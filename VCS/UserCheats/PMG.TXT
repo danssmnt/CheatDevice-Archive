@@ -1,0 +1,274 @@
+#cheat Trunk Gone Cops/ Jeep Cop Cars
+//ID: 18724
+//Score: 75
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns all cop cars into jeeps.
+//Image: none
+//Time: 15/11/2006 23:30:16
+//Working: Yes
+Trunk Gone Cops/ Jeep Cop Cars
+sethex(0x09AB98F4, 24)
+
+
+#cheat Cream Cop Car
+//ID: 18971
+//Score: 47
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Cream!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:50:07
+//Image: none
+//Time: 06/12/2006 18:33:30
+//Working: Yes
+sethex(0x09ab98f4,  16);
+
+#cheat Wheel size polaris V8
+//ID: 19466
+//Score: 13
+//Author: psphacker108
+//Category: Vehicle
+//Description: This is my wheel size Mod! You can mod your own car tires at : http://www.themaxone.net/tools/wheelsize.php
+//Thanks to DDM for some help! The first wheel size mod for vcs!
+//Image: http://img453.imageshack.us/my.php?image=screen2gb9.png
+//Time: 21/03/2007 16:40:13
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9360B98, 1.5);
+
+#cheat Bigger Wheels Sand King
+//ID: 19467
+//Score: 20
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Wheels on the Sand King Huge! Mod your own vehicle tires now!
+//
+//Using psphacker's Wheel Size modifier:
+//http://www.themaxone.net/tools/wheelsize.php
+//
+//Image: http://img339.imageshack.us/img339/4899/screen4gm4.png
+//Time: 21/03/2007 17:16:56
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A678, 1.5);
+
+#cheat DDM's Sentinel XS
+//ID: 19468
+//Score: 26
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This car has a custom Pearlescent Orange/Yellow paint job and a Nos Kit installed. Hold O to use the Nos and watch the Nos start pouring out of your Exhaust pipes. Also has Lamborghini Style Doors, 20" Rims, and is one beast of a machine.
+//
+//Thanks to psphacker108 for the wheel size changer, and Waterbottle for the Lamborghini Doors and Nos Cheat.
+//Image: http://img111.imageshack.us/img111/4241/video1pd5.gif
+//Time: 21/03/2007 19:13:51
+//Working: Yes
+if(getshort(pcar + 0x56) == 274)
+{
+setfloat(0x936F298, 0.8);
+setchar(pcar + 0x224, 255, 127, 0);
+setchar(pcar + 0x228, 0, 0, 0);
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+if(buttons & CTRL_CIRCLE && buttons & CTRL_CROSS) {
+
+   speed = 0.0;
+   setchar(0x09569B90, 0x10);
+   setchar(0x09569B94, 0, 127, 255);
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+else
+{
+   setchar(0x09569B90, 0x4);
+   setchar(0x09569B94, 63, 63, 63);
+}
+}
+
+#cheat Hikiwara Cholo Sabre
+//ID: 19412
+//Score: 36
+//Author: jumpman06
+//Category: Vehicle
+//Description: Kinda PMG'd car, in blue this time.. press right to change back to blue if it goes to some other color, Neon and drop by Vettefan88
+//
+//EDITED BY: psphacker108 on 26/02/07 16:18:09
+//Image: none
+//Time: 25/02/2007 23:53:46
+//Working: Yes
+if (buttons & CTRL_RIGHT)
+{
+setchar(0x9569b94,  0,  0x0,  0xFF);
+setchar(pcar+0x224, 0, 0x0, 0xff);
+setchar(pcar+0x228, 0, 0x0, 0xff);
+1 = 0;
+2 = 175;
+3 = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 1, 2, 3);}
+}
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat Hikiwara tuned Cholo Sabre
+//ID: 19272
+//Score: 80
+//Author: jumpman06
+//Category: Vehicle
+//Description: This is a kinda pmg car, made out of different codes,  its behind sunshine autos main building, where the races are
+//Image: none
+//Time: 16/01/2007 18:07:16
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(0x098F66E0, 'H', 'i', 'k', 'i', 'w', 'a', 'r', 'a', ' ', 'S', 'a', 'b', 'r', 'e', 0);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+static rotation; 
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat Monster Quad. *first ever pmg car*
+//ID: 19040
+//Score: 175
+//Author: vettefan88
+//Category: Pimp My Garage
+//Description: This is the first ever pmg'd car to be released for VCS. and it may be the only one for quite some time. it takes the quad, and gives it a large suspension lift, and some larger tires. It also has many performance enhancing tweaks.
+//
+//enjoy...
+//
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/monster%20Quad1.gif
+//Time: 14/12/2006 21:00:36
+//Working: Yes
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+
+#cheat Big Wheels On Infernus
+//ID: 19471
+//Score: 10
+//Author: BOY 999
+//Category: Vehicle
+//Description: This makes Infernus's have big wheels. 
+//
+//
+//
+//EDITED BY: psphacker108 on 26/03/07 03:46:24
+//Image: none
+//Time: 25/03/2007 10:32:42
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936E818, 0.9);
+

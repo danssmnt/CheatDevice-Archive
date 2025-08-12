@@ -1,0 +1,412 @@
+#cheat Infinite Health
+//ID: 18430
+//Score: 268
+//Author: Waterbottle
+//Category: Player
+//Description: ...
+//Image: none
+//Time: 02/11/2006 16:15:04
+//Working: Yes
+setfloat(pplayer + 0x4E4, 150.0);
+
+#cheat Weapons
+//ID: 18429
+//Score: 216
+//Author: Waterbottle
+//Category: Weapons
+//Description: This gives you chainsaw, teargas, handgum,  M16, uzi, mini gun and sniper
+//Image: none
+//Time: 02/11/2006 16:12:08
+//Working: Yes
+setchar(pplayer+0x594, 0x0b);//chainsaw
+setchar(pplayer+0x5B0, 0x10);//teargas
+setchar(pplayer+0x5CC, 0x14);//some handgun
+setchar(pplayer+0x5E8, 0x15);//M16
+setchar(pplayer+0x604, 0x18);//uzi
+setchar(pplayer+0x620, 0x1C);
+setchar(pplayer+0x63C, 0x23);//mini gun
+setchar(pplayer+0x658, 0x1E);//sniper
+
+#cheat Kamakazee!
+//ID: 18513
+//Score: 217
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and hit O and your car will automatically catch fire. Can be useful and is a ton of fun!
+//Image: none
+//Time: 04/11/2006 21:41:24
+//Working: Yes
+ if ((buttons & CTRL_CIRCLE))
+{
+setfloat(pcar + 0x0000027C, 0x0);
+}
+
+#cheat Wanted Level Modifier (Revised)
+//ID: 18512
+//Score: 145
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: A redo of my first, turn on , Hold O, and use up and down to change your current wanted level.
+//Image: none
+//Time: 04/11/2006 21:40:10
+//Working: Yes
+static Wanted;
+ if ((press & CTRL_UP&&buttons & CTRL_CIRCLE&&Wanted<6))
+{
+Wanted=Wanted+1;
+}
+ if ((press & CTRL_DOWN&&buttons & CTRL_CIRCLE&&Wanted>0))
+{
+Wanted=Wanted-1;
+} 
+setint(pplayer+0x00000910, Wanted);
+
+#cheat Hold L or R to change taxi fare amount
+//ID: 18511
+//Score: 117
+//Author: Durka Durka Mahn
+//Category: Player Stats
+//Description: Hold L or R while in a cab to change the amount of fares ou have successfully gotten.
+//Image: none
+//Time: 04/11/2006 21:38:32
+//Working: Yes
+ if ((buttons & CTRL_RTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)+1);
+}
+ if ((buttons & CTRL_LTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)-1);
+}
+
+
+#cheat Set Money
+//ID: 18510
+//Score: 85
+//Author: xFinch713x
+//Category: Player
+//Description: CHEAT IS HERE SO I COULD SUBMIT
+//HOW TO USE IN CODE SPACE
+// if ((pressslow & CTRL_UP))
+//{
+//setint(0x08bde55c, getint(0x08bde55c) + 1000);
+//}
+// if ((pressslow & CTRL_DOWN))
+//{
+//setint(0x08bde55c, getint(0x08bde55c) - 1000);
+//}
+//Image: none
+//Time: 04/11/2006 21:21:47
+//Working: Yes
+setint(0x08bde55c, 1000)
+//By pressing up, your money will go up by 1000, and by pressing down, will go down by 1000.  If you want to go up by more and down by more, chnage the 1000's in the code to whatever you want
+
+#cheat Superman
+//ID: 18509
+//Score: 267
+//Author: Waterbottle
+//Category: Player
+//Description: Ported from VCS Cheater,
+//X to accend
+//[] to decend
+//Analog to rotate and move
+//R to move fast
+//Image: none
+//Time: 04/11/2006 19:50:26
+//Working: Yes
+pstartfly = getshort(pplayer+0x1C8);
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(buttons & CTRL_RTRIGGER) speedmult = 1.5;  else speedmult = 0.3;
+    if(buttons & CTRL_CROSS) {
+                   setshort(pplayer+0x1C8, 0x1020);
+                   setfloat(pplayer+0x148, speedmult/2);
+                   }
+    else if(buttons & CTRL_SQUARE && pstartfly==0x1020) setfloat(pplayer+0x148, -speedmult/2);
+    else if(pstartfly==0x1020) setfloat(pplayer+0x148, 0);
+    setfloat(pplayer + 0x0078, -0.03 * xstick);
+    if(ystick < -0.5 && pstartfly==0x1020) {
+                   setfloat(pplayer+0x140, getfloat(pplayer+0x10));
+                   setfloat(pplayer+0x144, getfloat(pplayer+0x14));
+              } else if(pstartfly==0x1020) setfloat(pplayer+0x140, 0, 0);
+
+#cheat Bouncy!
+//ID: 18508
+//Score: 134
+//Author: Waterbottle
+//Category: Player
+//Description: Use analogstick to move around while Bouncing.
+//
+//Video isn't very good..
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/bouncy.gif
+//Time: 04/11/2006 19:48:13
+//Working: Yes
+BounceAmount = 0.8;
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(getshort(pplayer+0x1C8)!=0x1020) { setfloat(pplayer+0x148, BounceAmount); setshort(pplayer+0x1c8, 0x1020); 
+if(ystick < -0.5) {
+    setfloat(pplayer+0x140, getfloat(pplayer+0x10));
+    setfloat(pplayer+0x144, getfloat(pplayer+0x14));
+    }
+}
+setfloat(pplayer+0x78, -0.03 * xstick);
+
+#cheat Rocket Boost 4
+//ID: 18507
+//Score: 215
+//Author: edisoncarter
+//Category: Vehicle
+//Description: The built-in Rocket Boost cheat from LCS converted to cheat script.  Change "boost = 4.0" for different boost amounts.
+//Image: none
+//Time: 04/11/2006 19:26:23
+//Working: Yes
+if (buttons & CTRL_CROSS)                                                                         
+{                                                                                                                                                     
+    boost = 4.0;                                                                                  
+    thrust = boost * 0.00333;                                                
+                                                                                                  
+    // velocity = velocity + forward vector * thrust                                              
+    setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);          
+    setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);          
+    setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);          
+                                                                                                  
+    // rotational control on motorcycles                                                          
+    //if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)                       
+        setfloat(pcar + 0x0078, -0.03 * xstick);                                                  
+}                                                                                                 
+
+
+#cheat NOS
+//ID: 18504
+//Score: 158
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Hold O while driving to use NOS.
+//Screen blurs more the faster you drive.
+//
+//EDITED BY: ADePSP on 04/11/06 19:17:14
+//Image: none
+//Time: 04/11/2006 18:23:13
+//Working: Yes
+if(buttons & CTRL_CIRCLE) {
+
+   speed = 0.0;
+
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+
+#cheat All Red Baloons Burst. w/ Rewards
+//ID: 18503
+//Score: 218
+//Author: Waterbottle
+//Category: Environment
+//Description: All Baloons found, Rewards spawn at safehouse
+//Image: none
+//Time: 04/11/2006 18:22:16
+//Working: Yes
+for(i=0;i<99;i++) {
+setint(0x09f6a200+4*i, 1);
+}
+setshort(0x08bb3d3c, 99);
+off();
+
+#cheat Always Roll When Falling
+//ID: 18484
+//Score: 88
+//Author: theY4Kman
+//Category: Player
+//Description: [LCS PORT - ORIGINAL AUTHOR: theY4Kman]
+//When jumping, you'll always roll when you hit the ground.
+//
+//Image: http://y4kstudios.com/cheatsync/image.php?image=allroll&ext=.jpg
+//Time: 03/11/2006 21:21:36
+//Working: Yes
+setfloat(pplayer + 0x1C4, 800.0);
+
+#cheat Never Roll When Falling
+//ID: 18482
+//Score: 217
+//Author: theY4Kman
+//Category: Player
+//Description: [PORT FROM LCS - ORIGINAL AUTHOR: THEY4KMAN]
+//This code prevents you from rolling after you've fallen from a high spot. It clears up that annoyance many have had...
+//Image: http://y4kstudios.com/cheatsync/image.php?image=noroll&ext=.jpg
+//Time: 03/11/2006 21:17:17
+//Working: Yes
+setfloat(pplayer + 0x1C4, 0.0);
+
+#cheat Wanted Level Modifier
+//ID: 18476
+//Score: 120
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Change 0 to 0-6 and your wanted level will always be that. Note this cheat was made by me, Durka Durka Mahn. A better form will be out as soon as ADe gets the new coding up. You'll be able to actually use Up and Down to higher or lower your wanted level.
+//Image: none
+//Time: 03/11/2006 19:34:06
+//Working: Yes
+setchar(0x098B5350, 0x0);
+
+#cheat Remote Controlled Bike
+//ID: 18444
+//Score: 163
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Stand next to the bike you want to remort control then activate the cheat and quickly disable it,  as you leave the bike and you can remote control it.
+//Image: none
+//Time: 03/11/2006 00:13:28
+//Working: Yes
+setchar(pplayer+0x894, 0x12);
+#off
+setchar(pplayer+0x894, 0x10);
+
+#cheat Bobcat in garage
+//ID: 18441
+//Score: 91
+//Author: TSF442
+//Category: Garage Codes
+//Description: Puts bobcat in first garage.
+//Leave on until garage door opens.
+//All cars are red unless there is a car with another color first.
+//Image: http://img433.imageshack.us/img433/1246/video1vk6.gif
+//Time: 02/11/2006 23:53:43
+//Working: Yes
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 180);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Lock Car Doors
+//ID: 18440
+//Score: 257
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Press DOWN to lock/unlock car door, while door is locked nobody can get into your vehicle and you can't get out.
+//
+//Ported from theY4Kman's version for LCS.
+//Image: none
+//Time: 02/11/2006 23:07:08
+//Working: Yes
+if(press & CTRL_DOWN)
+setshort(pcar+0x232, getshort(pcar+0x232) ^ 0x0101);
+#off
+setshort(pcar+0x232, 0);
+
+#cheat 999,999,999$
+//ID: 18439
+//Score: 339
+//Author: Waterbottle
+//Category: Misc
+//Description: Gives you 999,999,999$
+//Image: none
+//Time: 02/11/2006 22:51:08
+//Working: Yes
+setint(0x08bde55c, 999999999, 999999999);
+
+#cheat Lamborghini Doors
+//ID: 18438
+//Score: 494
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This gives your car Lamborghini verticle Doors.
+//
+//Ported from vettefan88's version for LCS.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/lambo.jpg
+//Time: 02/11/2006 22:22:22
+//Working: Yes
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+#cheat Indestructable Vehicle
+//ID: 18437
+//Score: 370
+//Author: vettefan88
+//Category: Vehicle
+//Description: any car your in will not attain any physical damage, or engine damage.
+//Image: none
+//Time: 02/11/2006 20:48:45
+//Working: Yes
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+
+#cheat No reloading
+//ID: 18434
+//Score: 546
+//Author: Waterbottle
+//Category: Weapons
+//Description: You can fire with out having to load the gun.
+//Image: none
+//Time: 02/11/2006 16:17:06
+//Working: Yes
+setint(pplayer+0x5d4, 2);
+setint(pplayer+0x5f0, 2);
+setint(pplayer+0x60c, 2);
+setint(pplayer+0x5b8, 2);
+setint(pplayer+0x628, 2);
+setint(pplayer+0x644, 2);
+setint(pplayer+0x660, 2);
+
+#cheat Infinite Ammo
+//ID: 18433
+//Score: 649
+//Author: Waterbottle
+//Category: Weapons
+//Description: Gives you infinite ammo for all weapons
+//Image: none
+//Time: 02/11/2006 16:16:26
+//Working: Yes
+setint(pplayer+0x5d8, 0x00ffffff);
+setint(pplayer+0x5f4, 0x00ffffff);
+setint(pplayer+0x610, 0x00ffffff);
+setint(pplayer+0x5bc, 0x00ffffff);
+setint(pplayer+0x62c, 0x00ffffff);
+setint(pplayer+0x648, 0x00ffffff);
+setint(pplayer+0x664, 0x00ffffff);
+
+#cheat Infinite Breath
+//ID: 18432
+//Score: 446
+//Author: Waterbottle
+//Category: Player
+//Description: You will never drown
+//Image: none
+//Time: 02/11/2006 16:15:54
+//Working: Yes
+setfloat(pplayer + 0x82C, 2.0);
+
+#cheat Infinite armor
+//ID: 18431
+//Score: 230
+//Author: Waterbottle
+//Category: Player
+//Description: ...
+//Image: none
+//Time: 02/11/2006 16:15:30
+//Working: Yes
+setfloat(pplayer + 0x4E8, 150.0);
+

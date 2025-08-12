@@ -1,0 +1,377 @@
+#cheat Teleport Last Entered Car to You (Down)
+//ID: 19523
+//Score: 7
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Whilst on, the last entered car you were in will be teleported to you when you hit down. Please note that the cheat must be on before you get out of the last entered vehicle
+//Image: none
+//Time: 11/04/2007 00:45:32
+//Working: Yes
+if(pcar) {
+old = pcar; }
+if(press & CTRL_DOWN&&!pcar) {
+setfloat(old + 0x30,    getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) *  5.0); 
+setfloat(old + 0x34,    getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) *  5.0); 
+setfloat(old + 0x38,    getfloat(pplayer + 0x38) + 1.0); 
+}
+
+
+#cheat Red car neons
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Green car neons
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Blue car neons
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat White car neons
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Purple car neons
+R = 80;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Turquoise car neons
+R = 0;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Yellow car neons
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Orange car neons
+R = 255;
+G = 80;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Lime Green car neons
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Pink car neons
+R = 255;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Hot Pink car neons
+R = 255;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Sky Blue car neons
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Red bike neons
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Green bike neons
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Blue bike neons
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat White bike neons
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+
+#cheat Purple bike neons
+R = 80;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Turquoise bike neons
+R = 0;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Yellow bike neons
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Orange bike neons
+R = 255;
+G = 80;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Lime Green bike neons
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Pink bike neons
+R = 255;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Hot Pink bike neons
+R = 255;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Sky Blue bike neons
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat car neons
+R = 174;
+G = 225;
+B = 157;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Red car neons
+//by vettefan
+static done;
+R = 255;
+G = 0;
+B = 0;
+if(!done)
+{
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+done = 1;
+}
+#off
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 0, 0, 0);}
+done = 0;
+
+#cheat Black car neons
+R = 0;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Black bike neons
+R = 0;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Light/Dark Blue car neons
+R = 115;
+G = 206;
+B = 197;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Light/Dark bike neons
+R = 115;
+G = 206;
+B = 197;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Vice City Pink car neons
+R = 232;
+G = 89;
+B = 218;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Vice City Pink bike neons
+R = 232;
+G = 89;
+B = 218;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Dark Blue car neons
+R = 3;
+G = 15;
+B = 165;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Dark Blue bike neons
+R = 3;
+G = 15;
+B = 165;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Weather Modifier
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00,  weather);
+setchar(0x8bb3df8,  weather);
+setchar(0x8bb458c,  weather);
+
+#cheat Parachute
+static Active;
+if(getchar(pplayer+0x1c9)==0x10) {//In air?
+if(!Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  'O',  ' ',  't',  'o',  ' ',  'u',  's',  'e',  ' ',  'p',  'a',  'r',  'a',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  '/',  '\\',  ' ',  't',  'o',  ' ',  'r',  'e',  'l',  'e ',  'a',  's',  'e',  ' ',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(buttons & CTRL_CIRCLE) Active = true;
+if(buttons & CTRL_TRIANGLE) Active = false;
+if(Active) setfloat(pplayer+0x148,  getfloat(pplayer+0x148)*0.9);  
+//Give Some Control
+if(Active) {
+if(ystick < -0.5) {
+     setfloat(pplayer+0x140,  getfloat(pplayer+0x10)*0.2);
+     setfloat(pplayer+0x144,  getfloat(pplayer+0x14)*0.2);
+     } else setfloat(pplayer+0x140,  getfloat(pplayer+0x140)*0.99,  getfloat(pplayer+0x144)*0.99);
+setfloat(pplayer + 0x0078,  -0.01 * xstick);
+}
+} else Active = false;
+
+#cheat Stunt Man (updated)
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+   jumping = true;
+   if(xstick)
+   {
+   setfloat(pplayer+0x78,  -xstick / 2);
+   score += sqrt(xstick*xstick) * 40;
+   }
+   if(ystick)
+   {
+   setfloat(pplayer+0x70,  ystick * getfloat(pplayer) / 2);
+   setfloat(pplayer+0x74,  ystick * getfloat(pplayer+4) / 2);
+   score += sqrt(ystick*ystick) * 50;      
+   }
+} else if(jumping) {
+       
+jumping = 0;    
+setfloat(pplayer+0x70,  0,  0,  0);  
+time = 40;
+setint(0x08bde55c,  getint(0x08bde55c)+score);
+rand = (getint(pplayer) + getint(0x08bb3b40)) % 3;
+
+}
+else if(time > 0 && score) {
+      time--;
+      int = int(score);
+      if(rand == 0) setshort(0x08e90bd8,  1,  ' ',  'W',  'o',  'w' ,  ',  ',  ' ',  'y',  'o',  'u',  ' ',  'g',  'o',  't',  ' ');
+      else if(rand == 1) setshort(0x08e90bd8,  1,  ' ',  ' ',  'S',  'i',  'c' ,  'k',  ' ',  's',  't',  'u',  'n',  't',  '!',  ' ');  
+      else setshort(0x08e90bd8,  1,  'N',  'i',  'c' ,  'e',  ' ',  'f',  'l',  'i',  'p',  ' ',  'm',  'a',  'n',  ' ');
+      size = 0;
+      for(i = 1; i < int; i*=10) size+=2;
+      for(i = 0; int > 0; i+=2 ) {
+      setshort(0x08e90bf4+size-i,  '0' + (int % 10));
+      int = int(int/=10);
+      }
+      if(rand == 0) setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '!',  ' ',  ':',  ')',  0);
+      else if(rand == 1) setshort(0x08e90bf4+i,  ' ',  '$',  ' ',  'f',  'o',  'r',  ' ',  'y',  'o',  'u',  '!',  0);
+      else setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '.',  0);
+      }
+else time = score = 0;

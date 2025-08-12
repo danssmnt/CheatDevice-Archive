@@ -1,0 +1,2991 @@
+/////CAMERA
+
+#cheat CAMERA: Top Down Camera 
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+setfloat(0x08BC86C0, 20); //Zoom on foot
+setfloat(0x08BC8684, 25); //Zoom in car
+
+/////MISSION
+     
+#cheat MISSION: Mission Select, Hold R<>, Enter TAXI
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+}
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+if (mission <= 07)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 08)
+{setshort(0x08e90bd8, 1, '1', 's', 't', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+if (mission == 09)
+{setshort(0x08e90bd8, 1, 'T', 'e', 'l', 'e', 'p', 'o', 'r', 't', ' ', 'T', 'o', ' ', 'B', 'e', 'a', 'c', 'h', 'c', 'o', 'm', 'b', 'e', 'r', ' ', 'H', 'o', 't', 'e', 'l', ',', ' ', 'S', 't', 'u', 'c', 'k', ' ', 'I', 'n', ' ', 'C', 'a', 'r', 0);}
+if (mission == 10)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 11)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'A', 't', 't', 'a', 'c', 'k', 0);}
+if (mission == 12)
+{setshort(0x08e90bd8, 1, 'I', 'n', ' ', 'T', 'h', 'e', ' ', 'A', 'i', 'r', ' ', 'T', 'o', 'n', 'i', 'g', 'h', 't', ' ', '(', 'P', 'h', 'i', 'l', ' ', 'C', 'o', 'l', 'l', 'i', 'n', 's', ' ', 'C', 'o', 'n', 'c', 'e', 'r', 't', ')', 0);}
+if (mission == 13)
+{setshort(0x08e90bd8, 1, 'V', 'i', 'd', 'e', 'o', ' ', 'M', 'e', 'm', 'o', 'r', 'i', 'e', 's', 0);}
+if (mission == 14)
+{setshort(0x08e90bd8, 1, 'S', 'h', 'o', 'o', 't', 'i', 'n', 'g', ' ', 'R', 'a', 'n', 'g', 'e', 0);}
+if (mission == 15)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'r', 'a', 'm', 'e', 'd', 'i', 'c', ' ', '(', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ')', 0);}
+if (mission == 16)
+{setshort(0x08e90bd8, 1, 'V', 'i', 'g', 'i', 'l', 'a', 'n', 't', 'e', 0);}
+if (mission == 17)
+{setshort(0x08e90bd8, 1, 'F', 'i', 'r', 'e', 'f', 'i', 'g', 'h', 't', 'e', 'r', 0);}
+if (mission == 18)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'r', 'a', 'm', 'e', 'd', 'i', 'c', ' ', '(', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ')', 0);}
+if (mission == 19)
+{setshort(0x08e90bd8, 1, 'S', 'w', 'i', 'n', 'g', 'e', 'r', 's', ' ', 'C', 'l', 'u', 'b', ' ', 'G', 'o', 'l', 'f', 0);}
+if (mission == 20)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'x', 'i', ' ', 'D', 'r', 'i', 'v', 'e', 'r', 0);}
+if (mission == 21)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'P', 'r', 'o', 't', 'e', 'c', 't', 'i', 'o', 'n', ' ', 'R', 'a', 'c', 'k', 'e', 't', 0);}
+if (mission == 22)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'L', 'o', 'a', 'n', ' ', 'S', 'h', 'a', 'r', 'k', 0);}
+if (mission == 23)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'P', 'r', 'o', 's', 't', 'i', 't', 'u', 't', 'i', 'o', 'n', 0);}
+if (mission == 24)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'D', 'r', 'u', 'g', 's', 0);}
+if (mission == 25)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'S', 'm', 'u', 'g', 'g', 'l', 'i', 'n', 'g', 0);}
+if (mission == 26)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'R', 'o', 'b', 'b', 'e', 'r', 'y', 0);}
+if (mission == 27)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 28)
+{setshort(0x08e90bd8, 1, 'C', 'r', 'a', 's', 'h', ' ', 'C', 'o', 'a', 'c', 'h', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+if (mission == 29)
+{setshort(0x08e90bd8, 1, 'Q', 'u', 'a', 'd', ' ', 'B', 'i', 'k', 'e', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 30)
+{setshort(0x08e90bd8, 1, 'B', 'M', 'X', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 31)
+{setshort(0x08e90bd8, 1, 'S', 'a', 'n', 'c', 'h', 'e', 'z', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 32)
+{setshort(0x08e90bd8, 1, 'B', 'M', 'X', ' ', 'M', 'a', 'l', 'l', 0);}
+if (mission == 33)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 34)
+{setshort(0x08e90bd8, 1, 'H', 'e', 'l', 'i', ' ', 'T', 'o', 'u', 'r', 's', 0);}
+if (mission == 35)
+{setshort(0x08e90bd8, 1, 'F', 'i', 'r', 'e', ' ', 'H', 'e', 'l', 'i', 0);}
+if (mission == 36)
+{setshort(0x08e90bd8, 1, 'T', 'u', 'r', 'i', 's', 'm', 'o', ' ', '(', '1', 's', 't', ' ', 'I', 's', 'l', 'a', 'n', 'd', ')', 0);}
+if (mission == 37)
+{setshort(0x08e90bd8, 1, 'H', 'u', 'n', 't', 'e', 'r', ' ', 'T', 'a', 'r', 'g', 'e', 't', 0);}
+if (mission == 38)
+{setshort(0x08e90bd8, 1, 'A', 'i', 'r', ' ', 'R', 'a', 'c', 'e', 0);}
+if (mission == 39)
+{setshort(0x08e90bd8, 1, 'M', 'u', 'l', 't', 'i', ' ', 'V', 'e', 'h', 'i', 'c', 'l', 'e', ' ', 'R', 'a', 'c', 'e', 0);}
+if (mission == 40)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 41)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 08)
+{setshort(0x08e90bd8, 1, 'S', 'o', 'l', 'd', 'i', 'e', 'r', 0);}
+if (mission == 42)
+{setshort(0x08e90bd8, 1, 'C', 'l', 'e', 'a', 'n', 'i', 'n', 'g', ' ', 'H', 'o', 'u', 's', 'e', 0);}
+if (mission == 43)
+{setshort(0x08e90bd8, 1, 'C', 'o', 'n', 'd', 'u', 'c', 't', ' ', 'U', 'n', 'b', 'e', 'c', 'o', 'm', 'i', 'n', 'g', 0);}
+if (mission == 44)
+{setshort(0x08e90bd8, 1, 'C', 'h', 'o', 'l', 'o', ' ', 'V', 'i', 'c', 't', 'o', 'r', 'y', 0);}
+if (mission == 45)
+{setshort(0x08e90bd8, 1, 'B', 'o', 'o', 'm', 's', 'h', 'i', 'n', 'e', ' ', 'B', 'l', 'o', 'w', 'o', 'u', 't', 0);}
+if (mission == 46)
+{setshort(0x08e90bd8, 1, 'T', 'r', 'u', 'c', 'k', ' ', 'S', 't', 'o', 'p', 0);}
+if (mission == 47)
+{setshort(0x08e90bd8, 1, 'M', 'a', 'r', 'k', 'e', 'd', ' ', 'M', 'a', 'n', 0);}
+if (mission == 48)
+{setshort(0x08e90bd8, 1, 'S', 'h', 'a', 'k', 'e', 'd', 'o', 'w', 'n', 0);}
+if (mission == 49)
+{setshort(0x08e90bd8, 1, 'F', 'e', 'a', 'r', ' ', 'T', 'h', 'e', ' ', 'R', 'e', 'p', 'o', 0);}
+if (mission == 50)
+{setshort(0x08e90bd8, 1, 'W', 'a', 'k', 'i', 'n', 'g', ' ', 'U', 'p', ' ', 'T', 'h', 'e', ' ', 'N', 'e', 'i', 'g', 'h', 'b', 'o', 'u', 'r', 's', 0);}
+if (mission == 51)
+{setshort(0x08e90bd8, 1, 'O', ',', ' ', 'B', 'r', 'o', 't', 'h', 'e', 'l', ',', ' ', 'W', 'h', 'e', 'r', 'e', ' ', 'A', 'r', 't', ' ', 'T', 'h', 'o', 'u', '?', 0);}
+if (mission == 52)
+{setshort(0x08e90bd8, 1, 'G', 'o', 't', ' ', 'P', 'r', 'o', 't', 'e', 'c', 't', 'i', 'o', 'n', '?', 0);}
+if (mission == 53)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'e', 'n', ' ', 'F', 'u', 'n', 'd', 'a', 'y', ' ', 'C', 'o', 'm', 'e', 's', 0);}
+if (mission == 54)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'k', 'i', 'n', ' ', 'O', 'u', 't', ' ', 'T', 'h', 'e ', 'W', 'h', 'i', 't', 'e', ' ', 'T', 'r', 'a', 's', 'h', 0);}
+if (mission == 55)
+{setshort(0x08e90bd8, 1, 'D', '.', 'I', '.', 'V', '.', 'O', '.', 'R', '.', 'C', '.', 'E', '.', 0);}
+if (mission == 56)
+{setshort(0x08e90bd8, 1, 'T', 'o', ' ', 'V', 'i', 'c', 't', 'o', 'r', ',', ' ', 'T', 'h', 'e', ' ', 'S', 'p', 'o', 'i', 'l', 's', 0);}
+if (mission == 57)
+{setshort(0x08e90bd8, 1, 'H', 'o', 's', 'e', ' ', 'T', 'h', 'e', ' ', 'H', 'o', 'e', 's', 0);}
+if (mission == 58)
+{setshort(0x08e90bd8, 1, 'R', 'o', 'b', 'b', 'i', 'n', 'g', ' ', 'T', 'h', 'e', ' ', 'C', 'r', 'a', 'd', 'l', 'e', 0);}
+if (mission == 59)
+{setshort(0x08e90bd8, 1, 'J', 'i', 'v', 'e', ' ', 'D', 'r', 'i', 'v', 'e', 0);}
+if (mission == 60)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'A', 'u', 'd', 'i', 't', 'i', 'o', 'n', 0);}
+if (mission == 61)
+{setshort(0x08e90bd8, 1, 'C', 'a', 'u', 'g', 'h', 't', ' ', 'I', 'n', ' ', 'T', 'h', 'e', ' ', 'A', 'c', 't', 0);}
+if (mission == 62)
+{setshort(0x08e90bd8, 1, 'S', 'n', 'i', 't', 'c', 'h', ' ', 'H', 'i', 't', 'c', 'h', 0);}
+if (mission == 63)
+{setshort(0x08e90bd8, 1, 'F', 'r', 'o', 'm', ' ', 'Z', 'e', 'r', 'o', ' ', 'T', 'o', 'H', 'e', 'r', 'o', 0);}
+if (mission == 64)
+{setshort(0x08e90bd8, 1, 'N', 'i', 'c', 'e', ' ', 'P', 'a', 'c', 'k', 'a', 'g', 'e', 0);}
+if (mission == 65)
+{setshort(0x08e90bd8, 1, 'B', 'a', 'l', 'l', 's', 0);}
+if (mission == 66)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'p', 'i', ' ', 'D', 'o', 'n', 't', ' ', 'S', 'c', 'r', 'e', 'e', 'c', 'h', 0);}
+if (mission == 67)
+{setshort(0x08e90bd8, 1, 'H', 'a', 'v', 'a', 'n', 'a', ' ', 'G', 'o', 'o', 'd', ' ', 'T', 'i', 'm', 'e', 0);}
+if (mission == 68)
+{setshort(0x08e90bd8, 1, 'M', 'o', 'n', 'e', 'y', ' ', 'F', 'o', 'r', ' ', 'N', 'o', 't', 'h', 'i', 'n', 'g', 0);}
+if (mission == 69)
+{setshort(0x08e90bd8, 1, 'L', 'e', 'a', 'p', ' ', 'A', 'n', 'd', ' ', 'B', 'o', 'u', 'n', 'd', 0);}
+if (mission == 70)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'B', 'u', 'm', ' ', 'D', 'e', 'a', 'l', 0);}
+if (mission == 71)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'M', 'u', 'g', 's', 'h', 'o', 't ', 'L', 'o', 'n', 'g', 's', 'h', 'o', 't', 0);}
+if (mission == 72)
+{setshort(0x08e90bd8, 1, 'H', 'o', 's', 't', 'i', 'l', 'e', ' ', 'T', 'a', 'k', 'e', 'o', 'v', 'e', 'r', 0);}
+if (mission == 73)
+{setshort(0x08e90bd8, 1, 'U', 'n', 'f', 'r', 'i', 'e', 'n', 'd', 'l', 'y', ' ', 'C', 'o', 'm', 'p', 'e', 't', 'i', 't', 'i', 'o', 'n', 0);}
+if (mission == 74)
+{setshort(0x08e90bd8, 1, 'H', 'i', 'g', 'h', ' ', 'W', 'i', 'r', 'e', 0);}
+if (mission == 75)
+{setshort(0x08e90bd8, 1, 'B', 'u', 'r', 'n', 'i', 'n', 'g', ' ', 'B', 'r', 'i', 'd', 'g', 'e', 's', 0);}
+if (mission == 76)
+{setshort(0x08e90bd8, 1, 'A', 'c', 'c', 'i', 'd', 'e', 'n', 't', 's', ' ', 'W', 'I', 'l', 'l', ' ', 'H', 'a', 'p', 'p', 'e', 'n', 0);}
+if (mission == 77)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'C', 'o', 'l', 'o', 'n', 'e', 'l', 's', ' ', 'C', 'o', 'k', 'e', 0);}
+if (mission == 78)
+{setshort(0x08e90bd8, 1, 'K', 'i', 'l', 'l', ' ', 'P', 'h', 'i', 'l', 0);}
+if (mission == 79)
+{setshort(0x08e90bd8, 1, 'S', 'a', 'y', ' ', 'C', 'h', 'e', 'e', 's', 'e', 0);}
+if (mission == 80)
+{setshort(0x08e90bd8, 1, 'K', 'i', 'l', 'l', ' ', 'P', 'h', 'i', 'l', ':', ' ', 'P', 'a', 'r', 't', ' ', '2', 0);}
+if (mission == 81)
+{setshort(0x08e90bd8, 1, 'S', 'o', ' ', 'L', 'o', 'n', 'g', ' ', 'S', 'c', 'h', 'l', 'o', 'n', 'g', 0);}
+if (mission == 82)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 83)
+{setshort(0x08e90bd8, 1, 'B', 'l', 'i', 't', 'z', 'k', 'r', 'i', 'e', 'g', 0);}
+if (mission == 84)
+{setshort(0x08e90bd8, 1, 'T', 'u', 'r', 'n', ' ', 'O', 'n', ',', ' ', 'T', 'u', 'n', 'e', ' ', 'I', 'n', ',', ' ', 'B', 'u', 'g', ' ', 'O', 'u', 't', 0);}
+if (mission == 85)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'k', 'i', 'n', 'g', ' ', 'T', 'h', 'e', ' ', 'F', 'a', 'l', 'l', 0);}
+if (mission == 86)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'i', 't', 'e', ' ', 'L', 'i', 'e', 's', 0);}
+if (mission == 87)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'e', 'r', 'e', ' ', 'I', 't', ' ', 'H', 'u', 'r', 't', 's', ' ', 'M', 'o', 's', 't', 0);}
+if (mission == 88)
+{setshort(0x08e90bd8, 1, 'B', 'l', 'i', 't', 'z', 'k', 'r', 'i', 'e', 'g', ' ', 'S', 't', 'r', 'i', 'k', 'e', 's', ' ', 'A', 'g', 'a', 'i', 'n', 0);}
+if (mission == 89)
+{setshort(0x08e90bd8, 1, 'L', 'o', 's', 't', ' ', 'A', 'n', 'd', ' ', 'F', 'o', 'u', 'n', 'd', 0);}
+if (mission == 90)
+{setshort(0x08e90bd8, 1, 'L', 'i', 'g', 'h', 't', ' ', 'M', 'y', ' ', 'P', 'y', 'r', 'e', 0);}
+if (mission == 91)
+{setshort(0x08e90bd8, 1, 'H', 'o', 'm', 'e', 's', ' ', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'R', 'a', 'n', 'g', 'e', 0);}
+if (mission == 92)
+{setshort(0x08e90bd8, 1, 'P', 'u', 'r', 'p', 'l', 'e', ' ', 'H', 'a', 'z', 'e', 0);}
+if (mission == 93)
+{setshort(0x08e90bd8, 1, 'F', 'a', 'r', 'e', 'w', 'e', 'l', 'l', ' ', 'T', 'o', ' ', 'A', 'r', 'm', 's', 0);}
+if (mission == 94)
+{setshort(0x08e90bd8, 1, 'S', 't', 'e', 'a', 'l', ' ', 'T', 'h', 'e', ' ', 'D', 'e', 'a', 'l', 0);}
+if (mission == 95)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'E', 'x', 'c', 'h', 'a', 'n', 'g', 'e', 0);}
+if (mission == 96)
+{setshort(0x08e90bd8, 1, 'D', 'o', 'm', 'o', ' ', 'A', 'r', 'i', 'g', 'a', 't', 'o', ' ', 'D', 'o', 'm', 'e', 's', 't', 'o', 'b', 'o', 't', 'o', 0);}
+if (mission == 97)
+{setshort(0x08e90bd8, 1, 'O', 'v', 'e', 'r', ' ', 'T', 'h', 'e', ' ', 'T', 'o', 'p', 0);}
+if (mission == 98)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'L', 'a', 's', 't', ' ', 'S', 't', 'a', 'n', 'd', 0);}
+if (mission >= 99)
+{setshort(0x08e90bd8, 1, '1', 's', 't', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+}
+setchar(0x9F932D8, mission);
+
+/////WEAPON
+
+#cheat WEAPON: No Reloading
+setint(pplayer+0x5d4,  2);
+setint(pplayer+0x5f0,  2);
+setint(pplayer+0x60c,  2);
+setint(pplayer+0x5b8,  2);
+setint(pplayer+0x628,  2);
+setint(pplayer+0x644,  2);
+setint(pplayer+0x660,  2);
+
+
+#cheat WEAPON: Infinite Ammo
+setint(pplayer+0x5d8,  0x00ffffff);
+setint(pplayer+0x5f4,  0x00ffffff);
+setint(pplayer+0x610,  0x00ffffff);
+setint(pplayer+0x5bc,  0x00ffffff);
+setint(pplayer+0x62c,  0x00ffffff);
+setint(pplayer+0x648,  0x00ffffff);
+setint(pplayer+0x664,  0x00ffffff);
+off()
+
+
+#cheat WEAPON: Brass Knuckles
+setchar(pplayer+0x578,   0x01);
+off()
+
+#cheat WEAPON: Night Stick
+setchar(pplayer+0x594,   0x04);
+off()
+
+#cheat WEAPON: Katana
+setchar(pplayer+0x594,   0x0A);
+off()
+
+#cheat WEAPON: Axe
+setchar(pplayer+0x594,    0x07);
+off()
+
+#cheat WEAPON: Cane
+setchar(pplayer+0x594,    0x08);
+off()
+
+#cheat WEAPON: Golf Club
+setchar(pplayer+0x594,    0x03);
+off()
+
+#cheat WEAPON: Colt Python
+setchar(pplayer+0x5CC,   0x14);
+off()
+
+#cheat WEAPON: Silenced UZI
+setchar(pplayer+0x604,   0x1A);
+off()
+
+#cheat WEAPON: M-249 
+setchar(pplayer+0x63C,   0x22);
+off()
+
+#cheat WEAPON: Chaingun
+setchar(pplayer+0x63C,   0x23);
+off()
+
+#cheat WEAPON: Rocket Launcher
+setchar(pplayer+0x63C,   0x20);
+off()
+
+#cheat WEAPON: Flamethrower
+setchar(pplayer+0x63C,   0x21);
+off()
+
+#cheat WEAPON: Chainsaw
+setchar(pplayer+0x594,   0x0B);
+off()
+
+#cheat WEAPON: Molotov
+setchar(pplayer+0x5B0,   0x11);
+off()
+
+#cheat WEAPON: Grenade
+setchar(pplayer+0x5B0,   0x0C);
+off()
+
+#cheat WEAPON: Tear Gas
+setchar(pplayer+0x5B0,   0x10);
+off()
+
+#cheat WEAPON: Land Mines
+setchar(pplayer+0x5B0,   0x0E);
+off()
+
+/////VEHICLE
+
+#cheat VEHICLE: Rotate Car Camera
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+
+#cheat VEHICLE: Voodoo Hydraulics
+setfloat (0x96324a0+0x80, -0.01);
+setfloat(0x9632540, 0);
+setfloat(0x9632544, 0);
+if (getshort(pcar+0x56)==239){
+if (getfloat(pcar+0xD0)==1000)
+{hyd = .1;}
+if (getfloat(pcar+0xD0) == 500)
+{hyd = -.1;}
+if (buttons & CTRL_LEFT)
+{setfloat(0x9632540, -.5);}
+if (buttons & CTRL_RIGHT)
+{setfloat(0x9632540, .5);}
+if (buttons & CTRL_UP)
+{setfloat(0x9632544, 1.5);}
+if (buttons & CTRL_DOWN)
+{setfloat(0x9632544, -1.5);}
+if (press & CTRL_CIRCLE && getchar(pcar+0x136))
+{setfloat(pcar + 0x00000148, hyd);}
+if (press & CTRL_NOTE){
+if (hyd == .1)
+{setfloat(pcar+0xD0, 500);
+setfloat(pcar+0x688, .6, .6, .6, .6);
+setfloat(pcar+0x698, 1.05, 1.05, 1.05, 1.05);}
+if (hyd == -.1)
+{setfloat(pcar+0xD0, 1000);
+setfloat(pcar+0x688, .46, .46, .46, .46);
+setfloat(pcar+0x698, .81, .81, .81, .81);}}}
+
+
+#cheat VEHICLE: Fuel Usage
+static start;
+static gas;
+if(pcar&&!start) {
+if(!getchar(pcar+0x3d)) {
+gas = (abs((getint(pplayer+0x68)+getint(pplayer))*getint(0x08bb3b40)) % (100-50)) + 50;
+setchar(pcar+0x3d,  1);
+}
+else {
+gas = getchar(pcar+0x3c);
+}
+start = 1;
+}
+setchar(pcar+0x3c,  gas);
+if(!pcar) {
+start = 0;
+}
+static timepassed;
+static init;
+if(!init)
+{
+   lasttime = getchar( 0x08bb3b41 );
+   init = 1;
+}
+if( lasttime != getchar( 0x08bb3b41 ) )
+{
+   timepassed++;
+   lasttime = getchar( 0x08bb3b41 );
+}
+if( timepassed == 6 )
+{
+  if(gas > 0) {
+    gas -= 1;
+  }
+  timepassed = 0;
+}
+if(pcar&&gas) {
+setshort(0x08e90bd8,  'F',  'U',  'E',  'L',  '-',  '-',  '-',  '-',  ':',  ' ',  ' ');
+int = gas;
+size = 0;
+for( i = 1; i < int; i *= 10 ) size+=2;
+for( i = 0; int > 0; i+=2 )
+{
+   setshort(0x08e90bea+size-i,   '0' + (int % 10));
+   int = int(int/10);
+}
+setshort(0x08e90bea+size-i+0x6,  ' ',  ' ',  0);
+}
+if(pcar&&!gas) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)*0.91,  getfloat(pcar+0x144)*0.91);
+setshort(0x08e90bd8,  1,  'F',  'U',  'E',  'L',  ' ',  'E',  'M',  'P',  'T',  'Y',  0); 
+}
+if(getfloat(pcar+0x140) == 0 && getfloat(pcar+0x144) == 0 && getfloat(pcar+0x30) > 21.09 && getfloat(pcar+0x30) < 71.80 && getfloat(pcar+0x34) > -1091.87 && getfloat(pcar+0x34) < -1042.57) {
+if(gas<100) {
+price = (100 - gas) * 0.4;
+setint(0x08bde55c,  getint(0x08bde55c) - price,  getint(0x08bde55c) - price);
+gas = 100;
+}
+}
+
+
+#cheat VEHICLE: Lock Car Doors
+if(press & CTRL_DOWN)
+setshort(pcar+0x232,  getshort(pcar+0x232) ^ 0x0101);
+#off
+setshort(pcar+0x232,  0);
+
+
+#cheat VEHICLE: Undamageable Tires
+setshort(pcar+0x3b6,  0,  0);//cars
+setshort(pcar+0x434,  0);//bikes
+
+
+#cheat VEHICLE: Wind Effect on Motorcycle
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<0.0) {
+
+setchar(0x8bACDE7,  0x3E);
+
+}
+
+if(speed<1.0) {
+
+setchar(0x8bACDE7,  0x3F);
+
+}
+
+if(speed<2.0) {
+
+setchar(0x8bACDE6,  0x00);
+setchar(0x8bACDE7,  0x3F);
+
+}
+#off
+setchar(0x8bACDE6,  0x00);
+setchar(0x8bACDE7,  0x00);
+
+
+/////CAR COLOR
+
+#cheat VEHICLE: Red Paint
+setchar(pcar+0x224, 255, 0, 0);
+setchar(pcar+0x228, 255, 0, 0);
+
+
+#cheat VEHICLE: Green Paint
+setchar(pcar+0x224, 0, 255, 0);
+setchar(pcar+0x228, 0, 255, 0);
+
+
+#cheat VEHICLE: Blue Paint
+setchar(pcar+0x224, 0, 0, 255);
+setchar(pcar+0x228, 0, 0, 255);
+
+
+#cheat VEHICLE: Yellow Paint
+setchar(pcar+0x224, 223, 213, 0);
+setchar(pcar+0x228, 223, 213, 0);
+
+
+#cheat VEHICLE: Orange Paint
+setchar(pcar+0x224, 206, 134, 26);
+setchar(pcar+0x228, 206, 134, 26);
+
+
+#cheat VEHICLE: Purple Paint
+setchar(pcar+0x224, 91, 0, 183);
+setchar(pcar+0x228, 91, 0, 183);
+
+
+#cheat VEHICLE: Silver Paint
+setchar(pcar+0x224, 90, 90, 90);
+setchar(pcar+0x228, 90, 90, 90);
+
+
+#cheat VEHICLE: Charcoal Paint
+setchar(pcar+0x224, 15, 15, 15);
+setchar(pcar+0x228, 15, 15, 15);
+
+
+#cheat VEHICLE: Black Paint
+setchar(pcar+0x224, 0, 0, 0);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: White Paint
+setchar(pcar+0x224, 0xff, 0xff, 0xff);
+setchar(pcar+0x228, 0xff, 0xff, 0xff);
+
+
+#cheat VEHICLE: Red/Black Paint
+setchar(pcar+0x224, 255, 0, 0);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Green/Black Paint
+setchar(pcar+0x224, 0, 255, 0);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Blue/Black Paint
+setchar(pcar+0x224, 0, 0, 255);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Yellow/Black Paint
+setchar(pcar+0x224, 223, 213, 0);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Orange/Black Paint
+setchar(pcar+0x224, 206, 134, 26);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Purple/Black Paint
+setchar(pcar+0x224, 91, 0, 183);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Silver/Black Paint
+setchar(pcar+0x224, 90, 90, 90);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Charcoal/Black Paint
+setchar(pcar+0x224, 15, 15, 15);
+setchar(pcar+0x228, 0, 0, 0);
+
+
+#cheat VEHICLE: Red/White Paint
+setchar(pcar+0x224, 255, 0, 0);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Green/White Paint
+setchar(pcar+0x224, 0, 255, 0);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Blue/White Paint
+setchar(pcar+0x224, 0, 0, 255);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Yellow/White Paint
+setchar(pcar+0x224, 223, 213, 0);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Orange/White Paint
+setchar(pcar+0x224, 206, 134, 26);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Purple/White Paint
+setchar(pcar+0x224, 91, 0, 183);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Silver/White Paint
+setchar(pcar+0x224, 90, 90, 90);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+#cheat VEHICLE: Charcoal/White Paint
+setchar(pcar+0x224, 15, 15, 15);
+setchar(pcar+0x228, 255, 255, 255);
+
+
+/////GANG
+
+#cheat GANG: Vance Gang Disrespect
+static timer;
+if(timer%150 == 0)
+for(x = 0; 0x098b4a40 + x <= 0x098ecf90; x += 0xd10)
+{
+ID = getshort(0x098b4a40 + x + 0x56);
+if(ID == 103 || ID == 104 || ID == 89 || ID == 90 || ID == 107 || ID == 108)
+{
+if(!getint(0x098b4a40 + x + 0x480))
+{
+setchar(0x098b4a40 + x + 0x894, 0x8);
+setint(0x098b4a40 + x + 0x890, pplayer);
+}
+}
+}
+timer++;
+if(timer == 150)
+timer = 0;
+
+#cheat GANG: Cuban Follow
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 91 || ID == 92){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0xC);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat GANG: Cuban Disrespect
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 91 || ID == 92){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat GANG: Haitian Disrespect
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 37 || ID == 40){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat GANG: Cop Disrespect
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 99 || ID == 100){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat GANG: Criminal Disrespect
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 55 || ID == 58){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+/////PEDESTRIAN
+
+#cheat PED: Passengers
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) {
+       setchar(0x098b4a40 + i + 0x894, 0x21);
+       setint(0x098b4a40 + i +0x484, pcar);
+       setint(0x098b4a40 + i +0x450, pcar);
+   }
+}
+off();
+
+
+#cheat PED: Target Follows 
+pped = getint(0x08BA1D70); //Pointer to aimed at ped
+static yourped;
+if(pped&&!yourped)
+   yourped=pped; //If aimed at a ped, save its address in the memory
+if(yourped){
+   setfloat(yourped+0x4e4, 10000);
+   setchar(yourped+0x63C, 0x22);
+   setchar(yourped+0x87c, 0x1e);
+   //setchar(yourped+0x8B4, 0x0);
+   //setchar(yourped+0x8C4, 0x0);
+   setint(yourped+0x648, 1000);
+   setchar(yourped+0x789, 0x7);
+   if(!pcar){
+       if(getint(yourped+0x480))
+           setchar(yourped+0x894, 0x10);
+       else{
+           if(pped && pped != yourped){
+               setchar(yourped+0x894, 0x8);
+               setint(yourped+0x890, pped);
+           } else {
+               setchar(yourped+0x894, 0xC); //If not in a car, make that ped follow you
+               setint(yourped+0x890, pplayer); //Lets the ped know who to follow
+           }
+       }
+       
+   }
+   else{
+       if(!getint(yourped+0x480))
+           setchar(yourped+0x894, 0x11); //If in a car, make that ped get in the car
+       setint(yourped+0x484, pcar);  //Makes the ped know what car to get into
+       setint(yourped+0x450, pcar);
+   }
+   if(buttons & CTRL_LTRIGGER && press & CTRL_TRIANGLE){
+       setfloat(yourped+0x4e4, 0);
+       yourped=0;
+   }
+}
+
+
+/////MAIN
+
+#cheat MAIN: Infinate Adrenaline
+setchar(0x08BB3B5B,   0x8f);
+#off
+setchar(0x08BB3B5B,   0x3f);
+
+
+#cheat MAIN: Water Level
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+if (getchar(0x954A000) != 0)
+{
+   for (p = 0x9549D80; p < 0x954E580; p += 4)
+       setint(p, 0);
+}
+#off
+setfloat(0x96C96B0,  6);
+
+
+#cheat MAIN: Wave Size/Speed Modifier
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0,  Wave);
+
+
+#cheat MAIN: Weather Modifier
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00,  weather);
+setchar(0x8bb3df8,  weather);
+setchar(0x8bb458c,  weather);
+
+
+#cheat MAIN: Media Attention Meter
+setshort(0x08bb41ac,  1);
+setint(0x089bb648,  0);
+setint(0x089bb65c,  0);
+setint(0x089bb66c,  0);
+#off
+setshort(0x08bb41ac,  0);
+setint(0x089bb648,  0x450100db);
+setint(0x089bb65c,  0x450100d6);
+setint(0x089bb66c,  0x144000d2); 
+
+
+#cheat MAIN: Bobble Head World
+setchar(0x08bacdf7,  1);
+#off
+setchar(0x08bacdf7,  0);
+
+/////PURCHASE
+
+#cheat BUY: Security Guard Dealers
+static Marker1;
+X1 = 91.67;
+Y1 = 269.59;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<1){
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't',
+'o', ' ', 'b', 'u', 'y', ' ', 's', 'o', 'm', 'e', ' ', '"', 'B', 'l', 'o', 'w', '"', ' ', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '2', '0', '0', '~', 'w', '~');}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1)<1){
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+setint(0x08bde55c, getint(0x08bde55c)-200);
+setchar(0x8BC8984, 0x0c);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)-75);
+setshort(0x08e90DD8, 1, 'G', 'o', 'o', 'd', '.', '.', '.', 0);}
+if(getchar(0x8BC8984) == 0x0c){
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+if(newtime - 20 > time){
+setchar(0x8BC8984, 0x0);}}
+static Marker2;
+X2 = 95.67;
+Y2 = 270.81;
+if(!Marker2){
+Marker2 = 1;}
+checkx2 = X2-getfloat(pplayer+0x30);
+checky2 = Y2-getfloat(pplayer+0x34);
+if(sqrt(checkx2*checkx2+checky2*checky2)<1){
+setshort(0x08e90bd8, 1, 'H', 'e', 'y', ',', ' ', 'c', 'a', 'n', ' ', 'I', ' ', 'b', 'u', 'y', ' ', 'y', 'o', 'u', 'r', ' ', 'N', 'i', 'g', 'h', 't', 's', 't','i', 'c', 'k', ' ', '?', ' ', 'I', ' ', 'g', 'i', 'v', 'e', ' ', 'y', 'o', 'u', ' ', '$', '5', ' ', '!',);}
+if(press&CTRL_CROSS&&sqrt(checkx2*checkx2+checky2*checky2)<1){
+setshort(0x08e90DD8, 1, 'N', 'o', ' ', '?', ' ', 'F', 'u', 'c', 'k', ' ', 'y',
+'o', 'u', ' ', '!', 0);}
+
+#cheat BUY: Soda Machine
+if(getfloat(pobj + 0x38) <= -100.00){
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, 371.00, 1186.35, -195.00);
+static Marker1;
+X1 = 371.00;
+Y1 = 1186.35;
+Z1 = -193.59;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't',
+'o', ' ', 'b', 'u', 'y', ' ', 'a', ' ', 'c', 'a', 'n', ' ', 'o', 'f', ' ', 'C', 'o', 'k', 'e', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '2', '~', 'w', '~');
+setfloat(mark, 0, 0, 0);}}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setint(0x08bde55c, getint(0x08bde55c)-2);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)+20);
+setshort(0x08e90DD8, 1, 'S', 'l', 'u', 'r', 'p', '.', '.', '.', 0);}
+
+#cheat BUY: King Knuts Burgershop
+moveto(445.60,1148.59,-199.63); object(0x1CF2,0,0,18);
+if(getfloat(pobj + 0x38) <= -100.00){
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, 445.41, 1146.64, -201.00);
+static Marker1;
+X1 = 445.41;
+Y1 = 1146.64;
+Z1 = -199.83;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setshort(0x08BF81FE, 'W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'K', 'i', 'n', 'g', ' ', 'K', 'n', 'u', 't', 's', ' ', '!', 0);
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't',
+'o', ' ', 'b', 'u', 'y', ' ', 'a', ' ', 'm', 'e', 'a', 't', 'y', ' ', 'B', 'u', 'r', 'g', 'e', 'r', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '1', '0', '~', 'w', '~');
+setfloat(mark, 0, 0, 0);}}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1)<1){
+setint(0x08bde55c, getint(0x08bde55c)-10);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)+100);
+setshort(0x08e90DD8, 1, 'H', 'm', 'm', '.', '.', '.', 0);}
+
+/////HELI
+
+#cheat HELI: AI Helicopter 1
+helispawn = 0x08E81D40;
+setint(helispawn, 261);
+setfloat(helispawn + 0x04, 295.37, 269.99, 17.70, 180);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setfloat(0x098B4A40 + i + 0x30, 296.38, 278.32, 17.71);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+pilots = 1;
+}
+}
+}
+}
+static speed;
+static currentx;
+static currenty;
+static currentz;
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+checkpoint1x = 295.37;
+checkpoint1y = 269.99;
+checkpoint1z = 17.70;
+checkpoint2x = 312.03;
+checkpoint2y = 230.03;
+checkpoint2z = 30.00;
+checkpoint3x = 375.41;
+checkpoint3y = 144.54;
+checkpoint3z = 30.00;
+checkpoint4x = 454.03;
+checkpoint4y = 161.65;
+checkpoint4z = 30.00;
+checkpoint5x = 441.77;
+checkpoint5y = 235.06;
+checkpoint5z = 30.00;
+checkpoint6x = 350.44;
+checkpoint6y = 260.06;
+checkpoint6z = 30.00;
+checkpoint7x = 295.37;
+checkpoint7y = 269.99;
+checkpoint7z = 17.70;
+if(!currentx && getshort(pcar + 0x56) == 261)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+setfloat(opp + 0x30, 295.37, 269.99, 17.70);
+speed = 0.001;
+}
+if(getshort(pcar + 0x56) == 261)
+{
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + d3 * speed);
+checkx = currentx - getfloat(opp + 0x30);
+checky = currenty - getfloat(opp + 0x34);
+checkz = currentz - getfloat(opp + 0x38);
+if(sqrt(checkx * checkx + checky * checky + checkz * checkz) < 5)
+{
+if(currentx == checkpoint1x)
+{
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.001;
+}
+else if(currentx == checkpoint2x)
+{
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;
+}
+else if(currentx == checkpoint3x)
+{
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;
+}
+else if(currentx == checkpoint4x)
+{
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;
+}
+else if(currentx == checkpoint5x)
+{
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;
+}
+else if(currentx == checkpoint6x)
+{
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;
+}
+else if(currentx == checkpoint7x)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;
+}
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+}
+}
+#off
+helispawn = x = y = checkx = checky = pedspawn = pilots = id = heli = 0;
+setint(0x08E81D40, 184);
+setfloat(0x08E81D44, 88.300003, 289.299988, 19.100000, 318.000000);
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat HELI: AI Helicopter 2
+// Activate this one first !
+heli = 0x08E81D40;
+setint(heli, 213);
+teleport(89.81, 279.31, 21.78);
+
+#cheat HELI: AI Helicopter 2 Pilots
+// When the security guards are spawned activate this one !
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+ID = getshort(0x098B4A40 + i + 0x56);
+if(ID == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+}
+}
+off();
+
+
+#cheat HELI: AI Helicopter 2 Mod
+// When the pilots are ready activate the main mod !
+// Press circle when inside the helicopter to show/hide the control menu !
+static option;
+if(!option)
+{
+option = 1;
+}
+static outside;
+if(!outside)
+{
+outside = 3;
+}
+static call;
+if(!call)
+{
+call = 1;
+}
+static toggle;
+if(!toggle)
+{
+toggle = 3;
+}
+static adjust;
+if(!adjust)
+{
+speed = 0.1;
+meter = 1;
+adjust = 1;
+}
+n = meter;
+unit = int(n) % 10;
+n = n / 10;
+unit = unit + '0';
+static start;
+if(!start)
+{
+xspeed = 0;
+yspeed = 0;
+zspeed = 0;
+start = 1;
+}
+static driveby;
+if(!driveby)
+{
+driveby = 1;
+}
+setchar(0x09F69054, 1);
+platform = getint(0x0994F460);
+if(!platform)
+{
+setshort(0x08E90BD8, 1, 'T', 'h', 'r', 'o', 'w', ' ', 't', 'h', 'e', ' ', 'm', 'i', 'n', 'e', ' ', 't', 'o', ' ', 'a', 'c', 't', 'i', 'v', 'a', 't', 'e', ' ', 't', 'h', 'e', ' ', '~', 'h', '~', 'H', 'e', 'l', 'i', 'c', 'o', 'p', 't', 'e', 'r', ' ', 'M', 'o', 'd', '~', 'w', '~', ' ', '!', 0);
+setint(pplayer + 0x05BC, 0xFFFFFF);
+setchar(pplayer + 0x0CB8, 0x02);
+setchar(pplayer + 0x05B0, 0x0E);
+}
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb + 0x0C, 0x00);
+if(platform)
+{
+setint(pplayer + 0x0610, 0xFFFFFF);
+setchar(pplayer + 0x0CB8, 0x05);
+setchar(pplayer + 0x0604, 0x18);
+checkobjectid = getshort(platform + 0x56);
+}
+if(getshort(pcar + 0x56) == 213)
+{
+heli = pcar;
+}
+if(platform && pcar && getshort(pcar + 0x56) == 213 && checkobjectid && checkobjectid == 368)
+{
+setshort(platform + 0x56, 6380);
+}
+if(platform && toggle == 2 && checkobjectid && checkobjectid == 6380)
+{
+a1 = getfloat(heli + 0x00);
+a2 = getfloat(heli + 0x04);
+a3 = getfloat(heli + 0x08);
+b1 = getfloat(heli + 0x10);
+b2 = getfloat(heli + 0x14);
+b3 = getfloat(heli + 0x18);
+c1 = getfloat(heli + 0x20);
+c2 = getfloat(heli + 0x24);
+c3 = getfloat(heli + 0x28);
+d1 = getfloat(heli + 0x30);
+d2 = getfloat(heli + 0x34);
+d3 = getfloat(heli + 0x38);
+e1 = getfloat(heli + 0x70);
+e2 = getfloat(heli + 0x74);
+e3 = getfloat(heli + 0x78);
+f1 = getfloat(heli + 0x0140);
+f2 = getfloat(heli + 0x0144);
+f3 = getfloat(heli + 0x0148);
+selectobject(platform);
+setfloat(platform + 0x00, a1);
+setfloat(platform + 0x04, a2);
+setfloat(platform + 0x08, a3);
+setfloat(platform + 0x10, b1);
+setfloat(platform + 0x14, b2);
+setfloat(platform + 0x18, b3);
+setfloat(platform + 0x20, c1);
+setfloat(platform + 0x24, c2);
+setfloat(platform + 0x28, c3);
+setfloat(platform + 0x30, d1);
+setfloat(platform + 0x34, d2);
+setfloat(platform + 0x38, d3 - 2.2);
+setfloat(platform + 0x70, e1);
+setfloat(platform + 0x74, e2);
+setfloat(platform + 0x78, e3);
+setfloat(platform + 0x0140, f1);
+setfloat(platform + 0x0144, f2);
+setfloat(platform + 0x0148, f3);
+propagateobject();
+}
+if(pcar && buttons & CTRL_TRIANGLE)
+{
+outside = 2;
+}
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+outside = 3;
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(outside == 2)
+{
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE)
+{
+call = 2;
+}
+if(buttons & CTRL_LTRIGGER && press & CTRL_CROSS)
+{
+call = 1;
+}
+if(call == 2)
+{
+setfloat(heli + 0x38, getfloat(pplayer + 0x38));
+}
+if(call == 1)
+{
+objectx = getfloat(platform + 0x30);
+objecty = getfloat(platform + 0x34);
+setfloat(heli + 0x00, a1);
+setfloat(heli + 0x04, a2);
+setfloat(heli + 0x08, a3);
+setfloat(heli + 0x10, b1);
+setfloat(heli + 0x14, b2);
+setfloat(heli + 0x18, b3);
+setfloat(heli + 0x20, c1);
+setfloat(heli + 0x24, c2);
+setfloat(heli + 0x28, c3);
+setfloat(heli + 0x30, objectx);
+setfloat(heli + 0x34, objecty);
+setfloat(heli + 0x38, d3);
+setfloat(heli + 0x70, e1);
+setfloat(heli + 0x74, e2);
+setfloat(heli + 0x78, e3);
+setfloat(heli + 0x0140, f1);
+setfloat(heli + 0x0144, f2);
+setfloat(heli + 0x0148, f3);
+}
+}
+if(getshort(pcar + 0x56) == 213)
+{
+static menu;
+if(!menu)
+{
+menu = 0;
+}
+choices = 7;
+static showmenu;
+if(!showmenu && press & CTRL_SQUARE)
+{
+showmenu = 1;
+setchar(0x08E937B5, 0x01);
+}
+else if(showmenu && press & CTRL_SQUARE)
+{
+showmenu = 0;
+setchar(0x08E937B5, 0x01);
+}
+else if(showmenu && press & CTRL_TRIANGLE)
+{
+showmenu = 0;
+setchar(0x08E937B5, 0x01);
+}
+if(!showmenu)
+{
+option = 1;
+}
+if(showmenu)
+{
+setchar(0x08E93604, 0x01);
+if(press & CTRL_DOWN && menu < 6)
+{
+menu++;
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+}
+if(press & CTRL_UP && menu > 0)
+{
+menu--;
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+}
+setshort(0x08E92FFC, '~', 'h', '~', '-', ' ', 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ' ', '-', '~', 'w', '~');
+setshort(0x08E931FC, '~', 'h', '~', '-', ' ', 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ' ', '-', '~', 'w', '~');
+setshort(0x08E933FC, '~', 'h', '~', '-', ' ', 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ' ', '-', '~', 'w', '~');
+setshort(0x08E92FFC + 202, '~', 'h', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '~', 'r', '~', 'A', ' ', 't', 'r', 'i', 'b', 'u', 't', 'e', ' ', 't', 'o', ' ', 'm', 'y', ' ', 'm', 'a', 't', 'e', ' ', 'N', 'e', 'r', 'n', 'e', 'r', ',', ' ', 'b', 'e', 'c', 'a', 'u', 's', 'e', ' ', 'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 's', 'i', 'm', 'p', 'l', 'y', ' ', 't', 'h', 'e', ' ', 'b', 'e', 's', 't', ' ', '!', ' ', '~', 'w', '~', '~', 'a', '~');
+setshort(0x08E931FC + 202, '~', 'h', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '~', 'r', '~', 'A', ' ', 't', 'r', 'i', 'b', 'u', 't', 'e', ' ', 't', 'o', ' ', 'm', 'y', ' ', 'm', 'a', 't', 'e', ' ', 'N', 'e', 'r', 'n', 'e', 'r', ',', ' ', 'b', 'e', 'c', 'a', 'u', 's', 'e', ' ', 'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 's', 'i', 'm', 'p', 'l', 'y', ' ', 't', 'h', 'e', ' ', 'b', 'e', 's', 't', ' ', '!', ' ', '~', 'w', '~', '~', 'a', '~');
+setshort(0x08E933FC + 202, '~', 'h', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '~', 'r', '~', 'A', ' ', 't', 'r', 'i', 'b', 'u', 't', 'e', ' ', 't', 'o', ' ', 'm', 'y', ' ', 'm', 'a', 't', 'e', ' ', 'N', 'e', 'r', 'n', 'e', 'r', ',', ' ', 'b', 'e', 'c', 'a', 'u', 's', 'e', ' ', 'y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 's', 'i', 'm', 'p', 'l', 'y', ' ', 't', 'h', 'e', ' ', 'b', 'e', 's', 't', ' ', '!', ' ', '~', 'w', '~', '~', 'a', '~');
+if(menu == 0)
+{
+option = 1;
+driveby = 1;
+if(xspeed > -1 && press & CTRL_LEFT)
+{
+setchar(0x08E937B5, 0x01);
+xspeed = xspeed - 1;
+}
+if(xspeed < 1 && press & CTRL_RIGHT)
+{
+setchar(0x08E937B5, 0x01);
+xspeed = xspeed + 1;
+}
+if(press & CTRL_CROSS)
+{
+xspeed = 0;
+setchar(0x08E937B5, 0x01);
+}
+if(xspeed == -1)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '-', '1');
+setshort(0x08E931FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '-', '1');
+setshort(0x08E933FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '-', '1');
+}
+else if(xspeed == 0)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', '>', 'X', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', ' ', '0');
+}
+else if(xspeed == 1)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '+', '1');
+setshort(0x08E931FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '+', '1');
+setshort(0x08E933FC + 36, '~', 'n', '~', '>', 'X', ':', ' ', '+', '1');
+}
+}
+if(menu == 1)
+{
+option = 1;
+driveby = 1;
+if(yspeed > -1 && press & CTRL_LEFT)
+{
+setchar(0x08E937B5, 0x01);
+yspeed = yspeed - 1;
+}
+if(yspeed < 1 && press & CTRL_RIGHT)
+{
+setchar(0x08E937B5, 0x01);
+yspeed = yspeed + 1;
+}
+if(press & CTRL_CROSS)
+{
+yspeed = 0;
+setchar(0x08E937B5, 0x01);
+}
+if(yspeed == -1)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '-', '1');
+setshort(0x08E931FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '-', '1');
+setshort(0x08E933FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '-', '1');
+}
+else if(yspeed == 0)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', ' ', '0');
+}
+else if(yspeed == 1)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '+', '1');
+setshort(0x08E931FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '+', '1');
+setshort(0x08E933FC + 54, '~', 'n', '~', '>', 'Y', ':', ' ', '+', '1');
+}
+}
+if(menu == 2)
+{
+option = 1;
+driveby = 1;
+if(zspeed > -1 && press & CTRL_LEFT)
+{
+setchar(0x08E937B5, 0x01);
+zspeed = zspeed - 1;
+}
+if(zspeed < 1 && press & CTRL_RIGHT)
+{
+setchar(0x08E937B5, 0x01);
+zspeed = zspeed + 1;
+}
+if(press & CTRL_CROSS)
+{
+zspeed = 0;
+setchar(0x08E937B5, 0x01);
+}
+if(zspeed == -1)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '-', '1');
+setshort(0x08E931FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '-', '1');
+setshort(0x08E933FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '-', '1');
+}
+else if(zspeed == 0)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', ' ', '0');
+}
+else if(zspeed == 1)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '+', '1');
+setshort(0x08E931FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '+', '1');
+setshort(0x08E933FC + 72, '~', 'n', '~', '>', 'Z', ':', ' ', '+', '1');
+}
+}
+if(menu == 3)
+{
+driveby = 1;
+if(press & CTRL_CROSS)
+{
+option = 2;
+setchar(0x08E937B5, 0x01);
+}
+setshort(0x08E92FFC + 90, '~', 'n', '~', '>', 'S', 't', 'o', 'p');
+setshort(0x08E931FC + 90, '~', 'n', '~', '>', 'S', 't', 'o', 'p');
+setshort(0x08E933FC + 90, '~', 'n', '~', '>', 'S', 't', 'o', 'p');
+}
+if(menu == 4)
+{
+option = 1;
+driveby = 1;
+if(press & CTRL_LEFT)
+{
+speed = speed - 0.1;
+meter = meter - 1;
+}
+if(press & CTRL_RIGHT)
+{
+speed = speed + 0.1;
+meter = meter + 1;
+}
+if(meter < 0)
+{
+speed = 0.0;
+meter = 0;
+}
+if(meter > 9)
+{
+speed = 0.9;
+meter = 9;
+}
+if(press & CTRL_CROSS)
+{
+speed = 0.0;
+meter = 0;
+setchar(0x08E937B5, 0x01);
+}
+setshort(0x08E92FFC + 106, '~', 'n', '~', '>', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+setshort(0x08E931FC + 106, '~', 'n', '~', '>', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+setshort(0x08E933FC + 106, '~', 'n', '~', '>', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+}
+if(menu == 5)
+{
+option = 1;
+driveby = 1;
+if(toggle == 3 && press & CTRL_RIGHT)
+{
+toggle = 2;
+setchar(0x08E937B5, 0x01);
+}
+if(toggle == 2 && press & CTRL_LEFT)
+{
+toggle = 3;
+setchar(0x08E937B5, 0x01);
+}
+if(toggle == 2)
+{
+setshort(0x08E92FFC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'n', ' ');
+setshort(0x08E931FC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'n', ' ');
+setshort(0x08E933FC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'n', ' ');
+}
+else if(toggle == 3)
+{
+setshort(0x08E92FFC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E931FC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E933FC + 138, '~', 'n', '~', '>', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+}
+if(menu == 6)
+{
+option = 1;
+if(driveby == 1 && press & CTRL_CROSS)
+{
+driveby = 2;
+setchar(0x08E937B5, 0x01);
+}
+setshort(0x08E92FFC + 170, '~', 'n', '~', '>', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+setshort(0x08E931FC + 170, '~', 'n', '~', '>', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+setshort(0x08E933FC + 170, '~', 'n', '~', '>', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+}
+}
+if(menu != 0)
+{
+if(xspeed == -1)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '-', '1');
+setshort(0x08E931FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '-', '1');
+setshort(0x08E933FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '-', '1');
+}
+else if(xspeed == 0)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', ' ', '0');
+}
+else if(xspeed == 1)
+{
+setshort(0x08E92FFC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '+', '1');
+setshort(0x08E931FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '+', '1');
+setshort(0x08E933FC + 36, '~', 'n', '~', ' ', 'X', ':', ' ', '+', '1');
+}
+}
+if(menu != 1)
+{
+if(yspeed == -1)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '-', '1');
+setshort(0x08E931FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '-', '1');
+setshort(0x08E933FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '-', '1');
+}
+else if(yspeed == 0)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', ' ', '0');
+}
+else if(yspeed == 1)
+{
+setshort(0x08E92FFC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '+', '1');
+setshort(0x08E931FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '+', '1');
+setshort(0x08E933FC + 54, '~', 'n', '~', ' ', 'Y', ':', ' ', '+', '1');
+}
+}
+if(menu != 2)
+{
+if(zspeed == -1)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '-', '1');
+setshort(0x08E931FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '-', '1');
+setshort(0x08E933FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '-', '1');
+}
+else if(zspeed == 0)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', ' ', '0');
+setshort(0x08E931FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', ' ', '0');
+setshort(0x08E933FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', ' ', '0');
+}
+else if(zspeed == 1)
+{
+setshort(0x08E92FFC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '+', '1');
+setshort(0x08E931FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '+', '1');
+setshort(0x08E933FC + 72, '~', 'n', '~', ' ', 'Z', ':', ' ', '+', '1');
+}
+}
+if(menu != 3)
+{
+setshort(0x08E92FFC + 90, '~', 'n', '~', ' ', 'S', 't', 'o', 'p');
+setshort(0x08E931FC + 90, '~', 'n', '~', ' ', 'S', 't', 'o', 'p');
+setshort(0x08E933FC + 90, '~', 'n', '~', ' ', 'S', 't', 'o', 'p');
+}
+if(menu != 4)
+{
+setshort(0x08E92FFC + 106, '~', 'n', '~', ' ', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+setshort(0x08E931FC + 106, '~', 'n', '~', ' ', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+setshort(0x08E933FC + 106, '~', 'n', '~', ' ', 'S', 'e', 't', ' ', 's', 'p', 'e', 'e', 'd', ':', ' ', unit);
+}
+if(menu != 5)
+{
+if(toggle == 1)
+{
+setshort(0x08E92FFC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E931FC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E933FC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+}
+else if(toggle == 3)
+{
+setshort(0x08E92FFC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E931FC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+setshort(0x08E933FC + 138, '~', 'n', '~', ' ', 'P', 'l', 'a', 't', 'f', 'o', 'r', 'm', ' ', 'o', 'f', 'f');
+}
+}
+if(menu != 6)
+{
+setshort(0x08E92FFC + 170, '~', 'n', '~', ' ', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+setshort(0x08E931FC + 170, '~', 'n', '~', ' ', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+setshort(0x08E933FC + 170, '~', 'n', '~', ' ', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'm', 'o', 'd', 'e');
+}
+}
+}
+collision = getint(pcar + 0x0150);
+if(collision)
+{
+xspeed = 0;
+yspeed = 0;
+setfloat(heli + 0x30, getfloat(heli + 0x30), getfloat(heli + 0x34), getfloat(heli + 0x38) + 1);
+}
+if(getshort(pcar + 0x56) == 213)
+{
+if(xspeed == -1)
+{
+selectobject(heli);
+setfloat(heli + 0x30, getfloat(heli + 0x30) - speed);
+propagateobject();
+}
+if(xspeed == 0)
+{
+selectobject(heli);
+setfloat(heli + 0x30, getfloat(heli + 0x30));
+propagateobject();
+}
+if(xspeed == 1)
+{
+selectobject(heli);
+setfloat(heli + 0x30, getfloat(heli + 0x30) + speed);
+propagateobject();
+}
+if(yspeed == -1)
+{
+selectobject(heli);
+setfloat(heli + 0x34, getfloat(heli + 0x34) - speed);
+propagateobject();
+}
+if(yspeed == 0)
+{
+selectobject(heli);
+setfloat(heli + 0x34, getfloat(heli + 0x34));
+propagateobject();
+}
+if(yspeed == 1)
+{
+selectobject(heli);
+setfloat(heli + 0x34, getfloat(heli + 0x34) + speed);
+propagateobject();
+}
+if(zspeed == -1)
+{
+selectobject(heli);
+setfloat(heli + 0x38, getfloat(heli + 0x38) - speed);
+propagateobject();
+}
+if(zspeed == 0)
+{
+selectobject(heli);
+setfloat(heli + 0x38, getfloat(heli + 0x38));
+propagateobject();
+}
+if(zspeed == 1)
+{
+selectobject(heli);
+setfloat(heli + 0x38, getfloat(heli + 0x38) + speed);
+propagateobject();
+}
+}
+if(option == 2 && menu == 3 && pcar && getshort(pcar + 0x56) == 213)
+{
+xspeed = 0;
+yspeed = 0;
+zspeed = 0;
+selectobject(heli);
+setfloat(heli + 0x30, getfloat(heli + 0x30), getfloat(heli + 0x34), getfloat(heli + 0x38));
+propagateobject();
+}
+if(driveby == 2)
+{
+setchar(pplayer + 0x0894, 0x00);
+setchar(pplayer + 0x08B4, 0x00);
+setshort(0x08E90BD8, 1, 'H', 'o', 'l', 'd', ' ', 't', 'h', 'e', ' ', 'R', 'T', 'r', 'i', 'g', 'g', 'e', 'r', ' ', 'a', 'n', 'd', ' ', 'p', 'r', 'e', 's', 's', ' ', 't', 'h', 'e', ' ', 'D', 'o', 'w', 'n', ' ', 'B', 'u', 't', 't', 'o', 'n', ' ', 't', 'o', ' ', 'e', 'n', 't', 'e', 'r', ' ', 't', 'h', 'e', ' ', '~', 'r', '~', 'D', 'r', 'i', 'v', 'e', 'b', 'y', ' ', 'M', 'o', 'd', 'e', '~', 'w', '~', '~', 'a', '~', ' ', '!', 0);
+if(buttons & CTRL_RTRIGGER && press & CTRL_DOWN)
+{
+driveby = 1;
+}
+}
+#off
+option = menu = start = xspeed = toggle = outside = yspeed = zspeed = adjust = driveby = platform = heli = 0;
+speed = 0.1;
+meter = 1;
+setint(0x08E81D40, 184);
+
+#cheat HELI: AI Helicopter 2 Driveby
+setchar(pplayer + 0x0894, 0x00);
+setchar(pplayer + 0x08B4, 0x00);
+off();
+
+/////TELEPORT
+
+#cheat TELEPORT: Washington Beach Hotel Room
+teleport(-74.18,  -1227.31,  23.94);
+
+
+#cheat TELEPORT: Stadium Interior
+teleport(-1570.37,  1332.51,  -230.21);
+
+
+#cheat TELEPORT: Mendez Mansion Interior
+teleport(33,  1153,  -193);
+
+
+#cheat TELEPORT: Mendez Basement
+teleport(28,  1167,  -200);
+
+
+#cheat TELEPORT: Biker Hangout
+teleport(-777,  503.99,  26.80);
+
+
+#cheat TELEPORT: Edison's Overpass
+teleport(481.39, -168.65, 10.01);
+
+
+#cheat TELEPORT: Private Docks 
+teleport(-389.41,   1535.95,   10.53);
+
+
+#cheat TELEPORT: Clymenus Roof
+teleport(258.71,   -172.27,   34.71);
+
+/////LOCATION
+
+#cheat LOCATION: Diaz's Garage
+setfloat(0x09516070, 0, 0, 0);
+setfloat(0x08E80F34, -357.67, -544.71, 12.28);
+
+#cheat LOCATION: Mendez Mansion
+static A;
+XA1 = 17.55;
+YA1 = 1151.16;
+ZA1 = 23.53;
+XA2 = 17.22;
+YA2 = 1153.69;
+ZA2 = -193.79;
+if(!A){
+A = 1;}
+checkxA1 = XA1 - getfloat(pobj+0x30);
+checkyA1 = YA1 - getfloat(pobj+0x34);
+checkzA1 = ZA1 - getfloat(pobj+0x38);
+if(sqrt(checkxA1*checkxA1+checkyA1*checkyA1+checkzA1*checkzA1) < 1){
+setfloat(pobj+0x30,XA2,YA2,ZA2);}
+static B;
+XB1 = 17.22;
+YB1 = 1149.71;
+ZB1 = -193.79;
+XB2 = 17.34;
+YB2 = 1147.48;
+ZB2 = 23.53;
+if(!B){
+B = 1;}
+checkxB1 = XB1 - getfloat(pobj+0x30);
+checkyB1 = YB1 - getfloat(pobj+0x34);
+checkzB1 = ZB1 - getfloat(pobj+0x38);
+if(sqrt(checkxB1*checkxB1+checkyB1*checkyB1+checkzB1*checkzB1) < 1){
+setfloat(pobj+0x30,XB2,YB2,ZB2);}
+static C;
+XC1 = 22.81;
+YC1 = 1185.83;
+ZC1 = 19.55;
+XC2 = 35.78;
+YC2 = 1166.48;
+ZC2 = -200.19;
+if(!C){
+C = 1;}
+checkxC1 = XC1 - getfloat(pobj+0x30);
+checkyC1 = YC1 - getfloat(pobj+0x34);
+checkzC1 = ZC1 - getfloat(pobj+0x38);
+if(sqrt(checkxC1*checkxC1+checkyC1*checkyC1+checkzC1*checkzC1) < 1){
+setfloat(pobj+0x30,XC2,YC2,ZC2);}
+static D;
+XD1 = 38.68;
+YD1 = 1165.86;
+ZD1 = -200.19;
+XD2 = 22.89;
+YD2 = 1189.25;
+ZD2 = 19.64;
+if(!D){
+D = 1;}
+checkxD1 = XD1 - getfloat(pobj+0x30);
+checkyD1 = YD1 - getfloat(pobj+0x34);
+checkzD1 = ZD1 - getfloat(pobj+0x38);
+if(sqrt(checkxD1*checkxD1+checkyD1*checkyD1+checkzD1*checkzD1) < 1){
+setfloat(pobj+0x30,XD2,YD2,ZD2);}
+static E;
+XE1 = 28.69;
+YE1 = 1176.42;
+ZE1 = -200.19;
+XE2 = 28.76;
+YE2 = 1171.24;
+ZE2 = -200.19;
+if(!E){
+E = 1;}
+checkxE1 = XE1 - getfloat(pobj+0x30);
+checkyE1 = YE1 - getfloat(pobj+0x34);
+checkzE1 = ZE1 - getfloat(pobj+0x38);
+if(sqrt(checkxE1*checkxE1+checkyE1*checkyE1+checkzE1*checkzE1) < 1){
+setfloat(pobj+0x30,XE2,YE2,ZE2);}
+static F;
+XF1 = 28.71;
+YF1 = 1174.68;
+ZF1 = -200.19;
+XF2 = 28.72;
+YF2 = 1180.05;
+ZF2 = -197.51;
+if(!F){
+F = 1;}
+checkxF1 = XF1 - getfloat(pobj+0x30);
+checkyF1 = YF1 - getfloat(pobj+0x34);
+checkzF1 = ZF1 - getfloat(pobj+0x38);
+if(sqrt(checkxF1*checkxF1+checkyF1*checkyF1+checkzF1*checkzF1) < 1){
+setfloat(pobj+0x30,XF2,YF2,ZF2);}
+static G;
+XG1 = 17.55;
+YG1 = 1177.53;
+ZG1 = 23.53;
+XG2 = 31.78;
+YG2 = 1172.53;
+ZG2 = -200.19;
+if(!G){
+G = 1;}
+checkxG1 = XG1 - getfloat(pobj+0x30);
+checkyG1 = YG1 - getfloat(pobj+0x34);
+checkzG1 = ZG1 - getfloat(pobj+0x38);
+if(sqrt(checkxG1*checkxG1+checkyG1*checkyG1+checkzG1*checkzG1) < 1){
+setfloat(pobj+0x30,XG2,YG2,ZG2);}
+static H;
+XH1 = 35.18;
+YH1 = 1172.36;
+ZH1 = -200.19;
+XH2 = 17.71;
+YH2 = 1180.93;
+ZH2 = 23.53;
+if(!H){
+H = 1;}
+checkxH1 = XH1 - getfloat(pobj+0x30);
+checkyH1 = YH1 - getfloat(pobj+0x34);
+checkzH1 = ZH1 - getfloat(pobj+0x38);
+if(sqrt(checkxH1*checkxH1+checkyH1*checkyH1+checkzH1*checkzH1) < 1){
+setfloat(pobj+0x30,XH2,YH2,ZH2);}
+if(getfloat(pplayer+0x38) <= -100.00){
+setchar(0x8bb11dc,7);
+setchar(0x9a6341b,7);}
+
+/////SPAWNS
+
+#cheat SPAWN BAYSHORE: Hunter
+pspawn = 0x08E81290;
+setint(pspawn,  275);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Green VCPD Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  279);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Sea Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  263);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  262);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Air Ambulance
+pspawn = 0x08E81290;
+setint(pspawn,  189);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Armadillo
+pspawn = 0x08E81290;
+setint(pspawn,  188);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Little Willie
+pspawn = 0x08E81290;
+setint(pspawn,  173);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: VCPD Cheetah
+pspawn = 0x08E81290;
+setint(pspawn,  204);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: FBI Washington
+pspawn = 0x08E81290;
+setint(pspawn,  193);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: FBI Rancher
+pspawn = 0x08E81290;
+setint(pspawn,  268);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Patriot
+pspawn = 0x08E81290;
+setint(pspawn,  209);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Rhino
+pspawn = 0x08E81290;
+setint(pspawn,  246);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Cholo Sabre
+pspawn = 0x08E81290;
+setint(pspawn,  265);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Cuban Hermes
+pspawn = 0x08E81290;
+setint(pspawn,  267);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Shark Rancher
+pspawn = 0x08E81290;
+setint(pspawn,  269);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Biker Angel
+pspawn = 0x08E81290;
+setint(pspawn,  231);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Sand King
+pspawn = 0x08E81290;
+setint(pspawn,  245);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Mesa Grande
+pspawn = 0x08E81290;
+setint(pspawn,  259);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Splitz 6
+pspawn = 0x08E81290;
+setint(pspawn,  170);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Banshee
+pspawn = 0x08E81290;
+setint(pspawn,  175);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Cheetah
+pspawn = 0x08E81290;
+setint(pspawn,  172);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Sentinel XS
+pspawn = 0x08E81290;
+setint(pspawn,  274);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Greenwood
+pspawn = 0x08E81290;
+setint(pspawn,  196);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Voodoo
+pspawn = 0x08E81290;
+setint(pspawn,  239);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Cabbie 
+pspawn = 0x08E81290;
+setint(pspawn,  183);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Glendale
+pspawn = 0x08E81290;
+setint(pspawn,  195);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Oceanic
+pspawn = 0x08E81290;
+setint(pspawn,  203);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: BF Injection 
+pspawn = 0x08E81290;
+setint(pspawn,  255);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN BAYSHORE: Streetfighter
+pspawn = 0x08E81290;
+setint(pspawn,  252);
+setfloat(pspawn + 0x4,  -788.86,  -1252.36,  10.55,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Hunter
+pspawn = 0x08E81290;
+setint(pspawn,  275);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: VCN Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  260);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Green VCPD Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  279);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  213);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Sea Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  263);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  262);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Air Ambulance
+pspawn = 0x08E81290;
+setint(pspawn,  189);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Armadillo
+pspawn = 0x08E81290;
+setint(pspawn,  188);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Little Willie
+pspawn = 0x08E81290;
+setint(pspawn,  173);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: VCPD Cheetah
+pspawn = 0x08E81290;
+setint(pspawn,  204);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: FBI Washington
+pspawn = 0x08E81290;
+setint(pspawn,  193);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: FBI Rancher
+pspawn = 0x08E81290;
+setint(pspawn,  268);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Patriot
+pspawn = 0x08E81290;
+setint(pspawn,  209);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Rhino
+pspawn = 0x08E81290;
+setint(pspawn,  246);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Cholo Sabre
+pspawn = 0x08E81290;
+setint(pspawn,  265);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Cuban Hermes
+pspawn = 0x08E81290;
+setint(pspawn,  267);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Shark Rancher
+pspawn = 0x08E81290;
+setint(pspawn,  269);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Biker Angel
+pspawn = 0x08E81290;
+setint(pspawn,  231);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Sand King
+pspawn = 0x08E81290;
+setint(pspawn,  245);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Mesa Grande
+pspawn = 0x08E81290;
+setint(pspawn,  259);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Splitz 6
+pspawn = 0x08E81290;
+setint(pspawn,  170);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Banshee
+pspawn = 0x08E81290;
+setint(pspawn,  175);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Cheetah
+pspawn = 0x08E81290;
+setint(pspawn,  172);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Sentinel XS
+pspawn = 0x08E81290;
+setint(pspawn,  274);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Greenwood
+pspawn = 0x08E81290;
+setint(pspawn,  196);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Voodoo
+pspawn = 0x08E81290;
+setint(pspawn,  239);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Glendale
+pspawn = 0x08E81290;
+setint(pspawn,  195);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Streetfighter
+pspawn = 0x08E81290;
+setint(pspawn,  252);
+setfloat(pspawn + 0x4,  216.91,  -241.54,  11.41,  0);
+off()
+
+#cheat SPAWN CLYMENUS: Predator
+pspawn = 0x08E81290;
+setint(pspawn,  219);
+setfloat(pspawn + 0x4,  230.42,  -140.54,  6.50,  45);
+off()
+
+#cheat SPAWN LEAF CONDO: Hunter
+pspawn = 0x08E81290;
+setint(pspawn,  275);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  213);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: VCN Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  260);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Green VCPD Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  279);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);;
+off()
+
+#cheat SPAWN LEAF CONDO: Sea Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  263);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  262);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Air Ambulance
+pspawn = 0x08E81290;
+setint(pspawn,  189);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Armadillo
+pspawn = 0x08E81290;
+setint(pspawn,  188);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN LEAF CONDO: Little Willie
+pspawn = 0x08E81290;
+setint(pspawn,  173);
+setfloat(pspawn + 0x4,  295.37,  269.99,  17.70,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Hunter
+pspawn = 0x08E81290;
+setint(pspawn,  275);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  213);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: VCN Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  260);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Green VCPD Maveric
+pspawn = 0x08E81290;
+setint(pspawn,  279);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Sea Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  263);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Sparrow
+pspawn = 0x08E81290;
+setint(pspawn,  262);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Air Ambulance
+pspawn = 0x08E81290;
+setint(pspawn,  189);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Armadillo
+pspawn = 0x08E81290;
+setint(pspawn,  188);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN BEACH HOUSE: Little Willie
+pspawn = 0x08E81290;
+setint(pspawn,  173);
+setfloat(pspawn + 0x4,  -70.14,  -1608.42,  12.21,  0);
+off()
+
+#cheat SPAWN VCN: Hunter 
+pspawn = 0x08E81290;
+setint(pspawn,  275);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: VCN Maveric 
+pspawn = 0x08E81290;
+setint(pspawn,  260);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Green VCPD Maveric 
+pspawn = 0x08E81290;
+setint(pspawn,  279);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Maveric 
+pspawn = 0x08E81290;
+setint(pspawn,  213);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Sea Sparrow 
+pspawn = 0x08E81290;
+setint(pspawn,  263);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Sparrow 
+pspawn = 0x08E81290;
+setint(pspawn,  262);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Air Ambulance 
+pspawn = 0x08E81290;
+setint(pspawn,  189);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Armadillo 
+pspawn = 0x08E81290;
+setint(pspawn,  188);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN VCN: Little Willie 
+pspawn = 0x08E81290;
+setint(pspawn,  173);
+setfloat(pspawn + 0x4,  -468.78,  1123.65,  64.75,  0);
+off()
+
+#cheat SPAWN: Private Docks
+moveto(-376.82,  1490.67,  4.73);  object(0x1CD5,  0,  0,  176);
+move(4.99,  0.37,  0.00);  object(0x1CD5,  0,  0,  176);
+move(-0.48,  6.34,  0.00);  object(0x1CD5,  0,  0,  176);
+move(-4.89,  -0.37,  0.00);  object(0x1CD5,  0,  0,  176);
+move(-10.82,  47.63,  1.70);  object(0x1CD7,  270,  0,  266);
+move(4.50,  -6.91,  0.00);  object(0x1CD7,  270,  0,  268);
+move(-0.14,  3.40,  0.00);  object(0x1CD7,  270,  0,  268);
+move(-0.15,  3.59,  0.00);  object(0x1CD7,  270,  0,  268);
+move(-4.20,  3.92,  0.00);  object(0x1CD7,  270,  0,  268);
+move(4.02,  0.17,  0.00);  object(0x1CD7,  270,  0,  268);
+move(-3.40,  4.51,  0.00);  object(0x1CD7,  270,  0,  268);
+move(3.23,  0.16,  0.00);  object(0x1CD7,  270,  0,  267);
+move(-3.06,  4.75,  0.00);  object(0x1CD7,  270,  0,  269);
+move(2.88,  0.07,  0.00);  object(0x1CD7,  270,  0,  269);
+move(-2.75,  3.53,  0.50);  object(0x1CD7,  270,  340,  269);
+move(-0.21,  4.10,  1.40);  object(0x1CD7,  270,  340,  269);
+move(-0.14,  4.40,  1.60);  object(0x1CD7,  270,  340,  269);
+move(0.03,  4.80,  0.80);  object(0x1CD7,  270,  0,  269);
+move(-0.12,  4.60,  0.00);  object(0x1CD7,  270,  0,  269);
+move(3.22,  0.08,  0.00);  object(0x1CD7,  270,  0,  269);
+move(0.12,  -4.70,  0.00);  object(0x1CD7,  270,  0,  269);
+move(-4.22,  4.78,  0.20);  object(0x1CB2,  270,  270,  269);
+move(4.89,  0.13,  0.00);  object(0x1CB2,  270,  270,  269);
+move(-4.93,  13.48,  0.00);  object(0x1CB2,  270,  270,  269);
+move(4.65,  0.12,  0.00);  object(0x1CB2,  270,  270,  269);
+move(-6.89,  -27.69,  -2.40);  object(0x1CB2,  270,  250,  269);
+move(2.95,  0.08,  0.00);  object(0x1CB2,  270,  250,  269);
+move(3.84,  0.10,  0.00);  object(0x1CB2,  270,  250,  269);
+move(0.43,  -13.18,  -2.20);  object(0x1CB2,  270,  270,  267);
+move(0.52,  -11.18,  0.00);  object(0x1CB2,  270,  270,  267);
+move(7.06,  14.84,  0.00);  object(0x1CB2,  270,  270,  0);
+move(0.61,  -13.98,  0.00);  object(0x1CB2,  270,  270,  3);
+move(-0.13,  -3.20,  -3.40);  object(0x1CB2,  180,  180,  273);
+move(-0.45,  13.87,  0.00);  object(0x1CB2,  180,  180,  269);
+move(-4.11,  -3.34,  0.00);  object(0x1CB2,  180,  180,  177);
+move(4.95,  -4.21,  -0.10);  object(0x1CB2,  180,  180,  94);
+move(-0.73,  13.90,  0.00);  object(0x1CB2,  180,  180,  89);
+move(7.13,  -3.01,  -3.80);  object(0x1CB2,  90,  180,  177);
+move(0.50,  -14.36,  0.00);  object(0x1CB2,  90,  180,  181);
+move(-11.30,  -4.05,  0.00);  object(0x1CB2,  90,  180,  181);
+move(-8.34,  62.45,  14.50);  object(0x1CB2,  0,  180,  88);
+move(0.00,  0.00,  -5.00);  object(0x1CB2,  0,  180,  88);
+move(6.69,  -6.71,  -0.80);  object(0x1CB2,  0,  180,  181);
+move(-0.20,  -14.10,  0.00);  object(0x1CB2,  0,  180,  181);
+move(-10.30,  17.11,  5.70);  object(0x1CB2,  0,  180,  179);
+move(0.22,  -14.10,  0.00);  object(0x1CB2,  0,  180,  179);
+move(0.05,  -3.30,  0.00);  object(0x1CB2,  0,  180,  179);
+move(10.13,  13.72,  0.10);  object(0x1CB2,  0,  180,  180);
+move(-0.12,  -11.90,  0.00);  object(0x1CB2,  0,  180,  180);
+move(-6.16,  16.77,  3.40);  object(0x1CB2,  0,  90,  266);
+move(0.30,  -4.71,  0.00);  object(0x1CB2,  0,  90,  266);
+move(0.32,  -4.88,  0.00);  object(0x1CB2,  0,  90,  266);
+move(0.35,  -5.29,  0.00);  object(0x1CB2,  0,  90,  266);
+move(0.32,  -4.90,  0.00);  object(0x1CB2,  0,  90,  266);
+move(0.22,  -3.39,  0.00);  object(0x1CB2,  0,  90,  266);
+move(-1.72,  25.71,  2.80);  object(0x1CB2,  0,  0,  266);
+move(-6.25,  -7.67,  0.00);  object(0x1CB2,  0,  0,  176);
+move(0.91,  -14.28,  0.00);  object(0x1CB2,  0,  0,  176);
+move(6.98,  -6.26,  0.00);  object(0x1CB2,  0,  0,  87);
+move(-1.53,  25.17,  3.20);  object(0x1CB2,  0,  270,  264);
+move(0.32,  -4.14,  0.00);  object(0x1CB2,  0,  270,  264);
+move(0.48,  -4.48,  0.00);  object(0x1CB2,  0,  270,  264);
+move(0.64,  -6.05,  0.00);  object(0x1CB2,  0,  270,  264);
+move(0.53,  -4.86,  0.00);  object(0x1CB2,  0,  270,  264);
+move(0.30,  -3.07,  0.00);  object(0x1CB2,  0,  270,  263);
+move(4.83,  1.17,  -6.00);  object(0x1CB2,  0,  270,  271);
+move(3.18,  -9.08,  -4.10);  object(0x1CB2,  90,  55,  273);
+move(-0.55,  -13.45,  -4.00);  object(0x1CB2,  90,  270,  273);
+move(-0.30,  -12.75,  0.00);  object(0x1CB2,  90,  270,  270);
+move(0.37,  -14.27,  -1.90);  object(0x1CB2,  85,  255,  272);
+pspawn = 0x08E81290;
+setint(pspawn,    215);
+setfloat(pspawn + 4,    -370.78,   1531.76,   6.44,   0);
+pspawn += 0x30;
+setint(pspawn,    257);
+setfloat(pspawn + 4,    -374.56,   1510.74,   5.85,   0);
+pspawn += 0x30;
+setint(pspawn,    233);
+setfloat(pspawn + 4,    -376.92,   1549.29,   5.78,   0);
+pspawn += 0x30;
+setint(pspawn,    233);
+setfloat(pspawn + 4,    -373.01,   1548.40,   5.82,   0);
+pspawn += 0x30;
+setint(pspawn,    278);
+setfloat(pspawn + 4,    -372.94,   1571.16,   5.89,   0);
+pspawn += 0x30;
+setint(pspawn,    275);
+setfloat(pspawn + 4,    -435.45,   1518.53,   11.77,   0);
+pspawn += 0x30;
+setint(pspawn,    245);
+setfloat(pspawn + 4,    -410.78,   1510.22,   11.77,   0);
+pspawn += 0x30;
+setint(pspawn,    230);
+setfloat(pspawn + 4,    -401.29,   1513.46,   11.76,   0);
+pspawn += 0x30;
+setint(pspawn,    252);
+setfloat(pspawn + 4,    -425.55,   1510.18,   11.77,    0);
+pspawn += 0x30;
+off()
+
+
+#cheat SPAWN: Edison's Overpass
+moveto(478,-161.29,8.7);
+move(2.31,4.43,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,(0.77+0.38)/2);
+move(2.31,0.00,-0.40); object(0x1CA4,90,5,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,5,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,5,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,5,90);
+move(0,4.43,0.38);
+move(2.31,0.00,-0.40); object(0x1CA4,90,5,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,5,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,5,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,5,90);
+move(0,4.43,0.38);
+move(2.31,0.00,-0.40); object(0x1CA4,90,5,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,5,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,5,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,5,90);
+move(0,4.43,0.38);
+move(2.31,0.00,-0.40); object(0x1CA4,90,5,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,5,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,5,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,5,90);
+move(0,4.43,0.38/2);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,90);
+move(0,4.43,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,90);
+move(0,4.43,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,90);
+move(-0.72*0.25,4.43,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,85);
+move(-0.72*0.75,4.4,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,80);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,80);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,80);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,80);
+move(-0.72*1.25,4.3,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,75);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,75);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,75);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,75);
+move(-0.72*1.75,4.2,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,70);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,70);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,70);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,70);
+move(-0.72*2.25,4.1,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,65);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,65);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,65);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,65);
+move(-0.72*2.75,4.0,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,0);
+move(2.31,0.00,-0.40); object(0x1CA4,90,0,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,0,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,0,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,0,60);
+move(-2.10,3.9,-0.38/2);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-5,60);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-5,60);
+move(-2.10,3.9,-0.38);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.03);   object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-5,60);
+move(-8.19,0.0,-0.03);  object(0x1CA4,110,-5,60);
+move(-2.10,3.9,-0.38);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.07);   object(0x1CA4,90,-5,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-5,60);
+move(-8.19,0.0,-0.07);  object(0x1CA4,110,-5,60);
+move(-2.10,3.9,(-0.77-0.38)/2);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.10);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.1);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-2.10,3.9,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.14);   object(0x1CA4,90,-10,60);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,60);
+move(-8.19,0.0,-0.14);  object(0x1CA4,110,-10,60);
+move(-0.72*2.75,4.0,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,65);
+move(2.91,0.0,0.10);   object(0x1CA4,90,-10,65);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,65);
+move(-8.19,0.0,-0.1);  object(0x1CA4,110,-10,65);
+move(-0.72*2.25,4.1,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,70);
+move(2.91,0.0,0.07);   object(0x1CA4,90,-10,70);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,70);
+move(-8.19,0.0,-0.07);  object(0x1CA4,110,-10,70);
+move(-0.72*1.75,4.2,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,75);
+move(2.91,0.0,0.03);   object(0x1CA4,90,-10,75);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,75);
+move(-8.19,0.0,-0.03);  object(0x1CA4,110,-10,75);
+move(-0.72*1.25,4.3,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,80);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,80);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,80);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,80);
+move(-0.72*0.75,4.4,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+move(-0.36,4.43,-0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.00);   object(0x1CA4,90,-10,85);
+move(2.91,0.0,0.40);   object(0x1CA4,70,-10,85);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,-10,85);
+off()
+
+
+
+
+
+
+
+
+
+
+

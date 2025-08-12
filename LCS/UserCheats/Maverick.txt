@@ -1,0 +1,540 @@
+#cheat Maveric Spwan AT SSH
+//ID: 12246
+//Score: 49
+//Author: Deathless
+//Category: Garage Codes
+//Description: Spanws a Maveric at your safe house!
+//Image: none
+//Time: 05/06/2006 18:58:30
+//Working: Yes
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 214);
+setfloat(0x08E4E9C4, 272.15, -422.6, 26.02);
+setfloat(0x08E4E9D0, 16);
+
+#cheat VCN MAVERICK at the TOP OF THE HIGHEST BUILDING!
+//ID: 12287
+//Score: 77
+//Author: art_m11
+//Category: Garage Codes
+//Description: this cheat will spawn VCN MAVERICK from VICE CITY at the top of the HIGHEST BUILDING and will TELEPORT YOU THERE!
+//COOL!
+//
+//Image: none
+//Time: 06/06/2006 16:00:31
+//Working: Yes
+setchar(0x08e4e9c0, 216);
+setfloat(0x08e4e9c4, 105.35, -1559.10, 244.59);
+setfloat(0x08E4E9D0, 0);
+teleport(85.05, -1543.24, 244.59);
+
+#cheat POLICE MAVERICK AT  POLICE HELIPAD!
+//ID: 12289
+//Score: 93
+//Author: art_m11
+//Category: Garage Codes
+//Description: this cheat will spawn POLICE MAVERICK AT POLICE HELIPAD and TELEPORT YOU THERE!
+//Image: none
+//Time: 06/06/2006 16:04:11
+//Working: Yes
+setchar(0x08E4E9C0, 215);
+setfloat(0x08E4E9C4, 340.47, -1105.89, 76.98);
+setfloat(0x08E4E9D0, 0);
+teleport(341.40, -1120.32, 76.98);
+
+#cheat Team America Helicopter
+//ID: 13393
+//Score: 49
+//Author: JT456
+//Category: Pimp My Garage
+//Description: A extremely cool red and blue heli (Maveric) for TA Mt. Rushmore Base.
+//Image: none
+//Time: 20/06/2006 19:16:56
+//Working: Yes
+sethex(0x945ab90, 0x02, 0x0a, 0x00, 0x01);
+sethex(0x944fafc, 0xFF, 0x0D, 0x08);
+sethex(0x944fb14, 0x34, 0x4D, 0x9D);
+setint(0x08E38A38, 214);
+setchar(0x8E38A5C, 103, 109);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Hunter, Dodo, and Mavericks at Rashon's Showroom
+//ID: 14009
+//Score: 86
+//Author: rashon125
+//Category: Vehicle
+//Description: This spawns the Hunter, Dodo, Maverick, and Police Maverick helicopters right next to my showroom.
+//Image: http://i70.photobucket.com/albums/i97/rashon125/HunterAndDodo.jpg
+//Time: 01/07/2006 20:06:01
+//Working: Yes
+moveto(-0.62, -1641.88, 26.66);  object(0x01BF, 300, 0, 107);
+move(0.19, 0.41, 0.00);  object(0x01BF, 300, 0, 103);
+move(-4.59, 1.37, 2.60);  object(0x01BF, 300, 0, 111);
+move(-5.14, 2.10, 1.60);  object(0x01BF, 90, 0, 108);
+move(-6.36, 1.93, 0.00);  object(0x01BF, 90, 0, 107);
+move(8.56, 5.14, 0.00);  object(0x01BF, 90, 0, 108);
+move(-6.31, 2.08, 0.00);  object(0x01BF, 90, 0, 108);
+move(-7.62, -5.58, 0.00);  object(0x01BF, 90, 0, 109);
+move(2.27, 7.19, 0.00);  object(0x01BF, 90, 0, 107);
+move(-6.10, 1.90, 0.00);  object(0x01BF, 90, 0, 107);
+move(-2.34, -7.34, 0.00);  object(0x01BF, 90, 0, 108);
+move(-5.07, 2.92, 0.00);  object(0x01BF, 90, 0, 107);
+move(1.84, 6.18, 0.00);  object(0x01BF, 90, 0, 106);
+move(-5.97, 1.67, -1.90);  object(0x01BF, 60, 0, 106);
+move(-3.52, 0.89, -2.20);  object(0x01BF, 60, 0, 103);
+//Hunter
+setchar(0x08E4Ea18, 213);
+setchar(0x08E4Ea18 + 0x18, 0x01);
+setfloat(0x08E4Ea1c, -16.23, -1631.09, 32.10, 0);
+//Dodo
+setchar(08E4Ed88, 164);
+setchar(08E4Ed88 + 0x18, 0x01);
+setfloat(08E4Ed8c, -27.11, -1627.33, 32.10, 0);
+//Maverick
+setchar(0x08E4E9C0, 214);
+setfloat(0x08E4E9C4, 272.15, -422.6, 26.02);
+setfloat(0x08E4E9D0, 0);
+//Police Maverick
+setchar(0x08E4E9C0, 214);
+setfloat(0x08E4E9C4, -50.34, -1614.54, 26.15);
+setfloat(0x08E4E9D0, 0);
+off()
+
+#cheat spawn POLICE MAVERIC at back of ssv police
+//ID: 14107
+//Score: 19
+//Author: ITBTD
+//Category: Garage Codes
+//Description: juat as the cheat says
+//Image: none
+//Time: 03/07/2006 20:35:16
+//Working: Yes
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 215);
+setfloat(0x08E4E9C4, -1206.13, -26.39, 53.26);
+setfloat(0x08E4E9D0, 270);
+
+#cheat SNIPA hide out
+//ID: 14374
+//Score: 48
+//Author: ice cold killer
+//Category: Environment
+//Description: a hide out for snipers. it has all weapons, a stinger,a infernus,a hunter,a maverick and it comes with a teleport.too much to take pic of.
+//(may have to activate it a couple of times)
+//Image: http://img249.imageshack.us/img249/6184/snipahideoutyf7.png
+//Time: 08/07/2006 15:07:05
+//Working: Yes
+moveto(263.54, -437.80, 66.73);  object(0x01BF, 270, 0, 91);
+move(0.12, 6.20, 0.00);  object(0x01BF, 270, 0, 91);
+move(0.13, 6.80, 0.00);  object(0x01BF, 270, 0, 91);
+move(0.12, 6.40, 0.00);  object(0x01BF, 270, 0, 91);
+move(0.06, 3.20, 0.00);  object(0x01BF, 270, 0, 91);
+move(0.09, 5.10, 0.00);  object(0x01BF, 270, 0, 91);
+move(6.02, -0.11, 0.00);  object(0x01BF, 270, 0, 91);
+move(6.58, -0.12, 0.00);  object(0x01BF, 270, 0, 91);
+move(6.32, -0.12, 0.00);  object(0x01BF, 270, 0, 91);
+move(5.89, -0.11, 0.00);  object(0x01BF, 270, 0, 91);
+move(5.97, -0.11, 0.00);  object(0x01BF, 270, 0, 91);
+move(6.21, -0.12, 0.00);  object(0x01BF, 270, 0, 91);
+move(-11.52, -21.54, 0.00);  object(0x01BF, 90, 0, 0);
+move(-0.02, -4.37, 0.00);  object(0x01BF, 90, 0, 0);
+move(-0.02, -3.91, 0.00);  object(0x01BF, 90, 0, 0);
+move(6.50, -0.03, 0.00);  object(0x01BF, 90, 0, 0);
+move(-0.06, 4.99, 0.00);  object(0x01BF, 90, 0, 2);
+move(0.13, 4.40, 0.00);  object(0x01BF, 90, 0, 2);
+move(4.51, -0.12, 0.00);  object(0x01BF, 90, 0, 0);
+move(0.03, -3.67, 0.00);  object(0x01BF, 90, 0, 0);
+move(0.03, -4.08, 0.00);  object(0x01BF, 90, 0, 0);
+move(0.01, -1.47, 0.00);  object(0x01BF, 90, 0, 0);
+move(7.05, 13.32, -1.30);  object(0x01BF, 90, 20, 0);
+move(0.05, 5.60, 0.00);  object(0x01BF, 90, 20, 356);
+move(9.61, 35.34, -30.20);  object(0x01BF, 90, 20, 82);
+move(-27.54, -57.82, 32.91);  object(0x01BF, 60, 0, 181);
+move(-0.03, -2.34, 1.30);  object(0x01BF, 60, 0, 181);
+move(-0.04, -2.92, 1.90);  object(0x01BF, 60, 0, 181);
+move(-0.07, -5.16, 1.80);  object(0x01BF, 90, 0, 181);
+move(-0.04, -5.82, 0.00);  object(0x01BF, 90, 0, 181);
+move(0.06, 11.80, -1.83);  object(0x01BF, 50, 0, 181);
+move(-15.18, -1.28, -3.28);  object(0x01EF, 0, 0, 1);
+move(-6.54, 43.19, -1.10);  object(0x01EF, 0, 0, 180);
+move(6.20, 0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.10, 0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.20, 0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.30, 0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.20, 0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(5.40, 0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(0.41, -4.48, 0.00);  object(0x01EF, 0, 0, 90);
+moveto(281.86, -441.52, 68.04);  object(0x01BF, 0, 0, 1);
+move(-5.00, 0.08, 0.00);  object(0x01BF, 0, 0, 1);
+move(-5.67, -0.53, 0.00);  object(0x01BF, 0, 0, 0);
+move(-0.39, 1.05, -0.00);  object(0x01BF, 0, 0, 9);
+move(-3.80, 3.38, -0.00);  object(0x01BF, 0, 0, 91);
+move(-0.05, 4.09, 0.10);  object(0x01BF, 0, 0, 88);
+moveto(276.33, -439.45, 72.60);  object(0x01BF, 270, 0, 181);
+move(-5.70, 0.09, 0.00);  object(0x01BF, 270, 0, 181);
+move(11.80, -0.19, 0.00);  object(0x01BF, 270, 0, 181);
+move(0.05, 3.16, 0.00);  object(0x01BF, 270, 0, 181);
+move(0.07, 3.95, 0.00);  object(0x01BF, 270, 0, 181);
+move(-7.05, -3.03, 0.00);  object(0x01BF, 270, 0, 181);
+move(0.05, 3.05, 0.00);  object(0x01BF, 270, 0, 181);
+move(-4.96, -3.86, 0.00);  object(0x01BF, 270, 0, 181);
+move(0.07, 3.99, 0.00);  object(0x01BF, 270, 0, 181);
+move(15.46, -5.67, -3.50);  object(0x01BF, 180, 0, 269);
+move(-0.06, 3.90, 0.00);  object(0x01BF, 180, 0, 269);
+move(-19.15, 6.12, 0.00);  object(0x01BF, 180, 0, 269);
+move(0.09, -5.70, 0.00);  object(0x01BF, 180, 0, 269);
+move(0.08, -5.40, 0.00);  object(0x01BF, 180, 0, 269);
+move(18.78, 9.81, 0.04);  object(0x01BF, 180, 0, 269);
+move(-3.20, 0.48, 3.40);  object(0x01BF, 90, 0, 181);
+move(-7.00, 0.14, 0.00);  object(0x01BF, 90, 0, 181);
+move(-4.90, 0.10, 0.00);  object(0x01BF, 90, 0, 181);
+move(-0.07, -6.33, 0.00);  object(0x01BF, 90, 0, 184);
+moveto(281.93, -425.62, 69.04);  object(0x01BF, 0, 0, 178);
+moveto(276.66, -419.08, 56.23);  object(0x01BF, 355, 0, 349);
+move(-5.92, -7.02, 13.00);  object(0x01BF, 0, 0, 180);
+moveto(300.59, -443.94, 66.81);  object(0x01BF, 280, 0, 0);
+move(18.89, -4.22, -4.20);  object(0x01BF, 115, 0, 105);
+move(-4.63, -4.08, 0.00);  object(0x01BF, 115, 0, 7);
+move(0.00, 0.00, 0.00);  object(0x01BF, 115, 0, 7);
+move(-14.29, 4.07, 5.20);  object(0x01BF, 110, 0, 0);
+move(-0.02, -4.05, 1.30);  object(0x01BF, 110, 0, 0);
+move(-0.05, -5.94, 0.90);  object(0x01BF, 90, 0, 0);
+move(7.07, -0.23, 0.00);  object(0x01BF, 90, 0, 0);
+move(1.48, -0.27, 0.00);  object(0x01BF, 90, 0, 0);
+move(-8.50, -0.00, 0.10);  object(0x01BF, 90, 0, 358);
+//All Weapons
+//weapon 1
+setfloat(0x08e2d800, 268.68, -438.72, 68.03);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0xff, 0xff)
+setshort(0x08e2d826, 0x103)
+setchar(0x08e2d832, 0x0f)
+setchar(0x08e2d833, 0x00)
+setchar(0x08e2d850, 0xff)
+//weapon 2
+setfloat(0x08E2E400, 270.38, -439.72, 68.03);
+setint(0x08E2E414, 0);
+setchar(0x08E2E41C, 0xff, 0xff);
+setshort(0x08E2E426, 0x104);
+setchar(0x08E2E432, 0x0f);
+setchar(0x08E2E433, 0x00);
+setchar(0x08E2D450, 0xff);
+//weapon 3
+setfloat(0x08e2d860, 272.54, -440.46, 68.04);
+setint(0x08e2d874, 0);
+setchar(0x08E2D87C, 0xff, 0xff)
+setshort(0x08e2d886, 0x105)
+setchar(0x08e2d892, 0x0f)
+setchar(0x08e2d893, 0x00)
+setchar(0x08e2d8b0, 0xff)
+//weapon 4
+setfloat(0x08e2d8c0, 274.13, -440.90, 68.04);
+setint(0x08e2d8d4, 0);
+setchar(0x08e2d8dC, 0xff, 0xff);
+setshort(0x08e2d8e6, 0x106);
+setchar(0x08e2d8f2, 0x0f);
+setchar(0x08e2d8f3, 0x00);
+setchar(0x08e2d910, 0xff);
+//weapon 5
+setfloat(0x08e2d920, 276.11, -440.93, 68.04);
+setint(0x08e2d934, 0);
+setchar(0x08e2d93C, 0xff, 0xff);
+setshort(0x08e2d946, 0x107);
+setchar(0x08e2d952, 0x0f);
+setchar(0x08e2d953, 0x00);
+setchar(0x08e2d970, 0xff);
+//weapon 6
+setfloat(0x08e2d980, 278.19, -440.96, 68.04);
+setint(0x08e2d994, 0);
+setchar(0x08e2d99C, 0xff, 0xff);
+setshort(0x08e2d9a6, 0x108);
+setchar(0x08e2d9b2, 0x0f);
+setchar(0x08e2d9b3, 0x00);
+setchar(0x08e2d9d0, 0xff);
+//weapon 7
+setfloat(0x08e2d9e0, 280.09, -441.00, 68.04);
+setint(0x08e2d9f4, 0);
+setchar(0x08e2d9fC, 0xff, 0xff);
+setshort(0x08e2da06, 0x109);
+setchar(0x08e2da12, 0x0f);
+setchar(0x08e2da13, 0x00);
+setchar(0x08e2da30, 0xff);
+//weapon 8
+setfloat(0x08e2da40, 282.81, -440.84, 68.04);
+setint(0x08e2da54, 0);
+setchar(0x08e2da5C, 0xff, 0xff);
+setshort(0x08e2da66, 0x10a);
+setchar(0x08e2da72, 0x0f);
+setchar(0x08e2da73, 0x00);
+setchar(0x08e2da90, 0xff);
+//weapon 9
+setfloat(0x08e2daa0, 284.45, -440.84, 68.04);
+setint(0x08e2dab4, 0);
+setchar(0x08e2dabC, 0xff, 0xff);
+setshort(0x08e2dac6, 0x10b);
+setchar(0x08e2dad2, 0x0f);
+setchar(0x08e2dad3, 0x00);
+setchar(0x08e2daf0, 0xff);
+//weapon 10
+setfloat(0x08e2db00, 285.13, -440.95, 68.04);
+setint(0x08e2db14, 0);
+setchar(0x08e2db1C, 0xff, 0xff);
+setshort(0x08e2db26, 0x10b);
+setchar(0x08e2db32, 0x0f);
+setchar(0x08e2db33, 0x00);
+setchar(0x08e2db50, 0xff);
+//weapon 11
+setfloat(0x08E2DB60, 285.64, -438.85, 68.04);
+setint(0x08E2DB74, 0);
+setchar(0x08E2DB7C, 0xff, 0xff);
+setshort(0x08E2DB86, 0x10d);
+setchar(0x08E2DB92, 0x0f);
+setchar(0x08E2DB93, 0x00);
+setchar(0x08E2DBB0, 0xff);
+//weapon 12
+setfloat(0x08E2DBC0, 285.61, -436.86, 68.04);
+setint(0x08E2DBD4, 0);
+setchar(0x08E2DBDC, 0xff, 0xff);
+setshort(0x08E2DBE6, 0x10e);
+setchar(0x08E2DBF2, 0x0f);
+setchar(0x08E2DBF3, 0x00);
+setchar(0x08E2DC10, 0xff);
+//weapon 13
+setfloat(0x08E2DC20, 285.57, -434.44, 68.04);
+setint(0x08E2DC34, 0);
+setchar(0x08E2DC3C, 0xff, 0xff);
+setshort(0x08E2DC46, 0x10f);
+setchar(0x08E2DC52, 0x0f);
+setchar(0x08E2DC53, 0x00);
+setchar(0x08E2DC70, 0xff);
+//weapon 14
+setfloat(0x08E2DC80, 285.55, -432.82, 68.04);
+setint(0x08E2DC94, 0);
+setchar(0x08E2DC9C, 0xff, 0xff);
+setshort(0x08E2DCA6, 0x110);
+setchar(0x08E2DCB2, 0x0f);
+setchar(0x08E2DCB3, 0x00);
+setchar(0x08E2DCD0, 0xff);
+//weapon 15
+setfloat(0x08E2DCE0, 285.52, -430.86, 68.04);
+setint(0x08E2DCF4, 0);
+setchar(0x08E2DCFC, 0xff, 0xff);
+setshort(0x08E2DD06, 0x112);
+setchar(0x08E2DD12, 0x0f);
+setchar(0x08E2DD13, 0x00);
+setchar(0x08E2DD30, 0xff);
+//weapon 16
+setfloat(0x08E2DD40, 267.37, -424.65, 68.03);
+setint(0x08E2DD54, 0);
+setchar(0x08E2DD5C, 0xff, 0xff);
+setshort(0x08E2DD66, 0x113);
+setchar(0x08E2DD72, 0x0f);
+setchar(0x08E2DD73, 0x00);
+setchar(0x08E2DD90, 0xff);
+//weapon 17
+setfloat(0x08E2DDA0, 267.38, -426.39, 68.03);
+setint(0x08E2DDB4, 0);
+setchar(0x08E2DDBC, 0xff, 0xff);
+setshort(0x08E2DDC6, 0x115);
+setchar(0x08E2DDD2, 0x0f);
+setchar(0x08E2DDD3, 0x00);
+setchar(0x08E2DDF0, 0xff);
+//weapon 18
+setfloat(0x08E2DE00, 267.40, -428.06, 68.03);
+setint(0x08E2DE14, 0);
+setchar(0x08E2DE1C, 0xff, 0xff);
+setshort(0x08E2DE26, 0x116);
+setchar(0x08E2DE32, 0x0f);
+setchar(0x08E2DE33, 0x00);
+setchar(0x08E2DE50, 0xff);
+//weapon 19
+setfloat(0x08E2DE60, 267.44, -430.04, 68.03);
+setint(0x08E2DE74, 0);
+setchar(0x08E2DE7C, 0xff, 0xff);
+setshort(0x08E2DE86, 0x117);
+setchar(0x08E2DE92, 0x0f);
+setchar(0x08E2DE93, 0x00);
+setchar(0x08E2DEB0, 0xff);
+//weapon 20
+setfloat(0x08E2DEC0, 267.48, -432.73, 68.03);
+setint(0x08E2DED4, 0);
+setchar(0x08E2DEDC, 0xff, 0xff);
+setshort(0x08E2DEE6, 0x114);
+setchar(0x08E2DEF2, 0x0f);
+setchar(0x08E2DEF3, 0x00);
+setchar(0x08E2DF10, 0xff);
+//weapon 21
+setfloat(0x08E2DF20, 267.54, -434.64, 68.03);
+setint(0x08E2DF34, 0);
+setchar(0x08E2DF3C, 0xff, 0xff);
+setshort(0x08E2DF46, 0x118);
+setchar(0x08E2DF52, 0x0f);
+setchar(0x08E2DF53, 0x00);
+setchar(0x08E2DF70, 0xff);
+//weapon 22
+setfloat(0x08E2DF80, 267.55, -436.44, 68.03);
+setint(0x08E2DF94, 0);
+setchar(0x08E2DF9C, 0xff, 0xff);
+setshort(0x08E2DFA6, 0x119);
+setchar(0x08E2DFB2, 0x0f);
+setchar(0x08E2DFB3, 0x00);
+setchar(0x08E2DFD0, 0xff);
+//weapon 23
+setfloat(0x08E2DFE0, 269.30, -426.59, 68.03);
+setint(0x08E2DFF4, 0);
+setchar(0x08E2DFFC, 0xff, 0xff);
+setshort(0x08E2E006, 0x11a);
+setchar(0x08E2E012, 0x0f);
+setchar(0x08E2E013, 0x00);
+setchar(0x08E2D030, 0xff);
+//weapon 24
+setfloat(0x08E2E040, 270.98, -426.59, 68.04);
+setint(0x08E2E054, 0);
+setchar(0x08E2E05C, 0xff, 0xff);
+setshort(0x08E2E066, 0x11b);
+setchar(0x08E2E072, 0x0f);
+setchar(0x08E2E073, 0x00);
+setchar(0x08E2D090, 0xff);
+//weapon 25
+setfloat(0x08E2E0A0, 272.41, -426.61, 68.04);
+setint(0x08E2E0B4, 0);
+setchar(0x08E2E0BC, 0xff, 0xff);
+setshort(0x08E2E0C6, 0x11c);
+setchar(0x08E2E0D2, 0x0f);
+setchar(0x08E2E0D3, 0x00);
+setchar(0x08E2D0F0, 0xff);
+//weapon 26
+setfloat(0x08E2E100, 274.13, -426.59, 68.04);
+setint(0x08E2E114, 0);
+setchar(0x08E2E11C, 0xff, 0xff);
+setshort(0x08E2E126, 0x11d);
+setchar(0x08E2E132, 0x0f);
+setchar(0x08E2E133, 0x00);
+setchar(0x08E2D150, 0xff);
+//weapon 27
+setfloat(0x08E2E160, 278.72, -426.26, 68.04);
+setint(0x08E2E174, 0);
+setchar(0x08E2E17C, 0xff, 0xff);
+setshort(0x08E2E186, 0x11e);
+setchar(0x08E2E192, 0x0f);
+setchar(0x08E2E193, 0x00);
+setchar(0x08E2D1B0, 0xff);
+//weapon 28
+setfloat(0x08E2E1C0, 280.08, -426.17, 68.04);
+setint(0x08E2E1D4, 0);
+setchar(0x08E2E1DC, 0xff, 0xff);
+setshort(0x08E2E1E6, 0x11f);
+setchar(0x08E2E1F2, 0x0f);
+setchar(0x08E2E1F3, 0x00);
+setchar(0x08E2D210, 0xff);
+//weapon 29
+setfloat(0x08E2E220, 282.10, -426.10, 68.04);
+setint(0x08E2E234, 0);
+setchar(0x08E2E23C, 0xff, 0xff);
+setshort(0x08E2E246, 0x121);
+setchar(0x08E2E252, 0x0f);
+setchar(0x08E2E253, 0x00);
+setchar(0x08E2D270, 0xff);
+//weapon 30
+setfloat(0x08E2E280, 280.79, -434.30, 68.04);
+setint(0x08E2E294, 0);
+setchar(0x08E2E29C, 0xff, 0xff);
+setshort(0x08E2E2A6, 0x122);
+setchar(0x08E2E2B2, 0x0f);
+setchar(0x08E2E2B3, 0x00);
+setchar(0x08E2D2D0, 0xff);
+//weapon 31
+setfloat(0x08E2E2E0, 280.89, -436.35, 68.04);
+setint(0x08E2E2F4, 0);
+setchar(0x08E2E2FC, 0xff, 0xff);
+setshort(0x08E2E306, 0x124);
+setchar(0x08E2E312, 0x0f);
+setchar(0x08E2E313, 0x00);
+setchar(0x08E2D330, 0xff);
+//weapon 32
+setfloat(0x08E2E340, 280.97, -432.01, 68.04);
+setint(0x08E2E354, 0);
+setchar(0x08E2E35C, 0xff, 0xff);
+setshort(0x08E2E366, 0x22e);
+setchar(0x08E2E372, 0x0f);
+setchar(0x08E2E373, 0x00);
+setchar(0x08E2D390, 0xff);
+//weapon 33
+setfloat(0x08E2E3A0, 271.53, -430.56, 68.04);
+setint(0x08E2E3B4, 0);
+setchar(0x08E2E3BC, 0xff, 0xff);
+setshort(0x08E2E3C6, 0x24b);
+setchar(0x08E2E3D2, 0x0f);
+setchar(0x08E2E3D3, 0x00);
+setchar(0x08E2D3F0, 0xff);
+//weapon 34
+setfloat(0x08E2E460, 271.55, -432.18, 68.04);
+setint(0x08E2E474, 0);
+setchar(0x08E2E47C, 0xff, 0xff);
+setshort(0x08E2E486, 0x104);
+setchar(0x08E2E492, 0x0f);
+setchar(0x08E2E493, 0x00);
+setchar(0x08E2D4B0, 0xff);
+//weapon 35
+setfloat(0x08E2E4C0, 271.56, -434.13, 68.04);
+setint(0x08E2E4D4, 0);
+setchar(0x08E2E4DC, 0xff, 0xff);
+setshort(0x08E2E4E6, 0x104);
+setchar(0x08E2E4F2, 0x0f);
+setchar(0x08E2E4F3, 0x00);
+setchar(0x08E2D510, 0xff);
+//weapon 36
+setfloat(0x08E2DDA0, 271.35, -436.47, 68.04);
+setint(0x08E2DD54, 0);
+setchar(0x08E2DD5C, 0xff, 0xff);
+setshort(0x08E2DD66, 0x104);
+setchar(0x08E2DD72, 0x0f);
+setchar(0x08E2DD73, 0x00);
+setchar(0x08E2DD90, 0xff);
+teleport(279.26, -423.60, 68.04)
+off()
+//all vehicles@hide out
+//spawn MAVERIC at heli2-maveric
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 214);
+setfloat(0x08E4E9C4, 319.27, -463.95, 71.44);
+setfloat(0x08E4E9D0, 0);
+//spawn INFERNUS at car2-infernus
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 142);
+setfloat(0x08E4E9C4, 274.34, -465.17, 74.00);
+setfloat(0x08E4E9D0, 0);
+//spawn STINGER at car3-stinger
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 133);
+setfloat(0x08E4E9C4, 273.32, -448.59, 74.00);
+setfloat(0x08E4E9D0, 0);
+//spawn HUNTER at heli1-hunter
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 213);
+setfloat(0x08E4E9C4, 319.03, -450.14, 71.44);
+setfloat(0x08E4E9D0, 0);
+
+#cheat SPAWN POL. MAV. AT THE TOP OF A STAUNTON SAFEHOUSE
+//ID: 12077
+//Score: 41
+//Author: art_m11
+//Category: Vehicle
+//Description: TURN THE CHEAT ON,AND POLICE MAVERICK WILL BE STANDING AT THE TOP OF A STAUNTON SAFEHOUSE!
+//Image: none
+//Time: 03/06/2006 10:52:20
+//Working: Yes
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 215);
+setfloat(0x08E4E9C4, 292.89, -421.39, 68.04);
+setfloat(0x08E4E9D0, 0);
+

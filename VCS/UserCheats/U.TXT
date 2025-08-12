@@ -1,0 +1,198 @@
+#cheat pointer ped
+pped = getint(0x08BA1D70);
+
+
+#cheat Slowly turn Vic in the cardinal directions
+setfloat(pplayer + 0x78, 0.1);
+
+
+#cheat Remove what Vic is standing on
+setfloat(getint(pplayer + 0xF0) + 0x38, -10000.0);
+off();
+
+
+
+
+#cheat 1,000 Grenades
+setchar(pplayer + 0x674, 0x26);
+//0x674 for the thrown slot ID,
+//0x26 for the grenades ID
+setint(pplayer + 0x674 + 0x26, 1000);
+//0x674 for the thrown slot ID,
+//+0x26 for the ammo offset
+//1000 to give the ped 1,000 grenades
+
+
+#cheat camera
+setchar(pplayer + 0x674, 0x26);
+setint(pplayer + 0x674 + 0x26, 10);
+
+
+#cheat 24
+setchar(pplayer + 0x674, 0x24);
+
+
+#cheat 25
+setchar(pplayer + 0x674, 0x25);
+
+
+
+#cheat gta3
+setfloat(0x08B833DC, 30);
+setfloat(0x08B83374, 30);
+setfloat(0x08B834EC, -2);
+setchar(0x08B834F0, 0x06, 0xA0, 0xF6, 0xBC);
+
+
+#cheat safehouse
+teleport(-75.64,  -1227.72, 23.94);
+moveto(-76.25, -1224.71, 22.84);
+object(0x1D39, 0, 0, 92);
+
+
+
+#cheat laser exhaust
+setchar(0x9569B90, 0x70, 0x00, 0x00, 0x00, 0x00, 0xff, 0x00, 0x00);
+setchar(0x9569Ba7, 0x50);
+
+
+#cheat first person view
+setchar(pplayer + 0x000008B4, 61);
+#off
+setchar(pplayer + 0x000008B4, 55);
+
+
+#cheat mad cars
+setfloat(pcar + 0x00000000, 56);
+
+
+#cheat pimped deluxo @ compound
+//Basics
+setint(0x8C73A70, 187);
+setchar(0x8C73A70+0x24, 0, 0, 0, 255);
+setchar(0x8C73A70+0x28, 255, 140, 0, 255);
+//Wheels
+setfloat(0x9360E38, 1.06, 1.06);
+setfloat(0x962f680+0x6c, 1);
+setfloat(0x962f680+0xc4, 0.7);
+setfloat(0x962f680+0x70, 0.45);
+//Engine
+setchar(0x962f680+0x5c, 'R', 'P', S);
+//Suspension
+setfloat(0x962f680+0x7c, 0);
+setfloat(0x962f680+0x80, -1);
+setfloat(0x962f680+0x78, 0.335);
+setfloat(0x962f680+0x74, 0.575);
+setfloat(0x962f680+0x84, 0.54);
+setfloat(0x962f680+0x88, 1);
+//Handling
+setfloat(0x962f680+0x68, 20);
+setfloat(0x962f680+0xbc, 5900);
+setfloat(0x962f680+0xa0, 0);
+setfloat(0x962f680+0xa4, 0);
+setfloat(0x962f680+0xa8, 0);  
+//Effects
+//Exhaust
+setchar(0x09569B94, 0, 255, 255);
+setchar(0x09569B90, 0x4);
+//Teleport
+teleport( -1087.31, 356.47, 11.27);
+off()
+
+
+#cheat fireball
+kinda=0x8BBBD50;
+if(press & CTRL_UP)(
+setchar(0x8BBBD50, 0x0a);
+setchar(0x8BBBD83, 0x4a);
+setchar(0x8BBBD84, 0x04);
+setchar(0x8BBBD85, 0x01);
+setchar(0x8BBBD86, 0xFF);
+setfloat(kinda+0x10, getfloat(pcar+0x30),
+getfloat(pcar+0x34), getfloat(pcar+0x38));
+)
+
+
+#cheat reveal
+setchar(0x8badc8a, 0xc0, 0xff);
+
+
+#cheat monster ice cream man
+setfloat(0x935E198, 3);
+
+
+#cheat BIIIIIIIIG BLISTA CMPQ
+setfloat(0x935F3F8, 999999999999999999999999999999999999999999999999999999999999999999999999999 9999.999);
+
+
+
+
+
+#cheat Pimped Baggage Handler at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 174); //Car Id
+ setchar(0x8C73B30+0x24, 255,255,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a35c0, 1,  0); 
+ //Wheels
+ setfloat(0x935EC18, 1.83, 1.83); //wheel size
+ setfloat(0x962ec00+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962ec00+0xc4, 0.85); //Traction Loss
+ setfloat(0x962ec00+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962ec00+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962ec00+0x7c, 0.39); //Suspension Upper Limit
+ setfloat(0x962ec00+0x80, -0.13); //Suspension Lower Limit
+ setfloat(0x962ec00+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x962ec00+0x74, 1); //Suspension Force Level
+ setfloat(0x962ec00+0x84, 0.5); //Suspension Bias
+ setfloat(0x962ec00+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962ec00+0x68, 30); //Steering Lock
+ setfloat(0x962ec00+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962ec00+0xc0, 1500); //Turn Mass
+ setfloat(0x962ec00+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962ec00+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962ec00+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Limo at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,255,0, 255); //Color2
+ setshort(0x98a334e, 1, 'L','i','m','o', 0); 
+ //Wheels
+ setfloat(0x93679D8, 2.17, 2.17); //wheel size
+ setfloat(0x96319e0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.32); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.12); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 1); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 32); //Steering Lock
+ setfloat(0x96319e0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 1500); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()

@@ -1,0 +1,92 @@
+
+#cheat Fire Circles
+kinda=0x8BBBD50;
+if(press & CTRL_UP){
+setchar(0x8BBBD50, 0x0a);
+setchar(0x8BBBD83, 0x4a);
+setchar(0x8BBBD84, 0x04);
+setchar(0x8BBBD85, 0x01);
+setchar(0x8BBBD8C, 0xFF);
+setfloat(kinda+0x10, getfloat(pcar+0x30),getfloat(pcar+0x34),getfloat(pcar+0x38));
+}
+
+//Constantly drops a huge explosion on all of Vice City, killing all peds and vehicles about every 3 seconds.
+#cheat NUKE VICE CITY
+explosion=0x08BBBD50;
+static count;
+if(count%150==0){
+   setchar(explosion, 0x0a);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+   explosion+=0x50;
+   setchar(explosion, 0x04);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xFE);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+}
+count++;
+
+//Press Circle to send a shockwave out of your vehicle, destroying anything in its path. Hold O to continuously release shockwaves.
+#cheat Shockwave (Hold O to release)
+explosion=0x08BBBD50;
+static count;
+if(buttons&CTRL_CIRCLE){
+if(count%30==0){
+   setchar(explosion, 0x0a);
+   setfloat(explosion+0x10, getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38));
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 50.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+   explosion+=0x50;
+   setchar(explosion, 0x04);
+   setfloat(explosion+0x10, getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38));
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 50.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xFE);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+}
+   count++;
+}
+else count=0;
+
+//Aim at anything and shoot and explosions will be set off at your target.
+#cheat Spawn Explosion on Target (O when aiming)
+if(buttons&CTRL_RTRIGGER&&buttons&CTRL_CIRCLE){
+explosion=0x08BBBD50;
+setchar(explosion, 0xa);
+setfloat(explosion+0x10, getfloat(0x08ba1d50), getfloat(0x08ba1d54), getfloat(0x08ba1d58));
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+explosion+=0x50;
+setchar(explosion, 0x4);
+setfloat(explosion+0x10, getfloat(0x08ba1d50), getfloat(0x08ba1d54), getfloat(0x08ba1d58));
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+}
+

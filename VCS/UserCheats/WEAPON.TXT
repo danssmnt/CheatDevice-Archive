@@ -1,0 +1,816 @@
+#cheat Always have teargas
+//ID: 18582
+//Score: 85
+//Author: parm
+//Category: Weapons
+//Description: Cry me a river.
+//Image: none
+//Time: 06/11/2006 22:40:48
+//Working: Yes
+// by parm
+setchar(pplayer+0x5B0,  0x10)
+
+#cheat Always have cane
+//ID: 18581
+//Score: 71
+//Author: parm
+//Category: Weapons
+//Description: For all you oldies out there:
+//With this cheat on, you will always have a cane.
+//
+//
+//EDITED BY: psphacker108 on 07/11/06 04:40:48
+//Image: none
+//Time: 06/11/2006 22:39:29
+//Working: Yes
+// by parm
+// For all you oldies out there:
+setchar(pplayer+0x594,  0x08);
+
+#cheat Always have minigun (Chain gun)
+//ID: 18580
+//Score: 97
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on, you will always have the minigun (chain gun).
+//Image: none
+//Time: 06/11/2006 22:38:05
+//Working: Yes
+// by parm
+setchar(pplayer+0x63C,  0x23);
+
+#cheat Always have Flamethrower
+//ID: 18579
+//Score: 85
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on, you will always have the flamethrower in your inventory.
+//Image: none
+//Time: 06/11/2006 22:36:53
+//Working: Yes
+setchar(pplayer+0x63C,  0x21);
+
+#cheat Always have minigun 2
+//ID: 18578
+//Score: 104
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on you will always have minigun 2 (the one used in helicopter missions) in your inventory.
+//Image: none
+//Time: 06/11/2006 22:35:49
+//Working: Yes
+setchar(pplayer+0x63C,  0x22);
+
+
+#cheat Always have rocket launcher
+//ID: 18577
+//Score: 94
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on, you will always have the rocket launcher in your inventory.
+//Image: none
+//Time: 06/11/2006 22:32:46
+//Working: Yes
+setchar(pplayer+0x63C,  0x20);//rocket launcher
+
+#cheat No reloading
+//ID: 18434
+//Score: 414
+//Author: Waterbottle
+//Category: Weapons
+//Description: You can fire with out having to load the gun.
+//Image: none
+//Time: 02/11/2006 16:17:06
+//Working: Yes
+setint(pplayer+0x5d4, 2);
+setint(pplayer+0x5f0, 2);
+setint(pplayer+0x60c, 2);
+setint(pplayer+0x5b8, 2);
+setint(pplayer+0x628, 2);
+setint(pplayer+0x644, 2);
+setint(pplayer+0x660, 2);
+
+#cheat Infinite Ammo
+//ID: 18433
+//Score: 473
+//Author: Waterbottle
+//Category: Weapons
+//Description: Gives you infinite ammo for all weapons
+//Image: none
+//Time: 02/11/2006 16:16:26
+//Working: Yes
+setint(pplayer+0x5d8, 0x00ffffff);
+setint(pplayer+0x5f4, 0x00ffffff);
+setint(pplayer+0x610, 0x00ffffff);
+setint(pplayer+0x5bc, 0x00ffffff);
+setint(pplayer+0x62c, 0x00ffffff);
+setint(pplayer+0x648, 0x00ffffff);
+setint(pplayer+0x664, 0x00ffffff);
+
+#cheat Weapons
+//ID: 18429
+//Score: 169
+//Author: Waterbottle
+//Category: Weapons
+//Description: This gives you chainsaw, teargas, handgum,  M16, uzi, mini gun and sniper
+//Image: none
+//Time: 02/11/2006 16:12:08
+//Working: Yes
+setchar(pplayer+0x594, 0x0b);//chainsaw
+setchar(pplayer+0x5B0, 0x10);//teargas
+setchar(pplayer+0x5CC, 0x14);//some handgun
+setchar(pplayer+0x5E8, 0x15);//M16
+setchar(pplayer+0x604, 0x18);//uzi
+setchar(pplayer+0x620, 0x1C);
+setchar(pplayer+0x63C, 0x23);//mini gun
+setchar(pplayer+0x658, 0x1E);//sniper
+
+#cheat DUD Explosives
+//ID: 18842
+//Score: 61
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: All grenades, molotovs, and landmines thrown become useless, and will never blow up. Really cool when using molotovs since they bounce all over the place!
+//Image: none
+//Time: 22/11/2006 23:45:12
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb + 0xC, 0x0);
+}
+
+
+#cheat Explosion Maker
+//ID: 18789
+//Score: 125
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Touch an object and then aim at something. The object will turn into an explosive barrel and will teleport to whatever you aim at. Then shoot it for an impresive explosion! Works best aiming at peds. Thanks to EC for object checkers.
+//Image: http://img82.imageshack.us/img82/5336/video2xp5.gif
+//Time: 19/11/2006 23:47:56
+//Working: Yes
+static Loc;
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(getint(pplayer + 0x150))
+{
+Loc = getint(pplayer + 0x150);
+}
+modelid = getshort(Loc + 0x0056);
+if (modelid < 750 ||
+modelid == 1515 ||
+modelid == 2627 ||
+modelid == 7337 ||
+modelid == 1820 ||
+modelid == 1821 ||
+modelid == 1825 ||
+modelid == 1826 ||
+modelid == 1829 ||
+(modelid >= 2551 && modelid <= 2554) ||
+(modelid >= 1526 && modelid <= 1536) ||
+(modelid >= 1217 && modelid <= 1223) ||
+(modelid >= 1485 && modelid <= 1488))
+{
+if (modelid != 1533&&modelid > 270)
+{
+setshort(Loc + 0x56, 0x1c2);
+setfloat(Loc + 0x30, aimx);
+setfloat(Loc + 0x34, aimy);
+setfloat(Loc + 0x38, aimz);
+}
+}
+
+#cheat Rocket quick switch
+//ID: 18745
+//Score: 69
+//Author: lilfrk12006
+//Category: Weapons
+//Description: If you need to switch to the rocket launcher really quick have this code on. all you do is hit LEFT on the d-pad and it goes to rocket launcher...you can still go to the other weapons by hiting RIGHT on the d-pad.
+//Image: none
+//Time: 17/11/2006 22:58:25
+//Working: Yes
+//BY:LILFRK12006
+//
+//If you need to switch to the rocket launcher really quick have this code on. all you do is hit LEFT on the d-pad and it goes to rocket launcher...you can still go to the other weapons by hiting RIGHT on the d-pad.
+setshort(pplayer + 0x00000620, 1);
+
+#cheat All Weapons (36) (v2)
+//ID: 18659
+//Score: 434
+//Author: Sousanator
+//Category: Weapons
+//Description: Just like first version, but now easier scrolling and 36 weapons/items
+//use left/right to scroll through the sets of weapons (first, melee, heavy)
+//and up/down to switch that weapon in same category (golf club, bat, katana)
+//bug: weapon logo doesnt show,
+//Image: none
+//Time: 11/11/2006 02:40:39
+//Working: Yes
+//By Sousanator
+	setint(pplayer+0x5d8,  0x00ffffff);
+	setint(pplayer+0x5f4,  0x00ffffff);
+	setint(pplayer+0x610,  0x00ffffff);
+	setint(pplayer+0x5bc,  0x00ffffff);
+	setint(pplayer+0x62c,  0x00ffffff);
+	setint(pplayer+0x648,  0x00ffffff);
+	setint(pplayer+0x664,  0x00ffffff);
+	setint(pplayer+0x680,  0x00ffffff);
+	
+	static weaponPlace;
+	static group0;
+	static group1;
+	static group2;
+	static group3;
+	static group4;
+	static group5;
+	static group6;
+	static group7;
+	static group8;
+	static group9;
+	
+
+	if (pressslow & CTRL_LEFT) {
+		weaponPlace--;
+	} else if (pressslow & CTRL_RIGHT) {
+		weaponPlace++;
+	}
+	if (weaponPlace > 9) {
+		weaponPlace=0;
+	} else if (weaponPlace < 0) {
+		weaponPlace=9;
+	}	
+		
+if (weaponPlace == 0) {
+	if (pressslow & CTRL_DOWN) {
+		group0--;
+	} else if (pressslow & CTRL_UP) {
+		group0++;
+	}
+	if (group0 > 1) {
+		group0=0;
+	} else if (group0 < 0) {
+		group0=1;
+	}
+	setchar(pplayer+0xCB8,   0x00);
+
+		if (group0 == 0){
+			setchar(pplayer+0x578,   0x00);//FIST
+		} else if (group0 == 1){
+			setchar(pplayer+0x578,   0x01);//BRASS KNUCLES
+		}
+} else if (weaponPlace == 1) {
+	if (pressslow & CTRL_DOWN) {
+		group1--;
+	} else if (pressslow & CTRL_UP) {
+		group1++;
+	}
+	if (group1 > 9) {
+		group1=0;
+	} else if (group1 < 0) {
+		group1=9;
+	}
+	setchar(pplayer+0xCB8,   0x01);
+	if (group1==0){
+		setchar(pplayer+0x594,   0x02);//LITTLE KNIFE	
+	} else if (group1==1){
+		setchar(pplayer+0x594,   0x03);//GOLF CLUB
+	} else if (group1==2){
+		setchar(pplayer+0x594,   0x04);//KNIGHT STICK
+	} else if (group1==3){
+		setchar(pplayer+0x594,   0x05);//KNIFE
+	} else if (group1==4){
+		setchar(pplayer+0x594,   0x06);//BAT
+	} else if (group1==5){
+		setchar(pplayer+0x594,   0x07);//AXE
+	} else if (group1==6){
+		setchar(pplayer+0x594,   0x08);//CANE
+	} else if (group1==7){
+		setchar(pplayer+0x594,   0x09);//MECHETTY
+	} else if (group1==8){
+		setchar(pplayer+0x594,   0x0A);//KATANA
+	} else if (group1==9){
+		setchar(pplayer+0x594,   0x0B);//SAW
+	}
+} else if (weaponPlace == 2) {
+	if (pressslow & CTRL_DOWN) {
+		group2--;
+	} else if (pressslow & CTRL_UP) {
+		group2++;
+	}
+	if (group2 > 4) {
+		group2=0;
+	} else if (group2 < 0) {
+		group2=4;
+	}
+	setchar(pplayer+0xCB8,   0x02);
+	if (group2==0){
+		setchar(pplayer+0x5B0,   0x0C);//GRENADE
+	} else if (group2==1){
+		setchar(pplayer+0x5B0,   0x0D);//GRENADE2
+	} else if (group2==2){
+		setchar(pplayer+0x5B0,   0x0E);//REMOTE MINES
+	} else if (group2==3){
+		setchar(pplayer+0x5B0,   0x10);//TEAR GAS
+	} else if (group2==4){
+		setchar(pplayer+0x5B0,   0x11);//MOLTOV
+	}
+} else if (weaponPlace == 3) {
+	if (pressslow & CTRL_DOWN) {
+		group3--;
+	} else if (pressslow & CTRL_UP) {
+		group3++;
+	}
+	if (group3 > 1) {
+		group3=0;
+	} else if (group3 < 0) {
+		group3=1;
+	}
+	setchar(pplayer+0xCB8,   0x03);	
+	if (group3==0){
+		setchar(pplayer+0x5CC,   0x13);//PISTOL
+	} else if (group3==1){
+		setchar(pplayer+0x5CC,   0x14);//HANDGUN
+	}
+} else if (weaponPlace == 4) {
+	if (pressslow & CTRL_DOWN) {
+		group4--;
+	} else if (pressslow & CTRL_UP) {
+		group4++;
+	}
+	if (group4 > 2) {
+		group4=0;
+	} else if (group4 < 0) {
+		group4=2;
+	}
+	setchar(pplayer+0xCB8,   0x04);	
+	if (group4==0){
+		setchar(pplayer+0x5E8,   0x15);//SHOTGUN    
+	} else if (group4==1){
+		setchar(pplayer+0x5E8,   0x16);//SHOTGUN2
+	} else if (group4==2){
+		setchar(pplayer+0x5E8,   0x17);//SHOTGUN3
+	}
+} else if (weaponPlace == 5) {
+	if (pressslow & CTRL_DOWN) {
+		group5--;
+	} else if (pressslow & CTRL_UP) {
+		group5++;
+	}
+	if (group5 > 3) {
+		group5=0;
+	} else if (group5 < 0) {
+		group5=3;
+	}
+	setchar(pplayer+0xCB8,   0x05);	
+	if (group5==0){
+		setchar(pplayer+0x604,   0x18);//UZI
+	} else if (group5==1){
+		setchar(pplayer+0x604,   0x19);//UZI2
+	} else if (group5==2){
+		setchar(pplayer+0x604,   0x1A);//SILENT UZI
+	} else if (group5==3){
+		setchar(pplayer+0x604,   0x1B);//2HAND UZI
+	}
+} else if (weaponPlace == 6) {
+	if (pressslow & CTRL_DOWN) {
+		group6--;
+	} else if (pressslow & CTRL_UP) {
+		group6++;
+	}
+	if (group6 > 1) {
+		group6=0;
+	} else if (group6 < 0) {
+		group6=1;
+	}
+	setchar(pplayer+0xCB8,   0x06);	
+	if (group6==0){
+		setchar(pplayer+0x620,   0x1C);//2HAND UZI2
+	} else if (group6==1){
+		setchar(pplayer+0x620,   0x1D);//AK47
+	}
+} else if (weaponPlace == 7) {
+	if (pressslow & CTRL_DOWN) {
+		group7--;
+	} else if (pressslow & CTRL_UP) {
+		group7++;
+	}
+	if (group7 > 3) {
+		group7=0;
+	} else if (group7 < 0) {
+		group7=3;
+	}
+	setchar(pplayer+0xCB8,   0x07);	
+	if (group7==0){
+		setchar(pplayer+0x63C,   0x20);//ROCKET LAUNCHER
+	}else if (group7==1){
+		setchar(pplayer+0x63C,   0x21);//FLAMETHROWER
+	} else if (group7==2){
+		setchar(pplayer+0x63C,   0x22);//MINIGUN2
+	} else if (group7==3){
+		setchar(pplayer+0x63C,   0x23);//CHAINGUN
+	}
+} else if (weaponPlace == 8) {
+	if (pressslow & CTRL_DOWN) {
+		group8--;
+	} else if (pressslow & CTRL_UP) {
+		group8++;
+	}
+	if (group8 > 1) {
+		group8=0;
+	} else if (group8 < 0) {
+		group8=1;
+	}
+	setchar(pplayer+0xCB8,   0x08);
+	if (group8==0){
+		setchar(pplayer+0x658,   0x1E);//SNIPER
+	} else if (group8==1){
+		setchar(pplayer+0x658,   0x1F);//SNIPER2
+	}
+} else if (weaponPlace == 9) {
+	if (pressslow & CTRL_DOWN) {
+		group9--;
+	} else if (pressslow & CTRL_UP) {
+		group9++;
+	}
+	if (group9 > 2) {
+		group9=0;
+	} else if (group9 < 0) {
+		group9=2;
+	}
+	setchar(pplayer+0xCB8,   0x09);
+	if (group9==0){
+		setchar(pplayer+0x674,   0x27);//BINOCULARS
+	} else if (group9==1){
+		setchar(pplayer+0x674,   0x26);//CAMERA
+	} else if (group9==2){
+		setchar(pplayer+0x674,   0x24);//REMOTE SWITCH
+	}
+}
+
+#cheat Proximity Mines
+//ID: 18627
+//Score: 172
+//Author: xFinch713x
+//Category: Weapons
+//Description: HIDDEN WEAPON
+//
+//Once activated, it will give you proximity mines, in the place of your grenades.  Big explosions if you put multiple down
+//
+//thanks to Sousanator
+//Image: none
+//Time: 10/11/2006 17:16:50
+//Working: Yes
+setchar(pplayer+0x5B0,   0x0E);
+setchar(pplayer+0xCB8,   0x02);
+setint(pplayer+0x5bc,  0x00ffffff);
+off();
+
+#cheat All Weapons (33)
+//ID: 18617
+//Score: 239
+//Author: Sousanator
+//Category: Weapons
+//Description: Use Left/Right to scroll through all the weapons
+//
+//thanks parm since i was missing 2 before
+//includes infinite ammo, thanks to waterbottle
+//
+//now all 33 weapons, plus easy scrolling!
+//
+//just camera not included
+//Image: none
+//Time: 09/11/2006 01:43:20
+//Working: Yes
+	//By Sousanator
+	//credit to: vettefan/edisoncarter for run once varible thing,   and Waterbottle for weapon locations and infinite ammo
+	setint(pplayer+0x5d8,  0x00ffffff);
+	setint(pplayer+0x5f4,  0x00ffffff);
+	setint(pplayer+0x610,  0x00ffffff);
+	setint(pplayer+0x5bc,  0x00ffffff);
+	setint(pplayer+0x62c,  0x00ffffff);
+	setint(pplayer+0x648,  0x00ffffff);
+	setint(pplayer+0x664,  0x00ffffff);
+
+	static weaponHolding;
+
+	if (pressslow & CTRL_LEFT) {
+		weaponHolding--;
+	} else if (pressslow & CTRL_RIGHT) {
+		weaponHolding++;
+	}
+	if (weaponHolding > 35) {
+		weaponHolding=0;
+	} else if (weaponHolding < 0) {
+		weaponHolding=35;
+	}
+	
+	if (weaponHolding==0){
+		setchar(pplayer+0x578,   0x00);
+		setchar(pplayer+0xCB8,   0x00);//FIST
+	} else if (weaponHolding==1){
+		setchar(pplayer+0x578,   0x01);//BRASS KNUCKLES
+		setchar(pplayer+0xCB8,   0x00);
+	} else if (weaponHolding==2){
+		setchar(pplayer+0x594,   0x02);//LITTLE KNIFE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==3){
+		setchar(pplayer+0x594,   0x03);//GOLF CLUB
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==4){
+		setchar(pplayer+0x594,   0x04);//KNIGHT STICK
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==5){
+		setchar(pplayer+0x594,   0x05);//KNIFE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==6){
+		setchar(pplayer+0x594,   0x06);//BAT
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==7){
+		setchar(pplayer+0x594,   0x07);//AXE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==8){
+		setchar(pplayer+0x594,   0x08);//CANE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==9){
+		setchar(pplayer+0x594,   0x09);//MECHETTY
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==10){
+		setchar(pplayer+0x594,   0x0A);//KATANA
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==11){
+		setchar(pplayer+0x594,   0x0B);//SAW
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==12){
+		setchar(pplayer+0x5B0,   0x0C);//GRENADE
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==13){
+		setchar(pplayer+0x5B0,   0x0D);//GRENADE2
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==14){
+		setchar(pplayer+0x5B0,   0x0E);//LANDMINES
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==15){
+		setchar(pplayer+0x5B0,   0x10);//TEAR GAS
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==16){
+		setchar(pplayer+0x5B0,   0x11);//MOLTOV
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==17){
+		setchar(pplayer+0x5CC,   0x13);//PISTOL
+		setchar(pplayer+0xCB8,   0x03);
+	} else if (weaponHolding==18){
+		setchar(pplayer+0x5CC,   0x14);//HANDGUN
+		setchar(pplayer+0xCB8,   0x03);
+	} else if (weaponHolding==19){
+		setchar(pplayer+0x5E8,   0x15);//SHOTGUN
+		setchar(pplayer+0xCB8,   0x04);    
+	} else if (weaponHolding==20){
+		setchar(pplayer+0x5E8,   0x16);//SHOTGUN2
+		setchar(pplayer+0xCB8,   0x04);
+	} else if (weaponHolding==21){
+		setchar(pplayer+0x5E8,   0x17);//SHOTGUN3
+		setchar(pplayer+0xCB8,   0x04);
+	} else if (weaponHolding==22){
+		setchar(pplayer+0x604,   0x18);//UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==23){
+		setchar(pplayer+0x604,   0x19);//UZI2
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==24){
+		setchar(pplayer+0x604,   0x1A);//SILENT UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==25){
+		setchar(pplayer+0x604,   0x1B);//2HAND UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==26){
+		setchar(pplayer+0x620,   0x1C);//2HAND UZI2
+		setchar(pplayer+0xCB8,   0x06);
+	} else if (weaponHolding==27){
+		setchar(pplayer+0x620,   0x1D);//AK47
+		setchar(pplayer+0xCB8,   0x06);
+	} else if (weaponHolding==28){
+		setchar(pplayer+0x658,   0x1E);//SNIPER
+		setchar(pplayer+0xCB8,   0x08);
+	} else if (weaponHolding==29){
+		setchar(pplayer+0x658,   0x1F);//SNIPER2
+		setchar(pplayer+0xCB8,   0x08);
+	} else if (weaponHolding==30){
+		setchar(pplayer+0x63C,   0x20);//ROCKET LAUNCHER
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==31){
+		setchar(pplayer+0x63C,   0x21);//FLAMETHROWER
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==32){
+		setchar(pplayer+0x63C,   0x22);//MINIGUN2
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==33){
+		setchar(pplayer+0x63C,   0x23);//CHAINGUN
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==34){
+		//setchar(pplayer+0x578,   0x26);//CAMERA(not working)
+		setchar(pplayer+0xCB8,   0x00);	
+	} else if (weaponHolding==35){
+		setchar(pplayer+0xCB8,   0x09);//REMOTE SWITCH
+	}
+
+#cheat Toggle Weapons
+//ID: 18615
+//Score: 83
+//Author: parm
+//Category: Weapons
+//Description: Press R+Up to toggle heavy weapons and R+Down to toggle melee weapons.
+//
+//Thanks to DDM and Waterbottle.
+//Image: none
+//Time: 08/11/2006 23:49:18
+//Working: Yes
+// by parm, thanks to DDM and Waterbottle
+abc=getchar(pplayer+0x63c);
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x21)
+{
+setchar(pplayer+0x63C, 0x22);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M', 'i', 'n', 'i', 'g', 'u', 'n', ' ', '2');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x22)
+{
+setchar(pplayer+0x63C, 0x23);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C', 'h', 'a', 'i', 'n', 'g', 'u', 'n');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x23)
+{
+setchar(pplayer+0x63C, 0x20);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'R', 'o', 'c', 'k', 'e', 't', ' ', 'L', 'a', 'u', 'n', 'c', 'h', 'e', 'r');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x20)
+{
+setchar(pplayer+0x63C, 0x21);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'F', 'l', 'a', 'm', 'e', 't', 'h', 'r', 'o', 'w', 'e', 'r');
+}
+ab=getchar(pplayer+0x594);
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x03)
+{
+setchar(pplayer+0x594, 0x04);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'N', 'i', 'g', 'h', 't', ' ', 'S', 't', 'i', 'c', 'k');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x04)
+{
+setchar(pplayer+0x594, 0x05);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M', 'i', 'n', 'i', ' ', 'P', 'i', 'r', 'a', 't', 'e', ' ', 'S', 'w', 'o', 'r', 'd');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x05)
+{
+setchar(pplayer+0x594, 0x06);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'B', 'a', 't');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x06)
+{
+setchar(pplayer+0x594, 0x07);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'H', 'a', 'n', 'd', ' ', 'A', 'x', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x07)
+{
+setchar(pplayer+0x594, 0x08);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C', 'a', 'n', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x08)
+{
+setchar(pplayer+0x594, 0x09);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'K, ', 'n', 'i', 'f', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x09)
+{
+setchar(pplayer+0x594, 0x03);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'G', 'o', 'l', 'f', ' ', 'C', 'l', 'u', 'b');
+}
+
+#cheat Always have python (equalizer)
+//ID: 18585
+//Score: 93
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on you will always have the python pistol (AKA equalizer).
+//
+//EDITED BY: psphacker108 on 07/11/06 04:44:51
+//Image: none
+//Time: 07/11/2006 00:12:54
+//Working: Yes
+setchar(pplayer+0x5CC,  0x14);
+
+#cheat Always have pirate sword
+//ID: 18584
+//Score: 103
+//Author: parm
+//Category: Weapons
+//Description: ARR Matey!
+//
+//EDITED BY: psphacker108 on 07/11/06 04:39:54
+//Image: none
+//Time: 06/11/2006 23:53:46
+//Working: Yes
+//by parm
+//ARRR matey:
+setchar(pplayer+0x594,  0x05);
+
+#cheat Always have a knife
+//ID: 18583
+//Score: 69
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on you will always have a knife.
+//
+//EDITED BY: psphacker108 on 07/11/06 04:43:14
+//Image: none
+//Time: 06/11/2006 22:42:51
+//Working: Yes
+// by parm
+setchar(pplayer+0x594,  0x09);
+
+#cheat Rapid Fire for all Weapons
+//ID: 19237
+//Score: 75
+//Author: psphacker108
+//Category: Weapons
+//Description: Rapid Fire for all weapons! check the video, it lock's the fire right infront of you, Don't try to drive a vehicle it will get you stuck, Like if you use a shotgun it will fire before you can get the gun up! thanks to  Swikity for the hex. all credit to him.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-8.gif
+//Time: 09/01/2007 01:46:43
+//Working: Yes
+setint(pplayer + 0x000008B4,  12); 
+#off
+
+#cheat ALL Explosives are Remote Explosives
+//ID: 19053
+//Score: 69
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any rocket or thrown explosive will stay unarmed until you hit X.
+//Image: none
+//Time: 16/12/2006 21:25:34
+//Working: Yes
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C))
+{
+setchar(pexp + 0x0C, 0x0);
+det = 1;
+}
+if(det && buttons & CTRL_CROSS)
+{
+setchar(pexp + 0x0C, 0x1);
+det = 0;
+}
+
+#cheat RAPID ROCKETS
+//ID: 18915
+//Score: 137
+//Author: lilfrk12006
+//Category: Weapons
+//Description: this will give you RAPID fire rocket launcher the faster you push O the faster it shoots
+//
+//EDIT: You can hold O and it fires like a machine gun!
+//Image: none
+//Time: 26/11/2006 00:28:35
+//Working: Yes
+//BY: LILFRK12006
+setchar(pplayer + 0x0000064D, 11);
+
+#cheat Thrown Objects turn into Rockets
+//ID: 18844
+//Score: 78
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any weapons thrown (or shot through the rocket launcher) will turn into a rocket. It actually shows the sound and explosion!
+//Image: none
+//Time: 23/11/2006 02:00:50
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb, 0x12);
+}
+
+#cheat Thrown Objects turn into Molotov Cocktails
+//ID: 18843
+//Score: 66
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Anything thrown (or shot through the rocket launcher) will turn into a Molotov Cocktail.
+//Image: none
+//Time: 23/11/2006 01:59:34
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb, 0x11);
+}
+
+

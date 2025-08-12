@@ -1,0 +1,560 @@
+#cheat Mission Select
+//ID: 19456
+//Score: 13
+//Author: vettefan88
+//Category: Misc
+//Description: Enter a taxi and start the taxi driver mission and you'll start the selected mission instead!
+//
+//Hold R and press Left and Right to cycle through the mission #'s.
+//the current mission # will be displayed where your money is.
+//
+//the default # is 20 for taxi driver.
+//
+//the story missions start at #42 and go up form there.
+//
+//ENJOY!
+//
+//EDITED BY: Durka Durka Mahn on 19/03/07 13:41:21
+//Image: none
+//Time: 19/03/2007 03:36:15
+//Working: Yes
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+money = getint(0x08bde55c);
+}
+setint(0x08bde55c, money, money);
+if (buttons & CTRL_RTRIGGER)
+{
+setint(0x08bde55c, mission, mission);
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+}
+setchar(0x9F932D8, mission);
+
+#cheat Hikiwara Cholo Sabre
+//ID: 19412
+//Score: 32
+//Author: jumpman06
+//Category: Vehicle
+//Description: Kinda PMG'd car, in blue this time.. press right to change back to blue if it goes to some other color, Neon and drop by Vettefan88
+//
+//EDITED BY: psphacker108 on 26/02/07 16:18:09
+//Image: none
+//Time: 25/02/2007 23:53:46
+//Working: Yes
+if (buttons & CTRL_RIGHT)
+{
+setchar(0x9569b94,  0,  0x0,  0xFF);
+setchar(pcar+0x224, 0, 0x0, 0xff);
+setchar(pcar+0x228, 0, 0x0, 0xff);
+1 = 0;
+2 = 175;
+3 = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 1, 2, 3);}
+}
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat Multi-color Modpack
+//ID: 19411
+//Score: 39
+//Author: jumpman06
+//Category: Vehicle
+//Description: use up left down and right to change colors on car for CARS only, Neon from Vettefan88
+//
+//EDITED BY: psphacker108 on 26/02/07 16:18:14
+//Image: none
+//Time: 25/02/2007 23:49:58
+//Working: Yes
+if (buttons & CTRL_UP)
+{
+setchar(0x9569b94,  0xFF,  0,  0);
+setchar(pcar+0x224, 0xFF, 0, 0);
+setchar(pcar+0x228, 0xFF, 0, 0);
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_LEFT)
+{
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x66, 0xff, 0x00);
+setchar(pcar+0x228, 0x66, 0xff, 0x00);
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_RIGHT)
+{
+setchar(0x9569b94,  0,  0xAF,  0xFF);
+setchar(pcar+0x224, 0, 0xaf, 0xff);
+setchar(pcar+0x228, 0, 0xaf, 0xff);
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_DOWN)
+{
+setchar(0x9569b94,  0,  0,  0);
+setchar(pcar+0x224, 0, 0, 0);
+setchar(pcar+0x228, 0, 0, 0);
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+
+
+#cheat Yellow Bike Neons
+//ID: 19406
+//Score: 40
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will put a yellow neon glow effect under your bike.
+//Image: http://img156.imageshack.us/img156/5146/screen2jr2.png
+//Time: 24/02/2007 18:10:08
+//Working: Yes
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat White Bike Neons
+//ID: 19405
+//Score: 33
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will put a white neon glow effect under your bike.
+//Image: none
+//Time: 24/02/2007 18:09:36
+//Working: Yes
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Purple Bike Neons
+//ID: 19404
+//Score: 35
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will put a purple neon glow effect under your bike.
+//Image: none
+//Time: 24/02/2007 18:09:03
+//Working: Yes
+R = 80;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Green Bike Neons
+//ID: 19403
+//Score: 39
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will put a green neon glow effect under your bike.
+//Image: http://img338.imageshack.us/img338/8913/screen3mz4.png
+//Time: 24/02/2007 18:08:32
+//Working: Yes
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Blue Bike Neons
+//ID: 19402
+//Score: 48
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a blue neon glow effect under your bike.
+//Image: http://img297.imageshack.us/img297/6935/video2fu8.gif
+//Time: 24/02/2007 18:08:04
+//Working: Yes
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Red Bike Neons
+//ID: 19401
+//Score: 39
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a red neon glow effect under your bike.
+//Image: http://img338.imageshack.us/img338/2933/screen1an3.png
+//Time: 24/02/2007 18:07:29
+//Working: Yes
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Yellow Car Neons
+//ID: 19400
+//Score: 35
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a yell neon glow effect under your car.
+//Image: none
+//Time: 24/02/2007 18:06:47
+//Working: Yes
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat White Car Neons
+//ID: 19399
+//Score: 33
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a white neon glow effect under your car
+//Image: http://img134.imageshack.us/img134/8816/video1rp1.gif
+//Time: 24/02/2007 18:02:17
+//Working: Yes
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Purple Car Neons
+//ID: 19398
+//Score: 35
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a purple neon glow effect under your car.
+//Image: http://img412.imageshack.us/img412/286/screen2sh5.png
+//Time: 24/02/2007 18:01:38
+//Working: Yes
+R = 255;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Green Car Neons
+//ID: 19397
+//Score: 39
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a green neon glow effect under your car.
+//Image: none
+//Time: 24/02/2007 18:01:05
+//Working: Yes
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Blue Car Neons
+//ID: 19396
+//Score: 46
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a Blue neon glow effect under your car.
+//Image: http://img401.imageshack.us/img401/2483/screen3cc0.png
+//Time: 24/02/2007 18:00:13
+//Working: Yes
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Red Car Neons
+//ID: 19395
+//Score: 40
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will put a red neon glow effect under your car.
+//Image: http://img401.imageshack.us/img401/764/screen1pg6.png
+//Time: 24/02/2007 17:59:14
+//Working: Yes
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Monster Quad. *first ever pmg car*
+//ID: 19040
+//Score: 167
+//Author: vettefan88
+//Category: Pimp My Garage
+//Description: This is the first ever pmg'd car to be released for VCS. and it may be the only one for quite some time. it takes the quad, and gives it a large suspension lift, and some larger tires. It also has many performance enhancing tweaks.
+//
+//enjoy...
+//
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/monster%20Quad1.gif
+//Time: 14/12/2006 21:00:36
+//Working: Yes
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+
+#cheat Spinners
+//ID: 18692
+//Score: 206
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever your in a vehicle the rims will spin non-stop giving the vehicle spinners.
+//
+//EDITED BY: edisoncarter on 12/11/06 20:10:18
+//Image: none
+//Time: 12/11/2006 19:35:26
+//Working: Yes
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644, spin, spin, spin, spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+
+#cheat Wave Size/Speed Modifier
+//ID: 18623
+//Score: 166
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to mess with the wave height and speed. going into positive values will increase the waves speed, while negative values increase the waves height, you can choose between one of the two wave modifications.
+//
+//EDITED BY: Waterbottle on 10/11
+//Image: none
+//Time: 10/11/2006 03:17:02
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0, Wave);
+
+#cheat Water Height Modifier
+//ID: 18619
+//Score: 230
+//Author: vettefan88
+//Category: Environment
+//Description: Exactly as the title says. This cheat will allow you to modify the height of the water in VCS by pressing left and right!!
+//
+//there is currently no water under the land, but when out in the water you can raise it up over the bridges, or down below rocks
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/water.gif
+//Time: 09/11/2006 20:23:14
+//Working: Yes
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Weather Modifier
+//ID: 18600
+//Score: 167
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to modify the weather in Vice City Stories.
+//it automatically starts  off on sunny weather, and the higher you go in the weather, the weirder it gets...
+//Image: none
+//Time: 08/11/2006 18:08:48
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00, weather);
+setchar(0x8bb3df8, weather);
+setchar(0x8bb458c, weather);
+
+#cheat Teleport to Custom Marker
+//ID: 18591
+//Score: 238
+//Author: vettefan88
+//Category: Teleport
+//Description: Press L TRIGGER, and SELECT to teleport to the location fo the custom marker you placed on your map.
+//
+//updated to teleport your car aswell.
+//Image: none
+//Time: 07/11/2006 22:24:12
+//Working: Yes
+ if ((press & CTRL_SELECT)&&(press & CTRL_LTRIGGER) && getchar(0x9a63412) == 1)
+{
+setfloat(pplayer + 0x30,  getfloat(0x09a63428),  getfloat(0x09a6342c),  -500);
+setfloat(pcar + 0x30,  getfloat(0x09a63428),  getfloat(0x09a6342c),  -500);
+} 
+
+#cheat Random Car Color
+//ID: 18551
+//Score: 117
+//Author: vettefan88
+//Category: Vehicle
+//Description: Every time you enter this cheat your car will get a  completely random color. the chances of seeing the same color twice are 1/1000000!
+//
+//EDITED BY: psphacker108 on 06/11/06 05:56:01
+//Image: none
+//Time: 05/11/2006 18:05:01
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+off()
+
+#cheat Disco Vehicle
+//ID: 18550
+//Score: 188
+//Author: vettefan88
+//Category: Vehicle
+//Description: Cars Color will rapidly change colors giving off a "disco" feel. or to some it may be a "seizure" feel.
+//there a literally millions of possible color combinations that can come from this code.
+//Image: none
+//Time: 05/11/2006 18:03:00
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+
+#cheat Light Cars
+//ID: 18547
+//Score: 108
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make your car really light, but it will still stay on the ground, it just won't be able to crash through anything.
+//use this to reset the car back to normal after using the heavy cars cheat.
+//Image: none
+//Time: 05/11/2006 17:43:10
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)/1000, getfloat(pcar+0xD4)/1000);
+off()
+
+#cheat Heavy Cars
+//ID: 18546
+//Score: 115
+//Author: vettefan88
+//Category: Vehicle
+//Description: Get into a car and activate this cheat.
+//but only activate it ONCE, as it may crash the game if you do it too many times.
+//it will make your car heavy based on it's current weight, letting the vehicle attain it's regular handling attributes.
+//Image: none
+//Time: 05/11/2006 17:40:18
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000, getfloat(pcar+0xD4)*1000);
+off()
+
+#cheat Lamborghini Doors
+//ID: 18438
+//Score: 424
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This gives your car Lamborghini verticle Doors.
+//
+//Ported from vettefan88's version for LCS.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/lambo.jpg
+//Time: 02/11/2006 22:22:22
+//Working: Yes
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+#cheat Indestructable Vehicle
+//ID: 18437
+//Score: 329
+//Author: vettefan88
+//Category: Vehicle
+//Description: any car your in will not attain any physical damage, or engine damage.
+//Image: none
+//Time: 02/11/2006 20:48:45
+//Working: Yes
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+

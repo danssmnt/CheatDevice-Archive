@@ -1,0 +1,661 @@
+#cheat Money Counter is a Speed'O'Meter v. 2
+//ID: 18666
+//Score: 181
+//Author: Waterbottle
+//Category: Misc
+//Description: The money counter will show how fast you are driving.
+//$ sign and zeros are removed from from the speed'o'meter. (found by edison)
+//You get the money you had back when you leave the vehicle.
+//Image: none
+//Time: 11/11/2006 18:17:41
+//Working: Yes
+static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+  wasin = true;
+  speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+  setint(0x08bde55c, speed, speed);
+  setchar(0x8BAEDB8, '%', 'd', 0);
+  setchar(0x8BAEDC0, '%', 'd', 0);
+}
+else
+{  if(wasin)
+  {
+  setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+  setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+  setint(0x08bde55c, money, money);
+  wasin = false;
+  }
+  money = getint(0x08bde560);
+}
+#off
+setint(0x08bde55c, money, money);
+setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+
+#cheat 999,999,999$
+//ID: 18439
+//Score: 252
+//Author: Waterbottle
+//Category: Misc
+//Description: Gives you 999,999,999$
+//Image: none
+//Time: 02/11/2006 22:51:08
+//Working: Yes
+setint(0x08bde55c, 999999999, 999999999);
+
+#cheat Mile High Club
+//ID: 19262
+//Score: 46
+//Author: chad1614
+//Category: Misc
+//Description: check out the pic 
+//This is a work in progress its my first creation and its completely original i dont know how to make cars spawn to it so there isnt really nothing in it but its cool to jump off and its actually a mile high (not exactly it's 5282ft) but big deal if anyone knows how to make cars spawn to it let me know gaxtoxca@aim.com or hit me up on aim gaxtoxca and i put a different code to teleport to it so you wouldnt have to drive or fly to it again and the teleport deosn't always work but it should work if u do it like three times and im lookin forward to making an update!
+//Image: http://i122.photobucket.com/albums/o245/chad1614/screen3.jpg
+//Time: 13/01/2007 06:14:06
+//Working: Yes
+moveto(-1423.42, -1744.05, 5280.05);  object(0x1CB2, 0, 270, 56);
+move(3.54, -5.21, 0.00);  object(0x1CB2, 0, 270, 56);
+move(3.49, -5.13, 0.00);  object(0x1CB2, 0, 270, 56);
+move(3.43, -5.04, 0.00);  object(0x1CB2, 0, 270, 56);
+move(3.43, -5.04, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-11.90, -8.10, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.43, 5.04, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.49, 5.13, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.49, 5.13, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.49, 5.13, 0.00);  object(0x1CB2, 0, 270, 56);
+move(2.07, -28.47, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.43, 5.04, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.54, 5.21, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.49, 5.13, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-3.43, 5.04, 0.00);  object(0x1CB2, 0, 270, 56);
+move(-0.89, -5.45, 0.00);  object(0x1CB2, 270, 270, 56);
+move(8.21, -12.07, 0.00);  object(0x1CB2, 270, 270, 56);
+move(4.79, 3.26, 0.00);  object(0x1CB2, 270, 270, 56);
+move(-8.26, 12.16, 0.00);  object(0x1CB2, 270, 270, 56);
+move(4.88, 3.32, 0.00);  object(0x1CB2, 270, 270, 56);
+move(8.26, -12.16, 0.00);  object(0x1CB2, 270, 270, 56);
+move(4.71, 3.21, 0.00);  object(0x1CB2, 270, 270, 56);
+move(-8.21, 12.07, 0.00);  object(0x1CB2, 270, 270, 56);
+move(4.79, 3.26, 0.00);  object(0x1CB2, 270, 270, 56);
+move(8.26, -12.16, 0.00);  object(0x1CB2, 270, 270, 56);
+move(5.12, 3.49, 0.00);  object(0x1CB2, 270, 270, 56);
+move(-8.26, 12.16, 0.00);  object(0x1CB2, 270, 270, 56);
+move(4.96, 3.38, 0.00);  object(0x1CB2, 270, 270, 56);
+move(10.51, -15.46, 0.00);  object(0x1CB2, 270, 270, 56);
+move(-5.68, -10.16, 3.30);  object(0x1CB2, 180, 180, 56);
+move(-11.90, -8.10, 0.00);  object(0x1CB2, 180, 180, 56);
+move(-5.62, -3.83, 0.00);  object(0x1CB2, 180, 180, 56);
+move(-10.01, 2.10, 0.00);  object(0x1CB2, 180, 180, 326);
+move(-7.95, 11.69, 0.00);  object(0x1CB2, 180, 180, 326);
+move(-1.34, 1.97, 0.00);  object(0x1CB2, 180, 180, 326);
+move(1.71, 9.97, 0.00);  object(0x1CB2, 180, 180, 54);
+move(4.26, 3.25, 0.00);  object(0x1CB2, 180, 180, 56);
+move(19.59, 12.97, 0.00);  object(0x1CB2, 180, 180, 56);
+move(-4.50, -2.98, 0.00);  object(0x1CB2, 180, 180, 56);
+move(14.62, 0.93, 0.00);  object(0x1CB2, 180, 180, 326);
+move(7.28, -10.86, 0.00);  object(0x1CB2, 180, 180, 327);
+move(1.91, -2.92, 0.00);  object(0x1CB2, 180, 180, 327);
+move(-1.72, -3.39, -3.30);  object(0x1CB2, 180, 90, 327);
+move(-0.97, 1.48, 6.30);  object(0x1CB2, 180, 90, 327);
+move(-5.10, -3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.10, -3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.18, -3.40, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.18, -3.40, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.10, -3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-4.52, -2.96, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-7.87, 12.01, 0.11);  object(0x1CB2, 180, 90, 327);
+move(5.10, 3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(5.18, 3.40, 0.00);  object(0x1CB2, 180, 90, 327);
+move(5.10, 3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(5.10, 3.34, 0.00);  object(0x1CB2, 180, 90, 327);
+move(5.02, 3.29, 0.00);  object(0x1CB2, 180, 90, 327);
+move(4.77, 3.12, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-1.32, 2.02, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.18, -3.40, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-4.68, -3.07, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.27, -3.45, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.27, -3.45, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-4.85, -3.18, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-5.60, -3.67, 0.00);  object(0x1CB2, 180, 90, 327);
+move(4.37, -6.66, 0.00);  object(0x1CB2, 180, 90, 327);
+move(4.91, -7.43, 0.00);  object(0x1CB2, 180, 90, 327);
+move(-2.44, -1.57, 3.30);  object(0x1CB2, 180, 0, 327);
+move(12.45, 8.00, 0.00);  object(0x1CB2, 180, 0, 327);
+move(0.00, 0.00, 0.00);  object(0x1CB2, 180, 0, 327);
+move(-10.25, 2.08, 0.00);  object(0x1CB2, 180, 0, 238);
+move(5.26, -10.23, 3.40);  object(0x1CB2, 180, 270, 238);
+move(2.07, 1.57, 0.00);  object(0x1CB2, 180, 270, 238);
+move(-3.35, 5.24, 0.00);  object(0x1CB2, 180, 270, 238);
+move(-1.27, 1.67, 0.00);  object(0x1CB2, 180, 270, 238);
+move(-1.99, -1.51, 0.00);  object(0x1CB2, 180, 270, 238);
+move(1.27, -1.67, 0.00);  object(0x1CB2, 180, 270, 238);
+move(6.39, -16.19, -6.60);  object(0x1CB2, 90, 270, 238);
+move(6.27, 8.59, -2.80);  object(0x1CB2, 90, 245, 143);
+move(10.90, 8.28, -3.00);  object(0x1CB2, 90, 270, 143);
+move(7.64, 5.80, -0.50);  object(0x1CB2, 90, 270, 143);
+move(3.91, -5.14, 0.20);  object(0x1CB2, 90, 270, 143);
+move(-7.72, -5.86, 0.40);  object(0x1CB2, 90, 270, 143);
+move(-11.31, -8.19, 3.10);  object(0x1CB2, 90, 245, 143);
+move(-14.59, -2.05, 5.21);  object(0x1CA9, 0, 180, 58);
+move(3.52, -5.86, 0.00);  object(0x1CA9, 0, 180, 58);
+move(11.56, 4.09, -1.80);  object(0x1CA9, 0, 205, 328);
+move(4.56, 3.09, -2.60);  object(0x1CA9, 0, 205, 323);
+move(5.93, 4.44, -1.50);  object(0x1CA9, 0, 180, 328);
+move(6.77, 4.81, 0.00);  object(0x1CA9, 0, 180, 318);
+move(5.61, 4.20, 0.00);  object(0x1CA9, 0, 180, 323);
+move(0.91, 6.30, 0.00);  object(0x1CA9, 0, 180, 233);
+move(-2.04, 2.72, 0.00);  object(0x1CA9, 0, 180, 233);
+move(-35.67, -10.44, 13.11);  object(0x1CB4, 180, 180, 233);
+move(5.82, 39.38, -15.32);  object(0x1CE5, 180, 90, 166);
+move(-8.38, -48.47, -0.60);  object(0x1CEA, 120, 90, 0);
+move(-5.59, 8.04, 0.20);  object(0x1CEB, 45, 265, 21);
+
+teleport(-1437.93,  -1770.99,  5282);
+
+#cheat Super Shot/Super Boogie Walk
+//ID: 19233
+//Score: 52
+//Author: Swikity
+//Category: Misc
+//Description: Allows you to have automatic fire with only one button push.
+//Also allows you to do the Super Boogie Walk.
+//
+//Video only shows the Super Boogie Walk during like, the last 1/2 second.
+//
+//Instructions:
+//1. Activate the cheat.
+//2. Press O once while weapon is selected to activate super fire. Weapon will fire until it needs to reload.
+//3. When you get bored with not being able to move, deactivate the cheat.
+//4. Activate part 2 of this cheat (Super Fire Will Not Work)
+//5. Hold/Press [] to do the Super Boogie Walk
+//6. Deactivate the cheat to stop.
+//
+//EDITED BY: psphacker108 on 09/01/07 00:59:04
+//Image: http://i42.photobucket.com/albums/e303/Swikity/video3-1.gif
+//Time: 09/01/2007 00:20:26
+//Working: Yes
+//Instructions:
+//1. Activate the cheat.
+//2. Press O once while weapon is selected to activate super fire. Weapon will fire until it needs to reload.
+//3. When you get bored with not being able to move, deactivate the cheat and then super jump for a bit.
+//4. The original Super Boogie Walk cheat. (Super Fire Will Not Work)
+//5. Hold/Press [] to do the Super Boogie Walk
+//6. Deactivate the cheat to stop.
+setint(pplayer + 0x000001C8, 20);
+setint(pplayer + 0x000001C8, 20);
+
+
+
+#cheat Ultimate Car Launcher
+//ID: 19231
+//Score: 79
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: The Ultimate Car Launcher! Park a car atop the platform over the 4 small circles, then drop to the bottom and shoot one of the barrels on the very bottom. BOOM the car is gone!
+//Image: http://img183.imageshack.us/img183/9095/video1xf1.gif
+//Time: 08/01/2007 01:47:14
+//Working: Yes
+moveto(-767.14, -1206.59, 13.16);  object(0x1CB2, 270, 65, 66);
+move(5.63, -12.71, 3.10);  object(0x1CB2, 270, 90, 66);
+move(3.00, -6.77, -5.90);  object(0x1CB2, 270, 0, 66);
+move(-1.61, 3.88, 0.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 0.90);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 0.80);  object(0x01C2, 0, 0, 66);
+move(0.32, -0.73, 0.00);  object(0x01C2, 0, 0, 66);
+move(-0.84, -0.37, 0.00);  object(0x01C2, 0, 0, 66);
+move(-0.32, 0.73, 0.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.50);  object(0x01C2, 0, 0, 66);
+move(0.32, -0.73, 4.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.80);  object(0x01C2, 0, 0, 66);
+move(0.86, 0.49, 4.30);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.90);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+teleport(-770.87, -1198.80, 11.08);
+
+#cheat Grapple Gun
+//ID: 19027
+//Score: 105
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This cheat turns any aimable weapon into a grapplegun! Hold R and X to move towards the target. Hold L along with the other two to increase your grappling speed!
+//Image: http://img171.imageshack.us/img171/1659/video1fq6.gif
+//Time: 13/12/2006 00:28:22
+//Working: Yes
+static grapplespeed;
+aimx = getfloat(pplayer + 0x30) - getfloat(0x08ba1d50);
+aimy = getfloat(pplayer + 0x34) - getfloat(0x08ba1d54);
+aimz = getfloat(pplayer + 0x38) - getfloat(0x08ba1d58); 
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CROSS)
+{
+    setshort(pplayer + 0x01c8,  0x1020);
+    setfloat(pplayer + 0x0140,  -aimx * grapplespeed);
+    setfloat(pplayer + 0x0144,  -aimy * grapplespeed);
+    setfloat(pplayer + 0x0148,  -aimz * grapplespeed);
+}
+if(buttons & CTRL_LTRIGGER)
+{
+grapplespeed = 0.01;
+}
+else
+{
+grapplespeed = 0.005;
+}
+
+#cheat inside lookout point on rooftop [tested]
+//ID: 18956
+//Score: 47
+//Author: jumpman06
+//Category: Misc
+//Description: in the mission where you and lance jump off the rooftop past that signpost theres a lookout point ontop this is it! .:.::Random::.:.
+//Image: none
+//Time: 03/12/2006 18:41:48
+//Working: Yes
+//jack hikiwara 
+//to exit use step thru walls!
+teleport(-872.58, -1396.98, 34.15);
+
+#cheat Object repellant Vic! (Kinda) v0.1
+//ID: 18836
+//Score: 50
+//Author: Haddenjms
+//Category: Misc
+//Description: Back up into an object while in a patriot and your patiot will either do one of the following, 2 of the following, or all 3.
+//
+//(HUGE CREDIT TO DDM AND EC.)
+//
+//~Climb up (light pole)
+//~Get backward rocket boost
+//~Or go flying into the air
+//Image: none
+//Time: 22/11/2006 16:01:21
+//Working: Yes
+//Smack into something to be repelled
+
+PColl = getint(pplayer+0x150);
+
+CarColl = getint(pcar+0x150);
+
+boost = -5;
+
+thrust = boost * 0.00333;
+
+if(PColl)
+
+{
+
+setfloat(pplayer + 0x0140,   getfloat(pplayer + 0x0140) + getfloat(pplayer + 0x0010) * thrust);
+
+setfloat(pplayer + 0x0144,   getfloat(pplayer + 0x0144) + getfloat(pplayer + 0x0014) * thrust);
+
+setfloat(pplayer + 0x0148,   getfloat(pplayer + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+
+setchar(pplayer + 0x1c9,  getchar(pplayer + 0x1c9) | 0x10);
+
+}
+
+if(CarColl)
+
+{
+
+setfloat(pcar + 0x0140,   getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+
+setfloat(pcar + 0x0144,   getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+
+setfloat(pcar + 0x0148,   getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+
+{
+
+setchar(pcar + 0x1c9,  getchar(pcar + 0x1c9) | 0x10);
+
+}
+
+}
+
+#cheat The Evil Box
+//ID: 18721
+//Score: 100
+//Author: Waterbottle
+//Category: Misc
+//Description: Try and stay away from the evil box as long as possible. Touch an object (light post for example) to make the box start chasing you.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/evilbox.gif
+//Time: 15/11/2006 20:59:35
+//Working: Yes
+static state;
+static address;
+static ext;
+static score;
+static topscore;
+if(!state)//get address of a weapon
+{
+  setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', 'n', ' ', 'o' , 'b', 'j', 'e', 'c', 't', ' ', 't' , 'o', ' ', 's', 't', 'a', 'r', 't' , '.', ' ', 'T', 'o', 'p', ' ', 's' , 'c', 'o', 'r', 'e', ':');
+  int = int(topscore);
+  size = 0;
+  if(int == 0) setshort(0x08e90c20, '0', 0); else {
+  for(i = 1; i <= int; i*=10) size+=2;
+  for(i = 0; int > 0; i+=2 )
+  {
+  setshort(0x08e90c20+size-i, '0' + (int % 10));
+  int = int(int/=10);
+  }
+  setshort(0x08e90c20+i, 0);
+  }
+  if(getint(pplayer+0x150)>0x09910000)
+  {
+  address = getint(pplayer+0x150);
+  ext = 1.0;
+  state = 1;
+  oldobj = getshort(address+0x56);
+  oldx = getfloat(address+0x30);
+  oldy = getfloat(address+0x34);
+  oldz = getfloat(address+0x38);
+  }
+}
+if(state == 1)//teleport and set up object
+{
+  rand = (getint(pplayer) + getint(0x08bb3b40)) % 4;
+  setfloat(address + 0x30, getfloat(pplayer+0x30) + 25 * -getfloat(pplayer+4));
+  setfloat(address + 0x34, getfloat(pplayer+0x34) + 25 * -getfloat(pplayer));
+  setfloat(address + 0x38, getfloat(pplayer+0x38));
+  setshort(address + +0x56, 0x0207+rand);
+  state = 2;
+}
+if(state==2)
+{
+dx = getfloat(pplayer+0x30) - getfloat(address+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(address+0x34);
+setfloat(address + 0x30, getfloat(address + 0x30) + dx * 0.05 * ext);
+setfloat(address + 0x34, getfloat(address + 0x34) + dy * 0.05 * ext);
+setfloat(address + 0x38, getfloat(pplayer + 0x38));
+ext+=0.001;
+
+setshort(0x08e90bd8, 1, 'S', 'C', 'O' , 'R', 'E', ':', ' ');
+int = int(score);
+size = 0;
+if(int == 0) setshort(0x08e90be8, '0', 0); else {
+for(i = 1; i <= int; i*=10) size+=2;
+for(i = 0; int > 0; i+=2 )
+{
+setshort(0x08e90be6+size-i, '0' + (int % 10));
+int = int(int/=10);
+}
+setshort(0x08e90be6+i, 0);
+}
+
+score++;
+if(sqrt(dx*dx)<0.75 && sqrt(dy*dy)<0.75)
+{
+setfloat(address + 0x30, 0, 0, 0);
+if(score > topscore) topscore = score;
+  setshort(address+0x56, oldobj);
+  setfloat(address+0x30, oldx);
+  setfloat(address+0x34, oldy);
+  setfloat(address+0x38, oldz);
+address = state = score = oldobj = oldx = oldy = oldz = 0;
+ext = 1.0;
+}
+}
+
+#cheat Get Negative $666
+//ID: 18566
+//Score: 63
+//Author: gytu666
+//Category: Pointless
+//Description: Pointless.
+//Get -$666?!
+//What the...?!!!
+//Image: none
+//Time: 06/11/2006 07:26:05
+//Working: Yes
+setint(0x08bde55c, -666)
+
+#cheat Dud Guns/Boogie Walk
+//ID: 19232
+//Score: 40
+//Author: Swikity
+//Category: Pointless
+//Description: This makes it so you still shoot the gun, but no bullets come out and it doesn't kill people.
+//
+//To do the boogie walk, just press [ ] while walking.
+//
+//EDITED BY: psphacker108 on 09/01/07 01:02:51
+//Image: http://i42.photobucket.com/albums/e303/Swikity/video4-2.gif
+//Time: 09/01/2007 00:00:46
+//Working: Yes
+//To do the boogie walk, just keep pressing [] while you are walking.
+setint(pplayer + 0x000008B4, 1);
+setint(pplayer + 0x000008B4, 1);
+
+#cheat Remove Anything
+//ID: 18679
+//Score: 99
+//Author: Waterbottle
+//Category: Pointless
+//Description: Any ped/vehicle/small object you touch will immediatly disappear.
+//Any larger object/building will become unsolid when you touch it.
+//Image: none
+//Time: 12/11/2006 02:51:26
+//Working: Yes
+add = getint(pobj + 0x150);
+if(add) 
+    setfloat(add+0x30, 0, 0, 0);
+
+#cheat Get Wasted
+//ID: 18675
+//Score: 63
+//Author: dwinch
+//Category: Pointless
+//Description: says what it does automatic be sure to turn off or else it will just keep wasting you!
+//
+//EDITED BY: psphacker108 on 15/11/06 05:57:05
+//Image: none
+//Time: 11/11/2006 22:00:51
+//Working: Yes
+//turn on then off
+setchar(pplayer+0x8B4, 0x3A);
+
+#cheat Get Busted
+//ID: 18674
+//Score: 58
+//Author: dwinch
+//Category: Pointless
+//Description: Not sure why you would want to.. but..
+//Image: none
+//Time: 11/11/2006 21:59:54
+//Working: Yes
+//turn on then off
+setchar(pplayer+0x8B4, 0x41);
+
+#cheat Hold L or R to change taxi fare amount
+//ID: 18511
+//Score: 101
+//Author: Durka Durka Mahn
+//Category: Player Stats
+//Description: Hold L or R while in a cab to change the amount of fares ou have successfully gotten.
+//Image: none
+//Time: 04/11/2006 21:38:32
+//Working: Yes
+ if ((buttons & CTRL_RTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)+1);
+}
+ if ((buttons & CTRL_LTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)-1);
+}
+
+
+#cheat custom message
+//ID: 18496
+//Score: 75
+//Author: Waterbottle
+//Category: Text Mods
+//Description: prints a message
+//Image: none
+//Time: 04/11/2006 16:24:02
+//Working: Yes
+setshort(0x08e90bd8, 1, 0x67, 0x7, 0x80, 0x115, 0x7, 0x64, 0x111, 0x6, 0x208, 0x32, 0x4, 0x208, 0x101, 0x7, 0x48, 0x115, 0x6, 0x16, 0x103, 0x6, 0x80, 0x33, 0);
+
+#cheat Patroit - Hummer
+//ID: 19286
+//Score: 27
+//Author: chazleyboI
+//Category: Text Mods
+//Description: Changes The Name Of Patroit To Hummer 
+//Image: none
+//Time: 24/01/2007 17:16:35
+//Working: Yes
+setshort(0x098A325A, 'h', 'u', 'm', 'm', 'e', 'r', 0);
+
+#cheat Teleport To Mendez Basement
+//ID: 19161
+//Score: 44
+//Author: Swikity
+//Category: Interiors
+//Description: Teleports you to Mendez's Basement.
+//
+//EDITED BY: psphacker108 on 01/01/07 18:35:03
+//Image: none
+//Time: 31/12/2006 23:19:12
+//Working: Yes
+teleport(28, 1167, -200);
+
+#cheat Teleport To Biker Hangout
+//ID: 19160
+//Score: 47
+//Author: Swikity
+//Category: Interiors
+//Description: Teleports you to the biker hangout interior from one of the Lance missions.
+//
+//EDITED BY: psphacker108 on 01/01/07 18:34:56
+//Image: none
+//Time: 31/12/2006 23:18:00
+//Working: Yes
+teleport(-777, 503.99, 26.80);
+
+#cheat Teleport To Mendez Mansion Interior
+//ID: 19159
+//Score: 64
+//Author: Swikity
+//Category: Interiors
+//Description: Teleports you to the Mendez Mansion interior from the domesobot mission.
+//
+//EDITED BY: psphacker108 on 01/01/07 18:35:11
+//Image: http://i126.photobucket.com/albums/p92/b23704/screen1.jpg
+//Time: 31/12/2006 23:15:39
+//Working: Yes
+teleport(33, 1153, -193);
+
+#cheat Teleport To Stadium Interior
+//ID: 19158
+//Score: 55
+//Author: Swikity
+//Category: Interiors
+//Description: Teleports you to the stadium interior from the missions.
+//
+//EDITED BY: psphacker108 on 01/01/07 18:35:19
+//Image: http://i126.photobucket.com/albums/p92/b23704/screen2.jpg
+//Time: 31/12/2006 23:13:40
+//Working: Yes
+teleport(-1570.37, 1332.51, -230.21);
+
+#cheat Monster Quad. *first ever pmg car*
+//ID: 19040
+//Score: 120
+//Author: vettefan88
+//Category: Pimp My Garage
+//Description: This is the first ever pmg'd car to be released for VCS. and it may be the only one for quite some time. it takes the quad, and gives it a large suspension lift, and some larger tires. It also has many performance enhancing tweaks.
+//
+//enjoy...
+//
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/monster%20Quad1.gif
+//Time: 14/12/2006 21:00:36
+//Working: Yes
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+
+#cheat Texture sound normal
+//ID: 18863
+//Score: 45
+//Author: psphacker108
+//Category: Audio
+//Description: This must be seperated don't put the 2 codes together admins! anyways this will turn the texture sound OFF code back to normal make sure these are seprate!
+//Image: none
+//Time: 23/11/2006 20:53:25
+//Working: Yes
+//BY:PSPHACKER108
+sethex(pplayer + 0x60,    0x0E);
+
+#cheat Texture sound OFF
+//ID: 18864
+//Score: 46
+//Author: psphacker108
+//Category: Audio
+//Description: This will make the wall and texture sound Go off by it self !and when you walk like to punch a car you won't hear that annoying texture sound. Very helpful if you hate that noise. thanks to ADePSP for help!
+//Image: none
+//Time: 23/11/2006 20:54:01
+//Working: Yes
+//BY:PSPHACKER108
+sethex(pplayer + 0x60,   0xEE);
+
+#cheat Peds never bleed
+//ID: 19521
+//Score: 1
+//Author: psphacker108
+//Category: Pedestrians
+//Description: This makes any ped you shoot, smack or run over never bleed.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-3.gif
+//Time: 10/04/2007 05:05:47
+//Working: Yes
+setchar(0x9567DA8,  0x00); 
+
+
+#cheat Teleport to strange neons
+//ID: 19522
+//Score: 2
+//Author: KEI(Japanese)
+//Category: Teleport
+//Description: Telepore to strange things like neons in the hotel.
+//Please look at Image!
+//
+//Image: http://blog82.fc2.com/s/safehouse2/file/kimogara.jpg
+//Time: 10/04/2007 10:41:20
+//Working: Unknown
+teleport(230.55, -1228.41, 13.60);
+moveto(229.92, -1228.38, 12.17);  object(0x1CA4, 90, 0, 91);
+
+

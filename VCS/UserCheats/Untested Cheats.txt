@@ -1,0 +1,583 @@
+#cheat Heavy Vic
+//by vettefan
+//makes vic really heavy, and capable of smashing through traffic.
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+setfloat(pplayer + 0x128, 0, 0);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat indestructable cars
+//by vettefan
+//cars will not attain any physical damage, or engine damage
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+
+#cheat Heavy Cars
+if (getfloat(pcar+0xD0) <= 50000);
+{
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000);
+setfloat(pcar+0xD4, getfloat(pcar+0xD4)*1000);
+}
+#off
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)/1000);
+setfloat(pcar+0xD4, getfloat(pcar+0xD4)/1000);
+
+#cheat turquoise exhaust
+//by vettefan
+//not as bright and vibrant of a change as in LCS but it's still noticable
+setchar(0x9569b94, 0x00, 0xff, 0xff);
+
+#cheat Lamborghini Doors
+//By Waterbottle
+//Ported from vettefan88's version for LCS
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+#cheat 999,999,999$
+setint(0x08bde55c, 999999999, 999999999);
+
+#cheat 0$
+setint(0x08bde55c, 0, 0);
+
+#cheat Locked Car Doors
+//Ported from theY4Kman's version for LCS.
+setshort(pcar+0x232, 0x0101);
+#off
+setshort(pcar+0x232, 0);
+
+#cheat Bobcat in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 180);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Polaris V8 in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 186);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Jetski in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 233);
+#off
+setint(0x08C739B0, 0);
+
+#cheat All Red Baloons Burst. w/ Rewards
+address = 0x09f6a200;
+for(i=0;i<99;i++) {
+setint(address+4*i, 1);
+}
+setshort(0x08bb3d3c, 99);
+off();
+
+#cheat NOS
+//Hold O while driving to use NOS
+if(buttons & CTRL_CIRCLE) {
+speed = 0.0;
+if(getfloat(pcar+0x140)>0) { speed+=getfloat(pcar+0x140); }
+else { speed-=getfloat(pcar+0x140); }
+if(getfloat(pcar+0x144)>0) { speed+=getfloat(pcar+0x144); }
+else { speed-=getfloat(pcar+0x144); }
+if(speed<175/75) {
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+
+#cheat Bouncy!
+BounceAmount = 0.8;
+rot = getfloat(0x09fc73f0);
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(getshort(pplayer+0x1C8)!=0x1020) { setfloat(pplayer+0x148,BounceAmount); setshort(pplayer+0x1c8, 0x1020);
+if(ystick < -0.5) {
+setfloat(pplayer+0x140,getfloat(pplayer+0x10));
+setfloat(pplayer+0x144,getfloat(pplayer+0x14));
+}
+}
+if(xstick < -0.5) rot += 2;
+if(xstick > 0.5) rot -= 2;
+setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));
+setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));
+setfloat(0x09fc73f0, rot); 
+
+
+#cheat Superman
+//By Waterbottle
+rot = getfloat(0x09fc73f0);
+pstartfly = getshort(pplayer+0x1C8);
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(buttons & CTRL_RTRIGGER) speedmult = 1.5; else speedmult = 0.3;
+if(buttons & CTRL_CROSS) {
+setshort(pplayer+0x1C8, 0x1020);
+setfloat(pplayer+0x148, speedmult/2);
+}
+else if(buttons & CTRL_SQUARE && pstartfly==0x1020) setfloat(pplayer+0x148, -speedmult/2);
+else if(pstartfly==0x1020) setfloat(pplayer+0x148, 0);
+if(xstick < -0.5 && pstartfly==0x1020) rot += 2;
+if(xstick > 0.5 && pstartfly==0x1020) rot -= 2;
+if(pstartfly==0x1020) {
+setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));
+setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));
+}
+if(ystick < -0.5 && pstartfly==0x1020) {
+setfloat(pplayer+0x140, -sin(rot)*speedmult);
+setfloat(pplayer+0x144, cos(rot)*speedmult);
+} else if(pstartfly==0x1020) setfloat(pplayer+0x140, 0, 0);
+setfloat(0x09fc73f0, rot);
+
+#cheat message
+setshort(0x08e90bd8, 1, 'C', 'u', 's', 't','o','m',' ','m','e','s','s','s','a','g','e','!',0); 
+
+#cheat Rocket Boost 4
+if (buttons & CTRL_CROSS)
+{
+  boost = 4.0;
+  thrust = boost * 0.00333;
+
+  // velocity = velocity + forward vector * thrust
+  setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+  setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+  setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+  // rotational control on motorcycles
+  //if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)
+      setfloat(pcar + 0x0078,  -0.03 * xstick);
+}
+
+
+#cheat Police Wagon
+setchar(0x09ab96e2, 208);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 255);
+setchar(0x09ab96e7, 64);
+setchar(0x09ab96ea, 128);
+setchar(0x09ab96eb, 63);
+setchar(0x09ab96f6, 4);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 254);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab99fe, 5);
+setchar(0x09ab9a2e, 4);
+setchar(0x09abe776, 64);
+setchar(0x09abe777, 65);
+setchar(0x09abe88e, 3);
+setchar(0x09abe8be, 3);
+setchar(0x09abf746, 64);
+setchar(0x09abf747, 65);
+setchar(0x09abf85e, 3);
+setchar(0x09ac2bce, 4);
+setchar(0x09ac2bfe, 4);
+setchar(0x09abd5ae, 4);
+
+#cheat Spin Car
+setchar(pcar + 0x5C3, 0xFF);
+
+
+#cheat always bleeding
+setchar(pplayer+0x1cb, 0x3f);
+#off
+setchar(pplayer+0x1cb, 0x0);
+
+// By Edison Carter
+// jump to get off the ground to start with
+// same controls as San Andreas
+#cheat Invisible Jetpack
+{
+   dx = 0; dy = 0; dz = 0;
+
+   // forward thrust
+   thrust = -ystick * 0.005;
+   if (ystick < -0.1 && (buttons & CTRL_CROSS))
+       thrust = -ystick * 0.024;
+   dx += getfloat(pplayer + 0x0010) * thrust;
+   dy += getfloat(pplayer + 0x0014) * thrust;
+   dz += getfloat(pplayer + 0x0018) * thrust;
+
+   // strafe left
+   if (buttons & CTRL_LTRIGGER)
+   {
+       dx += getfloat(pplayer + 0x0000) * -0.00333;
+       dy += getfloat(pplayer + 0x0004) * -0.00333;
+       dz += getfloat(pplayer + 0x0008) * -0.00333;
+   }
+
+   // strafe right
+   if (buttons & CTRL_RTRIGGER)
+   {
+       dx += getfloat(pplayer + 0x0000) * 0.00333;
+       dy += getfloat(pplayer + 0x0004) * 0.00333;
+       dz += getfloat(pplayer + 0x0008) * 0.00333;
+   }
+
+   // lift
+   lift = 0.0068;
+   if (buttons & CTRL_SQUARE)
+       lift -= 0.007;
+   if (buttons & CTRL_CROSS)
+       if (ystick < 0)
+           lift += (1.0 + ystick) * 0.006;
+       else
+           lift += 0.006;
+   dx += getfloat(pplayer + 0x0020) * lift;
+   dy += getfloat(pplayer + 0x0024) * lift;
+   dz += getfloat(pplayer + 0x0028) * lift;
+
+   // add vector to velocity
+   gameplayspeed = getfloat(0x08bb3b58);
+   setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+   setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+   setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+   // rotational control
+   setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+   // never roll when falling, thanks to theY4Kman
+   setfloat(pplayer + 0x1C4,  0.0);
+}
+
+// Thanks to vettefan for car color addresses
+#cheat Car Color Shows Car Health
+health = getfloat(pcar+0x027c);
+if (health >= 990)
+   setchar(pcar+0x224, 0, 180, 0);
+else if (health >= 650)
+   setchar(pcar+0x224, 255 * (1000 - health) / 350, 255, 0);
+else if (health >= 300)
+   setchar(pcar+0x224, 255, 255 * (health - 300) / 350, 0);
+else if (health >= 280)
+   setchar(pcar+0x224, 128, 0, 0);
+else
+   setchar(pcar+0x224, 0, 0, 0);
+
+// Thanks to vettefan for car color addresses
+#cheat Your Car Turns Black Before Exploding
+health = getfloat(pcar+0x027c);
+if (health < 300)
+   setchar(pcar+0x224, 0, 0, 0);
+
+
+
+by edisoncarter edited by lordmetal
+#cheat Rocket Boost 3
+if (buttons & CTRL_CROSS)
+{
+boost = 3.0;
+thrust = boost * 0.00333;
+
+// velocity = velocity + forward vector * thrust
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+// rotational control on motorcycles
+//if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)
+setfloat(pcar + 0x0078, -0.03 * xstick);
+}
+
+by edisoncarter edited by lordmetal
+#cheat Rocket Boost 2
+if (buttons & CTRL_CROSS)
+{
+boost = 2.0;
+thrust = boost * 0.00333;
+
+// velocity = velocity + forward vector * thrust
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+// rotational control on motorcycles
+//if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)
+setfloat(pcar + 0x0078, -0.03 * xstick);
+}
+
+by edisoncarter edited by lordmetal
+#cheat Rocket Boost 1
+if (buttons & CTRL_CROSS)
+{
+boost = 1.0;
+thrust = boost * 0.00333;
+
+// velocity = velocity + forward vector * thrust
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+// rotational control on motorcycles
+//if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)
+setfloat(pcar + 0x0078, -0.03 * xstick);
+}
+
+#cheat Skip Nighttime
+if (getchar(0x08bb3b40) >= 18 || getchar(0x08bb3b40) <= 5)
+   setchar(0x08bb3b40, 6, 0);
+
+
+//By Waterbottle
+//press O to use NOS
+//press R to use power break (stops you immediatly)
+//Also did so if you press L then NOS won't work, so it dosn't affect drive by's.
+#cheat Nitrous Oxide v.2
+if(buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));//thanks to edison.
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_RTRIGGER && getshort(pcar+0x1c8)==0) {
+setfloat(pcar+0x140,  0,  0);
+}
+
+
+//By Waterbottle
+//aim at a ped and press /\ to take controll of it
+//when you are in controll of a ped you can rotate it with the analog stick (if a ped wants to go somewhere elsethan you want then it will look a bit weird, but you can still controll it)
+//use analog upwards to move it forward
+//Trianlge were supposed to make the ped leave or enter a vehivle, but it only works for leaving vehicles
+//press and hold L+R alittle while to kill the ped you are in controll of
+#cheat remote controll ped
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+   setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+   setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+   }
+
+//kill ped
+if(press & CTRL_LTRIGGER && press & CTRL_RTRIGGER) rot = 0;
+if(buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER) {
+rot+=25;
+if(rot>2000) { setfloat(address+0x4e4, 0); setint(0x09fc73f8, 0); }
+}
+
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894,0x10);
+else setchar(address+0x894,0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+// By Edison Carter
+// same controls as San Andreas
+#cheat Invisible Jetpack
+{
+  dx = 0; dy = 0; dz = 0;
+
+  // forward thrust
+  thrust = -ystick * 0.005;
+  if (ystick < -0.1 && (buttons & CTRL_CROSS))
+      thrust = -ystick * 0.024;
+  dx += getfloat(pplayer + 0x0010) * thrust;
+  dy += getfloat(pplayer + 0x0014) * thrust;
+  dz += getfloat(pplayer + 0x0018) * thrust;
+
+  // strafe left
+  if (buttons & CTRL_LTRIGGER)
+  {
+      dx += getfloat(pplayer + 0x0000) * -0.00333;
+      dy += getfloat(pplayer + 0x0004) * -0.00333;
+      dz += getfloat(pplayer + 0x0008) * -0.00333;
+  }
+
+  // strafe right
+  if (buttons & CTRL_RTRIGGER)
+  {
+      dx += getfloat(pplayer + 0x0000) * 0.00333;
+      dy += getfloat(pplayer + 0x0004) * 0.00333;
+      dz += getfloat(pplayer + 0x0008) * 0.00333;
+  }
+
+  // lift
+  lift = 0.0068;
+  if (buttons & CTRL_SQUARE)
+      lift -= 0.007;
+  if (buttons & CTRL_CROSS) {
+  setshort(pplayer+0x1c8, 0x1020);
+      if (ystick < 0)
+          lift += (1.0 + ystick) * 0.006;
+      else
+          lift += 0.006;
+  }
+  dx += getfloat(pplayer + 0x0020) * lift;
+  dy += getfloat(pplayer + 0x0024) * lift;
+  dz += getfloat(pplayer + 0x0028) * lift;
+
+  // add vector to velocity
+  gameplayspeed = getfloat(0x08bb3b58);
+  setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+  setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+  setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+  // rotational control
+  setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+  // never roll when falling, thanks to theY4Kman
+  setfloat(pplayer + 0x1C4,  0.0);
+}
+
+
+#cheat disable side missions
+setchar(0x09f69054, 1);
+#off
+setchar(0x09f69054, 0);
+
+#cheat Aim of Death
+// Target a ped and they die!
+pped = getint(0x08BA1D70);
+if (pped != 0)
+  setfloat(pped + 0x4e4, 0);
+
+#cheat Force Push
+// Target a ped and they go flying!
+static pdone;
+pped = getint(0x08BA1D70);
+if (pped != 0 && pped != pdone)
+{
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   setshort(pped + 0x01c8, 0x1020);
+   setfloat(pped + 0x0140, dx * 0.2);
+   setfloat(pped + 0x0144, dy * 0.2);
+   setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+   pdone = pped;
+}
+if (pped == 0)
+{
+   pdone = 0;
+}
+
+#cheat Tractor Beam
+// Target a ped to pull them towards you
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+   setshort(pped + 0x01c8, 0x1020);
+   setfloat(pped + 0x0140, -dx * 0.05);
+   setfloat(pped + 0x0144, -dy * 0.05);
+   setfloat(pped + 0x0148, -dz * 0.05);
+}
+
+//aim at a ped and it start bouncing
+#cheat bounce ped
+BounceHeight = 0.4;
+static add;
+pped = getint(0x08BA1D70);
+if(pped) add = pped;
+
+if(add) {
+pedfly = getshort(add+0x1c8);
+if(pedfly!=0x1020) {
+setshort(add+0x1c8, 0x1020);
+setfloat(add+0x148, BounceHeight);
+}
+}
+
+#cheat Custom Police Car
+setchar(0x09ab98f4, 4);
+setchar(0x09ab8ce4, 22);
+setchar(0x09ab8d06, 192);
+setchar(0x09ab8d07, 65);
+setchar(0x09ab8d0a, 48);
+setchar(0x09ab8d0b, 64);
+setchar(0x09ab8d16, 4);
+setchar(0x09ab8d17, 190);
+setchar(0x09ab8d1a, 195);
+setchar(0x09ab8d1b, 62);
+setchar(0x09ab8d33, 69);
+setchar(0x09ab85d6, 192);
+setchar(0x09ab85d7, 64);
+setchar(0x09abd57e, 1);
+setchar(0x09abe82e, 2);
+setchar(0x09abe85e, 1);
+setchar(0x09abe776, 208);
+setchar(0x09abf746, 208);
+setchar(0x09abf7fe, 2);
+setchar(0x09abf82e, 2);
+setchar(0x09abf837, 62);
+setchar(0x09abf83b, 62);
+setchar(0x09abe867, 62);
+setchar(0x09abe86b, 62);
+setchar(0x09ac2b9e, 1);
+setchar(0x09ac4126, 180);
+setchar(0x09ac4127, 62);
+setchar(0x09ac412a, 147);
+setchar(0x09ac412b, 60);
+setchar(0x09ac4c3a, 32);
+setchar(0x09ac4c3b, 64);
+setchar(0x09ac4c4a, 96);
+setchar(0x09ac4c4b, 190);
+setchar(0x09ab8d07, 66);
+setchar(0x09ab8d1a, 149);
+setchar(0x09ab9322, 32);
+setchar(0x09ab9357, 0);
+setchar(0x09ab935b, 0);
+setchar(0x09ab9717, 0);
+setchar(0x09ab971b, 0);
+setchar(0x09ab96f6, 237);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 236);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab96e2, 198);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 28);
+setchar(0x09ab96e7, 65);
+setchar(0x09ab96ea, 0);
+setchar(0x09ab96eb, 63);
+setchar(0x09ac1a37, 0);
+setchar(0x09ac1a3b, 0);
+setchar(0x09ac1a07, 0);
+setchar(0x09ac1a0b, 0);
+setchar(0x09ac19d2, 0);
+setchar(0x09ac19d3, 64);
+setchar(0x09ac19d6, 128);
+setchar(0x09ac19d7, 65);
+setchar(0x09ac19da, 16);
+setchar(0x09ac19db, 64);
+setchar(0x09ac19e6, 152);
+setchar(0x09ac19e7, 192);
+setchar(0x09ac19ea, 195);
+setchar(0x09ac19eb, 62);
+

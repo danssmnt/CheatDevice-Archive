@@ -1,0 +1,941 @@
+#cheat Bloody Footprints
+//ID: 3917
+//Score: 202
+//Author: vettefan88
+//Category: Player
+//Description: Bloody Footprints
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x198, 0x40);
+#off
+setchar(pplayer + 0x198, 0x00);
+
+
+#cheat S.O.G.'s entire GTA:LCS mod
+//ID: 6489
+//Score: 443
+//Author: S.O.G.
+//Category: Environment
+//Description: [MEGA-UPDATE!](Nearly everything is custom in this mod) Gun flames, smoke, sparks, spark sizes, car smoke and fire, flamethrower flame, moltove laser effects (awsome looking), red hydrant water, water splashes, blood...etc...
+//Image: http://img20.imageshack.us/img20/5157/gunv12ns.gif
+//Time: 15/04/2006 07:12:15
+//Working: Yes
+// Gun Flash
+sethex(0x967CA14, 0x00, 0xFF, 0x30);
+// Gun Flash (No Animation)
+sethex(0x967CAA8, 0x00, 0xFF, 0x50);
+// Gun Smoke
+sethex(0x967CB3C, 0x00, 0xFF, 0x90);
+// Gun Smoke 2
+sethex(0x967CBD0, 0x00, 0xFF, 0x90);
+// Sparks from bullets
+sethex(0x967C168, 0x00, 0x20, 0xFF);
+// Spark Size
+sethex(0x967c163, 0x42);
+// Sparks from cars and tires
+sethex(0x967C1FC, 0x00, 0xFF, 0x20);
+// Spark Size
+sethex(0x967C1F7, 0x41);
+// Bullet Hit Smoke
+sethex(0x967E8B8, 0x00, 0xE0, 0xE0);
+// Flamethrower flame
+setchar(0x967C980, 0x00, 0x90, 0x30);
+// Exaust Color
+setchar(0x967E6FC, 0xFF, 0x50, 0x20);
+// Smoke from tire when tire is leaving a black mark (hard to notice)
+setchar(0x967E790, 0x00, 0x00, 0xFF);
+// Smoke when you do a burnout (changes only the shade, not the colors)
+setchar(0x967E7EA, 0x00);
+// Fire Hydrant color, All hex values below here were found by Vettefan88 and theY4Kman
+sethex(0x967F03C, 0xCC, 0x00, 0x00);
+// Fire Hydrant color 2
+sethex(0x967DC94, 0xFF, 0x00, 0x00);
+// Dust from car color
+sethex(0x967DF77, 0xFF, 0xFF, 0xFF);
+// Rocket smoke color
+sethex(0x967EB9C, 0x00, 0xCC, 0xFF);
+// Ferry Chimney smoke color
+sethex(0x967EF14, 0xCC, 0x33, 0x00);
+// Engine smoke color 1
+sethex(0x967E134, 0x00, 0xFF, 0xCC);
+// Engine smoke color 2
+sethex(0x967E1C8, 0x00, 0xFF, 0xCC);
+// Engine smoke color 3
+sethex(0x967E25C, 0x00, 0xFF, 0xCC);
+// Engine fire color
+sethex(0x0967D104, 0x00, 0xFF, 0xCC);
+// General fire color
+sethex(0x0967C8EC, 0x66, 0xFF, 0xCC);
+// Blood color 1
+sethex(0x967C4E0, 0x00, 0x00, 0xFF);
+// Blood color 2
+sethex(0x967C574, 0x00, 0x00, 0xFF);
+// Blood Spurt
+sethex(0x967C608, 0x00, 0x00, 0xFF);
+// Dirt from tire color
+sethex(0x967C308, 0xFF, 0xFF, 0xCC)
+// Raindrop
+sethex(0x967D510, 0xFF, 0x00, 0x59);
+// Small Raindrop
+sethex(0x967D5A4, 0xFF, 0x00, 0x59);
+// Rain Splash
+sethex(0x967D638, 0xFF, 0x00, 0x59);
+// Big Row of Rain Splash
+sethex(0x967D6CC, 0xFF, 0x00, 0x59);
+// Rain Splash Up
+sethex(0x967D760, 0xFF, 0x00, 0x59);
+// Water Spray
+sethex(0x967D7F4, 0xFF, 0x00, 0x59);
+// Car Splash
+sethex(0x967DAD8, 0xFF, 0x00, 0x59);
+// Boat Splash
+sethex(0x967DB6C, 0xFF, 0x00, 0x59);
+// Jet Thrust from Boat
+sethex(0x967DC00, 0xFF, 0x00, 0x59);
+// Ped Splash
+sethex(0x967DE50, 0xFF, 0x00, 0x59);
+// Medium Explosion
+sethex(0x967D888, 0x00, 0xCC, 0xFF);
+// Large Explosion
+sethex(0x967D91C, 0x00, 0xCC, 0xFF);
+// Medium Fast Explosion
+sethex(0x967D9B0, 0x00, 0xCC, 0xFF);
+// Large Fast Explosion
+sethex(0x967DA44, 0x00, 0xCC, 0xFF);
+// Extinguish Steam
+sethex(0x967DDBC, 0xCC, 0xFF, 0xFF);
+//Moltov Center Flame -edited from Zywolf's moltov cheat
+setchar(0x967D104, 0xFF, 0x00, 0xFF);
+setchar(0x967D11B, 0x44);
+// Pimped Diablo, handles like a Yakuza Stinger
+setshort(0x992FF36, 0x44, 0x69, 0x61, 0x62, 0x6c, 0x6f, 0x20, 0x53, 0x6f, 0x67, 0x67, 0x73, 0x74, 0x65, 0x72);
+sethex(0x945c6c1, 0x01);
+setchar(0x945c672, 0x5);
+setchar(0x945c671, 0x50);
+setchar(0x945c670, 0x34);
+setshort(0x9443d30, 254);
+setfloat(0x9443d2c, 0.9);
+setfloat(0x945c5f0, 1700);
+setfloat(0x945c5f8, 0.8);
+setfloat(0x945c6b0, 0.35);
+setfloat(0x945c6b4, -0.2);
+setfloat(0x945c6b8, 0.5);
+setfloat(0x945c67c, 1.00933);
+setfloat(0x945c680, 1.00933);
+setfloat(0x945c674, 0.00128);
+setfloat(0x945c690, 0.52);
+setfloat(0x945c694, 0);
+setfloat(0x945c698, 35);
+setfloat(0x945c6a8, 1.5);
+setfloat(0x945c6ac, 0.1);
+setfloat(0x945c6c4, 0.25);
+setfloat(0x945c6bc, 0.95);
+setfloat(0x945c610, 0);
+setfloat(0x945c614, -0.2);
+setfloat(0x945c618, -0.25);
+setchar(0x945c620, 70);
+setfloat(0x945c69c, 0.8);
+setfloat(0x945c6a0, 0.53);
+setfloat(0x945c5fc, 0.0);
+sethex(0x944fb40, 0x00, 0x00, 0x00);
+sethex(0x944fb20, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 175);
+sethex(0x8E38A5E, 0x01, 0x00);
+//car drive on water
+setchar(0x08b33e32, 1);
+//bloody footprint
+setchar(pplayer + 0x198, 0x40);
+//max ammo
+setint(pplayer + 0x05f0, 100);
+setint(pplayer + 0x05f4, 9999);
+setint(pplayer + 0x060c, 100);
+setint(pplayer + 0x0610, 9999);
+setint(pplayer + 0x0628, 100);
+setint(pplayer + 0x062c, 9999);
+setint(pplayer + 0x0644, 100);
+setint(pplayer + 0x0648, 9999);
+setint(pplayer + 0x0660, 100);
+setint(pplayer + 0x0664, 9999);
+setint(pplayer + 0x0664, 9999);
+setint(pplayer + 0x067c, 100);
+setint(pplayer + 0x0680, 9999);
+setint(pplayer + 0x000005D8, 9999);
+//all peds boody WB
+setchar(099542b0+0x167-cb0, 0xf)
+setchar(099542b0+0x167-0x1960, 0xf)
+setchar(099542b0+0x167-0x2610, 0xf)
+setchar(099542b0+0x167-0x32c0, 0xf)
+setchar(099542b0+0x167-0x3F70, 0xf)
+setchar(099542b0+0x167-0x4c20, 0xf)
+setchar(099542b0+0x167-0x58d0, 0xf)
+setchar(099542b0+0x167, 0xf)
+setchar(0994b720+0x167, 0x5)
+setchar(0994d080+0x167, 0xf)
+setchar(0994dd30+0x167, 0xf)
+setchar(0995ce40+0x167, 0xf)
+setchar(099542b0+0x167+cb0, 0xf)
+setchar(099542b0+0x167+0x1960, 0xf)
+setchar(099542b0+0x167+0x2610, 0xf)
+setchar(099542b0+0x167+0x32c0, 0xf)
+setchar(099542b0+0x167+0x3F70, 0xf)
+setchar(099542b0+0x167+0x4c20, 0xf)
+setchar(099542b0+0x167+0x58d0, 0xf)
+setchar(099542b0+0x167+0x6580, 0xf)
+setchar(099542b0+0x167+0x7230, 0xf)
+setchar(099542b0+0x167+0x7ee0, 0xf)
+setchar(099542b0+0x167+0x8b90, 0xf)
+setchar(099542b0+0x167+0x9840, 0xf)
+setchar(099542b0+0x167+104f0, 0xf)
+setchar(099542b0+0x167+0xb1a0, 0xf)
+setchar(099542b0+0x167+0xbe50, 0xf)
+setchar(099542b0+0x167+0xcb00, 0xf)
+setchar(099542b0+0x167+0xd7b0, 0xf)
+setchar(099542b0+0x167+0xe460, 0xf)
+setchar(099542b0+0x167+0xf110, 0xf)
+setchar(099542b0+0x167+0xfdc0, 0xf)
+setchar(099542b0+0x167+0x10a70, 0xf)
+setchar(099542b0+0x167+0x11720, 0xf)
+setchar(099542b0+0x167+0x123d0, 0xf)
+setchar(099542b0+0x167+0x13080, 0xf)
+setchar(099542b0+0x167+0x13d30, 0xf)
+setchar(099542b0+0x167+0x149e0, 0xf)
+setchar(099542b0+0x167+0x15690, 0xf)
+setchar(099542b0+0x167+0x16340, 0xf)
+setchar(099542b0+0x167+0x16ff0, 0xf)
+setchar(099542b0+0x167+0x17ca0, 0xf)
+setchar(099542b0+0x167+0x18950, 0xf)
+setchar(099542b0+0x167+0x19600, 0xf)
+setchar(099542b0+0x167+0x1a2b0, 0xf)
+setchar(099542b0+0x167+0x1af60, 0xf)
+setchar(099542b0+0x167+0x1bc10, 0xf)
+setchar(099542b0+0x167+0x1c8c0, 0xf)
+setchar(099542b0+0x167+0x1d570, 0xf)
+setchar(099542b0+0x167+0x1e220, 0xf)
+setchar(099542b0+0x167+0x1eed0, 0xf)
+setchar(099542b0+0x167+0x1fb80, 0xf)
+setchar(099542b0+0x167+0x20830, 0xf)
+setchar(099542b0+0x167+0x214e0, 0xf)
+setchar(099542b0+0x167+0x22190, 0xf)
+setchar(099542b0+0x167+0x22e40, 0xf)
+setchar(099542b0+0x167+0x23af0, 0xf)
+setchar(099542b0+0x167+0x247a0, 0xf)
+setchar(099542b0+0x167+0x25450, 0xf)
+setchar(099542b0+0x167+0x26100, 0xf)
+//ped bloody foot
+setchar(099542b0+0x168-cb0, 0x40)
+setchar(099542b0+0x168-0x1960, 0x40)
+setchar(099542b0+0x168-0x2610, 0x40)
+setchar(099542b0+0x168-0x32c0, 0x40)
+setchar(099542b0+0x168-0x3F70, 0x40)
+setchar(099542b0+0x168-0x4c20, 0x40)
+setchar(099542b0+0x168-0x58d0, 0x40)
+setchar(099542b0+0x168, 0x40)
+setchar(0994b720+0x168, 0x40)
+setchar(0994d080+0x168, 0x40)
+setchar(0994dd30+0x168, 0x40)
+setchar(099542b0+0x168+cb0, 0x40)
+setchar(099542b0+0x168+0x1960, 0x40)
+setchar(099542b0+0x168+0x2610, 0x40)
+setchar(099542b0+0x168+0x32c0, 0x40)
+setchar(099542b0+0x168+0x3F70, 0x40)
+setchar(099542b0+0x168+0x4c20, 0x40)
+setchar(099542b0+0x168+0x58d0, 0x40)
+setchar(099542b0+0x168+0x6580, 0x40)
+setchar(099542b0+0x168+0x7230, 0x40)
+setchar(099542b0+0x168+0x7ee0, 0x40)
+setchar(099542b0+0x168+0x8b90, 0x40)
+setchar(099542b0+0x168+0x9840, 0x40)
+setchar(099542b0+0x168+104f0, 0x40)
+setchar(099542b0+0x168+0xb1a0, 0x40)
+setchar(099542b0+0x168+0xbe50, 0x40)
+setchar(099542b0+0x168+0xcb00, 0x40)
+setchar(099542b0+0x168+0xd7b0, 0x40)
+setchar(099542b0+0x168+0xe460, 0x40)
+setchar(099542b0+0x168+0xf110, 0x40)
+setchar(099542b0+0x168+0xfdc0, 0x40)
+setchar(099542b0+0x168+0x10a70, 0x40)
+setchar(099542b0+0x168+0x11720, 0x40)
+setchar(099542b0+0x168+0x123d0, 0x40)
+setchar(099542b0+0x168+0x13080, 0x40)
+setchar(099542b0+0x168+0x13d30, 0x40)
+setchar(099542b0+0x168+0x149e0, 0x40)
+setchar(099542b0+0x168+0x15690, 0x40)
+setchar(099542b0+0x168+0x16340, 0x40)
+setchar(099542b0+0x168+0x16ff0, 0x40)
+setchar(099542b0+0x168+0x17ca0, 0x40)
+setchar(099542b0+0x168+0x18950, 0x40)
+setchar(099542b0+0x168+0x19600, 0x40)
+setchar(099542b0+0x168+0x1a2b0, 0x40)
+setchar(099542b0+0x168+0x1af60, 0x40)
+setchar(099542b0+0x168+0x1bc10, 0x40)
+setchar(099542b0+0x168+0x1c8c0, 0x40)
+setchar(099542b0+0x168+0x1d570, 0x40)
+setchar(099542b0+0x168+0x1e220, 0x40)
+setchar(099542b0+0x168+0x1eed0, 0x40)
+setchar(099542b0+0x168+0x1fb80, 0x40)
+setchar(099542b0+0x168+0x20830, 0x40)
+setchar(099542b0+0x168+0x214e0, 0x40)
+setchar(099542b0+0x168+0x22190, 0x40)
+setchar(099542b0+0x168+0x22e40, 0x40)
+setchar(099542b0+0x168+0x23af0, 0x40)
+setchar(099542b0+0x168+0x247a0, 0x40)
+setchar(099542b0+0x168+0x25450, 0x40)
+setchar(099542b0+0x168+0x26100, 0x40)
+//always bleeding
+setchar(pplayer + 0x197, 0x0F);
+//Peds have Weapons - by Sousanator
+setchar(0x8B564D8, 1);
+//Super Punch
+setchar(pplayer + 0x0bb3, 0x01);
+//fireball lifespan
+setint(0x967C960, 5000);
+//Staunton Marquee Text mod-teleport to 248.68, -658.68, 26.02 to see it
+setchar(0x08B586C8, 0x53, 0x2e, 0x4f, 0x2e, 0x47, 0x2e, 0x20, 0x69, 0x73, 0x20, 0x74, 0x68, 0x65, 0x20, 0x62, 0x65, 0x73, 0x74, 0x20, 0x6d, 0x6f, 0x64, 0x64, 0x65, 0x72, 0x20, 0x65, 0x76, 0x65, 0x72, 0x21, 0x20, 0x53, 0x6f, 0x20, 0x63, 0x68, 0x65, 0x63, 0x6b, 0x20, 0x79, 0x6f, 0x73, 0x65, 0x6c, 0x66, 0x20, 0x66, 0x6f, 0x6f, 0x6c, 0x21);
+#off
+//cars drive on water
+setchar(0x08b33e32, 0);
+//Bloody Footprints
+setchar(pplayer + 0x198, 0x00);
+//Long Fireball Lifespan
+setint(0x967C960, 2000)
+//I didn't make any of the cheats below the Diablo Car section!  Credit goes to whoever made them, not me, however it adds greatly to the mod, so I put them in it.
+//edited by S.O.G. on 5/6/2006 2:15:57 AM
+
+#cheat Fire Hydrants shoot out blood
+//ID: 10265
+//Score: 113
+//Author: vettefan88
+//Category: Environment
+//Description: This will make the fire hydrants shoot out blood instead of water
+//Image: none
+//Time: 13/05/2006 19:09:16
+//Working: Yes
+sethex(0x967F03C, 0xFF, 0x00, 0x00);
+
+#cheat Bloody Footprints
+//ID: 7336
+//Score: 29
+//Author: dj-miz
+//Category: Player
+//Description: Bloody Footprints
+//Image: none
+//Time: 16/04/2006 22:05:19
+//Working: Yes
+setchar(pplayer + 0x198, 0x40); 
+#off 
+setchar(pplayer + 0x198, 0x00); 
+
+
+#cheat Bloody Water
+//ID: 11107
+//Score: 95
+//Author: mafian
+//Category: Environment
+//Description: Turns all sources of water (except the ocean) into a bloodish color
+//Image: none
+//Time: 21/05/2006 22:26:42
+//Working: Yes
+sethex(0x967DC94, 0xCC, 0x33, 0x33);
+sethex(0x967D070, 0xCC, 0x33, 0x33);
+sethex(0x967D510, 0xCC, 0x33, 0x33);
+sethex(0x967D5A4, 0xCC, 0x33, 0x33);
+sethex(0x967D638, 0xCC, 0x33, 0x33);
+sethex(0x967D6CC, 0xCC, 0x33, 0x33);
+sethex(0x967D760, 0xCC, 0x33, 0x33);
+sethex(0x967D7F4, 0xCC, 0x33, 0x33);
+sethex(0x967DAD8, 0xCC, 0x33, 0x33);
+sethex(0x967DB6C, 0xCC, 0x33, 0x33);
+sethex(0x967EE80, 0xCC, 0x33, 0x33);
+
+#cheat Purple Zombie Blood
+//ID: 11131
+//Score: 126
+//Author: Llama4UrMomma
+//Category: Pedestrians
+//Description: Pedestrians squirt purple zombie blood when shot. Works especially well when you chop their heads off with a katana
+//
+//EDITED BY: vettefan88 on 22/05/06 00:56:48
+//Image: none
+//Time: 22/05/2006 00:54:57
+//Working: Yes
+sethex(0x967C4E0, 0x99, 0x00, 0xFF);
+sethex(0x967C574, 0x99, 0x00, 0xFF);
+sethex(0x967C608, 0x99, 0x00, 0xFF);
+
+#cheat Green
+//ID: 12304
+//Score: 60
+//Author: supacheata
+//Category: Environment
+//Description: Turns every explosion, blood, gunshot particle to green. Very cool when it comes to cutting people's heads off with a Katana, green blood flies out.
+//Image: none
+//Time: 06/06/2006 21:32:29
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Rocket Smoke
+sethex(0x967EB9C, 0x66, 0xCC, 0x00);
+// Car Collison Dust
+sethex(0x967E4AC, 0x66, 0xCC, 0x00);
+// Ferry Chimney Smoke
+sethex(0x967EF14, 0x66, 0xCC, 0x00);
+// Medium Explosion
+sethex(0x967D888, 0x66, 0xCC, 0x00);
+// Large Explosion
+sethex(0x967D91C, 0x66, 0xCC, 0x00);
+// Medium Fast Explosion
+sethex(0x967D9B0, 0x66, 0xCC, 0x00);
+// Large Fast Explosion
+sethex(0x967DA44, 0x66, 0xCC, 0x00);
+// Water Hydrant
+sethex(0x967DC94, 0x66, 0xCC, 0x00);
+// Engine Smoke
+sethex(0x967E134, 0x66, 0xCC, 0x00);
+// Engine Smoke 2
+sethex(0x967E1C8, 0x66, 0xCC, 0x00);
+// Car Flame Smoke
+sethex(0x967E25C, 0x66, 0xCC, 0x00);
+// Burning Rubber Smoke
+sethex(0x967E824, 0x66, 0xCC, 0x00);
+// Exhaust
+sethex(0x967E6FC, 0x66, 0xCC, 0x00);
+// Car Fire
+sethex(0x0967D104, 0x66, 0xCC, 0x00);
+// Flamethrower Flame
+sethex(0x967C980, 0x66, 0xCC, 0x00);
+// Flames
+sethex(0x0967C8EC, 0x66, 0xCC, 0x00);
+// Gunflash
+sethex(0x967CA14, 0x66, 0xCC, 0x00);
+// Bullet Hit Smoke
+sethex(0x967E8B8, 0x66, 0xCC, 0x00);
+// Small Sparks
+sethex(0x967C1FC, 0x66, 0xCC, 0x00);
+// Gun Smoke
+sethex(0x967CB3C, 0x66, 0xCC, 0x00);
+// Gun Smoke 2
+sethex(0x967CBD0, 0x66, 0xCC, 0x00);
+// Blood
+sethex(0x967C4E0, 0x66, 0xCC, 0x00);
+// Blood Small
+sethex(0x967C574, 0x66, 0xCC, 0x00);
+// Blood Spurt
+sethex(0x967C608, 0x66, 0xCC, 0x00);
+// Debris
+sethex(0x967C69C, 0x66, 0xCC, 0x00);
+// Debris 2
+sethex(0x967C730, 0x66, 0xCC, 0x00);
+// Water Spark
+sethex(0x967C290, 0x66, 0xCC, 0x00);
+// Wheel Dirt
+sethex(0x967C308, 0x66, 0xCC, 0x00);
+// Sand
+sethex(0x967C3B8, 0x66, 0xCC, 0x00);
+// Wheel Water
+sethex(0x967C44C, 0x66, 0xCC, 0x00);
+// Flyers
+sethex(0x967C7C4, 0x66, 0xCC, 0x00);
+// Cigarette Smoke
+sethex(0x967CC64, 0x66, 0xCC, 0x00);
+// Smoke
+sethex(0x967CCF8, 0x66, 0xCC, 0x00);
+// Smoke Slow-Motion
+sethex(0x967CD8C, 0x66, 0xCC, 0x00);
+// Dry Ice
+sethex(0x967CE20, 0x66, 0xCC, 0x00);
+// Teargas
+sethex(0x967CEB4, 0x66, 0xCC, 0x00);
+// Garage Paint Spray
+sethex(0x967CF48, 0x66, 0xCC, 0x00);
+// Shard
+sethex(0x967CFDC, 0x66, 0xCC, 0x00);
+// Splash
+sethex(0x967D070, 0x66, 0xCC, 0x00);
+// Steam
+sethex(0x967D198, 0x66, 0xCC, 0x00);
+// Steam 2
+sethex(0x967D22C, 0x66, 0xCC, 0x00);
+// Steam NY Slow-Motion
+sethex(0x967D354, 0x66, 0xCC, 0x00);
+// Ground Steam
+sethex(0x967D3E8, 0x66, 0xCC, 0x00);
+// Engine Steam
+sethex(0x967D47C, 0x66, 0xCC, 0x00);
+// Raindrop
+sethex(0x967D510, 0x66, 0xCC, 0x00);
+// Small Raindrop
+sethex(0x967D5A4, 0x66, 0xCC, 0x00);
+// Rain Splash
+sethex(0x967D638, 0x66, 0xCC, 0x00);
+// Big Row of Rain Splash
+sethex(0x967D6CC, 0x66, 0xCC, 0x00);
+// Rain Splash Up
+sethex(0x967D760, 0x66, 0xCC, 0x00);
+// Water Spray
+sethex(0x967D7F4, 0x66, 0xCC, 0x00);
+// Car Splash
+sethex(0x967DAD8, 0x66, 0xCC, 0x00);
+// Boat Splash
+sethex(0x967DB6C, 0x66, 0xCC, 0x00);
+// Jet Thrust from Boat
+sethex(0x967DC00, 0x66, 0xCC, 0x00);
+// Extinguish Steam
+sethex(0x967DDBC, 0x66, 0xCC, 0x00);
+// Ped Splash
+sethex(0x967DE50, 0x66, 0xCC, 0x00);
+// Ped Foot Dust
+sethex(0x967DEE4, 0x66, 0xCC, 0x00);
+// Car Dust
+sethex(0x967DF77, 0x66, 0xCC, 0x00);
+// Helicopter Dust
+sethex(0x967E00C, 0x66, 0xCC, 0x00);
+// Helicopter Attack
+sethex(0x967E0A0, 0x66, 0xCC, 0x00);
+// Paint Spray
+sethex(0x967E382, 0x66, 0xCC, 0x00);
+// Car Debris
+sethex(0x967E540, 0x66, 0xCC, 0x00);
+// Helicopter Debris
+sethex(0x967E668, 0x66, 0xCC, 0x00);
+// Rubber Smoke
+sethex(0x967E790, 0x66, 0xCC, 0x00);
+// First Gunshell
+sethex(0x967E94C, 0x66, 0xCC, 0x00);
+// Gunshell
+sethex(0x967E9E0, 0x66, 0xCC, 0x00);
+// Bump1 Gunshell
+sethex(0x967EA74, 0x66, 0xCC, 0x00);
+// Bump2 Gunshell
+sethex(0x967EB08, 0x66, 0xCC, 0x00);
+// Bird Front
+sethex(0x967ECC4, 0x66, 0xCC, 0x00);
+// Ship Side
+sethex(0x967ED58, 0x66, 0xCC, 0x00);
+// Beastie
+sethex(0x967EDEC, 0x66, 0xCC, 0x00);
+// 2D Raindrop
+sethex(0x967EE80, 0x66, 0xCC, 0x00);
+// Multiplayer Hit
+sethex(0x967EFA8, 0x66, 0xCC, 0x00);
+// Hydrant Steam
+sethex(0x967F03C, 0x66, 0xCC, 0x00);
+// Gunflash No Animation
+sethex(0x967CAA8, 0x66, 0xCC, 0x00);
+// Spark
+sethex(0x9794D40, 0x66, 0xCC, 0x00);
+
+#cheat GTA HorrorMovie Enviromod 2: Back With Vengance
+//ID: 13229
+//Score: 82
+//Author: Haddenjms
+//Category: Environment
+//Description: Once again, it's back, but this time, BLOOD will come faster, and STALKERS will be stalking you, fighting along the way. If you punch someone they will disapeer... Much strangeness going on, HAVE FUN GETTING KILLED!
+//Image: none
+//Time: 19/06/2006 04:06:23
+//Working: Yes
+setfloat(0x8E55530, -73, -931, 26.50);
+moveto(-72.85, -944.33, 26.36); object(0x01E4, 0, 0, 178);
+move(-8.69, -0.36, 0.00); object(0x01E4, 0, 0, 178);
+move(-4.28, 4.17, 0.00); object(0x01E4, 0, 0, 271);
+move(0.23, 8.90, 0.00); object(0x01E4, 0, 0, 271);
+move(0.51, 8.98, 0.20); object(0x01E4, 0, 0, 270);
+move(4.31, 4.21, 0.00); object(0x01E4, 0, 0, 0);
+move(8.90, -0.01, 0.00); object(0x01E4, 0, 0, 0);
+move(8.70, -0.01, 0.00); object(0x01E4, 0, 0, 0);
+move(4.34, -4.14, -0.20); object(0x01E4, 0, 0, 92);
+move(-0.28, -8.80, 0.00); object(0x01E4, 0, 0, 92);
+move(-0.28, -8.70, 0.00); object(0x01E4, 0, 0, 92);
+move(-4.84, -3.97, 0.00); object(0x01E4, 0, 0, 178);
+move(-17.24, -0.73, 3.00); object(0x01E4, 0, 0, 178);
+move(8.59, 0.30, 0.00); object(0x01E4, 0, 0, 178);
+move(8.89, 0.31, 0.00); object(0x01E4, 0, 0, 178);
+move(4.40, 4.53, 0.00); object(0x01E4, 0, 0, 93);
+move(0.49, 8.59, 0.00); object(0x01E4, 0, 0, 93);
+move(0.50, 8.79, 0.00); object(0x01E4, 0, 0, 93);
+move(-4.41, 4.02, 0.00); object(0x01E4, 0, 0, 2);
+move(-8.70, 0.26, 0.00); object(0x01E4, 0, 0, 2);
+move(-9.00, 0.27, 0.00); object(0x01E4, 0, 0, 2);
+move(-4.82, -4.34, 0.00); object(0x01E4, 0, 0, 270);
+move(0.08, -8.90, 0.00); object(0x01E4, 0, 0, 270);
+move(0.08, -9.20, 0.00); object(0x01E4, 0, 0, 270);
+//other part
+moveto(-73.00, -937.85, 26.77); object(0x0251, 0, 0, 180);
+move(-2.42, 0.62, 0.00); object(0x0251, 0, 0, 209);
+move(-2.23, 2.54, 0.00); object(0x0251, 0, 0, 248);
+move(-0.31, 2.45, 0.00); object(0x0251, 0, 0, 277);
+move(0.54, 3.45, 0.00); object(0x0251, 0, 0, 317);
+move(3.55, 1.95, 0.00); object(0x0251, 0, 0, 2);
+move(4.45, -1.32, 0.00); object(0x0251, 0, 0, 52);
+move(1.27, -4.42, 0.00); object(0x0251, 0, 0, 105);
+move(-0.85, -3.21, 0.00); object(0x0251, 0, 0, 139);
+setfloat(0x09D5e240, 150)
+//Made by judas_coach
+sethex(0x99D4492, 0xFF);
+sethex(0x99D44D6, 0x00);
+sethex(0x99D4546, 0xFF);
+sethex(0x99D45A6, 0xFF);
+sethex(0x99D456A, 0xFF);
+sethex(0x99D44AE, 0xFF);
+sethex(0x99D467B, 0xFF);
+sethex(0x99D46EA, 0xFF);
+sethex(0x99D46AA, 0xFF);
+sethex(0x99D473A, 0xFF);
+//WARNING: Cannot be turned off
+setchar(0x8B562F2, 1)
+#off
+setchar(0x8B562F2, 0)
+setchar(pplayer + 0x198, 0x40);
+//by PezoFaSho
+setchar(0x8B48E29, 0x01)
+setchar(0x08B564D8, 1)
+setchar(0x08B48E29, 1)
+setint(0x088de24c, 0);
+setshort(0x088de258, 0);
+#off
+setint(0x088de24c, 0x1080000d);
+setshort(0x088de258, 20);
+//WARNING: Cannot be turned off
+setchar(0x8B562F2, 1)
+#off
+setchar(0x8B562F2, 0)
+setchar(099542b0+0x168-cb0, 0x40)
+setchar(099542b0+0x168-0x1960, 0x40)
+setchar(099542b0+0x168-0x2610, 0x40)
+setchar(099542b0+0x168-0x32c0, 0x40)
+setchar(099542b0+0x168-0x3F70, 0x40)
+setchar(099542b0+0x168-0x4c20, 0x40)
+setchar(099542b0+0x168-0x58d0, 0x40)
+setchar(099542b0+0x168, 0x40)
+setchar(0994b720+0x168, 0x40)
+setchar(0994d080+0x168, 0x40)
+setchar(0994dd30+0x168, 0x40)
+setchar(099542b0+0x168+cb0, 0x40)
+setchar(099542b0+0x168+0x1960, 0x40)
+setchar(099542b0+0x168+0x2610, 0x40)
+setchar(099542b0+0x168+0x32c0, 0x40)
+setchar(099542b0+0x168+0x3F70, 0x40)
+setchar(099542b0+0x168+0x4c20, 0x40)
+setchar(099542b0+0x168+0x58d0, 0x40)
+setchar(099542b0+0x168+0x6580, 0x40)
+setchar(099542b0+0x168+0x7230, 0x40)
+setchar(099542b0+0x168+0x7ee0, 0x40)
+setchar(099542b0+0x168+0x8b90, 0x40)
+setchar(099542b0+0x168+0x9840, 0x40)
+setchar(099542b0+0x168+104f0, 0x40)
+setchar(099542b0+0x168+0xb1a0, 0x40)
+setchar(099542b0+0x168+0xbe50, 0x40)
+setchar(099542b0+0x168+0xcb00, 0x40)
+setchar(099542b0+0x168+0xd7b0, 0x40)
+setchar(099542b0+0x168+0xe460, 0x40)
+setchar(099542b0+0x168+0xf110, 0x40)
+setchar(099542b0+0x168+0xfdc0, 0x40)
+setchar(099542b0+0x168+0x10a70, 0x40)
+setchar(099542b0+0x168+0x11720, 0x40)
+setchar(099542b0+0x168+0x123d0, 0x40)
+setchar(099542b0+0x168+0x13080, 0x40)
+setchar(099542b0+0x168+0x13d30, 0x40)
+setchar(099542b0+0x168+0x149e0, 0x40)
+setchar(099542b0+0x168+0x15690, 0x40)
+setchar(099542b0+0x168+0x16340, 0x40)
+setchar(099542b0+0x168+0x16ff0, 0x40)
+setchar(099542b0+0x168+0x17ca0, 0x40)
+setchar(099542b0+0x168+0x18950, 0x40)
+setchar(099542b0+0x168+0x19600, 0x40)
+setchar(099542b0+0x168+0x1a2b0, 0x40)
+setchar(099542b0+0x168+0x1af60, 0x40)
+setchar(099542b0+0x168+0x1bc10, 0x40)
+setchar(099542b0+0x168+0x1c8c0, 0x40)
+setchar(099542b0+0x168+0x1d570, 0x40)
+setchar(099542b0+0x168+0x1e220, 0x40)
+setchar(099542b0+0x168+0x1eed0, 0x40)
+setchar(099542b0+0x168+0x1fb80, 0x40)
+setchar(099542b0+0x168+0x20830, 0x40)
+setchar(099542b0+0x168+0x214e0, 0x40)
+setchar(099542b0+0x168+0x22190, 0x40)
+setchar(099542b0+0x168+0x22e40, 0x40)
+setchar(099542b0+0x168+0x23af0, 0x40)
+setchar(099542b0+0x168+0x247a0, 0x40)
+setchar(099542b0+0x168+0x25450, 0x40)
+setchar(099542b0+0x168+0x26100, 0x40)
+setint(0x088de24c, 0);
+setshort(0x088de258, 1900);
+//by rick
+//part1
+sethex(0x967C4E0, 0x33, 0xFF, 0x00);
+//part2
+sethex(0x967C574, 0x33, 0xFF, 0x00);
+//part3
+setchar(0x08B4BC10, 1);
+//part 4
+setchar(0x8B562F2, 1);
+//part 5
+setchar(0x08B48E29, 1);
+#off
+setchar(0x08B4BC10, 0);
+setchar(0x8B562F2, 0);
+setchar(0x08B48E29, 0);
+setshort(0x992F7E0, 45, 6C, 6D, 20, 53, 74, 72, 65, 65, 74);
+setchar(08b5e36c, 0x00, 0x00, 0x00)
+
+#cheat rain and blood go orange
+//ID: 13661
+//Score: 48
+//Author: Ayrton simmons
+//Category: Pointless
+//Description: look up
+//Image: none
+//Time: 24/06/2006 15:22:17
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Blood
+sethex(0x967C4E0, 0xFF, 0x99, 0x00);
+// Blood Small
+sethex(0x967C574, 0xFF, 0x99, 0x00);
+// Blood Spurt
+sethex(0x967C608, 0xFF, 0x99, 0x00);
+// Raindrop
+sethex(0x967D510, 0xFF, 0x99, 0x00);
+// Small Raindrop
+sethex(0x967D5A4, 0xFF, 0x99, 0x00);
+// Rain Splash
+sethex(0x967D638, 0xFF, 0x99, 0x00);
+// Big Row of Rain Splash
+sethex(0x967D6CC, 0xFF, 0x99, 0x00);
+// Rain Splash Up
+sethex(0x967D760, 0xFF, 0x99, 0x00);
+// 2D Raindrop
+sethex(0x967EE80, 0xFF, 0x99, 0x00);
+
+#cheat all rain is blood!!!
+//ID: 14241
+//Score: 41
+//Author: wewa
+//Category: Environment
+//Description: This looks hella cool
+//
+//thx to: admac21 for the idea!!!
+//Image: none
+//Time: 05/07/2006 20:00:57
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Water Hydrant
+sethex(0x967DC94, 0xCC, 0x00, 0x33);
+// Water Spark
+sethex(0x967C290, 0xCC, 0x00, 0x33);
+// Wheel Water
+sethex(0x967C44C, 0xCC, 0x00, 0x33);
+// Dry Ice
+sethex(0x967CE20, 0xCC, 0x00, 0x33);
+// Splash
+sethex(0x967D070, 0xCC, 0x00, 0x33);
+// Raindrop
+sethex(0x967D510, 0xCC, 0x00, 0x33);
+// Small Raindrop
+sethex(0x967D5A4, 0xCC, 0x00, 0x33);
+// Rain Splash
+sethex(0x967D638, 0xCC, 0x00, 0x33);
+// Big Row of Rain Splash
+sethex(0x967D6CC, 0xCC, 0x00, 0x33);
+// Rain Splash Up
+sethex(0x967D760, 0xCC, 0x00, 0x33);
+// Water Spray
+sethex(0x967D7F4, 0xCC, 0x00, 0x33);
+// Car Splash
+sethex(0x967DAD8, 0xCC, 0x00, 0x33);
+// Boat Splash
+sethex(0x967DB6C, 0xCC, 0x00, 0x33);
+// Jet Thrust from Boat
+sethex(0x967DC00, 0xCC, 0x00, 0x33);
+// Ped Splash
+sethex(0x967DE50, 0xCC, 0x00, 0x33);
+// Ship Side
+sethex(0x967ED58, 0xCC, 0x00, 0x33);
+// 2D Raindrop
+sethex(0x967EE80, 0xCC, 0x00, 0x33);
+// Hydrant Steam
+sethex(0x967F03C, 0xCC, 0x00, 0x33);
+
+#cheat green alien blood!
+//ID: 15339
+//Score: 12
+//Author: haydn
+//Category: Misc
+//Description: makes all blood turn green, makes it look like every1 is an alien, please download
+//Image: none
+//Time: 23/07/2006 20:23:53
+//Working: Unknown
+// Cheats Found by haydn
+// Script Written by haydn
+// Blood
+sethex(0x967C4E0, 0x00, 0x66, 0x00);
+
+#cheat Make a gang
+//ID: 5274
+//Score: 1600
+//Author: pspboy
+//Category: Player
+//Description: Make the peds follow you and have weapons, they will attack what you attack. Thanks Sousanator, for the peds follow you and peds have wepons cheats. Tested and it does work.
+//Image: none
+//Time: 24/02/2006 23:24:47
+//Working: Yes
+setchar(0x08B48E29, 1)
+setchar(0x08B564D8, 1)
+#off
+setchar(0x08B564D8, 0)
+setchar(0x08B48E29, 0)
+
+//edited by ADePSP on 25/02/2006 20:00:31
+
+#cheat Cops/Gangs are Wimps
+//ID: 5531
+//Score: 48
+//Author: theY4Kman
+//Category: Pedestrians
+//Description: When you shoot a cop (When you have a wanted level), he runs away, just like some normal peds do. The same thing happens with gang members. If a cop or gang member who's been scared away reaches the "refresh point" (The point in which he goes back to norm
+//Image: none
+//Time: 09/03/2006 22:03:08
+//Working: Yes
+sethex(08b312D4, FF);
+sethex(08b312D5, FF);
+sethex(08b312D6, FF);
+sethex(08b312D7, FF);
+
+//edited by Durka Durka Mahn on 3/13/2006 3:20:09 PM
+
+#cheat NO PEDS
+//ID: 5718
+//Score: 83
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: One ped will exist. however I have 2 other cheats. one of those you can use to remove it.this will also remove those peds that are in vehicles (ghost cars :o). No longer will gangmembers or police shoot at you.
+//Image: http://www.waterbottle.y4kstudios.com/NO%20PEDS/heyyou.gif
+//Time: 18/03/2006 10:52:14
+//Working: Yes
+setfloat(099542b0-cb0, 0,0,0)
+setfloat(099542b0-0x1960, 0,0,0)
+setfloat(099542b0-0x2610, 0,0,0)
+setfloat(099542b0-0x32c0, 0,0,0)
+setfloat(099542b0-0x3F70, 0,0,0)
+setfloat(099542b0-0x4c20, 0,0,0)
+setfloat(099542b0-0x58d0, 0,0,0)
+setfloat(099542b0, 0,0,0)
+setfloat(0994c3d0, 0,0,0)
+setfloat(0994dd30, 0,0,0)
+setfloat(099542b0+cb0, 0,0,0)
+setfloat(099542b0+0x1960, 0,0,0)
+setfloat(099542b0+0x2610, 0,0,0)
+setfloat(099542b0+0x32c0, 0,0,0)
+setfloat(099542b0+0x3F70, 0,0,0)
+setfloat(099542b0+0x4c20, 0,0,0)
+setfloat(099542b0+0x58d0, 0,0,0)
+setfloat(099542b0+0x6580, 0,0,0)
+setfloat(099542b0+0x7230, 0,0,0)
+setfloat(099542b0+0x7ee0, 0,0,0)
+setfloat(099542b0+0x8b90, 0,0,0)
+setfloat(099542b0+0x9840, 0,0,0)
+setfloat(099542b0+0xa4f0, 0,0,0)
+setfloat(099542b0+0xb1a0, 0,0,0)
+setfloat(099542b0+0xbe50, 0,0,0)
+setfloat(099542b0+0xcb00, 0,0,0)
+setfloat(099542b0+0xd7b0, 0,0,0)
+setfloat(099542b0+0xe460, 0,0,0)
+setfloat(099542b0+0xf110, 0,0,0)
+setfloat(099542b0+0xfdc0, 0,0,0)
+setfloat(099542b0+0x10a70, 0,0,0)
+setfloat(099542b0+0x11720, 0,0,0)
+setfloat(099542b0+0x123d0, 0,0,0)
+setfloat(099542b0+0x13080, 0,0,0)
+setfloat(099542b0+0x13d30, 0,0,0)
+setfloat(099542b0+0x149e0, 0,0,0)
+setfloat(099542b0+0x15690, 0,0,0)
+setfloat(099542b0+0x16340, 0,0,0)
+setfloat(099542b0+0x16ff0, 0,0,0)
+setfloat(099542b0+0x17ca0, 0,0,0)
+setfloat(099542b0+0x18950, 0,0,0)
+setfloat(099542b0+0x19600, 0,0,0)
+setfloat(099542b0+0x1a2b0, 0,0,0)
+setfloat(099542b0+0x1af60, 0,0,0)
+setfloat(099542b0+0x1bc10, 0,0,0)
+setfloat(099542b0+0x1c8c0, 0,0,0)
+setfloat(099542b0+0x1d570, 0,0,0)
+setfloat(099542b0+0x1e220, 0,0,0)
+setfloat(099542b0+0x1eed0, 0,0,0)
+setfloat(099542b0+0x1fb80, 0,0,0)
+setfloat(099542b0+0x20830, 0,0,0)
+setfloat(099542b0+0x214e0, 0,0,0)
+setfloat(099542b0+0x22190, 0,0,0)
+setfloat(099542b0+0x22e40, 0,0,0)
+setfloat(099542b0+0x23af0, 0,0,0)
+setfloat(099542b0+0x247a0, 0,0,0)
+setfloat(099542b0+0x25450, 0,0,0)
+setfloat(099542b0+0x26100, 0,0,0)
+setfloat(099542b0+0x26db0, 0,0,0)
+setfloat(099542b0+0x27a60, 0,0,0)
+setfloat(099542b0+0x28710, 0,0,0)
+setfloat(099542b0+0x293c0, 0,0,0)
+setfloat(099542b0+0x2a070, 0,0,0)
+setfloat(099542b0+0x2ad20, 0,0,0)
+setfloat(099542b0+0x2b9d0, 0,0,0)
+setfloat(099542b0+0x2c680, 0,0,0)
+setfloat(099542b0+0x2d330, 0,0,0)
+setfloat(099542b0+0x2dfe0, 0,0,0)
+setfloat(099542b0+0x2ec90, 0,0,0)
+setfloat(099542b0+0x2f940, 0,0,0)
+
+//edited by RASAL on 23/03/2006 12:43:30
+
+#cheat Make a gang
+//ID: 6808
+//Score: 62
+//Author: gior_9220001
+//Category: Player
+//Description: //Make the peds follow you and have weapons, they will attack what you attack. Thanks Sousanator, for the peds follow you and peds have wepons cheats. Tested and it does work.
+//Image: none
+//Time: 15/04/2006 23:46:26
+//Working: Yes
+setchar(0x08B48E29, 1) 
+setchar(0x08B564D8, 1) 
+#off 
+setchar(0x08B564D8, 0) 
+setchar(0x08B48E29, 0) 
+
+#cheat Aggressive Drivers
+//ID: 4068
+//Score: 284
+//Author: GangsterOfGTA
+//Category: Button Cheats
+//Description: Aggressive Drivers ON
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(0x08B4BC10, 1);
+#off
+setchar(0x08B4BC10, 0);
+//theY4Kman: To makeup for lack of description, this cheat enables and disables the Button Code for Aggressive Drivers.
+
+//edited by Waterbottle on 09.03.2006 20:19:07
+
+#cheat Gangs attack
+//ID: 6083
+//Score: 138
+//Author: vettefan88
+//Category: Pedestrians
+//Description: as of cheat device 1.0 gangs won't attack you, this will reverse that and make all gangs attack you
+//Image: none
+//Time: 02/04/2006 20:01:05
+//Working: Yes
+setchar(0x0979B4B0, 0, 100, 0);
+setchar(0x0979B4E4, 0, 100, 0);
+setchar(0x0979B518, 0, 100, 0);
+setchar(0x0979B54C, 0, 100, 0);
+setchar(0x0979B580, 0, 100, 0);
+setchar(0x0979B5B4, 0, 100, 0);
+setchar(0x0979B5E8, 0, 100, 0);
+setchar(0x0979B61C, 0, 100, 0);
+setchar(0x0979B650, 0, 100, 0);
+
+//edited by vettefan88 on 4/3/2006 4:35:16 PM
+

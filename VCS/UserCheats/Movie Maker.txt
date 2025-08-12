@@ -1,0 +1,814 @@
+#cheat Rotate the Car Camera NA
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat Rotate the Car Camera
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat Rotate the Car Camera & Passenger Mode 
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+
+#cheat Rotate the Car Camera & Passenger Mode
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat CTW Camera View
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+setfloat(0x08BC86C0, 17); //Zoom on foot
+setfloat(0x08BC8684, 22); //Zoom in car
+//created by 03stevensmi
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+//setfloat(0x08BC8070, 0, 0, 180); //Zoom 
+setfloat(0x08BC7E8C, 180);
+setfloat(0x08BC7E90, 180);
+setfloat(0x08BC7FDC, 180);
+setfloat(0x08BC7FB8, 180);
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 1080, 0); //Rotation
+//setfloat(0x08BC8070, 0, 180, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 1080, 0, 0); //Rotation
+setfloat(0x08C7F18, -0.9);
+//setfloat(0x08BC8070, 180, 0, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+
+#cheat Adjust Camera Distance to 0
+setfloat(0x8bc86c0, 0);
+setfloat(0x8bc8684, 0);
+
+#cheat Adjust Camera Distance to 2
+setfloat(0x8bc86c0, 2);
+setfloat(0x8bc8684, 2);
+
+#cheat Adjust Camera Distance to 4
+setfloat(0x8bc86c0, 4);
+setfloat(0x8bc8684, 4);
+
+#cheat Adjust Camera Distance to 6
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+
+#cheat Adjust Camera Distance to 8
+setfloat(0x8bc86c0, 8);
+setfloat(0x8bc8684, 8);
+
+#cheat Adjust Camera Distance to 10
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+
+#cheat Adjust Camera Distance to -10
+setfloat(0x8bc86c0, -10);
+setfloat(0x8bc8684, -10);
+
+#cheat Adjust Camera Distance to -9
+setfloat(0x8bc86c0, -9);
+setfloat(0x8bc8684, -9);
+
+#cheat Adjust Camera Distance to -8
+setfloat(0x8bc86c0, -8);
+setfloat(0x8bc8684, -8);
+
+#cheat Adjust Camera Distance to -7
+setfloat(0x8bc86c0, -7);
+setfloat(0x8bc8684, -7);
+
+#cheat Adjust Camera Distance to -6
+setfloat(0x8bc86c0, -6);
+setfloat(0x8bc8684, -6);
+
+#cheat Adjust Camera Distance to -5
+setfloat(0x8bc86c0, -5);
+setfloat(0x8bc8684, -5);
+
+#cheat Adjust Camera Distance to -4
+setfloat(0x8bc86c0, -4);
+setfloat(0x8bc8684, -4);
+
+#cheat Adjust Camera Distance to -3
+setfloat(0x8bc86c0, -3);
+setfloat(0x8bc8684, -3);
+
+#cheat Adjust Camera Distance to -2
+setfloat(0x8bc86c0, -2);
+setfloat(0x8bc8684, -2);
+
+#cheat Adjust Camera Distance to -1
+setfloat(0x8bc86c0, -1);
+setfloat(0x8bc8684, -1);
+
+#cheat Adjust Camera Distance to -0
+setfloat(0x8bc86c0, -0);
+setfloat(0x8bc8684, -0);
+
+#cheat 1st person view 
+setfloat(0x8bc86c0, -4);
+setfloat(0x8bc8684, -4);
+
+#cheat Top Down View
+setfloat(0x08BC7FC4, -2); // Enable Top Down View 
+setfloat(0x08BC86C0, 10); // On Foot Camera Zoom
+setfloat(0x08BC8684, 15); // In Vehicle Camera Zoom
+
+// By Winchy
+// You can get some nice angles if used during a cutscene.
+// CANNOT be used in cars.
+#cheat Lock Camera
+setchar(pplayer + 0x550,   1);
+#off
+setchar(pplayer + 0x550,   0);
+
+#cheat First Person View in Car v2
+//ID: 19850
+//Score: 33
+//Author: Xsjado
+//Category: Vehicle
+//Description: it works well for the moment but still needs a bit of work on it. none of the car cheats like rocket boost and other stuff dont work for the moment. i noticed there was a fair few people that wanted this, enjoy 
+//notes: doesnt work with motobikes, also turn on when you have entered the car or you will freeze 
+//
+//thanks to M_Roc for an address i needed
+//
+//EDITED BY: psphacker108 on 03/07/07 02:19:28
+//Image: none
+//Time: 29/06/2007 15:51:08
+//Working: Yes
+setchar(pplayer + 0x000008B4, 61);
+setchar(pplayer+0x4C,   0x10,   0x20);
+#off 
+setchar(pplayer+0x4C,   0x00,   0x00); 
+setchar(pplayer + 0x000008B4, 55);
+
+#cheat First Person View in Car
+//ID: 19834
+//Score: 41
+//Author: Xsjado
+//Category: Vehicle
+//Description: Puts the view point IN Vics head! parts of the face like eyes and nose can block camera and view is better in different cars. if the camera moves out of the car press L to reset it. doesnt work with motobikes
+//
+//EDITED BY: psphacker108 on 28/06/07 02:33:58
+//Image: none
+//Time: 24/06/2007 12:04:06
+//Working: Yes
+setchar(pplayer + 0x000008B4, 61);
+#off
+setchar(pplayer + 0x000008B4, 55);
+
+#cheat Player Position Reset
+sethex(0x098B52F4,    00);
+
+#cheat Player Position Reset 2
+sethex(0x098B52F4,    01);
+
+#cheat Player Always fighting postion
+sethex(0x098B52F4,    11);
+
+#Player Phone to Head
+setchar(pplayer+0x8B4, 0x24);
+
+#cheat Player Fall down, get up
+setchar(pplayer+0x8B4, 0x2D);
+
+#cheat Player Fall down, get up 2
+setchar(pplayer+0x8B4, 0x2E);
+
+#cheat Player Lock on Mode, strange Camera
+setchar(pplayer+0x8B4, 0x32);
+
+#Player Handsup
+setchar(pplayer+0x8B4, 0x40);
+
+#Player Busted
+setchar(pplayer+0x8B4, 0x41);
+
+#cheat Player Drown in water
+setchar(pplayer+0x8B4, 0x44);
+
+#cheat Player Enable AI 1 walking
+setchar(pplayer+0x894, 0x04);
+
+#Player attack mode
+setchar(pplayer+0x894, 0x08);
+
+#cheat Player follow mode
+setchar(pplayer+0x894, 0x0C);
+
+#cheat Player enter your car as passenger
+setchar(pplayer+0x894, 0x11);
+
+#cheat Player Enter nearest car as passenger
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Player Lock On to your car
+setchar(pplayer+0x894, 0x16);
+
+#Player Enable AI driving
+setchar(pplayer+0x894, 0x17);
+
+#Player Enable AI 2 walking
+setchar(pplayer+0x894, 0x18);
+
+#Player Enable AI 2 sprinting
+setchar(pplayer+0x894, 0x19);
+
+#Player Enable AI 3 walking
+setchar(pplayer+0x894, 0x1E);
+
+#cheat Player Call for Taxi
+if(buttons & CTRL_UP && !pcar){
+setchar(pplayer+0x894, 0x20);
+
+#Player Enable AI 4 running
+setchar(pplayer+0x894, 0x31);}
+
+#Ped Make target attack you
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x8);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Make target follow you
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0xC);
+setint(pped+0x890, pplayer);}
+
+#Ped Leave your Car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x10);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Enter your car as passenger
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x11);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Enter your car as passenger 2
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x21);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Hijacks nearest car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(yourped+0x894, 0x17);
+setchar(yourped+0x894, 0x12);}
+
+#Ped Call for Taxi
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x20);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Phone to Head
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x24);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Fall down, get up
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x2D);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Fall down, get up 2
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x2E);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Lock on Mode, strange Camera
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x32);
+setint(pped+0x890, pplayer);}
+
+#Ped Handsup
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x40);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Busted
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x41);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Drown in water
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x44);
+setint(pped+0x890, pplayer);}
+
+#cheat Always Roll When Falling
+//ID: 18484
+//Score: 76
+//Author: theY4Kman
+//Category: Player
+//Description: [LCS PORT - ORIGINAL AUTHOR: theY4Kman]
+//When jumping, you'll always roll when you hit the ground.
+//
+//Image: http://y4kstudios.com/cheatsync/image.php?image=allroll&ext=.jpg
+//Time: 03/11/2006 21:21:36
+//Working: Yes
+setfloat(pplayer + 0x1C4, 800.0);
+
+#cheat Free Spirit [port from: LCS]
+//ID: 18556
+//Score: 161
+//Author: magical trevor
+//Category: Player
+//Description: Thanks to DDM for helping me find this, this cheat will make Vic's player model freeze in one spot and you can walk around as his shadow, or 'spirit'
+//Image: http://img526.imageshack.us/img526/5898/video1xr0.gif
+//Time: 05/11/2006 20:27:56
+//Working: Yes
+setchar(pplayer + 0x042, 0xA3);
+#off
+setchar(pplayer + 0x042, 0xA2);
+
+#cheat First Person Mode
+//ID: 18834
+//Score: 136
+//Author: M_Roc
+//Category: Player
+//Description: Makes Vice City Stories a First Person Shooter
+//Vic is in First person,Takes VCS to a whole another level. 
+//Best To put the Camera Close to Vic
+//
+//EDITED BY: psphacker108 on 23/11/06 00:52:34
+//Image: http://vcs.dajoob.com/cheats/video1.gif
+//Time: 22/11/2006 15:04:43
+//Working: Yes
+//Put it on Camera Angle 3
+//By M_Roc aka Mz8691 aka Kran to others
+//More Cheats on the way Like my High Cheat
+setchar(pplayer+0x4C,  0x10,  0x20);
+#off
+setchar(pplayer+0x4C,  0x00,  0x00);
+setchar(0x9A63413,  0x123);
+setchar(0x9A63418,  0x01);
+setchar(pplayer+0x4C,  0x20,  0x00);
+setchar(0x9A63413,  0x70);
+setchar(0x9A63418,  0x01);
+setchar(pplayer+0x4C,  0x40,  0x00);
+setchar(0x9A63413,  0x00);
+setchar(0x9A63418,  0x02);
+setchar(pplayer+0x4C,  0x10,  0x10);
+setchar(0x9A63413,  0x10);
+setchar(0x9A63418,  0x10);
+setchar(pplayer+0x4C,  0x254,  0x56);
+setchar(0x9A63413,  0x285);
+setchar(0x9A63418,  0x2583);
+setchar(pplayer+0x4C,  0x34,  0x352);
+#off
+setchar(pplayer+0x4C,  0x00,  0x00);
+setchar(0x9A63413,  0x00);
+setchar(0x9A63418,  0x01);
+
+#cheat Stunt Man
+// By Waterbottle
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+    jumping = true;
+    if(xstick)
+    {
+    setfloat(pplayer+0x78,  -xstick / 2);
+    score += sqrt(xstick*xstick) * 40;
+    }
+    if(ystick)
+    {
+    setfloat(pplayer+0x70,  ystick * getfloat(pplayer) / 2);
+    setfloat(pplayer+0x74,  ystick * getfloat(pplayer+4) / 2);
+    score += sqrt(ystick*ystick) * 50;      
+    }
+} else if(jumping) {
+    jumping = 0;
+    setfloat(pplayer+0x70,  0,  0,  0);
+    time = 40;
+    setint(0x08bde55c,  getint(0x08bde55c)+score);
+    rand = (getint(pplayer) + getint(0x08bb3b40)) % 3;
+}
+else if(time > 0 && score) {
+    time--;
+    int = int(score);
+    if(rand == 0) setshort(0x08e90bd8,  1,  ' ',  'W',  'o',  'w' ,  ',  ', ' ',  'y',  'o',  'u',  ' ',  'g',  'o',  't',  ' ');
+    else if(rand == 1) setshort(0x08e90bd8,  1,  ' ',  ' ',  'S',  'i',  'c' ,  'k',  ' ',  's',  't',  'u',  'n',  't',  '!',  ' ');
+    else setshort(0x08e90bd8,  1,  'N',  'i',  'c' ,  'e',  ' ',  'f',  'l',  'i',  'p',  ' ',  'm',  'a',  'n',  ' ');
+    size = 0;
+    for(i = 1; i < int; i*=10) size+=2;
+    for(i = 0; int > 0; i+=2 ) {
+    setshort(0x08e90bf4+size-i,  '0' + (int % 10));
+    int = int(int/=10);
+    }
+    if(rand == 0) setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '!',  ' ',  ':',  ')',  0);
+    else if(rand == 1) setshort(0x08e90bf4+i,  ' ',  '$',  ' ',  'f',  'o', 'r',  ' ',  'y',  'o',  'u',  '!',  0);
+    else setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '.',  0);
+    }
+else time = score = 0;
+
+
+
+// By Magical Trevor
+// Thanks to DDM for helping me find this, this cheat will make Vic's player model freeze in one spot and you can walk around as his shadow, or 'spirit'
+#cheat Free Spirit
+setchar(pplayer + 0x042,  0xA3);
+#off
+setchar(pplayer + 0x042,  0xA2);
+
+
+#cheat lock cam (hit note butten)
+if(buttons & CTRL_NOTE)
+{
+setchar(pplayer + 0x550, 1);
+}
+#off
+if(buttons & CTRL_NOTE)
+{
+setchar(pplayer + 0x550, 0);
+}
+
+
+
+#cheat camera angles
+if(buttons & CTRL_NOTE)
+{
+setchar(pplayer + 0x550, 1);
+}
+if(buttons & CTRL_SCREEN)
+{
+setchar(pplayer + 0x550, 0);
+}
+if(buttons & CTRL_VOLUP)
+{
+setfloat(0x8bc86c0, -12);
+setfloat(0x8bc8684, -12);
+}
+if(buttons & CTRL_VOLDOWN)
+{
+setfloat(0x08BC8030, 0, 0, 0);
+setfloat(0x08BC80B0, 0, 1080, 0);
+setfloat(0x08BC8070, 0, 180, 0); 
+setfloat(0x08BC7E8C, 90);
+}
+
+
+
+
+#cheat camera angles (HELP & INFO)
+setshort(0x08e90bd8, 1, 'P','r','e','s','s',' ','"','N','O','T','E','"',' ','t','o',' ','l','o','c','k',' ','c','a','m','e','r','a',',',' ','P','r','e','s','s',' ','"','S','C','R','E','E','N','"',' ','t','o',' ','u','n','l','o','c','k',' ','c','a','m','e','r','a',',',' ','H','o','l','d',' ','"','V','O','L','.','U','P','"',' ','t','o',' ','c','h','a','n','g','e',' ','c','a','m','e','r','a',' ','d','i','s','t','a','n','c','e',',',' ','H','o','l','d',' ','"','V','O','L','.','D','O','W','N','"',' ','t','o',' ','c','h','a','n','g','e',' ','c','a','m','e','r','a',' ','a','n','g','l','e','.', 0);
+if(buttons & CTRL_NOTE)
+{
+setchar(pplayer + 0x550, 1);
+}
+if(buttons & CTRL_SCREEN)
+{
+setchar(pplayer + 0x550, 0);
+}
+if(buttons & CTRL_VOLUP)
+{
+setfloat(0x8bc86c0, -12);
+setfloat(0x8bc8684, -12);
+}
+if(buttons & CTRL_VOLDOWN)
+{
+setfloat(0x08BC8030, 0, 0, 0);
+setfloat(0x08BC80B0, 0, 1080, 0);
+setfloat(0x08BC8070, 0, 180, 0); 
+setfloat(0x08BC7E8C, 90);
+}
+
+
+
+#cheat Make A Movie
+static menu;
+choices = 10;
+setchar(0x08E93604, 0x1);
+if(press & CTRL_DOWN && menu < choices - 1) {
+   menu++;
+setchar(0x08E93604, 0x0);
+}
+if(press & CTRL_UP && menu > 0) {
+   menu--;
+setchar(0x08E93604, 0x0);
+}
+setshort(0x08E92FFC, 'M', 'o', 'v', 'i', 'e', ' ', 'M', 'a', 'k', 'e', 'r');
+setshort(0x08E931FC, 'M', 'o', 'v', 'i', 'e', ' ', 'M', 'a', 'k', 'e', 'r');
+setshort(0x08E933FC, 'M', 'o', 'v', 'i', 'e', ' ', 'M', 'a', 'k', 'e', 'r');
+if(menu == 0) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8, 1, 'P','r','e','s','s',' ','"','N','O','T','E','"',' ','t','o',' ','l','o','c','k',' ','c','a','m','e','r','a',',',' ','P','r','e','s','s',' ','"','S','C','R','E','E','N','"',' ','t','o',' ','u','n','l','o','c','k',' ','c','a','m','e','r','a',',',' ','H','o','l','d',' ','"','V','O','L','.','U','P','"',' ','t','o',' ','c','h','a','n','g','e',' ','c','a','m','e','r','a',' ','d','i','s','t','a','n','c','e',',',' ','H','o','l','d',' ','"','V','O','L','.','D','O','W','N','"',' ','t','o',' ','c','h','a','n','g','e',' ','c','a','m','e','r','a',' ','a','n','g','l','e','.', 0);
+if(buttons & CTRL_NOTE)
+{
+setchar(pplayer + 0x550, 1);
+}
+if(buttons & CTRL_SCREEN)
+{
+setchar(pplayer + 0x550, 0);
+}
+if(buttons & CTRL_VOLUP)
+{
+setfloat(0x8bc86c0, -12);
+setfloat(0x8bc8684, -12);
+}
+if(buttons & CTRL_VOLDOWN)
+{
+setfloat(0x08BC8030, 0, 0, 0);
+setfloat(0x08BC80B0, 0, 1080, 0);
+setfloat(0x08BC8070, 0, 180, 0); 
+setfloat(0x08BC7E8C, 90);
+}
+setshort(0x08E92FFC + 22, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E931FC + 22, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E933FC + 22, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+}
+if(menu == 1) {
+if(buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+}
+setshort(0x08E92FFC + 54, '~', 'n', '~', '>', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E931FC + 54, '~', 'n', '~', '>', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E933FC + 54, '~', 'n', '~', '>', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+}
+if(menu == 2) {
+if(buttons & CTRL_CROSS)
+{
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+//setfloat(0x08BC8070, 0, 0, 180); //Zoom 
+setfloat(0x08BC7E8C, 180);
+setfloat(0x08BC7E90, 180);
+setfloat(0x08BC7FDC, 180);
+setfloat(0x08BC7FB8, 180);
+}
+setshort(0x08E92FFC + 94, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E931FC + 94, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E933FC + 94, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+}
+if(menu == 3) {
+if(buttons & CTRL_CROSS)
+{
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 1080, 0, 0); //Rotation
+setfloat(0x08C7F18, -0.9);
+//setfloat(0x08BC8070, 180, 0, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+}
+setshort(0x08E92FFC + 128, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E931FC + 128, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E933FC + 128, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+}
+if(menu == 4) {
+if(buttons & CTRL_CROSS)
+{
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+}
+setshort(0x08E92FFC + 162, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E931FC + 162, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E933FC + 162, '~', 'n', '~', '>', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+}
+if(menu == 5) {
+if(buttons & CTRL_CROSS)
+{
+setchar(pplayer + 0x000008B4, 61);
+#off
+setchar(pplayer + 0x000008B4, 55);
+}
+setshort(0x08E92FFC + 204, '~', 'n', '~', '>', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E931FC + 204, '~', 'n', '~', '>', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E933FC + 204, '~', 'n', '~', '>', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+}
+if(menu == 6) {
+if(buttons & CTRL_CROSS)
+{
+setchar(pplayer+0x8B4, 0x24);
+}
+setshort(0x08E92FFC + 258, '~', 'n', '~', '>', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E931FC + 258, '~', 'n', '~', '>', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E933FC + 258, '~', 'n', '~', '>', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+}
+if(menu == 7) {
+if(buttons & CTRL_CROSS)
+{
+setchar(pplayer+0x8B4, 0x40);
+}
+setshort(0x08E92FFC + 288, '~', 'n', '~', '>', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E931FC + 288, '~', 'n', '~', '>', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E933FC + 288, '~', 'n', '~', '>', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+}
+if(menu == 8) {
+if(buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_UP && !pcar){
+setchar(pplayer+0x894, 0x20);
+}
+setshort(0x08E92FFC + 310, '~', 'n', '~', '>', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E931FC + 310, '~', 'n', '~', '>', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E933FC + 310, '~', 'n', '~', '>', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+}
+if(menu == 9) {
+if(buttons & CTRL_CROSS)
+{
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+    jumping = true;
+    if(xstick)
+    {
+    setfloat(pplayer+0x78,  -xstick / 2);
+    score += sqrt(xstick*xstick) * 40;
+    }
+    if(ystick)
+    {
+    setfloat(pplayer+0x70,  ystick * getfloat(pplayer) / 2);
+    setfloat(pplayer+0x74,  ystick * getfloat(pplayer+4) / 2);
+    score += sqrt(ystick*ystick) * 50;      
+    }
+} else if(jumping) {
+    jumping = 0;
+    setfloat(pplayer+0x70,  0,  0,  0);
+    time = 40;
+    setint(0x08bde55c,  getint(0x08bde55c)+score);
+    rand = (getint(pplayer) + getint(0x08bb3b40)) % 3;
+}
+else if(time > 0 && score) {
+    time--;
+    int = int(score);
+    if(rand == 0) setshort(0x08e90bd8,  1,  ' ',  'W',  'o',  'w' ,  ',  ', ' ',  'y',  'o',  'u',  ' ',  'g',  'o',  't',  ' ');
+    else if(rand == 1) setshort(0x08e90bd8,  1,  ' ',  ' ',  'S',  'i',  'c' ,  'k',  ' ',  's',  't',  'u',  'n',  't',  '!',  ' ');
+    else setshort(0x08e90bd8,  1,  'N',  'i',  'c' ,  'e',  ' ',  'f',  'l',  'i',  'p',  ' ',  'm',  'a',  'n',  ' ');
+    size = 0;
+    for(i = 1; i < int; i*=10) size+=2;
+    for(i = 0; int > 0; i+=2 ) {
+    setshort(0x08e90bf4+size-i,  '0' + (int % 10));
+    int = int(int/=10);
+    }
+    if(rand == 0) setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '!',  ' ',  ':',  ')',  0);
+    else if(rand == 1) setshort(0x08e90bf4+i,  ' ',  '$',  ' ',  'f',  'o', 'r',  ' ',  'y',  'o',  'u',  '!',  0);
+    else setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '.',  0);
+    }
+else time = score = 0;
+}
+setshort(0x08E92FFC + 344, '~', 'n', '~', '>', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E931FC + 344, '~', 'n', '~', '>', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E933FC + 344, '~', 'n', '~', '>', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+}
+if(menu > 0) {
+setshort(0x08E92FFC + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E931FC + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E933FC + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+}
+if(menu > 1) {
+setshort(0x08E92FFC + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E931FC + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E933FC + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+}
+if(menu > 2) {
+setshort(0x08E92FFC + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E931FC + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E933FC + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+}
+if(menu > 3) {
+setshort(0x08E92FFC + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E931FC + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E933FC + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+}
+if(menu > 4) {
+setshort(0x08E92FFC + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E931FC + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E933FC + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+}
+if(menu > 5) {
+setshort(0x08E92FFC + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E931FC + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E933FC + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+}
+if(menu > 6) {
+setshort(0x08E92FFC + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E931FC + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E933FC + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+}
+if(menu > 7) {
+setshort(0x08E92FFC + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E931FC + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E933FC + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+}
+if(menu > 8) {
+setshort(0x08E92FFC + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E931FC + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E933FC + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+}
+if(menu > 9) {
+setshort(0x08E92FFC + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E931FC + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E933FC + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+}
+if(menu < 0) {
+setshort(0x08E92FFC +0x2 + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E931FC +0x2 + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+setshort(0x08E933FC +0x2 + 22, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', 's');
+}
+if(menu < 1) {
+setshort(0x08E92FFC +0x2 + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E931FC +0x2 + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+setshort(0x08E933FC +0x2 + 54, '~', 'n', '~', 'R', 'o', 't', 'a', 't', 'e', ' ', 'C', 'a', 'r', ' ', 'C', 'a', 'm', 'e', 'r', 'a');
+}
+if(menu < 2) {
+setshort(0x08E92FFC +0x2 + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E931FC +0x2 + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+setshort(0x08E933FC +0x2 + 94, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '1');
+}
+if(menu < 3) {
+setshort(0x08E92FFC +0x2 + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E931FC +0x2 + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+setshort(0x08E933FC +0x2 + 128, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'A', 'n', 'g', 'l', 'e', ' ', '2');
+}
+if(menu < 4) {
+setshort(0x08E92FFC +0x2 + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E931FC +0x2 + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+setshort(0x08E933FC +0x2 + 162, '~', 'n', '~', 'C', 'a', 'm', 'e', 'r', 'a', ' ', 'D', 'i', 's', 't', 'a', 'n', 'c', 'e', ' ', 'x', '6');
+}
+if(menu < 5) {
+setshort(0x08E92FFC +0x2 + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E931FC +0x2 + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+setshort(0x08E933FC +0x2 + 204, '~', 'n', '~', 'F', 'i', 'r', 's', 't', ' ', 'P', 'e', 'r', 's', 'o', 'n', ' ', 'V', 'i', 'e', 'w', ' ', 'I', 'n', ' ', 'C', 'a', 'r');
+}
+if(menu < 6) {
+setshort(0x08E92FFC +0x2 + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E931FC +0x2 + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+setshort(0x08E933FC +0x2 + 258, '~', 'n', '~', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'P', 'h', 'o', 'n', 'e');
+}
+if(menu < 7) {
+setshort(0x08E92FFC +0x2 + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E931FC +0x2 + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+setshort(0x08E933FC +0x2 + 288, '~', 'n', '~', 'H', 'a', 'n', 'd', 's', ' ', 'U', 'p');
+}
+if(menu < 8) {
+setshort(0x08E92FFC +0x2 + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E931FC +0x2 + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+setshort(0x08E933FC +0x2 + 310, '~', 'n', '~', 'I', 'c', 'h', ' ', 'B', 'i', 'n', ' ', 'h', 'i', 't', 'l', 'e', 'r');
+}
+if(menu < 9) {
+setshort(0x08E92FFC +0x2 + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E931FC +0x2 + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+setshort(0x08E933FC +0x2 + 344, '~', 'n', '~', 'S', 't', 'u', 'n', 't', ' ', 'M', 'a', 'n');
+}

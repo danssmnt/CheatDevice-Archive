@@ -1,0 +1,490 @@
+#cheat Red car neons
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Green car neons
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Blue car neons
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat White car neons
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Purple car neons
+R = 80;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Turquoise car neons
+R = 0;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Yellow car neons
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Orange car neons
+R = 255;
+G = 80;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Lime Green car neons
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Pink car neons
+R = 255;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Hot Pink car neons
+R = 255;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Sky Blue car neons
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+off();
+
+#cheat Red bike neons
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Green bike neons
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Blue bike neons
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat White bike neons
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+
+#cheat Purple bike neons
+R = 80;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Turquoise bike neons
+R = 0;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Yellow bike neons
+R = 255;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Orange bike neons
+R = 255;
+G = 80;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Lime Green bike neons
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Pink bike neons
+R = 255;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Hot Pink bike neons
+R = 255;
+G = 0;
+B = 80;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+#cheat Sky Blue bike neons
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+off();
+
+
+#cheat Fire On Car
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+
+
+#cheat GhostRider
+pspawn = 0x08E81290;  
+setint(pspawn,    231);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x08be3a20,  1);
+setfloat(0x08be3a30,  getfloat(pobj+0x30),  getfloat(pobj+0x34),  
+
+getfloat(pobj+0x38));
+setchar(0x08be3a20,  1);
+setfloat(0x08be3a30,  getfloat(pcar+0x30),  getfloat(pcar+0x34),  
+
+getfloat(pcar+0x38));
+setchar(0x9569b94,  0xFF,  0x00,  0x00);
+setchar(pcar+0x224, 0xFF, 0x00, 0x00);
+setchar(pcar+0x228, 0xFF, 0x00, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+static rotation;
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar +
+
+0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5)
+
+setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5)
+
+setfloat(pcar+0x140,  0,  0);
+
+
+#cheat Drive on Side
+setchar(pcar + 0x00000003, 0);
+
+
+
+#cheat Your Car Is White
+// By vettefan88
+setchar(pcar+0x224, 0xff, 0xff, 0xff);
+setchar(pcar+0x228, 0xff, 0xff, 0xff);
+
+
+
+#cheat Your Car Is White
+// By vettefan88
+setchar(pcar+0x224, 0xff, 0xa8, 0x00);
+setchar(pcar+0x228, 0xff, 0xa8, 0x00);
+
+
+#cheat black
+setchar(pcar+0x00000224, 0x00, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x00);
+
+#cheat red
+setchar(pcar+0x00000224, 0x99, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x99, 0x00, 0x00);
+
+#cheat yellow
+setchar(pcar+0x00000224, 0xff, 0x99, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x00);
+
+#cheat purple
+setchar(pcar+0x00000224, 0x5e, 0x29, 0x47);
+setchar(pcar+0x00000228, 0x5e, 0x29, 0x47);
+
+#cheat dark green
+setchar(pcar+0x00000224, 0x33, 0x99, 0x00);
+setchar(pcar+0x00000228, 0x33, 0x99, 0x00);
+
+#cheat orange
+setchar(pcar+0x00000224, 0xff, 0x66, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x66, 0x00);
+
+#cheat light gray
+setchar(pcar+0x00000224, 0xcc, 0xcc, 0xcc);
+setchar(pcar+0x00000228, 0xcc, 0xcc, 0xcc);
+
+#cheat white
+setchar(pcar+0x00000224, 0xff, 0xff, 0xff);
+setchar(pcar+0x00000228, 0xff, 0xff, 0xff);
+
+#cheat green
+setchar(pcar+0x00000224, 0x33, 0xcc, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xcc, 0x00);
+
+#cheat blue
+setchar(pcar+0x00000224, 0x00, 0x66, 0xcc);
+setchar(pcar+0x00000228, 0x00, 0x66, 0xcc);
+
+#cheat dark blue
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+#cheat dark gray
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+#cheat brown
+setchar(pcar+0x00000224, 0x66, 0x33, 0x00);
+setchar(pcar+0x00000228, 0x66, 0x33, 0x00);
+
+#cheat peach
+setchar(pcar+0x00000224, 0xff, 0xcc, 0x66);
+setchar(pcar+0x00000228, 0xff, 0xcc, 0x66);
+
+
+#cheat neon green
+setchar(pcar+0x00000224, 0x33, 0xff, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xff, 0x00);
+
+#cheat neon blue
+setchar(pcar+0x00000224, 0x00, 0xff, 0xff);
+setchar(pcar+0x00000228, 0x00, 0xff, 0xff);
+
+#cheat neon red
+setchar(pcar+0x00000224, 0xff, 0x00, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x00, 0x00);
+
+#cheat neon yellow
+setchar(pcar+0x00000224, 0x00, 0x00, 0xff);
+setchar(pcar+0x00000228, 0x00, 0x00, 0xff);
+
+#cheat neon purple
+setchar(pcar+0x00000224, 0xcc, 0x00, 0xff);
+setchar(pcar+0x00000228, 0xcc, 0x00, 0xff);
+
+#cheat neon orange
+setchar(pcar+0x00000224, 0xff, 0x99, 0x55);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x55);
+
+#cheat Black Lamborghini
+if(getshort(pcar+0x58)==270)
+{
+  setfloat(pcar+0x450,  0,  -1.2566371,  0);
+  setfloat(pcar+0x480,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+{
+  setshort(pcar+0x3b6,  0,  0);
+{
+   static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+  wasin = true;
+ speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+ setint(0x08bde55c,  speed,  speed);
+ setchar(0x8BAEDB8,  '%',  'd',  0);
+ setchar(0x8BAEDC0,  '%',  'd',  0);
+}
+else
+{  if(wasin)
+ {
+ setchar(0x8BAEDB8,  '%',  '0',  '8',  'd',  '$',  0);
+ setchar(0x8BAEDC0,  '$',  '%',  '0',  '8',  'd',  0);
+ setint(0x08bde55c,  money,  money);
+ wasin = false;
+ }
+ money = getint(0x08bde560);
+{
+  setchar(pcar+0x00000224, 0x00, 0x00, 0x00);
+  setchar(pcar+0x00000228, 0x00, 0x00, 0x00);
+}
+
+#cheat Orange Lamborghini
+if(getshort(pcar+0x58)==270)
+{
+  setfloat(pcar+0x450,  0,  -1.2566371,  0);
+  setfloat(pcar+0x480,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+{
+  setshort(pcar+0x3b6,  0,  0);
+{
+   static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+ wasin = true;
+ speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+ setint(0x08bde55c,  speed,  speed);
+ setchar(0x8BAEDB8,  '%',  'd',  0);
+ setchar(0x8BAEDC0,  '%',  'd',  0);
+}
+else
+{  if(wasin)
+ {
+ setchar(0x8BAEDB8,  '%',  '0',  '8',  'd',  '$',  0);
+ setchar(0x8BAEDC0,  '$',  '%',  '0',  '8',  'd',  0);
+ setint(0x08bde55c,  money,  money);
+ wasin = false;
+ }
+ money = getint(0x08bde560);
+{
+  setchar(pcar+0x00000224, 0xff, 0x66, 0x00);
+  setchar(pcar+0x00000228, 0xff, 0x66, 0x00);
+}
+
+
+#cheat Sentinel XTREME
+if(getshort(pcar+0x58)==274)
+{
+  setfloat(pcar+0x450,  0,  -1.2566371,  0);
+  setfloat(pcar+0x480,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+  setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+{
+  setshort(pcar+0x3b6,  0,  0);
+{
+  static rotation;
+  if (rotation == 0)
+  {
+  rotation = 360;
+  }
+  spin = tan(rotation);
+  setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+  rotation = rotation - 1;
+  if (rotation == 1)
+  {rotation = 360;}
+  if (buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+  //calculate speed
+  speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+  //if speed is lower than max speed for NOS accelerate
+  if(speed<1.8) {
+  setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+  setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+  }
+  }
+  //Power Brake if vehicle is on ground
+  if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0) setfloat(pcar+0x140,  0,  0);
+{
+  setchar(pcar+0x00000224, 0x00, 0x00, 0x00);
+  setchar(pcar+0x00000228, 0x00, 0x00, 0x00);
+{
+  static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+ wasin = true;
+ speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+ setint(0x08bde55c,  speed,  speed);
+ setchar(0x8BAEDB8,  '%',  'd',  0);
+ setchar(0x8BAEDC0,  '%',  'd',  0);
+}
+else
+{  if(wasin)
+ {
+ setchar(0x8BAEDB8,  '%',  '0',  '8',  'd',  '$',  0);
+ setchar(0x8BAEDC0,  '$',  '%',  '0',  '8',  'd',  0);
+ setint(0x08bde55c,  money,  money);
+ wasin = false;
+ }
+ money = getint(0x08bde560);
+}
+

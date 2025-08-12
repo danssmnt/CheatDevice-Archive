@@ -1,0 +1,564 @@
+#cheat Red Armor Bar
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+
+#cheat Blue Armor Bar
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+#cheat Green Armor Bar
+R = 0;
+G = 255;
+B = 0;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+#cheat Black Armor Bar
+R = 0;
+G = 0;
+B = 0;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+#cheat White Armor Bar
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+#cheat Red Health Bar
+R = 255;
+G = 0;
+B = 0;
+setchar(0x96e2174, R, G, B);
+off();
+
+#cheat Blue Health Bar
+R = 0;
+G = 0;
+B = 255;
+setchar(0x96e2174, R, G, B);
+off();
+
+#cheat Green Health Bar
+R = 0;
+G = 255;
+B = 0;
+setchar(0x96e2174, R, G, B);
+off();
+
+#cheat Black Health Bar
+R = 0;
+G = 0;
+B = 0;
+setchar(0x96e2174, R, G, B);
+off();
+
+#cheat White Health Bar
+R = 255;
+G = 255;
+B = 255;
+setchar(0x96e2174, R, G, B);
+off();
+
+
+#cheat Pink Armor Bar
+R = 232;
+G = 89;
+B = 218;
+for(neon=0;neon<15;neon++)
+{setchar(0x96E1ED0+4*neon,  R,  G,  B);}
+off();
+
+
+#cheat radio always on
+//by vettefan
+//activate it before you leave your safehouse, or you'll have to enter a vehicle first
+setchar(pcar+0x2b7, 0);
+setchar(0x8bb11dc, 0);
+setchar(0x9a6341b, 0);
+
+
+#cheat Pop out police VCS
+setchar(pcar + 0x267, 0x75);
+off()
+
+
+#cheat Pop out police OFF
+setchar(pcar + 0x267, 0x44);
+off()
+
+#cheat Red Radar Disc
+R = 255;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Green Radar Disc
+R = 0;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Blue Radar Disc
+R = 0;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat White Radar Disc
+R = 255;
+G = 255;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+
+#cheat Purple Radar Disc
+R = 80;
+G = 0;
+B = 80;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Turquoise Radar Disc
+R = 0;
+G = 255;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Yellow Radar Disc
+R = 255;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Orange Radar Disc
+R = 255;
+G = 80;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Lime Green Radar Disc
+R = 80;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Pink Radar Disc
+R = 255;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Hot Pink Radar Disc
+R = 255;
+G = 0;
+B = 80;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Sky Blue Radar Disc
+R = 0;
+G = 175;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Black Blue Radar Disc
+R = 0;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Red Health/Armor Outlines
+R = 255;
+G = 0;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Green Health/Armor Outlines
+R = 0;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Blue Health/Armor Outlines
+R = 0;
+G = 0;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat White Health/Armor Outlines
+R = 255;
+G = 255;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+
+#cheat Purple Health/Armor Outlines
+R = 80;
+G = 0;
+B = 80;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Turquoise Health/Armor Outlines
+R = 0;
+G = 255;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Yellow Health/Armor Outlines
+R = 255;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Orange Health/Armor Outlines
+R = 255;
+G = 80;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Lime Green Health/Armor Outlines
+R = 80;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Pink Health/Armor Outlines
+R = 255;
+G = 0;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Hot Pink Health/Armor Outlines
+R = 255;
+G = 0;
+B = 80;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Sky Blue Health/Armor Outlines
+R = 0;
+G = 175;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Black Health/Armor Outlines
+R = 0;
+G = 0;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat real time clock
+setint(0x8bb3b3c, 60000);
+#off
+setint(0x8bb3b3c, 1000);
+
+#cheat set clock
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);
+}
+
+#cheat Racer!
+static gotten;
+dx = x - getfloat(opp+0x30);
+dy = y - getfloat(opp+0x34);
+setfloat(opp + 0x30,   getfloat(opp + 0x30) + dx * 0.03);
+setfloat(opp + 0x34,   getfloat(opp + 0x34) + dy * 0.03);  
+setfloat(opp + 0x38, 11.30);
+if(!gotten&&getint(pobj+0x150))
+{
+x = -638.01;
+y = -486.57;
+opp = getint(pobj + 0x150);
+setfloat(opp + 0x30, -286.36, -479.83, 11.30);
+gotten = 1;
+}
+if(x == -638.01&&y == -486.57&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -637.88;
+y = -431.38;
+}
+if(x == -637.88&&y == -431.38&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -625.43;
+y = -402.98;
+}
+if(x == -625.43&&y == -402.98&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -576.10;
+y = -369.26;
+}
+if(x == -576.10&&y == -369.26&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -431.85;
+y = -353.90;
+}
+if(x == -431.85&&y == -353.90&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -333.02;
+y = -357.48;
+}
+if(x == -333.02&&y == -357.48&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -290.63;
+y = -374.91;
+}
+if(x == -290.63&&y == -374.91&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -286.36;
+y = -479.83;
+}
+
+#cheat Race Opponent!
+static gotten;
+static currentx;
+static currenty;
+checkpoint1x = -638.01;
+checkpoint1y = -486.57;
+checkpoint2x = -637.88;
+checkpoint2y = -431.38;
+checkpoint3x = -625.43;
+checkpoint3y = -402.98;
+checkpoint4x = -576.10;
+checkpoint4y = -369.26;
+checkpoint5x = -431.85;
+checkpoint5y = -353.90;
+checkpoint6x = -333.02;
+checkpoint6y = -357.48;
+checkpoint7x = -290.63;
+checkpoint7y = -374.91;
+if(!gotten&&getint(pobj+0x150))
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+setfloat(opp + 0x30, -286.36, -479.83, 11.30);
+gotten = 1;
+}
+setfloat(opp + 0x30,   getfloat(opp + 0x30) + dx * 0.0009);
+setfloat(opp + 0x34,   getfloat(opp + 0x34) + dy * 0.0009);  
+setfloat(opp + 0x38, 11.30);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+if(sqrt(checkx*checkx+checky*checky) < 5 )
+{
+ if(currentx == checkpoint1x)
+ {
+ currentx = checkpoint2x;
+ currenty = checkpoint2y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint2x)
+ {
+ currentx = checkpoint3x;
+ currenty = checkpoint3y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint3x)
+ {
+ currentx = checkpoint4x;
+ currenty = checkpoint4y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint4x)
+ {
+ currentx = checkpoint5x;
+ currenty = checkpoint5y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint5x)
+ {
+ currentx = checkpoint6x;
+ currenty = checkpoint6y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint6x)
+ {
+ currentx = checkpoint7x;
+ currenty = checkpoint7y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+ if(currentx == checkpoint7x)
+ {
+ currentx = checkpoint1x;
+ currenty = checkpoint1y;
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+ }
+}
+#off
+currentx = currenty = gotten = opp = 0;
+
+#cheat Race Opponent!
+static speed;
+static lap;
+static currentx;
+static currenty;
+checkpoint1x = -638.01;
+checkpoint1y = -486.57;
+checkpoint2x = -637.88;
+checkpoint2y = -431.38;
+checkpoint3x = -625.43;
+checkpoint3y = -402.98;
+checkpoint4x = -576.10;
+checkpoint4y = -369.26;
+checkpoint5x = -431.85;
+checkpoint5y = -353.90;
+checkpoint6x = -333.02;
+checkpoint6y = -357.48;
+checkpoint7x = -290.63;
+checkpoint7y = -374.91;
+if(!currentx&&getint(pobj+0x150))
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+setfloat(opp + 0x30, -286.36, -479.83, 11.30);
+speed = 0.0009;
+}
+setfloat(opp + 0x30,   getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34,   getfloat(opp + 0x34) + dy * speed);  
+setfloat(opp + 0x38, 11.30);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+if(sqrt(checkx*checkx+checky*checky) < 5 )
+{
+ if(currentx == checkpoint1x && !lap)
+ {
+   currentx = checkpoint2x;
+   currenty = checkpoint2y;
+   lap = 1;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint2x)
+ {
+   currentx = checkpoint3x;
+   currenty = checkpoint3y;
+   speed = 0.009;
+ }
+ else if(currentx == checkpoint3x)
+ {
+   currentx = checkpoint4x;
+   currenty = checkpoint4y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint4x)
+ {
+   currentx = checkpoint5x;
+   currenty = checkpoint5y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint5x)
+ {
+   currentx = checkpoint6x;
+   currenty = checkpoint6y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint6x)
+ {
+   currentx = checkpoint7x;
+   currenty = checkpoint7y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint7x)
+ {
+   currentx = checkpoint1x;
+   currenty = checkpoint1y;
+   speed = 0.0009;
+ }
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+}
+#off
+currentx = currenty = gotten = opp = 0;
+
+#cheat Vcn cop
+//made with VCS Car Spawner by DDM
+pspawn = 0x08E81290;
+setint(pspawn, 260);
+setfloat(pspawn + 4, -469.57, 1123.63, 64.75);
+pspawn + 4,  227.56,  -129.41,  5.9,  160);
+

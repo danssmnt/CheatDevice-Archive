@@ -1,0 +1,482 @@
+#cheat Never Wanted
+setchar(pplayer + 0x00000910, 0);
+
+#cheat Hunter At ArmyBase
+//By: Gunner54
+vspawn = 0x08E81290;
+setint(vspawn, 275);
+setfloat(vspawn + 4, -1684.62, -124.43, 14.62); // x, y, z, angle
+vspawn += 0x30;
+
+#cheat Submarine + HoverCar
+//Credits: Waterbottle
+static height;
+if(!height)
+ height = getfloat(pcar+0x38);
+static Zdeg;
+ if(!Zdeg)
+ Zdeg = getfloat(pplayer+0x8d0);
+ 
+ static st;
+ static speed;
+ setfloat(pcar+0x1c8, 0x1020);
+ setfloat(pcar+0x38, height);
+ setfloat(pcar+0x148, 0);
+ Zdeg += xstick * 1.5;
+ if(ystick)
+ {
+ Xdeg = getfloat(pcar) * -10 * ystick;
+ Ydeg = getfloat(pcar+4) * -10 * ystick;
+ }
+ else Ydeg = Xdeg = 0;
+
+ if(buttons & CTRL_CROSS)
+ {
+ if(speed < 0)
+         speed += 0.02;
+ if(speed < 0.75)
+         speed += 0.01;
+ }
+ else
+ if(buttons & CTRL_SQUARE)
+ {
+ if(speed > 0)
+         speed -= 0.015;
+ if(speed > -0.4)
+         speed -= 0.008;
+ }
+ else speed *= 0.95;
+
+ if(buttons & CTRL_UP) height+=0.1;
+ if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+ 
+ setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+ setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+ setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+ setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+ setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+ setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+ setfloat(pcar+0x20, -sin(Ydeg));
+ setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+ setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+ 
+ setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144, getfloat(pcar)*speed);
+ if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 0;
+{
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+ static speed;
+ //set the car ontop of the water
+ setfloat(pcar+0x38,  getfloat(0x96C96B0)+0.8);
+ setfloat(pcar+0x8,  0);
+ setfloat(pcar+0x18,  0);
+ setfloat(pcar+0x20,  0,  0,  0);
+ setfloat(pcar+0x148,  0);
+ //hand brake
+ if(buttons & CTRL_RTRIGGER)
+ {
+ speed*=0.9;
+ handb = 2.5;
+ } else handb = 1;
+ //rotate the vehicle
+ if(speed>0.1)
+         setfloat(pcar+0x78,  -0.015 * xstick * handb);
+ //accelerte
+ if(buttons & CTRL_CROSS && speed<0.7)
+         speed += 0.02;
+ else if(speed>0)
+         speed -= 0.01;
+ //add speed to car
+ setfloat(pcar+0x140,  -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144,  getfloat(pcar)*speed);
+}
+
+#cheat Never Been Busted
+//By: Gunner54
+setchar(0x08BB40AC, 0);
+
+#cheat Never Been Wasted
+//By: Gunner54
+setchar(0x08BB40A8, 0);
+
+//Thanks to edison for findinghow to remove $ and extra 0's
+#cheat Money Counter is a Speed'O'Meter
+static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+  wasin = true;
+  speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+  setint(0x08bde55c, speed, speed);
+  setchar(0x8BAEDB8, '%', 'd', 0);
+  setchar(0x8BAEDC0, '%', 'd', 0);
+}
+else
+{  if(wasin)
+  {
+  setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+  setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+  setint(0x08bde55c, money, money);
+  wasin = false;
+  }
+  money = getint(0x08bde560);
+}
+#off
+setint(0x08bde55c, money, money);
+setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+
+
+#cheat lock4
+car = getint(pobj + 0x150);
+if(add)
+{
+   setshort(car+0x232, 0x0101);
+}
+
+#cheat lock4
+car = getint(pobj + 0x150);
+if(car)
+{
+   setshort(car+0x232, 0x0101);
+}
+
+#cheat Multiplayer Passenger
+setchar(pcar+0x8B4, 0x18)
+
+#cheat Multiplayer Passenger
+setchar(pcar+0x8B4, 0x18)
+off()
+
+#cheat message
+setshort(0x08e90bd8, 1, 'C', 'u', 's', 't','o','m',' ','m','e','s','s','s','a','g','e','!',0); 
+
+#cheat Superman 2
+pstartfly = getshort(pplayer+0x1C8);
+static speedmult;
+setfloat(pplayer + 0x4E4, 150.0);//health
+
+   setfloat(pplayer + 0x78, -0.03 * xstick);
+   setfloat(pplayer + 0x70, 0.03 * ystick * getfloat(pplayer));
+   setfloat(pplayer + 0x74, 0.03 * ystick * getfloat(pplayer+4));
+   if(buttons & CTRL_CROSS) {
+                  setshort(pplayer+0x1c8, 0x1020);
+            if(speedmult<1.4) speedmult+=0.01;
+   } else if(speedmult >= 0) speedmult*=0.95;
+
+   if(pstartfly==0x1020)
+   {
+   updown = (getfloat(pplayer+0x28)>0) ? 1 : -1;
+   setfloat(pplayer+0x140, -getfloat(pplayer+4)*speedmult);
+   setfloat(pplayer+0x144, getfloat(pplayer)*speedmult);
+   setfloat(pplayer+0x148, (getfloat(pplayer+0x18)+cos(90/180*3.1415))*speedmult * updown);    
+   }
+
+#cheat Stunt Man
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+   jumping = true;
+   if(xstick)
+   {
+   setfloat(pplayer+0x78, -xstick / 2);
+   score += sqrt(xstick*xstick) * 40;
+   }
+   if(ystick)
+   {
+   setfloat(pplayer+0x70, ystick * getfloat(pplayer) / 2);
+   setfloat(pplayer+0x74, ystick * getfloat(pplayer+4) / 2);
+   score += sqrt(ystick*ystick) * 50;      
+   }
+} else if(jumping) {
+     
+jumping = 0;    
+setfloat(pplayer+0x70, 0, 0, 0);  
+time = 40;
+setint(0x08bde55c, getint(0x08bde55c)+score);
+rand = (getint(pplayer) + getint(0x08bb3b40)) % 3;
+
+}
+else if(time > 0 && score) {
+      time--;
+      int = int(score);
+      if(rand == 0) setshort(0x08e90bd8, 1, ' ', 'W', 'o', 'w' , ',', ' ', 'y', 'o', 'u', ' ', 'g', 'o', 't', ' ');
+      else if(rand == 1) setshort(0x08e90bd8, 1, ' ', ' ', 'S', 'i', 'c' , 'k', ' ', 's', 't', 'u', 'n', 't', '!', ' ');
+      else setshort(0x08e90bd8, 1, 'N', 'i', 'c' , 'e', ' ', 'f', 'l', 'i', 'p', ' ', 'm', 'a', 'n', ' ');
+      size = 0;
+      for(i = 1; i < int; i*=10) size+=2;
+      for(i = 0; int > 0; i+=2 ) {
+      setshort(0x08e90bf4+size-i, '0' + (int % 10));
+      int = int(int/=10);
+      }
+      if(rand == 0) setshort(0x08e90bf4+i, ' ', 'p', 'o', 'i', 'n', 't', 's', '!', ' ', ':', ')', 0);
+      else if(rand == 1) setshort(0x08e90bf4+i, ' ', '$', ' ', 'f', 'o', 'r', ' ', 'y', 'o', 'u', '!', 0);
+      else setshort(0x08e90bf4+i, ' ', 'p', 'o', 'i', 'n', 't', 's', '.', 0);
+      }
+else time = score = 0;
+
+#cheat Car Stunts (Hold O and use analog)
+if(xstick < -0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78,  getfloat(pcar + 0x78)-0.02);
+}
+
+#cheat Wanted Level Modifier (Revised)
+static Wanted;
+if ((press & CTRL_UP&&buttons & CTRL_CIRCLE&&Wanted<6))
+{
+Wanted=Wanted+1;
+}
+if ((press & CTRL_DOWN&&buttons & CTRL_CIRCLE&&Wanted>0))
+{
+Wanted=Wanted-1;
+}
+setint(pplayer+0x00000910,  Wanted);
+
+
+#cheat Pet Car (Up ON, Down OFF)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static thingy;
+if(pcar)
+{
+yourcar = getint(pcar);
+}
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +1);
+setfloat(yourcar + 0x34, playery +1);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&thingy)
+{
+thingy = 0;
+}
+
+#cheat Stunt Car Mode
+if (getchar(pcar+0x75c)==0)
+{
+setchar(0x8bc7f14, 3);
+setfloat(0x8bc7f24, 0);
+setchar(0x8bc7f41, 0);
+setfloat(pcar+0x70, -ystick/10);
+setfloat(pcar+0x74, -xstick/10);
+if (buttons & CTRL_LTRIGGER)
+setfloat(pcar+0x78, 0.1);
+if (buttons & CTRL_RTRIGGER)
+setfloat(pcar+0x78, -0.1);
+}
+
+#cheat Stunt Mode
+if (getchar(pcar+0x75c)==0)
+{
+setfloat(pcar+0x70, -ystick/10);
+setfloat(pcar+0x74, -xstick/10);
+if (buttons & CTRL_SQUARE)
+setfloat(pcar+0x78, 0.1);
+if (buttons & CTRL_CIRCLE)
+setfloat(pcar+0x78, -0.1);
+}
+
+#cheat Pet Car (Up ON, Down OFF)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static thingy;
+if(pcar)
+{
+yourcar = getint(pcar);
+}
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +1);
+setfloat(yourcar + 0x34, playery +1);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&thingy)
+{
+thingy = 0;
+}
+
+#cheat Pet Car (Up ON, Down OFF)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static thingy;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +1);
+setfloat(yourcar + 0x34, playery +1);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&thingy)
+{
+thingy = 0;
+}
+
+#cheat Pet Car
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,   1000000000);
+setfloat(yourcar + 0x0000010C,   0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C,  0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30,  playerx +3);
+setfloat(yourcar + 0x34,  playery +3);
+setfloat(yourcar + 0x38,  playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,   +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,   getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,   +0.2);
+}
+
+#cheat The Evil Box
+static state;
+static address;
+static ext;
+static score;
+static topscore;
+if(!state)//get address of a weapon
+{
+  setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', 'n', ' ', 'o' , 'b', 'j', 'e', 'c', 't', ' ', 't' , 'o', ' ', 's', 't', 'a', 'r', 't' , '.', ' ', 'T', 'o', 'p', ' ', 's' , 'c', 'o', 'r', 'e', ':');
+  int = int(topscore);
+  size = 0;
+  if(int == 0) setshort(0x08e90c20, '0', 0); else {
+  for(i = 1; i <= int; i*=10) size+=2;
+  for(i = 0; int > 0; i+=2 )
+  {
+  setshort(0x08e90c20+size-i, '0' + (int % 10));
+  int = int(int/=10);
+  }
+  setshort(0x08e90c20+i, 0);
+  }
+  if(getint(pplayer+0x150)>0x09910000)
+  {
+  address = getint(pplayer+0x150);
+  ext = 1.0;
+  state = 1;
+  oldobj = getshort(address+0x56);
+  oldx = getfloat(address+0x30);
+  oldy = getfloat(address+0x34);
+  oldz = getfloat(address+0x38);
+  }
+}
+if(state == 1)//teleport and set up object
+{
+  rand = (getint(pplayer) + getint(0x08bb3b40)) % 4;
+  setfloat(address + 0x30, getfloat(pplayer+0x30) + 25 * -getfloat(pplayer+4));
+  setfloat(address + 0x34, getfloat(pplayer+0x34) + 25 * -getfloat(pplayer));
+  setfloat(address + 0x38, getfloat(pplayer+0x38));
+  setshort(address + +0x56, 0x0207+rand);
+  state = 2;
+}
+if(state==2)
+{
+dx = getfloat(pplayer+0x30) - getfloat(address+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(address+0x34);
+setfloat(address + 0x30, getfloat(address + 0x30) + dx * 0.05 * ext);
+setfloat(address + 0x34, getfloat(address + 0x34) + dy * 0.05 * ext);
+setfloat(address + 0x38, getfloat(pplayer + 0x38));
+ext+=0.001;
+
+setshort(0x08e90bd8, 1, 'S', 'C', 'O' , 'R', 'E', ':', ' ');
+int = int(score);
+size = 0;
+if(int == 0) setshort(0x08e90be8, '0', 0); else {
+for(i = 1; i <= int; i*=10) size+=2;
+for(i = 0; int > 0; i+=2 )
+{
+setshort(0x08e90be6+size-i, '0' + (int % 10));
+int = int(int/=10);
+}
+setshort(0x08e90be6+i, 0);
+}
+
+score++;
+if(sqrt(dx*dx)<0.75 && sqrt(dy*dy)<0.75)
+{
+setfloat(address + 0x30, 0, 0, 0);
+if(score > topscore) topscore = score;
+  setshort(address+0x56, oldobj);
+  setfloat(address+0x30, oldx);
+  setfloat(address+0x34, oldy);
+  setfloat(address+0x38, oldz);
+address = state = score = oldobj = oldx = oldy = oldz = 0;
+ext = 1.0;
+}
+}
+

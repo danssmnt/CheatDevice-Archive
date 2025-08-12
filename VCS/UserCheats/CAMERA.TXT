@@ -1,0 +1,689 @@
+#cheat 1,000 Grenades
+setchar(pplayer + 0x5B0, 0x0C);
+//0x5b0 for the thrown slot ID,
+//0x0c for the grenades ID
+setint(pplayer + 0x5B0 + 0x0C, 1000);
+//0x5B0 for the thrown slot ID,
+//+0x0C for the ammo offset
+//1000 to give the ped 1,000 grenades
+
+#cheat Kill Vic!
+setfloat(pplayer + 0x4E4, 0.0);
+
+#cheat Full Armor
+setfloat(pplayer + 0x4E8, 100.0);
+
+#cheat Remove whatever Vic touches
+ptouch = getint(pplayer + 0x150);
+if(ptouch){
+     setfloat(ptouch + 0x38, -10000.0);
+     off();
+}
+
+#cheat Make Vic fly straight up
+setshort(pplayer + 0x1C8, 0x1020);//Get player off ground (see below)
+setfloat(pplayer + 0x148, -50.0);
+off();
+
+#cheat Keep off the Grass!
+//Kills you if you step on grass!
+if(getchar(pplayer + 0x137) == 0x5) //If on grass
+     setfloat(pplayer + 0x4E4, 0); //Die!
+
+#cheat Remove what Vic is standing on
+setfloat(getint(pplayer + 0xF0) + 0x38, -10000.0);
+off();
+
+#cheat Slowly turn Vic in the cardinal directions
+setfloat(pplayer + 0x78, 0.1);
+
+#cheat Set player coordinates to 0.0, 0.0, 0.0
+setfloat(pplayer + 0x30, 0.0, 0.0, 0.0);
+
+#cheat Spawn some Fires
+pfire = 0x08BE3A20;
+setchar(pfire, 1);
+setfloat(pfire + 0x10, 314.57, -168.91, 26.13);
+pfire += 0x40;
+setchar(pfire, 1);
+setfloat(pfire + 0x10, 356.07, -169.03, 26.13);
+
+#cheat PCJ-600 and Jet Ski spawn at 101 Bayshore
+pspawn = 0x08E81290;
+setint(pspawn, 212); // modelid pcj-600
+setfloat(pspawn + 4, -801.37, -1178.76, 10.96, 290); // x, y, z, angle
+pspawn += 0x30;
+setint(pspawn, 233); // modelid jet ski
+setfloat(pspawn + 4, -729.4, -1148.9, 6.0, 20); // x, y, z, angle
+pspawn += 0x30;
+
+#cheat Make car catch fire!
+setfloat(pcar+0x27C, 0.0);
+off();
+
+#cheat Remove whatever Vic's Car touches
+ptouch = getint(pcar + 0x150);
+if(ptouch){
+    setfloat(ptouch + 0x38, -10000.0);
+    off();
+}
+
+#cheat Make Vic's Car fly straight up
+setfloat(pcar + 0x148, -50.0);
+off();
+
+#cheat Remove what Vic's car is on
+setfloat(getint(pcar + 0xF0) + 0x38, -10000.0);
+off();
+
+#cheat Slowly turn Vic's car on the Z axis
+setfloat(pcar + 0x78, 0.1);
+
+#cheat Set player's car's coordinates to 0.0, 0.0, 0.0
+setfloat(pcar + 0x30, 0.0, 0.0, 0.0);
+
+#cheat Always Have Headshot (Using Manual Aim)
+static lastaimed;
+paim = getint(pplayer + 0x81C);
+if(paim && paim != 0x09914520)
+lastaimed = paim;
+if(getint(pplayer + 0x81C) == 0x09914520 && lastaimed)
+setfloat(0x09914520 + 0x30, getfloat(lastaimed + 0x30), getfloat(lastaimed + 0x34), getfloat(lastaimed + 0x38) + 0.625);
+
+#cheat Saw Blade
+//Bump into cars to collect them, then use O to spin them
+//extremely fast, knocking out everything in their way!
+static car1;
+static car2;
+static car3;
+static car4;
+static started;
+static touch2;
+static touch3;
+static touch4;
+if(!started){
+angle = 0;
+started = 1;
+}
+if(buttons & CTRL_RTRIGGER){
+if(press & CTRL_UP)
+?car1 = 0;
+if(press & CTRL_RIGHT)
+?car2 = 0;
+if(press & CTRL_DOWN)
+?car3 = 0;
+if(press & CTRL_LEFT)
+?car4 = 0;
+}
+if(buttons & CTRL_CIRCLE){
+revspeed = 6;
+rotspeed = 5;
+} else{
+revspeed = 1;
+rotspeed = .1;
+}
+touch1 = getint(pobj+0x150);
+if(car1)
+touch2 = getint(car1+0x150);
+if(car2)
+touch3 = getint(car2+0x150);
+if(car3)
+touch4 = getint(car3+0x150);
+if(touch1 && touch1 != pcar && touch1 != car1 ?&& touch1 != car2 ?&& touch1 != car3 ?&& touch1 != car4 && getshort(touch1 + 0x56) >= 170 && getshort(touch1 + 0x56) <= 280){
+if(!car1)
+?car1 = touch1;
+else if(!car2)
+?car2 = touch1;
+else if(!car3)
+?car3 = touch1;
+else if(!car4)
+?car4 = touch1;
+}
+if(touch2 && touch2 != pcar && touch2 != car1 ?&& touch2 != car2 ?&& touch2 != car3 ?&& touch2 != car4 && getshort(touch2 + 0x56) >= 170 && getshort(touch2 + 0x56) <= 280){
+if(!car1)
+?car1 = touch2;
+else if(!car2)
+?car2 = touch2;
+else if(!car3)
+?car3 = touch2;
+else if(!car4)
+?car4 = touch2;
+}
+if(touch3 && touch3 != pcar && touch3 != car1 ?&& touch3 != car2 ?&& touch3 != car3 ?&& touch3 != car4 && getshort(touch3 + 0x56) >= 170 && getshort(touch3 + 0x56) <= 280){
+if(!car1)
+?car1 = touch3;
+else if(!car2)
+?car2 = touch3;
+else if(!car3)
+?car3 = touch3;
+else if(!car4)
+?car4 = touch3;
+}
+if(touch4 && touch4 != pcar && touch4 != car1 ?&& touch4 != car2 ?&& touch4 != car3 ?&& touch4 != car4 && getshort(touch4 + 0x56) >= 170 && getshort(touch4 + 0x56) <= 280){
+if(!car1)
+?car1 = touch4;
+else if(!car2)
+?car2 = touch4;
+else if(!car3)
+?car3 = touch4;
+else if(!car4)
+?car4 = touch4;
+}
+angle+=revspeed;
+if(angle > 360)
+angle = 0;
+if(car1){
+setfloat(car1 + 0x08, 0);
+? ?    setfloat(car1 + 0x18, 0);
+setfloat(car1+0x140, 0, 0, -0.00083);
+setfloat(car1 + 0x20, 0, 0, 1);
+setfloat(car1 + 0x70, 0, 0, rotspeed);
+setfloat(car1 + 0x27c, 100000);
+setfloat(car1+0x30, getfloat(pobj+0x30) + cos(angle)*10, getfloat(pobj+0x34) + sin(angle)*10, getfloat(pobj+0x38) + 0.25);
+}
+if(car2){
+setfloat(car2 + 0x08, 0);
+? ?    setfloat(car2 + 0x18, 0);
+setfloat(car2+0x140, 0, 0, -0.00083);
+setfloat(car2 + 0x20, 0, 0, 1);
+setfloat(car2 + 0x70, 0, 0, rotspeed);
+setfloat(car2 + 0x27c, 100000);
+setfloat(car2+0x30, getfloat(pobj+0x30) + cos(angle+90)*10, getfloat(pobj+0x34) + sin(angle+90)*10, getfloat(pobj+0x38) + 0.25);
+}
+if(car3){
+setfloat(car3 + 0x08, 0);
+? ?    setfloat(car3 + 0x18, 0);
+setfloat(car3+0x140, 0, 0, -0.00083);
+setfloat(car3 + 0x20, 0, 0, 1);
+setfloat(car3 + 0x70, 0, 0, rotspeed);
+setfloat(car3 + 0x27c, 100000);
+setfloat(car3+0x30, getfloat(pobj+0x30) + cos(angle+180)*10, getfloat(pobj+0x34) + sin(angle+180)*10, getfloat(pobj+0x38) + 0.25);
+}
+if(car4){
+setfloat(car4 + 0x08, 0);
+? ?    setfloat(car4 + 0x18, 0);
+setfloat(car4+0x140, 0, 0, -0.00083);
+setfloat(car4 + 0x20, 0, 0, 1);
+setfloat(car4 + 0x70, 0, 0, rotspeed);
+setfloat(car4 + 0x27c, 100000);
+setfloat(car4+0x30, getfloat(pobj+0x30) + cos(angle+270)*10, getfloat(pobj+0x34) + sin(angle+270)*10, getfloat(pobj+0x38) + 0.25);
+}
+#off
+car1 = car2 = car3 = car4 = started = 0;
+
+#cheat Touch of Death 2
+coll = getint(pobj+0x150);
+if(coll&&getshort(coll+0x56) >= 170 && getshort(coll+0x56) <= 280){
+for(i=0; i<4; i++){
+person=getint(coll+0x384+(i*0x4));
+if(person!=pplayer&&person){
+?setfloat(person + 0x4e4, 0);
+?setchar(person + 0x894, 0x26);
+? ? }
+}
+}
+
+#cheat Theft of Death
+ptheft = getint(pplayer+0x450);
+if(ptheft){
+? for(i=0; i<4; i++){
+? ? ? person=getint(ptheft+0x384+(i*0x4));
+? ? ? if(person!=pplayer&&person){
+? ? ? ? ? setfloat(person + 0x4e4, 0);
+? ? ? ? ? setchar(person + 0x894, 0x26);
+? ? ? }
+? }
+}
+
+#cheat Float Away Cars!
+static touch;
+if(getint(pobj+0x150))
+? touch=getint(pobj+0x150);
+if(touch)
+? if(getshort(touch+0x56)<280)
+? ? ? sethex(touch+0xEC, 0x20);
+if(getchar(pcar+0xEC)==0x20)
+? sethex(pcar+0xEC,0x22);
+
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Shotgun Upgrade Pack
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Machine Gun Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFEA0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Pistol Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's sp
+}
+off();
+
+#cheat Thrown Weapon Upgrade Pack
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setshort(sub+0x40, 0x0E);//Allow run and shoot
+setfloat(sub+0x44, 0.25, 0.25, 0.25);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Heavy Weapon Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x09600060+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+//setshort(sub+0x40, 0x0E);//Allow run and shoot
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Marker Placement
+mark = 0x08c62EA0; //Starting address
+setfloat(mark, getfloat(pobj+0x30), getfloat(pobj+0x34),  getfloat(pobj+0x38) + 1); //X, Y, Z coords
+setchar(mark+0x2c, 0, 0, 255); //Color
+setchar(mark+0x3B, 0x3F);
+setchar(mark+0x4F, 0x02);
+
+#cheat Force people out of their car
+coll = getint(pobj+0x150);
+if(coll&&getshort(coll+0x56) >= 170 && getshort(coll+0x56) <= 280){
+for(i=0; i<4; i++){
+ person=getint(coll+0x384+(i*0x4));
+ if(person!=pplayer&&person){
+     setchar(person + 0x894, 0x10);
+     }
+}
+}
+
+#cheat More Health
+//Use with my weapon packs
+setfloat(pplayer+0x4e4, 1000000);
+
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Shotgun Upgrade Pack
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Machine Gun Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFEA0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Pistol Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's sp
+}
+off();
+
+#cheat Thrown Weapon Upgrade Pack
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setshort(sub+0x40, 0x0E);//Allow run and shoot
+setfloat(sub+0x44, 0.25, 0.25, 0.25);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Heavy Weapon Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x09600060+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+//setshort(sub+0x40, 0x0E);//Allow run and shoot
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat CTW Camera View
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+setfloat(0x08BC86C0, 19); //Zoom on foot
+setfloat(0x08BC8684, 23); //Zoom in car
+//created by 03stevensmi
+
+#cheat Camera Test 1
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+setfloat(0x08BC86C0, 10); //Zoom on foot
+setfloat(0x08BC8684, 15); //Zoom in car
+
+#cheat camera 20 
+setfloat(0x08BC86C0, 20); //Zoom on foot
+setfloat(0x08BC8684, 20); //Zoom in car
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 1080, 0, 0); //Rotation
+setfloat(0x08C7F18, -0.9);
+//setfloat(0x08BC8070, 180, 0, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+
+#cheat Set fire at where car is hit
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pcar+0x30) + getfloat(pcar+0x120), getfloat(pcar+0x34) + getfloat(pcar+0x124), getfloat(pcar+0x38) + getfloat(pcar+0x128));
+
+#cheat Set fire at where car is hit
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pcar+0x30) - getfloat(pcar+0x120), getfloat(pcar+0x34) - getfloat(pcar+0x124), getfloat(pcar+0x38) - getfloat(pcar+0x128));
+
+#cheat Kill Anyone Attempting to Kill/Carjack You (Hit O)
+if(press & CTRL_CIRCLE)
+  for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+     if(0x098b4a40 + i != pplayer && (getint(0x098b4a40 + i + 0x890) == pplayer || (getint(0x098b4a40 + i + 0x484) == pcar && getint(0x098b4a40 + i + 0x450) == pcar))) {
+         setfloat(0x098b4a40+i+0x4e4, 0);
+     }
+  }
+
+#cheat Passengers!
+if(buttons & CTRL_DOWN)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) { 
+       setchar(0x098b4a40 + i + 0x5BC, 0x21);
+       setint(0x098b4a40 + i +0x484, pcar);
+       setint(0x098b4a40 + i +0x450, pcar);
+   }
+}
+
+#cheat Loved
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer ** !getint(0x098b4a40+i+0x480)) { 
+       setchar(0x098b4a40 + i + 0x894, 0xc);
+       setint(0x098b4a40 + i + 0x890, pplayer);
+   }
+}
+off();
+
+#cheat Enable AI Driving/Walking/Running
+if(pcar)
+   setchar(pplayer+0x894, 0x17);
+else {
+   if(buttons & CTRL_CROSS)
+       setchar(pplayer+0x894, 0x19);
+   else
+       setchar(pplayer+0x894, 0x18);
+}
+#off
+setchar(pplayer+0x894, 0x01);
+
+#cheat Make Target Attack You!
+pped = getint(0x08BA1D70);
+if(pped){
+   setchar(pped+0x894, 0x8);
+   setint(pped+0x890, pplayer);
+}
+
+#cheat Make Target Follow You!
+pped = getint(0x08BA1D70); //Pointer to aimed at ped
+static yourped;
+static fix;
+if(pped&&!yourped)
+   yourped=pped; //If aimed at a ped, save its address in the memory
+if(yourped){
+   setfloat(yourped+0x4e4, 10000);
+   setchar(yourped+0x63C, 0x22);
+   setchar(yourped+0x87c, 0x1e);
+   //setchar(yourped+0x8B4, 0x0);
+   //setchar(yourped+0x8C4, 0x0);
+   setint(yourped+0x648, 1000);
+   setchar(yourped+0x789, 0x7);
+   if(!pcar){
+       if(getint(yourped+0x480)){
+           setchar(yourped+0x894, 0x10);
+           fix=1;
+       } else{
+           if(pped && pped != yourped){
+               setchar(yourped+0x894, 0x8);
+               setint(yourped+0x890, pped);
+               fix=1;
+           } else {
+               if(fix){
+                   setchar(yourped+0x894, 0x01);
+                   fix=0;
+               }
+               setchar(yourped+0x894, 0xC); //If not in a car, make that ped follow you
+               setint(yourped+0x890, pplayer); //Lets the ped know who to follow
+           }
+       }
+       
+   }
+   else{
+       if(!getint(yourped+0x480))
+           setchar(yourped+0x894, 0x11); //If in a car, make that ped get in the car
+       setint(yourped+0x484, pcar);  //Makes the ped know what car to get into
+       setint(yourped+0x450, pcar);
+   }
+   if(buttons & CTRL_LTRIGGER && press & CTRL_TRIANGLE){
+       setfloat(yourped+0x4e4, 0);
+       yourped=0;
+   }
+}
+
+#cheat Touch of Death 2
+coll = getint(pobj+0x150);
+if(coll&&getshort(coll+0x56) >= 170 && getshort(coll+0x56) <= 280){
+for(i=0; i<4; i++){
+ person=getint(coll+0x384+(i*0x4));
+ if(person!=pplayer&&person){
+     setfloat(person + 0x4e4, 0);
+     setchar(person + 0x894, 0x26);
+     }
+}
+}
+
+#cheat Dodo Cars
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+if(speed>0.50){
+if(!(buttons & CTRL_SQUARE) && buttons & CTRL_CROSS){
+ thrust = 0.00333;
+ setfloat(pcar+0x70,  ystick * getfloat(pcar) / 32);
+ setfloat(pcar+0x74,  ystick * getfloat(pcar+4) / 32);
+ setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * (0.1*thrust));          
+ setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * (0.1*thrust)); 
+ setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * (4*thrust));
+}
+}
+
+#cheat Theft of Death
+ptheft = getint(pplayer+0x450);
+if(ptheft){
+   for(i=0; i<4; i++){
+       person=getint(ptheft+0x384+(i*0x4));
+       if(person!=pplayer&&person){
+           setfloat(person + 0x4e4, 0);
+           setchar(person + 0x894, 0x26);
+       }
+   }
+}
+
+#cheat Touch Peds and Cars to make them Float Away!
+static touch;
+if(getint(pobj+0x150))
+   touch=getint(pobj+0x150);
+if(touch)
+   if(getshort(touch+0x56)<280)
+       sethex(touch+0xEC, 0x20);
+if(getchar(pcar+0xEC)==0x20)
+   sethex(pcar+0xEC,0x22);
+
+#cheat Force Chain V2
+static init;
+static old;
+static counter;
+static savemoney;
+if(!init){
+savemoney = getint(0x08bde55c);
+}
+
+if(!init || buttons & CTRL_CIRCLE){
+if(pcar)
+ cur = pcar;
+else cur = pplayer;
+init = 1;
+counter = 0;
+}
+if(cur == pcar || cur == pplayer){
+if(pcar)
+ cur = pcar;
+else cur = pplayer;
+}
+get = getint(cur + 0x150);
+if(get && get != old){
+if(getshort(get + 0x56) < 280 && getshort(get + 0x56) > 150){
+ touch = getint(cur + 0x150);
+ boost = 5;
+ thrust = boost * 0.00333;
+ setfloat(touch + 0x0140,   getfloat(touch + 0x0140) + getfloat(cur + 0x0010) + thrust);
+ setfloat(touch + 0x0144,   getfloat(touch + 0x0144) + getfloat(cur + 0x0014) + thrust);
+ setfloat(touch + 0x0148,   getfloat(touch + 0x0148) + getfloat(cur + 0x0018) * thrust);
+ old = cur;
+ cur = touch;
+ counter++;
+}
+}
+if(counter>0){
+setint(0x08bde55c, counter, counter);
+} else {
+setint(0x08bde55c, savemoney, savemoney);
+}
+#off
+setint(0x08bde55c, savemoney);
+
+#cheat Teh blahz
+mark = 0x08c62EA0;
+setfloat(mark, 394.29, 26.15, 15.58);
+setint(mark+0x20, 0x09a6d668);
+setchar(mark+0x2c, 1, 1, 255);
+setchar(mark+0x3B, 0x3F + 0x2);
+setchar(mark+0x4F, 0x02);
+setchar(mark+0x47, 0x42);
+setchar(mark+0x50, 1, 0, 1);
+mark += 0x90;
+setfloat(mark, 322.03, -20.76, 11.32);
+setint(mark+0x20, 0x09a6d668);
+setchar(mark+0x2c, 1, 1, 255);
+setchar(mark+0x3B, 0x3F + 0x2);
+setchar(mark+0x4F, 0x02);
+setchar(mark+0x47, 0x42);
+setchar(mark+0x50, 1, 0, 1);
+
+#cheat Box Text
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '~', 'n', '~', 'B', 'a', 'a', 0);
+
+#cheat Bottom Left Corner
+setshort(0x08BF81FE, 'T', 'e', 's', 't', 0);
+
+#cheat Heal Last Killed Pedestrian (R + UP)
+static lastkilled;
+static lastaimed;
+ptarget = getint(0x08BA1D70); //Pointer to aimed at ped
+if(ptarget)
+lastaimed = ptarget;
+if(getfloat(lastaimed + 0x4e4) <= 0)
+lastkilled = lastaimed;
+if(lastkilled && buttons & CTRL_RTRIGGER && press & CTRL_UP){
+setchar(pplayer + 0x894, 0x18);
+setint(pplayer + 0x890, lastkilled);
+}
+#off
+lastkilled = ptarget = lastaimed = 0;
+#cheat New Construction
+moveto(212.51,-250.21,13.51);  object(0x1CB2,0,0,202);
+move(9.47,-5.44,0.00);  object(0x1CB2,0,0,337);
+
+
+
+
+#cheat setfloat(0x08B78D40, 1);
+setfloat(0x08B78D40, 1);
+
+#cheat setchar(0x08B78D40, 1);
+setchar(0x08B78D40, 1);
+
+#cheat setchar(0x08B78D41, 0);
+setchar(0x08B78D41, 0);
+
+#cheat setchar(0x08A88E40, 1);
+setchar(0x08A88E40, 1);
+
+#cheat setshort(0x08A88E40, 0);
+setshort(0x08A88E40, 0);
+
+
+
+
+
+

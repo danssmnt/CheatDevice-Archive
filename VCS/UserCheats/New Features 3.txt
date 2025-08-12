@@ -1,0 +1,1790 @@
+#cheat Light Cars
+//ID: 18547
+//Score: 121
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make your car really light, but it will still stay on the ground, it just won't be able to crash through anything.
+//use this to reset the car back to normal after using the heavy cars cheat.
+//Image: none
+//Time: 05/11/2006 17:43:10
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)/1000, getfloat(pcar+0xD4)/1000);
+off()
+
+#cheat Heavy Cars
+//ID: 18546
+//Score: 129
+//Author: vettefan88
+//Category: Vehicle
+//Description: Get into a car and activate this cheat.
+//but only activate it ONCE, as it may crash the game if you do it too many times.
+//it will make your car heavy based on it's current weight, letting the vehicle attain it's regular handling attributes.
+//Image: none
+//Time: 05/11/2006 17:40:18
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000, getfloat(pcar+0xD4)*1000);
+off()
+
+#cheat Random Car Color
+//ID: 18551
+//Score: 132
+//Author: vettefan88
+//Category: Vehicle
+//Description: Every time you enter this cheat your car will get a  completely random color. the chances of seeing the same color twice are 1/1000000!
+//
+//EDITED BY: psphacker108 on 06/11/06 05:56:01
+//Image: none
+//Time: 05/11/2006 18:05:01
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+off()
+
+#cheat Disco Vehicle
+//ID: 18550
+//Score: 219
+//Author: vettefan88
+//Category: Vehicle
+//Description: Cars Color will rapidly change colors giving off a "disco" feel. or to some it may be a "seizure" feel.
+//there a literally millions of possible color combinations that can come from this code.
+//Image: none
+//Time: 05/11/2006 18:03:00
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+
+#cheat Cars never flip!
+//ID: 18549
+//Score: 281
+//Author: rela82me
+//Category: Vehicle
+//Description: ported over from Edison Carter's cheat from LCS
+//Image: none
+//Time: 05/11/2006 17:45:48
+//Working: Yes
+setfloat(pcar + 0x08,  0);
+setfloat(pcar + 0x18,  0);
+
+#cheat Free Spirit [port from: LCS]
+//ID: 18556
+//Score: 219
+//Author: magical trevor
+//Category: Player
+//Description: Thanks to DDM for helping me make this, this cheat will make Vic's player model freeze in one spot and you can walk around as his shadow, or 'spirit'
+//Image: http://img526.imageshack.us/img526/5898/video1xr0.gif
+//Time: 05/11/2006 20:27:56
+//Working: Yes
+setchar(pplayer + 0x042, 0xA3);
+#off
+setchar(pplayer + 0x042, 0xA2);
+
+#cheat Aim of Death
+//ID: 18575
+//Score: 175
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at any ped and it will die!
+//Image: http://www.mydatabus.com/public/water/a/death.gif
+//Time: 06/11/2006 21:04:18
+//Working: Yes
+pped = getint(0x08BA1D70);
+if (pped != 0)
+   setfloat(pped + 0x4e4, 0);
+
+#cheat No Aim Target
+//ID: 18574
+//Score: 83
+//Author: theY4Kman
+//Category: Pedestrians
+//Description: (Thanks for the ped pointer, Waterbottle)
+//When you target a ped, there will be no target there. It will only show up when you shoot the person.
+//Image: http://y4kstudios.com/cheatsync/notarg.gif
+//Time: 06/11/2006 20:27:11
+//Working: Yes
+// Thanks, Waterbottle
+sethex(0x08BA1D6F, 00);
+
+#cheat White Aim Target
+//ID: 18573
+//Score: 79
+//Author: theY4Kman
+//Category: Pedestrians
+//Description: [PORT FROM LCS - ORIGINAL AUTHOR: theY4Kman]
+//(Thanks to Waterbottle for the ped pointer)
+//This makes your aim target white.
+//Image: none
+//Time: 06/11/2006 20:18:23
+//Working: Yes
+// Thanks, Waterbottle
+sethex(0x08BA1D6C, FF, FF, FF);
+
+#cheat Tractor Beam
+//ID: 18572
+//Score: 256
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them to you.  Thanks to Waterbottle for finding pointer to targetted ped!
+//Image: http://www1.cheatdevice.com/gta/VCSTractorBeam.gif
+//Time: 06/11/2006 19:56:20
+//Working: Yes
+// Target a ped to pull them towards you
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+
+#cheat Force Push
+//ID: 18571
+//Score: 305
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped and they go flying!  Kind of like a remote super punch.  Thanks to Waterbottle for finding the address of targetted ped.
+//Image: http://www1.cheatdevice.com/gta/VCSForcePush2.gif
+//Time: 06/11/2006 19:51:11
+//Working: Yes
+// Target a ped and they go flying!
+static pdone;
+pped = getint(0x08BA1D70);
+if (pped != 0 && pped != pdone)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, dx * 0.2);
+    setfloat(pped + 0x0144, dy * 0.2);
+    setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+    pdone = pped;
+}
+if (pped == 0)
+{
+    pdone = 0;
+}
+
+#cheat disable side missions
+//ID: 18570
+//Score: 152
+//Author: Waterbottle
+//Category: Environment
+//Description: This disables all missions, meaning, no more will the annoying side missions pop up when you want to select a cheat.
+//Image: none
+//Time: 06/11/2006 18:21:01
+//Working: Yes
+setchar(0x09f69054, 1);
+#off
+setchar(0x09f69054, 0);
+
+#cheat Remote Control Ped!
+//ID: 18569
+//Score: 319
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: aim at a ped and press /\ to take controll of it.
+//When you are in controll of a ped you can rotate it with the analog stick.
+//Use analog upward to move ped.
+//Press L+R to kill the ped you are in controll of.
+//Requires cheatdevice 2.1 or higher.
+//Image: none
+//Time: 06/11/2006 17:46:55
+//Working: Yes
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+    setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+    setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+    }
+
+//kill ped
+if(press & CTRL_LTRIGGER && press & CTRL_RTRIGGER) rot = 0;
+if(buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER) {
+rot+=25;
+if(rot>2000) { setfloat(address+0x4e4, 0); setint(0x09fc73f8, 0); }
+}
+
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894, 0x10);
+else setchar(address+0x894, 0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+#cheat Skip Nighttime
+//ID: 18568
+//Score: 135
+//Author: edisoncarter
+//Category: Environment
+//Description: At 18:00 rolls the clock forward to 6:00 so you don't have to play in the dark.
+//Image: none
+//Time: 06/11/2006 16:19:37
+//Working: Yes
+if (getchar(0x08bb3b40) >= 18 || getchar(0x08bb3b40) <= 5)
+    setchar(0x08bb3b40, 6, 0);
+
+#cheat Nitrous Oxide v.2
+//ID: 18567
+//Score: 466
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Updated version of NOS; now with power break.
+//
+//press O to use NOS
+//press [] to use power break (stops you immediatly)
+//
+//Also did so if you press L then NOS won't work, so it dosn't affect drive by's.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/NOS.gif
+//Time: 06/11/2006 16:16:24
+//Working: Yes
+if(buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0) setfloat(pcar+0x140, 0, 0);
+
+#cheat Get Negative $666
+//ID: 18566
+//Score: 72
+//Author: gytu666
+//Category: Pointless
+//Description: Pointless.
+//Get -$666?!
+//What the...?!!!
+//Image: none
+//Time: 06/11/2006 07:26:05
+//Working: Yes
+setint(0x08bde55c, -666)
+
+#cheat Your Car Turns Black Before Exploding
+//ID: 18563
+//Score: 92
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When your car turns black, bail!  One more hit and it'll explode!  Thanks to vettefan for the car color addresses.
+//Image: none
+//Time: 06/11/2006 05:34:12
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health < 300)
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat Car Color Shows Car Health
+//ID: 18562
+//Score: 224
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Your car goes from green to yellow to red to black as it takes damage.  Thanks to vettefan for the car color addresses!
+//Image: http://www1.cheatdevice.com/gta/VCSCarHealthColor.gif
+//Time: 06/11/2006 05:26:14
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health >= 990)
+    setchar(pcar+0x224, 0, 180, 0);
+else if (health >= 650)
+    setchar(pcar+0x224, 255 * (1000 - health) / 350, 255, 0);
+else if (health >= 300)
+    setchar(pcar+0x224, 255, 255 * (health - 300) / 350, 0);
+else if (health >= 280)
+    setchar(pcar+0x224, 128, 0, 0);
+else
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat  Wanted Level Modifier 3.0
+//ID: 18561
+//Score: 343
+//Author: theY4Kman
+//Category: Player
+//Description: This is a revision of Durka Durka Mahn's 'Wanted Level Modifer'
+//Unlike the last version of it, this one now keeps the wanted level you wish. There's no more of the wanted level coming back again.
+//Hold down X and the Right Trigger, and tap up or down.
+//Image: none
+//Time: 06/11/2006 03:25:59
+//Working: Yes
+// Wanted Level Modifier (Originally coded by Durka Durka Mahn, but edited by theY4Kman)
+if(getint(0x8C5ED90) == 00) wantedlevel = getint(pplayer+0x910);
+else wantedlevel = wantedlevel;
+if ((press & CTRL_UP) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel < 6)) wantedlevel++;
+if ((press & CTRL_DOWN) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel > 0)) wantedlevel--;
+setint(pplayer+0x910, wantedlevel);
+setint(0x8C5ED90, 01);
+#off
+setint(0x8C5ED90, 00);
+
+#cheat Invisible Jetpack
+//ID: 18559
+//Score: 385
+//Author: edisoncarter
+//Category: Player
+//Description: Same controls as in San Andreas.
+//Image: http://www1.cheatdevice.com/gta/VCSJetpack1.gif
+//Time: 06/11/2006 00:50:04
+//Working: Yes
+// By Edison Carter
+// same controls as in San Andreas
+{
+    dx = 0; dy = 0; dz = 0;
+
+    // forward thrust
+    thrust = -ystick * 0.005;
+    if (ystick < -0.1 && (buttons & CTRL_CROSS))
+        thrust = -ystick * 0.024;
+    dx += getfloat(pplayer + 0x0010) * thrust;
+    dy += getfloat(pplayer + 0x0014) * thrust;
+    dz += getfloat(pplayer + 0x0018) * thrust;
+
+    // strafe left
+    if (buttons & CTRL_LTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * -0.00333;
+        dy += getfloat(pplayer + 0x0004) * -0.00333;
+        dz += getfloat(pplayer + 0x0008) * -0.00333;
+    }
+
+    // strafe right
+    if (buttons & CTRL_RTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * 0.00333;
+        dy += getfloat(pplayer + 0x0004) * 0.00333;
+        dz += getfloat(pplayer + 0x0008) * 0.00333;
+    }
+
+    // lift
+    lift = 0.0068;
+    if (buttons & CTRL_SQUARE)
+        lift -= 0.007;
+    if (buttons & CTRL_CROSS)
+    {
+        setshort(pplayer+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * 0.006;
+        else
+            lift += 0.006;
+    }
+    dx += getfloat(pplayer + 0x0020) * lift;
+    dy += getfloat(pplayer + 0x0024) * lift;
+    dz += getfloat(pplayer + 0x0028) * lift;
+
+    // add vector to velocity
+    gameplayspeed = getfloat(0x08bb3b58);
+    setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+    setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+    setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+    // rotational control
+    setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+    // never roll when falling, thanks to theY4Kman
+    setfloat(pplayer + 0x1C4,  0.0);
+}
+
+#cheat Hit Down to freeze Vic or his car.
+//ID: 18557
+//Score: 107
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: While you hold down wether you're in a car or not you will stop moving in mid-air.
+//Image: none
+//Time: 05/11/2006 21:11:14
+//Working: Yes
+if(buttons & CTRL_DOWN)
+{
+    setfloat(pcar+0x140, getfloat(pcar+0x140)+getfloat(pcar+0x10)==0);
+    setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar+0x14)==0);
+    setfloat(pcar+0x148, getfloat(pcar+0x148)+getfloat(pcar+0x18)==0);
+    setfloat(pplayer+0x140, getfloat(pplayer+0x140)+getfloat(pplayer+0x10)==0);
+    setfloat(pplayer+0x144, getfloat(pplayer+0x144)+getfloat(pplayer+0x14)==0);
+    setfloat(pplayer+0x148, getfloat(pplayer+0x148)+getfloat(pplayer+0x18)==0);
+}
+
+#cheat Money Modifier
+//ID: 18545
+//Score: 187
+//Author: magical trevor
+//Category: Player
+//Description: this modifys your money in the game
+//CONTROLS
+//RTRIGGER + UP: money goes up by 1000
+//RTRIGGER + DOWN: money goes down by 1000
+//RTRIGGER + LEFT: money goes down by 2000
+//RTRIGGER + RIGHT: money goes up by 2000
+//Image: none
+//Time: 05/11/2006 17:18:01
+//Working: Yes
+ if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_UP&&getint(0x08bde55c)<999999999))
+{
+setint(0x08bde55c,  getint(0x08bde55c)+1000);
+}
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_RIGHT&&getint(0x08bde55c)<999999999))
+{
+setint(0x08bde55c,  getint(0x08bde55c)+2000);
+}
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_DOWN&&getint(0x08bde55c)>000000000))
+{
+setint(0x08bde55c,  getint(0x08bde55c)-1000);
+} 
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_LEFT&&getint(0x08bde55c)>000000000))
+{
+setint(0x08bde55c,  getint(0x08bde55c)-2000);
+} 
+
+#cheat Extreme Boost (Hit O)
+//ID: 18544
+//Score: 280
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: A redo of waterbottle's NOS cheat, this will give you an INSTANT shot of boost of speed instead of an overtime boost when you hit O. Very useful for insane jumps and can also be used in big vehicles to ram stuff.
+//Image: http://img212.imageshack.us/img212/9427/2yh5.gif
+//Time: 05/11/2006 16:22:46
+//Working: Yes
+if((press & CTRL_CIRCLE))
+{
+    setfloat(pcar+0x140, getfloat(pcar+0x140)+getfloat(pcar+0x10)+0.1);
+    setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar+0x14)+0.1);
+}
+
+
+
+#cheat $1
+//ID: 18528
+//Score: 76
+//Author: Dirty Sanchez
+//Category: Player
+//Description: This will give you $1. Its weird but enjoy!!!
+//Image: none
+//Time: 05/11/2006 09:49:08
+//Working: Yes
+setint(0x08bde55c,  1) 
+
+
+#cheat indeflatable tires
+//ID: 18517
+//Score: 329
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Your tires will never deflate
+//Image: none
+//Time: 05/11/2006 00:34:46
+//Working: Yes
+setshort(pcar+0x3b6, 0, 0);//cars
+setshort(pcar+0x434, 0);//bikes
+
+#cheat Car Hop (Hit Down)
+//ID: 18514
+//Score: 162
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and get in a vehicle then hit down and your car will pop up into the air, in a controlled amount.
+//Image: none
+//Time: 04/11/2006 21:42:32
+//Working: Yes
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148, +0.2);
+}
+
+#cheat Ped Slingshot
+//ID: 18682
+//Score: 158
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release!
+//Image: http://www1.cheatdevice.com/gta/VCSPedSlingshot.gif
+//Time: 12/11/2006 06:08:29
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pcurrentped = 0;
+    }
+}
+
+
+#cheat Remove Anything
+//ID: 18679
+//Score: 117
+//Author: Waterbottle
+//Category: Pointless
+//Description: Any ped/vehicle/small object you touch will immediatly disappear.
+//Any larger object/building will become unsolid when you touch it.
+//Image: none
+//Time: 12/11/2006 02:51:26
+//Working: Yes
+add = getint(pobj + 0x150);
+if(add) 
+    setfloat(add+0x30, 0, 0, 0);
+
+#cheat Drive On Water!
+//ID: 18678
+//Score: 371
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This cheat will allow any vehicle you are in to drive on water. Control Setup 1 recommeded.
+//X: accelerate, Analog: rotate, R: hand brake, [] Reverse
+//
+//Thanks to Durka Durka Mahn for the cheat idea ;)
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/drivewater.gif
+//Time: 12/11/2006 01:01:08
+//Working: Yes
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+   static speed;
+   //set the car ontop of the water
+   setfloat(pcar+0x38, getfloat(0x96C96B0)+0.8);
+   setfloat(pcar+0x8, 0);
+   setfloat(pcar+0x18, 0);
+   setfloat(pcar+0x20, 0, 0, 0);
+   setfloat(pcar+0x148, 0);
+   //hand brake
+   if(buttons & CTRL_RTRIGGER) 
+   {
+   speed*=0.9;
+   handb = 2.5;
+   } else handb = 1;
+   //rotate the vehicle
+   if(speed > 0.1)
+           setfloat(pcar+0x78, -0.015 * xstick * handb);
+   else if(speed < -0.1)
+           setfloat(pcar+0x78, 0.015 * xstick * handb);
+   //accelerte
+   if(buttons & CTRL_CROSS) 
+   {
+   if(speed < 0)
+           speed += 0.02; 
+   if(speed < 0.7)
+           speed += 0.02; 
+   }
+   else
+   if(buttons & CTRL_SQUARE)
+   {
+   if(speed > 0)
+           speed -= 0.02; 
+   if(speed > -0.5)
+           speed -= 0.02; 
+   }
+   else speed *= 0.95;
+   //add speed to car
+   setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+   setfloat(pcar+0x144, getfloat(pcar)*speed);
+}
+
+#cheat Invisible Vic
+//ID: 18677
+//Score: 112
+//Author: dwinch
+//Category: Player
+//Description: Makes Vic invisible.
+//Shadow is also not visible.
+//When you get in a car your player skin will be left behind next to the car (shown in gif).
+//Which isn't that bad if you drive off anyway.
+//
+//EDITED BY: edisoncarter on 12/11/06 05:33:28
+//Image: http://smg.photobucket.com/albums/v514/Winchy/th_invisible.gif
+//Time: 12/11/2006 00:50:57
+//Working: Yes
+setchar(pplayer+0x4C, 0x10);
+setchar(pplayer+0x4D, 0x20);
+#off
+setchar(pplayer+0x4C, 0x00);
+setchar(pplayer+0x4D, 0x00);
+
+#cheat Touch of Death
+//ID: 18676
+//Score: 248
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: While on, anything you touch (person or vehicle) will die or blow up! No need for weapons with this cheat! (Special Thanks to Waterbottle's help in pointers!!!)
+//
+//Note: This works on foot and in car!
+//Image: http://img295.imageshack.us/img295/320/firecarsde2.gif
+//Time: 12/11/2006 00:47:45
+//Working: Yes
+object = getint(pplayer+0x150);
+carobject = getint(pcar+0x150);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setfloat(object + 0x4e4,  0);
+}
+if(getint(pplayer+0x150)>0x098edcc0&&getint(pplayer+0x150)<0x099019a0)
+{
+setfloat(object + 0x27c,  0);
+} 
+
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setfloat(carobject + 0x4e4,  0);
+}
+if(getint(pcar+0x150)>0x098edcc0&&getint(pcar+0x150)<0x099019a0)
+{
+setfloat(carobject + 0x27c,  0);
+} 
+
+#cheat Get Wasted
+//ID: 18675
+//Score: 71
+//Author: dwinch
+//Category: Pointless
+//Description: says what it does automatic be sure to turn off or else it will just keep wasting you!
+//
+//EDITED BY: psphacker108 on 15/11/06 05:57:05
+//Image: none
+//Time: 11/11/2006 22:00:51
+//Working: Yes
+//turn on then off
+setchar(pplayer+0x8B4, 0x3A);
+
+#cheat Get Busted
+//ID: 18674
+//Score: 65
+//Author: dwinch
+//Category: Pointless
+//Description: Not sure why you would want to.. but..
+//Image: none
+//Time: 11/11/2006 21:59:54
+//Working: Yes
+//turn on then off
+setchar(pplayer+0x8B4, 0x41);
+
+#cheat Money Counter is a Speed'O'Meter v. 2
+//ID: 18666
+//Score: 241
+//Author: Waterbottle
+//Category: Misc
+//Description: The money counter will show how fast you are driving.
+//$ sign and zeros are removed from from the speed'o'meter. (found by edison)
+//You get the money you had back when you leave the vehicle.
+//Image: none
+//Time: 11/11/2006 18:17:41
+//Working: Yes
+static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+  wasin = true;
+  speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*100;
+  setint(0x08bde55c, speed, speed);
+  setchar(0x8BAEDB8, '%', 'd', 0);
+  setchar(0x8BAEDC0, '%', 'd', 0);
+}
+else
+{  if(wasin)
+  {
+  setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+  setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+  setint(0x08bde55c, money, money);
+  wasin = false;
+  }
+  money = getint(0x08bde560);
+}
+#off
+setint(0x08bde55c, money, money);
+setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+
+#cheat Lock Camera
+//ID: 18663
+//Score: 119
+//Author: dwinch
+//Category: Camera
+//Description: Locks camera in its current state.
+//You can get some nice angles if used during a cutscene.
+//CANNOT be used in cars.
+//Image: http://img.photobucket.com/albums/v514/Winchy/lockedcamera.jpg
+//Time: 11/11/2006 13:32:42
+//Working: Yes
+setchar(pplayer + 0x550,  1);
+#off
+setchar(pplayer + 0x550,  0);
+
+#cheat All Weapons (36) (v2)
+//ID: 18659
+//Score: 629
+//Author: Sousanator
+//Category: Weapons
+//Description: Just like first version, but now easier scrolling and 36 weapons/items
+//use left/right to scroll through the sets of weapons (first, melee, heavy)
+//and up/down to switch that weapon in same category (golf club, bat, katana)
+//bug: weapon logo doesnt show,
+//Image: none
+//Time: 11/11/2006 02:40:39
+//Working: Yes
+//By Sousanator
+	setint(pplayer+0x5d8,  0x00ffffff);
+	setint(pplayer+0x5f4,  0x00ffffff);
+	setint(pplayer+0x610,  0x00ffffff);
+	setint(pplayer+0x5bc,  0x00ffffff);
+	setint(pplayer+0x62c,  0x00ffffff);
+	setint(pplayer+0x648,  0x00ffffff);
+	setint(pplayer+0x664,  0x00ffffff);
+	setint(pplayer+0x680,  0x00ffffff);
+	
+	static weaponPlace;
+	static group0;
+	static group1;
+	static group2;
+	static group3;
+	static group4;
+	static group5;
+	static group6;
+	static group7;
+	static group8;
+	static group9;
+	
+
+	if (pressslow & CTRL_LEFT) {
+		weaponPlace--;
+	} else if (pressslow & CTRL_RIGHT) {
+		weaponPlace++;
+	}
+	if (weaponPlace > 9) {
+		weaponPlace=0;
+	} else if (weaponPlace < 0) {
+		weaponPlace=9;
+	}	
+		
+if (weaponPlace == 0) {
+	if (pressslow & CTRL_DOWN) {
+		group0--;
+	} else if (pressslow & CTRL_UP) {
+		group0++;
+	}
+	if (group0 > 1) {
+		group0=0;
+	} else if (group0 < 0) {
+		group0=1;
+	}
+	setchar(pplayer+0xCB8,   0x00);
+
+		if (group0 == 0){
+			setchar(pplayer+0x578,   0x00);//FIST
+		} else if (group0 == 1){
+			setchar(pplayer+0x578,   0x01);//BRASS KNUCLES
+		}
+} else if (weaponPlace == 1) {
+	if (pressslow & CTRL_DOWN) {
+		group1--;
+	} else if (pressslow & CTRL_UP) {
+		group1++;
+	}
+	if (group1 > 9) {
+		group1=0;
+	} else if (group1 < 0) {
+		group1=9;
+	}
+	setchar(pplayer+0xCB8,   0x01);
+	if (group1==0){
+		setchar(pplayer+0x594,   0x02);//LITTLE KNIFE	
+	} else if (group1==1){
+		setchar(pplayer+0x594,   0x03);//GOLF CLUB
+	} else if (group1==2){
+		setchar(pplayer+0x594,   0x04);//KNIGHT STICK
+	} else if (group1==3){
+		setchar(pplayer+0x594,   0x05);//KNIFE
+	} else if (group1==4){
+		setchar(pplayer+0x594,   0x06);//BAT
+	} else if (group1==5){
+		setchar(pplayer+0x594,   0x07);//AXE
+	} else if (group1==6){
+		setchar(pplayer+0x594,   0x08);//CANE
+	} else if (group1==7){
+		setchar(pplayer+0x594,   0x09);//MECHETTY
+	} else if (group1==8){
+		setchar(pplayer+0x594,   0x0A);//KATANA
+	} else if (group1==9){
+		setchar(pplayer+0x594,   0x0B);//SAW
+	}
+} else if (weaponPlace == 2) {
+	if (pressslow & CTRL_DOWN) {
+		group2--;
+	} else if (pressslow & CTRL_UP) {
+		group2++;
+	}
+	if (group2 > 4) {
+		group2=0;
+	} else if (group2 < 0) {
+		group2=4;
+	}
+	setchar(pplayer+0xCB8,   0x02);
+	if (group2==0){
+		setchar(pplayer+0x5B0,   0x0C);//GRENADE
+	} else if (group2==1){
+		setchar(pplayer+0x5B0,   0x0D);//GRENADE2
+	} else if (group2==2){
+		setchar(pplayer+0x5B0,   0x0E);//REMOTE MINES
+	} else if (group2==3){
+		setchar(pplayer+0x5B0,   0x10);//TEAR GAS
+	} else if (group2==4){
+		setchar(pplayer+0x5B0,   0x11);//MOLTOV
+	}
+} else if (weaponPlace == 3) {
+	if (pressslow & CTRL_DOWN) {
+		group3--;
+	} else if (pressslow & CTRL_UP) {
+		group3++;
+	}
+	if (group3 > 1) {
+		group3=0;
+	} else if (group3 < 0) {
+		group3=1;
+	}
+	setchar(pplayer+0xCB8,   0x03);	
+	if (group3==0){
+		setchar(pplayer+0x5CC,   0x13);//PISTOL
+	} else if (group3==1){
+		setchar(pplayer+0x5CC,   0x14);//HANDGUN
+	}
+} else if (weaponPlace == 4) {
+	if (pressslow & CTRL_DOWN) {
+		group4--;
+	} else if (pressslow & CTRL_UP) {
+		group4++;
+	}
+	if (group4 > 2) {
+		group4=0;
+	} else if (group4 < 0) {
+		group4=2;
+	}
+	setchar(pplayer+0xCB8,   0x04);	
+	if (group4==0){
+		setchar(pplayer+0x5E8,   0x15);//SHOTGUN    
+	} else if (group4==1){
+		setchar(pplayer+0x5E8,   0x16);//SHOTGUN2
+	} else if (group4==2){
+		setchar(pplayer+0x5E8,   0x17);//SHOTGUN3
+	}
+} else if (weaponPlace == 5) {
+	if (pressslow & CTRL_DOWN) {
+		group5--;
+	} else if (pressslow & CTRL_UP) {
+		group5++;
+	}
+	if (group5 > 3) {
+		group5=0;
+	} else if (group5 < 0) {
+		group5=3;
+	}
+	setchar(pplayer+0xCB8,   0x05);	
+	if (group5==0){
+		setchar(pplayer+0x604,   0x18);//UZI
+	} else if (group5==1){
+		setchar(pplayer+0x604,   0x19);//UZI2
+	} else if (group5==2){
+		setchar(pplayer+0x604,   0x1A);//SILENT UZI
+	} else if (group5==3){
+		setchar(pplayer+0x604,   0x1B);//2HAND UZI
+	}
+} else if (weaponPlace == 6) {
+	if (pressslow & CTRL_DOWN) {
+		group6--;
+	} else if (pressslow & CTRL_UP) {
+		group6++;
+	}
+	if (group6 > 1) {
+		group6=0;
+	} else if (group6 < 0) {
+		group6=1;
+	}
+	setchar(pplayer+0xCB8,   0x06);	
+	if (group6==0){
+		setchar(pplayer+0x620,   0x1C);//2HAND UZI2
+	} else if (group6==1){
+		setchar(pplayer+0x620,   0x1D);//AK47
+	}
+} else if (weaponPlace == 7) {
+	if (pressslow & CTRL_DOWN) {
+		group7--;
+	} else if (pressslow & CTRL_UP) {
+		group7++;
+	}
+	if (group7 > 3) {
+		group7=0;
+	} else if (group7 < 0) {
+		group7=3;
+	}
+	setchar(pplayer+0xCB8,   0x07);	
+	if (group7==0){
+		setchar(pplayer+0x63C,   0x20);//ROCKET LAUNCHER
+	}else if (group7==1){
+		setchar(pplayer+0x63C,   0x21);//FLAMETHROWER
+	} else if (group7==2){
+		setchar(pplayer+0x63C,   0x22);//MINIGUN2
+	} else if (group7==3){
+		setchar(pplayer+0x63C,   0x23);//CHAINGUN
+	}
+} else if (weaponPlace == 8) {
+	if (pressslow & CTRL_DOWN) {
+		group8--;
+	} else if (pressslow & CTRL_UP) {
+		group8++;
+	}
+	if (group8 > 1) {
+		group8=0;
+	} else if (group8 < 0) {
+		group8=1;
+	}
+	setchar(pplayer+0xCB8,   0x08);
+	if (group8==0){
+		setchar(pplayer+0x658,   0x1E);//SNIPER
+	} else if (group8==1){
+		setchar(pplayer+0x658,   0x1F);//SNIPER2
+	}
+} else if (weaponPlace == 9) {
+	if (pressslow & CTRL_DOWN) {
+		group9--;
+	} else if (pressslow & CTRL_UP) {
+		group9++;
+	}
+	if (group9 > 2) {
+		group9=0;
+	} else if (group9 < 0) {
+		group9=2;
+	}
+	setchar(pplayer+0xCB8,   0x09);
+	if (group9==0){
+		setchar(pplayer+0x674,   0x27);//BINOCULARS
+	} else if (group9==1){
+		setchar(pplayer+0x674,   0x26);//CAMERA
+	} else if (group9==2){
+		setchar(pplayer+0x674,   0x24);//REMOTE SWITCH
+	}
+}
+
+#cheat Change Outfit
+//ID: 18655
+//Score: 169
+//Author: Sousanator
+//Category: Player
+//Description: Based entirly off of TSF442's codes
+//This just makes it more convienent to choose the outfit.
+//
+//Use Up/Down to scroll through all the outfits.
+//Then walk in the 'T-Shirt' icon and press Triangle to exit
+//You should now be wearing the selected outfit.
+//
+//Image: none
+//Time: 11/11/2006 00:10:22
+//Working: Yes
+//Original Codes By TSF442
+	static outfit;
+
+	if (pressslow & CTRL_DOWN) {
+		outfit--;
+	} else if (pressslow & CTRL_UP) {
+		outfit++;
+	}
+	if (outfit > 13) {
+		outfit=0;
+	} else if (outfit < 0) {
+		outfit=13;
+	}
+setint(0x08BF2E00,  outfit);
+	if (outfit == 0) {
+		setshort(0x08e90bd8, 1, 'A', 'r', 'm', 'y', ' ', 'F', 'a', 't', 'i', 'g', 'u', 'e', 's', 0);
+	} else if (outfit == 1) {	
+		setshort(0x08e90bd8, 1, 'C', 'a', 's', 'u', 'a', 'l', 0);
+	} else if (outfit == 2) {
+		setshort(0x08e90bd8, 1, 'L', 'e', 'i', 's', 'u', 'r', 'e', 0);
+	} else if (outfit == 3) {
+		setshort(0x08e90bd8, 1, 'T', 'r', 'a', 'i', 'l', 'e', 'r', ' ', 'T', 'r', 'a', 's', 'h', 0);
+	} else if (outfit == 4) {
+		setshort(0x08e90bd8, 1, 'C', 'u', 'b', 'a', 'n', ' ', 'S', 't', 'y', 'l', 'e', 0);
+	} else if (outfit == 5) {
+		setshort(0x08e90bd8, 1, 'P', 'a', 's', 't', 'e', 'l', ' ', 'S', 'u', 'i', 't', 0);
+	} else if (outfit == 6) {
+		setshort(0x08e90bd8, 1, 'T', 'r', 'a', 'c', 'k', ' ', 'S', 'u', 'i', 't', 0);
+	} else if (outfit == 7) {
+		setshort(0x08e90bd8, 1, 'B', 'u', 'r', 'g', 'u', 'l', 'a', 'r', 0);
+	} else if (outfit == 8) {
+		setshort(0x08e90bd8, 1, 'H', 'i', 'r', 'e', 'd', ' ', 'M', 'u', 's', 'c', 'l', 'e', 0);
+	} else if (outfit == 9) {
+		setshort(0x08e90bd8, 1, 'R', 'e', 'p', 'o', '-', 'M', 'a', 'n', 0);
+	} else if (outfit == 10) {
+		setshort(0x08e90bd8, 1, 'S', 'm', 'u', 'g', 'g', 'l', 'e', 'r', 0);
+	} else if (outfit == 11) {
+		setshort(0x08e90bd8, 1, 'S', 'm', 'a', 'r', 't', ' ', 'S', 'u', 'i', 't', 0);
+	} else if (outfit == 12) {
+		setshort(0x08e90bd8, 1, 'W', 'i', 'n', 'n', 'e', 'r', 0);
+	} else if (outfit == 13) {
+		setshort(0x08e90bd8, 1, 'W', 'e', 't', ' ', 'S', 'u', 'i', 't', 0);
+	}	
+
+#cheat Media Attention Meter
+//ID: 18640
+//Score: 162
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Displays your newsworthiness when you go on a killing spree.  Improved version: displays any time, you don't have to get up to 6 stars to get it to display.
+//
+//This was an unused hidden cheat with no button code.  The game does not think you cheated from
+//Image: http://www1.cheatdevice.com/gta/VCSMediaAttentionMeter.jpg
+//Time: 10/11/2006 19:39:53
+//Working: Yes
+// By Edison Carter
+// displays your newsworthiness when you go on a killing spree
+setshort(0x08bb41ac, 1);
+setint(0x089bb648, 0);
+setint(0x089bb65c, 0);
+setint(0x089bb66c, 0);
+#off
+setshort(0x08bb41ac, 0);
+setint(0x089bb648, 0x450100db);
+setint(0x089bb65c, 0x450100d6);
+setint(0x089bb66c, 0x144000d2);
+
+
+
+#cheat Remote Control Bike
+//ID: 18639
+//Score: 125
+//Author: dwinch
+//Category: Vehicle
+//Description: See gif for better idea of what it does.
+//I cannot add the whole thing here, apparently there are errors (I assume as it is more than one code), so the rest is in the readme:
+//http://www.filelodge.com/files/room49/1424824/Remote%20Control%20Bike.txt
+//Image: http://www.filelodge.com/files/room49/1424824/th_RCB.gif
+//Time: 10/11/2006 19:35:41
+//Working: Yes
+//get on bike, get off, use this (turn on/off QUICKLY)
+//must be a few feet away from bike
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Force Blast
+//ID: 18638
+//Score: 154
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Force push all peds away from you!
+//Image: none
+//Time: 10/11/2006 19:08:36
+//Working: Yes
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+    if (p == pplayer)
+        continue;
+    dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(p + 0x01c8, 0x1020);
+    setfloat(p + 0x0140, dx * 0.2);
+    setfloat(p + 0x0144, dy * 0.2);
+    setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+off();
+
+#cheat All Cars Start Burning, Then Blow Up.
+//ID: 18637
+//Score: 115
+//Author: Waterbottle
+//Category: Vehicle
+//Description: All cars will start burning and then a few seconds later blow up.
+//Image: none
+//Time: 10/11/2006 18:51:28
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         if(p != pcar) setfloat(p + 0x27c, 0);
+     }
+}
+setchar(0x08bb32c8,  1);
+#off
+setchar(0x08bb32c8,  0); 
+
+#cheat No Traffic
+//ID: 18636
+//Score: 156
+//Author: Waterbottle
+//Category: Vehicle
+//Description: All cars will dissapear except the one you are in. Allowing you to drive around without any cars getting in your way,
+//Image: none
+//Time: 10/11/2006 18:49:27
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+  for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+       if(p != pcar) setchar(p + 0x4c, 1);
+  }
+}
+
+#cheat All Peds Invincible
+//ID: 18631
+//Score: 82
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: All peds will be invincible, you can not hurt them. 333Mhz recommended.
+//Image: none
+//Time: 10/11/2006 18:04:56
+//Working: Yes
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 150);
+}
+
+#cheat Kill All Peds
+//ID: 18630
+//Score: 155
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Press R + /\ to kill all peds.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/death.gif
+//Time: 10/11/2006 18:03:40
+//Working: Yes
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_TRIANGLE) {
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+}
+
+#cheat No Peds
+//ID: 18629
+//Score: 97
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: This will immediatly remove all peds. 333Mhz recommended.
+//Image: none
+//Time: 10/11/2006 18:02:25
+//Working: Yes
+static counter;
+player = getint(0x08bc8170);//address of pplayer 
+if(counter++ % 30 == 0) {
+     for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+             if(p != player) setchar(p + 0x4c, 1);
+     }
+}
+
+#cheat Proximity Mines
+//ID: 18627
+//Score: 244
+//Author: xFinch713x
+//Category: Weapons
+//Description: HIDDEN WEAPON
+//
+//Once activated, it will give you proximity mines, in the place of your grenades.  Big explosions if you put multiple down
+//
+//thanks to Sousanator
+//Image: none
+//Time: 10/11/2006 17:16:50
+//Working: Yes
+setchar(pplayer+0x5B0,   0x0E);
+setchar(pplayer+0xCB8,   0x02);
+setint(pplayer+0x5bc,  0x00ffffff);
+off();
+
+#cheat Wave Size/Speed Modifier
+//ID: 18623
+//Score: 182
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to mess with the wave height and speed. going into positive values will increase the waves speed, while negative values increase the waves height, you can choose between one of the two wave modifications.
+//
+//EDITED BY: Waterbottle on 10/11
+//Image: none
+//Time: 10/11/2006 03:17:02
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0, Wave);
+
+#cheat Jet ski's drive sideways
+//ID: 18622
+//Score: 83
+//Author: psphacker108
+//Category: Vehicle
+//Description: when activated make sure your on a jetski make sure your in Open water and Move your analog stick side to side and it will drive side ways makes all vehicles go on there sides to!! jetski acts like a submarine on sharp turns
+//Image: http://img399.imageshack.us/my.php?image=screen1zr4.png
+//Time: 10/11/2006 01:02:27
+//Working: Yes
+setint(pcar + 0x00000000, 19);
+
+#cheat Ped Teleporter
+//ID: 18621
+//Score: 115
+//Author: Durka Durka Mahn
+//Category: Pedestrians
+//Description: Turn on then use Triangle and Up to set a place for peds to teleport to, then target a ped and hit Up and they will teleport to that location.
+//Image: http://img481.imageshack.us/img481/4092/video1jb9.gif
+//Time: 10/11/2006 00:18:31
+//Working: Yes
+pped = getint(0x08BA1D70);
+if((pressmed & CTRL_TRIANGLE&&pressmed & CTRL_UP))
+{
+playerx = getfloat(pplayer + 0x030);
+playery = getfloat(pplayer + 0x034);
+playerz = getfloat(pplayer + 0x038);
+}
+
+if((press & CTRL_UP))
+{
+setfloat(pped + 0x30, playerx);
+setfloat(pped + 0x34, playery);
+setfloat(pped + 0x38, playerz);
+}
+
+#cheat Invisible Car
+//ID: 18620
+//Score: 124
+//Author: dwinch
+//Category: Vehicle
+//Description: Car and Vic inside are invisible.
+//
+//EDITED BY: psphacker108 on 10/11/06 00:36:38
+//Image: none
+//Time: 10/11/2006 00:06:18
+//Working: Yes
+setchar(pcar+0x4A, 0x15);
+#off
+setchar(pcar+0x4A, 0x18);
+
+#cheat Water Height Modifier
+//ID: 18619
+//Score: 270
+//Author: vettefan88
+//Category: Environment
+//Description: Exactly as the title says. This cheat will allow you to modify the height of the water in VCS by pressing left and right!!
+//
+//there is currently no water under the land, but when out in the water you can raise it up over the bridges, or down below rocks
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/water.gif
+//Time: 09/11/2006 20:23:14
+//Working: Yes
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat All Weapons (33)
+//ID: 18617
+//Score: 317
+//Author: Sousanator
+//Category: Weapons
+//Description: Use Left/Right to scroll through all the weapons
+//
+//thanks parm since i was missing 2 before
+//includes infinite ammo, thanks to waterbottle
+//
+//now all 33 weapons, plus easy scrolling!
+//
+//just camera not included
+//Image: none
+//Time: 09/11/2006 01:43:20
+//Working: Yes
+	//By Sousanator
+	//credit to: vettefan/edisoncarter for run once varible thing,   and Waterbottle for weapon locations and infinite ammo
+	setint(pplayer+0x5d8,  0x00ffffff);
+	setint(pplayer+0x5f4,  0x00ffffff);
+	setint(pplayer+0x610,  0x00ffffff);
+	setint(pplayer+0x5bc,  0x00ffffff);
+	setint(pplayer+0x62c,  0x00ffffff);
+	setint(pplayer+0x648,  0x00ffffff);
+	setint(pplayer+0x664,  0x00ffffff);
+
+	static weaponHolding;
+
+	if (pressslow & CTRL_LEFT) {
+		weaponHolding--;
+	} else if (pressslow & CTRL_RIGHT) {
+		weaponHolding++;
+	}
+	if (weaponHolding > 35) {
+		weaponHolding=0;
+	} else if (weaponHolding < 0) {
+		weaponHolding=35;
+	}
+	
+	if (weaponHolding==0){
+		setchar(pplayer+0x578,   0x00);
+		setchar(pplayer+0xCB8,   0x00);//FIST
+	} else if (weaponHolding==1){
+		setchar(pplayer+0x578,   0x01);//BRASS KNUCKLES
+		setchar(pplayer+0xCB8,   0x00);
+	} else if (weaponHolding==2){
+		setchar(pplayer+0x594,   0x02);//LITTLE KNIFE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==3){
+		setchar(pplayer+0x594,   0x03);//GOLF CLUB
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==4){
+		setchar(pplayer+0x594,   0x04);//KNIGHT STICK
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==5){
+		setchar(pplayer+0x594,   0x05);//KNIFE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==6){
+		setchar(pplayer+0x594,   0x06);//BAT
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==7){
+		setchar(pplayer+0x594,   0x07);//AXE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==8){
+		setchar(pplayer+0x594,   0x08);//CANE
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==9){
+		setchar(pplayer+0x594,   0x09);//MECHETTY
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==10){
+		setchar(pplayer+0x594,   0x0A);//KATANA
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==11){
+		setchar(pplayer+0x594,   0x0B);//SAW
+		setchar(pplayer+0xCB8,   0x01);
+	} else if (weaponHolding==12){
+		setchar(pplayer+0x5B0,   0x0C);//GRENADE
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==13){
+		setchar(pplayer+0x5B0,   0x0D);//GRENADE2
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==14){
+		setchar(pplayer+0x5B0,   0x0E);//LANDMINES
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==15){
+		setchar(pplayer+0x5B0,   0x10);//TEAR GAS
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==16){
+		setchar(pplayer+0x5B0,   0x11);//MOLTOV
+		setchar(pplayer+0xCB8,   0x02);
+	} else if (weaponHolding==17){
+		setchar(pplayer+0x5CC,   0x13);//PISTOL
+		setchar(pplayer+0xCB8,   0x03);
+	} else if (weaponHolding==18){
+		setchar(pplayer+0x5CC,   0x14);//HANDGUN
+		setchar(pplayer+0xCB8,   0x03);
+	} else if (weaponHolding==19){
+		setchar(pplayer+0x5E8,   0x15);//SHOTGUN
+		setchar(pplayer+0xCB8,   0x04);    
+	} else if (weaponHolding==20){
+		setchar(pplayer+0x5E8,   0x16);//SHOTGUN2
+		setchar(pplayer+0xCB8,   0x04);
+	} else if (weaponHolding==21){
+		setchar(pplayer+0x5E8,   0x17);//SHOTGUN3
+		setchar(pplayer+0xCB8,   0x04);
+	} else if (weaponHolding==22){
+		setchar(pplayer+0x604,   0x18);//UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==23){
+		setchar(pplayer+0x604,   0x19);//UZI2
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==24){
+		setchar(pplayer+0x604,   0x1A);//SILENT UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==25){
+		setchar(pplayer+0x604,   0x1B);//2HAND UZI
+		setchar(pplayer+0xCB8,   0x05);
+	} else if (weaponHolding==26){
+		setchar(pplayer+0x620,   0x1C);//2HAND UZI2
+		setchar(pplayer+0xCB8,   0x06);
+	} else if (weaponHolding==27){
+		setchar(pplayer+0x620,   0x1D);//AK47
+		setchar(pplayer+0xCB8,   0x06);
+	} else if (weaponHolding==28){
+		setchar(pplayer+0x658,   0x1E);//SNIPER
+		setchar(pplayer+0xCB8,   0x08);
+	} else if (weaponHolding==29){
+		setchar(pplayer+0x658,   0x1F);//SNIPER2
+		setchar(pplayer+0xCB8,   0x08);
+	} else if (weaponHolding==30){
+		setchar(pplayer+0x63C,   0x20);//ROCKET LAUNCHER
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==31){
+		setchar(pplayer+0x63C,   0x21);//FLAMETHROWER
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==32){
+		setchar(pplayer+0x63C,   0x22);//MINIGUN2
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==33){
+		setchar(pplayer+0x63C,   0x23);//CHAINGUN
+		setchar(pplayer+0xCB8,   0x07);
+	} else if (weaponHolding==34){
+		//setchar(pplayer+0x578,   0x26);//CAMERA(not working)
+		setchar(pplayer+0xCB8,   0x00);	
+	} else if (weaponHolding==35){
+		setchar(pplayer+0xCB8,   0x09);//REMOTE SWITCH
+	}
+
+#cheat Toggle Weapons
+//ID: 18615
+//Score: 108
+//Author: parm
+//Category: Weapons
+//Description: Press R+Up to toggle heavy weapons and R+Down to toggle melee weapons.
+//
+//Thanks to DDM and Waterbottle.
+//Image: none
+//Time: 08/11/2006 23:49:18
+//Working: Yes
+// by parm, thanks to DDM and Waterbottle
+abc=getchar(pplayer+0x63c);
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x21)
+{
+setchar(pplayer+0x63C, 0x22);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M', 'i', 'n', 'i', 'g', 'u', 'n', ' ', '2');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x22)
+{
+setchar(pplayer+0x63C, 0x23);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C', 'h', 'a', 'i', 'n', 'g', 'u', 'n');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x23)
+{
+setchar(pplayer+0x63C, 0x20);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'R', 'o', 'c', 'k', 'e', 't', ' ', 'L', 'a', 'u', 'n', 'c', 'h', 'e', 'r');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x20)
+{
+setchar(pplayer+0x63C, 0x21);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'F', 'l', 'a', 'm', 'e', 't', 'h', 'r', 'o', 'w', 'e', 'r');
+}
+ab=getchar(pplayer+0x594);
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x03)
+{
+setchar(pplayer+0x594, 0x04);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'N', 'i', 'g', 'h', 't', ' ', 'S', 't', 'i', 'c', 'k');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x04)
+{
+setchar(pplayer+0x594, 0x05);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M', 'i', 'n', 'i', ' ', 'P', 'i', 'r', 'a', 't', 'e', ' ', 'S', 'w', 'o', 'r', 'd');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x05)
+{
+setchar(pplayer+0x594, 0x06);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'B', 'a', 't');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x06)
+{
+setchar(pplayer+0x594, 0x07);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'H', 'a', 'n', 'd', ' ', 'A', 'x', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x07)
+{
+setchar(pplayer+0x594, 0x08);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C', 'a', 'n', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x08)
+{
+setchar(pplayer+0x594, 0x09);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'K, ', 'n', 'i', 'f', 'e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x09)
+{
+setchar(pplayer+0x594, 0x03);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'G', 'o', 'l', 'f', ' ', 'C', 'l', 'u', 'b');
+}
+
+#cheat Guys Follow You
+//ID: 18614
+//Score: 131
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:43:24
+//Working: Yes
+setchar(0x08bacdf5, 1);
+#off
+setchar(0x08bacdf5, 0);
+
+
+#cheat Bobble Head World
+//ID: 18613
+//Score: 113
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.  This is a hidden cheat without a button code.
+//Image: none
+//Time: 08/11/2006 22:43:00
+//Working: Yes
+setchar(0x08bacdf7, 1);
+#off
+setchar(0x08bacdf7, 0);
+
+
+#cheat All Green Lights
+//ID: 18612
+//Score: 98
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:42:26
+//Working: Yes
+setchar(0x08bafd80, 1);
+#off
+setchar(0x08bafd80, 0);
+
+
+#cheat Aggressive Drivers
+//ID: 18611
+//Score: 107
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:41:59
+//Working: Yes
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0);
+
+
+#cheat Perfect Traction
+//ID: 18608
+//Score: 133
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Down = Car Hop
+//Image: none
+//Time: 08/11/2006 22:40:38
+//Working: Yes
+setchar(0x08bb2452, 1);
+#off
+setchar(0x08bb2452, 0);
+
+
+#cheat Invisible Traffic
+//ID: 18607
+//Score: 80
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.  This is a hidden cheat with no button code.
+//Image: none
+//Time: 08/11/2006 22:40:04
+//Working: Yes
+setchar(0x08bb2450, 1);
+#off
+setchar(0x08bb2450, 0);
+
+#cheat Peds Have Weapons
+//ID: 18606
+//Score: 112
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:38:39
+//Working: Yes
+setchar(0x08baef2c, 1);
+#off
+setchar(0x08baef2c, 0);
+
+
+#cheat Fast Clock
+//ID: 18605
+//Score: 78
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//
+//EDITED BY: psphacker108 on 08/11/06 23:21:47
+//Image: none
+//Time: 08/11/2006 22:37:35
+//Working: Yes
+setchar(0x08bb2db4, 1);
+#off
+setchar(0x08bb2db4, 0);
+
+#cheat Your Car Goes Flipping [LCS>VCS Port]
+//ID: 18604
+//Score: 98
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Press up to activate... Note: This has NOT been tested on boats!!!
+//Image: none
+//Time: 08/11/2006 21:29:50
+//Working: Yes
+if(press & CTRL_UP)
+{
+setfloat(pcar + 0x0000010B, +1B);
+}
+
+#cheat Telekinesis
+//ID: 18601
+//Score: 269
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at a ped to choose it, then press down to go into manual aiming, the ped will fly after what you aim at.
+//
+//Hold X to spin the ped faster and faster.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/tele.gif
+//Time: 08/11/2006 18:26:30
+//Working: Yes
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+
+if(pped && pped<0x9900000) address=pped;
+
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+
+setshort(address+0x1c8, 0x1020);
+
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+
+if(buttons & CTRL_CROSS)
+       rotsp+=0.005;
+  else
+       rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+
+#cheat Weather Modifier
+//ID: 18600
+//Score: 182
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to modify the weather in Vice City Stories.
+//it automatically starts  off on sunny weather, and the higher you go in the weather, the weirder it gets...
+//Image: none
+//Time: 08/11/2006 18:08:48
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00, weather);
+setchar(0x8bb3df8, weather);
+setchar(0x8bb458c, weather);
+
+#cheat Teleport to Custom Marker
+//ID: 18591
+//Score: 270
+//Author: vettefan88
+//Category: Teleport
+//Description: Press L TRIGGER, and SELECT to teleport to the location fo the custom marker you placed on your map.
+//
+//updated to teleport your car aswell.
+//Image: none
+//Time: 07/11/2006 22:24:12
+//Working: Yes
+ if ((press & CTRL_SELECT)&&(press & CTRL_LTRIGGER) && getchar(0x9a63412) == 1)
+{
+setfloat(pplayer + 0x30,  getfloat(0x09a63428),  getfloat(0x09a6342c),  -500);
+setfloat(pcar + 0x30,  getfloat(0x09a63428),  getfloat(0x09a6342c),  -500);
+} 
+
+#cheat Parachute
+//ID: 18589
+//Score: 314
+//Author: Waterbottle
+//Category: Player
+//Description: A simple cheat allowing you use an invisible parachute at any time you're falling by pressing O.
+//Image: none
+//Time: 07/11/2006 18:29:02
+//Working: Yes
+static Active;
+if(getchar(pplayer+0x1c9)==0x10) {//In air?
+if(!Active) setshort(0x08e90bd8,  1, 'P', 'r', 'e', 's', 's', ' ', 'O', ' ', 't', 'o', ' ', 'u', 's', 'e', ' ', 'p', 'a', 'r', 'a', 'c', 'h', 'u', 't', 'e', '!', 0);
+if(Active) setshort(0x08e90bd8,  1, 'P', 'r', 'e', 's', 's', ' ', '/', '\\', ' ', 't', 'o', ' ', 'r', 'e', 'l', 'e ', 'a', 's', 'e', ' ', 'c', 'h', 'u', 't', 'e', '!', 0);
+if(buttons & CTRL_CIRCLE) Active = true;
+if(buttons & CTRL_TRIANGLE) Active = false;
+if(Active) setfloat(pplayer+0x148, getfloat(pplayer+0x148)*0.9); 
+//Give Some Control
+if(Active) {
+if(ystick < -0.5) {
+      setfloat(pplayer+0x140, getfloat(pplayer+0x10)*0.2);
+      setfloat(pplayer+0x144, getfloat(pplayer+0x14)*0.2);
+      } else setfloat(pplayer+0x140, getfloat(pplayer+0x140)*0.99, getfloat(pplayer+0x144)*0.99);
+setfloat(pplayer + 0x0078, -0.01 * xstick);
+}
+} else Active = false;
+

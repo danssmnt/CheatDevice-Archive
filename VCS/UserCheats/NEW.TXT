@@ -1,0 +1,99 @@
+
+
+#cheat Hello
+static menu;
+choices = 5;
+setchar(0x08E93604, 0x1);
+if(press & CTRL_DOWN && menu < choices - 1) {
+   menu++;
+setchar(0x08E93604, 0x0);
+}
+if(press & CTRL_UP && menu > 0) {
+   menu--;
+setchar(0x08E93604, 0x0);
+}
+setshort(0x08E92FFC, 'H', 'e', 'l', 'l', 'o');
+setshort(0x08E931FC, 'H', 'e', 'l', 'l', 'o');
+setshort(0x08E933FC, 'H', 'e', 'l', 'l', 'o');
+if(menu == 0) {
+setshort(0x08E92FFC + 10, '~', 'n', '~', '>', 'n', 'e', 'o', 'n');
+setshort(0x08E931FC + 10, '~', 'n', '~', '>', 'n', 'e', 'o', 'n');
+setshort(0x08E933FC + 10, '~', 'n', '~', '>', 'n', 'e', 'o', 'n');
+}
+if(menu == 1) {
+setshort(0x08E92FFC + 24, '~', 'n', '~', '>', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E931FC + 24, '~', 'n', '~', '>', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E933FC + 24, '~', 'n', '~', '>', 'e', 'x', 'h', 'a', 'u', 's', 't');
+}
+if(menu == 2) {
+setshort(0x08E92FFC + 44, '~', 'n', '~', '>', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E931FC + 44, '~', 'n', '~', '>', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E933FC + 44, '~', 'n', '~', '>', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+}
+if(menu == 3) {
+setshort(0x08E92FFC + 78, '~', 'n', '~', '>', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E931FC + 78, '~', 'n', '~', '>', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E933FC + 78, '~', 'n', '~', '>', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+}
+if(menu == 4) {
+setshort(0x08E92FFC + 98, '~', 'n', '~', '>', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E931FC + 98, '~', 'n', '~', '>', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E933FC + 98, '~', 'n', '~', '>', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+}
+if(menu > 0) {
+setshort(0x08E92FFC + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+setshort(0x08E931FC + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+setshort(0x08E933FC + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+}
+if(menu > 1) {
+setshort(0x08E92FFC + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E931FC + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E933FC + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+}
+if(menu > 2) {
+setshort(0x08E92FFC + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E931FC + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E933FC + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+}
+if(menu > 3) {
+setshort(0x08E92FFC + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E931FC + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E933FC + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+}
+if(menu > 4) {
+setshort(0x08E92FFC + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E931FC + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E933FC + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+}
+if(menu < 0) {
+setshort(0x08E92FFC +0x2 + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+setshort(0x08E931FC +0x2 + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+setshort(0x08E933FC +0x2 + 10, '~', 'n', '~', 'n', 'e', 'o', 'n');
+}
+if(menu < 1) {
+setshort(0x08E92FFC +0x2 + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E931FC +0x2 + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+setshort(0x08E933FC +0x2 + 24, '~', 'n', '~', 'e', 'x', 'h', 'a', 'u', 's', 't');
+}
+if(menu < 2) {
+setshort(0x08E92FFC +0x2 + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E931FC +0x2 + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+setshort(0x08E933FC +0x2 + 44, '~', 'n', '~', 'w', 'e', 'a', 'p', 'o', 'n', ' ', 'u', 'p', 'g', 'r', 'a', 'd', 'e');
+}
+if(menu < 3) {
+setshort(0x08E92FFC +0x2 + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E931FC +0x2 + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+setshort(0x08E933FC +0x2 + 78, '~', 'n', '~', 'v', 'i', 'c', ' ', 'm', 'o', 'd');
+}
+if(menu < 4) {
+setshort(0x08E92FFC +0x2 + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E931FC +0x2 + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+setshort(0x08E933FC +0x2 + 98, '~', 'n', '~', 's', 'p', 'e', 'i', 'c', 'a', 'l', ' ', 'c', 'a', 'r');
+}
+
+#cheat Hunter
+//made with VCS Car Spawner by DDM
+pspawn = 0x08E81290;
+setint(pspawn, 275);
+setfloat(pspawn + 0x4, -1452, -1146.36, 14.87, 180);
+teleport(-1452.89,  -1146.36,  14.87);

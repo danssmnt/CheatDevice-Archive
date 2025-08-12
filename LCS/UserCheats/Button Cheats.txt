@@ -1,0 +1,11 @@
+#cheat Invisible Traffic
+setchar(0x8B33E2C, 0x01);
+#off
+setchar(0x8B33E2C, 0x00);
+
+#cheat press R to make the closest ped enter your vehicle
+sethex(08b89d35, 32, 55, 53, 58, 44, 53, 58)
+
+#cheat Full Health
+setfloat(pplayer + 0x04b8, 100.100)
+off();

@@ -1,0 +1,4915 @@
+Possible To Find (edisoncarter wrote this):
+- change heaven number
+- infinite mission time
+- find power punch by comparing with and without adrenaline pill
+- possibly resurect unused weeapons by changing weapon numbers
+- controller setup (setup1 or setup2) so people can default it to what they want
+- radio volume (again for custom default)
+- infinite sprint (UK version)
+
+
+===========
+
+
+the only other item location we know is
+US version: 099b8870
+UK version: 099b75a8
+
+to find the teleport location on them you pluss them with 0x0030
+
+
+
+==============
+
+
+
+
+#cheat Teleport: Top of Tall Building
+//Author: edisoncarter
+//Category: Teleport
+teleport(95, -1509, 216.98);
+
+#cheat Max Money
+//Author: edisoncarter
+//Category: Stats
+setint(0x8b89acc, 99999999);
+setint(0x8b89ad0, 99999999);
+
+#cheat No Money
+//Author: edisoncarter
+//Category: Stats
+setint(0x08b89acc, 0, 0);
+
+#cheat Hud On
+//Author: edisoncarter
+//Category: Settings
+setchar(0x08b59b0a, 1);
+
+#cheat Hud Off
+//Author: edisoncarter
+//Category: Settings
+setchar(0x08b59b0a, 0);
+
+#cheat Time is 9:30am
+//Author: edisoncarter
+//Category: Stats
+setchar(0x08b5e090, 9, 30);
+
+#cheat Weapon Set 1 Cheat includes Smoke Bomb
+//Author: edisoncarter/Vettefan88
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93ad0, 0x000e);
+setshort(0x08a93ad4, 200);
+
+#cheat Weapon Set 1 Cheat includes Brass Knuckles
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93a98, 0x0001);
+setshort(0x08a93a9c, 0x0001);
+
+#cheat Weapon Set 1 Cheat includes Knife
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93ab4, 0x0005);
+setshort(0x08a93ab8, 0x0001);
+
+#cheat Weapon Set 1 Cheat includes Molotov
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93ad0, 0x000f);
+setshort(0x08a93ad4, 0x000a);
+
+#cheat Weapon Set 1 Cheat includes 9mm
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93aec, 0x0011);
+setshort(0x08a93af0, 0x0064);
+
+#cheat Weapon Set 1 Cheat includes Shotgun
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93b08, 0x0013);
+setshort(0x08a93b0c, 0x0032);
+
+#cheat Weapon Set 1 Cheat includes Tec-9
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93b24, 0x0016);
+setshort(0x08a93b28, 0x0096);
+
+#cheat Weapon Set 1 Cheat includes AK-47
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93b40, 0x001b);
+setshort(0x08a93b44, 0x0078);
+
+#cheat Weapon Set 1 Cheat includes Sniper Rifle or Flamethrower (Not Sure)
+//Author: edisoncarter
+//Description: UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93b5c, 0x001c);
+setshort(0x08a93b60, 0x0019);
+
+For vettefan's weapon modifier:
+04 = nightstick
+06 = baseball bat
+08 = crash
+0C = crash
+0D = remote grenades
+0E = black smoke tear gas (new!)
+0F = motatov
+10 = overhead punch
+11 = 9mm
+
+I wonder what else is in there. The address for the melee weapon slot is 0x5b0. I've already looked over most of that one:
+// 0x05b0 = (byte) melee weapon
+// 3 = blank nightstick backwards
+// 4 = nightstick
+// 5 = blank nightstick special move
+// 6 = baseball bat
+// 7 = blank
+// 8 = blank special move
+// 9 = blank special move
+// a = katana
+// b = blank chainsaw
+// c = remote grenades
+It looks like each weapon slot may have abilities to hold some unused weapons that others can't. 
+
+Here's the addresses for messing with the Weapon Set 1 cheat. The second number on each is the amount of ammo they give you. It might be easier to experiment with weapon numbers using this.
+
+#cheat Weapon Set 1 tester
+// Weapon Set 1 Cheat 
+// UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+// brass knuckles, knife, molatov, 9mm, shotgun, tec-9, AK, flamethrower, sniper rifle
+
+#cheat No Warning For Saving With Cheats
+//Author: edisoncarter
+//Category: Settings
+setchar(0x08b562f2, 0); 
+
+#cheat Your Car is Black
+//Author: edisoncarter
+//Category: Vehicles
+setchar(pcar + 0x01f0, 0, 0);
+
+#cheat 5% health
+//Author: edisoncarter
+//Category: Player
+setfloat(pplayer + 0x04b8, 5.0);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 192
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. crash
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 192);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 193
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. predator boat, slowed down game severely
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 193);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 194
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 194);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 195
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 195);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 196
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. predator boat
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 196);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 197
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. crash
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 197);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 198
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 198);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 199
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. multiple little invisible pieces that caught fire and exploded
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 199);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 200
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 200);
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod 201
+//Author: edisoncarter
+//Description: Originally By: Skiller. Edited By: edisoncarter. crash
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 201);
+ 
+
+The objects look like they're in a fixed size array at fixed intervals in memory. They're at intervals of 0x220 bytes. If you go back or ahead 0x220 in memory, you can play with other objects. The array goes back pretty far. The object you found may be near the end, so if you chose one further back it might be more reliable. I followed it back 96 items (99AA950) and there was still lots of objects before that.
+The object you found starts at 099b7550. The basic structure of objects is:
+// 0x0000 = (float) y right hand vector
+// 0x0004 = (float) x right hand vector
+// 0x0008 = (float) z right hand vector
+// 0x0010 = (float) x forward vector
+// 0x0014 = (float) y forward vector
+// 0x0018 = (float) z forward vector
+// 0x0020 = (float) x rotation around the given axis
+// 0x0024 = (float) y rotation around the given axis
+// 0x0028 = (float) z rotation around the given axis
+// 0x0030 = (float) x coordinate
+// 0x0034 = (float) y coordinate
+// 0x0038 = (float) z coordinate
+// 0x0058 = (short) model id
+// 0x0070 = (float) x velocity
+// 0x0074 = (float) y velocity
+// 0x0078 = (float) z velocity
+// 0x0080 = (float) x rotational momentum
+// 0x0084 = (float) y rotational momentum
+// 0x0088 = (float) flat rotational momentum
+
+typedef struct
+{
+float xRightHandVector;
+float yRightHandVector;
+float zRightHandVector;
+float dUnknown0C;
+float xForwardVector;
+float yForwardVector;
+float zForwardVector;
+float dUnknown1C;
+float xRotationAngle;
+float yRotationAngle;
+float zRotationAngle;
+float dUnknown2C;
+float x;
+float y;
+float z;
+float dUnknown3C;
+byte pnUnknown40[0x06];
+byte nOnGround;
+byte pnUnknown47[0x11];
+byte nModelID;
+byte pnUnknown59[0x17];
+float xVelocity;
+float yVelocity;
+float zVelocity;
+}
+Object;
+
+Here's some valid Model ID's I saw in actual use:
+0x024a
+0x0261
+0x0259
+0x022d
+0x024b
+0x0151
+0x0112
+0x0108
+0x023f
+0x022f
+0x022e
+0x011d
+0x010d
+0x011f
+0x010e
+0x0123
+0x010c
+0x011c
+0x011a
+0x0117
+0x0103
+---------
+the next value after 0xff is setshort(0x099b75a8, 0x100);
+
+The value is actually a short (2-byte integer), so make sure you use setshort not setchar if you go over 0xff. I'm not sure if the object at that location already has a 00 01 or 02 in the high order byte, so a box may be setshort(0x099b75a8, 0x018) or setshort(0x099b75a8, 0x118) or setshort(0x099b75a8, 0x218). Someone should test that so we know what we're doing. You may find a different set of stuff using setshort in the 0x00 - 0xff range.
+
+Here's some values I saw the game itself using that should be valid:
+setshort(0x099b75a8, 0x024a);
+0x0261
+0x0259
+0x022d
+0x024b
+0x0151
+0x0112
+0x0108
+0x023f
+0x022f
+0x022e
+0x011d
+0x010d
+0x011f
+0x010e
+0x0123
+0x010c
+0x011c
+0x011a
+0x0117
+0x0103
+
+Waterbottle posted these before:
+0x0118: some weapon
+0x0117: shotgun
+0x0116: different shotgun
+0x0115: normal shotgun
+0x0114: AK thinghy I think
+0x0113: colt?
+0x0112: handgun
+0x0111: rocket thinghy
+0x0110: moltov
+0x010F: teargas
+0x010E: handgrenade
+0x010D: chainsaw
+0x010C: sword
+0x010B: shorter sword
+0x010A: axe
+0x0109: diferent axe
+0x0108: basebal bat
+0x0107: knife
+0x0106: police bat
+0x0105: hockey club
+0x0104: knife of somesort
+0x0103: brass cnuckles
+0x0102: somthing
+0x0101: (CRASH)
+---------
+//Author: edisoncarter
+
+#cheat Toni Move Freely
+//Author: Jérémie Blanc
+//Description: Use this is Toni has frozen from the other Toni... cheats.
+//Category: Player
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Freeze
+//Author: Jérémie Blanc
+//Description: Toni is frozen & cannot do anything.
+//Category: Player
+setchar(pplayer + 0x0000034C, 13);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Can Turn Around Only
+//Author: Jérémie Blanc
+//Description: If gangs comes after you, they will not hurt you when this is on.
+//Category: Player
+setchar(pplayer + 0x0000034C, 17);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Cannot Use Ammo In His Weapons
+//Author: Jérémie Blanc
+//Description: Also cannot shoot ammo when in vehicles.
+//Category: Player
+setchar(pplayer + 0x0000034C, 25);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Holding Cellphone Position
+//Author: Jérémie Blanc
+//Description: To disable the effect, remove the cheat and then shoot once.
+//Category: Player
+setchar(pplayer + 0x0000034C, 36);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Game Freezes
+//Author: Jérémie Blanc
+//Description: Your game will freeze/crash is you enable this.
+//Category: Player
+setchar(pplayer + 0x0000034C, 7);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Analog Stick Only Move Toni Forward
+//Author: Jérémie Blanc
+//Category: Player
+setchar(pplayer + 0x0000034C, 41);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Falls On Ground And Gets Up
+//Author: Jérémie Blanc
+//Category: Player
+setchar(pplayer + 0x0000034C, 42);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Falls Once And Freezes When He Gets Up
+//Author: Jérémie Blanc
+//Category: Player
+setchar(pplayer + 0x0000034C, 43);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Instantly Warp To Last Entered Vehicle
+//Author: Jérémie Blanc
+//Description: Make sure you are outside your car & that you have entered a vehicle once, and make sure that the vehicle you last entered is still these, and didn't disappear, or your game might freeze. If you enable this while inside a vehicle, you won't be able to leave the vehicle.
+//Category: Player
+setchar(pplayer + 0x0000034C, 47);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Becomes Invisible, But Toni Freezes
+//Author: Jérémie Blanc
+//Category: Player
+setchar(pplayer + 0x0000034C, 50);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Go In Vehicle From Any Distance (Last One Entered)
+//Author: Jérémie Blanc
+//Description: You will only go to the vehicle you last entered from any distance.
+//Category: Player
+setchar(pplayer + 0x0000034C, 24);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Get Wasted
+//Author: Jérémie Blanc
+//Description: You will keep getting Wasted until you remove this cheat.
+//Category: Player
+setchar(pplayer + 0x0000034C, 54);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Get Wasted (W/ Blood Under Toni)
+//Author: Jérémie Blanc
+//Description: You will keep getting Wasted until you remove this cheat.
+//Category: Player
+setchar(pplayer + 0x0000034C, 55);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Get Busted
+//Author: Jérémie Blanc
+//Description: You will keep getting Busted until you remove this cheat.
+//Category: Player
+setchar(pplayer + 0x0000034C, 62);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Toni Putting His Hands Up
+//Author: Jérémie Blanc
+//Description: To disable the effect, remove the cheat and then shoot once.
+//Category: Player
+setchar(pplayer + 0x0000034C, 61);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat Have Camera/Infinite Camera Shots
+//Author: Jérémie Blanc
+//Description: Works when you have a camera.
+//Category: Weapons
+setchar(pplayer + 0x00000698, 4000);
+setchar(pplayer + 0x0000069C, 4000);
+
+#cheat Toni Keeps Shooting Without Stop
+//Author: Jérémie Blanc
+//Description: Enable the cheat, and shoot with a weapon to activate it. Dosen't work with a 1st-Person View Weapon.
+//Category: Player/Weapons
+setchar(pplayer + 0x00000194, 23);
+
+#cheat Toni Shoots Slowly
+//Author: Jérémie Blanc
+//Description: It shoots 1 bullet and stops shooting and it repeats.
+//Category: Player/Weapons
+setchar(pplayer + 0x00000194, 27);
+
+#cheat Reload Gun
+//Author: Jérémie Blanc
+//Category: Player/Weapons
+setchar(pplayer + 0x00000624, 2);
+
+#cheat Cannot Shoot With Weapons
+//Author: Jérémie Blanc
+//Category: Player/Weapons
+setchar(pplayer + 0x00000624, 3);
+
+#cheat Birds, etc. Sound
+//Author: Jérémie Blanc
+//Description: change camera angle a little, cannot look behind, put volume to maximum to hear better. You can put your own values, instead of 1.
+//Category: Misc.
+setchar(0x08B58CB0, 1);
+#off
+setchar(0x08B58CB0, 0);
+
+#cheat Construction Sound
+//Author: Jérémie Blanc
+//Description: change camera angle a little, cannot look behind, put volume to maximum to hear better. You can put your own values, instead of 3.
+//Category: Misc.
+setchar(0x08B58CB0, 3);
+#off
+setchar(0x08B58CB0, 0);
+
+#cheat Default Sound
+//Author: Jérémie Blanc
+//Description: Default Sound Effects, You can hear Ped's Car Engines.
+//Category: Misc.
+setchar(0x08B58CB0, 0);
+
+#cheat Car May Stretch
+//Author: Jérémie Blanc
+//Description: Car will stretch when this is enabled, the car should be in ground a little stretched.
+//Category: Vehicles
+setchar(pcar + 0x0000000B, 192);
+
+#cheat Car Stretches A Lot
+//Author: Jérémie Blanc
+//Description: Car will stretch when this is enabled, the car should be in ground a little stretched.
+//Category: Vehicles
+setchar(pcar + 0x0000000B, 193);
+
+#cheat Car Stretches Even More
+//Author: Jérémie Blanc
+//Description: Car will stretch when this is enabled, the car should be in ground a little stretched.
+//Category: Vehicles
+setchar(pcar + 0x0000000B, 194);
+
+#cheat Car Stretches Like A Paper
+//Author: Jérémie Blanc
+//Description: Car will stretch when this is enabled, the car should be in ground a little stretched.
+//Category: Vehicles
+setchar(pcar + 0x0000000B, 195);
+
+#cheat Spawn 2 Cop Peds Shooting Criminals
+//Author: Jérémie Blanc
+//Description: Works only when you are in a vehicle.
+//Category: Pedestrians
+setchar(pcar + 0x00000257, 100)
+
+#cheat High-Pitched Bike Engine Sound
+//Author: Jérémie Blanc
+//Description: Works best on PCJ-600 & Sanchez. Your vehicle will have a high-pitched engine sound when you drive.
+//Category: Vehicles
+setchar(pcar + 0x00000267, 255)
+#off
+setchar(pcar + 0x00000267, 0)
+
+#cheat Different Driving Sound
+//Author: Jérémie Blanc
+//Description: Works best on PCJ-600. Your vehicle will have a different driving sound, kind of.
+//Category: Vehicles
+setchar(pcar + 0x00000267, 100)
+#off
+setchar(pcar + 0x00000267, 0)
+
+#cheat Normal Bike Position
+//Author: Jérémie Blanc
+//Description: Use this if you changed the bike position effects
+//Category: Vehicles
+setchar(pcar + 0x00000344, 5)
+
+#cheat Toni Dosen't Move His Body On Bike
+//Author: Jérémie Blanc
+//Description: When on a bike, when you turn with your bike when you're driving, Toni will stay in one place and will not follow the bike position.
+//Category: Vehicles
+setchar(pcar + 0x00000344, 4)
+#off
+setchar(pcar + 0x00000344, 5)
+
+#cheat Toni Freezes In Game On Bike
+//Author: Jérémie Blanc
+//Description: When activated, Toni will not be on bike anymore, he will be floating in air, so you can control the bike without Toni being on it. If you stop moving with your bike, the camera will go back to Toni that is floating in air, you can turn Toni around and move the bike at the same time, but since the camera is now on Toni, you'll have to follow your radar. Turn it off and then on to reactivate this cheat.
+//Category: Vehicles
+setchar(pcar + 0x00000344, 2)
+#off
+setchar(pcar + 0x00000344, 5)
+
+#cheat Falling Toni Action
+//Author: Jérémie Blanc
+//Description: Toni falling action, you hear a lot of falling footsteps. May freeze/crash game.
+//Category: Player
+//Working: Yes
+setchar(pplayer + 0x00000195, 255);
+
+#cheat Change Safehouse Marker Location & Effect
+//Author: Jérémie Blanc
+//Description: You need to be in that interior first. Load Cheat Device save file, then load another safe file for this cheat to work.
+//Category: Interiors
+setchar(0x09F6CD70, 0)
+#off
+setchar(0x09F6CD70, 1)
+
+#cheat Portland Safehouse Always Loaded
+//Author: Jérémie Blanc
+//Description: You need to be in that interior first. Load Cheat Device save file, then load another safe file for this cheat to work.
+//Category: Interiors
+setchar(0x09F6CDAC, 0)
+#off
+setchar(0x09F6CDAC, 1)
+
+#cheat Staunton Island Safehouse Always Loaded
+//Author: Jérémie Blanc
+//Description: You need to be in that interior first. Load Cheat Device save file, then load another safe file for this cheat to work.
+//Category: Interiors
+setchar(0x09F6CDB0, 0)
+#off
+setchar(0x09F6CDB0, 1)
+
+#cheat Shoreside Vale Safehouse Always Loaded
+//Author: Jérémie Blanc
+//Description: You need to be in that interior first. Load Cheat Device save file, then load another safe file for this cheat to work.
+//Category: Interiors
+setchar(0x09F6CDB4, 0)
+#off
+setchar(0x09F6CDB4, 1)
+
+#cheat Game Think You Left Interior, But Interior Still Loaded
+//Author: Jérémie Blanc
+//Description: You need to be in that interior first. Load Cheat Device save file, then load another safe file for this cheat to work. The game think you left the interior, since color changes, radar & R+L is avalaible, and interior items disappear, and Interior is always loaded. Works for all Safehouse Interior.
+//Category: Interiors
+setchar(0x09F6CDB4, 1)
+
+#cheat Sometime Invisible World
+//Author: Jérémie Blanc
+//Description: Load Cheat Device save file, then load another safe file for this cheat to work.
+//Category: Environnement
+setchar(0x08B55864, 1)
+setchar(0x08B5586A, 255)
+setchar(0x08B5586B, 255)
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08E38A38, ???)
+
+#cheat Staunton Safehouse Garage Car 2 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08E38A64, ???)
+
+#cheat Staunton Safehouse Garage Car 3 Type Mod
+//Author: Skiller
+//Category: Garage 
+//Description: Replace ?? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08E38A90, ???)
+
+#cheat SSV SafeHouse Garage Car 1 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ??? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08e38ae8, ???)
+
+#cheat SSV SafeHouse Garage Car 2 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ??? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08e38b14, ???)
+
+#cheat SSV SafeHouse Garage Car 3 Type Mod
+//Author: Skiller
+//Category: Garage 
+//Description: Replace ??? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08e38b40, ???)
+
+#cheat SSV SafeHouse Garage Car 1 Base Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Base Color Code 0 to 101
+setint(0x08e38b0c, ??)
+
+#cheat SSV SafeHouse Garage Car 2 Base Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Base Color Code 0 to 101
+setint(0x08e38b38, ??)
+
+#cheat SSV SafeHouse Garage Car 3 Base Color Mod
+//Author: Skiller
+//Category: Garage 
+//Description: Replace ?? with Same Numbers Used for Base Color Code 0 to 101
+setint(0x08e38b64, ??)
+
+#cheat SSV SafeHouse Garage Car 1 Stripe Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Stripe Color Code 0 to 101
+setint(0x08e38b0d, ??)
+
+#cheat SSV SafeHouse Garage Car 2 Stripe Color Mod 
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Stripe Color Code 0 to 101
+setint(0x08e38b39, ??)
+
+#cheat SSV SafeHouse Garage Car 3 Stripe Color Mod
+//Author: Skiller
+//Category: Garage 
+//Description: Replace ?? with Same Numbers Used for Stripe Color Code 0 to 101
+setint(0x08e38b65, ??)
+
+#cheat Portland Safehouse Garage Car 1 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ??? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08e38988, ???)
+
+#cheat Portland Safehouse Garage Car 2 Type Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ??? with Same Numbers Used for Spawning a Car 130 to 216
+setint(0x08e389b4, ???)
+
+#cheat Portland Safehouse Garage Car 1 Base Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Base Color Code 0 to 101
+setint(0x08e389ac, ??)
+
+#cheat Portland Safehouse Garage Car 2 Base Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Base Color Code 0 to 101
+setint(0x08e389d8, ??)
+
+#cheat Portland Safehouse Garage Car 1 Stripe Color Mod
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Stripe Color Code 0 to 101
+setint(0x08e389ad, ??)
+
+#cheat Portland Safehouse Garage Car 2 Stripe Color Mod 
+//Author: Skiller
+//Category: Garage
+//Description: Replace ?? with Same Numbers Used for Stripe Color Code 0 to 101
+setint(0x08e389d9, ??)
+
+Garage Mod:
+192 FERRY
+193 GHOST // tried this and got a predator instead, crashed spawn, must be near water
+194 SPEEDER // crash (must be near water)
+195 REEFER // crash except maybe if near water
+196 PREDATR
+197 TRAIN
+198 HELI (escape) // crash
+199 HELI (chopper) // invisible, maybe RC heli
+200 AEROPL (airtrain) // crash
+201 DODO (deaddodo) // crash
+
+#cheat No Reloads
+//Author: Skiller
+//Category: Weapons
+//Description: No Reload on all Weapons Works well with Infinite Ammo
+setint(pplayer + 0x05ec, 0)
+setint(pplayer + 0x0608, 0) 
+setint(pplayer + 0x0624, 0)
+setint(pplayer + 0x0640, 0)
+setint(pplayer + 0x065C, 0)
+setint(pplayer + 0x0668, 0)
+setint(pplayer + 0x0674, 0)
+
+#cheat 100% Compleat
+//Author: Skiller
+//Category: Misc.
+//Description: Gives u all the Compleation Bonuses..
+setfloat(0x08b5e158, 100.0)
+
+#cheat Place Name Shows Always
+//Author: Skiller
+//Category: Misc.
+//Description: Makes the Names that pop up in the right hand Cornor Stay for ever
+setint(0x08b5e118, 1)
+
+#cheat Have All outfits (Stats For show)
+//Author: Skiller
+//Category: Misc.
+//Description: Gives u all outfits (only for show)
+sethex(0x08b5e244, FFFF)
+
+#cheat Radio On
+//Author: ADePSP
+//Category: Settings
+setchar(0x9adbc08, 0);
+
+#cheat Custom Tracks On
+//Author: ADePSP
+//Category: Settings
+setchar(0x9adbc08, 1);
+
+#cheat Staunton Marquee Mod, (ADePSP Simply Kicks Ass)
+//Author: ADePSP
+//Category: Surroundings
+//Description: Replaces www.grandtheftauto3.com with ADePSP Simply Kicks Ass in staunton marquee concept, base on the original cheat by vettefan88... There are 23 characters and each is an ASCII character... Use this chart to make your own message... http://www.lookuptables.com...
+//Time: 18/01/2006 22:31:58
+setchar(0x08B586C8, 0x41, 0x44, 0x65, 0x50, 0x53, 0x50, 0x20, 0x53, 0x69, 0x6D, 0x70, 0x6C, 0x79, 0x20, 0x4B, 0x69, 0x63, 0x4B, 0x53, 0x20, 0x41, 0x73, 0x73);
+teleport(248.68, -658.68, 26.02);
+
+#cheat Staunton Marquee Mod, (----MIKE KICKS ASS-----)
+//Author: ADePSP
+//Category: Environment
+//Description: Replaces www.grandtheftauto3.com with ----MIKE KICKS ASS----- in staunton marquee concept, base on the original cheat by vettefan88... There are 23 characters and each is an ASCII character... Use this chart to make your own message... http://www.lookuptables.com...
+//Time: 19/01/2006 03:14:58
+//Working: Yes
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x2D, 0x2D, 0x2D, 0x2D, 0x4D, 0x49, 0x4B, 0x45, 0x20, 0x4B, 0x49, 0x43, 0x4B, 0x53, 0x20, 0x41, 0x53, 0x53, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D);
+
+#cheat ADePSP FM
+//Author: ADePSP
+//Category: Vehicle
+//Description: Change HEAD RADIO to say ADEPSP FM
+//!!!Not tested on the US version of the game!!!
+//Image: none
+//Time: 30/01/2006 16:48:51
+//Image: http://img214.imageshack.us/img214/4471/adepspfm0uu.gif
+setshort(0x993F40A, 0x41,0x44,0x45,0x50,0x53,0x50,0x20,0x46,0x4D,0x20);
+#off
+setshort(0x993F40A, 0x48,0x45,0x41,0x44,0x20,0x52,0x41,0x44,0x49,0x4F);
+
+#cheat Porn City Radio
+//Author: ADePSP
+//Category: Vehicle
+//Working: Yes
+//Description: Changes the radio station names
+//WARNING: For those easily offended please don't use this cheat as you may be easily offended...
+//May not work on US version of the game!
+setshort(0x993F40A, 0x43, 0x4F, 0x43, 0x4B, 0x20, 0x52, 0x41, 0x44, 0x49, 0x4F);
+setshort(0x993F420, 0x20, 0x44, 0x4F, 0x55, 0x42, 0x4C, 0x45, 0x20, 0x45, 0x4E, 0x54, 0x52, 0x59, 0x20);
+setshort(0x993F43E, 0x47, 0x41, 0x4E, 0x4A, 0x41);
+setshort(0x993F44A, 0x54, 0x57, 0x41, 0x54, 0x20, 0x46, 0x4D);
+setshort(0x993F45A, 0x43, 0x55, 0x4E, 0x54, 0x20, 0x31, 0x30, 0x36);
+setshort(0x993F46C, 0x52, 0x41, 0x44, 0x49, 0x4F, 0x20, 0x46, 0x41, 0x4E, 0x4E, 0x59, 0x46, 0x41, 0x43, 0x45);
+setshort(0x993F48C, 0x47, 0x49, 0x52, 0x4C, 0x36, 0x39);
+setshort(0x993F49A, 0x50, 0x49, 0x53, 0x53, 0x46, 0x4C, 0x41, 0x50, 0x53, 0x20, 0x46, 0x4D);
+setshort(0x993F4B4, 0x4C, 0x45, 0x53, 0x42, 0x49, 0x41, 0x4E, 0x20, 0x4A, 0x41, 0x4D, 0x20, 0x52, 0x41, 0x47);
+setshort(0x993F4D4, 0x56, 0x44, 0x46, 0x4D);
+#off
+setshort(0x993F40A, 0x48, 0x45, 0x41, 0x44, 0x20, 0x52, 0x41, 0x44, 0x49, 0x4F); // HEAD RADIO
+setshort(0x993F420, 0x44, 0x4F, 0x55, 0x42, 0x4C, 0x45, 0x20, 0x43, 0x4C, 0x45, 0x46, 0x20, 0x46, 0x4D); // DOUBLE CLEF FM
+setshort(0x993F43E, 0x4B, 0x2D, 0x4A, 0x41, 0x48); // K-JAH
+setshort(0x993F44A, 0x52, 0x49, 0x53, 0x45, 0x20, 0x46, 0x4D); // RISE FM
+setshort(0x993F45A, 0x4C, 0x49, 0x50, 0x53, 0x20, 0x31, 0x30, 0x36); // LIPS 106
+setshort(0x993F46C, 0x52, 0x41, 0x44, 0x49, 0x4F, 0x20, 0x44, 0x45, 0x4C, 0x20, 0x4D, 0x55, 0x4E, 0x44, 0x4F); // RADIO DEL MUNDO
+setshort(0x993F48C, 0x4D, 0x53, 0x58, 0x20, 0x39, 0x38); // MSX 98
+setshort(0x993F49A, 0x46, 0x4C, 0x41, 0x53, 0x48, 0x42, 0x41, 0x43, 0x4B, 0x20, 0x46, 0x4D); // FLASHBACK FM
+setshort(0x993F4B4, 0x54, 0x48, 0x45, 0x20, 0x4C, 0x49, 0x42, 0x45, 0x52, 0x54, 0x59, 0x20, 0x4A, 0x41, 0x4D); // THE LIBERTY JAM
+setshort(0x993F4D4, 0x4C, 0x43, 0x46, 0x52); // LCFR
+
+#cheat Lock Camera
+//Author: Chrislawrance
+//Description: Requires CheatDevice 0.7d. Do not aim while camera is locked or your game might freeze/crash.
+//Category: Player
+setchar(pplayer + 0x560, 1);
+#off
+setchar(pplayer + 0x560, 0);
+
+#cheat Staunton Safehouse Garage Car 1 predator boat
+//Author: Chrislawrance
+//Description: predator boat found by edisoncarter. code created by Skiller
+//Category: Vehicle/Misc.
+setint(0x08E38A38, 196);
+
+#cheat Teleport: water between portland and staunton.
+//Author: Chrislawrance
+//Category: Teleport
+teleport(687.27, -30.82, 10.90); //created by chrislawrance. 
+
+#cheat Weapon Set 1 Cheat includes Smoke Bomb
+//Author: vettefan88
+//Description: Do Weapon Set 1 Cheat - UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+//Category: Weapons
+setshort(0x08a93ad0, 0x000e);
+setshort(0x08a93ad4, 200);
+
+#cheat Invisible Toni
+//Author: vettefan88
+//Description: Requires CheatDevice 0.7d
+//Category: Weapons
+setchar(pplayer + 0x19A, 0xE2);
+#off
+setchar(pplayer + 0x19A, 0x02);
+
+I found a weapon removed from the game  
+I found the chrome shotgun,
+the guns model isn't actually in the game, and there isn't an icon for the weapon but when firing it tony reacts like he's firing the chrome shotgun from VC.
+except since there is no model for it, it uses whatever gun was there last as the model.
+so now I have a colt that acts like a shotgun  .
+when trying to change weapons the game gets weird and will act like you don't have a gun there, so to get it to work I had to be on the weapon I was changing and then change it.
+to try it out go to this in hex:
+set it to show it in the init way, and then go to 0x5E8, you must be on the colt, or 9mm at the time, set the value to 14 to see the chrome shotgun.
+I'll have a vid later since my psp crashed trying to fire another "hidden" gun, I'll test this more. 
+04 = nightstick
+06 = baseball bat
+08 = crash
+0C = crash
+0D = remote grenades
+0E = black smoke tear gas (new!)
+0F = motatov
+10 = overhead punch
+11 = 9mm
+(edisoncarter found these digits)
+
+#cheat FLAME THROWER PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x1F);
+
+#cheat FLAME THROWER PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x1F);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x1E);
+
+#cheat ROCKET LAUNCHER PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x1E);
+
+#cheat MINIGUN PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x21);
+
+#cheat MINIGUN PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x21);
+
+#cheat MINIGUN PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x21);
+
+#cheat MINIGUN PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x21);
+
+#cheat MINIGUN PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x21);
+
+#cheat MINIGUN PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x21);
+
+#cheat MINIGUN PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x21);
+
+#cheat MINIGUN PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x21);
+
+#cheat MINIGUN PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x21);
+
+#cheat M-60 PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x20);
+
+#cheat M-60 PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x20);
+
+#cheat M-60 PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x20);
+
+#cheat M-60 PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x20);
+
+#cheat M-60 PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x20);
+
+#cheat M-60 PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x20);
+
+#cheat M-60 PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x20);
+
+#cheat M-60 PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x20);
+
+#cheat M-60 PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x20);
+
+#cheat BRASS KNUCKLES PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x01);
+
+#cheat BRASS KNUCKLES PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x01);
+
+#cheat GRENADE PROPERTIES TO MELEE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x0C);
+
+#cheat GRENADE PROPERTIES TO GRENADE SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x0C);
+
+#cheat GRENADE PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x0C);
+
+#cheat GRENADE PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x604, 0x0C);
+
+#cheat GRENADE PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x0C);
+
+#cheat GRENADE PROPERTIES TO SNIPER SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x674, 0x0C);
+
+#cheat GRENADE PROPERTIES TO HEAVY ARMS SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x658, 0x0C);
+
+#cheat GRENADE PROPERTIES TO FIST SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x594, 0x0C);
+
+#cheat GRENADE PROPERTIES TO UZI SLOT ENTRY
+//Author: vettefan88
+//Category: Weapons
+setchar(pplayer + 0x62B, 0x0C);
+
+#cheat Get Unlimited Smoke Bombs
+//Author: vettefan88
+//Description: Even if you have no grenades already on you this will set up everything, including giving you unlimited ammo for it. There won't be any number for the ammo amount but it will still be unlimited. Requires CheatDevice 0.7d or later.
+//Category: Weapons
+setchar(pplayer + 0x5D4, 0x01);
+setchar(pplayer + 0x5D9, 0xFF);
+setchar(pplayer + 0x5CC, 0x0E);
+
+#cheat Bloody Footprints
+//Author: vettefan88
+//Description: Requires CheatDevice 0.7d or later 
+//Category: Player
+setchar(pplayer + 0x198, 0x40);
+#off
+setchar(pplayer + 0x198, 0x00);
+
+#cheat Always Bleeding
+//Author: vettefan88
+//Description: Requires CheatDevice 0.7d or later 
+//Category: Player
+setchar(pplayer + 0x197, 0x0F);
+#off
+setchar(pplayer + 0x197, 0x00);
+
+#cheat Super Punch
+//Author: vettefan88
+//Description: Gives Toni Super Strength 
+//Category: Player
+#cheat Super Punch
+setchar(pplayer + 0x0bb3, 0x01);
+
+#cheat Reset Screenshots
+//Author: vettefan88
+//Description: The first code made to affect cheat device. Resets screenshot counter back to 1 
+//Category: Cheat Device
+setchar(0x09FFCE5C, 1);
+
+#cheat Radar: Map and blips
+//Author: vettefan88
+//Description: Radar Settings 
+//Category: Settings
+setchar(0x08B59B0C, 0);
+
+#cheat Radar: Blips Only
+//Author: vettefan88
+//Description: Radar Settings 
+//Category: Settings
+setchar(0x08B59B0C, 1);
+
+#cheat Radar: Off
+//Author: vettefan88
+//Description: Radar Settings 
+//Category: Settings
+setchar(0x08B59B0C, 2);
+
+#cheat unlimited side mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F91A, 0xFF)
+
+#cheat unlimited vigilant mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6FA7A, 0xFF)
+
+#cheat unlimited taxi mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F922, 0xFF)
+
+#cheat unlimited ambulance mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F91A, 0xFF)
+
+#cheat unlimited firetruck mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6FB46, 0xFF)
+
+#cheat No bumps and grinds mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F995, 0x00)
+
+#cheat unlimited car salesman timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F99E, 0xFF)
+
+#cheat unlimited scrapyard challenge mission timer
+//Author: vettefan88
+//Description: Do not use this cheat with other mission timer cheats 
+//Category: Mission
+setchar(0x09F6F920, 0xFF)
+
+#cheat unlimited taxi tip
+//Author: vettefan88 
+//Category: Mission
+setchar(0x09F6F930, 0xFF)
+
+#cheat 100 packages collected
+//Author: vettefan88
+//Description: This says you collected 100 packages.
+//Category: Stats
+setint(0x08B89AD4, 100);
+
+#cheat Constant skid marks on motorcycle
+//Author: vettefan88
+//Description: bikes leave a constant skid mark, and the back left tire of cars do as well.
+//Category: Vehicles
+setchar(pcar + 0x5b0, 0x03)
+
+#cheat Brake lights always on
+//Author: vettefan88
+//Description: bikes leave a constant skid mark, and the back left tire of cars do as well.
+//Category: Vehicles
+setchar(pcar + 0x252, 0x80)
+setchar(pcar + 0x253, 0x3F)
+
+#cheat other helicopter act like hunter
+//Author: vettefan88
+//Description: Same as all other ones like this.
+//Category: Vehicles
+setchar(pcar + 0x058, 0xD5);
+
+#cheat Staunton Marquee Mod, maxbot.com
+//Author: vettefan88
+//Description: Replaces www.grandtheftauto3.com with www.maxbot.com in staunton marquee
+//Category: Surroundings
+setchar(0x08B586C8, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x57, 0x57, 0x57, 0x2E, 0x4D, 0x41, 0x58, 0x42, 0x4F, 0x54, 0x2E, 0x43,  0x4F, 0x4D, 0x2D, 0x2D, 0x2D, 0x2D);
+
+#cheat cars destroyed
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E148, 999999999);
+
+#cheat bullets fired
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E150, 999999999);
+
+#cheat bullets that hit
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E164, 999999999);
+
+#cheat cars crushed
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E168, 999999999);
+
+#cheat hospital visits
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E17C, 999999999);
+
+#cheat fish fed
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E1F8, 999999999);
+
+#cheat mission attempts
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E1A4, 999999999);
+
+#cheat seaguls sniped
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E1FC, 999999999);
+
+#cheat wanted stars evaded
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E174, 999999999);
+
+#cheat wanted stars attained
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E170, 999999999);
+
+#cheat people you've wasted
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E140, 999999999);
+
+#cheat people wasted by others
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E144, 999999999);
+
+#cheat wheelie time
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E250, 999999999);
+
+#cheat stoppie time
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E254, 999999999);
+
+#cheat 2 wheels time
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E258, 999999999);
+
+#cheat number of headshots
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E16C, 999999999);
+
+#cheat gang members wasted
+//Author: Vettefan88
+//Category: Stats
+setint(0x08DCE74C, 999999999);
+
+#cheat boats destroyed
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E14C, 999999999);
+
+#cheat helicopters destroyed
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E154, 999999999);
+
+#cheat tires popped
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E058, 999999999);
+
+#cheat kg. of explosive used
+//Author: Vettefan88
+//Category: Stats
+setint(0x08B5E160, 999999999);
+
+#cheat stoppie distance
+//Author: Vettefan88
+//Category: Stats
+setchar(08B5E261, 0xFF, 0xFF, 0x79);
+
+#cheat wheelie distance
+//Author: Vettefan88
+//Category: Stats
+setchar(08B5E25D, 0xFF, 0xFF, 0x79);
+
+#cheat 2 wheel distance
+//Author: Vettefan88
+//Category: Stats
+setchar(08B5E265, 0xFF, 0xFF, 0x79);
+
+#cheat stats really high
+//Author: Vettefan88
+//Description: Edited By: mewantfood
+//Category: Stats
+setint(0x08B5E148, 999999999);
+setint(0x08B5E150, 999999999);
+setint(0x08B5E164, 999999999);
+setint(0x08B5E168, 999999999);
+setint(0x08B5E17C, 999999999);
+setint(0x08B5E1F8, 999999999);
+setint(0x08B5E1A4, 999999999);
+setint(0x08B5E1FC, 999999999);
+setint(0x08B5E174, 999999999);
+setint(0x08B5E170, 999999999);
+setint(0x08B5E140, 999999999);
+setint(0x08B5E144, 999999999);
+setint(0x08B5E250, 999999999);
+setint(0x08B5E254, 999999999);
+setint(0x08B5E258, 999999999);
+setint(0x08B5E16C, 999999999);
+setint(0x08DCE74C, 999999999);
+setint(0x08B5E14C, 999999999);
+setint(0x08B5E154, 999999999);
+setint(0x08B5E058, 999999999);
+setint(0x08B5E160, 999999999);
+setchar(08B5E261, 0xFF, 0xFF, 0x79);
+setchar(08B5E25D, 0xFF, 0xFF, 0x79);
+setchar(08B5E265, 0xFF, 0xFF, 0x79);
+
+#cheat Get unlimited remote grenades
+//Author: Vettefan88
+//Time: 18/01/2006 18:04:00
+//Category: Weapons
+setchar(pplayer + 0x5D4, 0x01);
+setchar(pplayer + 0x5D9, 0xFF);
+setchar(pplayer + 0x5CC, 0x0D);
+
+#cheat back to grenade
+//Author: Vettefan88
+//Category: Weapons
+setchar(pplayer + 0x6B8, 0x02);
+setchar(pplayer + 0x6E8, 0x0E);
+
+#cheat Bump and Frinds course 1
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, atomatically on last lap
+//Time: 21/01/2006 02:55:55
+setchar(09F6F995, 00);
+setchar(09F6F9A0, 03);
+
+#cheat Bump and Grinds course 2
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, Do not use with other mission timer cheats
+//Time: 21/01/2006 02:56:59
+setchar(09F6F9C5, 00);
+setchar(09F6F9D0, 03);
+
+#cheat Bump and Grinds course 3
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, and automatically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 02:58:02
+setchar(09F6F9B9, 00);
+setchar(09F6F9C4, 03);
+
+#cheat Bump and Grinds course 4
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automaically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 02:59:13
+setchar(09F6F9B9, 00);
+setchar(09F6F9C4, 03);
+
+#cheat Bump and Grinds course 5
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 02:59:53
+setchar(09F6F9DD, 00);
+setchar(09F6F9E8, 03);
+
+#cheat Bump and Grinds course 6
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 03:00:42
+setchar(09F6F9F5, 00);
+setchar(09F6FA00, 03);
+
+#cheat Bump and Grinds course 7
+//Author: Vettefan88
+//Category: Vehicle
+//Description: no timer, automatically on last lap, do not use with any other timer cheats
+//Time: 21/01/2006 03:01:47
+setchar(09F6F9DD, 00);
+setchar(09F6F9E8, 03);
+
+#cheat Bump and Grinds course 8
+//Author: Vettefan88
+//Category: Vehicle
+//Description: no timer, automatically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 03:02:47
+setchar(09F6F9E9, 00);
+setchar(09F6F9F4, 03);
+
+#cheat Bump and Grinds course 9
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Time: 21/01/2006 03:04:38
+setchar(09F6F9E9, 00);
+setchar(09F6F9F4, 03);
+
+#cheat Bump and Grinds course 10
+//Author: Vettefan88
+//Category: Vehicle
+//Description: No timer, automatically last lap, do not use with other timer cheats
+//Time: 21/01/2006 03:05:40
+setchar(09F6FA01, 00);
+setchar(09F6FA0C, 03);
+
+#cheat Impress the Pcj600 Customer
+//Author: Vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Pcj600 customer at the bike salesman
+//Time: 22/01/2006 02:53:14
+//Working: Yes
+setchar(09F6F9A0, 0xEB, 0x03);
+
+#cheat Impress the Faggio Customer
+//Author: Vettefan88
+//Category: Vehicle
+//Description: Automaticall impresse the Faggio customer at the bike salesman
+//Time: 22/01/2006 02:53:57
+//Working: Yes
+setchar(09F6F9A0, 0xF1, 0x03);
+
+#cheat Impress the Sanchez Customer
+//Author: Vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Sanchez Customer at the bike salesman.
+//Time: 22/01/2006 02:55:33
+//Working: Yes
+setchar(09F6F9A0, 0xED, 0x03);
+
+#cheat Impress the Freeway Customer
+//Author: Vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Freeway customer at the bike salesman
+//Time: 22/01/2006 02:56:12
+//Working: Yes
+setchar(09F6F9A0, 0xEA, 0x03);
+
+#cheat Automatically impress the Car customer
+//Author: Vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Car customer, as soon as they enter the vehicle
+//Time: 22/01/2006 21:49:15
+//Working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/carsales.gif
+setchar(09F6F999, 0x03);
+
+I think I found out how to get the crouch to happen, only thing is it freezes the game  
+you deen to change p+player 0x34c to 07
+it's the only one that freezes, the game, and I think it's because R* did something to try and remove it.
+thing is, cops can crouch, so I changed into a cop, and I managed to change the value to 07 without it freezing, but he didn't crouch, I think it's because I need to change one more thing around.
+if anyone else wants to try and work on this aswell it'll be great  
+even if someone just changes random values around p+player 0x34c 
+//Author: vettefan88
+
+#cheat Constant Flip Over
+//Author: IisB
+//Category: Vehicles
+setfloat(pplayer + 0x00000000, 1998300001);
+
+#cheat Bobble Head World
+//Author: BlakEydPea
+//Description: Remember to have only one on or off! This cheat makes your head and everyone else's head huge.
+//Category: Cheats
+setchar(0x08b48e2b, 1);
+#off
+setchar(0x08b48e2b, 0);
+
+#cheat Teleport: Hunter Landing Place
+//Author: Mo
+//Category: Player/Vehicle
+teleport(340.59, -1104.46, 76.32);
+
+#cheat CircleCar
+//Author: Mo
+//Description: Funny Car Spin to maker great StuntS!
+//Category: Vehicles
+setchar(pcar + 0x08b, 0x0C0);
+
+#cheat JumpCar
+//Author: Mo
+//Description: This makes your car flying a bit
+//Category: Vehicles
+setchar(pcar + 0x03A, 0x0ff);
+ 
+#cheat Screw Tony
+//Author: Mo 
+//Category: Vehicles
+setchar(pplayer + 0x196, 26);
+#off 
+setchar(pplayer + 0x196, 00);
+
+#cheat LCFR Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 09);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Liberty Jam Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 08);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Flashback Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 07);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat MSX Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 06);
+#off
+setchar(pcar + 0x2A0, 09);
+
+#cheat Radio Del Mundo Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 05);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Lips 106 Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 04);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Rise FM Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 03);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat K-Jah always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 02);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Double Cleff FM Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 01);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Head Radio Always on
+//Author: Fenn 
+//Category: Misc.
+setchar(pcar + 0x2A0, 00);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Radio Always Off
+//Author: Fenn 
+//Description: Deactivate to turn off.
+//Category: Misc.
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Your car is always driving forwards
+//Author: Fenn 
+//Category: Vehicles
+setchar(pcar + 0x24e, 80);
+setchar(pcar + 0x24f, BF);
+#off
+setchar(pcar + 0x24e, 00);
+setchar(pcar + 0x24f, 00);
+
+#cheat Your car is always in reverse
+//Author: Fenn 
+//Category: Vehicles
+setchar(pcar + 0x24e, 80);
+setchar(pcar + 0x24f, 3F);
+#off
+setchar(pcar + 0x24e, 00);
+setchar(pcar + 0x24f, 00);
+
+#cheat Toni Is Leet.
+//Author: Fenn 
+//Category: Player
+setint(08b89acc, 1337, 1337);
+setchar(08b5e090, 13, 37);
+
+#cheat Radio Always Off V.0.3 'Lite' (BETA)
+//Author: Fenn
+//Description: This cheat completely disables every radio channel except 'Radio Off'. Everything in this cheat found and made by Fenn. Below is a string which is run through out the game, going through and disabling all stations.
+//Category: Misc.
+setchar(pcar + 0x2A0, 09, 08, 07, 06, 05, 04, 03, 02, 01, 00, 0);
+#off
+setchar(pcar + 0x2A0, 0A);
+
+#cheat Box In The Sky
+//Author: Fenn
+//Category: Misc.
+setfloat(099b6260,93.81);
+setfloat(099b6264,64.35);
+setfloat(099b6268,100.02);
+setchar(099b6288, 0x1B);
+setchar(099b6289, 0x02);
+
+#cheat Teleport to box in the sky
+//Author: Fenn
+//Category: Misc.
+teleport(93.81, 64.35, 100.99);
+
+#cheat Toni Stuck in Jump position
+//Author: Fenn
+//Category: Player
+//Description: Toni gets stuck in the jump position on land.
+//Image: http://img84.imageshack.us/img84/3950/screen23oc.png
+//Time: 27/01/2006 10:15:56
+setchar(pobj + 0x180, 00);
+setchar(pobj + 0x194, 04);
+setchar(pobj + 0x195, 08);
+#off
+setchar(pobj + 0x180, 01);
+setchar(pobj + 0x194, 07);
+setchar(pobj + 0x195, 00);
+
+Memory Locations For Clothing:
+0x100
+0x101
+0x104
+0x105
+//Author: Fenn
+
+#cheat All Green Lights
+//Author: Ne0n 
+//Category: Vehicles
+setchar(0x08B314AC, 1);
+#off
+setchar(0x08B314AC, 0);
+
+#cheat Car Invisible
+//Author: Ne0n 
+//Category: Vehicles
+setchar(pcar + 0x0046, 19);
+#off
+setchar(pcar + 0x0046, 09);
+
+#cheat Reverse Lights always on
+//Author: Ne0n 
+//Category: Vehicles
+setchar(pcar + 0x24E, 0x80);
+setchar(pcar + 0x24F, 0xBF);
+#off
+setchar(pcar + 0x24E, 0x00);
+setchar(pcar + 0x24F, 0x00);
+
+#cheat Break Lights always on
+//Author: Ne0n 
+//Category: Vehicles
+setchar(pcar + 0x252, 0x80);
+setchar(pcar + 0x253, 0x3F);
+#off
+setchar(pcar + 0x252, 0x00);
+setchar(pcar + 0x253, 0x00);
+
+#cheat Hovercar (No Wheels) (Beta)
+//Author: Ne0n 
+//Description: Concept originally by supacasey. Enable 'Your Car Is Indestructable' or your car will blow up! The car launches into the sky when you enable this, teleport when you land in water.
+//Category: Vehicles
+setchar(pcar + 0x4eb, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x52b, 0xff);
+setchar(pcar + 0x54b, 0xff);
+#off
+setchar(pcar + 0x4eb, 0x41);
+setchar(pcar + 0x50b, 0x41);
+setchar(pcar + 0x52b, 0x41);
+setchar(pcar + 0x54b, 0x41);
+
+#cheat KATANA PROPERTIES TO MELEE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x0A);
+
+#cheat KATANA PROPERTIES TO GRENADE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x0A);
+
+#cheat KATANA PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x0A);
+
+#cheat KATANA PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x604, 0x0A);
+
+#cheat KATANA PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x0A);
+
+#cheat KATANA PROPERTIES TO SNIPER SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x674, 0x0A);
+
+#cheat DAGGER PROPERTIES TO MELEE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x05);
+
+#cheat DAGGER PROPERTIES TO GRENADE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x05);
+
+#cheat DAGGER PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x05);
+
+#cheat DAGGER PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x604, 0x05);
+
+#cheat DAGGER PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x05);
+
+#cheat DAGGER PROPERTIES TO SNIPER SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x674, 0x05);
+
+#cheat BAT PROPERTIES TO MELEE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x06);
+
+#cheat BAT PROPERTIES TO GRENADE SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x06);
+
+#cheat BAT PROPERTIES TO HANDGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x06);
+
+#cheat BAT PROPERTIES TO SHOTGUN SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x604, 0x06);
+
+#cheat BAT PROPERTIES TO ASSUALT RFL SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x63C, 0x06);
+
+#cheat BAT PROPERTIES TO SNIPER SLOT ENTRY
+//Author: Butterballer360
+//Category: Weapons
+setchar(pplayer + 0x674, 0x06);
+
+#cheat Hover Car
+//Author: Butterballer360
+//Description: It still has vertical wheels, but you can fly, I still have to tweak a few details to make it easier to move, but I wanted to rease the progress thus far of flying with semi limited movement. Gain momentum before activating for easier movement (fixing that bug now  ) Workks on bikes as well
+//Category: Vehicles
+setchar(pcar + 0x0142, 0x01)
+#off
+setchar(pcar + 0x0142, 0x02)
+
+#cheat Infinite Sprint
+//Author: Butterballer360
+//Category: Player
+setchar(pplayer + 0x0354, 0x04)
+
+(The Following Car Model List is the values that edisoncarter used to make the "Spawn ----" cheat.)
+CAR MODEL HEX VALUES (BLANK MEANS THAT VALUE DOES NOT EXIST)
+82 = DEIMOS SP
+83 = LANDSTALKER
+84 = IDAHO
+85 = STINGER
+86 = LINERUN
+87 = PEREN
+88 = SENTINEL
+89 = PATRIOT
+8A = FIRETRUCK
+8B = TRASHMASTER
+8C = LIMO
+8D = MANANA
+8E = INFERNUS
+8F = BLISTA
+90 = PONY
+91 = MULE
+92 = CHEETAH
+93 = AMBULANCE
+94 = FBI CAR
+95 = MOONBEAM
+96 = ESPERAN
+97 = TAXI
+98 = KURUMA
+99 = BOBCAT
+9A = WHOOPEE
+9B = BFINJC
+9C = HEARSE
+9D = POLICE CAR
+9E = ENFORCER
+9F = SECURITY
+A0 = BANSHEE
+A1 = BUS
+A2 = RHINO
+A3 = BARRACKS
+A4 = DODO
+A5 = COACH
+A6 = CABBIE
+A7 = STALLION
+A8 = RUMPO
+A9 = RC BANDIT
+AA = BELLYUP
+AB = MR WONGS
+AC = MAFIA CAR
+AD = YARDI CAR
+AE = YAKUZA CAR
+AF = DIABLO CAR
+B0 = COLOMCR
+B1 = HOODS CAR
+B2 = PANPLANT
+B3 = FLATBED
+B4 = YANKEE
+B5 = BICKLE 76
+B6 = TOYZ
+B7 = CAMPAIGN VAN
+B8 = BALLOT VAN
+B9 = HELLENBACH GT
+BA = PHOBOS VT
+BB = V8 GHOST
+BC = BARRACKS
+BD = HOTROD
+BE = SINDACO CAR
+BF = FORELLI CAR
+C0 = 
+C1 = 
+C2 =
+C3 =
+C4 =
+C5=
+C6 =
+C7 = TINY INVISIBLE HELICOPTER
+C8 =
+C9 =
+CA = ANGEL
+CB = PIZZABOY
+CC = NOODLEBOY
+CD = PCJ600
+CE = FAGGIO
+CF = FREEWAY
+D0 = ANGEL 2
+D1 = SNACHEZ 2
+D2 = SANCHEZ
+D3 = RC GOBLI
+D4 = RC RAIDER
+D5 = HUNTER
+D6 = MAVERICK
+D7 = POLICE MAVERICK
+D8 = VNC MAVERICK
+By Sousanator:
+
+#cheat Peds Have Weapons
+//Author: Sousanator
+//Category: Player/Weapons
+setchar(0x08B564D8, 1)
+#off
+setchar(0x08B564D8, 0)
+
+#cheat Peds Follow You
+//Author: Sousanator
+//Category: Player/Weapons
+setchar(0x08B48E29, 1)
+#off
+setchar(0x08B48E29, 0)
+
+#cheat Peds Riot
+//Author: Sousanator
+//Category: Player/Weapons
+setchar(0x8B562F2, 1)
+#off
+setchar(0x8B562F2, 0)
+
+#cheat Unlimited Noodles
+//Author: Sousanator
+//Category: Mission
+setint(0x09F6F920, 5);
+
+#cheat Wheelie All the Time
+//Author: Sousanator
+//Description: Simulates pressing down all the time, so only use on bike, exept it doesnt work in the airport for some strange reason, and you should only use it on the bike, cause it simulates if you were presing down all the time, so the camera goes all whack, once you get off the bike(and toni runs towards you)
+//Category: Vehicle/Controls
+setchar(0x08B89CA5, 1)
+
+#cheat Wheelie by Pressing Up
+//Author: Sousanator
+//Description: Up is Down, but Down stays Down. If you get off the bike, camera faces you, when you run. with this cheat you can press up and do a wheelie, or down and still do a wheelie, but once again keep this code on only when your on the bike, or else your camera looks towards you, tilted up, and when you press up, its like your pressing down. Good for screenshots.
+//Category: Vehicle/Controls
+setchar(0x08B89CA5, 0)
+
+#cheat Casual clothes
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 0)
+
+#cheat Leone's suit
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 1)
+
+#cheat Overalls
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 2)
+
+#cheat Avenging Angels fatigues
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 3)
+
+#cheat Chauffeur's clothes
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 4)
+
+#cheat Lawyer's suit
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 5)
+
+#cheat Tuxedo
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 6)
+
+#cheat 'The King' jumpsuit
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 7)
+
+#cheat Cox Mascot suit
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 8)
+
+#cheat Underwear
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 9)
+
+#cheat Hero Garb
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 10)
+
+#cheat 'Dragon' jumpsuit
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 11)
+
+#cheat Antonio
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 12)
+
+#cheat Sweats
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 13)
+
+#cheat Goodfella
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 14)
+
+#cheat Wiseguy
+//Author: Sousanator
+//Category: Clothes
+setchar(0x09F6C454, 15)
+
+#cheat Teleport: Slash TV
+//Author: Sousanator
+//Category: Teleport
+teleport(1575.79, -1138.03, 18.93);
+
+#cheat Hero Garb Car Colors
+//Author: Sousanator
+//Description: Thanks to edisoncarter.
+//Category: Vehicles
+setchar(pcar + 0x01f0, 3 , 6);
+
+#cheat Semi-Peds Riot
+//Author: Sousanator
+//Time: 18/01/2006 18:04:00
+//Category: Button Cheats
+//Working: Yes
+//Description: WARNING: Cannot be turned off! Not all peds attack each other
+setchar(0x8B562F2, 1)
+#off
+setchar(0x8B562F2, 0)
+
+#cheat No tires (Hoverbike)
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x00)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (6)SUPER HUGER tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x43)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (7)SUPER HUGE tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x42)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (6)Super Huge tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x42)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (5)BIGGER tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x41)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (4)Bigger tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x41)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (3)BIG tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x40)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (2)Big tires 
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x40)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (1)Normal tires
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f)
+
+#cheat (0)Tiny tires
+//Author: Sousanator
+//Category: Vehicles
+setchar(0x08B562E2, 0x00)
+setchar(0x08B562E3, 0x3f)
+#off
+setchar(0x08B562E2, 0x80)
+setchar(0x08B562E3, 0x3f) 
+
+there are plenty other sizes inbetween,, just edit 08B562E2 0 to ff(sometimes the lines show so i only went to 80)
+and edit 08B562E3 from 3f to 43 
+
+#cheat Invert Look
+//Author: Sousanator
+setchar(0x08B562F3, 0)
+#off
+setchar(0x08B562F3, 1)
+
+#cheat D-Pad Controls
+//Author: Sousanator
+setchar(0x08B562F4, 1)
+
+#cheat Analog Controls
+//Author: Sousanator
+setchar(0x08B562F4, 0)
+
+#cheat 20 Rampages completed
+//Author: Waterbottle
+//Category: Stats
+setshort(0x08B5E1E4, 0x14);
+
+#cheat 26 unique stunts performed
+//Author: Waterbottle
+//Category: Stats
+setshort(0x08B5E19C, 0x1A)
+
+#cheat All collectables
+//Author: Waterbottle
+//Description: Hidden Packages by Vettefan88, Rampages & Unique Jumps by Waterbottle. Completed all Rampages, Unique Jumps & Hidden Packages.
+//Category: Stats
+setshort(0x08B5E1E4, 0x14)
+setshort(0x08B5E19C, 0x1A)
+setint(0x08B89AD4, 100);
+
+#cheat Controller setup 1/2
+//Author: Waterbottle
+//Description: On is Setup2, OFF is Setup1.
+//Category: Settings
+setshort(0x08B865A3, 0x01)
+setshort(0x08B866A3, 0x01);
+#off
+setshort(0x08B865A3, 0x00)
+setshort(0x08B866A3, 0x00);
+
+#cheat World Inside Out
+//Author: Waterbottle
+//Description: See objects thru other objects
+//Category: Surroundings
+setchar(0x08B33593, 00)
+#off
+setchar(0x08B33593, 81)
+
+#cheat Remove All Draw Distance
+//Author: Waterbottle
+//Description: Like if you were in Blue Hell
+//Category: Surrondings
+setchar(0x08B33593, 63)
+#off
+setchar(0x08B33593, 81)
+
+#cheat Remove All Draw Distance 2
+//Author: Waterbottle
+//Description: Like if you were in Blue Hell.
+//Category: Surrondings
+setchar(0x08B33593, 255)
+#off
+setchar(0x08B33593, 81)
+
+#cheat Press UP Button
+//Author: Waterbottle
+//Category: Controls
+setchar(0x08B89CB2, -1);
+setchar(0x08B89CE4, -1);
+setchar(0x09AD541E, -128);
+setchar(0x09AD541F, 63);
+setchar(0x09AD545C, 16);
+
+#cheat disable UP and DOWN button in cheatdevice only
+//Author: Waterbottle
+//Category: Cheat Device/Controls
+setchar(0x08B89CB2, 0);
+setchar(0x08B89CE4, 0);
+setchar(0x09AD541E, 0);
+setchar(0x09AD541F, 0);
+setchar(0x09AD545C, 0);
+setchar(0x09FFDC2C, 0);
+setchar(0x09FFDC30, 0);
+setchar(0x09FFDC34, 0);
+setchar(0x09FFDC38, 0);
+setchar(0x09FFDC4C, 0);
+setchar(0x09962E2B, 0);
+
+#cheat Fix Damaged Car
+//Author: Waterbottle
+//Description: Teleport inside Staunton Island Pay 'N Spray
+//Category: Teleport
+teleport(378.19, -494.00, 26.15);
+
+#cheat all Hidden Packages + weapons spawn
+//Author: Waterbottle
+//Description: To use first activate the cheat and then load the savegame you want all the hidden packages on...weapons will NOT spawn if you don't load the savegame after you have acticated the cheat... enjoy :)
+//Category: Stats/Weapons
+setchar(0x09f6bc30, 01)
+setchar(0x09f6bc40, 01)
+setchar(0x09f6bc50, 01)
+setchar(0x09f6bc60, 01)
+setchar(0x09f6bc70, 01)
+setchar(0x09f6bc80, 01)
+setchar(0x09f6bc90, 01)
+setchar(0x09f6bca0, 01)
+setchar(0x09f6bcb0, 01)
+setchar(0x09f6bcc0, 01)
+setchar(0x09f6bcd0, 01)
+setchar(0x09f6bce0, 01)
+setchar(0x09f6bcf0, 01)
+setchar(0x09f6bd00, 01)
+setchar(0x09f6bd10, 01)
+setchar(0x09f6bd20, 01)
+setchar(0x09f6bd30, 01)
+setchar(0x09f6bd40, 01)
+setchar(0x09f6bd50, 01)
+setchar(0x09f6bd60, 01)
+setchar(0x09f6bd70, 01)
+setchar(0x09f6bd80, 01)
+setchar(0x09f6bd90, 01)
+setchar(0x09f6bda0, 01)
+setchar(0x09f6bdb0, 01)
+setchar(0x09f6bdc0, 01)
+setchar(0x09f6bdd0, 01)
+setchar(0x09f6bde0, 01)
+setchar(0x09f6bc34, 01)
+setchar(0x09f6bc44, 01)
+setchar(0x09f6bc54, 01)
+setchar(0x09f6bc64, 01)
+setchar(0x09f6bc74, 01)
+setchar(0x09f6bc84, 01)
+setchar(0x09f6bc94, 01)
+setchar(0x09f6bca4, 01)
+setchar(0x09f6bcb4, 01)
+setchar(0x09f6bcc4, 01)
+setchar(0x09f6bcd4, 01)
+setchar(0x09f6bce4, 01)
+setchar(0x09f6bcf4, 01)
+setchar(0x09f6bd04, 01)
+setchar(0x09f6bd14, 01)
+setchar(0x09f6bd24, 01)
+setchar(0x09f6bd34, 01)
+setchar(0x09f6bd44, 01)
+setchar(0x09f6bd54, 01)
+setchar(0x09f6bd64, 01)
+setchar(0x09f6bd74, 01)
+setchar(0x09f6bd84, 01)
+setchar(0x09f6bd94, 01)
+setchar(0x09f6bda4, 01)
+setchar(0x09f6bdb4, 01)
+setchar(0x09f6bdc4, 01)
+setchar(0x09f6bdd4, 01)
+setchar(0x09f6bdf4, 01)
+setchar(0x09f6bc38, 01)
+setchar(0x09f6bc48, 01)
+setchar(0x09f6bc58, 01)
+setchar(0x09f6bc68, 01)
+setchar(0x09f6bc78, 01)
+setchar(0x09f6bc88, 01)
+setchar(0x09f6bc98, 01)
+setchar(0x09f6bca8, 01)
+setchar(0x09f6bcb8, 01)
+setchar(0x09f6bcc8, 01)
+setchar(0x09f6bcd8, 01)
+setchar(0x09f6bce8, 01)
+setchar(0x09f6bcf8, 01)
+setchar(0x09f6bd08, 01)
+setchar(0x09f6bd18, 01)
+setchar(0x09f6bd28, 01)
+setchar(0x09f6bd38, 01)
+setchar(0x09f6bd48, 01)
+setchar(0x09f6bd58, 01)
+setchar(0x09f6bd68, 01)
+setchar(0x09f6bd78, 01)
+setchar(0x09f6bd88, 01)
+setchar(0x09f6bd98, 01)
+setchar(0x09f6bda8, 01)
+setchar(0x09f6bdb8, 01)
+setchar(0x09f6bdc8, 01)
+setchar(0x09f6bdd8, 01)
+setchar(0x09f6be08, 01)
+setchar(0x09f6bc2c, 01)
+setchar(0x09f6bc3c, 01)
+setchar(0x09f6bc4c, 01)
+setchar(0x09f6bc5c, 01)
+setchar(0x09f6bc6c, 01)
+setchar(0x09f6bc7c, 01)
+setchar(0x09f6bc8c, 01)
+setchar(0x09f6bc9c, 01)
+setchar(0x09f6bcac, 01)
+setchar(0x09f6bcbc, 01)
+setchar(0x09f6bccc, 01)
+setchar(0x09f6bcdc, 01)
+setchar(0x09f6bcec, 01)
+setchar(0x09f6bcfc, 01)
+setchar(0x09f6bd0c, 01)
+setchar(0x09f6bd1c, 01)
+setchar(0x09f6bd2c, 01)
+setchar(0x09f6bd3c, 01)
+setchar(0x09f6bd4c, 01)
+setchar(0x09f6bd5c, 01)
+setchar(0x09f6bd6c, 01)
+setchar(0x09f6bd7c, 01)
+setchar(0x09f6bd8c, 01)
+setchar(0x09f6bd9c, 01)
+setchar(0x09f6bdac, 01)
+setchar(0x09f6bdbc, 01)
+setchar(0x09f6bdcc, 01)
+setchar(0x09f6bddc, 01)
+setint(0x08B89AD4, 100);
+
+#cheat All rampages + M-60 spawn
+//Author: Waterbottle
+//Description: activate cheat and then load the savegame you want the M-60 to spawn in...
+//Category: Stats/Weapons
+setchar(0x09f6be90, 01)
+setchar(0x09f6bea0, 01)
+setchar(0x09f6beb0, 01)
+setchar(0x09f6bec0, 01)
+setchar(0x09f6bed0, 01)
+setchar(0x09f6bee0, 01)
+setchar(0x09f6bef0, 01)
+setchar(0x09f6bf00, 01)
+setchar(0x09f6bf10, 01)
+setchar(0x09f6bf20, 01)
+setchar(0x09f6bf30, 01)
+setchar(0x09f6bf40, 01)
+setchar(0x09f6bf50, 01)
+setchar(0x09f6bf60, 01)
+setchar(0x09f6bf70, 01)
+setchar(0x09f6bf80, 01)
+setchar(0x09f6bf90, 02)
+setchar(0x09f6bfa0, 02)
+setchar(0x09f6bfb0, 02)
+setchar(0x09f6be94, 01)
+setchar(0x09f6bea4, 01)
+setchar(0x09f6beb4, 01)
+setchar(0x09f6bec4, 01)
+setchar(0x09f6bed4, 01)
+setchar(0x09f6bee4, 01)
+setchar(0x09f6bef4, 01)
+setchar(0x09f6bf04, 01)
+setchar(0x09f6bf14, 01)
+setchar(0x09f6bf24, 01)
+setchar(0x09f6bf34, 0xFA)
+setchar(0x09f6bf44, 01)
+setchar(0x09f6bf54, 01)
+setchar(0x09f6bf64, 01)
+setchar(0x09f6bf74, 02)
+setchar(0x09f6bf84, 02)
+setchar(0x09f6bf94, 02)
+setchar(0x09f6bfa4, 02)
+setchar(0x09f6bfb4, 08)
+setchar(0x09f6bfc4, 01)
+setchar(0x09f6bfd4, 01)
+setchar(0x09f6be98, 01)
+setchar(0x09f6bea8, 01)
+setchar(0x09f6beb8, 01)
+setchar(0x09f6bec8, 01)
+setchar(0x09f6bed8, 01)
+setchar(0x09f6bee8, 01)
+setchar(0x09f6bef8, 01)
+setchar(0x09f6bf08, 01)
+setchar(0x09f6bf18, 01)
+setchar(0x09f6bf28, 01)
+setchar(0x09f6bf38, 01)
+setchar(0x09f6bf48, 01)
+setchar(0x09f6bf58, 01)
+setchar(0x09f6bf68, 64)
+setchar(0x09f6bf78, 01)
+setchar(0x09f6bf88, 02)
+setchar(0x09f6bf98, 02)
+setchar(0x09f6bfa8, 02)
+setchar(0x09f6bfb8, 02)
+setchar(0x09f6bfc8, 01)
+setchar(0x09f6bfd8, 01)
+setchar(0x09f6be8c, 01)
+setchar(0x09f6be9c, 01)
+setchar(0x09f6beac, 01)
+setchar(0x09f6bebc, 01)
+setchar(0x09f6becc, 01)
+setchar(0x09f6bedc, 01)
+setchar(0x09f6beec, 01)
+setchar(0x09f6befc, 01)
+setchar(0x09f6bf0c, 01)
+setchar(0x09f6bf1c, 01)
+setchar(0x09f6bf2c, 01)
+setchar(0x09f6bf3c, 01)
+setchar(0x09f6bf4c, 02)
+setchar(0x09f6bf5c, 01)
+setchar(0x09f6bf6c, 01)
+setchar(0x09f6bf7c, 01)
+setchar(0x09f6bf8c, 02)
+
+#cheat get overalls in your hideout
+//Author: Waterbottle
+//Category: Clothes
+setchar(0x09f6bfc0, 01)
+
+#cheat get chaffour outfit in hideout
+//Author: Waterbottle
+//Category: Clothes
+setchar(0x09f6bfd1, 01)
+
+#cheat unlock car and bike races and some multiplayer content
+//Author: Waterbottle
+//Category: Misc.
+setchar(0x09f6bfe1, 01)
+
+#cheat bouncy bounce
+//Author: Waterbottle
+//Category: Vehicles
+setchar(pcar + 4fb, 80)
+
+#cheat Don't get wasted
+//Author: Waterbottle
+//Category: Player
+setchar(pplayer + 0x196, 0x26);
+#off
+setchar(pplayer + 0x196, 0x00);
+
+#cheat Rhino Car (Modified)
+//Author: Waterbottle
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA2);
+
+#cheat Screen Upsidedown
+//Author: Waterbottle
+//Category: Cheats
+setshort(0x08B33580, 1)
+#off
+setshort(0x08B33580, 0)
+
+cheat Write the message Waterbottle (in normal color) rox (in blue) lol (in red)' at the bottom of the screen
+//Author: Waterbottle
+//Description: If you want to make your own message edit the numbers above with ASCII. if you want more letters then you can do that by increising the hex address with 2 for each new letter. If you want any part of the text to be red or blue then use 0x7e, 0x62, 0x7e (for blue) or 0x7e, 0x72, 0x7e (for red) and put those in as any other text in the 3 slots before the text you want to be that color
+//Category: Misc.
+setchar(08e4dac2, 0x57)
+setchar(08e4dac4, 0x61)
+setchar(08e4dac6, 0x74)
+setchar(08e4dac8, 0x65)
+setchar(08e4daca, 0x72)
+setchar(08e4dacc, 0x62)
+setchar(08e4dace, 0x6f)
+setchar(08e4dad0, 0x74)
+setchar(08e4dad2, 0x74)
+setchar(08e4dad4, 0x6c)
+setchar(08e4dad6, 0x65)
+setchar(08e4dad8, 0x20)
+setchar(08e4dada, 0x7e)
+setchar(08e4dadc, 0x62)
+setchar(08e4dade, 0x7e)
+setchar(08e4dae0, 0x72)
+setchar(08e4dae2, 0x6f)
+setchar(08e4dae4, 0x78)
+setchar(08e4dae6, 0x20)
+setchar(08e4dae8, 0x7e)
+setchar(08e4daea, 0x72)
+setchar(08e4daec, 0x7e)
+setchar(08e4daee, 0x6c)
+setchar(08e4daf0, 0x6f)
+setchar(08e4daf2, 0x6c)
+setchar(08e4dac0, 0x01)
+#off
+setchar(08e4dac0, 0x00)
+
+#cheat make a box into a welcomemat
+//Author: Waterbottle
+//Description: This will teleport a box outside the staunton safehouse door and stretch and make it thinner... making it look like a welcome mat. It is only visible if you are a few meters away from it or if you have the camera in a special angle. Sometimes it uses a container instead of a box.
+//Category: Misc.
+setfloat(099b7580, 289.87)
+setfloat(099b7584, -431.15)
+setfloat(099b7588, 25.00)
+setfloat(099b7560, -1.62)
+setchar(099b757b, 0xBD)
+
+#cheat get a videogame machine inside staunton safehouse
+//Author: Waterbottle
+//Category: Misc.
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87)
+setchar(099b75a8, 0x3b)
+
+#cheat make
+//Author: Waterbottle
+//Category: Misc.
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87) 
+
+#cheat make a welcome mat
+//Author: Waterbottle
+//Description: this will make a welomce mat infront o your staunton safehouse door. only visible if ou are a few meters away from it or have the camera in a special angle
+//Category: Misc.
+setfloat(099b7580, 289.87)
+setfloat(099b7584, -431.15)
+setfloat(099b7588, 25.00)
+setfloat(099b7560, -1.62)
+setchar(099b757b, 0xBD)
+setchar(099b75a8, 0x18)
+
+#cheat make inside safe house
+//Author: Waterbottle
+//Category: Misc.
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87)
+
+#cheat make outside safehouse
+//Author: Waterbottle
+//Category: Misc.
+setfloat(099b7580, 297.81)
+setfloat(099b7584, -443.35)
+setfloat(099b7588, 26.02)
+
+here is a list of what yit turns into if you edit 099b75a8:
+00: nothing
+o1: nothing
+02: red thinghy
+03: nothing
+04: a huge garage door or somthing
+06: briefcase
+07: buoy
+08: not sure what it is...
+09: fire hydrant
+0A: money
+0B: a bomb with a red light (o somthing like that)
+0C: a wooden box
+0D: a door (old objects also sticks with it if you change to this one)
+0E: nothing
+0F: a lamp for outdoors with a powerfull light
+10: a door
+11: a garage door
+12: a different garage door (old objects also sticks with it if you change to this one)
+13: telephone
+14: rusty fuel can thinghy (old objects also sticks with it if you change to this one)
+15: brown fuel tank thinghy
+16: wood planks thing (old objects also sticks with it if you change to this one)
+17: smaller box
+18: box
+19: red coal can thinghy
+1A: lamp post (old objects also sticks with it if you change to this one)
+1B: wooden box
+1C: red fuel can thing
+1D: different lamppost (old objects also sticks with it if you change to this one)
+1E: red fuel can thing with a thinghy on top
+1F: rusty trashcan
+20: container
+21: small roadblock
+22: bus sign or somthuing (old objects also sticks with it if you change to this one)
+23: half open box (old objects also sticks with it if you change to this one)
+24: lamppost (old objects also sticks with it if you change to this one)
+25: lamppost (old objects also sticks with it if you change to this one)
+26: no parkikng sign
+27: phone sign
+28: trashcan
+29: a invisible object
+2A: A fruitbasket full of somtig red
+2B: a buoy with a handle
+2C: a cone (old objects also sticks with it if you change to this one)
+2D: Information pickup (old objects also sticks with it if you change to this one)
+2E: health pickup
+2F: adrenaline pickup
+30: grey thinghy
+31: a package of somesort
+32: a stack of papers
+33: a broken part of asphalt (maybe)
+34: a smaller broken piece of asphalt
+35: a door or somthing
+36: a door or somthing
+37: a HHUGE buoy
+38: a hhalf window screen
+39: a wall with a door hole in iy
+3a: a green door
+3b: video game?
+3c: nothing
+3d: nothing
+3e: door
+3f: police bribe
+40: a black thing
+41: nothing
+42: a dark thingh
+43:nothing
+44: roadblock gate thingh(old objects also sticks with it if you change to this one)
+45: bomb
+46: a large window (old objects also sticks with it if you change to this one)
+47: an unused pickup (of a video camera)
+48: rampage pickup
+49: fish
+4A: a traffic ligh
+4B: armor pickup
+4C: nothing
+4D: metal pole
+4E: top of a traffic light
+4F: top of a raffic ligh (opposite way)
+50: top of one light traffic light
+51: mummy
+52: nothing
+53: nothing
+54: nothing
+55: nothing
+56: nothing
+57: nothing
+58: nothing
+59: nothing
+60: nothing
+FE: nothing
+FF: nothing
+all values not listed there has not been tested. would be nice if someone could test them
+------
+Object Location:
+I found it by taking captures when I pushed a box
+this is the x location
+setfloat(099b7580, 289.87)
+y location
+setfloat(099b7584, -431.15)
+z location
+setfloat(099b7588, 25.00)
+lenght (or somthing like that)
+setfloat(099b7560, -1.62)
+height
+setchar(099b757b, 0xBD)
+object texture. you can find a list of what the object values are on the previous page i think
+setchar(099b75a8, 0x18)
+--------
+change these values to change the object into the following (nothing not listed here has been tested that has 01 in 099b75a9)
+the first value is 099b75a8 the second value is 099b75a9
+18 01 some weapon
+17 01 shotgun
+16 01 different shotgun
+15 01 normal shotgun
+14 01 AK thinghy I think
+13 01 colt?
+12 01 handgun
+11 01 rocket thinghy
+10 01 moltov
+0F 01 teargas
+0E 01 handgrenade
+0D 01 chainsaw
+0C 01 sword
+0B 01 shorter sword
+0A 01 axe
+09 01 diferent axe
+08 01 basebal bat
+07 01 knife
+06 01 police bat
+05 01 hockey club
+04 01 knife of somesort
+03 01 brass cnuckles
+02 01 somthing
+01 01 (CRASH)
+--------
+here is all know colols that can be used in the make message at bottom thing
+0x7e, 0x70, 0x7e = purple
+0x7e, 0x77, 0x7e = White
+0x7e, 0x62, 0x7e = blue
+0x7e, 0x72, 0x7e = red
+0x7e, 0x67, 0x7e = green
+0x7e, 0x6F, 0x7e = pink (or somthing like that)
+0x7e, 0x74, 0x7e = light blue
+0x7e, 0x74, 0x7e = yellow
+--------
+Here is the list so far:
+013A part of a railroad track
+0131 part of a bridge
+0127 (CRASH)
+0126 looks like the middle or somthing of a minigun
+0125 extremly small object
+0124 photo camera
+0123 remote detonator
+0122 looks like the bottom part of a minigun
+0121 looks kinda like a minigun
+0120 flame thrower
+011f rocket launcher
+011e newer looking sniper
+011d sniper rifle
+011c fourth uzi
+011b a third uzi
+011a differnt uzi
+0119 an uzi
+0118 some weapon
+0117 shotgun
+0116 different shotgun
+0115 normal shotgun
+0114 AK thinghy I think
+0113 colt?
+0112 handgun
+0111 rocket thinghy
+0110 moltov
+010F teargas
+010E handgrenade
+010D chainsaw
+010C sword
+010B shorter sword
+010A axe
+0109 diferent axe
+0108 basebal bat
+0107 knife
+0106 police bat
+0105 hockey club
+0104 knife of somesort
+0103 brass cnuckles
+0102 somthing
+0101 (CRASH)
+0200: nothing
+0201: nothing
+0202: red thinghy
+0203: nothing
+0204: a huge garage door or somthing
+0206: briefcase
+0207: buoy
+0208: not sure what it is...
+0209: fire hydrant
+020A: money
+020B: a bomb with a red light (o somthing like that)
+020C: a wooden box
+020D: a door (old objects also sticks with it if you change to this one)
+020E: nothing
+020F: a lamp for outdoors with a powerfull light10: a door
+0210: a door
+0211: a garage door
+0212: a different garage door (old objects also sticks with it if you change to this one)
+0213: telephone
+0214: rusty fuel can thinghy (old objects also sticks with it if you change to this one)
+0215: brown fuel tank thinghy
+0216: wood planks thing (old objects also sticks with it if you change to this one)
+0217: smaller box
+0218: box
+0219: red coal can thinghy
+021A: lamp post (old objects also sticks with it if you change to this one)
+021B: wooden box
+021C: red fuel can thing
+021D: different lamppost (old objects also sticks with it if you change to this one)
+021E: red fuel can thing with a thinghy on top
+021F: rusty trashcan
+0220: container
+0221: small roadblock
+0222: bus sign or somthuing (old objects also sticks with it if you change to this one)
+0223: half open box (old objects also sticks with it if you change to this one)
+0224: lamppost (old objects also sticks with it if you change to this one)
+0225: lamppost (old objects also sticks with it if you change to this one)
+0226: no parkikng sign
+0227: phone sign
+0228: trashcan
+0229: a invisible object
+022A: A fruitbasket full of somtig red
+022B: a buoy with a handle
+022C: a cone (old objects also sticks with it if you change to this one)
+022D: Information pickup (old objects also sticks with it if you change to this one)
+022E: health pickup
+022F: adrenaline pickup
+0230: grey thinghy
+0231: a package of somesort
+0232: a stack of papers
+0233: a broken part of asphalt (maybe)
+0234: a smaller broken piece of asphalt
+0235: a door or somthing
+0236: a door or somthing
+0237: a HHUGE buoy
+0238: a hhalf window screen
+0239: a wall with a door hole in iy
+023a: a green door
+023b: video game?
+023c: nothing
+023d: nothing
+023e: door
+023f: police bribe
+0240: a black thing
+0241: nothing
+0242: a dark thingh
+0243: nothing
+0244: roadblock gate thingh(old objects also sticks with it if you change to this one)
+0245: bomb
+0246: a large window (old objects also sticks with it if you change to this one)
+0247: an unused pickup (of a video camera)
+0248: rampage pickup
+0249: fish
+024A: a traffic ligh
+024B: armor pickup
+024C: nothing
+024D: metal pole
+024E: top of a traffic light
+024F: top of a raffic ligh (opposite way)
+0250: top of one light traffic light
+0251: mummy
+0252: nothing
+0253: nothing
+0254: nothing
+0255: nothing
+0256: nothing
+0257: nothing
+0258: nothing
+0259: nothing
+0260: nothing
+02FE: nothing
+02FF: nothing
+082b: red garage door
+---------
+//Author: Waterbottle
+
+#cheat Flamthrower shoots like shotgun
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x658, 0x15);
+
+#cheat Invisible Flamethrower
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x594, 0x1F);
+
+#cheat Flamethrower Melee weapon
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x1F);
+
+#cheat Flamethrower Grenade
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x1F);
+
+#cheat Flamethrower Shotgun
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x604, 0x1F);
+
+#cheat Flamethrower Handgun
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x1F);
+
+#cheat Flamethrower Assault Rifle
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x63c, 0x1F);
+
+#cheat Flamethrower Heavy Weapon
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x658, 0x1F);
+
+#cheat Flamethrower Sniper
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x674, 0x1F);
+
+#cheat Give Fist slot Shotgun properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x594, 0x13);
+
+#cheat Give Melee slot Shotgun properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5b0, 0x13);
+
+#cheat Give Grenade slot Shotgun properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5cc, 0x13);
+
+#cheat Give Handgun slot Shotgun properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x5e8, 0x13);
+
+#cheat Give Assualt Rifle slot Shotgun Properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x63c, 0x13);
+
+#cheat Give Heavy Weapon slot Shotgun Properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x658, 0x13);
+
+#cheat Give Sniper slot Shotgun Properties
+//Author: xXCrosshairXx
+//Category: Weapons
+setchar(pplayer + 0x674, 0x13);
+
+#cheat Undamageable Tires
+//Author: Peril (pez2k)
+//Description: WARNING: FREEZES WHEN USED ON BIKES. Still get popping sound, but tyres are intact. If you enter a car with punctured tires, they magically reinflate too.
+//Category: Vehicles
+setchar(pcar + 0x0356, 0x00)
+setchar(pcar + 0x0357, 0x00)
+setchar(pcar + 0x0358, 0x00)
+setchar(pcar + 0x0359, 0x00)
+
+#cheat Flapping Bonnet
+//Author: Peril (pez2k)
+//Description: The bonnet/hood of any car entered will come loose and flap. It will fall off at speed or with any bump, as normal. off will freeze it where it is, so you can have it permanently raised.
+//Category: Vehicles
+setchar(pcar + 0x035a, 0x02)
+#off
+setchar(pcar + 0x035a, 0x00)
+
+#cheat Flapping Car Parts
+//Author: Peril (pez2k)
+//Description: WARNING: FREEZES WHEN USED ON BIKES. All moving car body parts swing about. Toni will repeatedly try to close the driver's door.
+//Category: Vehicles
+setchar(pcar + 0x035a, 0x02)
+setchar(pcar + 0x035b, 0x02)
+setchar(pcar + 0x035c, 0x02)
+setchar(pcar + 0x035d, 0x02)
+setchar(pcar + 0x035e, 0x02)
+setchar(pcar + 0x035f, 0x02)
+
+#cheat Horn Always On
+//Author: Peril (pez2k)
+//Description: For your current car only. Gets annoying, fast.
+//Category: Vehicles
+setchar(pcar + 0x02a8, 0x01)
+
+Been looking through pcar, so far I've found these:
+0x026c = possibly speed in reverse
+0x0278 = counting something, don't seem to be able to stop or reverse it, possibly car's life so far, will try spawning tosee if that gives a low value
+0x02a8 = horn, 0x00 is off, 0x01 is on, instantly resets self
+Visual damage:
+0x0356 = front left wheel
+0x0357 = rear left wheel
+0x0358 = front right wheel
+0x0359 = rear right wheel
+0x035a = bonnet/hood
+0x035b = boot/trunk
+0x035c = front left door
+0x035d = front right door
+0x035e = rear left door
+0x035f = rear right door
+0x0360 = front left wing/headlight
+0x0361 = linked to 0x0366 in some way, sets to 0x01
+0x0362 = unknown
+0x0363 = unknown
+0x0364 = front right wing/headlight
+0x0365 = unknown
+0x0366 = front bumper AND windscreen
+0x0367 = rear bumper
+Values for damage:
+Moving parts:
+0x00 = undamaged
+0x01 = dented
+0x02 = swinging free (also merely open for doors ie. when entering/exiting)
+0x03 = missing
+Fixed parts:
+0x00 = undamaged
+0x01 = damaged, but not visually
+0x02 = dented
+0x03 = missing
+For the windscreen, both 0x01 and 0x02 are cracked, which is why it cracks first hit but takes a few more to remove.
+Parts flapping with 0x02 will freeze in place when set back to any other value.
+Setting everything to 0x03 does indeed mean they'll fall off as soon as they're hit, causing your car to flake to bits if you're in any sort of accident. Doors have a side effect when set to 0x03, nobody bothers to open them because they think they're not there.
+Headlights have weird values such as 0x40 or 0x04, hard to knock the wings just enough to try them out.
+For 0x0366, the first bit is the front bumper, second windscreen, eg. 01 is a fine bumper and cracked screen.
+Here's a quick silly code or two from the above:
+
+#cheat Die
+//Author: Peril (pez2k)
+//Description: Does exactly what it says on the tin. If used in vehicles, you live until you get out. Be sure to disable before respawning!
+//Category: Player
+setfloat(pplayer + 0x04b8, 0.0)
+
+#cheat All Vehicles Chrome Plated
+//Author: TZone
+//Category: Cheats
+setchar(0x08B58986, 1);
+#off 
+setchar(0x08B58986, 0);
+
+#cheat No Visible Damage to Car
+//Author: Ignorance_is_Bilss
+//Description: Car WILL take damage just not visibly
+//Category: Vehicles
+setchar (pcar + 0x0356, 0)
+setchar (pcar + 0x0357, 0)
+setchar (pcar + 0x0358, 0)
+setchar (pcar + 0x0359, 0)
+setchar (pcar + 0x035a, 0)
+setchar (pcar + 0x035b, 0)
+setchar (pcar + 0x035c, 0)
+setchar (pcar + 0x035d, 0)
+setchar (pcar + 0x035e, 0)
+setchar (pcar + 0x035f, 0)
+setchar (pcar + 0x0360, 0)
+setchar (pcar + 0x0361, 0)
+setchar (pcar + 0x0362, 0)
+setchar (pcar + 0x0363, 0)
+setchar (pcar + 0x0364, 0)
+setchar (pcar + 0x0365, 0)
+setchar (pcar + 0x0366, 0)
+setchar (pcar + 0x0367, 0)
+
+#cheat Disable Side Missions
+//Author: jacob26
+//Category: Mission
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09F6C4C0, 0);
+
+#cheat Centre Camera Behind Toni
+//Author: jacob26
+//Description: Useful in helicopters.
+//Category: Controls
+setchar(0x08B8344D, 1);
+
+Like me with the timer... but someone else found something better anyway. I'll continue on my work with the satellite RC. You might even be able to control any car...
+I found the hex location that determines whether or not you're in a car. It screws around with things a bit, though.
+ 
+#cheat In Vehicle
+//Author: jacob26
+//Category: Vehicles
+setchar(pplayer + 0x538, 1);
+#off
+setchar(pplayer + 0x538, 0);
+
+If anyone can find out how to stop it from messing up...
+This cheat also teleports you to your last vehicle, well... inside your last vehicle.
+Try it on motorbikes. Toni hangs, sitting down, in mid-air.
+Works with trains, and presumably ferries. It's cool to go onto the train, get off, leave the station, and teleport back into the train, because the tunnel doesn't exist for a while (until eventually the loading screen appears), and you can see the train going underneath the city above.
+Also, I was thinking: maybe there is a speed hex somewhere. It seems to be speed that loses the bonnet on your car when it comes loose.
+Oh... and it would be awesome if people could explode.
+
+#cheat Target On/Off
+//Author: jacob26
+//Category: Settings
+setchar(0x08E4A9F3, 1);
+#off
+setchar(0x08E4A9F3, 0);
+
+#cheat "ALL YOUR BASE ARE BELONG TO US"
+//Author: jacob26
+//Description: Made by jacob26, Credits goes to vettefan88. Go to Francis Internation Airport and this replaces "WELCOME TO FRANCIS INTERNATIONAL AIRPORT".
+//Category: Surrondings
+setchar(0x08B57EFA, 0x41, 0x4C, 0x4C, 0x20, 0x59, 0x4F, 0x55, 0x52, 0x20, 0x42, 0x41, 0x53, 0x45, 0x20, 0x41, 0x52, 0x45, 0x20, 0x42, 0x45, 0x4C, 0x4F, 0x4E, 0x47, 0x20, 0x54, 0x4F, 0x20, 0x55, 0x53, 0x20, 0x2E, 0x20, 0x2E, 0x20, 0x2E, 0x20, 0x2E, 0x20, 0x2E, 0x20, 0x2E);
+
+#cheat Funk in Time "ALL YOUR BASE ARE BELONG TO US"
+//Author: jacob26
+//Description: Made by jacob26, Credits goes to vettefan88. Go to the "Funk in Time" marquee and this replaces "OUR STUFF IS CHEAPER THAN CHEAP"
+//Category: Surrondings
+setchar(0x08B58126, 0x41, 0x4C, 0x4C, 0x20, 0x59, 0x4F, 0x55, 0x52, 0x20, 0x42, 0x41, 0x53, 0x45, 0x20, 0x41, 0x52, 0x45, 0x20, 0x42, 0x45, 0x4C, 0x4F, 0x4E, 0x47, 0x20, 0x54, 0x4F, 0x20, 0x55, 0x53, 0x2E);
+
+#cheat Perfect Traction (With hydrolics)
+//Author: cooldocy795
+//Category: Cheats
+setchar(0x08B33E2E, 1);
+#off
+setchar(0x08B33E3E, 0);
+
+#cheat All 100 Hidden Packages
+//Author: cooldocy795
+//Description: Use as is, or enter your own value for how many packages you have. Turning the option off will turn your count to zero, unless you chage the value.
+//Category: Stats
+setchar(0x08b89ad4, 100)
+#off
+setchar(0x08b89ad4, 0)
+
+#cheat Invisible Car
+//Author: cooldocy795
+//Category: Cheats
+setchar(0x46, 17);
+#off
+setchar(0x46, 19);
+
+#cheat Moon Size 1
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 00);
+
+#cheat Moon Size 2
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 01);
+
+#cheat Moon Size 3
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 02);
+
+#cheat Moon Size 4
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 03);
+
+#cheat Moon Size 5
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 04);
+
+#cheat Moon Size 6
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 05);
+
+#cheat Moon Size 7
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 06);
+
+#cheat Moon Size 8
+//Author: begabamboo
+//Description: Changes the Size of the Moon
+//Category: Misc.
+setchar(0x08b4c0b4, 07);
+
+
+
+
+
+By kingvercetti:
+
+#cheat Infinite Uzi Ammo
+//Author: kingvercetti
+//Category: Weapons
+setchar(0x994C9CB, 0xFF);
+
+#cheat M4 Pistol
+//Author: kingvercetti
+//Description: When activating, you must be highlighted on a pistol.
+//Category: Weapons
+setchar(0x994C988, 0x1A);
+
+#cheat Have Adrenaline
+//Author: kingvercetti
+//Category: Weapons
+setchar(pplayer + 0x00000BB3, 1);
+setchar(0x8B5E043, 62);
+#off
+setchar(pplayer + 0x00000BB3, 00);
+setchar(0x8B5E043, 63);
+
+#cheat Re-Light Last Fire
+//Author: kingvercetti
+//Description: You must have lit a fire for this to work
+//Category: Misc.
+setchar(0x08B89E70, 1);
+
+#cheat Mega Bounce
+//Author: kingvercetti
+//Description: For use on a bike, I'm unsure for cars...
+//Category: Vehicles
+setchar(pcar + 0x4FF, 0x48);
+#off
+setchar(pcar + 0x4FF, 0x3F);
+
+#cheat Mega Bounce
+//Author: kingvercetti
+//Category: Vehicles
+setchar(0x998A5DF, 48);
+
+#cheat CircleCar
+//Author: Mo
+//Description: Thanks to edisoncarter. Funny Car Spin to maker great StuntS!
+//Category: Vehicles
+setchar(pcar + 0x08b, 0x0C0);
+
+#cheat JumpCar
+//Author: Mo
+//Description: Thanks to edisoncarter. This makes your car flying a bit
+//Category: Vehicles
+setchar(pcar + 0x03A, 0x0ff);
+
+#cheat HighCircleCar2
+//Author: Mo
+//Category: Vehicles
+setchar(pcar + 0x04E6, 00);
+
+#cheat Grenades, Remotes Grenades and Molotovs ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x000005D8, 44);
+
+#cheat Infinite Revolver and 9mm ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x000005F0, 300);
+
+#cheat all shotguns Infinite ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x00000610, 3027);
+
+#cheat Infinite Micro SMG, Uzi and Tec-9 ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x00000628, 3027);
+
+#cheat Infinite M4 and AK-47 ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x00000644, 404);
+
+#cheat Infinite Rocket Launcher, Mini-Gun and Flamethrower ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x00000664, 404);
+
+#cheat all Sniper Rifles ammo
+//Author: NIL8R_153
+//Category: Weapons
+setint(pplayer + 0x0000067C, 28);
+
+#cheat Bikes have 2 back wheels and no front
+//Author: Ollie199090
+//Category: Vehicles
+setchar(pcar + 0x50F, 0x40); 
+#off
+setchar(pcar + 0x50F, 0x3f); 
+
+#cheat No Front Wheel on bikes
+//Author: Ollie199090
+//Category: Vehicles
+setchar(pcar + 0x50F, 0x50);
+#off
+setchar(pcar + 0x50F, 0x3f);
+
+#cheat Super chopper
+//Author: Ollie199090
+//Category: Vehicles
+setchar(pcar + 0x50F, 0x82);
+#off
+setchar(pcar + 0x50F, 0x3f);
+
+#cheat Launch your car to the heaven
+//Author: Azekriel
+//Category: Vehicles
+setchar (pcar + 0x503, 0x44);
+#off
+setchar (pcar + 0x503, 0x43);
+
+#cheat Bouncing Motorcycles
+//Author: Azekriel
+//Category: Vehicles
+setchar (pcar + 0x4F7, 0x42);
+#off
+setchar (pcar + 0x4F7, 0x3F);
+
+#cheat Uni-cycle
+//Author: supacasey & ollie199090
+//Description: Works best if used on a PCJ-600.
+//Category: Vehicles
+setchar(pcar + 0x50b, 0x00);
+setchar(pcar + 0x50f, 0x50);
+#off
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+
+#cheat Slightly adjusted Hoverbike
+//Author: supacasey
+//Category: Vehicles
+setchar(pcar + 0x50a, 0x5e);
+setchar(pcar + 0x50b, 0xaf);
+setchar(pcar + 0x50f, 0xff);
+#off
+setchar(pcar + 0x50a, 0xa5);
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+
+#cheat Aggressive Drivers ON
+//Author: GangsterOfGTA
+//Category: Cheats
+setchar(0x08B4BC10, 1);
+#off
+setchar(0x08B4BC10, 0);
+
+#cheat Flying Car
+//Author: GangsterOfGTA
+//Description: before you use this cheat you must: Spawn a dodo, get in the dodo, get out of the dodo. If you dont do this it will crash.
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA4);
+
+#cheat All Cars Act Like dodo
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA4);
+
+#cheat All Cars Act Like ambulance
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0x93);
+
+#cheat All Cars Act Like rc bandit
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA9);
+
+#cheat All Cars Act Like v8 ghost
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0xBB);
+
+#cheat All Cars Act Like bus
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA1);
+
+#cheat All Cars Act Like rhino
+//Author: GangsterOfGTA
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA2);
+
+(Dodo & Tank one is already found.)
+
+#cheat Wheelie All the Time
+//Author: Christopher
+//Description: Simulates pressing down all the time, so only use on bike
+//Category: Vehicles
+setchar(0x08B89CA5, 1)
+
+#cheat Media Attention 
+//Author: PezoFaSho
+//Category: Cheats
+setchar(0x8B48E29, 0x01)
+#off
+setchar(0x8B48E29, 0x00)
+
+#cheat Suicide
+//Author: PezoFaSho
+//Category: Cheats
+setchar(pplayer + 0x4BB, 0x00)
+
+#cheat Custom Weapon Pack
+//Author: Pivonic
+//Category: Weapons
+setchar(pobj + 0x594, 0x02);
+setchar(pobj + 0x5b0, 0x03);
+setchar(pobj + 0x5cc, 0x0E);
+setchar(pobj + 0x5e8, 0x11);
+setchar(pobj + 0x604, 0x15);
+setchar(pobj + 0x62b, 0x17);
+setchar(pobj + 0x63c, 0x1B);
+setchar(pobj + 0x658, 0x23);
+setchar(pobj + 0x674, 0x1D);
+
+#cheat Hetic Mode (Crazy Mode)
+//Author: Pivonic
+//Category: Misc.
+setchar(0x08B564D8, 1)
+setchar(0x8B562F2, 1)
+setchar(0x08B4BC10, 1);
+setchar(0x08B314AC, 1);
+setchar(0x08B89E30, 1);
+setchar(0x08b33e32, 1);
+setchar(0x0994CF53, 0);
+setchar(pplayer + 0x198, 0x00);
+setchar(pplayer + 0x0354, 0x04)
+setchar(pcar + 0x5b0, 0x03)
+setchar(pcar + 0x252, 0x80)
+setchar(pcar + 0x253, 0x3F)
+#off
+setchar(0x08B564D8, 0)
+setchar(0x8B562F2, 0)
+setchar(0x08B4BC10, 0);
+setchar(0x08B314AC, 0);
+setchar(0x08B89E30, 0);
+setchar(0x08b33e32, 0);
+setchar(0x0994CF53, 1);
+setchar(pplayer + 0x198, 0x40);
+setchar(pplayer + 0x0354, 0x04)
+setchar(pcar + 0x5b0, 0x03)
+setchar(pcar + 0x252, 0x80)
+setchar(pcar + 0x253, 0x3F)
+
+#cheat Locked Car
+//Author: theY4Kman
+//Description: Requires CheatDevice 0.7c+. Once you've gotten in a car, you can't get out, and no one can get in! Now you can't get busted OR wasted...Except for when a tank blows your car up...Also works with bikes
+//Category: Vehicles
+setchar(pcar + 0x21D, 1)
+setchar(pcar + 0x21E, 1)
+#off
+setchar(pcar + 0x21D, 0)
+setchar(pcar + 0x21E, 0)
+
+#cheat Hijack Any Car
+//Author: theY4Kman
+//Category: Vehicles
+setchar(pplayer + 0x250, 12)
+
+#cheat Everlasting Fire
+//Author: -DeMoN-
+//Description: Enable this code then set fire to something. Only works with newest fire made
+//Category: Misc.
+setchar(0x08B89E30, 1);
+#off
+setchar(0x08B89E30, 0);
+
+Yeah I messed around with that 0B89E70 line yesterday and the place it re-sets fire to is random sometimes. I cant find a pattern in it. 0B89E70 re-sets fire to the last fire you had, so I set fire to a car and left it on while driving around. It does have one small use though, like in missions where you have to kill someone and they end up having a lot of health. Set them on fire and turn the code on they burn to death. Also, try turning it on, starting a Fire Truck mission, then turning it off, it may make fires go out. 
+
+#cheat Extinguish All Fires
+//Author: -DeMoN-
+//Description: Makes all fires have no effect on you, peds, or cars. Actual car damage fires still have effects
+//Category: Misc.
+setchar(0x08B89E30, 0);
+setchar(0x08B89E70, 0);
+
+#cheat Teleport: Random
+//Author: Me
+//Category: Teleport
+teleport(6567.85, -.95, 1155.95);
+
+#cheat Radio On
+//Author: Me
+//Category: Player
+//Description: Radio On
+//Image: none
+//Time: 28/01/2006 04:01:35
+setchar(0x9adbc08, 0)
+
+#cheat tony walkes on  1 leg
+//Author: Me
+//Category: Player
+//Description: none
+//Image: none
+//Time: 28/01/2006 15:37:30
+setchar(pplayer   0x19A, 0x06);
+#off
+setchar(pplayer   0x19A, 0x02);
+
+#cheat Car Bomb on
+//Author: matt420bad
+//Description: Press Circle to activate.
+//Category: Vehicles
+setchar(pcar + 0x5E5, 1A);
+
+#cheat Flat Toni
+//Author: matt420bad
+//Category: Player
+sethex(pplayer + 0x8b, 0x4c);
+
+#cheat Fire Proof + Moaning Toni
+//Author: matt420bad
+//Category: Player
+setchar(pplayer + 0x6DC, 0x70);
+setchar(pplayer + 0x6DD, 0x9E);
+setchar(pplayer + 0x6DE, 0xB8);
+setchar(pplayer + 0x6DF, 0x08);
+
+#cheat pop-up police on
+//Author: matt420bad
+//Description: Originally found by Jérémie Blanc
+//Category: Pedestrians
+setchar(pcar + 0x257, 0x60);
+
+#cheat Burnout and Smoke Trails(Cars) on
+//Author: matt420bad
+//Category: Vehicles
+setchar(pcar + 0x000006D4, 1);
+
+#cheat Petal On Bikes
+//Author: Swikity
+//Description: Only use with the player 91 player model, and at a reletivily low speed
+//Category: Vehicles
+setchar(pplayer + 0x34c, 25);
+
+#cheat One Handed Chainsaw (Video)
+//Author: Swikity
+//Category: Weapons
+//Description: Self Explanitory
+//Image: http://www.filelodge.com/files/hdd8/191765/One%20Handed%20Chainsaw.gif
+//Time: 26/01/2006 19:39:24
+//Working: Yes
+//by Swikity. Make sure you have the chainsaw selected before you activate the cheat.
+setchar(pplayer + 0x5b0, 0x0A);
+
+#cheat Infinite Ammo
+//Author: fyrehart
+//Category: Weapons
+setinit(pplayer + 0x00000644, 37);
+setinit(pplayer + 0x00000648, 50);
+setinit(pplayer + 0x00000628, 37);
+setinit(pplayer + 0x0000062C, 37);
+setinit(pplayer + 0x00000680, 1337);
+setinit(pplayer + 0x00000610, 1337);
+setinit(pplayer + 0x000005D8, 1337);
+setinit(pplayer + 0x000005F0, 37);
+setinit(pplayer + 0x000005F4, 50);
+setinit(pplayer + 0x00000610, 1337);
+setinit(pplayer + 0x00000660, 37);
+setinit(pplayer + 0x00000664, 1337);
+
+#cheat toni always looking backwards
+//Author: gta hacker
+//Category: Player/Controls
+setchar(pplayer + 0x194, 0xFF);
+#off
+setchar(pplayer + 0x190, 0x23);
+
+#cheat head always sidways
+//Author: gta hacker
+//Category: Player
+setchar(pplayer + 0x194, 03)
+
+#cheat 1% Health
+//Author: gta hacker
+//Category: Player
+setchar(pplayer + 0x04bb, 0x4a);
+#off
+setchar(pplayer + 0x04bb, 0x43);
+
+#cheat All Cars Are Like FBI Car
+//Author: TeamOverload
+//Description: you must first enter and exit an fbi car
+//Category: Vehicles
+setchar(pcar + 0x058, 0x94);
+
+#cheat All Cars Act Like Sanchez
+//Author: TeamOverload
+//Description: Must first get on and get off a Sanchez
+//Category: Vehicles
+setchar(pcar + 0x058, 0xD2);
+
+#cheat All Cars Act Like Firetruck
+//Author: TeamOverload
+//Description: same directions as my other vehicle cheats
+//Category: Vehicles
+setchar(pcar + 0x058, 0x8A); 
+
+#cheat All Cars Act Like Police Car
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0x9D);
+
+#cheat All Cars Act Like dodo
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA4);
+
+#cheat All Cars Act Like ambulance
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0x93);
+
+#cheat All Cars Act Like rc bandit
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA9);
+
+#cheat All Cars Act Like v8 ghost
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0xBB);
+
+#cheat All Cars Act Like bus
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA1);
+
+#cheat All Cars Act Like rhino
+//Author: TeamOverload
+//Description: Same Instructions
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA2);
+
+#cheat Infinite Ammo Sniper Rifle
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994CA20, 100);
+
+#cheat Infinite Ammo Grenades
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c978, 100);
+setchar(0x0994c978, 100);
+
+#cheat Infinite Ammo Pistol
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c990, 100);
+setchar(0x0994c990, 100);
+setchar(0x0994c994, 100);
+setchar(0x0994c994, 100);
+
+#cheat Infinite Ammo Shotgun
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c9b0, 100);
+setchar(0x0994c9b0, 100);
+
+#cheat Infinite Ammo Machine Gun 1
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c9c8, 100);
+setchar(0x0994c9c8, 100);
+setchar(0x0994c9cc, 100);
+setchar(0x0994c9cc, 100);
+setchar(0x0994c9d0, 100);
+setchar(0x0994c9d0, 100);
+setchar(0x0994c9d1, 100);
+setchar(0x0994c9d1, 100);
+
+#cheat Infinite Ammo Machine Gun 2
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c9e4, 100);
+setchar(0x0994c9e4, 100);
+setchar(0x0994c9e8, 100);
+setchar(0x0994c9e8, 100);
+setchar(0x0994c9ec, 100);
+setchar(0x0994c9ec, 100);
+setchar(0x0994c9ed, 100);
+setchar(0x0994c9ed, 100);
+
+#cheat Infinite Ammo Flamethrower
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994ca00, 100);
+setchar(0x0994ca00, 100);
+setchar(0x0994ca04, 100);
+setchar(0x0994ca04, 100);
+setchar(0x0994ca08, 100);
+setchar(0x0994ca08, 100);
+setchar(0x0994ca09, 100);
+setchar(0x0994ca09, 100);
+
+#cheat Infinite Ammo Sniper Rifle
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994CA20, 100);
+setchar(0x0994CA20, 100);
+
+#cheat Infinite Ammo Sniper Rifle 2
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994ca1c, 100);
+setchar(0x0994ca1c, 100);
+setchar(0x0994ca20, 100);
+setchar(0x0994ca20, 100);
+setchar(0x0994ca24, 100);
+setchar(0x0994ca24, 100);
+setchar(0x0994ca25, 100);
+setchar(0x0994ca25, 100);
+
+#cheat Infinite Ammo Shotgun 2
+//Author: PigManDan
+//Category: Weapons
+setchar(0x0994c9ac, 100);
+setchar(0x0994c9ac, 100);
+setchar(0x0994c9b0, 100);
+setchar(0x0994c9b0, 100);
+setchar(0x0994c9b4, 100);
+setchar(0x0994c9b4, 100);
+setchar(0x0994c9b5, 100);
+setchar(0x0994c9b5, 100);
+
+#crazy spin
+//Author: cruisx
+//Category: Vehicles
+setchar(pcar + 0x8b, 0x42);
+
+#cheat Fire (1)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89E30, 1);
+#off
+setchar(0x08B89E30, 0);
+
+#cheat Fire (2)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89E70, 1);
+#off
+setchar(0x08B89E70, 0);
+
+#cheat Fire (3)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89EB0, 1);
+#off
+setchar(0x08B89EB0, 0);
+
+#cheat Fire (4)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89EF0, 1);
+#off
+setchar(0x08B89EF0, 0);
+
+#cheat Fire (5)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89F30, 1);
+#off
+setchar(0x08B89F30, 0);
+
+#cheat Fire (6)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89F70, 1);
+#off
+setchar(0x08B89F70, 0);
+
+#cheat Fire (7)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89FB0, 1);
+#off
+setchar(0x08B89FB0, 0);
+
+#cheat Fire (8)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B89FF0, 1);
+#off
+setchar(0x08B89FF0, 0);
+
+#cheat Fire (9)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B8A030, 1);
+#off
+setchar(0x08B8A030, 0);
+
+#cheat Fire (10)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B8A070, 1);
+#off
+setchar(0x08B8A070, 0);
+
+#cheat Fire (11)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B8A0B0, 1);
+#off
+setchar(0x08B8A0B0, 0);
+
+#cheat Fire (12)
+//Author: Mister Enchilada
+//Category: Surroundings
+setchar(0x08B8A0F0, 1);
+#off
+setchar(0x08B8A0F0, 0);
+
+//              ...
+
+//              ...
+
+//              ...
+
+#cheat Fire (28)
+//Author: Mister Enchilada
+//Description: I think that this is 28.
+//Category: Surroundings
+setchar(0x08B8A830, 1);
+#off
+setchar(0x08B8A830, 0);
+
+#cheat Raise Staunton Lift Bridge Texture
+//Author: Mister Enchilada
+//Description: Raises the Lift Bridge Texture by 25 metres
+//Category: Misc.
+setfloat(0x08E6A828, 99.71);
+setfloat(0x08E6A8F8, 103.07);
+setfloat(0x08E6A9C8, 68.01);
+#off
+setfloat(0x08E6A828, 74.71);
+setfloat(0x08E6A8F8, 128.07);
+setfloat(0x08E6A9C8, 43.01);
+
+#cheat Raise Staunton Lift Bridge Mesh
+//Author: Mister Enchilada
+//Description: Raises the Lift Bridge Mesh by 25 metres
+//Category: Misc.
+setfloat(0x0951A618, 99.71);
+setfloat(0x0951A5B8, 103.07);
+setfloat(0x0951A558, 68.01);
+#off
+setfloat(0x0951A618, 74.71);
+setfloat(0x0951A5B8, 128.07);
+setfloat(0x0951A558, 43.01);
+
+#cheat Raise Staunton Lift Bridge 
+//Author: Mister Enchilada
+//Description: Edited by: Absolute. Raises the Lift Bridge by 25 metres
+//Category: Misc.
+setfloat(0x08E6A9C8, 68.01);
+setfloat(0x0951A558, 68.01);
+setfloat(0x08E6A9C8, 68.01);
+setfloat(0x0951A558, 68.01);
+#off 
+setfloat(0x08E6A9C8, 43.01);
+setfloat(0x0951A558, 43.01);
+
+#cheat Lower Staunton Lift Bridge 
+//Author: Mister Enchilada
+//Description: Edited by: Asbolute. Lower the Lift Bridge by 25 metres
+//Category: Misc.
+setfloat(0x08E6A9C8, 43.01);
+setfloat(0x0951A558, 43.01);
+setfloat(0x08E6A9C8, 43.01);
+setfloat(0x0951A558, 43.01);
+#off 
+setfloat(0x08E6A9C8, 68.01);
+setfloat(0x0951A558, 68.01);
+
+#cheat Super Chopper With Hover Back Wheels
+//Author: Absolute
+//Category: Vehicles
+setchar(pcar + 0x50a, 0x5e);
+setchar(pcar + 0x50b, 0xaf);
+setchar(pcar + 0x50f, 0xff);
+setchar(pcar + 0x50F, 0x82);
+setchar(pcar + 0x50a, 0x5e);
+setchar(pcar + 0x50b, 0xaf);
+setchar(pcar + 0x50f, 0xff);
+setchar(pcar + 0x50F, 0x82);
+#off
+setchar(pcar + 0x50a, 0xa5);
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+setchar(pcar + 0x50F, 0x3f);
+
+#cheat 3D/2D Toni !!! 
+//Author: Absolute
+//Category: Player
+sethex(pplayer + 0x8b, 0x4c);
+#off
+sethex(pplayer + 0x8b, 0x00); 
+
+#cheat Ice-Capades Toni
+//Author: Absolute
+//Category: Player
+setchar(pplayer + 0x194, 11);
+setchar(pplayer + 0x194, 12);
+
+#cheat Tricked Out Wheels
+//Author: Dirtmuncher111
+//Description: Sorry for the scare, but dont just turn on the cheat and get in a car or the game will crash. Simply spawn a rhino (default) and get in it. Then while in it, turn on the cheat and get out. Now you can get in any car and it is tricked out. Not only does it have big wheels but it can shoot a cannon and blow up cars by hitting them, like a rhino. Enjoy! 
+//Category: Vehicles
+setchar(pcar + 0x058, 0xA2);
+
+#cheat Toni Holds Gun In Firing Position (Press O With A Gun)
+//Author: F00tballplaya
+//Category: Player
+setchar(pplayer + 0x0000034C, 22);
+#off
+setchar(pplayer + 0x0000034C, 1); 
+
+#cheat Toni Cant Jump
+//Author: F00tballplaya
+//Category: Player
+setchar(pplayer + 0x0000034C, 6); 
+#off
+setchar(pplayer + 0x0000034C, 1); 
+
+#cheat Toni Glides On One Foot
+//Author: F00tballplaya
+//Category: Player
+setchar(pplayer + 0x19A, 0x06);
+#off
+setchar(pplayer + 0x19A, 0x02); 
+
+#cheat Your Car Is White
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 1, 1);
+
+#cheat Your Car Is Red
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 3, 3);
+
+#cheat Your Car Is Blue
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 4, 4);
+
+#cheat Your Car Is Pink
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 5, 5);
+
+#cheat Your Car Is Yellow
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 6, 6);
+
+#cheat Your Car Is Baby Blue
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 93, 93);
+
+#cheat Your Car Is Green
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 16, 16);
+
+#cheat Your Car Is Brown
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 30, 30);
+
+#cheat Your Car Is Gold
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 65, 65);
+
+#cheat Your Car Is Dark Blue
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 79, 79);
+
+#cheat Your Car Is Light Green
+//Author: F00tballplaya
+//Category: Vehicles
+setchar(pcar + 0x01f0, 86, 86);
+
+#cheat Toni Shoots But Nothing Comes Out
+//Author: F00tballplaya
+setchar(pplayer + 0x0000034C, 24);
+#off
+setchar(pplayer + 0x0000034C, 1);
+
+#cheat All Cars Act Like A Bickle 76'
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0xB5);
+
+#cheat All Cars Act Like A PCJ 600
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0xCD);
+
+#cheat All Cars Act Like A HotRod
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0xBD);
+
+#cheat All Cars Act Like A Banshee
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0xA0);
+
+#cheat All Cars Act Like A Cheetah
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0x92);
+
+#cheat All Cars Act Like A Limo
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0x8C);
+
+#cheat All Cars Act Like A TrashMaster
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0x8B);
+
+#cheat All Cars Act Like A Mafia Car
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0xAC);
+
+#cheat All Cars Act Like A BF Injection
+//Author: F00tballplaya
+setchar(pcar + 0x058, 0x9B);
+
+#cheat Write The Message F00tballplaya Strikes Back!
+//Author: F00tballplaya
+//Category: Pointless
+//Description: AWESOME
+//Working: Yes
+setshort(08e4dac2, 0x46, 0x30, 0x30, 0x74, 0x62, 0x61, 0x6c, 0x6c, 0x70, 0x6c, 0x61, 0x79, 0x61, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6b, 0x65, 0x73, 0x20, 0x42, 0x61, 0x63, 0x6b, 0x21)
+setchar(08e4dac0, 0x01)
+#off
+setchar(08e4dac0, 0x00)
+
+#cheat Crazy Camera
+//Author: F00tballplaya
+//Category: Camera
+//Description: the camera goes out of control
+//Working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/crazyvid.gif
+setchar(pplayer + 0x19E, 39)
+
+#cheat Toni Glides On One Foot
+//Author: F00tballplaya
+//Category: Player
+//Description: toni glides on one leg
+//Working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/glidetoni.gif
+setchar(pplayer + 0x19A, 0x06);
+#off
+setchar(pplayer + 0x19A, 0x02);
+
+#cheat Spawn Barb Wired Fence Infront Of Staunton
+//Author: F00tballplaya
+//Category: Environment
+//Description: self explanatoery US version
+//Time: 25/01/2006 22:52:22
+setfloat(09591700, 303.31) 
+setfloat(09591704, -472.06) 
+setfloat(09591708, 24.46)  
+setshort(09591728, 0x1F3)
+
+#cheat Walk Foward Only Gang's Dont Attack
+//Author: XAaroncX
+//Description: Could be used for gangs never attack
+//Category: Player
+setchar(pplayer + 0x195, 0x36);
+
+#cheat 9999999999 cars destroyed
+//Author: adam35
+//Category: Misc
+//Description: 999999999 cars destroyed
+//Image: none
+//Time: 26/01/2006 07:03:20
+setint(0x08B5E148, 9999999999)
+
+#cheat Teleport: SSV Lake
+//Author: ANTHODU65
+//Category: Teleport
+//Description: Useful when you have a boat.
+//Time: 25/01/2006 16:28:05
+//Working: Yes
+teleport(-1230.50,730.50,40.50);
+
+#cheat Teleport: Cochran Dam Waters
+//Author: bill
+//Category: Teleport
+//Working: Yes
+//Time: 26/01/2006 14:29:45
+
+#cheat Max Ammo
+//Author: btvenom
+//Category: Weapons
+//Description: Max Ammo for Every Weapon, Infinite if left ON
+//Time: 21/01/2006 17:34:32
+//Working: Yes
+setint(pplayer + 0x05f0, 100);
+setint(pplayer + 0x05f4, 9999);
+setint(pplayer + 0x060c, 100);
+setint(pplayer + 0x0610, 9999);
+setint(pplayer + 0x0628, 100);
+setint(pplayer + 0x062c, 9999);
+setint(pplayer + 0x0644, 100);
+setint(pplayer + 0x0648, 9999);
+setint(pplayer + 0x0660, 100);
+setint(pplayer + 0x0664, 9999);
+setint(pplayer + 0x0664, 9999);
+setint(pplayer + 0x067c, 100);
+setint(pplayer + 0x0680, 9999);
+setint(pplayer + 0x000005D8, 9999);
+
+#cheat Teleport: Hidden Portland Ramp
+//Author: cal_87
+//Category: Teleport
+//Description: a ramp hidden behind marco bistro
+//Image: none
+//Time: 26/01/2006 21:49:39
+//Image: http://www.filelodge.com/files/hdd6/130361/ramp.gif
+//Working: Yes
+teleport(1259.26, -449.20, 31.10);
+
+#cheat Gods Powers
+//Author: Chase
+//Category: Misc
+//Description: Give god powers to all guns and car!
+//Time: 20/01/2006 23:36:22
+//Working: No
+setchar (pcar + 0x035f, 0x09)
+
+#cheat All Cars Act Like Cheetahs *fixed*
+//Author: Dirka Dirka Mahn
+//Category: Vehicle
+//Description: Get in a cheetah before using this cheat
+//Time: 23/01/2006 21:58:50
+//Working: Yes
+//Get in Cheetah first
+setchar(pcar + 0x058, 0x92);
+
+#cheat All cars act like Taxis *fixed*
+//Author: Dirka Dirka Mahn
+//Category: Vehicle
+//Description: Get in a Taxi before using this cheat,
+//Time: 23/01/2006 21:59:47
+//Working: Yes
+//Get in Taxi first
+setchar(pcar + 0x058, 0x97);
+
+#cheat Cool PCJ 600 Wall Riding Spot
+//Author: Dirka Dirka Mahn
+//Category: Teleport
+//Description: Teles you inside a cool wallriding location on staunton
+//Time: 24/01/2006 01:09:38
+//Working: Yes
+teleport(341.05, -1100.01, 53.72);
+
+#cheat Teleport Car Into Staunton Garage
+//Author: Dirka Dirka Mahn
+//Category: Teleport
+//Description: Teles you or your car into your garage
+//Time: 24/01/2006 01:08:41
+//Working: Yes
+teleport(301.04, -427.35, 25.56);
+
+#cheat Teleport to Staunton Stadium
+//Author: Dirka Dirka Mahn
+//Category: Teleport
+//Description: Teles you into the staunton stadium, on solid ground.
+//Time: 24/01/2006 01:10:30
+//Working: Yes
+teleport(-90.35, -24.39, 16.15);
+
+#cheat Teleport to Rubble Under Staunton
+//Author: Dirka Dirka Mahn
+//Category: Teleport
+//Description: Teles you to rock under staunton
+//Time: 24/01/2006 01:11:14
+//Working: Yes
+teleport(418.95, -67.59, -3.12);
+
+#cheat Toni Has A "Free Spirit"
+//Author: Dirka Dirka Mahn
+//Category: Vehicle
+//Description: Hit ON and you will leave Tonis "body", hit OFF to go back. You can use this like the dummy glitch in halo 2!
+//Time: 25/01/2006 04:40:32
+//working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/freespirit.gif
+setchar(pplayer + 0x00000042, 171);
+#off
+setchar(pplayer + 0x00000042, 170);
+
+#cheat Staunton Marquee Mod: Super Bowl XL ! *JaSoN*
+//Author: Erminator
+//Category: Environment
+//Description: Replaces with   Seattle v Pittsburgh XL -By the Erminator
+//Image: none
+//Time: 25/01/2006 23:35:20
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x53, 0x65, 0x61, 0x74. 0x74,  0x6C, 0x65, 0x20, 0x56, 0x20, 0x50, 0x69, 0x74, 0x74, 0x73, 0x62, 0x75, 0x72, 0x67, 0x68, 0x20, 0x58, 0x4C );
+
+#cheat Staunton Marquee XL v.2
+//Author: Erminator
+//Category: Environment
+//Description: Changes the Marquee to Seattle v Pittsburgh XL
+//Image: none
+//Time: 26/01/2006 19:49:10
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x53, 0x65, 0x61, 0x74, 0x74,  0x6C, 0x65, 0x20, 0x56, 0x20, 0x50, 0x69, 0x74, 0x74, 0x73, 0x62, 0x75, 0x72, 0x67, 0x68, 0x20, 0x58, 0x4C );
+
+#cheat Teleport: Staunton: Top Of Round Tower Near Park
+//Author: GML
+//Category: Teleport
+//Description: Teleport to a Top of a Round Tower
+//Working: Yes
+teleport(96.96,-974.72,55.73)
+
+#cheat Staunten Marquee Mod (™GML.IS.THE.BEST™)
+//Author: GML
+//Category: Misc
+//Description: Writes ™GML.IS.THE.BEST™ at the Staunton Marquee
+//Image: none
+//Time: 26/01/2006 14:50:01
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x99, 0x47, 0x4d, 0x4c, 0x2e, 0x49, 0x53, 0x2e, 0x54, 0x48, 0x45, 0x2e, 0x42, 0x45, 0x53, 0x54, 0x99);
+
+#cheat Welcome To Paradise!
+//Author: napoléon
+//Category: Teleport
+//Description: Teleport 100,000z in the sky.
+//Time: 25/01/2006 16:34:13
+teleport(-1230.50,730.50,100000.50);
+
+#cheat Teleport: to construction tunnel
+//Author: Noru
+//Category: Teleport
+//Description: teleport to construction zone
+//Time: 19/01/2006 23:35:11
+//Working: Yes
+teleport(560.23, 122.61, -20.03);
+
+#cheat Teleport inside love media building
+//Author: Noru
+//Category: Teleport
+//Description: Teleport inside of love media building
+//Time: 21/01/2006 05:46:39
+//Working: Yes
+teleport(220.61, -1478.10, -26.16);
+
+#cheat teleport inside phills store
+//Author: Noru
+//Category: Teleport
+//Description: teleport inside phills store
+//Time: 21/01/2006 05:49:07
+//Working: Yes
+teleport(174.46, -1254.27, -32.27);
+
+#cheat Can\'t Jump
+//Author: Noru
+//Category: Player
+//Description: Toni can\'t Jump
+//Image: none
+//Time: 28/01/2006 15:15:15
+setchar(pplayer   0x0000034C, 30);
+#off
+setchar(pplayer   0x0000034C, 1);
+
+#cheat Noru Zone Radio
+//Author: Noru
+//Category: Vehicle
+//Description: Thanks to ADePSP for change radio cheat. Change Liberty Jam to say Noru Zone Radio
+setshort(0x993F4B4, 0x4E, 0x4F, 0x52, 0x55, 0x20, 0x5A, 0x4F, 0x4E, 0x45, 0x20, 0x52, 0x41, 0x44, 0x49, 0x4F);
+#off
+setshort(0x993F4B4, 0x54, 0x48, 0x45, 0x20, 0x4C, 0x49, 0x42, 0x45, 0x52, 0x54, 0x59, 0x20, 0x4A, 0x41, 0x4D);
+
+#cheat Anton
+//Author: PI55ED
+//Category: Misc
+//Description: make Anton is the best apper
+//Time: 25/01/2006 17:34:43
+//Working: Yes
+setchar(0x08B586C8, 45, 45, 45, 45, 77, 73, 75, 69, 32, 75, 73, 67, 75, 83, 32, 65, 83, 83, 45, 45, 45, 45, 45);
+
+#cheat Get $999,999,999
+//Author: pspboy
+//Category: Misc
+//Description: This cheat will give you the maximum amount of money, but it will never decrease or increase while enabled
+//Time: 24/01/2006 05:16:31
+//Working: yes
+setint(0x08b89acc, 999999999);
+setint(0x08b89ad0, 999999999);
+
+#cheat Rocket Fist
+//Author: RASAL
+//Category: Weapons
+//Description: gives the grenade slot a rocket punch ability
+//Time: 23/01/2006 09:44:30
+//Working: Yes
+setchar(pplayer + 0x5cc, 0x10)
+
+#cheat spawns movie icon outside safe house (UK version)
+//Author: RASAL
+//Category: Environment
+//Description: spawns movie icon outside safe house (UK version) like the vice city one
+//Image: http://www.filelodge.com/files/hdd6/130361/movie.gif
+//Time: 25/01/2006 10:04:17
+//Working: Yes
+setfloat(099b6260,297.81);
+setfloat(099b6264,-442.35);
+setfloat(099b6268,26.02);
+setchar(099b6288, 0x47);
+setchar(099b6289, 0x02);
+
+#cheat old style hidden package from GTA 3 (UK version)
+//Author: RASAL
+//Category: Environment
+//Description: old style hidden package
+//Time: 25/01/2006 10:06:19
+//Working: Yes
+setfloat(099b6260,297.81);
+setfloat(099b6264,-442.35);
+setfloat(099b6268,26.02);
+setchar(099b6288, 0x08);
+setchar(099b6289, 0x02);
+
+#cheat RED LIGHT!
+//Author: red light
+//Category: Pointless
+//Description: write RED LIGHT! at the bottom of the screen
+//Image: none
+//Time: 27/01/2006 01:13:21
+setchar(08e4dac2, 0x52)
+setchar(08e4dac4, 0x45)
+setchar(08e4dac6, 0x44)
+setchar(08e4dac8, 0x20)
+setchar(08e4daca, 0x4C)
+setchar(08e4dacc, 0x49)
+setchar(08e4dace, 0x47)
+setchar(08e4dad0, 0x48)
+setchar(08e4dad0, 0x54)
+setchar(08e4dad0, 0x21)
+
+#cheat LCST!!!
+//Author: red light
+//Category: Pointless
+//Description: write LCST!!! (liberty city stunt team) on bottom
+//Image: none
+//Time: 27/01/2006 01:32:51
+setchar(08e4dac2, 0x4C)
+setchar(08e4dac4, 0x43)
+setchar(08e4dac6, 0x53)
+setchar(08e4dac8, 0x54)
+setchar(08e4daca, 0x21)
+setchar(08e4dacc, 0x21)
+setchar(08e4dace, 0x21)
+
+#cheat Wilboss
+//Author: Wilfried
+//Category: Vehicle
+//Description: La voiture du chef de la ville
+//Time: 20/01/2006 18:44:05
+//Working: No
+setchar(0x250, 05)
+
+#cheat Teleport: A Evil box peeps cant get in
+//Author: Landon
+//Category: Teleport
+//Description: Weird box of DOOM!!!
+//Image: None
+//Time: 27/01/2006 08:27:40
+teleport(240.03, -996.31, 21.82)
+
+#cheat Teleport to cool haunted house place!
+//Author: Landon
+//Category: Teleport
+//Image: none
+//Time: 28/01/2006 06:51:44
+teleport(171.25, -90.41, 20.17)
+
+#cheat teleport: dans le broyeur
+//Author: anthony65
+//Category: Teleport
+//Description: vous risquez d\'y passer
+//Image: none
+//Time: 27/01/2006 16:52:34
+teleport(1141.71,60.30,0.50);
+
+#cheat HELLO AGAIN!!!!
+//Author: anthony65
+//Category: Teleport
+//Description: ????????????????????????????????????????????????????????????????
+//Image: none
+//Time: 27/01/2006 16:55:21
+teleport(-41.35,-1522.22,26.10);
+
+#cheat Go Away Ryan
+//Author: Paycer
+//Category: Misc
+//Description: Displays \"Go Away Ryan\" at the bottom of the screen
+//Image: none
+//Time: 28/01/2006 04:55:50
+setshort(08e4dac2, 0x52, 0x79, 0x61, 0x6E, 0x20, 0x47, 0x6F, 0x20, 0x41, 0x77, 0x61, 0x79, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00)
+
+#cheat Ryan Go Away with color
+//Author: Paycer
+//Category: Misc
+//Description: Displays Go Away Ryan in color this time lol
+//Image: none
+//Time: 28/01/2006 05:42:46
+setshort(08e4dac2, 0x7e, 0x72, 0x7e, 0x52, 0x79, 0x61, 0x6E, 0x20, 0x7e, 0x62, 0x7e, 0x47, 0x6F, 0x20, 0x41, 0x77, 0x61, 0x79)
+
+#cheat Portland Sniper Point
+//Author: Patrick Fairbank
+//Category: Teleport
+//Description: tes you 2 sniper point in portland
+//Image: none
+//Time: 28/01/2006 15:53:12
+  teleport(1422.68, -840.84, 29.22);
+
+#cheat Portland Saw Mill
+//Author: Patrick Fairbank
+//Category: Teleport
+//Description: teles u 2 Portland Saw Mill
+//Image: none
+//Time: 28/01/2006 15:55:00
+  teleport(1176.64, -1009.56, 14.51);
+
+#cheat obj infront 90 degree rotation
+//Author: joek2100
+//Category: Objects
+setfloat(09591670, 0,-1,0);
+setfloat(09591680, 1,0,0);
+setfloat(09591690, 0,0,1);
+setfloat(095916A0, 295.59,-472.22, 25.17)
+setshort(095916C8, 0xcd7)
+
+#cheat obj infront 90 degree rotation opposite direction 
+//Author: joek2100
+//Description: for glass there is no difference, but for other objects like 0x1E0 (keep out gate) this will make it face the opposite direction
+//Category: Objects
+setfloat(09591610, 0,1,0);
+setfloat(09591620, -1,0,0);
+setfloat(09591630, 0,0,1);
+setfloat(09591640, 292.28,-462.95, 25.47)
+setshort(09591668, 0x1E0)
+
+#cheat obj infront 180 degree rotation opposite direction
+//Author: joek2100
+//Description: for glass there is no difference, but for other objects like 0x1E0 (keep out gate) this will make it face the opposite direction
+//Category: Objects
+setfloat(095915B0, -1,0,0)
+setfloat(095915C0, 0,-1,0) 
+setfloat(095915D0, 0,0,1)
+setfloat(095915E0, 298.67,-457.74, 25.48)
+setshort(09591608, 0x1E0)
+
+#cheat obj infront 45 degree
+//Author: joek2100
+//Category: Objects
+setfloat(09591550, 1,-1,0);
+setfloat(09591560, 1,0,0);
+setfloat(09591570, 0,0,1);
+setfloat(09591580, 299.90,-438.05, 26.02)
+setshort(095915A8, 0xcd7)
+
+#cheat obj infront 45 degree opposite
+//Author: joek2100
+//Category: Objects
+setfloat(095914F0, 1,1,0);
+setfloat(09591500, -1,0,0);
+setfloat(09591510, 0,0,1);
+setfloat(09591520, 290.59,-439.22, 26.02)
+setshort(09591548, 0xcd7)
+
+#cheat Hoverbike
+//Author: begabamboo, supacasey & Ollie199090
+//Category: Vehicles
+setchar(pcar + 0x50a, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x50f, 0xff);
+#off
+setchar(pcar + 0x50a, 0xa5);
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+
+#cheat Sideways Tires DONT USE ON BIKES
+//Author: begabamboo, supacasey & Ollie199090
+//Description: Thanks Ne0n and fyrehart (sideways wheels) And Nathanboi211 (for drive on water cheat)
+//Category: Vehicles
+sethex(pcar +0x4f0, 00);
+sethex(pcar +0x4f1, 00);
+sethex(pcar +0x4f2, 00);
+sethex(pcar +0x4f3, 00);
+sethex(pcar +0x4f4, 00);
+sethex(pcar +0x4f5, 00);
+sethex(pcar +0x4f6, 00);
+sethex(pcar +0x4f7, 00);
+sethex(pcar +0x4f8, 00);
+sethex(pcar +0x4f9, 00);
+sethex(pcar +0x4fA, 80);
+sethex(pcar +0x4fC, 1D);
+sethex(pcar +0x4fE, 13);
+sethex(pcar +0x510, 00);
+sethex(pcar +0x511, 00);
+sethex(pcar +0x512, 00);
+sethex(pcar +0x513, 00);
+sethex(pcar +0x514, 00);
+sethex(pcar +0x515, 00);
+sethex(pcar +0x516, 00);
+sethex(pcar +0x517, 00);
+sethex(pcar +0x518, 00);
+sethex(pcar +0x519, 00);
+sethex(pcar +0x51A, 80);
+sethex(pcar +0x51C, 1D);
+sethex(pcar +0x51E, 13);
+sethex(pcar +0x530, 00);
+sethex(pcar +0x531, 00);
+sethex(pcar +0x532, 00);
+sethex(pcar +0x533, 00);
+sethex(pcar +0x534, 00);
+sethex(pcar +0x535, 00);
+sethex(pcar +0x536, 00);
+sethex(pcar +0x537, 00);
+sethex(pcar +0x538, 00);
+sethex(pcar +0x539, 00);
+sethex(pcar +0x53A, 80);
+sethex(pcar +0x53C, 1D);
+sethex(pcar +0x53E, 13);
+sethex(pcar +0x550, 00);
+sethex(pcar +0x551, 00);
+sethex(pcar +0x552, 00);
+sethex(pcar +0x553, 00);
+sethex(pcar +0x554, 00);
+sethex(pcar +0x555, 00);
+sethex(pcar +0x556, 00);
+sethex(pcar +0x557, 00);
+sethex(pcar +0x558, 00);
+sethex(pcar +0x559, 00);
+sethex(pcar +0x55A, 80);
+sethex(pcar +0x55C, 1D);
+sethex(pcar +0x55E, 13);
+setchar(0x08b33e32, 1);
+#off
+setchar(0x08b33e32, 0); 
+
+#cheat Builds part of rail road tracks threw Staunton Safehouse
+//Author: F00tballplaya & Waterbottle
+//Category: Misc.
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87)
+setchar(099b75a8, 0x3a)
+setchar(099b75a9, 0x01)
+
+#cheat Builds part of a bridge threw Staunton Safehouse
+//Author: F00tballplaya & Waterbottle
+//Category: Misc.
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87)
+setchar(099b75a8, 0x31)
+setchar(099b75a9, 0x01)
+
+#cheat part of rail road tracks threw Staunton safehouse
+//Author: F00tballplaya & Waterbottle
+//Category: Environment
+//Description: NICE!
+//Time: 24/01/2006 23:04:12
+//Working: Yes
+//US Version Only
+setfloat(099b7580, 276.07)
+setfloat(099b7584, -422.28)
+setfloat(099b7588, 60.87)
+setchar(099b75a8, 0x3a)
+setchar(099b75a9, 0x01)
+
+#cheat Create petrol pump outside safe house (UK version)
+//Author: Waterbottle & ADePSP
+//Description: Create an object outside the Staunton Safehouse.
+//Category: Surroundings
+//Time: 24/01/2006 14:16:00
+//Working: Yes
+setfloat(099b6260,297.81);
+setfloat(099b6264,-442.35);
+setfloat(099b6268,26.02);
+setchar(099b6288, 0x3b);
+setchar(099b6289, 0x02);
+
+#cheat Eternal Day
+//Author: Gtaguy/Conquerer
+//Category: Player
+//Description: Makes The Game Go To Eternal Daytime
+//Image: none
+//Time: 26/01/2006 23:48:43
+//Working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/day.gif
+setchar(0x08b5e090, 12, 00);
+
+#cheat Eternal Nighttime
+//Author: Gtaguy/Conquerer
+//Category: Player
+//Description: Makes The Game Go Into Nighttime Forever
+//Image: none
+//Time: 26/01/2006 23:49:30
+//Working: Yes
+//Image: http://www.filelodge.com/files/hdd6/130361/night.gif
+setchar(0x08b5e090, 00, 00);
+
+#cheat ssmax
+//Author: max/Ollie199090
+//Category: Player
+//Description: maxou
+//Image: none
+//Time: 28/01/2006 15:38:24
+setchar(pcar   0x50F, 0x82);
+#off
+setchar(pcar   0x50F, 0x3f);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+By homie from another homie:
+
+0994C9B0 for infinte shotgun ammo for all shotguns & infinite Minigun ammo
+0994CA04 for infinte RPG ammo
+0994C978 for all grenades and moltovies. 
+
+
+By mokmuud:
+
+god this is tough
+all i got so far is an area out side of the staunton safehouse right in front of the garage to constantly flame lol
+setchar(0x08b89e70, 1)
+
+
+By teknogeek:
+
+Horn 1: "0x02a8" 00, 01
+Lock horn: "0x02ad" 00, 01
+I'de REALLY like to find the offset for the car alarm...
+
+
+Not Sure:
+
+#cheat Cars Drive On Water
+setchar(0x08b33e32, 1);
+#off
+setchar(0x08b33e32, 0);
+
+#cheat 1
+setchar(0x08b491a9, 1);
+
+#cheat 2
+setchar(0x08dce71b, 1);
+
+#cheat 3
+setchar(0x08e68feb, 1);
+
+#cheat 4
+setchar(0x08e6977f, 1);
+
+#cheat 5
+setchar(0x09fcf130, 1);
+
+#cheat 6
+setchar(0x09fcf15f, 1);
+
+#cheat 7
+setchar(0x09fcf253, 1);
+
+#cheat Turn on Whoopee song (BETA);
+setchar(0x0998B82D, 1);
+
+No Radio
+setchar(pcar + 0x02a0, 0x00)
+
+#cheat Reflection removed from cars
+setchar(pcar + 0x048, 0x08);
+
+#cheat Gravity 30.0g
+//Author: Unknown
+//Description: High gravity to try to kill all peds
+//Category: Pedestrians
+setshort(0x08a0e994, 0x3E76);
+#off
+setshort(0x08a0e994, 0x3C03); 
+
+#cheat Drive On Water
+setchar(0x08B33E32, 1);
+#off 
+setchar(0x08B33E32, 0);
+
+#cheat Infinite Ammo
+setint(pplayer + 0x05f0, 100); // (int) handgun ammo loaded
+setint(pplayer + 0x05f4, 200); // (int) handgun ammo total
+setint(pplayer + 0x060c, 100); // (int) shotgun ammo loaded
+setint(pplayer + 0x0610, 200); // (int) shotgun ammo total
+setint(pplayer + 0x0628, 100); // (int) smg ammo loaded
+setint(pplayer + 0x062c, 200); // (int) smg ammo total
+setint(pplayer + 0x0644, 100); // (int) assault rifle ammo loaded
+setint(pplayer + 0x0648, 200); // (int) assault rifle ammo total
+setint(pplayer + 0x0660, 100); // (int) minigun ammo loaded
+setint(pplayer + 0x0664, 200); // (int) minigun ammo total
+setint(pplayer + 0x0664, 200); // (int) rocket launcher ammo total
+setint(pplayer + 0x067c, 100); // (int) sniper rifle ammo loaded
+setint(pplayer + 0x0680, 200); // (int) sniper rifle ammo total
+
+#cheat Teleport: Bump & Grinds Area
+//Author: Unknown
+//Category: Teleport
+//Description: Cross Country
+//Time: 25/01/2006 16:03:32
+//Working: Yes
+teleport(799.41,17.47,5.42);
+
+#cheat Teleport : 8-Ball Area
+//Author: Unknown
+//Category: Teleport
+//Description: teleportation a 8 ball
+//Time: 25/01/2006 16:49:10
+//Working: Yes
+teleport(1282.28,-103.86,14.78);
+
+
+
+
+
+
+
+
+0x8b5e200 = Pedestrians Wasted
+
+I found the addresses for the rest of the weapon types.
+Here's a complete list of the addresses to change the weapons in a current weapon slot.
+Fist: 0x594
+Melee: 0x5b0
+Grenades: 0x5cc
+handguns: 0x5e8
+shotguns: 0x604
+uzi: 0x62b
+assault rifles: 0x63c
+Heavy Arms: 0x658
+Snipers: 0x674
+using these codes you can get weapons like my flame thrower/mini gun combo.
+just get the weapon you want to use as the base model in it's correct slot. 
+ex. if you want your weapon to have a colt model, then you would change the handgun slot to the colt, wich is weapon 12.
+Then you would select what weapon you want the colt to react like. 
+ex. if you want it to react like a m-60 you would still change the handgun address to the m-60, wich is weapon 22. (there are actually two m-60's in the game memory. one fires faster than the other. I think the fast one is weapon 20 and the other is 22.)
+now you have a colt python that fires like an m-60 with all the power and everything  
+This is a just a rough weapon modifier, until an easier way comes out  
+
+I found the bloody footprint address.
+0x198
+00=no blood
+40=blood
+but it only stays for one print, before resetting.
+Can this be turned into a cheat, or added to cheat device?
+EDIT: change 0x197 to 0F and Tony will constantly bleed. 
+
+invisible Tony:
+change 0x19A to E2 
+
+Hey guys. I'm pretty new to this stuff (like the hex hacking and whatnot) but I did find a nice little Burnout 3-type glitch in LCS. 
+#cheat Teleport: B3 Glitch
+teleport(1064.69, -260.59, 6.65);
+Grab a PCJ (or any bike, but not a car and not on foot, Wont work) and drive into the corner this code teleports you to. Nothing really big, but cool and interesting to pull off in multiplayer. XP
+Also, I had an idea to go to all the package locations and write down the coords, then input them all into teleport codes and release them. So where if you want package 1, go into your menu and choose "Package 1" or something and it teleports you there. What do you think. Good idea?
+Also, sorry if this is a dumb question, but I was wondering how you edit the character (as in toni). The only options I have are Hex Editor, Edit Playerobject, Edit playercar, and type. Sorry for the noobish question. :3 
+
+I found a way to "leave toni behind"
+I have a cheat that when activated will allow the car to drive away, leaving tony sitting in the driving position, wherever the cheat was activated.
+I'm just testing it some more before I release it.
+CODE  
+#cheat Leave Toni Behind
+setchar(pcar + 0x077, 0xFF); 
+it's very glitchy.
+to use it get into a car and drive onto a road.
+when you activate the cheat it will spawn to to a road near your staunton safehouse.
+you will then be able to either de-activate the cheat, and continue driving, without toni, or the game will crash.
+I've had the best luck entering the cheat while on the road right behind the staunton safehouse.
+you can still get busted, or killed in the car, it's just toni's "skin" in left behind. and now an invisible toni drives it. 
+
+i found this cheat by acciedent,,
+it turns off the radio,, and waves,, and background sound like that,, but unfortunatley it cuts in and out,,
+it was when i was trying to make toni a car,,(didnt work)
+anways the hex code is 08B35069,, i wont make the actually code cause i dont think its good enough,, maybe it does other stuff too?? 
+
+i found a "not so useful code" again,, this time i have one that you CANT do a wheelie,,
+i was trying to get a wheelie all the time code,, but got that instead,, maybe if some one else looks at it the can get the wheeli all the time code,,
+the hex is 08B89CA4
+
+7E is the number when i pulled down on my analogue stick 

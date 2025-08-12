@@ -1,0 +1,250 @@
+#cheat Ultra Crazy Camera
+//ID: 11206
+//Score: 199
+//Author: vettefan88
+//Category: Camera
+//Description: This will make the camera react Really weird, everything will looked skewed and it gives a real strange effect.
+//
+//definitely worth a download, you'll love the effect!
+//(check out the pic)
+//Image: http://img45.imageshack.us/img45/2817/crazycamera0gu.gif
+//Time: 23/05/2006 00:46:21
+//Working: Yes
+setfloat(0x8b834f4, 150);
+
+#cheat Spinning Camera
+//ID: 11200
+//Score: 55
+//Author: vettefan88
+//Category: Camera
+//Description: This will make the camera rotate around toni really really fast.
+//Image: none
+//Time: 23/05/2006 00:31:16
+//Working: Yes
+setfloat(8b83500, 1);
+
+#cheat Stretched veiw
+//ID: 14594
+//Score: 22
+//Author: ice cold killer
+//Category: Camera
+//Description: a weird stretched view
+//Image: none
+//Time: 12/07/2006 07:51:51
+//Working: Yes
+setfloat(0x8b834f4, 151);
+
+#cheat Low Quality Camera
+//ID: 14876
+//Score: 45
+//Author: S.O.G.
+//Category: Camera
+//Description: The effect it too hard to describe, CHECK OUT THE PICTURE TO SEE IT IN ACTION!
+//Image: http://img53.imageshack.us/img53/4480/soglowqualhz3.gif
+//Time: 17/07/2006 01:17:29
+//Working: Yes
+setfloat(0x8b834f4, 400);
+
+#cheat camara
+//ID: 16360
+//Score: 27
+//Author: rhys26021994
+//Category: Camera
+//Description: picture time  say cheese :D
+//Image: none
+//Time: 12/08/2006 16:12:15
+//Working: Yes
+//Created Using Pickup Creator
+//By RASAL
+setfloat(0x08e2d800, 272.15, -422.6, 26.02);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0x253, 0x253);
+setshort(0x08e2d826, 0x124);
+setchar(0x08e2d832, 0x0f);
+setchar(0x08e2d833, 0x00);
+setchar(0x08e2d850, 0xff);
+
+#cheat No Signal Toni
+//ID: 16432
+//Score: 33
+//Author: wert
+//Category: Camera
+//Description: Toni disappears sometimes and after 1-2 seconds he is visible again, and then he disappears again and so on...(toni's appearance is irregularly, like a TV with bad signal)
+//Image: none
+//Time: 14/08/2006 17:26:38
+//Working: Yes
+setchar(pplayer + 0x46, 0x00)
+#off
+setchar(pplayer + 0x46, 0x00)
+
+#cheat FPS TONI !? 2 (MADE IN JAPAN)
+//ID: 16592
+//Score: 30
+//Author: kantagon
+//Category: Camera
+//Description: try it 2
+//Image: none
+//Time: 21/08/2006 20:25:05
+//Working: Yes
+setfloat(0x8b834f4, 10);
+setchar(pplayer + 0x19A, 0xE2);
+#off
+setchar(pplayer + 0x19A, 0x02);
+
+#cheat No Camera Rotation
+//ID: 11199
+//Score: 75
+//Author: vettefan88
+//Category: Camera
+//Description: If you would prefer for the topdown camera to not spin with toni then use this cheat alongside the classic topdown camera cheat.
+//Image: none
+//Time: 23/05/2006 00:29:57
+//Working: Yes
+setfloat(0x08b834FC, 100);
+setfloat(0x08b83500, 0);
+
+#cheat SUPER LOW QUALITY CAMERA (MADE IN JAPAN)
+//ID: 16593
+//Score: 19
+//Author: kantagon
+//Category: Camera
+//Description: where is Toni ?
+//Image: none
+//Time: 21/08/2006 20:28:34
+//Working: Yes
+setfloat(0x8b834f4, 1200);
+
+#cheat Center Camera Behind You
+//ID: 4036
+//Score: 90
+//Author: jacob26
+//Category: Camera
+//Description: Center Camera Behind You
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// by jacob26
+// useful in helicopters
+setchar(0x08B8344A, 1);
+
+
+#cheat Interior Car W/O Flashing parts!
+//ID: 7526
+//Score: 66
+//Author: Finbleoid
+//Category: Camera
+//Description: I need a bit of help really but im trying to get an in car veiw with a steering wheel and dashboard...
+//Image: none
+//Time: 17/04/2006 11:16:19
+//Working: Yes
+setchar(0x08B83468, 0);
+setfloat(0x08B83374, -7);
+
+#cheat Lock Camera when in a car
+//ID: 5840
+//Score: 101
+//Author: Waterbottle
+//Category: Camera
+//Description: This locks the camera while you are in a vehicle in opposition to the other lock camera cheat that only work while you are on foot. iif yyou leave a vehicle while it's turned on the camera will stay locked after you leave it
+//Image: http://www.waterbottle.y4kstudios.com/lockincar.gif
+//Time: 23/03/2006 10:09:24
+//Working: Yes
+setchar(0x08B8344C, 4)
+
+//edited by Waterbottle on 02.04.2006 15:50:37
+
+#cheat Classic Top Down Camera
+//ID: 5517
+//Score: 1106
+//Author: vettefan88
+//Category: Camera
+//Description: This puts the camers above Toni giving you the classic look from the original games. NOW WORKS IN CARS
+//Image: http://www.filelodge.com/files/hdd9/233662/topdown.gif
+//Time: 08/03/2006 20:00:36
+//Working: Yes
+setfloat(0x08B833DC, 30);
+setfloat(0x08B83374, 30);
+setfloat(0x08B834EC, -2);
+setchar(0x08B834F0, 0x06, 0xA0, 0xF6, 0xBC);
+//edited by vettefan88 on 3/10/2006 10:00:33 PM
+
+#cheat Interior car camera
+//ID: 5516
+//Score: 1018
+//Author: vettefan88
+//Category: Camera
+//Description: This puts the camera inside of your car.
+//Image: none
+//Time: 08/03/2006 19:58:35
+//Working: Yes
+setchar(0x08B83468, 0);
+setfloat(0x08B83374, -6);
+
+//edited by theY4Kman on 3/11/2006 9:48:17 AM
+
+#cheat Only camera is moveable
+//ID: 5319
+//Score: 47
+//Author: Waterbottle
+//Category: Camera
+//Description: Toni invisible(no shadow), can't move but camera is spinable
+//Image: none
+//Time: 26/02/2006 19:16:28
+//Working: Yes
+setchar(pplayer + 0x34c, 32)
+//edited by Waterbottle on 01.03.2006 22:45:46
+
+#cheat Crazy Camera
+//ID: 4228
+//Score: 47
+//Author: F00tballplaya
+//Category: Camera
+//Description: the camera goes out of control
+//Image: http://www.filelodge.com/files/hdd6/130361/crazyvid.gif
+//Time: 25/01/2006 22:15:44
+//Working: Yes
+setchar(pplayer + 0x19E, 39)
+
+
+#cheat Have Camera/Infinite Camera Shots #1
+//ID: 3903
+//Score: 67
+//Author: Jérémie Blanc
+//Category: Camera
+//Description: Have Camera/Infinite Camera Shots #1
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x00000698, 4000);
+//Works when you have a camera.
+
+
+#cheat Have Camera/Infinite Camera Shots #2
+//ID: 3904
+//Score: 83
+//Author: Jérémie Blanc
+//Category: Camera
+//Description: Have Camera/Infinite Camera Shots #2
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x0000069C, 4000);
+//Works when you have a camera.
+
+
+#cheat Lock Camera
+//ID: 3913
+//Score: 181
+//Author: Chrislawrance
+//Category: Camera
+//Description: Lock Camera
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// by chrislawrance, requires CheatDevice 0.7d
+setchar(pplayer + 0x560, 1);
+#off
+setchar(pplayer + 0x560, 0);
+
+//edited by ADePSP on 25/02/2006 21:20:02
+

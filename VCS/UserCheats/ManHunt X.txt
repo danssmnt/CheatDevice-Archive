@@ -1,0 +1,214 @@
+#cheat ManHunt X
+static menu;
+choices = 10;
+setchar(0x08E93604,  0x1);
+if(press & CTRL_DOWN && menu < choices - 1) {
+   menu++;
+setchar(0x08E93604,  0x0);
+}
+if(press & CTRL_UP && menu > 0) {
+   menu--;
+setchar(0x08E93604,  0x0);
+}
+setshort(0x08E92FFC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+setshort(0x08E931FC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+setshort(0x08E933FC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+if(menu == 0) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x98B5051,  0xff);
+setchar(0x98B504C,  0xff);
+setchar(0x98B504f,  0xff);
+setchar(0x98B5087,  0xff,  0xff);
+setchar(0x98B5038,  0xff,  0xff);
+}
+setshort(0x08E92FFC + 18,  '~',  'n',  '~',  '>',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 18,  '~',  'n',  '~',  '>',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 18,  '~',  'n',  '~',  '>',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 1) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x01);
+}
+setshort(0x08E92FFC + 48,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 48,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 48,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 2) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8978,  0x00);
+setchar(0x8BC8984,  0x07);
+}
+setshort(0x08E92FFC + 80,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 80,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 80,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 3) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8,  1,  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'A',  'O',  0); 
+}
+setshort(0x08E92FFC + 108,  '~',  'n',  '~',  '>',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC + 108,  '~',  'n',  '~',  '>',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC + 108,  '~',  'n',  '~',  '>',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu == 4) {
+if(buttons & CTRL_CROSS)
+{ 
+setchar(0x08baef2c,   1); 
+setchar(0x08bacdf5,   1); 
+}
+setshort(0x08E92FFC + 136,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 136,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 136,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 5) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x0c);
+setfloat(pplayer + 0x4E4,   50.0);
+}
+setshort(0x08E92FFC + 164,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 164,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 164,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 6) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8,  1,  '~',   'r',   '~',  'T',  'e',  's',  't',  ' ',  'C',  'a',  's',  'e',  ':',  ' ',  '4',  '1',  '2',  '9',  '6',  '7',  '~',   'w',   '~',  0);
+} 
+setshort(0x08E92FFC + 194,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E931FC + 194,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E933FC + 194,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+}
+if(menu == 7) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8,  1,  '~',   'r',   '~',  'T',  'e',  's',  't',  ' ',  'C',  'a',  's',  'e',  ':',  ' ',  '4',  '1',  '2',  '9',  '6',  '6',  '~',   'w',   '~',  0);
+} 
+setshort(0x08E92FFC + 220,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E931FC + 220,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E933FC + 220,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+}
+if(menu == 8) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x06);
+}
+setshort(0x08E92FFC + 248,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E931FC + 248,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E933FC + 248,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+}
+if(menu == 9) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x08);
+}
+setshort(0x08E92FFC + 278,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 278,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 278,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 0) {
+setshort(0x08E92FFC + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 1) {
+setshort(0x08E92FFC + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 2) {
+setshort(0x08E92FFC + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 3) {
+setshort(0x08E92FFC + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu > 4) {
+setshort(0x08E92FFC + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 5) {
+setshort(0x08E92FFC + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 6) {
+setshort(0x08E92FFC + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E931FC + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E933FC + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+}
+if(menu > 7) {
+setshort(0x08E92FFC + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E931FC + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E933FC + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+}
+if(menu > 8) {
+setshort(0x08E92FFC + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E931FC + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E933FC + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+}
+if(menu > 9) {
+setshort(0x08E92FFC + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 0) {
+setshort(0x08E92FFC +0x2 + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 18,  '~',  'n',  '~',  'K',  'i',  'l',  'l',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 1) {
+setshort(0x08E92FFC +0x2 + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 48,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 2) {
+setshort(0x08E92FFC +0x2 + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 80,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 3) {
+setshort(0x08E92FFC +0x2 + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC +0x2 + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC +0x2 + 108,  '~',  'n',  '~',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu < 4) {
+setshort(0x08E92FFC +0x2 + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 136,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 5) {
+setshort(0x08E92FFC +0x2 + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 164,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  'g',  'e',  'd',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 6) {
+setshort(0x08E92FFC +0x2 + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E931FC +0x2 + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+setshort(0x08E933FC +0x2 + 194,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r');
+}
+if(menu < 7) {
+setshort(0x08E92FFC +0x2 + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E931FC +0x2 + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+setshort(0x08E933FC +0x2 + 220,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b');
+}
+if(menu < 8) {
+setshort(0x08E92FFC +0x2 + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E931FC +0x2 + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+setshort(0x08E933FC +0x2 + 248,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n');
+}
+if(menu < 9) {
+setshort(0x08E92FFC +0x2 + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 278,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+#cheat New Construction
+moveto(277.57,-162.93,14.24);  object(0x1CA4,0,0,353);

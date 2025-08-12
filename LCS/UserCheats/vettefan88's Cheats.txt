@@ -1,0 +1,4020 @@
+#cheat Staunton Marquee Mod, maxbot.com
+//ID: 4105
+//Score: 22
+//Author: vettefan88
+//Category: Misc
+//Description: replaces www.grandtheftauto3.com with www.maxbot.com in staunton marquee concept, and creation by vettefan
+//Image: none
+//Time: 18/01/2006 22:13:45
+//Working: Yes
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D, 0x57, 0x57, 0x57, 0x2E, 0x4D, 0x41, 0x58, 0x42, 0x4F, 0x54, 0x2E, 0x43,  0x4F, 0x4D, 0x2D, 0x2D, 0x2D, 0x2D);
+
+
+#cheat Weapon Set 1 Cheat includes Smoke Bomb
+//ID: 3914
+//Score: 118
+//Author: vettefan88
+//Category: Weapons
+//Description: Weapon Set 1 Cheat includes Smoke Bomb
+//Image: http://www.filelodge.com/files/hdd6/130361/gas.gif
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// Do this button combo cheat after after turning this chear on,
+//UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+setshort(0x08a93ad0, 0x000e);
+setshort(0x08a93ad4, 200);
+
+
+#cheat Invisible Toni
+//ID: 3915
+//Score: 1239
+//Author: vettefan88
+//Category: Player
+//Description: Invisible Toni
+//Image: http://www.filelodge.com/files/hdd6/130361/invisible.gif
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x19A, 0xE2);
+#off
+setchar(pplayer + 0x19A, 0x02);
+
+
+#cheat Get unlimited smoke Bombs
+//ID: 3916
+//Score: 572
+//Author: vettefan88
+//Category: Weapons
+//Description: Get unlimited smoke Bombs
+//Image: http://www.filelodge.com/files/hdd6/130361/gas.gif
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x5D4, 0x01);
+setchar(pplayer + 0x5D9, 0xFF);
+setchar(pplayer + 0x5CC, 0x0E);
+//even if you have no grenades already on you this will set up everything, including giving you unlimited ammo for it.
+//there won't be any number for the ammo amount but it will still be unlimited. 
+
+
+#cheat Bloody Footprints
+//ID: 3917
+//Score: 276
+//Author: vettefan88
+//Category: Player
+//Description: Bloody Footprints
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x198, 0x40);
+#off
+setchar(pplayer + 0x198, 0x00);
+
+
+#cheat Always Bleeding
+//ID: 3918
+//Score: 91
+//Author: vettefan88
+//Category: Player
+//Description: Always Bleeding
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pplayer + 0x197, 0x0F);
+#off
+setchar(pplayer + 0x197, 0x00);
+
+
+#cheat Super Punch
+//ID: 3919
+//Score: 3052
+//Author: vettefan88
+//Category: Player
+//Description: Super Punch
+//Image: http://www.filelodge.com/files/hdd6/130361/spunch.gif
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Gives Toni Super Strength
+setchar(pplayer + 0x0bb3, 0x01);
+
+#cheat Radar: Map and blips
+//ID: 3920
+//Score: 30
+//Author: vettefan88
+//Category: Misc
+//Description: Radar: Map and blips
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Radar settings, found by vettefan.
+setchar(0x08B59B0C, 0);
+
+
+#cheat Radar: Blips Only
+//ID: 3921
+//Score: 18
+//Author: vettefan88
+//Category: Misc
+//Description: Radar: Blips Only
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Radar settings, found by vettefan.
+setchar(0x08B59B0C, 1);
+
+
+#cheat Radar: Off
+//ID: 3922
+//Score: 20
+//Author: vettefan88
+//Category: Misc
+//Description: Radar: Off
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Radar settings, found by vettefan.
+setchar(0x08B59B0C, 2);
+
+
+#cheat 100 packages collected
+//ID: 3923
+//Score: 64
+//Author: vettefan88
+//Category: Misc
+//Description: 100 packages collected
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//This says you collected 100 packages. made by vettefan
+setint(0x08B89AD4, 100);
+
+
+#cheat Constant skid marks on motorcycle
+//ID: 3924
+//Score: 21
+//Author: vettefan88
+//Category: Vehicle
+//Description: Constant skid marks on motorcycle
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//by vettefan
+//bikes leave a constant skid mark, and the back left tire of cars do aswell.
+setchar(pcar + 0x5b0, 0x03)
+//Waterbottle: It was set at not working. bu tit works for me... I'm going to set this to unknowm
+//edited by Waterbottle on 10.03.2006 16:55:58
+
+#cheat Brake lights always on
+//ID: 3925
+//Score: 21
+//Author: vettefan88
+//Category: Vehicle
+//Description: Brake lights always on
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//by vettefan
+//your brake lights will always be on
+setchar(pcar + 0x252, 0x80)
+setchar(pcar + 0x253, 0x3F)
+
+
+#cheat other helicopter act like hunter
+//ID: 3926
+//Score: 107
+//Author: vettefan88
+//Category: Vehicle
+//Description: other helicopter act like hunter
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//same as all other ones like this
+setchar(pcar + 0x058, 0xD5);
+
+
+#cheat Bump and Grinds course 3
+//ID: 4146
+//Score: 33
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, and automatically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 02:58:02
+//Working: Yes
+setchar(09F6F9B9, 00);
+setchar(09F6F9C4, 03);
+
+//edited by Waterbottle on 12.03.2006 14:19:55
+
+#cheat Bump and Grinds course 2
+//ID: 4145
+//Score: 32
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, Do not use with other mission timer cheats
+//Image: none
+//Time: 21/01/2006 02:56:59
+//Working: Yes
+setchar(09F6F9C5, 00);
+setchar(09F6F9D0, 03);
+
+//edited by Waterbottle on 12.03.2006 14:19:44
+
+#cheat Bump and Frinds course 1
+//ID: 4144
+//Score: 29
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, atomatically on last lap
+//Image: none
+//Time: 21/01/2006 02:55:55
+//Working: Yes
+setchar(09F6F995, 00);
+setchar(09F6F9A0, 03);
+
+//edited by Waterbottle on 12.03.2006 14:19:19
+
+#cheat Unlimited mission timer in the scrapyard challenge
+//ID: 4131
+//Score: 115
+//Author: vettefan88
+//Category: Misc
+//Description: This will give you unlimited time in the scrapyard challenge, Do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:52:40
+//Working: Yes
+setchar(0x09F6F920, 0xFF)
+
+
+#cheat Unlimited car salesman mission timer
+//ID: 4130
+//Score: 123
+//Author: vettefan88
+//Category: Misc
+//Description: Give you unlimited car salesman mission timer, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:49:37
+//Working: Yes
+setchar(0x09F6F99E, 0xFF)
+
+
+#cheat No "bump and grinds" mission timer
+//ID: 4129
+//Score: 61
+//Author: vettefan88
+//Category: Vehicle
+//Description: Your bum and grinds mission timer will never increase, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:48:51
+//Working: Yes
+setchar(0x09F6F995, 0x00)
+
+//edited by Waterbottle on 02.03.2006 22:33:17
+
+#cheat Unlimited firetruck mission timer
+//ID: 4128
+//Score: 161
+//Author: vettefan88
+//Category: Misc
+//Description: Gives you unlimited time in the firetruck mission, do not use with any other mission timers.
+//Image: none
+//Time: 20/01/2006 18:47:58
+//Working: Yes
+setchar(0x09F6FB46, 0xFF)
+
+
+#cheat Unlimited taxi mission timer
+//ID: 4127
+//Score: 67
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will give you unlimited taxi mission timer, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:45:13
+//Working: Yes
+setchar(0x09F6F91A, 0xFF)
+
+
+#cheat Unlimited Taxi timer + tip
+//ID: 4125
+//Score: 171
+//Author: vettefan88
+//Category: Misc
+//Description: This will give you unlimited time in the taxi mission, plus never decreasing tip bar. do not use with any other mission cheats.
+//Image: none
+//Time: 20/01/2006 18:44:02
+//Working: Yes
+setchar(0x09F6F922, 0xFF)
+setchar(0x09F6F930, 0xFF)
+
+
+#cheat unlimited vigilante mission timer
+//ID: 4124
+//Score: 150
+//Author: vettefan88
+//Category: Misc
+//Description: Unlimited time in vigilante mission. Do not use with any other timer cheats
+//Image: none
+//Time: 20/01/2006 18:41:50
+//Working: Yes
+setchar(0x09F6FA7A, 0xFF)
+
+
+#cheat Unlimited Go Go Faggio mission time
+//ID: 4123
+//Score: 114
+//Author: vettefan88
+//Category: Misc
+//Description: This cheat will give you unlimited time in the mission. Do not use with any other mission timer cheat.
+//Image: none
+//Time: 20/01/2006 18:39:49
+//Working: Yes
+setchar(0x09F6F91A, 0xFF)
+
+
+#cheat Staunton Marquee Mod (Glitch Hunter Noru)
+//ID: 4112
+//Score: 18
+//Author: Noru
+//Category: Text Mods
+//Description: Replaces www.grandtheftauto3.com with Glitch Hunter Noru in staunton marquee concept, base on the original cheat by vettefan88
+//Image: none
+//Time: 19/01/2006 23:46:47
+//Working: Yes
+setchar(0x08B586C8, 0x47, 0x4C, 0x49, 0x54, 0x43, 0x20, 0x48, 0x55, 0x4E, 0x54, 0x45, 0x52, 0x20, 0x4E, 0x4F, 0x52, 0x55);
+
+//edited by ADePSP on 13/03/2006 18:41:15
+
+#cheat Staunton Marquee Mod, (----MIKE KICKS ASS-----)
+//ID: 4107
+//Score: 16
+//Author: ADePSP
+//Category: Text Mods
+//Description: Replaces www.grandtheftauto3.com with ----MIKE KICKS ASS----- in staunton marquee concept, base on the original cheat by vettefan88... There are 23 characters and each is an ASCII character... Use this chart to make your own message... http://www.lookupta
+//Image: none
+//Time: 19/01/2006 03:14:58
+//Working: Yes
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x2D, 0x2D, 0x2D, 0x2D, 0x4D, 0x49, 0x4B, 0x45, 0x20, 0x4B, 0x49, 0x43, 0x4B, 0x53, 0x20, 0x41, 0x53, 0x53, 0x2D, 0x2D, 0x2D, 0x2D, 0x2D);
+
+//edited by ADePSP on 13/03/2006 18:40:52
+
+#cheat Staunton Marquee Mod, (ADePSP Simply Kicks Ass)
+//ID: 4106
+//Score: 31
+//Author: ADePSP
+//Category: Text Mods
+//Description: Replaces www.grandtheftauto3.com with ADePSP Simply Kicks Ass in staunton marquee concept, base on the original cheat by vettefan88... There are 23 characters and each is an ASCII character... Use this chart to make your own message... http://www.lookupta
+//Image: http://www.filelodge.com/files/hdd6/130361/me.gif
+//Time: 18/01/2006 22:31:58
+//Working: Yes
+teleport(248.68, -658.68, 26.02);
+setchar(0x08B586C8, 0x41, 0x44, 0x45, 0x50, 0x53, 0x50, 0x20, 0x53, 0x49, 0x4D, 0x50, 0x4C, 0x59, 0x20, 0x4B, 0x49, 0x43, 0x4B, 0x53, 0x20, 0x41, 0x53, 0x53);
+
+//edited by ADePSP on 13/03/2006 18:40:29
+
+#cheat Unlimited Triad takedown unlimited time+kills
+//ID: 4154
+//Score: 53
+//Author: vettefan88
+//Category: Misc
+//Description: Unlimited time, lots of kills already counted
+//Image: none
+//Time: 21/01/2006 03:08:05
+//Working: Yes
+setchar(09F6F91A, 0xFF);
+setchar(09F6F91C, 0xFF, 0xFF, 0xFF);
+#off
+setchar(09F6F919, 0x00, 0x00);
+
+
+#cheat Bump and Grinds course 10
+//ID: 4153
+//Score: 42
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 03:05:40
+//Working: Yes
+setchar(09F6FA01, 00);
+setchar(09F6FA0C, 03);
+
+//edited by Waterbottle on 12.03.2006 14:21:24
+
+#cheat Bump and Grinds course 9
+//ID: 4152
+//Score: 34
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 03:04:38
+//Working: Yes
+setchar(09F6F9E9, 00);
+setchar(09F6F9F4, 03);
+
+//edited by Waterbottle on 12.03.2006 14:21:09
+
+#cheat Bump and Grinds course 8
+//ID: 4151
+//Score: 34
+//Author: vettefan88
+//Category: Vehicle
+//Description: no timer, automatically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 03:02:47
+//Working: Yes
+setchar(09F6F9E9, 00);
+setchar(09F6F9F4, 03);
+
+//edited by Waterbottle on 12.03.2006 14:20:56
+
+#cheat Bump and Grinds course 7
+//ID: 4150
+//Score: 32
+//Author: vettefan88
+//Category: Vehicle
+//Description: no timer, automatically on last lap, do not use with any other timer cheats
+//Image: none
+//Time: 21/01/2006 03:01:47
+//Working: Yes
+setchar(09F6F9DD, 00);
+setchar(09F6F9E8, 03);
+
+//edited by Waterbottle on 12.03.2006 14:20:46
+
+#cheat Bump and Grinds course 6
+//ID: 4149
+//Score: 33
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 03:00:42
+//Working: Yes
+setchar(09F6F9F5, 00);
+setchar(09F6FA00, 03);
+
+//edited by Waterbottle on 12.03.2006 14:20:32
+
+#cheat Bump and Grinds course 5
+//ID: 4148
+//Score: 32
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 02:59:53
+//Working: Yes
+setchar(09F6F9DD, 00);
+setchar(09F6F9E8, 03);
+
+//edited by Waterbottle on 12.03.2006 14:20:20
+
+#cheat Bump and Grinds course 4
+//ID: 4147
+//Score: 33
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automaically on last lap, do not use with other timer cheats
+//Image: none
+//Time: 21/01/2006 02:59:13
+//Working: Yes
+setchar(09F6F9B9, 00);
+setchar(09F6F9C4, 03);
+
+//edited by Waterbottle on 12.03.2006 14:20:10
+
+#cheat No traffic on the roads
+//ID: 5703
+//Score: 293
+//Author: vettefan88
+//Category: Vehicle
+//Description: This cheat will remove all traffic from the roads, make sure you enter a vehicle BEFORE entering the cheat, leaving your vehicle will cause it to dissapear, deactivate the cheat to make cars start to appear again.
+//Image: none
+//Time: 17/03/2006 19:37:30
+//Working: Yes
+setchar(0x0997B088, 1);
+setchar(0x0997B768, 1);
+setchar(0x0997C528, 1);
+setchar(0x0997CC08, 1);
+setchar(0x0997D2E8, 1);
+setchar(0x0997D9C8, 1);
+setchar(0x0997E0A8, 1);
+setchar(0x0997E788, 1);
+setchar(0x0997EE68, 1);
+setchar(0x0997F548, 1);
+setchar(0x0997FC28, 1);
+setchar(0x09989A48, 1);
+setchar(0x0998A128, 1);
+setchar(0x0998A808, 1);
+setchar(0x0998AEE8, 1);
+setchar(0x0998B5C8, 1);
+setchar(0x0998BCA8, 1);
+setchar(0x0998C388, 1);
+setchar(0x0998CA68, 1);
+setchar(0x0998D148, 1);
+setchar(0x0998D828, 1);
+setchar(0x0998DF08, 1);
+setchar(0x0998E5E8, 1);
+setchar(0x0998ECC8, 1);
+setchar(0x0998F3A8, 1);
+setchar(0x0998FA88, 1);
+setchar(0x09990168, 1);
+setchar(0x09990848, 1);
+setchar(0x09990F28, 1);
+setchar(0x09991608, 1);
+setchar(0x09991CE8, 1);
+setchar(0x099923C8, 1);
+setchar(0x09992AA8, 1);
+setchar(0x09993188, 1);
+setchar(0x09993868, 1);
+setchar(0x09993F48, 1);
+setchar(0x09994628, 1);
+setchar(0x09989368, 1);
+setchar(0x09988C88, 1);
+setchar(0x099885A8, 1);
+setchar(0x09987EC8, 1);
+setchar(0x099877E8, 1);
+setchar(0x09987108, 1);
+setchar(0x09986A28, 1);
+setchar(0x09986348, 1);
+setchar(0x09985C68, 1);
+setchar(0x09985588, 1);
+setchar(0x09984EA8, 1);
+setchar(0x099847C8, 1);
+setchar(0x099840E8, 1);
+setchar(0x09983A08, 1);
+setchar(0x09983328, 1);
+setchar(0x09982C48, 1);
+setchar(0x09982568, 1);
+setchar(0x09981E88, 1);
+setchar(0x099817A8, 1);
+setchar(0x099810C8, 1);
+setchar(0x099809E8, 1);
+setchar(0x09980308, 1);
+setchar(0x0998A708, 1);
+setchar(pcar + 0x00000048, 0);
+
+//edited by Waterbottle on 19.03.2006 14:16:05
+
+#cheat Monster Tank
+//ID: 5630
+//Score: 175
+//Author: vettefan88
+//Category: Vehicle
+//Description: Turns all tanks into monster trucks
+//Image: http://img223.imageshack.us/img223/4870/screen46rp.png
+//Time: 16/03/2006 12:48:21
+//Working: Yes
+setfloat(0x0945B304, -1.2);
+
+//edited by Waterbottle on 20.03.2006 23:37:40
+
+#cheat raised diablo stallion
+//ID: 5629
+//Score: 34
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will slightly raise the diablo stallion to give it a meaner look.
+//Image: http://img218.imageshack.us/img218/1685/screen30qw.png
+//Time: 16/03/2006 12:41:53
+//Working: Yes
+setfloat(0x0945C6B4, -.3);
+
+//edited by vettefan88 on 4/21/2006 3:51:57 PM
+
+#cheat Lowrider yardie lobo
+//ID: 5627
+//Score: 87
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make all yardie lobos in the game lowriders
+//Image: http://img218.imageshack.us/img218/5663/screen28wz.png
+//Time: 16/03/2006 12:38:10
+//Working: Yes
+setfloat(0x0945C4D4, -.01);
+
+#cheat lowered pcj 600
+//ID: 5626
+//Score: 56
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will lower the pcj600 to the ground
+//Image: http://img238.imageshack.us/img238/6649/screen15gm.png
+//Time: 16/03/2006 12:34:36
+//Working: Yes
+setfloat(0x0945D4C4, -.01);
+
+#cheat Dropped thunderrodd
+//ID: 5625
+//Score: 47
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will lower every thunderrodd in the game to make it a lowrider
+//Image: http://img238.imageshack.us/img238/6276/screen48wg.png
+//Time: 16/03/2006 12:32:59
+//Working: Yes
+setfloat(0x0945D1F4, -.01);
+
+#cheat Monster Truck!
+//ID: 5624
+//Score: 73
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will turn every cartel cruiser in the game into a monster truck.
+//Image: http://www.filelodge.com/files/hdd9/233662/truck%20test.gif
+//Time: 16/03/2006 12:15:51
+//Working: Yes
+setfloat(0x0945C7A4, -.75);
+setfloat(0x0945C6E8, .5);
+setfloat(0x0945C798, .5);
+
+#cheat Classic Top Down Camera
+//ID: 5517
+//Score: 1396
+//Author: vettefan88
+//Category: Camera
+//Description: This puts the camers above Toni giving you the classic look from the original games. NOW WORKS IN CARS
+//Image: http://www.filelodge.com/files/hdd9/233662/topdown.gif
+//Time: 08/03/2006 20:00:36
+//Working: Yes
+setfloat(0x08B833DC, 30);
+setfloat(0x08B83374, 30);
+setfloat(0x08B834EC, -2);
+setchar(0x08B834F0, 0x06, 0xA0, 0xF6, 0xBC);
+//edited by vettefan88 on 3/10/2006 10:00:33 PM
+
+#cheat Interior car camera
+//ID: 5516
+//Score: 1322
+//Author: vettefan88
+//Category: Camera
+//Description: This puts the camera inside of your car.
+//Image: none
+//Time: 08/03/2006 19:58:35
+//Working: Yes
+setchar(0x08B83468, 0);
+setfloat(0x08B83374, -6);
+
+//edited by theY4Kman on 3/11/2006 9:48:17 AM
+
+#cheat Vettefan's extreme stunt tube!
+//ID: 5360
+//Score: 120
+//Author: vettefan88
+//Category: Location Mods
+//Description: Extreme Stunt Tube
+//Image: http://www.maxbot.com/gta/VettesLoop.jpg
+//Time: 01/03/2006 00:58:05
+//Working: Yes
+moveto(-1274.40,-558.78,11.22);  object(0x01BF,70,0,259);
+move(-4.56,-1.27,1.80);  object(0x01BF,70,355,613);
+move(-4.52,-2.02,1.80);  object(0x01BF,70,350,608);
+move(-4.39,-2.54,1.80);  object(0x01BF,70,345,603);
+move(-4.51,-3.36,1.60);  object(0x01BF,70,340,598);
+move(-3.89,-3.66,1.80);  object(0x01BF,70,335,594);
+move(-3.71,-4.46,1.90);  object(0x01BF,70,330,587);
+move(-2.91,-4.77,1.70);  object(0x01BF,70,325,582);
+move(-2.51,-4.71,1.50);  object(0x01BF,70,320,577);
+move(-1.66,-4.89,1.20);  object(0x01BF,70,315,572);
+move(-1.22,-5.33,1.20);  object(0x01BF,70,310,567);
+move(-0.65,-4.34,0.90);  object(0x01BF,70,305,562);
+move(-0.17,-5.47,1.00);  object(0x01BF,70,300,557);
+move(0.39,-4.39,0.70);  object(0x01BF,70,295,552);
+move(0.73,-4.54,0.60);  object(0x01BF,70,290,547);
+move(1.34,-4.96,0.50);  object(0x01BF,70,285,542);
+move(1.52,-4.13,0.30);  object(0x01BF,70,280,537);
+move(2.13,-4.34,0.20);  object(0x01BF,70,275,532);
+move(3.29,-4.60,0.00);  object(0x01BF,70,270,519);
+move(4.75,-3.22,0.30);  object(0x01BF,70,270,489);
+move(5.55,-0.61,0.40);  object(0x01BF,70,270,467);
+move(5.67,1.81,0.50);  object(0x01BF,70,270,438);
+move(3.73,3.81,0.60);  object(0x01BF,70,270,412);
+move(0.00,0.00,0.00);  object(0x01BF,70,270,412);
+move(1.22,5.60,0.60);  object(0x01BF,70,270,376);
+move(-1.43,4.68,0.60);  object(0x01BF,70,270,352);
+move(-3.40,3.67,0.60);  object(0x01BF,70,270,328);
+move(-4.11,2.19,1.00);  object(0x01BF,70,270,303);
+move(-4.93,-0.06,0.60);  object(0x01BF,70,270,276);
+move(-4.89,-2.65,0.80);  object(0x01BF,70,270,608);
+move(-3.20,-4.75,0.80);  object(0x01BF,70,270,579);
+move(-0.60,-5.01,0.80);  object(0x01BF,70,270,554);
+move(1.91,-4.79,0.80);  object(0x01BF,70,270,522);
+move(2.91,-3.24,-0.10);  object(0x01BF,70,270,492);
+move(1.48,-0.87,0.00);  object(0x01BF,70,270,483);
+move(5.68,-0.35,0.30);  object(0x01BF,70,270,471);
+move(5.55,1.71,0.40);  object(0x01BF,70,270,440);
+move(3.72,3.52,0.70);  object(0x01BF,70,270,412);
+move(1.40,5.25,0.30);  object(0x01BF,70,270,376);
+move(-1.20,5.14,0.60);  object(0x01BF,70,270,355);
+move(-3.42,3.91,0.60);  object(0x01BF,70,270,328);
+move(-4.06,2.25,0.70);  object(0x01BF,70,270,304);
+move(-5.58,-0.32,0.80);  object(0x01BF,70,270,279);
+move(-4.48,-1.99,0.00);  object(0x01BF,70,270,610);
+move(-3.14,-4.44,0.80);  object(0x01BF,70,270,579);
+move(-0.67,-4.81,1.00);  object(0x01BF,70,270,560);
+move(-314.01,-346.51,-33.57);  object(0x01BF,235,0,270);
+move(-4.56,-0.01,3.80);  object(0x01BF,225,0,270);
+move(-3.54,-0.01,4.30);  object(0x01BF,215,0,270);
+move(-2.66,-0.01,4.70);  object(0x01BF,205,0,270);
+move(-1.90,-0.00,5.10);  object(0x01BF,195,0,270);
+move(-1.00,-0.00,5.70);  object(0x01BF,185,0,270);
+move(0.00,0.00,5.60);  object(0x01BF,175,0,270);
+move(0.94,0.00,5.40);  object(0x01BF,165,0,270);
+move(1.93,0.00,5.20);  object(0x01BF,155,0,270);
+move(2.74,0.01,4.60);  object(0x01BF,145,0,270);
+move(3.20,0.01,4.00);  object(0x01BF,135,0,270);
+move(3.43,0.02,3.00);  object(0x01BF,125,0,270);
+move(4.10,0.02,2.40);  object(0x01BF,115,0,270);
+move(4.91,0.02,1.70);  object(0x01BF,105,0,270);
+move(5.13,-0.00,0.80);  object(0x01BF,85,0,450);
+move(5.63,0.06,0.20);  object(0x01BF,90,0,449);
+teleport(-1229, -554, 11.11);
+
+//edited by ADePSP on 01/03/2006 01:01:39
+
+#cheat All collectables
+//ID: 5118
+//Score: 323
+//Author: vettefan88/Waterbottle
+//Category: Player Stats
+//Description: Rampages/Unique stunts/Hidden packages
+//Image: none
+//Time: 13/02/2006 04:21:33
+//Working: Yes
+setshort(0x08B5E1E4, 0x14)
+setshort(0x08B5E19C, 0x1A)
+setint(0x08B89AD4, 100);
+
+//edited by Waterbottle on 24.02.2006 01:49:10
+
+#cheat Teleport to BF Injection
+//ID: 4991
+//Score: 81
+//Author: xFinch713x
+//Category: Teleport
+//Description: self explanatory
+//
+//EDITED BY: vettefan88 on 12/05/06 00:48:35
+//Image: none
+//Time: 07/02/2006 05:01:14
+//Working: Yes
+teleport(1434.18, -508.83, 12.70);
+
+#cheat Teleport to Remote Grenades
+//ID: 4976
+//Score: 84
+//Author: xFinch713x
+//Category: Teleport
+//Description: self explanatory
+//
+//EDITED BY: vettefan88 on 12/05/06 00:48:23
+//Image: none
+//Time: 06/02/2006 04:05:01
+//Working: Yes
+teleport(-1217.45, 333.08, 31.04);
+
+#cheat Stat: 999999999 hospital visits
+//ID: 4244
+//Score: 72
+//Author: vettefan88
+//Category: Player Stats
+//Description: Makes it so that you have 999999999 hospital visits in your stats
+//Image: none
+//Time: 26/01/2006 22:12:47
+//Working: Yes
+setint(0x08B5E17C, 999999999);
+
+//edited by Waterbottle on 10.03.2006 16:51:35
+
+#cheat Stat: 999999999 cars crushed
+//ID: 4243
+//Score: 98
+//Author: vettefan88
+//Category: Player Stats
+//Description: Makes it so that you have 999999999 cars crushed in your stats
+//Image: none
+//Time: 26/01/2006 22:11:08
+//Working: Yes
+setint(0x08B5E168, 999999999);
+
+//edited by Waterbottle on 10.03.2006 16:52:09
+
+#cheat Stat: 999999999 Bullets that hit
+//ID: 4242
+//Score: 107
+//Author: vettefan88
+//Category: Player Stats
+//Description: Makes it so that you have 999999999 bullets that hit in your stats
+//Image: none
+//Time: 26/01/2006 22:09:37
+//Working: Yes
+setint(0x08B5E164, 999999999);
+
+//edited by Waterbottle on 10.03.2006 16:51:56
+
+#cheat Stat: 999999999 bullets fired
+//ID: 4241
+//Score: 99
+//Author: vettefan88
+//Category: Player Stats
+//Description: Makes it so that you have 999999999 bullets fired in your stats
+//Image: none
+//Time: 26/01/2006 22:07:36
+//Working: Yes
+setint(0x08B5E150, 999999999);
+
+//edited by Waterbottle on 10.03.2006 16:51:18
+
+#cheat Stat: 999999999 cars destroyed
+//ID: 4240
+//Score: 94
+//Author: vettefan88
+//Category: Player Stats
+//Description: Makes it so that 999999999 cars are destroyed in your stats
+//Image: none
+//Time: 26/01/2006 22:05:58
+//Working: Yes
+setint(0x08B5E148, 999999999);
+
+//edited by Waterbottle on 10.03.2006 16:51:46
+
+#cheat Automatically impress the Car customer
+//ID: 4175
+//Score: 231
+//Author: vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Car customer, as soon as they enter the vehicle
+//Image: http://www.filelodge.com/files/hdd6/130361/carsales.gif
+//Time: 22/01/2006 21:49:15
+//Working: Yes
+setchar(09F6F999, 0x03);
+
+
+#cheat Unlimited Avenging angels mission timer
+//ID: 4171
+//Score: 142
+//Author: vettefan88
+//Category: Vehicle
+//Description: Gives you unlimited time in the avenging angels missions
+//Image: none
+//Time: 22/01/2006 03:51:39
+//Working: Yes
+setchar(09F6EAFE, 0xFF);
+
+
+#cheat Impress the Freeway Customer
+//ID: 4170
+//Score: 41
+//Author: vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Freeway customer at the bike salesman
+//Image: none
+//Time: 22/01/2006 02:56:12
+//Working: Yes
+setchar(09F6F9A0, 0xEA, 0x03);
+
+
+#cheat Impress the Sanchez Customer
+//ID: 4169
+//Score: 41
+//Author: vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Sanchez Customer at the bike salesman.
+//Image: none
+//Time: 22/01/2006 02:55:33
+//Working: Yes
+setchar(09F6F9A0, 0xED, 0x03);
+
+
+#cheat Impress the Faggio Customer
+//ID: 4168
+//Score: 39
+//Author: vettefan88
+//Category: Vehicle
+//Description: Automaticall impresse the Faggio customer at the bike salesman
+//Image: none
+//Time: 22/01/2006 02:53:57
+//Working: Yes
+setchar(09F6F9A0, 0xF1, 0x03);
+
+
+#cheat Impress the Pcj600 Customer
+//ID: 4167
+//Score: 42
+//Author: vettefan88
+//Category: Vehicle
+//Description: Automatically impresses the Pcj600 customer at the bike salesman
+//Image: none
+//Time: 22/01/2006 02:53:14
+//Working: Yes
+setchar(09F6F9A0, 0xEB, 0x03);
+
+
+#cheat unlimited Bike Salesman time
+//ID: 4165
+//Score: 73
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time in bike salesman mission
+//Image: none
+//Time: 22/01/2006 02:27:42
+//Working: Yes
+setchar(09F6F9A6, 0xFF);
+
+
+#cheat unlimited Noodle/Pizza delivery time
+//ID: 4164
+//Score: 88
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time, unlimited pizzas/noodles, automatically on the last delivery
+//Image: none
+//Time: 22/01/2006 02:27:07
+//Working: Yes
+setchar(09F6F926, 0xFF);
+setchar(09F6F920, 0x06);
+setchar(09F6F918, 0x0A);
+
+
+#cheat Unlimited time in bike shooter missions
+//ID: 4163
+//Score: 74
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time in unlimited AWOL angel/9mm mayhem/scooter chooter
+//Image: none
+//Time: 22/01/2006 02:25:58
+//Working: Yes
+setchar(09F6F91A, 0xFF);
+
+//edited by Durka Durka Mahn on 3/12/2006 11:39:50 AM
+
+#cheat Unlimited trash dash time
+//ID: 4162
+//Score: 94
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time in trash dash
+//Image: none
+//Time: 22/01/2006 02:23:56
+//Working: Yes
+setchar(09F6F91A, 0xFF);
+
+//edited by Durka Durka Mahn on 3/12/2006 11:40:35 AM
+
+#cheat Red car collision dust
+//ID: 6041
+//Score: 41
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever you hit a car the dust will be red
+//Image: none
+//Time: 01/04/2006 00:32:18
+//Working: Yes
+setchar(0x967E4AC, 0xFF, 0x00, 0x00);
+
+//edited by Waterbottle on 01.04.2006 18:31:05
+
+#cheat Blue flamethrower flame
+//ID: 6040
+//Score: 341
+//Author: vettefan88
+//Category: Weapons
+//Description: This will make the flame from the flamethrower blue
+//Image: none
+//Time: 01/04/2006 00:31:20
+//Working: Yes
+setchar(0x967C980, 0x00, 0x00, 0xFF);
+
+//edited by vettefan88 on 3/31/2006 7:34:30 PM
+
+#cheat Red engine steam
+//ID: 6039
+//Score: 40
+//Author: vettefan88
+//Category: Vehicle
+//Description: Your car will give off red enging steam when it gets damage
+//Image: none
+//Time: 01/04/2006 00:30:05
+//Working: Yes
+setchar(967D47C, 0xFF, 0x00, 0x00);
+
+//edited by Waterbottle on 01.04.2006 18:31:22
+
+#cheat Red Car exhaust
+//ID: 6038
+//Score: 40
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make all of the car exhaust in the game red
+//Image: none
+//Time: 01/04/2006 00:29:18
+//Working: Yes
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+
+//edited by Waterbottle on 01.04.2006 18:31:39
+
+#cheat Green Burnout Smoke
+//ID: 9637
+//Score: 84
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes burnout smoke to green
+//Image: none
+//Time: 07/05/2006 15:49:23
+//Working: Yes
+sethex(0x967E824, 0x00, 0xFF, 0x00);
+
+#cheat Purple Burnout Smoke
+//ID: 9636
+//Score: 78
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes the color of burnout smoke to purple
+//Image: none
+//Time: 07/05/2006 15:48:34
+//Working: Yes
+sethex(0x967E824, 0xFF, 0x00, 0xFF);
+
+#cheat Orange burnout smoke
+//ID: 9635
+//Score: 83
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes the color of smoke from burnouts to orange
+//Image: none
+//Time: 07/05/2006 15:46:22
+//Working: Yes
+sethex(0x967E824, 0xFF, 0x77, 0x00);
+
+#cheat Blue Burnout Smoke
+//ID: 9634
+//Score: 95
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes the color of the smoke from burnouts to blue
+//Image: none
+//Time: 07/05/2006 15:45:40
+//Working: Yes
+sethex(0x967E824, 0x00, 0x00, 0xFF);
+
+#cheat Changing Color Cop Car
+//ID: 9482
+//Score: 173
+//Author: xFinch713x
+//Category: Vehicle
+//Description: normally red but it changes colors while you drive
+//
+//EDITED BY: vettefan88 on 12/05/06 00:47:56
+//Image: none
+//Time: 06/05/2006 20:55:05
+//Working: Yes
+setchar(0x09b609d4, 0x40);
+#off
+setchar(0x09b609d4, 0x21);
+
+#cheat Gold Cop Car
+//ID: 9481
+//Score: 273
+//Author: xFinch713x
+//Category: Vehicle
+//Description: Makes all cop cars goldish looking (rainbowish)
+//
+//EDITED BY: vettefan88 on 12/05/06 00:48:04
+//Image: none
+//Time: 06/05/2006 20:54:25
+//Working: Yes
+setchar(0x09b609d4, 0x30);
+#off
+setchar(0x09b609d4, 0x21);
+
+#cheat All Fire is Blue
+//ID: 9385
+//Score: 101
+//Author: vettefan88
+//Category: Misc
+//Description: This will turn all fire in the game blue
+//Image: none
+//Time: 06/05/2006 16:35:31
+//Working: Yes
+sethex(0x967D888, 0x00, 0x00, 0xFF);
+sethex(0x967D91C, 0x00, 0x00, 0xFF);
+sethex(0x967D9B0, 0x00, 0x00, 0xFF);
+sethex(0x967DA44, 0x00, 0x00, 0xFF);
+sethex(0x0967D104, 0x00, 0x00, 0xFF);
+sethex(0x967C980, 0x00, 0x00, 0xFF);
+sethex(0x0967C8EC, 0x00, 0x00, 0xFF);
+
+#cheat Stat: 999999999 Bikes sold
+//ID: 9181
+//Score: 171
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the number of bikes sold to 999999999
+//Image: none
+//Time: 03/05/2006 22:41:04
+//Working: Yes
+setint(0x08B5E2AC, 999999999);
+
+#cheat Stat: 999999999 Cars Sold
+//ID: 9180
+//Score: 164
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the cars sold to 999999999
+//Image: none
+//Time: 03/05/2006 22:40:25
+//Working: Yes
+setint(0x08B5E2A4, 999999999);
+
+#cheat Stat: 999999999 Fires extinguished
+//ID: 9179
+//Score: 148
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the total number of fires extinguished to 999999999
+//Image: none
+//Time: 03/05/2006 22:39:54
+//Working: Yes
+setint(0x08B5E1D0, 999999999);
+
+#cheat Stat: 999999999 people saved in ambulance
+//ID: 9178
+//Score: 154
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the people saved in ambulance to 999999999
+//Image: none
+//Time: 03/05/2006 22:39:00
+//Working: Yes
+setint(0x08B5E1C8, 999999999);
+
+#cheat Stat: 999999999 Hitmen Wasted
+//ID: 9177
+//Score: 145
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets hitmen wasted to 999999999
+//Image: none
+//Time: 03/05/2006 22:38:23
+//Working: Yes
+setint(0x08B5E2DC, 999999999);
+
+#cheat Stat: 999999999 Criminals wasted
+//ID: 9176
+//Score: 138
+//Author: vettefan88
+//Category: Player Stats
+//Description: Sets Criminals wasted to 999999999
+//Image: none
+//Time: 03/05/2006 22:37:37
+//Working: Yes
+setint(0x08DCE770, 999999999);
+
+#cheat Stat: 999999999 Times busted
+//ID: 9175
+//Score: 93
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the times busted to 999999999
+//Image: none
+//Time: 03/05/2006 22:35:40
+//Working: Yes
+setint(0x08B5E178, 999999999);
+
+#cheat Stat: number of saves
+//ID: 9174
+//Score: 91
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will set the number of saves to 999999999
+//Image: none
+//Time: 03/05/2006 22:35:02
+//Working: Yes
+setint(0x08B5E180, 999999999);
+
+#cheat Stat: 999999999 Days passed in game
+//ID: 9173
+//Score: 98
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will set the number of days passed in the game to 999999999
+//Image: none
+//Time: 03/05/2006 22:34:30
+//Working: Yes
+setint(0x08B5E10C, 999999999);
+
+#cheat Stat: really long 2-wheels distance
+//ID: 9172
+//Score: 115
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will give you a really long 2-wheels distance
+//Image: none
+//Time: 03/05/2006 22:33:52
+//Working: Yes
+setchar(08B5E265, 0xFF, 0xFF, 0x79);
+
+#cheat Stat: really long wheelie distance
+//ID: 9171
+//Score: 111
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will give you a really long wheelie distance
+//Image: none
+//Time: 03/05/2006 22:33:08
+//Working: Yes
+setchar(08B5E25D, 0xFF, 0xFF, 0x79);
+
+#cheat Stat: Really long stoppie distance
+//ID: 9170
+//Score: 100
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will give you a really long stoppie distance
+//Image: none
+//Time: 03/05/2006 22:32:26
+//Working: Yes
+setchar(08B5E261, 0xFF, 0xFF, 0x79);
+
+#cheat Stat: 999999999 kilograms of explosives used
+//ID: 9169
+//Score: 120
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the kilograms of explosives used to 999999999
+//Image: none
+//Time: 03/05/2006 22:31:52
+//Working: Yes
+setint(0x08B5E160, 999999999);
+
+#cheat Stat: 999999999 tires popped
+//ID: 9168
+//Score: 119
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the number of tires popped to 999999999
+//Image: none
+//Time: 03/05/2006 22:31:12
+//Working: Yes
+setint(0x08B5E058, 999999999);
+
+#cheat Stat: 999999999 Helicopters Destroyed
+//ID: 9167
+//Score: 134
+//Author: vettefan88
+//Category: Player Stats
+//Description: Sets the number of helicopters destroyed to 999999999
+//Image: none
+//Time: 03/05/2006 22:30:37
+//Working: Yes
+setint(0x08B5E154, 999999999);
+
+#cheat Stat: 999999999 Boats Destroyed
+//ID: 9166
+//Score: 109
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the number of boats destroyed to 999999999
+//Image: none
+//Time: 03/05/2006 22:29:24
+//Working: Yes
+setint(0x08B5E14C, 999999999);
+
+#cheat Stat: 999999999 gang members wasted
+//ID: 9165
+//Score: 114
+//Author: vettefan88
+//Category: Player Stats
+//Description: raises the number of gang members wasted by 999999999
+//Image: none
+//Time: 03/05/2006 22:28:48
+//Working: Yes
+setint(0x08DCE74C, 999999999);
+
+#cheat Stat: 999999999 Number of headshots
+//ID: 9164
+//Score: 115
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets the number of headshots to 999999999
+//Image: none
+//Time: 03/05/2006 22:27:26
+//Working: Yes
+setint(0x08B5E16C, 999999999);
+
+#cheat Stat: 2-wheels time = 999999999
+//ID: 9163
+//Score: 97
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets 2-wheels time to 999999999
+//Image: none
+//Time: 03/05/2006 22:26:42
+//Working: Yes
+setint(0x08B5E258, 999999999);
+
+#cheat Stat: Stoppie time = 999999999
+//ID: 9162
+//Score: 110
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets stoppie time to 999999999
+//Image: none
+//Time: 03/05/2006 22:26:05
+//Working: Yes
+setint(0x08B5E254, 999999999);
+
+#cheat Stat: Wheelie time = 999999999
+//ID: 9161
+//Score: 90
+//Author: vettefan88
+//Category: Player Stats
+//Description: Sets wheelie time to 999999999
+//Image: none
+//Time: 03/05/2006 22:25:26
+//Working: Yes
+setint(0x08B5E250, 999999999);
+
+#cheat Stat: 999999999 people wasted by others
+//ID: 9160
+//Score: 91
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets people wasted by others to 999999999
+//Image: none
+//Time: 03/05/2006 22:24:47
+//Working: Yes
+setint(0x08B5E144, 999999999);
+
+#cheat Stat: 999999999 people you've wasted
+//ID: 9159
+//Score: 109
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets people you've wasted to 999999999
+//Image: none
+//Time: 03/05/2006 22:24:06
+//Working: Yes
+setint(0x08B5E140, 999999999);
+
+#cheat Stat: 999999999 wanted stars attained
+//ID: 9158
+//Score: 107
+//Author: vettefan88
+//Category: Player Stats
+//Description: sets wanted stars attained to 999999999
+//Image: none
+//Time: 03/05/2006 22:23:07
+//Working: Yes
+setint(0x08B5E170, 999999999);
+
+#cheat Stat: 999999999 wanted stars evaded
+//ID: 9157
+//Score: 104
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will say there are 999999999 wanted stars evade in your stats
+//Image: none
+//Time: 03/05/2006 22:22:13
+//Working: Yes
+setint(0x08B5E174, 999999999);
+
+#cheat Stat: 999999999 seagulls sniped
+//ID: 9156
+//Score: 107
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will say there are 999999999 seagulls sniped in your stats
+//Image: none
+//Time: 03/05/2006 22:21:30
+//Working: Yes
+setint(0x08B5E1FC, 999999999);
+
+#cheat Stat: 999999999 mission attempts
+//ID: 9155
+//Score: 82
+//Author: vettefan88
+//Category: Player Stats
+//Description: This wikll say there were 999999999 mission attempts in your stats
+//Image: none
+//Time: 03/05/2006 22:20:56
+//Working: Yes
+setint(0x08B5E1A4, 999999999);
+
+#cheat Stat: 999999999 fish fed
+//ID: 9154
+//Score: 92
+//Author: vettefan88
+//Category: Player Stats
+//Description: This will say that there were 999999999 fish fed in your stats
+//Image: none
+//Time: 03/05/2006 22:19:56
+//Working: Yes
+setint(0x08B5E1F8, 999999999);
+
+#cheat All Cars IN Shoreside Vale Garage Bullet Proof
+//ID: 8666
+//Score: 208
+//Author: vettefan88
+//Category: Garage Codes
+//Description: This will make all of the cars in your SSV garage bullet proof, fire proof and explosion proof
+//Image: none
+//Time: 23/04/2006 17:39:08
+//Working: Yes
+sethex(0x8E38B08, F7);
+sethex(0x8E38B34, F7);
+sethex(0x8E38B60, F7);
+sethex(0x8E38B86, F7);
+
+//edited by vettefan88 on 4/23/2006 12:47:00 PM
+
+#cheat All Cars in Staunton Garage Bullet Proof
+//ID: 8665
+//Score: 297
+//Author: vettefan88
+//Category: Garage Codes
+//Description: This will make all the cars in your Staunton Garage Bullet Proof, Fire Proof, and Explosion Proof.
+//Image: none
+//Time: 23/04/2006 17:36:53
+//Working: Yes
+sethex(0x8E38A58, F7);
+sethex(0x8E38A84, F7);
+sethex(0x8E38AB0, F7);
+sethex(0x8E38ADC, F7);
+
+
+#cheat All Cars in Portland Garage Bullet Proof
+//ID: 8664
+//Score: 215
+//Author: vettefan88
+//Category: Garage Codes
+//Description: Thile will make all the cas in your Portland Garage, Bullet Proof, Fire Proof, and Explosion Proof
+//Image: none
+//Time: 23/04/2006 17:33:22
+//Working: Yes
+sethex(0x8E389A8, F7);
+sethex(0x8E389D4, F7);
+sethex(0x8E38A00, F7);
+sethex(0x8E38A2C, F7);
+
+#cheat Lamborghini Doors
+//ID: 7987
+//Score: 4968
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will give your car Lamborghini verticle Doors.
+//Image: http://img382.imageshack.us/img382/8937/screen24kx.png
+//Time: 19/04/2006 17:34:40
+//Working: Yes
+setfloat(pcar + 0x3d8, 1);
+setfloat(pcar + 0x400, 0, -1.26, 1);
+setfloat(pcar + 0x438, 1);
+setfloat(pcar + 0x460, 0, -1.26, 1);
+
+#cheat Blood Gun Mode
+//ID: 6363
+//Score: 170
+//Author: K3B4B5T4R
+//Category: Weapons
+//Description: Make all the Gun sprites red. With thanks to vettefan88 and the Y4Kman>
+//Image: none
+//Time: 13/04/2006 23:42:23
+//Working: Yes
+// Gun Flash
+sethex(0x967CA14, 0xFF, 0x00, 0x00);
+// Gun Flash (No Animation)
+sethex(0x967CAA8, 0xFF, 0x00, 0x00);
+// Gun Smoke
+sethex(0x967CB3C, 0xFF, 0x00, 0x00);
+// Gun Smoke 2
+sethex(0x967CBD0, 0xFF, 0x00, 0x00);
+// Sparks
+sethex(0x967C168, 0xFF, 0x00, 0x00);
+// Small Sparks
+sethex(0x967C1FC, 0xFF, 0x00, 0x00);
+// Bullet Hit Smoke
+sethex(0x967E8B8, 0xFF, 0x00, 0x00);
+
+#cheat xFinch713x's Custom Cop Car
+//ID: 6321
+//Score: 277
+//Author: xFinch713x
+//Category: Vehicle
+//Description: Makes my Custom Cop Car and adds it to Staunton Garage
+//
+//PS- Made before PMG came out!
+//
+//EDITED BY: vettefan88 on 12/05/06 00:48:13
+//Image: http://www.filelodge.com/files/room14/359195/screen1.bmp
+//Time: 12/04/2006 05:16:29
+//Working: Yes
+setchar(0x09692A84, 0x30);
+setchar(0x09692AA2, 0x10);
+setchar(0x09692AA3, 0x3F);
+setchar(0x09692AD7, 0x40);
+setchar(0x09692ACE, 0x13);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09692A84, 0x21);
+setchar(0x09692AA2, 0x80);
+setchar(0x09692AA3, 0x3E);
+setchar(0x09692AD7, 0x3F);
+setchar(0x09692ACE, 0x00);
+setfloat(0x094420C0 + 0x4c, .75);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, 0);
+setchar(0x09F6C4C0, 0);
+setchar(0x967E6FC, 0xFF, 0xFF, 0xFF);
+//edited by xFinch713x on 4/11/2006 9:13:35 PM
+
+#cheat Gangs attack
+//ID: 6083
+//Score: 219
+//Author: vettefan88
+//Category: Pedestrians
+//Description: as of cheat device 1.0 gangs won't attack you, this will reverse that and make all gangs attack you
+//Image: none
+//Time: 02/04/2006 20:01:05
+//Working: Yes
+setchar(0x0979B4B0, 0, 100, 0);
+setchar(0x0979B4E4, 0, 100, 0);
+setchar(0x0979B518, 0, 100, 0);
+setchar(0x0979B54C, 0, 100, 0);
+setchar(0x0979B580, 0, 100, 0);
+setchar(0x0979B5B4, 0, 100, 0);
+setchar(0x0979B5E8, 0, 100, 0);
+setchar(0x0979B61C, 0, 100, 0);
+setchar(0x0979B650, 0, 100, 0);
+
+//edited by vettefan88 on 4/3/2006 4:35:16 PM
+
+#cheat Flaming exhaust
+//ID: 6082
+//Score: 2265
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make all car exhausts shoot flames
+//Image: none
+//Time: 02/04/2006 19:57:59
+//Working: Yes
+sethex(0x967E6A5, 40, 1C, 47, CD, CC, CC, 3D, 0A, D7, A3, 3B, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 01, 00, 60, 00, F6, FF, FF, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, A6, 9B, 44, BB, 60, 00, 00, 00, D0, 07, 00, 00, CD, CC, CC, 3D, 8F, C2, F5, 3C, 42, 60, 65, 3C, 02, 00, 00, 00, 00, 00, 00, 00, 00, 00, 80, 3F, 00, 00, 00, 00, 96, 91, 32, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 9C, 7C, B7, 08, 00, 00, 00, 00, 0F);
+off();
+
+#cheat Sideways tire
+//ID: 6044
+//Score: 37
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make your vehicle tires sideways, without water splashes or water sounds.
+//Image: none
+//Time: 01/04/2006 00:37:25
+//Working: Yes
+setint(pcar + 0x00000618, 2000000000);
+
+//edited by Waterbottle on 01.04.2006 18:30:30
+
+#cheat Red rocket smoke
+//ID: 6043
+//Score: 99
+//Author: vettefan88
+//Category: Weapons
+//Description: The smoke from rockets will be red
+//Image: none
+//Time: 01/04/2006 00:33:45
+//Working: Yes
+setchar(0x967EB9C, 0xFF, 0x00, 0x00);
+
+//edited by RASAL on 04/04/2006 14:23:52
+
+#cheat Red burning rubber smoke
+//ID: 6042
+//Score: 120
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever you do a burnout the smoke will be red.
+//Image: none
+//Time: 01/04/2006 00:33:01
+//Working: Yes
+setchar(0x967E824, 0xFF, 0x00, 0x00);
+
+//edited by Waterbottle on 01.04.2006 18:30:46
+
+#cheat Smog Trail Effect w/ Off Switch
+//ID: 11015
+//Score: 227
+//Author: MiiSteR LaZii
+//Category: Vehicle
+//Description: Give the back of yur car a trail of Black Smog to give it that Demonic look. 
+//
+//Thanks to Vettefan88 for Color theY4Kman for the Disperse Time & Radius Max.
+//
+//***Don't take my code and claim it as yurs!!
+//Image: http://i78.photobucket.com/albums/j104/Miister_Lazii/video1.gif
+//Time: 20/05/2006 23:52:46
+//Working: Yes
+//Smog
+sethex(0x967E824, 0x05, 0x05, 0x05);
+//Exhaust
+sethex(0x967E6FC, 0x05, 0x05, 0x05);
+//Smog Size
+sethex(0x967E6C6, 0xFF);
+//Smog Time
+sethex(0x967E6C8, 0xFF);
+#off
+//Smog Size
+sethex(0x967E6C6, 0x60);
+//Smog Time
+sethex(0x967E6C8, 0x01);
+
+#cheat All cars in Staunton garage are flyable deloreans
+//ID: 10767
+//Score: 173
+//Author: vettefan88
+//Category: Garage Codes
+//Description: This will make every car in your staunton garage a delorean, and automatcally capable of flying even without hover cars.
+//Image: none
+//Time: 17/05/2006 23:58:21
+//Working: Yes
+setint(0x8E38A38, 187);
+setchar(0x8E38A5C, 13, 0);
+setint(0x8E38A90, 187);
+setchar(0x8E38AB4, 13, 0);
+setint(0x8E38A64, 187);
+setchar(0x8E38A88, 13, 0);
+setfloat(0x8E38A3C, 301, -426.5, 26, 0);
+setfloat(0x8E38A68, 297.5, -426.5, 26, 0);
+setfloat(0x8E38A94, 294, -426.5, 26, 0);
+
+#cheat San Andreas Color Pack
+//ID: 10764
+//Score: 331
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will replace all of the car colors in the game with the colors from San Andreas, To help give the game a San Andreas'esque feel.
+//Image: none
+//Time: 17/05/2006 23:49:40
+//Working: Yes
+setchar(0x944F960, 0, 0, 0, 255, 245, 245, 245, 255, 42, 119, 161, 255, 132, 4, 16, 255, 38, 55, 57, 255, 134, 68, 110, 255, 215, 142, 16, 255, 76, 117, 183, 255, 189, 190, 198, 255, 94, 112, 114, 255, 70, 89, 122, 255, 101, 106, 121, 255, 93, 126, 141, 255, 88, 89, 90, 255, 214, 218, 214, 255, 156, 161, 163, 255, 51, 95, 63, 255, 115, 14, 26, 255, 123, 10, 42, 255, 159, 157, 148, 255, 59, 78, 120, 255, 115, 46, 62, 255, 105, 30, 59, 255, 150, 145, 140, 255, 81, 84, 89, 255, 63, 62, 69, 255, 165, 169, 167, 255, 99, 92, 90, 255, 61, 74, 104, 255, 151, 149, 146, 255, 66, 31, 33, 255, 95, 39, 43, 255, 132, 148, 171, 255, 118, 123, 124, 255, 100, 100, 100, 255, 90, 87, 82, 255, 37, 37, 39, 255, 45, 58, 53, 255, 147, 163, 150, 255, 109, 122, 136, 255, 34, 25, 24, 255, 111, 103, 95, 255, 124, 28, 42, 255, 95, 10, 21, 255, 25, 56, 38, 255, 93, 27, 32, 255, 157, 152, 114, 255, 122, 117, 96, 255, 152, 149, 134, 255, 173, 176, 176, 255, 132, 137, 136, 255, 48, 79, 69, 255, 77, 98, 104, 255, 22, 34, 72, 255, 39, 47, 75, 255, 125, 98, 86, 255, 158, 164, 171, 255, 156, 141, 113, 255, 109, 24, 34, 255, 78, 104, 129, 255, 156, 156, 152, 255, 145, 115, 71, 255, 102, 28, 38, 255, 148, 157, 159, 255, 164, 167, 165, 255, 142, 140, 70, 255, 52, 26, 30, 255, 106, 122, 140, 255, 170, 173, 142, 255, 171, 152, 143, 255, 133, 31, 46, 255, 111, 130, 151, 255, 88, 88, 83, 255, 154, 167, 144, 255, 96, 26, 35, 255, 32, 32, 44, 255, 164, 160, 150, 255, 170, 157, 132, 255, 120, 34, 43, 255, 14, 49, 109, 255, 114, 42, 63, 255, 123, 113, 94, 255, 116, 29, 40, 255, 30, 46, 50, 255, 77, 50, 47, 255, 124, 27, 68, 255, 46, 91, 32, 255, 57, 90, 131, 255, 109, 40, 55, 255, 167, 162, 143, 255, 175, 177, 177, 255, 54, 65, 85, 255, 109, 108, 110, 255, 15, 106, 137, 255, 32, 75, 107, 255, 43, 62, 87, 255, 155, 159, 157, 255, 108, 132, 149, 255, 7793, 96, 255, 174, 155, 127, 255, 64, 108, 143, 255, 31, 37, 59, 255, 171, 146, 118, 255, 19, 69, 115, 255, 150, 129, 108, 255, 100, 104, 106, 255, 16, 80, 130, 255, 161, 153, 131, 255, 56, 86, 148, 255, 82, 86, 97, 255, 127, 105, 86, 255, 140, 146, 154, 255, 89, 110, 135, 255, 71, 53, 50, 255, 68, 98, 79, 255, 115, 10, 39, 255, 34, 52, 87, 255, 100, 13, 27, 255, 163, 173, 198, 255, 105, 88, 83, 255, 155, 139, 128, 255, 98, 11, 28, 255, 91, 93, 94, 255, 98, 68, 40, 255, 115, 24, 39, 255, 27, 55, 109, 255, 236, 106, 174, 255);
+off()
+
+#cheat Wing Doors
+//ID: 10747
+//Score: 564
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will open up the doors to lay flat and look like wings on the car.
+//*look at the pic*
+//Image: http://img224.imageshack.us/img224/7549/screen57iz.png
+//Time: 17/05/2006 21:48:54
+//Working: Yes
+setfloat(pcar + 0x3d4, 1.6);
+setfloat(pcar + 0x404, 1.6);
+setfloat(pcar + 0x434, 1.6);
+setfloat(pcar + 0x464, 1.6);
+setchar(pcar + 0x438, 0, 1, 1, 0);
+setchar(pcar + 0x3d8, 0, 1, 1, 0);
+setchar(pcar + 0x408, 0, 1, 1, 0);
+setchar(pcar + 0x468, 0, 1, 1, 0);
+
+#cheat Reverse lamborghini doors
+//ID: 10584
+//Score: 196
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make the lambo doors open downwards.
+//
+//using it on a normal car will make the doors open into the ground, but using these with a monster truck will give it a truly unique look.
+//Image: none
+//Time: 16/05/2006 01:31:42
+//Working: Yes
+setfloat(pcar + 0x3d4, 1.26, 1);
+setfloat(pcar + 0x400, 0, 1.26, 1);
+setfloat(pcar + 0x434, 1.26, 1);
+setfloat(pcar + 0x460, 0, 1.26, 1);
+
+#cheat 180 degree doors
+//ID: 10549
+//Score: 230
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make the doors spin 180 degrees when they're opened, so that they lay right next to the door entrance.
+//Image: http://img483.imageshack.us/img483/2811/screen19hg.png
+//Time: 15/05/2006 20:53:14
+//Working: Yes
+setfloat(pcar + 0x3d4, -3.2, 1);
+setfloat(pcar + 0x400, 0, -3.2, 1);
+setfloat(pcar + 0x434, -3.2, 1);
+setfloat(pcar + 0x460, 0, -3.2, 1);
+
+#cheat koenigsegg doors
+//ID: 10547
+//Score: 326
+//Author: vettefan88
+//Category: Vehicle
+//Description: Just like my lamborghini door cheat this one will make the doors completely verticle giving it more of a koenigsegg look.
+//Image: http://img300.imageshack.us/img300/3100/screen12vy.png
+//Time: 15/05/2006 20:48:59
+//Working: Yes
+setfloat(pcar + 0x3d4, -1.6, 1);
+setfloat(pcar + 0x400, 0, -1.6, 1);
+setfloat(pcar + 0x434, -1.6, 1);
+setfloat(pcar + 0x460, 0, -1.6, 1);
+
+#cheat WHITE CAR EFFECTS
+//ID: 10449
+//Score: 109
+//Author: afrojim
+//Category: Vehicle
+//Description: this will give your car white nos and skidmarks effects press square and X toghether and move in any direction to preform adonut ring loooks good if you put it on my back to the future car!!
+//
+//EDITED BY: vettefan88 on 14/05/06 19:07:19
+//Image: none
+//Time: 14/05/2006 18:28:41
+//Working: Yes
+// Cheats Found by Vettefan88
+// Burning Rubber Smoke
+sethex(0x967E824, 0xFF, 0xFF, 0xFF);
+// Exhaust
+sethex(0x967E6FC, 0xFF, 0xFF, 0xFF);
+
+#cheat Fire Hydrants shoot out green acid
+//ID: 10267
+//Score: 81
+//Author: vettefan88
+//Category: Environment
+//Description: Fire hydrants will shoot out green acid
+//Image: none
+//Time: 13/05/2006 19:10:43
+//Working: Yes
+sethex(0x967F03C, 0x00, 0xFF, 0x00);
+
+#cheat Fire hydrants shoot out urine
+//ID: 10266
+//Score: 72
+//Author: vettefan88
+//Category: Environment
+//Description: The fire hydrants will shoot out yellow urine
+//Image: none
+//Time: 13/05/2006 19:10:00
+//Working: Yes
+sethex(0x967F03C, 0xFF, 0xFF, 0x00);
+
+#cheat Fire Hydrants shoot out blood
+//ID: 10265
+//Score: 140
+//Author: vettefan88
+//Category: Environment
+//Description: This will make the fire hydrants shoot out blood instead of water
+//Image: none
+//Time: 13/05/2006 19:09:16
+//Working: Yes
+sethex(0x967F03C, 0xFF, 0x00, 0x00);
+
+#cheat Moster Cheetah
+//ID: 9755
+//Score: 308
+//Author: xFinch713x
+//Category: Vehicle
+//Description: This makes a monster cheetah! made before PMG came out.  Car Spawns in staunton garage.
+//
+//PS-TURN ON THEN OFF BEFORE ENTERING GARAGE!
+//
+//EDITED BY: vettefan88 on 10/05/06 04:16:22
+//Image: none
+//Time: 08/05/2006 01:40:47
+//Working: Yes
+setfloat(0x09440F90 + 0x4c, 1.5);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945A430, -.75);
+setfloat(0x0945C6E8 - 0x945C6E0 + 0x945A430, .5);
+setfloat(0x0945C798 - 0x945C6E0 + 0x945A430, .5);
+setfloat(0x0945C7A0 - 0x945C6E0 + 0x945A430, 0);
+setfloat(0x0945C7A8 - 0x945C6E0 + 0x945A430, .6);
+setint(0x08E38A38, 146);
+
+#cheat Invisible Traffic
+//ID: 9669
+//Score: 177
+//Author: vettefan88
+//Category: Button Cheats
+//Description: This activates a button cheat removed from the game.
+//For some reason Rockstar didn't want you having it, but here it is.
+//
+//Turns all cars invisible except wheels, and peds inside them.
+//Image: none
+//Time: 07/05/2006 17:33:48
+//Working: Yes
+setchar(0x8B33E2C, 0x01);
+#off
+setchar(0x8B33E2C, 0x00);
+
+#cheat Gold Smoke Bombs
+//ID: 9656
+//Score: 327
+//Author: K3B4B5T4R
+//Category: Weapons
+//Description: With out the help of vettefan88's particle codes.
+//Image: none
+//Time: 07/05/2006 16:13:10
+//Working: Yes
+sethex(0x967CEB4, 0xEE, 0x80, 0x01);
+
+#cheat Brown Smoke Bombs
+//ID: 9653
+//Score: 158
+//Author: K3B4B5T4R
+//Category: Weapons
+//Description: With the help of vettefan88's particle codes
+//Image: none
+//Time: 07/05/2006 16:07:28
+//Working: Yes
+sethex(0x967CEB4, 0xD0, 0xFF, 0x6F);
+
+#cheat CYAN smoke bombs
+//ID: 9652
+//Score: 180
+//Author: K3B4B5T4R
+//Category: Weapons
+//Description: With the help of vettefan88's particle codes.
+//Image: none
+//Time: 07/05/2006 16:05:21
+//Working: Yes
+sethex(0x967CEB4, 0x68, 0xDD, 0xDD);
+
+#cheat Purple Smoke Bombs
+//ID: 9647
+//Score: 186
+//Author: vettefan88
+//Category: Weapons
+//Description: Turns Smoke Bombs Purple
+//Image: none
+//Time: 07/05/2006 15:56:31
+//Working: Yes
+sethex(0x967CEB4, 0xFF, 0x00, 0xFF);
+
+#cheat Green Smoke Bombs
+//ID: 9646
+//Score: 237
+//Author: vettefan88
+//Category: Weapons
+//Description: Turns Smoke Bombs Green
+//Image: none
+//Time: 07/05/2006 15:56:01
+//Working: Yes
+sethex(0x967CEB4, 0x00, 0xFF, 0x00);
+
+#cheat Red Smoke Bombs
+//ID: 9645
+//Score: 229
+//Author: vettefan88
+//Category: Weapons
+//Description: Turns Smoke Bombs Red
+//Image: none
+//Time: 07/05/2006 15:55:28
+//Working: Yes
+sethex(0x967CEB4, 0xFF, 0x00, 0x00);
+
+#cheat Blue Smoke Bombs
+//ID: 9644
+//Score: 229
+//Author: vettefan88
+//Category: Weapons
+//Description: Turns all smoke bombs Blue
+//Image: none
+//Time: 07/05/2006 15:54:46
+//Working: Yes
+sethex(0x967CEB4, 0x00, 0x00, 0xFF);
+
+#cheat Black Burnout smoke
+//ID: 9641
+//Score: 145
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes burnout smoke to black
+//Image: none
+//Time: 07/05/2006 15:51:32
+//Working: Yes
+sethex(0x967E824, 0x05, 0x05, 0x05);
+
+#cheat White Burnout Smoke
+//ID: 9639
+//Score: 88
+//Author: vettefan88
+//Category: Vehicle
+//Description: Changes burnout smoke to white
+//Image: none
+//Time: 07/05/2006 15:49:58
+//Working: Yes
+sethex(0x967E824, 0xFF, 0xFF, 0xFF);
+
+#cheat White Car shadow
+//ID: 14232
+//Score: 53
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will turn the car shadows white, giving them a neon underglow effect.
+//
+//great addon for your pmg cars.
+//Image: none
+//Time: 05/07/2006 14:58:02
+//Working: Yes
+setchar(0x95c01e1, 0);
+#off
+setchar(0x95c01e1, 1);
+
+#cheat Full Custom Color Set
+//ID: 15294
+//Score: 83
+//Author: jman12343
+//Category: Vehicle
+//Description: Makes all 127 colors change.
+//Thanks to vettefan88 and S.O.G for their pearlescent color sets, and I made 40-100 and 127.
+//Image: none
+//Time: 22/07/2006 21:23:11
+//Working: Yes
+setchar(0x944F960, 0x77, 0x36, 0x1B);//000
+setchar(0x944F964, 0xFF, 0x77, 0x36);//001
+setchar(0x944F968, 0xFF, 0xBB, 0x77);//002
+setchar(0x944F96C, 0x77, 0xFF, 0x36);//003
+setchar(0x944F974, 0x36, 0x77, 0x1B);//004
+setchar(0x944F970, 0x36, 0xFF, 0x77);//005
+setchar(0x944F978, 0x1B, 0x77, 0x36);//006
+setchar(0x944F97C, 0x36, 0x77, 0xFF);//007
+setchar(0x944F980, 0x36, 0x1B, 0x77);//008
+setchar(0x944F984, 0x1B, 0x36, 0x77);//009
+setchar(0x944F988, 0x77, 0x36, 0xFF);//010
+setchar(0x944F98C, 0xFF, 0x36, 0x77);//011
+setchar(0x944F990, 0x77, 0x1B, 0x36);//012
+setchar(0x944F994, 0xFF, 0x00, 0x36);//013
+setchar(0x944F998, 0xFF, 0x36, 0x00);//014
+setchar(0x944F9A0, 0x36, 0xFF, 0x00);//015
+setchar(0x944F99C, 0x00, 0xFF, 0x36);//016
+setchar(0x944F9A4, 0x00, 0x36, 0xFF);//017
+setchar(0x944F9A8, 0x36, 0x00, 0xFF);//018
+setchar(0x944F9AC, 0xFF, 0xFF, 0x77);//019
+setchar(0x944F9B0, 0xFF, 0xFF, 0x36);//020
+setchar(0x944F9B4, 0xFF, 0xFF, 0x1B);//021
+setchar(0x944F9B8, 0xFF, 0x77, 0xFF);//022
+setchar(0x944F9BC, 0xFF, 0x36, 0xFF);//023
+setchar(0x944F9C0, 0xFF, 0x1B, 0xFF);//024
+setchar(0x944F9C4, 0x77, 0xFF, 0xFF);//025
+setchar(0x944F9C8, 0x36, 0xFF, 0xFF);//026
+setchar(0x944F9CC, 0x1B, 0xFF, 0xFF);//027
+setchar(0x944F9D0, 128, 191, 255);//028
+setchar(0x944F9D4, 128, 255, 191);//029
+setchar(0x944F9D8, 191, 128, 255);//030
+setchar(0x944F9DC, 191, 255, 128);//031
+setchar(0x944F9E0, 255, 191, 128);//032
+setchar(0x944F9E4, 255, 128, 191);//033
+setchar(0x944F9E8, 32, 128, 223);// 034
+setchar(0x944F9EC, 32, 223, 128);// 035
+setchar(0x944F9F0, 128, 223, 32);// 036
+setchar(0x944F9F4, 128, 32, 223);// 037
+setchar(0x944F9F8, 223, 128, 32);// 038
+setchar(0x944F9FC, 223, 32, 128);// 039
+setchar(0x944FA00, 0x00, 0x00, 0x00);// 040
+setchar(0x944FA04, 0xFF, 0xFF, 0xFF);// 041
+setchar(0x944FA08, 0x83, 0x00, 0x00);// 042
+setchar(0x944FA0C, 0x00, 0x83, 0x00);// 043
+setchar(0x944FA10, 0x00, 0x00, 0x83);// 044
+setchar(0x944FA14, 0x83, 0x83, 0x00);// 045
+setchar(0x944FA18, 0x00, 0x83, 0x83);// 046
+setchar(0x944FA1C, 0x83, 0x00, 0x83);// 047
+setchar(0x944FA20, 0x83, 0x83, 0x83);// 048
+setchar(0x944FA24, 0xC3, 0xC3, 0xC3);// 049
+setchar(0x944FA28, 0x34, 0x6C, 0x49);// 050
+setchar(0x944FA2C, 0xFF, 0x79, 0x4B);// 051
+setchar(0x944FA30, 0x8F, 0x54, 0xC8);// 052
+setchar(0x944FA34, 0xFA, 0xC0, 0x8F);// 053
+setchar(0x944FA38, 0x56, 0x2F, 0x14);// 054
+setchar(0x944FA3C, 0x5A, 0xE1, 0x94);// 055
+setchar(0x944FA40, 0x35, 0x94, 0xB2);// 056
+setchar(0x944FA44, 0x86, 0xFF, 0x3F);// 057
+setchar(0x944FA48, 0x8A, 0x54, 0xCB);// 058
+setchar(0x944FA4C, 0x6A, 0xC6, 0x94);// 059
+setchar(0x944FA50, 0xFF, 0x52, 0x2B);// 060
+setchar(0x944FA54, 0xB0, 0x00, 0x00);// 061
+setchar(0x944FA58, 0x00, 0x40, 0x42);// 062
+setchar(0x944FA5C, 0xF7, 0xB1, 0x00);// 063
+setchar(0x944FA60, 0xFF, 0xC0, 0xFF);// 064
+setchar(0x944FA64, 0xFF, 0xFF, 0xC0);// 065
+setchar(0x944FA68, 0xC0, 0xFF, 0xFF);// 066
+setchar(0x944FA6C, 0xC0, 0xC0, 0xFF);// 067
+setchar(0x944FA70, 0xFF, 0xC0, 0xC0);// 068
+setchar(0x944FA74, 0xC0, 0xFF, 0xC0);// 069
+setchar(0x944FA78, 0xC9, 0xFF, 0x6B);// 070
+setchar(0x944FA7C, 0xFF, 0x5D, 0x5B);// 071
+setchar(0x944FA80, 0xFF, 0x45, 0x85);// 072
+setchar(0x944FA84, 0x45, 0x85, 0xFF);// 073
+setchar(0x944FA88, 0xFF, 0x45, 0x85);// 074
+setchar(0x944FA8C, 0x9C, 0xBC, 0xFF);// 075
+setchar(0x944FA90, 0xE3, 0x55, 0x74);// 076
+setchar(0x944FA94, 0xFF, 0x47, 0x00);// 077
+setchar(0x944FA98, 0x36, 0x72, 0x5B);// 078
+setchar(0x944FA9C, 0x46, 0x00, 0x46);// 079
+setchar(0x944FAA0, 0x00, 0x46, 0x46);// 080
+setchar(0x944FAA4, 0x46, 0x46, 0x00);// 081
+setchar(0x944FAA8, 0x46, 0x00, 0x00);// 082
+setchar(0x944FAAC, 0x46, 0x00, 0x00);// 083
+setchar(0x944FAB0, 0x00, 0x46, 0x00);// 084
+setchar(0x944FAB4, 0x30, 0x00, 0x30);// 085
+setchar(0x944FAB8, 0x30, 0x30, 0x00);// 086
+setchar(0x944FABC, 0x00, 0x30, 0x30);// 087
+setchar(0x944FAC0, 0x00, 0x00, 0x30);// 088
+setchar(0x944FAC4, 0x30, 0x00, 0x00);// 089
+setchar(0x944FAC8, 0x00, 0x30, 0x00);// 090
+setchar(0x944FACC, 0x5A, 0x85, 0x6D);// 091
+setchar(0x944FAD0, 0xB3, 0xDE, 0xFF);// 092
+setchar(0x944FAD4, 0xB7, 0xFF, 0x94);// 093
+setchar(0x944FAD8, 0x47, 0x20, 0xAE);// 094
+setchar(0x944FADC, 0x93, 0x52, 0xF3);// 095
+setchar(0x944FAE0, 0x81, 0xB2, 0xF2);// 096
+setchar(0x944FAE4, 0x50, 0x37, 0xB9);// 097
+setchar(0x944FAE8, 0x00, 0x34, 0xE5);// 098
+setchar(0x944FAEC, 0x63, 0xCE, 0xB2);// 099
+setchar(0x944FAF0, 0xA3, 0xC0, 0x7C);// 100
+setchar(0x0944FAF4, 0x77, 0x77, 0, 0xFF);//101
+setchar(0x0944FAF8, 0x77, 0x77, 0x77, 0xFF);//102
+setchar(0x0944FAFC, 0x77, 0, 0, 0xFF);//103
+setchar(0x0944FB00, 0x77, 0, 0x77, 0xFF);//104
+setchar(0x0944FB04, 0x77, 0, 0xff, 0xFF);//105
+setchar(0x0944FB08, 0x77, 0xff, 0xff, 0xFF);//106
+setchar(0x0944FB0C, 0x77, 0xff, 0, 0xFF);//107
+setchar(0x0944FB10, 0x77, 0xff, 0x77, 0xFF);//108
+setchar(0x0944FB14, 0x77, 0x77, 0xff, 0xFF);//109
+setchar(0x0944FB18, 0xff, 0xff, 0x77, 0xFF);//110
+setchar(0x0944FB1C, 0xff, 0x77, 0x77, 0xFF);//111
+setchar(0x0944FB20, 0xff, 0x77, 0, 0xFF);//112
+setchar(0x0944FB24, 0xff, 0, 0x77, 0xFF);//113
+setchar(0x0944FB28, 0xff, 0x77, 0xff, 0xFF);//114
+setchar(0x0944FB2C, 0, 0x77, 0x77, 0xFF);//115
+setchar(0x0944FB30, 0, 0, 0x77, 0xFF);//116
+setchar(0x0944FB34, 0, 0x77, 0, 0xFF);//117
+setchar(0x0944FB38, 0, 0x77, 0xff, 0xFF);//118
+setchar(0x0944FB3C, 0, 0x77, 0x77, 0xFF);//119
+setchar(0x0944FB40, 0, 0x82, 0xFE, 0xFE);//120
+setchar(0x0944FB44, 0xFF, 0x00, 0x00);//121
+setchar(0x0944FB48, 0x00, 0x00, 0xFF);//122
+setchar(0x0944FB4C, 0x00, 0xff, 0x00);//123
+setchar(0x0944FB50, 0xFF, 0x00, 0xFF);//124
+setchar(0x0944FB54, 0x00, 0xFF, 0xFF);//125
+setchar(0x0944FB58, 0xFF, 0xFF, 0x00);//126
+setchar(0x0944FB5C, 0xEE, 0xEE, 0xEE);//127
+
+#cheat Particle Changes
+//ID: 17210
+//Score: 25
+//Author: WarPSP
+//Category: Misc
+//Description: Many Pariticle Changes thanks to the
+//Cheats Found by Vettefan88 and theY4Kman
+//
+//Image: none
+//Time: 09/09/2006 19:40:17
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Rocket Smoke
+sethex(0x967EB9C, 0x66, 0x00, 0x00);
+// Car Collison Dust
+sethex(0x967E4AC, 0x66, 0x00, 0x00);
+// Ferry Chimney Smoke
+sethex(0x967EF14, 0x66, 0x00, 0x00);
+// Car Flame Smoke
+sethex(0x967E25C, 0x66, 0x00, 0x00);
+// Exhaust
+sethex(0x967E6FC, 0x66, 0x00, 0x00);
+// Car Fire
+sethex(0x0967D104, 0x66, 0x00, 0x00);
+// Flamethrower Flame
+sethex(0x967C980, 0x66, 0x00, 0x00);
+// Bullet Hit Smoke
+sethex(0x967E8B8, 0x66, 0x00, 0x00);
+// Engine Steam
+sethex(0x967D47C, 0x66, 0x00, 0x00);
+// Rubber Smoke
+sethex(0x967E790, 0x66, 0x00, 0x00);
+// Hydrant Steam
+sethex(0x967F03C, 0x66, 0x00, 0x00);
+
+#cheat Never Fall over
+//ID: 12313
+//Score: 248
+//Author: vettefan88
+//Category: Player
+//Description: Toni will never fall over, This is especially useful in my heavy toni cheat or while using the gather spell on foot.
+//
+//No longer will getting hit from behind knock you to the ground!
+//Image: none
+//Time: 07/06/2006 01:18:41
+//Working: Yes
+setfloat(pplayer + 0x128, 0, 0);
+
+#cheat Ultimate Car Showroom *DELUXE EDITION* V1
+//ID: 12054
+//Score: 412
+//Author: vettefan88
+//Category: Location Mods
+//Description: This is the Deluxe version of the ultimate car showroom.
+//Featuring 2 completely new buildings, including a Showroom, and Repair Garage.
+//It has many Car Spawns, A bult in Pay & Spray, and Bomb Shop.
+//The showroom has 3 floors and a heli-pad
+//Image: none
+//Time: 02/06/2006 23:17:03
+//Working: Yes
+moveto(-1079.79, 68.19, 62.20);  object(0x01BF, 90, 0, 90);
+move(0.03, -8.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.62, 0.30, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.08, 7.70, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.57, -0.06, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.08, -7.90, 0.00);  object(0x01BF, 90, 0, 90);
+move(-7.19, 8.53, -1.30);  object(0x01BF, 90, 20, 180);
+move(-7.40, 0.05, -2.70);  object(0x01BF, 90, 20, 180);
+move(7.89, -7.41, 4.02);  object(0x01BF, 90, 0, 90);
+move(-6.65, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.72, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.03, 7.80, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.51, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.69, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.63, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.72, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.21, -0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(26.23, -7.70, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.74, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.73, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.67, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(-5.99, -0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(32.71, -7.67, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.63, 0.01, 0.00);  object(0x01BF, 90, 0, 91);
+move(-6.74, 0.18, 0.00);  object(0x01BF, 90, 0, 91);
+move(-6.62, 0.04, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.13, -0.04, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.05, -8.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.05, -7.90, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.05, -7.80, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.02, -2.70, 0.00);  object(0x01BF, 90, 0, 90);
+move(25.95, 18.27, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.56, 0.04, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.94, 0.18, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.27, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(19.72, -8.05, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.45, -0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.61, 0.33, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.27, -0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.03, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.01, -3.10, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.03, 3.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.20, 0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.27, 0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(-12.04, -3.04, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.44, 0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(5.96, 0.02, 0.00);  object(0x01BF, 90, 0, 90);
+move(-9.50, 18.25, 0.00);  object(0x01BF, 90, 0, 90);
+move(-22.70, 7.96, 0.00);  object(0x01BF, 90, 0, 90);
+move(28.78, 1.53, 1.45);  object(0x01BF, 90, 340, 90);
+move(0.07, -4.20, 1.50);  object(0x01BF, 90, 340, 90);
+move(0.03, -3.80, 1.40);  object(0x01BF, 90, 340, 90);
+move(0.01, -7.50, 1.30);  object(0x01BF, 90, 0, 90);
+move(0.07, -7.90, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.04, -5.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.45, -0.05, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.07, 7.80, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.07, 7.80, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.07, 7.90, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.07, 7.80, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.30, -0.05, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.06, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.06, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.07, -7.90, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.06, -6.50, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.01, -1.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.77, 31.25, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.14, -0.05, 0.00);  object(0x01BF, 90, 0, 90);
+move(-3.37, -0.03, 0.00);  object(0x01BF, 90, 0, 90);
+move(4.08, -7.61, -1.30);  object(0x01BF, 90, 20, 90);
+move(-4.09, -0.05, 0.00);  object(0x01BF, 90, 20, 90);
+//rails
+moveto(-1144.75, 23.52, 66.57);  object(0x01EF, 0, 0, 0);
+move(-4.20, -0.03, 0.00);  object(0x01EF, 0, 0, 0);
+move(0.04, 6.34, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.06, 6.20, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.06, 6.10, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.06, 6.30, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.06, 6.10, 0.00);  object(0x01EF, 0, 0, 90);
+move(10.63, -30.97, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.01, 6.20, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.01, 6.20, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.01, 6.30, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.01, 6.10, 0.00);  object(0x01EF, 0, 0, 270);
+move(6.02, 5.35, 1.50);  object(0x01EF, 0, 0, 90);
+move(0.08, -6.20, 0.00);  object(0x01EF, 0, 0, 90);
+move(0.08, -6.20, 0.00);  object(0x01EF, 0, 0, 90);
+move(0.08, -6.20, 0.00);  object(0x01EF, 0, 0, 90);
+move(0.07, -5.80, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.29, -6.33, 0.00);  object(0x01EF, 0, 0, 0);
+move(6.20, -0.02, 0.00);  object(0x01EF, 0, 0, 0);
+move(6.10, -0.02, 0.00);  object(0x01EF, 0, 0, 0);
+move(-0.10, 0.60, -5.60);  object(0x01EF, 0, 0, 0);
+move(-6.20, 0.02, 0.00);  object(0x01EF, 0, 0, 0);
+move(-6.20, 0.02, 0.00);  object(0x01EF, 0, 0, 0);
+move(-6.10, 0.02, 0.00);  object(0x01EF, 0, 0, 0);
+move(-9.89, 37.92, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.01, 6.10, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.01, 5.30, 0.00);  object(0x01EF, 0, 0, 90);
+move(6.08, 0.10, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.20, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.10, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.20, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.10, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(4.40, -0.02, 0.00);  object(0x01EF, 0, 0, 180);
+move(3.80, -0.02, 0.00);  object(0x01EF, 0, 0, 180);
+move(20.19, -0.78, 0.00);  object(0x01EF, 0, 0, 180);
+move(6.30, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(-61.41, -48.54, 4.10);  object(0x01EF, 0, 0, 0);
+move(-4.10, -0.03, 0.00);  object(0x01EF, 0, 0, 0);
+move(28.58, 22.85, 1.60);  object(0x01EF, 0, 0, 270);
+move(-0.01, 6.20, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.00, 2.90, 0.00);  object(0x01EF, 0, 0, 270);
+move(0.06, 6.07, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.10, -0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.30, -0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.10, -0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(-3.90, -0.03, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.17, -0.01, 0.00);  object(0x01EF, 0, 0, 90);
+move(-0.10, -31.51, -1.60);  object(0x01EF, 0, 0, 90);
+move(13.19, 24.42, 1.40);  object(0x01F0, 0, 0, 0);
+move(-2.60, -0.00, 0.00);  object(0x01F0, 0, 0, 0);
+move(34.91, 10.91, -5.60);  object(0x01EF, 0, 0, 180);
+move(3.63, -0.04, 0.00);  object(0x01EF, 0, 0, 180);
+move(-10.08, 0.13, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.01, 1.50, 0.00);  object(0x01EF, 0, 0, 270);
+//Repair shop
+moveto(-1224.53, -16.28, 58.59);  object(0x01BF, 90, 0, 270);
+move(0.10, -8.00, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.10, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.10, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.75, 0.08, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.10, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.10, 7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.10, 8.00, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.68, -23.71, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.93, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.31, 0.07, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.08, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.08, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.02, -7.77, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.51, 0.05, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.08, 7.83, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.08, 8.00, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.08, 7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.48, 0.06, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.08, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.08, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.92, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.63, 0.19, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(-6.71, 7.67, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.04, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.41, -1.47, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.04, -7.30, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.95, -23.66, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.03, 7.70, -1.00);  object(0x01BF, 90, 15, 270);
+move(-0.03, 7.30, -2.00);  object(0x01BF, 90, 15, 270);
+move(-0.02, 6.70, -1.80);  object(0x01BF, 90, 15, 270);
+move(0.01, 6.35, -1.70);  object(0x01BF, 90, 15, 270);
+move(-3.97, 0.57, 6.72);  object(0x01EF, 0, 0, 270);
+move(0.02, -6.30, 0.00);  object(0x01EF, 0, 0, 270);
+move(0.02, -6.30, 0.00);  object(0x01EF, 0, 0, 270);
+move(0.02, -6.30, 0.00);  object(0x01EF, 0, 0, 270);
+move(7.02, -13.30, 0.00);  object(0x01EF, 0, 0, 270);
+move(-0.00, 1.10, 0.00);  object(0x01EF, 0, 0, 270);
+move(-20.29, 32.37, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.10, 0.00, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.10, 0.00, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.10, 0.00, 0.00);  object(0x01EF, 0, 0, 180);
+move(-6.20, 0.00, 0.00);  object(0x01EF, 0, 0, 180);
+move(-1.10, 0.00, 0.00);  object(0x01EF, 0, 0, 180);
+//car spawns
+//landstalker
+setchar(08E4Eb78, 131);
+setchar(08E4Eb78 + 0x18, 0x01);
+setfloat(08E4Eb7c, -1134.07, 48.77, 58.78, 90);
+//Linerunner
+setchar(08E4Eba4, 134);
+setchar(08E4eba4 + 0x18, 0x01);
+setfloat(08E4Eba8, -1115.27, 45.67, 59.48, 180);
+//bobcat
+setchar(08E4Ebfc, 153);
+setchar(08E4Ebfc + 0x18, 0x01);
+setfloat(08E4ec00, -1135.40, 29.64, 58.50, 90);
+//cartel cruiser
+setchar(08E4Ec54, 176);
+setchar(08E4Ec54 + 0x18, 0x01);
+setfloat(08E4Ec58, -1144.86, 28.49, 67.51, 0);
+//securicar
+setchar(08E4Ec80, 159);
+setchar(08E4Ec80 + 0x18, 0x01);
+setfloat(08E4Ec84, -1118.17, 31.21, 59.04, 90);
+//hunter
+setchar(08E4Ecd8, 213);
+setchar(08E4Ecd8 + 0x18, 0x01);
+setfloat(08E4Ecdc, -1093.59, 35.83, 69.91, 45);
+//Rc Bandit
+setchar(08E4Ed04, 137);
+setchar(08E4Ed04 + 0x18, 0x01);
+setfloat(08E4Ed08, -1112.59, 41.01, 68.52, 90);
+//diablo
+setchar(08E4Ed88, 175);
+setchar(08E4Ed88 + 0x18, 0x01);
+setfloat(08E4Ed8c, 1187.36, -41.28, 52.73, 0);
+//yardie
+setchar(08E4Edb4, 173);
+setchar(08E4Edb4 + 0x18, 0x01);
+setfloat(08E4Edb8, -1199.13, -40.75, 52.83, 0);
+//leone
+setchar(08E4Ede0, 172);
+setchar(08E4Ede0 + 0x18, 0x01);
+setfloat(08E4Ede4, -1206.78, -9.69, 52.77, 180);
+//hoods
+setchar(08E4Ee0c, 177);
+setchar(08E4Ee0c + 0x18, 0x01);
+setfloat(08E4Ee10, -1112.59, 41.01, 68.52, 90);
+off()
+
+#cheat Teleport to The Deluxe Garage
+//ID: 12053
+//Score: 135
+//Author: vettefan88
+//Category: Teleport
+//Description: This will teleport you to the Garage section of the ultimate Car Showroom *Deluxe*
+//Image: none
+//Time: 02/06/2006 23:14:52
+//Working: Yes
+teleport(-1184.26, -18.84, 53.17);
+
+#cheat Teleport to Deluxe Showroom
+//ID: 12052
+//Score: 111
+//Author: vettefan88
+//Category: Teleport
+//Description: This will teleport you to the "Ultimate Car Showroom *Deluxe*
+//Image: none
+//Time: 02/06/2006 23:14:08
+//Working: Yes
+teleport(-1136.20, 23.19, 58.81);
+
+#cheat Real Time Clock
+//ID: 12043
+//Score: 209
+//Author: vettefan88
+//Category: Misc
+//Description: This will make the game time move in real time.
+//what this means is that a minute in real life will be a minute in the game.
+//
+//So if you synchronize the times when you start playing, The time will remain consistent with real time.
+//Image: none
+//Time: 02/06/2006 19:34:16
+//Working: Yes
+setint(0x08B5E08C, 60000);
+#off
+setint(0x08B5E08C, 1000);
+
+#cheat Crouch
+//ID: 11948
+//Score: 98
+//Author: theY4Kman
+//Category: Player
+//Description: When you turn this on, you will bend your knees instantly, like when you land on the ground from a high jump (Not to be confused with crouching, as cops do with guns)
+//
+//EDITED BY: vettefan88 on 31/05/06 23:51:47
+//Image: none
+//Time: 31/05/2006 23:02:54
+//Working: Yes
+sethex(pplayer + 195, 0A);
+setfloat(pplayer + 1A8, 00);
+off();
+
+#cheat Candy Green Lovers!!! (tested)
+//ID: 11888
+//Score: 91
+//Author: scarfield
+//Category: Misc
+//Description: Turns a lot of things into candy green. AWESOME CANDY GREEN FANS UNITE!!!
+//
+//Great with the Ultimate stunt pcj-600 by vettefan88.
+//
+//
+//Image: http://img324.imageshack.us/img324/221/video29sy.gif
+//Time: 31/05/2006 01:56:47
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Rocket Smoke
+sethex(0x967EB9C, 0x00, 0xFF, 0x00);
+// Car Collison Dust
+sethex(0x967E4AC, 0x00, 0xFF, 0x00);
+// Ferry Chimney Smoke
+sethex(0x967EF14, 0x00, 0xFF, 0x00);
+// Medium Explosion
+sethex(0x967D888, 0x00, 0xFF, 0x00);
+// Large Explosion
+sethex(0x967D91C, 0x00, 0xFF, 0x00);
+// Medium Fast Explosion
+sethex(0x967D9B0, 0x00, 0xFF, 0x00);
+// Large Fast Explosion
+sethex(0x967DA44, 0x00, 0xFF, 0x00);
+// Water Hydrant
+sethex(0x967DC94, 0x00, 0xFF, 0x00);
+// Engine Smoke
+sethex(0x967E134, 0x00, 0xFF, 0x00);
+// Engine Smoke 2
+sethex(0x967E1C8, 0x00, 0xFF, 0x00);
+// Car Flame Smoke
+sethex(0x967E25C, 0x00, 0xFF, 0x00);
+// Burning Rubber Smoke
+sethex(0x967E824, 0x00, 0xFF, 0x00);
+// Exhaust
+sethex(0x967E6FC, 0x00, 0xFF, 0x00);
+// Car Fire
+sethex(0x0967D104, 0x00, 0xFF, 0x00);
+// Flamethrower Flame
+sethex(0x967C980, 0x00, 0xFF, 0x00);
+// Flames
+sethex(0x0967C8EC, 0x00, 0xFF, 0x00);
+// Gunflash
+sethex(0x967CA14, 0x00, 0xFF, 0x00);
+// Bullet Hit Smoke
+sethex(0x967E8B8, 0x00, 0xFF, 0x00);
+// Small Sparks
+sethex(0x967C1FC, 0x00, 0xFF, 0x00);
+// Gun Smoke
+sethex(0x967CB3C, 0x00, 0xFF, 0x00);
+// Gun Smoke 2
+sethex(0x967CBD0, 0x00, 0xFF, 0x00);
+// Blood
+sethex(0x967C4E0, 0x00, 0xFF, 0x00);
+// Blood Small
+sethex(0x967C574, 0x00, 0xFF, 0x00);
+// Blood Spurt
+sethex(0x967C608, 0x00, 0xFF, 0x00);
+// Debris
+sethex(0x967C69C, 0x00, 0xFF, 0x00);
+// Debris 2
+sethex(0x967C730, 0x00, 0xFF, 0x00);
+// Water Spark
+sethex(0x967C290, 0x00, 0xFF, 0x00);
+// Wheel Dirt
+sethex(0x967C308, 0x00, 0xFF, 0x00);
+// Sand
+sethex(0x967C3B8, 0x00, 0xFF, 0x00);
+// Wheel Water
+sethex(0x967C44C, 0x00, 0xFF, 0x00);
+// Flyers
+sethex(0x967C7C4, 0x00, 0xFF, 0x00);
+// Cigarette Smoke
+sethex(0x967CC64, 0x00, 0xFF, 0x00);
+// Smoke
+sethex(0x967CCF8, 0x00, 0xFF, 0x00);
+// Smoke Slow-Motion
+sethex(0x967CD8C, 0x00, 0xFF, 0x00);
+// Dry Ice
+sethex(0x967CE20, 0x00, 0xFF, 0x00);
+// Teargas
+sethex(0x967CEB4, 0x00, 0xFF, 0x00);
+// Garage Paint Spray
+sethex(0x967CF48, 0x00, 0xFF, 0x00);
+// Shard
+sethex(0x967CFDC, 0x00, 0xFF, 0x00);
+// Splash
+sethex(0x967D070, 0x00, 0xFF, 0x00);
+// Steam
+sethex(0x967D198, 0x00, 0xFF, 0x00);
+// Steam 2
+sethex(0x967D22C, 0x00, 0xFF, 0x00);
+// Steam NY Slow-Motion
+sethex(0x967D354, 0x00, 0xFF, 0x00);
+// Ground Steam
+sethex(0x967D3E8, 0x00, 0xFF, 0x00);
+// Engine Steam
+sethex(0x967D47C, 0x00, 0xFF, 0x00);
+// Raindrop
+sethex(0x967D510, 0x00, 0xFF, 0x00);
+// Small Raindrop
+sethex(0x967D5A4, 0x00, 0xFF, 0x00);
+// Rain Splash
+sethex(0x967D638, 0x00, 0xFF, 0x00);
+// Big Row of Rain Splash
+sethex(0x967D6CC, 0x00, 0xFF, 0x00);
+// Rain Splash Up
+sethex(0x967D760, 0x00, 0xFF, 0x00);
+// Water Spray
+sethex(0x967D7F4, 0x00, 0xFF, 0x00);
+// Car Splash
+sethex(0x967DAD8, 0x00, 0xFF, 0x00);
+// Boat Splash
+sethex(0x967DB6C, 0x00, 0xFF, 0x00);
+// Jet Thrust from Boat
+sethex(0x967DC00, 0x00, 0xFF, 0x00);
+// Extinguish Steam
+sethex(0x967DDBC, 0x00, 0xFF, 0x00);
+// Ped Splash
+sethex(0x967DE50, 0x00, 0xFF, 0x00);
+// Ped Foot Dust
+sethex(0x967DEE4, 0x00, 0xFF, 0x00);
+// Car Dust
+sethex(0x967DF77, 0x00, 0xFF, 0x00);
+// Helicopter Dust
+sethex(0x967E00C, 0x00, 0xFF, 0x00);
+// Helicopter Attack
+sethex(0x967E0A0, 0x00, 0xFF, 0x00);
+// Paint Spray
+sethex(0x967E382, 0x00, 0xFF, 0x00);
+// Car Debris
+sethex(0x967E540, 0x00, 0xFF, 0x00);
+// Helicopter Debris
+sethex(0x967E668, 0x00, 0xFF, 0x00);
+// Rubber Smoke
+sethex(0x967E790, 0x00, 0xFF, 0x00);
+// First Gunshell
+sethex(0x967E94C, 0x00, 0xFF, 0x00);
+// Gunshell
+sethex(0x967E9E0, 0x00, 0xFF, 0x00);
+// Bump1 Gunshell
+sethex(0x967EA74, 0x00, 0xFF, 0x00);
+// Bump2 Gunshell
+sethex(0x967EB08, 0x00, 0xFF, 0x00);
+// Bird Front
+sethex(0x967ECC4, 0x00, 0xFF, 0x00);
+// Ship Side
+sethex(0x967ED58, 0x00, 0xFF, 0x00);
+// Beastie
+sethex(0x967EDEC, 0x00, 0xFF, 0x00);
+// 2D Raindrop
+sethex(0x967EE80, 0x00, 0xFF, 0x00);
+// Multiplayer Hit
+sethex(0x967EFA8, 0x00, 0xFF, 0x00);
+// Hydrant Steam
+sethex(0x967F03C, 0x00, 0xFF, 0x00);
+// Gunflash No Animation
+sethex(0x967CAA8, 0x00, 0xFF, 0x00);
+// Spark
+sethex(0x9794D40, 0x00, 0xFF, 0x00);
+setchar(0x8b8d530, 0x00, 0xFF, 0x00);
+setchar(0x8b8d5c0, 0x00, 0xFF, 0x00);
+setchar(0x8b8d650, 0x00, 0xFF, 0x00);
+setchar(0x8b8d6e0, 0x00, 0xFF, 0x00);
+setchar(0x8b8d770, 0x00, 0xFF, 0x00);
+setchar(0x8b8d800, 0x00, 0xFF, 0x00);
+setchar(0x8b8d890, 0x00, 0xFF, 0x00);
+setchar(0x8b8d920, 0x00, 0xFF, 0x00);
+setchar(0x8b8d9b0, 0x00, 0xFF, 0x00);
+
+#cheat Ultimate Car showroom V2 (BETA RELEASE)
+//ID: 11789
+//Score: 1015
+//Author: vettefan88
+//Category: Location Mods
+//Description: Now in Version 2 BETA it Features:
+//19 Cars Spawns.
+//Every weapon spawn
+//front gate removed
+//Over 5 Floors!
+//Observation Deck
+//Built in PMG Cars
+//
+//The biggest car showroom to date!
+//Image: http://img359.imageshack.us/img359/5479/screen134zk.png
+//Time: 30/05/2006 00:29:54
+//Working: Yes
+moveto(34.17, -372.69, 23.13);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.60, -9.85, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.14, 0.04, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-6.07, 7.76, 0.00);  object(0x01BF, 90, 0, 270);
+move(11.99, -7.72, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.50, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-5.78, 54.22, -0.90);  object(0x01BF, 75, 0, 270);
+move(5.23, 0.05, -1.40);  object(0x01BF, 75, 0, 270);
+move(5.97, 0.06, -1.60);  object(0x01BF, 75, 0, 270);
+move(5.97, 0.06, -1.60);  object(0x01BF, 75, 0, 270);
+move(4.88, -0.03, -1.30);  object(0x01BF, 75, 0, 270);
+move(5.23, 0.05, -1.40);  object(0x01BF, 75, 0, 270);
+move(-18.50, -6.52, 10.60);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(-3.90, 2.89, 2.44);  object(0x01BF, 90, 0, 180);
+move(-7.80, -0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(-7.80, -0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(-4.10, -0.00, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.59, 6.43, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.80, 0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(4.40, 0.00, 0.00);  object(0x01BF, 90, 0, 180);
+move(-19.30, -0.02, 0.00);  object(0x01BF, 90, 0, 180);
+move(26.90, 0.02, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, -6.48, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.60, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.05, 6.51, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.16, 0.00);  object(0x01BF, 90, 0, 180);
+move(-6.70, 0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.31, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.33, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.17, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.41, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.03, 4.81, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.03, 3.62, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.51, -27.53, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.36, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.27, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.32, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 5.83, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.02, 2.74, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.36, -5.50, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.80, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.10, -0.04, 0.00);  object(0x01BF, 90, 0, 180);
+move(-13.56, 5.52, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.30, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.20, -0.04, 0.00);  object(0x01BF, 90, 0, 180);
+move(1.42, 3.31, 2.50);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-4.90, 0.03, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-2.68, -0.00, -2.20);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(-1.32, -3.35, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-6.39, 3.78, -1.00);  object(0x01BF, 90, 10, 270);
+move(-0.02, 7.30, -1.30);  object(0x01BF, 90, 10, 270);
+move(-0.05, 7.37, -1.30);  object(0x01BF, 90, 10, 270);
+move(-0.02, 4.10, -0.80);  object(0x01BF, 90, 10, 272);
+move(23.45, 17.31, -0.40);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(42.75, -2.63, 6.98);  object(0x0CDB, 0, 0, 270);
+move(0.06, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.06, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+//lights on third floor
+moveto(56.48, -324.82, 28.51);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.00, 0.00);  object(0x020F, 0, 0, 90);
+//other lights
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+move(-1.30, 0.00, 0.00);  object(0x020F, 0, 0, 90);
+//fourth floor
+moveto(88.91, -328.42, 33.05);  object(0x01BF, 90, 0, 90);
+move(-6.10, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.42, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.01, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.41, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-3.83, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(28.74, -6.85, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.31, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.51, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.55, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.35, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-3.04, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.00, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.00, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.00, -7.60, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.60, 14.95, -0.60);  object(0x01BF, 90, 10, 90);
+move(0.0, -7.20, -1.30);  object(0x01BF, 90, 10, 90);
+move(0.0, -7.30, -1.30);  object(0x01BF, 90, 10, 90);
+move(0.0, -7.30, -1.30);  object(0x01BF, 90, 10, 90);
+//railings
+moveto(57.2, -324.82, 33.4);  object(0x01ef, 0, 0, 90);
+move(0.00, -6.60, 0.00);  object(0x01ef, 0, 0, 90);
+move(0.00, -6.60, 0.00);  object(0x01ef, 0, 0, 90);
+move(0.00, -6.60, 0.00);  object(0x01ef, 0, 0, 90);
+move(0.00, -6.60, 0.00);  object(0x01ef, 0, 0, 90);
+move(0.00, -6.60, 0.00);  object(0x01f0, 0, 0, 90);
+moveto(57.08, -361.11, 33.4);  object(0x01EF, 0, 0, 0);
+//fourth floor addon + observation deck
+moveto(88.89, -321.34, 33.03);  object(0x01BF, 90, 0, 90);
+move(-6.30, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.39, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.20, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.22, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-3.65, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.48, 0.39, 0.80);  object(0x01BF, 105, 0, 90);
+move(-5.98, -0.01, 1.60);  object(0x01BF, 105, 0, 90);
+move(-6.61, -0.01, 0.80);  object(0x01BF, 90, 0, 90);
+move(0.01, -7.40, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.05, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.01, 7.40, 0.00);  object(0x01BF, 90, 0, 90);
+move(6.09, -14.69, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.18, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-4.89, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.01, 7.20, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.02, 8.70, 0.00);  object(0x01BF, 90, 0, 90);
+move(13.86, -19.82, 0.20);  object(0x01EF, 0, 0, 270);
+move(-0.00, 7.60, 0.00);  object(0x01EF, 0, 0, 270);
+move(-6.43, -7.64, 0.00);  object(0x01EF, 0, 0, 0);
+move(-5.70, 0.03, 0.00);  object(0x01EF, 0, 0, 0);
+//remove the Front Gate
+setfloat(0x09997788, -100);
+//pimped cars
+//monster hummer- Patriot
+setshort(0x992FC5A, 0x20, 0x48, 0x75, 0x6d, 0x6d, 0x65, 0x72);
+setchar(0x9459d32, 0x5);
+setchar(0x9459d31, 0x50);
+setchar(0x9459d30, 0x34);
+setshort(0x94401d0, 250);
+setfloat(0x94401cc, 1.6);
+setfloat(0x9459cb0, 2500);
+setfloat(0x9459cb8, 0.75);
+setfloat(0x9459d70, 0.35);
+setfloat(0x9459d74, -.7);
+setfloat(0x9459d78, 0.5);
+setfloat(0x9459d3c, 1);
+setfloat(0x9459d40, 1);
+setfloat(0x9459d34, 0.001);
+setfloat(0x9459d50, 0.5);
+setfloat(0x9459d54, 0);
+setfloat(0x9459d58, 25);
+setfloat(0x9459d68, 1.5);
+setfloat(0x9459d6c, 1);
+setfloat(0x9459d84, 0.28);
+setfloat(0x9459d7c, 0);
+setfloat(0x9459cd0, 0);
+setfloat(0x9459cd4, 0);
+setfloat(0x9459cd8, -1);
+setchar(0x9459ce0, 80);
+setfloat(0x9459d5c, 0.92);
+setfloat(0x9459d60, 0.5);
+setfloat(0x9459cbc, 0);
+sethex(0x9459d80, 0x83, 0xc1, 0x00, 0x04);
+//venom-banshee
+setshort(0x992FDD4, 0x20, 0x20, 0x56, 0x65, 0x6e, 0x6f, 0x6d);
+sethex(0x945b131, 0x01);
+sethex(0x945b133, 0x02);
+setchar(0x945b0e2, 0x8);
+setchar(0x945b0e1, 0x50);
+setchar(0x945b0e0, 0x52);
+setshort(0x94425c0, 250);
+setfloat(0x94425bc, 1);
+setfloat(0x945b060, 1500);
+setfloat(0x945b068, 0.85);
+setfloat(0x945b120, 0.3);
+setfloat(0x945b124, -0.15);
+setfloat(0x945b128, 0.5);
+setfloat(0x945b0ec, 5);
+setfloat(0x945b0f0, 4);
+setfloat(0x945b100, 0.52);
+setfloat(0x945b104, 0);
+setfloat(0x945b108, 34);
+setfloat(0x945b118, 1.6);
+setfloat(0x945b11c, 0.1);
+setfloat(0x945b134, 0.15);
+setfloat(0x945b12c, 0);
+setfloat(0x945b080, 0);
+setfloat(0x945b084, 0);
+setfloat(0x945b088, -1);
+setchar(0x945b090, 70);
+setchar(0x967E6FC, 0x00, 187, 0x00);
+//porsche
+setshort(0x992FC0E, 0x50, 0x6f, 0x72, 0x73, 0x63, 0x68, 0x65);
+setchar(0x9459972, 0x5);
+setchar(0x9459971, 0x50);
+setchar(0x9459970, 0x52);
+setshort(0x943fb90, 250);
+setfloat(0x943fb8c, 0.87);
+setfloat(0x94598f8, 0.8);
+setfloat(0x94599b0, 0.2);
+setfloat(0x94599b4, -0.05);
+setfloat(0x94599b8, 0.5);
+setfloat(0x945997c, 1.5);
+setfloat(0x9459980, 1.5);
+setchar(0x8E38A58, 255);
+setfloat(0x9459974, 0.00208);
+setfloat(0x9459990, 0.52);
+setfloat(0x9459994, 0);
+setfloat(0x9459998, 25);
+setfloat(0x94599a8, 1);
+setfloat(0x94599ac, 0.2);
+setfloat(0x94599c4, 0.4);
+setfloat(0x94599bc, 1);
+setfloat(0x9459910, 0);
+setfloat(0x9459914, 0);
+setfloat(0x9459918, -0.5);
+setchar(0x9459920, 70);
+setfloat(0x945999c, 0.92);
+setfloat(0x94599a0, 0.48);
+setfloat(0x94598fc, 0);
+sethex(0x94599c0, 0x83, 0xa1, 0x00, 0x06);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+//car spawns
+//landstalker
+setchar(0x08E4E9C0, 131);
+setchar(0x08E4E9C0 + 0x18, 0x01);
+setfloat(0x08E4E9C4, 41.34, -369, 16.16, 300);
+//patriot
+setchar(0x08E4E9EC, 137);
+setchar(0x08E4E9EC + 0x18, 0x01);
+setfloat(0x08E4E9f0, 41.34, -364, 16.16, 300);
+//phobos
+setchar(0x08E4Ea18, 186);
+setchar(0x08E4Ea18 + 0x18, 0x01);
+setfloat(0x08E4Ea1c, 41.34, -359, 16.16, 300);
+//stinger
+setchar(0x08E4Ea44, 133);
+setchar(0x08E4Ea44 + 0x18, 0x01);
+setfloat(0x08E4Ea48, 41.34, -354, 16.16, 300);
+//yardie lobo
+setchar(0x08E4Ea70, 173);
+setchar(0x08E4Ea70 + 0x18, 0x01);
+setfloat(0x08E4Ea74, 41.34, -349, 16.16, 300);
+//banshee
+setchar(0x08E4Ea9c, 160);
+setchar(0x08E4Ea9c + 0x18, 0x01);
+setfloat(0x08E4Eaa0, 41.34, -344, 16.16, 300);
+//hellenbach
+setchar(0x08E4Eac8, 185);
+setchar(0x08E4Eac8 + 0x18, 0x01);
+setfloat(0x08E4Eacc, 41.34, -339, 16.16, 300);
+//thunder-rodd
+setchar(0x08E4Eaf4, 189);
+setchar(0x08E4Eaf4 + 0x18, 0x01);
+setfloat(0x08E4Eaf8, 41.34, -334, 16.16, 300);
+//deimos
+setchar(0x08E4Eb20, 130);
+setchar(0x08E4Eb20 + 0x18, 0x01);
+setfloat(0x08E4Eb24, 41.34, -329, 16.16, 300);
+//angel
+setchar(0x08E4Eb4c, 202);
+setchar(0x08E4Eb4c + 0x18, 0x01);
+setfloat(0x08E4Eb50, 55.34, -369, 16.16, 300);
+//cheetah
+setchar(0x08E4Eb78, 146);
+setchar(0x08E4Eb78 + 0x18, 0x01);
+setfloat(0x08E4Eb7c, 73.74, -352.51, 16.16, 270);
+//pcj 600
+setchar(0x08E4Eba4, 205);
+setchar(0x08E4Eba4 + 0x18, 0x01);
+setfloat(0x08E4Eba8, 55.34, -359, 16.16, 300);
+//yakuza stinger
+setchar(0x08E4Ebd0, 174);
+setchar(0x08E4Ebd0 + 0x18, 0x01);
+setfloat(0x08E4Ebd4, 55.34, -354, 16.16, 300);
+//diablo
+setchar(0x08E4Ebfc, 175);
+setchar(0x08E4Ebfc + 0x18, 0x01);
+setfloat(0x08E4Ec00, 55.34, -349, 16.16, 300);
+//Bickle
+setchar(0x08E4Ec28, 181);
+setchar(0x08E4Ec28 + 0x18, 0x01);
+setfloat(0x08E4Ec2c, 55.34, -344, 16.16, 300);
+//leone sentinel
+setchar(0x08E4Ec54, 172);
+setchar(0x08E4Ec54 + 0x18, 0x01);
+setfloat(0x08E4Ec58, 55.34, -339, 16.16, 300);
+//infernus
+setchar(0x08E4Ec80, 142);
+setchar(0x08E4Ec80 + 0x18, 0x01);
+setfloat(0x08E4Ec84, 55.34, -334, 16.16, 300);
+//stretch
+setchar(0x08E4Ecac, 140);
+setchar(0x08E4Ecac + 0x18, 0x01);
+setfloat(0x08E4Ecb0, 55.34, -329, 16.16, 300);
+//police
+setchar(0x08E4Ecd8, 157);
+setchar(0x08E4Ecd8 + 0x18, 0x01);
+setfloat(0x08E4Ecdc, 27.00, -365.41, 16.16, 270);
+//weapon spawns
+setfloat(0x08e2d800, 55.39, -326, 24.31);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0xff, 0xff)
+setshort(0x08e2d826, 0x103)
+setchar(0x08e2d832, 0x0f)
+setchar(0x08e2d833, 0x00)
+setchar(0x08e2d850, 0xff)
+setfloat(0x08E2E400, 55.39, -328, 24.31);
+setint(0x08E2E414, 0);
+setchar(0x08E2E41C, 0xff, 0xff);
+setshort(0x08E2E426, 0x124);
+setchar(0x08E2E432, 0x0f);
+setchar(0x08E2E433, 0x00);
+setchar(0x08E2D450, 0xff);
+setfloat(0x08e2d860, 55.39, -330, 24.31);
+setint(0x08e2d874, 0);
+setchar(0x08E2D87C, 0xff, 0xff)
+setshort(0x08e2d886, 0x104)
+setchar(0x08e2d892, 0x0f)
+setchar(0x08e2d893, 0x00)
+setchar(0x08e2d8b0, 0xff)
+setfloat(0x08e2d8c0, 55.39, -332, 24.31);
+setint(0x08e2d8d4, 0);
+setchar(0x08e2d8dC, 0xff, 0xff);
+setshort(0x08e2d8e6, 0x105);
+setchar(0x08e2d8f2, 0x0f);
+setchar(0x08e2d8f3, 0x00);
+setchar(0x08e2d910, 0xff);
+setfloat(0x08e2d920, 55.39, -334, 24.31);
+setint(0x08e2d934, 0);
+setchar(0x08e2d93C, 0xff, 0xff);
+setshort(0x08e2d946, 0x106);
+setchar(0x08e2d952, 0x0f);
+setchar(0x08e2d953, 0x00);
+setchar(0x08e2d970, 0xff);
+setfloat(0x08e2d980, 55.39, -336, 24.31);
+setint(0x08e2d994, 0);
+setchar(0x08e2d99C, 0xff, 0xff);
+setshort(0x08e2d9a6, 0x107);
+setchar(0x08e2d9b2, 0x0f);
+setchar(0x08e2d9b3, 0x00);
+setchar(0x08e2d9d0, 0xff);
+setfloat(0x08e2d9e0, 55.39, -338, 24.31);
+setint(0x08e2d9f4, 0);
+setchar(0x08e2d9fC, 0xff, 0xff);
+setshort(0x08e2da06, 0x108);
+setchar(0x08e2da12, 0x0f);
+setchar(0x08e2da13, 0x00);
+setchar(0x08e2da30, 0xff);
+setfloat(0x08e2da40, 55.39, -340, 24.31);
+setint(0x08e2da54, 0);
+setchar(0x08e2da5C, 0xff, 0xff);
+setshort(0x08e2da66, 0x109);
+setchar(0x08e2da72, 0x0f);
+setchar(0x08e2da73, 0x00);
+setchar(0x08e2da90, 0xff);
+setfloat(0x08e2daa0, 55.39, -342, 24.31);
+setint(0x08e2dab4, 0);
+setchar(0x08e2dabC, 0xff, 0xff);
+setshort(0x08e2dac6, 0x10a);
+setchar(0x08e2dad2, 0x0f);
+setchar(0x08e2dad3, 0x00);
+setchar(0x08e2daf0, 0xff);
+setfloat(0x08e2db00, 55.39, -344, 24.31);
+setint(0x08e2db14, 0);
+setchar(0x08e2db1C, 0xff, 0xff);
+setshort(0x08e2db26, 0x10b);
+setchar(0x08e2db32, 0x0f);
+setchar(0x08e2db33, 0x00);
+setchar(0x08e2db50, 0xff);
+setfloat(0x08E2DB60, 55.39, -346, 24.31);
+setint(0x08E2DB74, 0);
+setchar(0x08E2DB7C, 0xff, 0xff);
+setshort(0x08E2DB86, 0x10c);
+setchar(0x08E2DB92, 0x0f);
+setchar(0x08E2DB93, 0x00);
+setchar(0x08E2DBB0, 0xff);
+setfloat(0x08E2DBC0, 55.39, -348, 24.31);
+setint(0x08E2DBD4, 0);
+setchar(0x08E2DBDC, 0xff, 0xff);
+setshort(0x08E2DBE6, 0x10d);
+setchar(0x08E2DBF2, 0x0f);
+setchar(0x08E2DBF3, 0x00);
+setchar(0x08E2DC10, 0xff);
+setfloat(0x08E2DC20, 55.39, -350, 24.31);
+setint(0x08E2DC34, 0);
+setchar(0x08E2DC3C, 0xff, 0xff);
+setshort(0x08E2DC46, 0x10e);
+setchar(0x08E2DC52, 0x0f);
+setchar(0x08E2DC53, 0x00);
+setchar(0x08E2DC70, 0xff);
+setfloat(0x08E2DC80, 55.39, -352, 24.31);
+setint(0x08E2DC94, 0);
+setchar(0x08E2DC9C, 0xff, 0xff);
+setshort(0x08E2DCA6, 0x123);
+setchar(0x08E2DCB2, 0x0f);
+setchar(0x08E2DCB3, 0x00);
+setchar(0x08E2DCD0, 0xff);
+setfloat(0x08E2DCE0, 55.39, -354, 24.31);
+setint(0x08E2DCF4, 0);
+setchar(0x08E2DCFC, 0xff, 0xff);
+setshort(0x08E2DD06, 0x10f);
+setchar(0x08E2DD12, 0x0f);
+setchar(0x08E2DD13, 0x00);
+setchar(0x08E2DD30, 0xff);
+setfloat(0x08E2DD40, 55.39, -356, 24.31);
+setint(0x08E2DD54, 0);
+setchar(0x08E2DD5C, 0xff, 0xff);
+setshort(0x08E2DD66, 0x110);
+setchar(0x08E2DD72, 0x0f);
+setchar(0x08E2DD73, 0x00);
+setchar(0x08E2DD90, 0xff);
+setfloat(0x08E2DDA0, 55.39, -358, 24.31);
+setint(0x08E2DDB4, 0);
+setchar(0x08E2DDBC, 0xff, 0xff);
+setshort(0x08E2DDC6, 0x112);
+setchar(0x08E2DDD2, 0x0f);
+setchar(0x08E2DDD3, 0x00);
+setchar(0x08E2DDF0, 0xff);
+setfloat(0x08E2DE00, 55.39, -360, 24.31);
+setint(0x08E2DE14, 0);
+setchar(0x08E2DE1C, 0xff, 0xff);
+setshort(0x08E2DE26, 0x113);
+setchar(0x08E2DE32, 0x0f);
+setchar(0x08E2DE33, 0x00);
+setchar(0x08E2DE50, 0xff);
+setfloat(0x08E2DE60, 55.39, -362, 24.31);
+setint(0x08E2DE74, 0);
+setchar(0x08E2DE7C, 0xff, 0xff);
+setshort(0x08E2DE86, 0x115);
+setchar(0x08E2DE92, 0x0f);
+setchar(0x08E2DE93, 0x00);
+setchar(0x08E2DEB0, 0xff);
+setfloat(0x08E2DEC0, 55.39, -364, 24.31);
+setint(0x08E2DED4, 0);
+setchar(0x08E2DEDC, 0xff, 0xff);
+setshort(0x08E2DEE6, 0x116);
+setchar(0x08E2DEF2, 0x0f);
+setchar(0x08E2DEF3, 0x00);
+setchar(0x08E2DF10, 0xff);
+setfloat(0x08E2DF20, 55.39, -366, 24.31);
+setint(0x08E2DF34, 0);
+setchar(0x08E2DF3C, 0xff, 0xff);
+setshort(0x08E2DF46, 0x117);
+setchar(0x08E2DF52, 0x0f);
+setchar(0x08E2DF53, 0x00);
+setchar(0x08E2DF70, 0xff);
+setfloat(0x08E2DF80, 55.39, -368, 24.31);
+setint(0x08E2DF94, 0);
+setchar(0x08E2DF9C, 0xff, 0xff);
+setshort(0x08E2DFA6, 0x114);
+setchar(0x08E2DFB2, 0x0f);
+setchar(0x08E2DFB3, 0x00);
+setchar(0x08E2DFD0, 0xff);
+setfloat(0x08E2DFE0, 55.39, -370, 24.31);
+setint(0x08E2DFF4, 0);
+setchar(0x08E2DFFC, 0xff, 0xff);
+setshort(0x08E2E006, 0x118);
+setchar(0x08E2E012, 0x0f);
+setchar(0x08E2E013, 0x00);
+setchar(0x08E2D030, 0xff);
+setfloat(0x08E2E040, 55.39, -372, 24.31);
+setint(0x08E2E054, 0);
+setchar(0x08E2E05C, 0xff, 0xff);
+setshort(0x08E2E066, 0x119);
+setchar(0x08E2E072, 0x0f);
+setchar(0x08E2E073, 0x00);
+setchar(0x08E2D090, 0xff);
+setfloat(0x08E2E0A0, 55.39, -374, 24.31);
+setint(0x08E2E0B4, 0);
+setchar(0x08E2E0BC, 0xff, 0xff);
+setshort(0x08E2E0C6, 0x11a);
+setchar(0x08E2E0D2, 0x0f);
+setchar(0x08E2E0D3, 0x00);
+setchar(0x08E2D0F0, 0xff);
+setfloat(0x08E2E100, 55.39, -376, 24.31);
+setint(0x08E2E114, 0);
+setchar(0x08E2E11C, 0xff, 0xff);
+setshort(0x08E2E126, 0x11b);
+setchar(0x08E2E132, 0x0f);
+setchar(0x08E2E133, 0x00);
+setchar(0x08E2D150, 0xff);
+setfloat(0x08E2E160, 53.39, -376, 24.31);
+setint(0x08E2E174, 0);
+setchar(0x08E2E17C, 0xff, 0xff);
+setshort(0x08E2E186, 0x11c);
+setchar(0x08E2E192, 0x0f);
+setchar(0x08E2E193, 0x00);
+setchar(0x08E2D1B0, 0xff);
+setfloat(0x08E2E1C0, 51.39, -376, 24.31);
+setint(0x08E2E1D4, 0);
+setchar(0x08E2E1DC, 0xff, 0xff);
+setshort(0x08E2E1E6, 0x11d);
+setchar(0x08E2E1F2, 0x0f);
+setchar(0x08E2E1F3, 0x00);
+setchar(0x08E2D210, 0xff);
+setfloat(0x08E2E220, 49.39, -376, 24.31);
+setint(0x08E2E234, 0);
+setchar(0x08E2E23C, 0xff, 0xff);
+setshort(0x08E2E246, 0x11e);
+setchar(0x08E2E252, 0x0f);
+setchar(0x08E2E253, 0x00);
+setchar(0x08E2D270, 0xff);
+setfloat(0x08E2E280, 47.39, -376, 24.31);
+setint(0x08E2E294, 0);
+setchar(0x08E2E29C, 0xff, 0xff);
+setshort(0x08E2E2A6, 0x11f);
+setchar(0x08E2E2B2, 0x0f);
+setchar(0x08E2E2B3, 0x00);
+setchar(0x08E2D2D0, 0xff);
+setfloat(0x08E2E2E0, 45.39, -376, 24.31);
+setint(0x08E2E2F4, 0);
+setchar(0x08E2E2FC, 0xff, 0xff);
+setshort(0x08E2E306, 0x120);
+setchar(0x08E2E312, 0x0f);
+setchar(0x08E2E313, 0x00);
+setchar(0x08E2D330, 0xff);
+setfloat(0x08E2E340, 43.39, -376, 24.31);
+setint(0x08E2E354, 0);
+setchar(0x08E2E35C, 0xff, 0xff);
+setshort(0x08E2E366, 0x121);
+setchar(0x08E2E372, 0x0f);
+setchar(0x08E2E373, 0x00);
+setchar(0x08E2D390, 0xff);
+setfloat(0x08E2E3A0, 41.39, -376, 24.31);
+setint(0x08E2E3B4, 0);
+setchar(0x08E2E3BC, 0xff, 0xff);
+setshort(0x08E2E3C6, 0x122);
+setchar(0x08E2E3D2, 0x0f);
+setchar(0x08E2E3D3, 0x00);
+setchar(0x08E2D3F0, 0xff);
+setfloat(0x08E2E460, 39.39, -376, 24.31);
+setint(0x08E2E474, 0);
+setchar(0x08E2E47C, 0xff, 0xff);
+setshort(0x08E2E486, 0x22e);
+setchar(0x08E2E492, 0x0f);
+setchar(0x08E2E493, 0x00);
+setchar(0x08E2D4B0, 0xff);
+setfloat(0x08E2E4C0, 37.39, -376, 24.31);
+setint(0x08E2E4D4, 0);
+setchar(0x08E2E4DC, 0xff, 0xff);
+setshort(0x08E2E4E6, 0x24b);
+setchar(0x08E2E4F2, 0x0f);
+setchar(0x08E2E4F3, 0x00);
+setchar(0x08E2D510, 0xff);
+teleport(87.25, -323.25, 16.83);
+
+#cheat Teleport to Car Showroom
+//ID: 11410
+//Score: 190
+//Author: vettefan88
+//Category: Teleport
+//Description: This will teleport you to my Car Showroom.
+//Featuring 3 floors 18 vehicle spawns, and all weapon spawns.
+//
+//MAKE SURE YOU GET THE SHOWROOM CHEAT ASWELL, or it won't do anything but spawn you into an empty lot.
+//Image: http://img359.imageshack.us/img359/5479/screen134zk.png
+//Time: 25/05/2006 20:48:47
+//Working: Yes
+teleport(87.25, -323.25, 16.83);
+
+#cheat Ultimate Car showroom
+//ID: 11409
+//Score: 287
+//Author: vettefan88
+//Category: Location Mods
+//Description: The ultimate car showroom in staunton.
+//it's 3 floors, Featuring 19 vehicles, all weapon spawns, and pmg'd cars built into it.
+//(be sure to get the teleport off of cheatsync)
+//
+//now removes the annoying front gate a relocates the weapons and some cars
+//Image: http://img231.imageshack.us/img231/736/screen146gz.png
+//Time: 25/05/2006 20:47:12
+//Working: Yes
+moveto(34.17, -372.69, 23.13);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.60, -9.85, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.14, 0.04, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.06, 7.80, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-0.05, 7.60, 0.00);  object(0x01BF, 90, 0, 270);
+move(-6.07, 7.76, 0.00);  object(0x01BF, 90, 0, 270);
+move(11.99, -7.72, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.50, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.05, -7.70, 0.00);  object(0x01BF, 90, 0, 270);
+move(-5.78, 54.22, -0.90);  object(0x01BF, 75, 0, 270);
+move(5.23, 0.05, -1.40);  object(0x01BF, 75, 0, 270);
+move(5.97, 0.06, -1.60);  object(0x01BF, 75, 0, 270);
+move(5.97, 0.06, -1.60);  object(0x01BF, 75, 0, 270);
+move(4.88, -0.03, -1.30);  object(0x01BF, 75, 0, 270);
+move(5.23, 0.05, -1.40);  object(0x01BF, 75, 0, 270);
+move(-18.50, -6.52, 10.60);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.01, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(-3.90, 2.89, 2.44);  object(0x01BF, 90, 0, 180);
+move(-7.80, -0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(-7.80, -0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(-4.10, -0.00, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.59, 6.43, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.80, 0.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(4.40, 0.00, 0.00);  object(0x01BF, 90, 0, 180);
+move(-19.30, -0.02, 0.00);  object(0x01BF, 90, 0, 180);
+move(26.90, 0.02, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, -6.48, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.60, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.05, 6.51, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.16, 0.00);  object(0x01BF, 90, 0, 180);
+move(-6.70, 0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.31, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.33, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.17, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.41, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.03, 4.81, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.03, 3.62, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.51, -27.53, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.36, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.27, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 6.32, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.04, 5.83, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.02, 2.74, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.36, -5.50, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.80, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.10, -0.04, 0.00);  object(0x01BF, 90, 0, 180);
+move(-13.56, 5.52, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.30, -0.05, 0.00);  object(0x01BF, 90, 0, 180);
+move(6.20, -0.04, 0.00);  object(0x01BF, 90, 0, 180);
+move(1.42, 3.31, 2.50);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-4.90, 0.03, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-5.00, 0.04, 0.00);  object(0x0CDB, 180, 0, 180);
+move(-2.68, -0.00, -2.20);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.40, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(0.02, -3.30, 0.00);  object(0x01F0, 0, 0, 90);
+move(-1.32, -3.35, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-6.39, 3.78, -1.00);  object(0x01BF, 90, 10, 270);
+move(-0.02, 7.30, -1.30);  object(0x01BF, 90, 10, 270);
+move(-0.05, 7.37, -1.30);  object(0x01BF, 90, 10, 270);
+move(-0.02, 4.10, -0.80);  object(0x01BF, 90, 10, 272);
+move(23.45, 17.31, -0.40);  object(0x01F0, 0, 0, 180);
+move(-3.30, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(-3.40, 0.02, 0.00);  object(0x01F0, 0, 0, 180);
+move(42.75, -2.63, 6.98);  object(0x0CDB, 0, 0, 270);
+move(0.06, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+move(0.06, -5.00, 0.00);  object(0x0CDB, 0, 0, 270);
+//row of lights on third floor
+moveto(56.48, -324.82, 28.51);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+move(0.00, -1.30, 0.00);  object(0x020F, 0, 0, 90);
+//remove the Front Gate
+setfloat(0x09997788, -100);
+//pimped cars
+//monster hummer- Patriot
+setshort(0x992FC5A, 0x20, 0x48, 0x75, 0x6d, 0x6d, 0x65, 0x72);
+setchar(0x9459d32, 0x5);
+setchar(0x9459d31, 0x50);
+setchar(0x9459d30, 0x34);
+setshort(0x94401d0, 250);
+setfloat(0x94401cc, 1.6);
+setfloat(0x9459cb0, 2500);
+setfloat(0x9459cb8, 0.75);
+setfloat(0x9459d70, 0.35);
+setfloat(0x9459d74, -.7);
+setfloat(0x9459d78, 0.5);
+setfloat(0x9459d3c, 1);
+setfloat(0x9459d40, 1);
+setfloat(0x9459d34, 0.001);
+setfloat(0x9459d50, 0.5);
+setfloat(0x9459d54, 0);
+setfloat(0x9459d58, 25);
+setfloat(0x9459d68, 1.5);
+setfloat(0x9459d6c, 1);
+setfloat(0x9459d84, 0.28);
+setfloat(0x9459d7c, 0);
+setfloat(0x9459cd0, 0);
+setfloat(0x9459cd4, 0);
+setfloat(0x9459cd8, -1);
+setchar(0x9459ce0, 80);
+setfloat(0x9459d5c, 0.92);
+setfloat(0x9459d60, 0.5);
+setfloat(0x9459cbc, 0);
+sethex(0x9459d80, 0x83, 0xc1, 0x00, 0x04);
+//venom-banshee
+setshort(0x992FDD4, 0x20, 0x20, 0x56, 0x65, 0x6e, 0x6f, 0x6d);
+sethex(0x945b131, 0x01);
+sethex(0x945b133, 0x02);
+setchar(0x945b0e2, 0x8);
+setchar(0x945b0e1, 0x50);
+setchar(0x945b0e0, 0x52);
+setshort(0x94425c0, 250);
+setfloat(0x94425bc, 1);
+setfloat(0x945b060, 1500);
+setfloat(0x945b068, 0.85);
+setfloat(0x945b120, 0.3);
+setfloat(0x945b124, -0.15);
+setfloat(0x945b128, 0.5);
+setfloat(0x945b0ec, 5);
+setfloat(0x945b0f0, 4);
+setfloat(0x945b100, 0.52);
+setfloat(0x945b104, 0);
+setfloat(0x945b108, 34);
+setfloat(0x945b118, 1.6);
+setfloat(0x945b11c, 0.1);
+setfloat(0x945b134, 0.15);
+setfloat(0x945b12c, 0);
+setfloat(0x945b080, 0);
+setfloat(0x945b084, 0);
+setfloat(0x945b088, -1);
+setchar(0x945b090, 70);
+setchar(0x967E6FC, 0x00, 187, 0x00);
+//porsche
+setshort(0x992FC0E, 0x50, 0x6f, 0x72, 0x73, 0x63, 0x68, 0x65);
+setchar(0x9459972, 0x5);
+setchar(0x9459971, 0x50);
+setchar(0x9459970, 0x52);
+setshort(0x943fb90, 250);
+setfloat(0x943fb8c, 0.87);
+setfloat(0x94598f8, 0.8);
+setfloat(0x94599b0, 0.2);
+setfloat(0x94599b4, -0.05);
+setfloat(0x94599b8, 0.5);
+setfloat(0x945997c, 1.5);
+setfloat(0x9459980, 1.5);
+setchar(0x8E38A58, 255);
+setfloat(0x9459974, 0.00208);
+setfloat(0x9459990, 0.52);
+setfloat(0x9459994, 0);
+setfloat(0x9459998, 25);
+setfloat(0x94599a8, 1);
+setfloat(0x94599ac, 0.2);
+setfloat(0x94599c4, 0.4);
+setfloat(0x94599bc, 1);
+setfloat(0x9459910, 0);
+setfloat(0x9459914, 0);
+setfloat(0x9459918, -0.5);
+setchar(0x9459920, 70);
+setfloat(0x945999c, 0.92);
+setfloat(0x94599a0, 0.48);
+setfloat(0x94598fc, 0);
+sethex(0x94599c0, 0x83, 0xa1, 0x00, 0x06);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+//car spawns
+//landstalker
+setchar(0x08E4E9C0, 131);
+setchar(0x08E4E9C0 + 0x18, 0x01);
+setfloat(0x08E4E9C4, 41.34, -369, 16.16, 300);
+//patriot
+setchar(0x08E4E9EC, 137);
+setchar(0x08E4E9EC + 0x18, 0x01);
+setfloat(0x08E4E9f0, 41.34, -364, 16.16, 300);
+//phobos
+setchar(0x08E4Ea18, 186);
+setchar(0x08E4Ea18 + 0x18, 0x01);
+setfloat(0x08E4Ea1c, 41.34, -359, 16.16, 300);
+//stinger
+setchar(0x08E4Ea44, 133);
+setchar(0x08E4Ea44 + 0x18, 0x01);
+setfloat(0x08E4Ea48, 41.34, -354, 16.16, 300);
+//yardie lobo
+setchar(0x08E4Ea70, 173);
+setchar(0x08E4Ea70 + 0x18, 0x01);
+setfloat(0x08E4Ea74, 41.34, -349, 16.16, 300);
+//banshee
+setchar(0x08E4Ea9c, 160);
+setchar(0x08E4Ea9c + 0x18, 0x01);
+setfloat(0x08E4Eaa0, 41.34, -344, 16.16, 300);
+//hellenbach
+setchar(0x08E4Eac8, 185);
+setchar(0x08E4Eac8 + 0x18, 0x01);
+setfloat(0x08E4Eacc, 41.34, -339, 16.16, 300);
+//thunder-rodd
+setchar(0x08E4Eaf4, 189);
+setchar(0x08E4Eaf4 + 0x18, 0x01);
+setfloat(0x08E4Eaf8, 41.34, -334, 16.16, 300);
+//deimos
+setchar(0x08E4Eb20, 130);
+setchar(0x08E4Eb20 + 0x18, 0x01);
+setfloat(0x08E4Eb24, 41.34, -329, 16.16, 300);
+//angel
+setchar(0x08E4Eb4c, 202);
+setchar(0x08E4Eb4c + 0x18, 0x01);
+setfloat(0x08E4Eb50, 55.34, -369, 16.16, 300);
+//cheetah
+setchar(0x08E4Eb78, 146);
+setchar(0x08E4Eb78 + 0x18, 0x01);
+setfloat(0x08E4Eb7c, 73.74, -352.51, 16.16, 0);
+//pcj 600
+setchar(0x08E4Eba4, 205);
+setchar(0x08E4Eba4 + 0x18, 0x01);
+setfloat(0x08E4Eba8, 55.34, -359, 16.16, 300);
+//yakuza stinger
+setchar(0x08E4Ebd0, 174);
+setchar(0x08E4Ebd0 + 0x18, 0x01);
+setfloat(0x08E4Ebd4, 55.34, -354, 16.16, 300);
+//diablo
+setchar(0x08E4Ebfc, 175);
+setchar(0x08E4Ebfc + 0x18, 0x01);
+setfloat(0x08E4Ec00, 55.34, -349, 16.16, 300);
+//Bickle
+setchar(0x08E4Ec28, 181);
+setchar(0x08E4Ec28 + 0x18, 0x01);
+setfloat(0x08E4Ec2c, 55.34, -344, 16.16, 300);
+//leone sentinel
+setchar(0x08E4Ec54, 172);
+setchar(0x08E4Ec54 + 0x18, 0x01);
+setfloat(0x08E4Ec58, 55.34, -339, 16.16, 300);
+//infernus
+setchar(0x08E4Ec80, 142);
+setchar(0x08E4Ec80 + 0x18, 0x01);
+setfloat(0x08E4Ec84, 55.34, -334, 16.16, 300);
+//stretch
+setchar(0x08E4Ecac, 140);
+setchar(0x08E4Ecac + 0x18, 0x01);
+setfloat(0x08E4Ecb0, 55.34, -329, 16.16, 300);
+//police
+setchar(0x08E4Ecd8, 157);
+setchar(0x08E4Ecd8 + 0x18, 0x01);
+setfloat(0x08E4Ecdc, 27.00, -365.41, 16.16, 0);
+//weapon spawns
+setfloat(0x08e2d800, 55.39, -326, 24.31);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0xff, 0xff)
+setshort(0x08e2d826, 0x103)
+setchar(0x08e2d832, 0x0f)
+setchar(0x08e2d833, 0x00)
+setchar(0x08e2d850, 0xff)
+setfloat(0x08E2E400, 55.39, -328, 24.31);
+setint(0x08E2E414, 0);
+setchar(0x08E2E41C, 0xff, 0xff);
+setshort(0x08E2E426, 0x124);
+setchar(0x08E2E432, 0x0f);
+setchar(0x08E2E433, 0x00);
+setchar(0x08E2D450, 0xff);
+setfloat(0x08e2d860, 55.39, -330, 24.31);
+setint(0x08e2d874, 0);
+setchar(0x08E2D87C, 0xff, 0xff)
+setshort(0x08e2d886, 0x104)
+setchar(0x08e2d892, 0x0f)
+setchar(0x08e2d893, 0x00)
+setchar(0x08e2d8b0, 0xff)
+setfloat(0x08e2d8c0, 55.39, -332, 24.31);
+setint(0x08e2d8d4, 0);
+setchar(0x08e2d8dC, 0xff, 0xff);
+setshort(0x08e2d8e6, 0x105);
+setchar(0x08e2d8f2, 0x0f);
+setchar(0x08e2d8f3, 0x00);
+setchar(0x08e2d910, 0xff);
+setfloat(0x08e2d920, 55.39, -334, 24.31);
+setint(0x08e2d934, 0);
+setchar(0x08e2d93C, 0xff, 0xff);
+setshort(0x08e2d946, 0x106);
+setchar(0x08e2d952, 0x0f);
+setchar(0x08e2d953, 0x00);
+setchar(0x08e2d970, 0xff);
+setfloat(0x08e2d980, 55.39, -336, 24.31);
+setint(0x08e2d994, 0);
+setchar(0x08e2d99C, 0xff, 0xff);
+setshort(0x08e2d9a6, 0x107);
+setchar(0x08e2d9b2, 0x0f);
+setchar(0x08e2d9b3, 0x00);
+setchar(0x08e2d9d0, 0xff);
+setfloat(0x08e2d9e0, 55.39, -338, 24.31);
+setint(0x08e2d9f4, 0);
+setchar(0x08e2d9fC, 0xff, 0xff);
+setshort(0x08e2da06, 0x108);
+setchar(0x08e2da12, 0x0f);
+setchar(0x08e2da13, 0x00);
+setchar(0x08e2da30, 0xff);
+setfloat(0x08e2da40, 55.39, -340, 24.31);
+setint(0x08e2da54, 0);
+setchar(0x08e2da5C, 0xff, 0xff);
+setshort(0x08e2da66, 0x109);
+setchar(0x08e2da72, 0x0f);
+setchar(0x08e2da73, 0x00);
+setchar(0x08e2da90, 0xff);
+setfloat(0x08e2daa0, 55.39, -342, 24.31);
+setint(0x08e2dab4, 0);
+setchar(0x08e2dabC, 0xff, 0xff);
+setshort(0x08e2dac6, 0x10a);
+setchar(0x08e2dad2, 0x0f);
+setchar(0x08e2dad3, 0x00);
+setchar(0x08e2daf0, 0xff);
+setfloat(0x08e2db00, 55.39, -344, 24.31);
+setint(0x08e2db14, 0);
+setchar(0x08e2db1C, 0xff, 0xff);
+setshort(0x08e2db26, 0x10b);
+setchar(0x08e2db32, 0x0f);
+setchar(0x08e2db33, 0x00);
+setchar(0x08e2db50, 0xff);
+setfloat(0x08E2DB60, 55.39, -346, 24.31);
+setint(0x08E2DB74, 0);
+setchar(0x08E2DB7C, 0xff, 0xff);
+setshort(0x08E2DB86, 0x10c);
+setchar(0x08E2DB92, 0x0f);
+setchar(0x08E2DB93, 0x00);
+setchar(0x08E2DBB0, 0xff);
+setfloat(0x08E2DBC0, 55.39, -348, 24.31);
+setint(0x08E2DBD4, 0);
+setchar(0x08E2DBDC, 0xff, 0xff);
+setshort(0x08E2DBE6, 0x10d);
+setchar(0x08E2DBF2, 0x0f);
+setchar(0x08E2DBF3, 0x00);
+setchar(0x08E2DC10, 0xff);
+setfloat(0x08E2DC20, 55.39, -350, 24.31);
+setint(0x08E2DC34, 0);
+setchar(0x08E2DC3C, 0xff, 0xff);
+setshort(0x08E2DC46, 0x10e);
+setchar(0x08E2DC52, 0x0f);
+setchar(0x08E2DC53, 0x00);
+setchar(0x08E2DC70, 0xff);
+setfloat(0x08E2DC80, 55.39, -352, 24.31);
+setint(0x08E2DC94, 0);
+setchar(0x08E2DC9C, 0xff, 0xff);
+setshort(0x08E2DCA6, 0x123);
+setchar(0x08E2DCB2, 0x0f);
+setchar(0x08E2DCB3, 0x00);
+setchar(0x08E2DCD0, 0xff);
+setfloat(0x08E2DCE0, 55.39, -354, 24.31);
+setint(0x08E2DCF4, 0);
+setchar(0x08E2DCFC, 0xff, 0xff);
+setshort(0x08E2DD06, 0x10f);
+setchar(0x08E2DD12, 0x0f);
+setchar(0x08E2DD13, 0x00);
+setchar(0x08E2DD30, 0xff);
+setfloat(0x08E2DD40, 55.39, -356, 24.31);
+setint(0x08E2DD54, 0);
+setchar(0x08E2DD5C, 0xff, 0xff);
+setshort(0x08E2DD66, 0x110);
+setchar(0x08E2DD72, 0x0f);
+setchar(0x08E2DD73, 0x00);
+setchar(0x08E2DD90, 0xff);
+setfloat(0x08E2DDA0, 55.39, -358, 24.31);
+setint(0x08E2DDB4, 0);
+setchar(0x08E2DDBC, 0xff, 0xff);
+setshort(0x08E2DDC6, 0x112);
+setchar(0x08E2DDD2, 0x0f);
+setchar(0x08E2DDD3, 0x00);
+setchar(0x08E2DDF0, 0xff);
+setfloat(0x08E2DE00, 55.39, -360, 24.31);
+setint(0x08E2DE14, 0);
+setchar(0x08E2DE1C, 0xff, 0xff);
+setshort(0x08E2DE26, 0x113);
+setchar(0x08E2DE32, 0x0f);
+setchar(0x08E2DE33, 0x00);
+setchar(0x08E2DE50, 0xff);
+setfloat(0x08E2DE60, 55.39, -362, 24.31);
+setint(0x08E2DE74, 0);
+setchar(0x08E2DE7C, 0xff, 0xff);
+setshort(0x08E2DE86, 0x115);
+setchar(0x08E2DE92, 0x0f);
+setchar(0x08E2DE93, 0x00);
+setchar(0x08E2DEB0, 0xff);
+setfloat(0x08E2DEC0, 55.39, -364, 24.31);
+setint(0x08E2DED4, 0);
+setchar(0x08E2DEDC, 0xff, 0xff);
+setshort(0x08E2DEE6, 0x116);
+setchar(0x08E2DEF2, 0x0f);
+setchar(0x08E2DEF3, 0x00);
+setchar(0x08E2DF10, 0xff);
+setfloat(0x08E2DF20, 55.39, -366, 24.31);
+setint(0x08E2DF34, 0);
+setchar(0x08E2DF3C, 0xff, 0xff);
+setshort(0x08E2DF46, 0x117);
+setchar(0x08E2DF52, 0x0f);
+setchar(0x08E2DF53, 0x00);
+setchar(0x08E2DF70, 0xff);
+setfloat(0x08E2DF80, 55.39, -368, 24.31);
+setint(0x08E2DF94, 0);
+setchar(0x08E2DF9C, 0xff, 0xff);
+setshort(0x08E2DFA6, 0x114);
+setchar(0x08E2DFB2, 0x0f);
+setchar(0x08E2DFB3, 0x00);
+setchar(0x08E2DFD0, 0xff);
+setfloat(0x08E2DFE0, 55.39, -370, 24.31);
+setint(0x08E2DFF4, 0);
+setchar(0x08E2DFFC, 0xff, 0xff);
+setshort(0x08E2E006, 0x118);
+setchar(0x08E2E012, 0x0f);
+setchar(0x08E2E013, 0x00);
+setchar(0x08E2D030, 0xff);
+setfloat(0x08E2E040, 55.39, -372, 24.31);
+setint(0x08E2E054, 0);
+setchar(0x08E2E05C, 0xff, 0xff);
+setshort(0x08E2E066, 0x119);
+setchar(0x08E2E072, 0x0f);
+setchar(0x08E2E073, 0x00);
+setchar(0x08E2D090, 0xff);
+setfloat(0x08E2E0A0, 55.39, -374, 24.31);
+setint(0x08E2E0B4, 0);
+setchar(0x08E2E0BC, 0xff, 0xff);
+setshort(0x08E2E0C6, 0x11a);
+setchar(0x08E2E0D2, 0x0f);
+setchar(0x08E2E0D3, 0x00);
+setchar(0x08E2D0F0, 0xff);
+setfloat(0x08E2E100, 55.39, -376, 24.31);
+setint(0x08E2E114, 0);
+setchar(0x08E2E11C, 0xff, 0xff);
+setshort(0x08E2E126, 0x11b);
+setchar(0x08E2E132, 0x0f);
+setchar(0x08E2E133, 0x00);
+setchar(0x08E2D150, 0xff);
+setfloat(0x08E2E160, 53.39, -376, 24.31);
+setint(0x08E2E174, 0);
+setchar(0x08E2E17C, 0xff, 0xff);
+setshort(0x08E2E186, 0x11c);
+setchar(0x08E2E192, 0x0f);
+setchar(0x08E2E193, 0x00);
+setchar(0x08E2D1B0, 0xff);
+setfloat(0x08E2E1C0, 51.39, -376, 24.31);
+setint(0x08E2E1D4, 0);
+setchar(0x08E2E1DC, 0xff, 0xff);
+setshort(0x08E2E1E6, 0x11d);
+setchar(0x08E2E1F2, 0x0f);
+setchar(0x08E2E1F3, 0x00);
+setchar(0x08E2D210, 0xff);
+setfloat(0x08E2E220, 49.39, -376, 24.31);
+setint(0x08E2E234, 0);
+setchar(0x08E2E23C, 0xff, 0xff);
+setshort(0x08E2E246, 0x11e);
+setchar(0x08E2E252, 0x0f);
+setchar(0x08E2E253, 0x00);
+setchar(0x08E2D270, 0xff);
+setfloat(0x08E2E280, 47.39, -376, 24.31);
+setint(0x08E2E294, 0);
+setchar(0x08E2E29C, 0xff, 0xff);
+setshort(0x08E2E2A6, 0x11f);
+setchar(0x08E2E2B2, 0x0f);
+setchar(0x08E2E2B3, 0x00);
+setchar(0x08E2D2D0, 0xff);
+setfloat(0x08E2E2E0, 45.39, -376, 24.31);
+setint(0x08E2E2F4, 0);
+setchar(0x08E2E2FC, 0xff, 0xff);
+setshort(0x08E2E306, 0x120);
+setchar(0x08E2E312, 0x0f);
+setchar(0x08E2E313, 0x00);
+setchar(0x08E2D330, 0xff);
+setfloat(0x08E2E340, 43.39, -376, 24.31);
+setint(0x08E2E354, 0);
+setchar(0x08E2E35C, 0xff, 0xff);
+setshort(0x08E2E366, 0x121);
+setchar(0x08E2E372, 0x0f);
+setchar(0x08E2E373, 0x00);
+setchar(0x08E2D390, 0xff);
+setfloat(0x08E2E3A0, 41.39, -376, 24.31);
+setint(0x08E2E3B4, 0);
+setchar(0x08E2E3BC, 0xff, 0xff);
+setshort(0x08E2E3C6, 0x122);
+setchar(0x08E2E3D2, 0x0f);
+setchar(0x08E2E3D3, 0x00);
+setchar(0x08E2D3F0, 0xff);
+setfloat(0x08E2E460, 39.39, -376, 24.31);
+setint(0x08E2E474, 0);
+setchar(0x08E2E47C, 0xff, 0xff);
+setshort(0x08E2E486, 0x22e);
+setchar(0x08E2E492, 0x0f);
+setchar(0x08E2E493, 0x00);
+setchar(0x08E2D4B0, 0xff);
+setfloat(0x08E2E4C0, 37.39, -376, 24.31);
+setint(0x08E2E4D4, 0);
+setchar(0x08E2E4DC, 0xff, 0xff);
+setshort(0x08E2E4E6, 0x24b);
+setchar(0x08E2E4F2, 0x0f);
+setchar(0x08E2E4F3, 0x00);
+setchar(0x08E2D510, 0xff);
+off()
+
+#cheat Mega Jump
+//ID: 11267
+//Score: 229
+//Author: vettefan88
+//Category: Player
+//Description: Toni will jump 100 times higher than he normally does.
+//Image: none
+//Time: 23/05/2006 23:56:01
+//Working: Yes
+setfloat(pplayer + 0xD0, 0.7, 1);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat Super Jump
+//ID: 11266
+//Score: 154
+//Author: vettefan88
+//Category: Player
+//Description: Toni will jump 10 times higher than he normally does.
+//Image: none
+//Time: 23/05/2006 23:55:12
+//Working: Yes
+setfloat(pplayer + 0xD0, 7, 10);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat Heavy Toni
+//ID: 11209
+//Score: 902
+//Author: vettefan88
+//Category: Player
+//Description: This will make toni extremely heavy allowing him to smash through all traffic!
+//like the heavy cars cheat but for toni!
+//
+//check out the pic to see me smash through a tank!
+//
+//*UPDATED* now includes better values and an #off setting
+//Image: http://img246.imageshack.us/img246/6376/tank2ii.gif
+//Time: 23/05/2006 02:44:46
+//Working: Yes
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat Ultra Crazy Camera
+//ID: 11206
+//Score: 249
+//Author: vettefan88
+//Category: Camera
+//Description: This will make the camera react Really weird, everything will looked skewed and it gives a real strange effect.
+//
+//definitely worth a download, you'll love the effect!
+//(check out the pic)
+//Image: http://img45.imageshack.us/img45/2817/crazycamera0gu.gif
+//Time: 23/05/2006 00:46:21
+//Working: Yes
+setfloat(0x8b834f4, 150);
+
+#cheat Spinning Camera
+//ID: 11200
+//Score: 68
+//Author: vettefan88
+//Category: Camera
+//Description: This will make the camera rotate around toni really really fast.
+//Image: none
+//Time: 23/05/2006 00:31:16
+//Working: Yes
+setfloat(8b83500, 1);
+
+#cheat No Camera Rotation
+//ID: 11199
+//Score: 92
+//Author: vettefan88
+//Category: Camera
+//Description: If you would prefer for the topdown camera to not spin with toni then use this cheat alongside the classic topdown camera cheat.
+//Image: none
+//Time: 23/05/2006 00:29:57
+//Working: Yes
+setfloat(0x08b834FC, 100);
+setfloat(0x08b83500, 0);
+
+#cheat Replace "Godfather" Text with "President"
+//ID: 11197
+//Score: 40
+//Author: vettefan88
+//Category: Text Mods
+//Description: This will replace the "Godfather" Ranking with "President"
+//
+//if you don't yet have a godfather ranking just get all of the stat cheats out of the stat category to automatically raise it for you.
+//Image: none
+//Time: 23/05/2006 00:15:04
+//Working: Yes
+setshort(993690E, 0x50, 0x72, 0x65, 0x73, 0x69, 0x64, 0x65, 0x6e, 0x74);
+
+#cheat Replace "Godfather" Text with "CIPRIANI"
+//ID: 11195
+//Score: 38
+//Author: vettefan88
+//Category: Text Mods
+//Description: When your reach a rank of "godfather" instead of saying godfather it will say "Cipriani".
+//
+//to automatically raise your rank to godfather just download all of the stat cheats. (see the stat category)
+//Image: none
+//Time: 23/05/2006 00:13:19
+//Working: Yes
+setshort(993690E, 0x43, 0x69, 0x70, 0x72, 0x69, 0x61, 0x6e, 0x69, 0);
+
+#cheat Replace "Criminal Rating" with "Player Points"
+//ID: 11194
+//Score: 35
+//Author: vettefan88
+//Category: Text Mods
+//Description: This will replace the "CriminalRating" text in the stats screen with "Player Points"
+//Image: none
+//Time: 23/05/2006 00:11:28
+//Working: Yes
+setshort(9933CBC, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x20, 0x50, 0x6f, 0x69, 0x6e, 0x74, 0x73, 0);
+
+#cheat Replace "Criminal Rating" with "Reputation"
+//ID: 11193
+//Score: 39
+//Author: vettefan88
+//Category: Text Mods
+//Description: this will replace the text "Criminal Rating" in the stats menu with "Reputation"
+//Image: none
+//Time: 23/05/2006 00:10:10
+//Working: Yes
+setshort(9933CBC, 0x52, 0x65, 0x70, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e);
+
+#cheat Roll
+//ID: 11138
+//Score: 88
+//Author: theY4Kman
+//Category: Player
+//Description: When you turn this cheat on, you will roll instantly.
+//
+//EDITED BY: vettefan88 on 22/05/06 02:14:59
+//Image: none
+//Time: 22/05/2006 01:47:52
+//Working: Yes
+sethex(pplayer + 195, 0A);
+setfloat(pplayer + 1A8, 800);
+off();
+
+#cheat Purple Zombie Blood
+//ID: 11131
+//Score: 204
+//Author: Llama4UrMomma
+//Category: Pedestrians
+//Description: Pedestrians squirt purple zombie blood when shot. Works especially well when you chop their heads off with a katana
+//
+//EDITED BY: vettefan88 on 22/05/06 00:56:48
+//Image: none
+//Time: 22/05/2006 00:54:57
+//Working: Yes
+sethex(0x967C4E0, 0x99, 0x00, 0xFF);
+sethex(0x967C574, 0x99, 0x00, 0xFF);
+sethex(0x967C608, 0x99, 0x00, 0xFF);
+
+#cheat Turqoise Blue Burnout smoke for yur car.
+//ID: 11056
+//Score: 95
+//Author: MiiSteR LaZii
+//Category: Vehicle
+//Description: Turqoise Blue Burnout SMOKEE!! Check out the pic, smoke is behind the StR
+//
+//Thanks to Vettefan88 ad his Black Burnout Smoke!
+//
+//***Don't take my cheat and claim it as yurs!!
+//Image: http://i78.photobucket.com/albums/j104/Miister_Lazii/screen2.jpg
+//Time: 21/05/2006 17:59:10
+//Working: Yes
+sethex(0x967E824, 0x00, 0x88, 0x80);
+
+#cheat SPINNAAZZ!!
+//ID: 11022
+//Score: 150
+//Author: striker
+//Category: Vehicle
+//Description: strt up a car get in with spinnerz activated and get out JUST DONT CLOSE THE DOOR or teh wheels will stop spinning!  but otherwise the wheels just keep spinning... the beggining of spinners!
+//
+//EDITED BY: vettefan88 on 21/05/06 17:46:14
+//Image: none
+//Time: 21/05/2006 05:29:14
+//Working: Yes
+setchar(pcar + 0x000006CC, 1);
+setchar(pcar + 0x000006C8, 1);
+setchar(pcar + 0x000006D4, 1);
+setchar(pcar + 0x000006D0, 1); //
+
+#cheat Drive from the back seat of bikes. *working*
+//ID: 10433
+//Score: 84
+//Author: vettefan88
+//Category: Vehicle
+//Description: this will allow you to drive from the back seat of bikes.
+//EDITED BY: ADePSP on 14/05/06 16:50:58
+//Image: none
+//Time: 14/05/2006 16:46:29
+//Working: Yes
+setchar(pplayer + 0x34C, 0x18);
+off()
+

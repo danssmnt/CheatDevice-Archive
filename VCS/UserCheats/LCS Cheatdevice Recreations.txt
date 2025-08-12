@@ -1,0 +1,54 @@
+#cheat No Reloading
+// By Waterbottle
+setint(pplayer+0x5d4,  2);
+setint(pplayer+0x5f0,  2);
+setint(pplayer+0x60c,  2);
+setint(pplayer+0x5b8,  2);
+setint(pplayer+0x628,  2);
+setint(pplayer+0x644,  2);
+setint(pplayer+0x660,  2);
+
+#cheat Water Level
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+if (getchar(0x954A000) != 0)
+{
+   for (p = 0x9549D80; p < 0x954E580; p += 4)
+       setint(p, 0);
+}
+#off
+setfloat(0x96C96B0,  6);
+
+#cheat Weather Modifier
+// By vettefan88
+// press up and down to modify the weather in Vice City Stories.
+// it automatically starts off on sunny weather, and the higher you go in the weather, the weirder it gets...
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00,  weather);
+setchar(0x8bb3df8,  weather);
+setchar(0x8bb458c,  weather);
+
+#cheat Freeze Cars
+static counter;
+if(pcar) car = pcar; else car = 0x098edcc0;
+for(p=car+0x820; p <= 0x099019a0; p+=0x820) {
+setfloat(p + 0x140, 0, 0, 0);
+}
+for(p=car-0x820; p >= 0x098edcc0; p-=0x820) {
+setfloat(p + 0x140, 0, 0, 0);
+}
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0);
+

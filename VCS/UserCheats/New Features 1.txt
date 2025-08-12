@@ -1,0 +1,2050 @@
+#cheat The Invisible Ferris Wheel
+//ID: 19394
+//Score: 45
+//Author: Durka Durka Mahn
+//Category: Pointless
+//Description: Basically this makes an invisible ferris wheel that Vic will spin around. Use Up and Down to increase/decrease the ferris wheel speed, and Left and Right to make it bigger/smaller. Use R to set where the ferris wheel will be, and L to start. When you're done, hit Square to get off.
+//Image: http://img187.imageshack.us/img187/5527/video1hh2.gif
+//Time: 24/02/2007 16:58:09
+//Working: Yes
+static circumference;
+static fspeed;
+static go;
+static rot;
+static speed;
+x = pobj + 0x30;
+y = pobj + 0x34;
+z = pobj + 0x38;
+if(press & CTRL_RTRIGGER)
+{
+midx = getfloat(x);
+midy = getfloat(y);
+midz = getfloat(z) + 25;
+circumference = 20;
+fspeed = 0.2;
+}
+if(press & CTRL_LTRIGGER)
+{
+go = 1;
+}
+if(press & CTRL_SQUARE)
+{
+go = 0;
+}
+if(go)
+{
+    setfloat(pobj + 0x08,  0);
+    setfloat(pobj + 0x18,  0);
+    setfloat(pobj + 0x20,  0,  0,  1);
+    setfloat(pobj + 0x30,   midx);
+    setfloat(pobj + 0x34,   midy + sin(rot) * circumference);
+    setfloat(pobj + 0x38,   midz - cos(rot) * circumference);
+    rot += fspeed;
+}
+if(buttons & CTRL_UP)
+{
+fspeed += 0.1;
+}
+if(buttons & CTRL_DOWN)
+{
+fspeed -= 0.1;
+}
+if(buttons & CTRL_RIGHT)
+{
+circumference += 1;
+}
+if(press & CTRL_LEFT)
+{
+circumference -= 1;
+}
+
+#cheat Vic of Fire
+//ID: 19381
+//Score: 58
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: Vic and all the vehicles he enters will be on fire! Make sure you have the infinite health cheats on or you will die.
+//Image: none
+//Time: 22/02/2007 03:56:03
+//Working: Yes
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+
+#cheat Great Blood by tako
+//ID: 19378
+//Score: 75
+//Author: GA6ZAM
+//Category: Pedestrians
+//Description: A lot of bloods goes out. 
+//
+//
+//EDITED BY: psphacker108 on 20/02/07 15:23:12
+//Image: http://sky.geocities.jp/gtamoddercommunity/blood.gif
+//Time: 20/02/2007 08:07:43
+//Working: Yes
+if(getchar(0x9567DC8) != getchar(0x9569BB0))
+{
+setchar(0x9567DAF, getchar(0x9567DC8), getchar(0x9567DC9), getchar(0x9567DCA), getchar(0x9567DCB), getchar(0x9567DD0));
+}
+setchar(0x9567DC8, getchar(0x9569BB0), getchar(0x9569BB1), getchar(0x9569BB2), getchar(0x9569BB3));
+setchar(0x9567DD0, getchar(0x9569BB8));
+setchar(0x9567D6B, 0x3E);
+setchar(0x9567DA8, 0x04);
+setchar(0x9567DAC, 0xFF, 0x00, 0x00);
+setchar(0x9567E4C, getchar(0x9569BB0), getchar(0x9569BB1), getchar(0x9569BB2), getchar(0x9569BB3));
+setchar(0x9567E54, getchar(0x9569BB8));
+setchar(0x9567DEF, 0x3F);
+setchar(0x9567E2B, 0x04);
+setchar(0x9567E1B, 0x3D);
+setchar(0x9567E30, 0xFF, 0x00, 0x00);
+#off
+setchar(0x9567D6B, 0x3B);
+setchar(0x9567DA8, 0x35);
+setchar(0x9567DEF, 0x3C);
+setchar(0x9567E2B, 0x40);
+setchar(0x9567E1B, 0x3C);
+setchar(0x9567DAC, 0xFF, 0x20, 0x20);
+setchar(0x9567E30, 0xFF, 0x20, 0x20);
+setchar(0x9567DC8, getchar(0x9567DAF), getchar(0x9567DB0), getchar(09567DB1), getchar(0x9567DB2));
+setchar(0x9567DD0, getchar(0x9567DB3));
+setchar(0x9567E4C, getchar(0x9567DAF), getchar(0x9567DB0), getchar(09567DB1), getchar(0x9567DB2));
+setchar(0x9567E54, getchar(0x9567DB3));
+setchar(0x9567DAF, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+
+#cheat NOS Ver 1.3 by tako
+//ID: 19377
+//Score: 93
+//Author: GA6ZAM
+//Category: Vehicle
+//Description: High performance this. 
+//
+//O -> NOS
+//down -> STOP
+//up -> SROW MOSION
+//
+//EDITED BY: psphacker108 on 20/02/07 15:22:45
+//Image: http://sky.geocities.jp/gtamoddercommunity/Nitro.gif
+//Time: 20/02/2007 08:04:57
+//Working: Yes
+if(pcar)
+{
+setchar(0x9569C62, 0x30); 
+setchar(0x9569C98, 0x00); 
+setchar(0x9569C9C, 0xFF, 0x60, 0x30);
+if(buttons & CTRL_UP)
+{
+setchar(0x8BB3B5A, 0x80, 0x3E);
+setfloat(pcar + 0x0078, -0.05 * xstick);
+if(buttons & CTRL_DOWN && getshort(pcar+0x1c8)==0)
+setfloat(pcar+0x140, 0, 0);
+else if(buttons & CTRL_CIRCLE) 
+{ 
+setchar(0x9569B5A, 0xB0); 
+setchar(0x9569B90, 0x00); 
+setchar(0x9569B78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); 
+setchar(0x9569B94, 0x00, 0x50, 0xFF); 
+setchar(0x9569B85, 0xFF); 
+setchar(0x9569B5E, 0x70);
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)); 
+if(speed<1.8)
+{
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005); 
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+else
+{
+setchar(0x9569B5A, 0xFF); 
+setchar(0x9569B90, 0x04); 
+setchar(0x9569B78, 0x0A, 0xD7, 0x23, 0x3C, 0x8F, 0xC2, 0xF5, 0x3C); 
+setchar(0x9569B94, 0x62, 0x62, 0x6C); 
+setchar(0x9569B85, 0x00); 
+setchar(0x9569B5E, 0x60);
+}
+}
+else if(buttons & CTRL_DOWN && getshort(pcar+0x1c8)==0)
+{
+setchar(0x8BB3B5A, 0x80, 0x3F);
+setfloat(pcar+0x140, 0, 0);
+}
+else if(buttons & CTRL_CIRCLE) 
+{
+setchar(0x8BB3B5A, 0x80, 0x3F);
+setchar(0x9569B5A, 0xB0); 
+setchar(0x9569B90, 0x00); 
+setchar(0x9569B78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); 
+setchar(0x9569B94, 0x00, 0x50, 0xFF); 
+setchar(0x9569B85, 0xFF); 
+setchar(0x9569B5E, 0x70);
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)); 
+if(speed<1.8)
+{
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005); 
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+else
+{
+setchar(0x9569B5A, 0xFF); 
+setchar(0x9569B90, 0x04); 
+setchar(0x9569B78, 0x0A, 0xD7, 0x23, 0x3C, 0x8F, 0xC2, 0xF5, 0x3C); 
+setchar(0x9569B94, 0x62, 0x62, 0x6C); 
+setchar(0x9569B85, 0x00); 
+setchar(0x9569B5E, 0x60);
+setchar(0x8BB3B5A, 0x80, 0x3F);
+}
+}
+else
+{
+setchar(0x8BB3B5A, 0x80, 0x3F);
+setchar(0x9569B5A, 0xFF); 
+setchar(0x9569B90, 0x04); 
+setchar(0x9569B78, 0x0A, 0xD7, 0x23, 0x3C, 0x8F, 0xC2, 0xF5, 0x3C); 
+setchar(0x9569B94, 0x62, 0x62, 0x6C); 
+setchar(0x9569B85, 0x00); 
+setchar(0x9569B5E, 0x60);
+}
+#off 
+setchar(0x9569B5A, 0xFF); 
+setchar(0x9569B90, 0x04); 
+setchar(0x9569B78, 0x0A, 0xD7, 0x23, 0x3C, 0x8F, 0xC2, 0xF5, 0x3C); 
+setchar(0x9569B94, 0x62, 0x62, 0x6C); 
+setchar(0x9569B85, 0x00); 
+setchar(0x9569B5E, 0x60); 
+setchar(0x9569C62, 0xFF); 
+setchar(0x9569C98, 0x04); 
+setchar(0x9569C9C, 0x80, 0x80, 0x80);
+
+
+#cheat Amazing Rapid Fire
+//ID: 19376
+//Score: 70
+//Author: psphacker108
+//Category: Weapons
+//Description: Hit 0 once and it will fire untill it run's out of it's round's! Then simply hit 0 again and it will start all over again! you can Run with it on (Certin guns) Does not work on gernades or in vehicles)Please wait for video to load.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-10.gif
+//Time: 20/02/2007 06:45:10
+//Working: Yes
+setchar(pplayer + 0x6D6,  0x33);
+
+#cheat Aim But No Fire
+//ID: 19375
+//Score: 30
+//Author: psphacker108
+//Category: Weapons
+//Description: Simple you can Aim at a ped but the gun will not fire.
+//Image: none
+//Time: 20/02/2007 06:43:23
+//Working: Yes
+setchar(pplayer + 0x6D3, 50);
+
+#cheat Zero Cash $0
+//ID: 19343
+//Score: 35
+//Author: UnNaMeD
+//Category: Player
+//Description: This cheat gives you no money at all you must leave it on if you turn it off you can get money.
+//
+//EDITED BY: psphacker108 on 20/02/07 05:39:59
+//Image: none
+//Time: 14/02/2007 07:58:58
+//Working: Yes
+setint(0x08bde55c,   0)  
+
+#cheat Patroit - Hummer
+//ID: 19286
+//Score: 80
+//Author: chazleyboI
+//Category: Text Mods
+//Description: Changes The Name Of Patroit To Hummer 
+//Image: none
+//Time: 24/01/2007 17:16:35
+//Working: Yes
+setshort(0x098A325A, 'h', 'u', 'm', 'm', 'e', 'r', 0);
+
+#cheat Hikiwara tuned Cholo Sabre
+//ID: 19272
+//Score: 93
+//Author: jumpman06
+//Category: Vehicle
+//Description: This is a kinda pmg car, made out of different codes,  its behind sunshine autos main building, where the races are
+//Image: none
+//Time: 16/01/2007 18:07:16
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(0x098F66E0, 'H', 'i', 'k', 'i', 'w', 'a', 'r', 'a', ' ', 'S', 'a', 'b', 'r', 'e', 0);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+static rotation; 
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat straigh line drag
+//ID: 19271
+//Score: 89
+//Author: jumpman06
+//Category: Vehicle
+//Description: make your car DRAG race rly good, best on the airstrip
+//Image: none
+//Time: 16/01/2007 18:02:39
+//Working: Yes
+if(buttons&CTRL_CROSS) 
+{ 
+   setfloat(pcar+0x70,  ystick * getfloat(pcar) / 80); 
+   setfloat(pcar+0x74,  ystick * getfloat(pcar+4) / 80); 
+   setfloat(pcar+0x78,  xstick* getfloat(pcar+8) / 80); 
+} 
+
+#cheat Raise The World +1m
+//ID: 19246
+//Score: 90
+//Author: edisoncarter
+//Category: Environment
+//Description: Raises the solid part of everything in the world by 1 meter while the visible part stays the same.  Because of the camera perspective it may look like you're still standing on the ground from some angles.  Use repeatedly to raise further.
+//Image: http://www1.cheatdevice.com/gta/VCSRaiseTheWorld1.gif
+//Time: 11/01/2007 00:10:58
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) + 1.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1.0);
+off();
+
+
+#cheat Lower The World -0.5m
+//ID: 19245
+//Score: 78
+//Author: edisoncarter
+//Category: Environment
+//Description: Lowers the solid part of everything in the world by half a meter.  The visible part stays the same, so it looks like everyone is submerged in concrete.  Use repeatedly to lower further.
+//Image: http://www1.cheatdevice.com/gta/VCSLowerTheWorld1.jpg
+//Time: 11/01/2007 00:04:22
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) - 0.5);
+off();
+
+
+#cheat Maverick in Garage
+//ID: 19243
+//Score: 73
+//Author: trecool999
+//Category: Garage Codes
+//Description: Puts a Maverick in your Garage. Without the hover cars cheat, you probably have no chance of getting it out :D.
+//Image: none
+//Time: 09/01/2007 19:23:11
+//Working: Yes
+//By Trecool999
+setint(0x08C739B0,  213);
+
+#cheat Tropic In Garage
+//ID: 19242
+//Score: 67
+//Author: trecool999
+//Category: Garage Codes
+//Description: Puts the Tropic boat in your garage. Very annoying to get out but, oh well :P.
+//Image: none
+//Time: 09/01/2007 19:21:40
+//Working: Yes
+//By Trecool999
+setint(0x08C739B0,  250);
+
+#cheat Theory of Chaos Doors
+//ID: 19241
+//Score: 90
+//Author: jumpman06
+//Category: Vehicle
+//Description: Doors That go a little crazy but bassically become CCR or CCX doors..
+//Image: none
+//Time: 09/01/2007 16:40:04
+//Working: Yes
+// By *CH405* & *Theory*
+setfloat(pcar+0x450,  -9,  -65,  -9);
+setfloat(pcar+0x480,  -9,  -65,  -9);
+setfloat(pcar+0x4b0,  -9,  -65,  -9);
+setfloat(pcar+0x4e0,  -9,  -65,  -9);
+
+#cheat No Car Doors
+//ID: 19239
+//Score: 75
+//Author: jumpman06
+//Category: Vehicle
+//Description: Makes your car doors Fake, you can get in where the doors are but they are still there, Vic gets in like theyre not there
+//
+//Image: none
+//Time: 09/01/2007 16:33:39
+//Working: Yes
+// By *CH405* & *Theory*
+setfloat(pcar+0x450,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x480,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x4b0,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x4e0,  3.1,  1.96393,  3.1);
+
+#cheat Rapid Fire for all Weapons
+//ID: 19237
+//Score: 143
+//Author: psphacker108
+//Category: Weapons
+//Description: Rapid Fire for all weapons! check the video, it lock's the fire right infront of you, Don't try to drive a vehicle it will get you stuck, Like if you use a shotgun it will fire before you can get the gun up! 
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-8.gif
+//Time: 09/01/2007 01:46:43
+//Working: Yes
+setint(pplayer + 0x000008B4,  12); 
+#off
+
+#cheat Super Shot/Super Boogie Walk
+//ID: 19233
+//Score: 100
+//Author: Swikity
+//Category: Misc
+//Description: Allows you to have automatic fire with only one button push.
+//Also allows you to do the Super Boogie Walk.
+//
+//Video only shows the Super Boogie Walk during like, the last 1/2 second.
+//
+//Instructions:
+//1. Activate the cheat.
+//2. Press O once while weapon is selected to activate super fire. Weapon will fire until it needs to reload.
+//3. When you get bored with not being able to move, deactivate the cheat.
+//4. Activate part 2 of this cheat (Super Fire Will Not Work)
+//5. Hold/Press [] to do the Super Boogie Walk
+//6. Deactivate the cheat to stop.
+//
+//EDITED BY: psphacker108 on 09/01/07 00:59:04
+//Image: http://i42.photobucket.com/albums/e303/Swikity/video3-1.gif
+//Time: 09/01/2007 00:20:26
+//Working: Yes
+//Instructions:
+//1. Activate the cheat.
+//2. Press O once while weapon is selected to activate super fire. Weapon will fire until it needs to reload.
+//3. When you get bored with not being able to move, deactivate the cheat and then super jump for a bit.
+//4. The original Super Boogie Walk cheat. (Super Fire Will Not Work)
+//5. Hold/Press [] to do the Super Boogie Walk
+//6. Deactivate the cheat to stop.
+setint(pplayer + 0x000001C8, 20);
+setint(pplayer + 0x000001C8, 20);
+
+
+
+#cheat Dud Guns/Boogie Walk
+//ID: 19232
+//Score: 64
+//Author: Swikity
+//Category: Pointless
+//Description: This makes it so you still shoot the gun, but no bullets come out and it doesn't kill people.
+//
+//To do the boogie walk, just press [ ] while walking.
+//
+//EDITED BY: psphacker108 on 09/01/07 01:02:51
+//Image: http://i42.photobucket.com/albums/e303/Swikity/video4-2.gif
+//Time: 09/01/2007 00:00:46
+//Working: Yes
+//To do the boogie walk, just keep pressing [] while you are walking.
+setint(pplayer + 0x000008B4, 1);
+setint(pplayer + 0x000008B4, 1);
+
+#cheat a bunch of vehicle colors for vcs
+//ID: 19220
+//Score: 92
+//Author: DoteStudios
+//Category: Vehicle
+//Description:  This has a ton of different colors for vehicles in vcs. The list includes basics and neons. The colors include: black, red, yellow, purple, dark green, orange, light gray, white, green, blue, dark blue, dark gray, brown, peach, neon green, neon blue, neon red, neon yellow, neon purple, and neon orange.
+//
+//NOTE: For every space paste, #cheat.
+//Image: none
+//Time: 05/01/2007 21:31:08
+//Working: Yes
+setchar(pcar+0x00000224, 0x00, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0x99, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x99, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0x99, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x00);
+
+setchar(pcar+0x00000224, 0x5e, 0x29, 0x47);
+setchar(pcar+0x00000228, 0x5e, 0x29, 0x47);
+
+setchar(pcar+0x00000224, 0x33, 0x99, 0x00);
+setchar(pcar+0x00000228, 0x33, 0x99, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0x66, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x66, 0x00);
+
+setchar(pcar+0x00000224, 0xcc, 0xcc, 0xcc);
+setchar(pcar+0x00000228, 0xcc, 0xcc, 0xcc);
+
+setchar(pcar+0x00000224, 0xff, 0xff, 0xff);
+setchar(pcar+0x00000228, 0xff, 0xff, 0xff);
+
+setchar(pcar+0x00000224, 0x33, 0xcc, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xcc, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0x66, 0xcc);
+setchar(pcar+0x00000228, 0x00, 0x66, 0xcc);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+setchar(pcar+0x00000224, 0x66, 0x33, 0x00);
+setchar(pcar+0x00000228, 0x66, 0x33, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0xcc, 0x66);
+setchar(pcar+0x00000228, 0xff, 0xcc, 0x66);
+
+setchar(pcar+0x00000224, 0x33, 0xff, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xff, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0xff, 0xff);
+setchar(pcar+0x00000228, 0x00, 0xff, 0xff);
+
+setchar(pcar+0x00000224, 0xff, 0x00, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0xff);
+setchar(pcar+0x00000228, 0x00, 0x00, 0xff);
+
+setchar(pcar+0x00000224, 0xcc, 0x00, 0xff);
+setchar(pcar+0x00000228, 0xcc, 0x00, 0xff);
+
+setchar(pcar+0x00000224, 0xff, 0x99, 0x55);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x55);
+
+#cheat Car Drives Sideways
+//ID: 19215
+//Score: 87
+//Author: DoteStudios
+//Category: Vehicle
+//Description:  This makes the car you are driving in drive sideways. It is just like the jet ski cheat.
+//
+//EDITED BY: psphacker108 on 09/01/07 02:16:17
+//Image: none
+//Time: 04/01/2007 04:19:44
+//Working: Yes
+setchar(pcar + 0x00000003, 0);
+
+#cheat Destroy All Police and Army Vehicles
+//ID: 19518
+//Score: 52
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: While this code is on, any and all police cars, motorcycles, helicopters, SWAT Vans, FBI vehicles, and Army vehicles will be destroyed as soon as they appear on-screen! Thanks to Waterbottle for his code used in this.
+//Image: none
+//Time: 09/04/2007 03:46:03
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         checkID = getshort(p + 0x56);
+         if(p != pcar && checkID == 193 || checkID == 204 || checkID == 207 || checkID == 218 || checkID == 221 || checkID == 234 || checkID == 246 || checkID == 260 || checkID == 261 || checkID == 268 || checkID == 279 || checkID == 191) setfloat(p + 0x27c,  0);
+     }
+}
+#off
+setchar(0x08bb32c8,   0); 
+
+#cheat Big Wheels On Infernus
+//ID: 19471
+//Score: 44
+//Author: BOY 999
+//Category: Vehicle
+//Description: This makes Infernus's have big wheels. 
+//
+//
+//
+//EDITED BY: psphacker108 on 26/03/07 03:46:24
+//Image: none
+//Time: 25/03/2007 10:32:42
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936E818, 0.9);
+
+#cheat DDM's Sentinel XS
+//ID: 19468
+//Score: 68
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This car has a custom Pearlescent Orange/Yellow paint job and a Nos Kit installed. Hold O to use the Nos and watch the Nos start pouring out of your Exhaust pipes. Also has Lamborghini Style Doors, 20" Rims, and is one beast of a machine.
+//
+//Thanks to psphacker108 for the wheel size changer, and Waterbottle for the Lamborghini Doors and Nos Cheat.
+//Image: http://img111.imageshack.us/img111/4241/video1pd5.gif
+//Time: 21/03/2007 19:13:51
+//Working: Yes
+if(getshort(pcar + 0x56) == 274)
+{
+setfloat(0x936F298, 0.8);
+setchar(pcar + 0x224, 255, 127, 0);
+setchar(pcar + 0x228, 0, 0, 0);
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+if(buttons & CTRL_CIRCLE && buttons & CTRL_CROSS) {
+
+   speed = 0.0;
+   setchar(0x09569B90, 0x10);
+   setchar(0x09569B94, 0, 127, 255);
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+else
+{
+   setchar(0x09569B90, 0x4);
+   setchar(0x09569B94, 63, 63, 63);
+}
+}
+
+#cheat Bigger Wheels Sand King
+//ID: 19467
+//Score: 49
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Wheels on the Sand King Huge! Mod your own vehicle tires now!
+//
+//Using psphacker's Wheel Size modifier:
+//http://www.themaxone.net/tools/wheelsize.php
+//
+//Image: http://img339.imageshack.us/img339/4899/screen4gm4.png
+//Time: 21/03/2007 17:16:56
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A678, 1.5);
+
+#cheat Wheel size polaris V8
+//ID: 19466
+//Score: 35
+//Author: psphacker108
+//Category: Vehicle
+//Description: This is my wheel size Mod! You can mod your own car tires at : http://www.themaxone.net/tools/wheelsize.php
+//Thanks to DDM for some help! The first wheel size mod for vcs!
+//Image: http://img453.imageshack.us/my.php?image=screen2gb9.png
+//Time: 21/03/2007 16:40:13
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9360B98, 1.5);
+
+#cheat The Convenient Portals
+//ID: 19464
+//Score: 49
+//Author: Durka Durka Mahn
+//Category: Teleport
+//Description: This cheat makes two portals- One outside of the Clymenus Suite, the other outside the 101 Bayshore Avenue Safehouse. Turn the cheat on, keep it on, and you can walk into the portal to go back and forth.
+//
+//Create your own portal at:
+//www.themaxone.net/tools/portalmaker.php
+//Image: http://img159.imageshack.us/img159/7158/portalje5.png
+//Time: 20/03/2007 19:34:37
+//Working: Yes
+//made with Portal Maker by DDM
+static Made;
+X1 = 269.45;
+Y1 = -166.28;
+Z1 = 11.84;
+X2 = -796.30;
+Y2 = -1181.56;
+Z2 = 11.10;
+if(!Made)
+{
+for( rot = 0; rot < 270; rot += 10.8 )
+{
+moveto(X1 + cos(rot) * 3, Y1 + sin(rot) * 3, Z1); object(0x1B3, 0, 0, -rot + 90);
+}
+for( rot2 = 0; rot2 < 270; rot2 += 10.8 )
+{
+moveto(X2 + cos(rot2) * 3, Y2 + sin(rot2) * 3, Z2); object(0x1B3, 0, 0, -rot2 + 90);
+}
+Made = 1;
+}
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 2 )
+{
+setfloat(pobj+0x30, X2 + 5, Y2 + 5, Z2);
+}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 2 )
+{
+setfloat(pobj+0x30, X1 + 5, Y1 + 5, Z1);
+}
+
+#cheat * UPDATE * The Car Mod Shop V 4
+//ID: 19463
+//Score: 156
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: That's right! This cheat makes a fully working Car Modding shop, much like Trans Fender in San Andreas! To use, drive into the Clymenus Suite Garage with the car you want to modify, and you will be teleported to the car modding Garage. Use Up and Down to navigate through the options, Left and Right to change the Car Color Options, and X to toggle Nos on and off. Once you're done, hold O to teleport back, and hold O to use your Nos. Enjoy!
+//Special thanks to Waterbottle for his Nos code and helping me fix some bugs.
+//
+//UPDATE! Version 2 now has Car Color 2! Use R2, G2, and B2 values to change whilst on the menu. Enjoy!
+//
+//UPDATE! Version 3 now has Lamborghini Doors and Unpoppable Car Tires. Credit to Waterbottle for these codes!
+//
+//UPDATE! Version 4 includes an awesome blue Nos effects and a spinners option at the ModShop. Some bugfixes also included.
+//Image: http://www.themaxone.net/bigvid.gif
+//Time: 20/03/2007 14:30:41
+//Working: Yes
+static Exit;
+static counter;
+static rotation;
+static Spinners;
+static car;
+static Tires;
+static Doors;
+static Nos;
+static menu;
+static stateIn;
+static Start;
+static R;
+static G;
+static B;
+static R2;
+static G2;
+static B2;
+if(getfloat(pcar + 0x30) >=258.71 && getfloat(pcar + 0x30) <= 268.65 && getfloat(pcar + 0x34) >= -146.48 && getfloat(pcar + 0x34) <= -138.07)
+{
+   stateIn = 1;
+   car = pcar;
+   R = getchar(pcar + 0x224);
+   G = getchar(pcar + 0x225);
+   B = getchar(pcar + 0x226);
+   R2 = getchar(pcar + 0x228);
+   G2 = getchar(pcar + 0x229);
+   B2 = getchar(pcar + 0x22A);
+}
+if(stateIn && getfloat(pcar + 0x140) == 0 && getfloat(pcar + 0x144) == 0)
+{
+   Start = 1;
+   setfloat(pcar + 0x30, -140.79, -1420.82, 4.90);
+xRightHandVector    = getfloat(pobj + 0x0000);
+yRightHandVector    = getfloat(pobj + 0x0004);
+zRightHandVector    = getfloat(pobj + 0x0008);
+xForwardVector      = getfloat(pobj + 0x0010);
+yForwardVector      = getfloat(pobj + 0x0014);
+zForwardVector      = getfloat(pobj + 0x0018);
+xUpVector           = getfloat(pobj + 0x0020);
+yUpVector           = getfloat(pobj + 0x0024);
+zUpVector           = getfloat(pobj + 0x0028);
+xRotationalMomentum = getfloat(pobj + 0x0070);
+yRotationalMomentum = getfloat(pobj + 0x0074);
+zRotationalMomentum = getfloat(pobj + 0x0078);
+xVelocity           = getfloat(pobj + 0x0140);
+yVelocity           = getfloat(pobj + 0x0144);
+}
+
+if(Start)
+{
+   stateIn = 0;
+    setfloat(pobj + 0x0000,  xRightHandVector);
+    setfloat(pobj + 0x0004,  yRightHandVector);
+    setfloat(pobj + 0x0008,  zRightHandVector);
+    setfloat(pobj + 0x0010,  xForwardVector);
+    setfloat(pobj + 0x0014,  yForwardVector);
+    setfloat(pobj + 0x0018,  zForwardVector);
+    setfloat(pobj + 0x0020,  xUpVector);
+    setfloat(pobj + 0x0024,  yUpVector);
+    setfloat(pobj + 0x0028,  zUpVector);
+    setfloat(pobj + 0x0070,  xRotationalMomentum);
+    setfloat(pobj + 0x0074,  yRotationalMomentum);
+    setfloat(pobj + 0x0078,  zRotationalMomentum);
+    setfloat(pobj + 0x0140,  0, 0);
+   if( menu == 0 )
+   {
+      int = R;
+      setshort( 0x08e90bd8, 1, 'R', ':', ' ', 0 );
+   }
+   if( menu == 1 )
+   {
+      int = G;
+      setshort( 0x08e90bd8, 1, 'G', ':', ' ', 0 );
+   }
+   if( menu == 2 )
+   {
+      int = B;
+      setshort( 0x08e90bd8, 1, 'B', ':', ' ', 0 );
+   }
+   if( menu == 3 )
+   {
+      int = R2;
+      setshort( 0x08e90bd8, 1, 'R', '2', ':', ' ', 0 );
+   }
+   if( menu == 4 )
+   {
+      int = G2;
+      setshort( 0x08e90bd8, 1, 'G', '2', ':', ' ', 0 );
+   }
+   if( menu == 5 )
+   {
+      int = B2;
+      setshort( 0x08e90bd8, 1, 'B', '2', ':', ' ', 0 );
+   }
+   size = 0;
+   for(i = 1; i < int; i*=10) size+=2;
+   for(i = 0; int > 0; i+=2 ) 
+   {
+      if( menu < 3)
+      {
+      setshort(0x08e90bdc+size-i,  '0' + (int % 10));
+      int = int(int/=10);
+      } 
+      else if( menu > 2)
+      {
+      setshort(0x08e90bde+size-i,  '0' + (int % 10));
+      int = int(int/=10);
+      } 
+   }
+   if( menu == 6 && !Nos)
+   {
+      if(press & CTRL_CROSS)
+         Nos = 1;
+      setshort( 0x08e90bd8, 1, 'N', 'o', 's', ' ', 'o', 'f', 'f', 0);
+   }
+   else if( menu == 6 && Nos)
+   {
+      if(press & CTRL_CROSS)
+         Nos = 0;
+      setshort( 0x08e90bd8, 'N', 'o', 's', ' ', 'o', 'n',  0);
+   }
+   if( menu == 7 && !Doors)
+   {
+      if(press & CTRL_CROSS)
+         Doors = 1;
+      setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 7 && Doors)
+   {
+      if(press & CTRL_CROSS)
+         Doors = 0;
+      setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'n', 0);
+   }
+   if( menu == 8 && !Tires)
+   {
+      if(press & CTRL_CROSS)
+         Tires = 1;
+      setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 8 && Tires)
+   {
+      if(press & CTRL_CROSS)
+         Tires = 0;
+      setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'n', 0);
+   }
+   if( menu == 9 && !Spinners)
+   {
+      if(press & CTRL_CROSS)
+         Spinners = 1;
+      setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 9 && Spinners)
+   {
+      if(press & CTRL_CROSS)
+         Spinners = 0;
+      setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'n', 0);
+   }
+   if(buttons & CTRL_LEFT)
+   {
+      if(menu == 0)
+         R--;
+      if(menu == 1)
+         G--;
+      if(menu == 2)
+         B--;
+      if(menu == 3)
+         R2--;
+      if(menu == 4)
+         G2--;
+      if(menu == 5)
+         B2--;
+   }
+   if(buttons & CTRL_RIGHT)
+   {
+      if(menu == 0)
+         R++;
+      if(menu == 1)
+         G++;
+      if(menu == 2)
+         B++;
+      if(menu == 3)
+         R2++;
+      if(menu == 4)
+         G2++;
+      if(menu == 5)
+         B2++;
+   }
+   if(buttons & CTRL_CIRCLE)
+   {
+      Start = 0;
+    setfloat(pcar + 0x30, -191.57, -1392.88, 145.00);
+    setfloat(pcar + 0x30, 277.13, -146.65, 15);
+      menu = 0;
+    Exit = 1;
+   }
+   if(press & CTRL_DOWN && menu < 9)
+      menu++;
+   if(press & CTRL_UP  && menu > 0)
+      menu--;
+      setchar(pcar + 0x224, R, G, B);
+      setchar(pcar + 0x228, R2, G2, B2);
+   }
+if(Exit)
+{
+    setfloat(pobj + 0x0000,  xRightHandVector);
+    setfloat(pobj + 0x0004,  yRightHandVector);
+    setfloat(pobj + 0x0008,  zRightHandVector);
+    setfloat(pobj + 0x0010,  xForwardVector);
+    setfloat(pobj + 0x0014,  yForwardVector);
+    setfloat(pobj + 0x0018,  zForwardVector);
+    setfloat(pobj + 0x0020,  xUpVector);
+    setfloat(pobj + 0x0024,  yUpVector);
+    setfloat(pobj + 0x0028,  zUpVector);
+    setfloat(pobj + 0x0070,  xRotationalMomentum);
+    setfloat(pobj + 0x0074,  yRotationalMomentum);
+    setfloat(pobj + 0x0078,  zRotationalMomentum);
+    setfloat(pobj + 0x0140,  0, 0, 0);
+Exit = 0;
+}
+if(Nos && !stateIn && !Start && pcar == car)
+{
+if(buttons & CTRL_CIRCLE && buttons & CTRL_CROSS) {
+
+   speed = 0.0;
+   setchar(0x09569B90, 0x10);
+   setchar(0x09569B94, 0, 127, 255);
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+else
+{
+   setchar(0x09569B90, 0x4);
+   setchar(0x09569B94, 63, 63, 63);
+}
+}
+
+if(Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+}
+else if(!Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  1.2566371,  0,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  1.2566371,  0,  0);
+}
+if(Tires && pcar == car)
+{
+setshort(pcar+0x3b6,  0,  0);//cars
+setshort(pcar+0x434,  0);//bikes
+}
+if(Spinners && pcar == car)
+{
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+}
+
+#cheat Mission Select
+//ID: 19456
+//Score: 64
+//Author: vettefan88
+//Category: Misc
+//Description: Enter a taxi and start the taxi driver mission and you'll start the selected mission instead!
+//
+//Hold R and press Left and Right to cycle through the mission #'s.
+//the current mission # will be displayed where your money is.
+//
+//the default # is 20 for taxi driver.
+//
+//the story missions start at #42 and go up form there.
+//
+//ENJOY!
+//
+//EDITED BY: Durka Durka Mahn on 19/03/07 13:41:21
+//Image: none
+//Time: 19/03/2007 03:36:15
+//Working: Yes
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+money = getint(0x08bde55c);
+}
+setint(0x08bde55c, money, money);
+if (buttons & CTRL_RTRIGGER)
+{
+setint(0x08bde55c, mission, mission);
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+}
+setchar(0x9F932D8, mission);
+
+#cheat See through
+//ID: 19446
+//Score: 38
+//Author: psphacker108
+//Category: Player
+//Description: This make's you be able  to see through car's peds, buildings, and the ground You are not visible though. Nor can you see ped's driving car's.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-5.gif
+//Time: 17/03/2007 03:32:57
+//Working: Yes
+setchar(0x8BAB9A7, 89);
+#off
+setchar(0x8BAB9A7, 44);
+
+#cheat Upside down Screen
+//ID: 19445
+//Score: 31
+//Author: psphacker108
+//Category: Button Cheats
+//Description: This make's the screen go upside down on your psp, It will even go upside down in the start menu.You won't have to enter the button cheat!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-13.gif
+//Time: 17/03/2007 03:13:45
+//Working: Yes
+setchar(0x8bab98c, 1);
+#off
+setchar(0x8bab98c, 0);
+
+
+#cheat Explosive Sphere
+//ID: 19433
+//Score: 83
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: A large Sphere made of 150 Explosive barrels will spawn around Vic. Use it to implode onto a pedestrian or yourself!
+//Image: http://img223.imageshack.us/img223/5449/screen1my4.png
+//Time: 10/03/2007 03:06:25
+//Working: Yes
+for( rot = 0; rot < 360; rot += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30) + cos(rot) * 5, getfloat(pplayer+0x34)   + sin(rot) * 5,  getfloat(pplayer+0x38));  object(0x01c2,  0,  0,  -rot + 90); 
+}
+for( rot2 = 0; rot2 < 360; rot2 += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30), getfloat(pplayer+0x34)   + sin(rot2) * 5,  getfloat(pplayer+0x38) + cos(rot2) * 5);  object(0x01c2,  rot2 + 90,  0,  0); 
+}
+for( rot3 = 0; rot3 < 360; rot3 += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30) + cos(rot3) * 5, getfloat(pplayer+0x34)  ,  getfloat(pplayer+0x38) + sin(rot3) * 5);  object(0x01c2,  90,  -rot3 + 90,  0); 
+}
+off();
+
+#cheat Firecrackers!
+//ID: 19432
+//Score: 81
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: Spawns a huge line of red firecrackers next to Vic. Shoot them to start the fireworks!
+//Image: http://img61.imageshack.us/img61/6662/screen1jr0.png
+//Time: 10/03/2007 03:05:06
+//Working: Yes
+for( x = 0; x < 120; x += 0.8 )
+{
+    moveto(getfloat(pplayer+0x30) + x, getfloat(pplayer+0x34),  getfloat(pplayer+0x38));  object(0x01c2,  0,  0,  0); 
+}
+off();
+
+#cheat Better Transmission Sound
+//ID: 19425
+//Score: 71
+//Author: psphacker108
+//Category: Audio
+//Description: Make's a better sounding vehicle, turn on leave it on it won't slow down the game at all and every car you get into it will work on as long as it's always on.
+//Image: none
+//Time: 06/03/2007 23:35:06
+//Working: Yes
+setchar(pcar + 0x277, 0xEF);
+
+
+#cheat Transmission Back to normal
+//ID: 19424
+//Score: 50
+//Author: psphacker108
+//Category: Audio
+//Description: This make's the transmission sound back to normal on your car.
+//Image: none
+//Time: 06/03/2007 23:34:19
+//Working: Yes
+setchar(pcar + 0x277, 0x20);
+off()
+
+#cheat Pop out Police VCS
+//ID: 19421
+//Score: 57
+//Author: psphacker108
+//Category: Vehicle
+//Description: Pop out Police for VCS! You must use the Vehicle you have in your little haiti garage for this code to work, Turn off with the OFF code Seprate so you can get out but the cops can't get in!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-12.gif
+//Time: 05/03/2007 03:03:06
+//Working: Yes
+setchar(pcar + 0x267, 0x75);
+off()
+
+#cheat pop out police OFF
+//ID: 19420
+//Score: 46
+//Author: psphacker108
+//Category: Vehicle
+//Description: This turn's the Pop out Police code I made off ( It will let you be able to get out of your car)
+//Image: none
+//Time: 05/03/2007 02:49:32
+//Working: Yes
+setchar(pcar + 0x267, 0x44);
+off()
+
+
+#cheat The Perfect Circle Maker
+//ID: 19419
+//Score: 52
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This will make a perfect circle of walls around Vic, no matter where he is. Only use once per reboot, because it will only spawn correctly one time, so choose where you put it carefully! You can also change 0x1CA4 to a different value for other objects. Much credit to Waterbottle for help in making this. Enjoy.
+//Image: http://img163.imageshack.us/img163/8484/screen1md1.png
+//Time: 04/03/2007 20:00:30
+//Working: Yes
+for( rot = 0; rot < 360; rot += 3.6 )
+{
+    moveto(getfloat(pplayer+0x30) + cos(rot) * 10, getfloat(pplayer+0x34)   + sin(rot) * 10,  
+
+getfloat(pplayer+0x38));  object(0x1CA4,  0,  0,  -rot + 90); 
+}
+off();
+
+#cheat Ghostrider
+//ID: 19414
+//Score: 102
+//Author: jumpman06
+//Category: Vehicle
+//Description: Make vic like ghostrider!! goto sunshine autos look by the races youl find it, leave code on all times you want it on, looks cool with the 'robbery' suit on
+//
+//EDITED BY: psphacker108 on 28/02/07 01:50:29
+//Image: http://img443.imageshack.us/img443/1219/video4mg2.gif
+//Time: 27/02/2007 22:19:30
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,    231);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x08be3a20,  1); 
+setfloat(0x08be3a30,  getfloat(pobj+0x30),  getfloat(pobj+0x34),  
+
+getfloat(pobj+0x38));
+setchar(0x08be3a20,  1); 
+setfloat(0x08be3a30,  getfloat(pcar+0x30),  getfloat(pcar+0x34),  
+
+getfloat(pcar+0x38));
+setchar(0x9569b94,  0xFF,  0x00,  0x00);
+setchar(pcar+0x224, 0xFF, 0x00, 0x00);
+setchar(pcar+0x228, 0xFF, 0x00, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+static rotation; 
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 
+
+0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) 
+
+setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) 
+
+setfloat(pcar+0x140,  0,  0);
+
+#cheat No Vehicle Damage
+//ID: 19413
+//Score: 82
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make the Vehicle your in have No  damage what so ever, You can hit wall's or other car's No Damage. No more cracked windshields!
+//Image: none
+//Time: 27/02/2007 17:02:48
+//Working: Yes
+setchar(pcar+0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(pcar+0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(pcar+0xA0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(pcar+0xB0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+#cheat Hikiwara Cholo Sabre
+//ID: 19412
+//Score: 56
+//Author: jumpman06
+//Category: Vehicle
+//Description: Kinda PMG'd car, in blue this time.. press right to change back to blue if it goes to some other color, Neon and drop by Vettefan88
+//
+//EDITED BY: psphacker108 on 26/02/07 16:18:09
+//Image: none
+//Time: 25/02/2007 23:53:46
+//Working: Yes
+if (buttons & CTRL_RIGHT)
+{
+setchar(0x9569b94,  0,  0x0,  0xFF);
+setchar(pcar+0x224, 0, 0x0, 0xff);
+setchar(pcar+0x228, 0, 0x0, 0xff);
+1 = 0;
+2 = 175;
+3 = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 1, 2, 3);}
+}
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat Multi-color Modpack
+//ID: 19411
+//Score: 67
+//Author: jumpman06
+//Category: Vehicle
+//Description: use up left down and right to change colors on car for CARS only, Neon from Vettefan88
+//
+//EDITED BY: psphacker108 on 26/02/07 16:18:14
+//Image: none
+//Time: 25/02/2007 23:49:58
+//Working: Yes
+if (buttons & CTRL_UP)
+{
+setchar(0x9569b94,  0xFF,  0,  0);
+setchar(pcar+0x224, 0xFF, 0, 0);
+setchar(pcar+0x228, 0xFF, 0, 0);
+R = 255;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_LEFT)
+{
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x66, 0xff, 0x00);
+setchar(pcar+0x228, 0x66, 0xff, 0x00);
+R = 80;
+G = 255;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_RIGHT)
+{
+setchar(0x9569b94,  0,  0xAF,  0xFF);
+setchar(pcar+0x224, 0, 0xaf, 0xff);
+setchar(pcar+0x228, 0, 0xaf, 0xff);
+R = 0;
+G = 175;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+if (buttons & CTRL_DOWN)
+{
+setchar(0x9569b94,  0,  0,  0);
+setchar(pcar+0x224, 0, 0, 0);
+setchar(pcar+0x228, 0, 0, 0);
+R = 255;
+G = 255;
+B = 255;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, R, G, B);}
+}
+
+
+#cheat Teleport To And Back V1
+//ID: 19758
+//Score: 3
+//Author: emcp
+//Category: Teleport
+//Description: This cheat allows you to teleport to a specified location by pressing R + up and then by pressing R + down you can return to the location you were when you first teleported
+//
+//after each teleport you have to turn the cheat back on this is to stop constant teleporting in the cheat device (if theres a way around this please tell me thanks)
+//
+//this is useful if you make a construction like a hide away and you are being chased by police you can cool down in the hideaway and return back to the spot you were
+//
+//this is the first version i dont think it works in cars that will work very very soon and more features
+//
+//EDITED BY: Durka Durka Mahn on 07/06/07 19:05:01 Fixed!
+//
+//EDITED BY: Durka Durka Mahn on 09/06/07 03:27:54
+//Image: none
+//Time: 07/06/2007 18:52:05
+//Working: Yes
+//My First Cheat Created For VCS
+//Created By Emmet Mc Poland (emcp)
+if(press & CTRL_UP && buttons & CTRL_RTRIGGER)
+{
+x = getfloat(pobj+ 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj+ 0x38); 
+}
+if(press & CTRL_DOWN && buttons & CTRL_RTRIGGER) {
+setfloat(pobj+0x30, x, y, z);
+}
+
+#cheat Custom Gravity
+//ID: 19757
+//Score: 5
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Use the D-Pad to change the gravity along the X/Y axi.
+//Image: none
+//Time: 07/06/2007 01:23:42
+//Working: Yes
+gravity = 0.002;
+static speed;
+static menu;
+if(press & CTRL_RIGHT) {
+	menu = 1;
+	speed = 0;
+}
+if(press & CTRL_LEFT) {
+	menu = 2;
+	speed = 0;
+}
+if(press & CTRL_UP) {
+	menu = 3;
+	speed = 0;
+}
+if(press & CTRL_DOWN) {
+	menu = 4;
+	speed = 0;
+}
+if(menu == 1) {
+	if(!getint(pobj+0x150)) {
+		speed += gravity;
+		setfloat(pobj+0x30, getfloat(pobj+0x30) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 2) {
+	if(!getint(pobj+0x150)) {
+		speed -= gravity;
+		setfloat(pobj+0x30, getfloat(pobj+0x30) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 3) {
+	if(!getint(pobj+0x150)) {
+		speed += gravity;
+		setfloat(pobj+0x34, getfloat(pobj+0x34) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 4) {
+	if(!getint(pobj+0x150)) {
+		speed -= gravity;
+		setfloat(pobj+0x34, getfloat(pobj+0x34) + speed);
+	} else {
+		speed = 0;
+	}
+} 
+setshort(0x08e90bd8, 1, 'U', 's', 'e', ' ', 't', 'h', 'e', ' ', 'D', '-', 'P', 'a', 'd', ' ', 't', 'o', ' ', 'c', 'h', 'a', 'n', 'g', 'e', ' ', 'y', 
+
+'o', 'u', 'r', ' ', 'G', 'r', 'a', 'v', 'i', 't', 'y', '!', 0); 
+
+#cheat Pez Dispenser
+//ID: 19768
+//Score: 4
+//Author: Durka Durka Mahn
+//Category: Pointless
+//Description: Touch 5 different cars and they will appear above you! Hit O to launch the top car, and hold R and hit O to launch them all at the same time!
+//Image: http://www.themaxone.net/video2.gif
+//Time: 09/06/2007 04:46:02
+//Working: Yes
+static car1;
+static car2;
+static car3;
+static car4;
+static car5;
+static getRidoftheCars;
+touchCheck = getint(pobj + 0x150);
+if(touchCheck && getshort(touchCheck + 0x56) < 279 && getshort(touchCheck + 0x56) > 150) {
+	if(!car5) {
+		car5 = touchCheck;
+	}
+	if(!car4&&car5&&touchCheck != car5) {
+		car4 = touchCheck;
+	}
+	if(!car3&&car5&&car4&&touchCheck != car4&&touchCheck != car5) {
+		car3 = touchCheck;
+	}
+	if(!car2&&car5&&car4&&car3&&touchCheck != car5&&touchCheck != car4&&touchCheck != 
+
+car3) {
+		car2 = touchCheck;
+	}
+	if(!car1&&car5&&car4&&car3&&car2&&touchCheck != car5&&touchCheck != 
+
+car4&&touchCheck != car3&&touchCheck != car2) {
+		car1 = touchCheck;
+	}
+}
+if(car4 && !car5) {
+	car5 = car4;
+	car4 = 0;
+}
+if(car3 && !car4 && car5) {
+	car4 = car3;
+	car3 = 0;
+ }
+if(car3 && !car4 && !car5) {
+	car5 = car3;
+	car3 = 0;
+ }
+if(car3 && !car4) {
+	car4 = car3;
+	car3 = 0;
+ }
+if(car2 && !car3 && car4 && car5) {
+	car3 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && !car4 && car5) {
+	car4 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && !car4 && !car5) {
+	car5 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && car4 && car5) {
+	car3 = car2;
+	car2 = 0;
+ }
+if(car1 && !car2 && car3 && car4 && car5) {
+	car2 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && car4 && car5) {
+	car3 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && !car4 && car5) {
+	car4 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && !car4 && !car5) {
+	car5 = car1;
+	car1 = 0;
+ }
+if(car1) {		
+	setfloat(car1 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 2.5);
+	setfloat(car1 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car1+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car1+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car1+0x140,  0,  0,  0);
+	setfloat(car1+0x70,  0,  0,  0);
+}
+if(car2) {
+	setfloat(car2 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 5);
+	setfloat(car2 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car2+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car2+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car2+0x140,  0,  0,  0);
+	setfloat(car2+0x70,  0,  0,  0);
+}
+if(car3) {
+	setfloat(car3 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 7.5);
+	setfloat(car3 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car3+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car3+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car3+0x140,  0,  0,  0);
+	setfloat(car3+0x70,  0,  0,  0);
+}
+if(car4) {
+	setfloat(car4 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 10);
+	setfloat(car4 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car4+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car4+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car4+0x140,  0,  0,  0);
+	setfloat(car4+0x70,  0,  0,  0);
+}
+if(car5) {
+	setfloat(car5 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 12.5);
+	setfloat(car5 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car5+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car5+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car5+0x140,  0,  0,  0);
+	setfloat(car5+0x70,  0,  0,  0);
+}
+if(press & CTRL_CIRCLE) {
+	if(car5) {
+		setfloat(car5+0x140,  getfloat(car5+0x140)+getfloat(car5+0x10)+0.1);
+		setfloat(car5+0x144,  getfloat(car5+0x144)+getfloat(car5+0x14)+0.1);
+		car5 = 0;
+	}
+}
+if(buttons & CTRL_RTRIGGER && press & CTRL_CIRCLE) {
+	if(car1) {
+		setfloat(car1+0x140,  getfloat(car1+0x140)+getfloat(car1+0x10)+0.1);
+		setfloat(car1+0x144,  getfloat(car1+0x144)+getfloat(car1+0x14)+0.1);
+		car1 = 0;
+	}
+	if(car2) {
+		setfloat(car2+0x140,  getfloat(car2+0x140)+getfloat(car2+0x10)+0.1);
+		setfloat(car2+0x144,  getfloat(car2+0x144)+getfloat(car2+0x14)+0.1);
+		car2 = 0;
+	}
+	if(car3) {
+		setfloat(car3+0x140,  getfloat(car3+0x140)+getfloat(car3+0x10)+0.1);
+		setfloat(car3+0x144,  getfloat(car3+0x144)+getfloat(car3+0x14)+0.1);
+		car3 = 0;
+	}
+	if(car4) {
+		setfloat(car4+0x140,  getfloat(car4+0x140)+getfloat(car4+0x10)+0.1);
+		setfloat(car4+0x144,  getfloat(car4+0x144)+getfloat(car4+0x14)+0.1);
+		car4 = 0;
+	}
+	if(car5) {
+		setfloat(car5+0x140,  getfloat(car5+0x140)+getfloat(car5+0x10)+0.1);
+		setfloat(car5+0x144,  getfloat(car5+0x144)+getfloat(car5+0x14)+0.1);
+		car5 = 0;
+	}
+}
+#off
+car1 = car2 = car3 = car4 = car5 = 0;
+
+#cheat Raise the World of the Boat
+//ID: 19727
+//Score: 8
+//Author: psphacker108
+//Category: Environment
+//Description: This allows you to Raise the World of the Boat in little haiti, Watch Video. if you turn off the code the world or lights and solid goes to.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-32.gif
+//Time: 31/05/2007 06:35:29
+//Working: Yes
+if (buttons & CTRL_UP) 
+setfloat(0x9442038, getfloat(0x9442038)-.1);
+if (buttons & CTRL_DOWN) 
+setfloat(0x9442038, getfloat(0x9442038)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Shift the world of the boat
+//ID: 19726
+//Score: 7
+//Author: psphacker108
+//Category: Environment
+//Description: You can Now shift the world of the small boat near the pay n spray in little haiti.By pressing LEFT to move twords the city, RIGHT going twords water, Watch Video. ( Thanks to vettefan for code setup) If you turn off the code the world of the boat dissapears.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-31.gif
+//Time: 31/05/2007 06:33:28
+//Working: Yes
+if (buttons & CTRL_LEFT)
+setfloat(0x9442030, getfloat(0x9442030)-.1);
+if (buttons & CTRL_RIGHT) 
+setfloat(0x9442030, getfloat(0x9442030)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Light Control
+//ID: 19650
+//Score: 12
+//Author: psphacker108
+//Category: Environment
+//Description: The Christmas lights near 101 bayshore ave you can now control! 
+//
+//Controls:
+//LEFT_ Moves the lights back on the deck.
+//RIGHT_ Moves them over above your head.
+//DOWN_Turns them off.
+//UP_ Turns them back on.
+//
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-30.gif
+//Time: 24/05/2007 15:06:36
+//Working: Yes
+if(buttons & CTRL_RIGHT)
+setchar(0x9460815, 0x00);
+{
+setchar(0x946081a, 0x35);
+}
+if(buttons & CTRL_LEFT)
+setchar(0x9460815, 0xb0);
+{
+setchar(0x946081a, 0x55);
+}
+if(buttons & CTRL_DOWN)
+{
+setchar(0x9460817, 0xD4);
+}
+if(buttons & CTRL_UP)
+{
+setchar(0x9460817, 0xC4);
+}
+
+#cheat Ride in back of Limo
+//ID: 19570
+//Score: 39
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's vic Ride in the back of the limo, Made by vettefan Found for all vehicles by psphacker108.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-28.gif
+//Time: 24/04/2007 19:48:17
+//Working: Yes
+//thanks to Vettefan88
+setfloat(0x9367a24, -2.1);
+
+#cheat Boat Vehicles
+//ID: 19566
+//Score: 44
+//Author: psphacker108
+//Category: Vehicle
+//Description: Grab a Car, Get near water facing the island you want to head to.Then activate code you will be going straight throwds the opisote island like your in a boat! you will be in the water moving ! No steering, no speed control one set speed. HINT use hover cars to get camera closer,Watch the video, A cool code indeed. Make's the Splitz 6 water travel much faster! Ignore the Extra :} error it has to work that way...
+//Image: http://img134.imageshack.us/img134/9316/video4wu0.gif
+//Time: 22/04/2007 07:10:05
+//Working: Yes
+static turbo;
+if(pcar)
+{
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));  
+if(speed<1.8) 
+{ 
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);  
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005); 
+if(turbo<1.6)
+}
+
+#cheat Rain Color Modifier V1
+//ID: 19563
+//Score: 50
+//Author: psphacker108
+//Category: Environment
+//Description: Using this code you can change the colors of the rain in the game! 4 colors are set nothing else yet. You can turn off the code Rain stays on at the selected color. (Looks better in game play then in video)
+//Controls
+//DOWN_BLUE RAIN
+//LEFT_RED RAIN
+//RIGHT_GREEN RAIN
+//UP_PURPLE RAIN
+//
+//thanks to Ja750 for the idea.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-12.gif
+//Time: 15/04/2007 05:01:19
+//Working: Yes
+setchar(0x8bb3e00, 0x02);
+if(buttons & CTRL_DOWN)
+{
+setchar(0x956a5e4, 0x00, 0x00, 0xff);
+}
+if(buttons & CTRL_LEFT)
+{
+setchar(0x956a5e4, 0xff, 0x00, 0x00);
+}
+if(buttons & CTRL_RIGHT)
+{
+setchar(0x956a5e4, 0x00, 0xff, 0x00);
+}
+if(buttons & CTRL_UP)
+{
+setchar(0x956a5e4, 0x99, 0x00, 0x9f);
+}
+
+#cheat Destroy Last Entered Vehicle
+//ID: 19529
+//Score: 45
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: The last parked vehicle will be destroyed when you get into a new car. Thanks to psphacker108 for the idea.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-7.gif
+//Time: 13/04/2007 19:15:34
+//Working: Yes
+static old;
+static new;
+if(pcar && !old) {
+old = pcar;
+new = 0;
+}
+if(pcar && !new && pcar != old) {
+new = pcar;
+setfloat(old + 0x27c, 0);
+old = 0;
+}
+
+#cheat The Ring of Fire
+//ID: 19528
+//Score: 74
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: 10 fires will surround you in the shape of a circle! Hit O to release the Ring, and any vehicles caught in the ring when you release it will catch fire and blow up! Hit Down to lock the ring size.
+//Image: http://img256.imageshack.us/img256/4190/video1rn0.gif
+//Time: 13/04/2007 16:25:04
+//Working: Yes
+static counter;
+static dist;
+static lockdist;
+static lockx;
+static locky;
+static lockz;
+static lockon;
+x = getfloat(pobj + 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj + 0x38);
+if(press & CTRL_CIRCLE) {
+lockx = x;
+locky = y;
+lockz = z;
+}
+if(buttons & CTRL_CIRCLE) {
+dist += 0.5;
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, lockx + cos(0) * dist,  locky + sin(0) * dist,  lockz);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, lockx + cos(36) * dist,  locky + sin(36) * dist,  lockz);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, lockx + cos(72) * dist,  locky + sin(72) * dist,  lockz);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  lockx + cos(108) * dist,  locky + sin(108) * dist,  lockz);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, lockx + cos(144) * dist,  locky + sin(144) * dist,  lockz);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, lockx + cos(180) * dist,  locky + sin(180) * dist,  lockz);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, lockx + cos(216) * dist,  locky + sin(216) * dist,  lockz);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  lockx + cos(252) * dist,  locky + sin(252) * dist,  lockz);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, lockx + cos(288) * dist,  locky + sin(288) * dist,  lockz);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, lockx + cos(324) * dist,  locky + sin(324) * dist,  lockz);
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = lockx - getfloat(cars+0x30);
+         dy = locky - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+else {
+if(dist > 3.0) {
+dist -= 0.5;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+if(dist < 3.0) {
+dist += 0.5;
+}
+else if(press & CTRL_DOWN && !lockon) {
+lockdist = dist;
+lockon = 1;
+}
+else if(press & CTRL_DOWN && lockon) {
+lockon = 0;
+}
+if(lockon) {
+dist = lockdist;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, x + cos(0) * dist,  y + sin(0) * dist,  z);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, x + cos(36) * dist,  y + sin(36) * dist,  z);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, x + cos(72) * dist,  y + sin(72) * dist,  z);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  x + cos(108) * dist,  y + sin(108) * dist,  z);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, x + cos(144) * dist,  y + sin(144) * dist,  z);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, x + cos(180) * dist,  y + sin(180) * dist,  z);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, x + cos(216) * dist,  y + sin(216) * dist,  z);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  x + cos(252) * dist,  y + sin(252) * dist,  z);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, x + cos(288) * dist,  y + sin(288) * dist,  z);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, x + cos(324) * dist,  y + sin(324) * dist,  z);
+}
+#off
+setchar(0x08bb32c8,    0); 
+
+#cheat Disables wait for ferris wheel to stop
+//ID: 19526
+//Score: 28
+//Author: psphacker108
+//Category: Text Mods
+//Description: When you go up to the chundler wheel you will not get that annoying message wait for ferris wheel to stop.
+//Image: none
+//Time: 13/04/2007 06:37:00
+//Working: Yes
+setchar(0x98ad4c8, 0x00);
+
+#cheat Teleport Last Entered Car to You (Down)
+//ID: 19523
+//Score: 45
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Whilst on, the last entered car you were in will be teleported to you when you hit down. Please note that the cheat must be on before you get out of the last entered vehicle
+//Image: none
+//Time: 11/04/2007 00:45:32
+//Working: Yes
+if(pcar) {
+old = pcar; }
+if(press & CTRL_DOWN&&!pcar) {
+setfloat(old + 0x30,    getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) *  5.0); 
+setfloat(old + 0x34,    getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) *  5.0); 
+setfloat(old + 0x38,    getfloat(pplayer + 0x38) + 1.0); 
+}
+
+#cheat The Launch Pad
+//ID: 19519
+//Score: 64
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This is a car launching pad, designed to shoot you all across Vice City! Simply line your car up with one of the tubes, set the boost amount, hit O, and you're off! Up and Down will change the amount of boost, which is displayed on your money meter. Hold R and Right to respawn to the Launch Pad.
+//Image: http://www.themaxone.net/images/video1.gif
+//Time: 09/04/2007 18:02:26
+//Working: Yes
+static MakeConstruction;
+static boost;
+thrust = boost * 0.00333; 
+if(!MakeConstruction) {
+moveto(-229.56, -1078.36, 83.78);  object(0x1CD5, 350, 0, 310);
+move(-4.32, 3.67, 1.90);  object(0x1CD5, 340, 0, 310);
+move(-1.66, 1.35, 0.70);  object(0x1CD5, 330, 0, 310);
+move(17.51, 3.71, -2.70);  object(0x1CD5, 350, 0, 350);
+move(-1.20, 6.49, 2.10);  object(0x1CD5, 340, 0, 350);
+move(-0.84, 4.52, 2.60);  object(0x1CD5, 330, 0, 350);
+move(14.96, -16.02, -4.50);  object(0x1CD5, 350, 0, 40);
+move(5.09, 6.04, 2.30);  object(0x1CD5, 340, 0, 40);
+move(4.26, 5.04, 3.20);  object(0x1CD5, 330, 0, 40);
+move(-0.60, -21.12, -5.60);  object(0x1CD5, 350, 0, 70);
+move(8.82, 3.24, 2.40);  object(0x1CD5, 340, 0, 70);
+move(6.67, 2.45, 3.40);  object(0x1CD5, 330, 0, 70);
+move(-47.98, -17.97, -5.70);  object(0x1CD5, 350, 0, 240);
+move(-6.07, -3.49, 2.10);  object(0x1CD5, 340, 0, 240);
+move(-7.17, -4.12, 3.80);  object(0x1CD5, 330, 0, 240);
+move(17.71, 4.58, -5.90);  object(0x1CA4, 0, 0, 222);
+move(3.29, -2.92, 0.00);  object(0x1CA4, 0, 0, 222);
+move(3.86, -1.39, 0.00);  object(0x1CA4, 0, 0, 180);
+move(1.70, 0.01, 0.00);  object(0x1CA4, 0, 0, 180);
+move(3.62, 1.89, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.26, 2.67, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.00, 2.37, 0.00);  object(0x1CA4, 0, 0, 130);
+move(-0.17, 9.09, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.54, 1.28, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-7.30, 6.08, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.77, 1.47, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-9.42, 1.14, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.85, -3.35, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-0.13, -0.15, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-6.29, -7.38, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.08, -2.43, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-1.36, -3.57, 0.00);  object(0x1CA4, 0, 0, 270);
+move(1.80, -3.21, 0.00);  object(0x1CA4, 0, 0, 220);
+move(1.61, -1.35, 0.00);  object(0x1CA4, 0, 0, 220);
+MakeConstruction = 1;
+boost = 1000;
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+}
+setshort(0x08e90bd8, 1, 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ':', ' ', 'O', ' ', '-', ' ', 'L', 'a', 'u', 'n', 'c', 'h', ', ', ' ', 'U', 'p', ' ', 
+
+'a', 'n', 'd', ' ', 'D', 'o', 'w', 'n', ' ', '-', ' ', 'C', 'h', 'a', 'n', 'g', 'e', ' ', 'B', 'o', 'o', 's', 't', ' ', 'A', 'm', 'o', 'u', 'n', 't', ', ', ' ', 
+
+'R', ' ', '+', ' ', 'R', 'i', 'g', 'h', 't', ' ', '-', ' ', 'R', 'e', 's', 'e', 't', ' ', 'C', 'a', 'r', 0);
+if(press & CTRL_CIRCLE) {
+    setfloat(pcar+0x140,  getfloat(pcar+0x140)+getfloat(pcar+0x10)*thrust);
+    setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar+0x14)*thrust); 
+}
+if(buttons & CTRL_DOWN) {
+boost -= 5;
+}
+else if(buttons & CTRL_UP) {
+boost += 5;
+}
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_RIGHT) {
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+setfloat(pcar + 0x140, 0, 0, 0);
+}
+setint(0x08bde55c, boost, boost);
+

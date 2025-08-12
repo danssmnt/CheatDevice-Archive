@@ -1,0 +1,517 @@
+#cheat Soda
+if(getfloat(pobj + 0x38) <= -100.00){
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, 371.00, 1186.35, -195.00);
+static Marker1;
+X1 = 371.00;
+Y1 = 1186.35;
+Z1 = -193.59;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't',
+'o', ' ', 'b', 'u', 'y', ' ', 'a', ' ', 'c', 'a', 'n', ' ', 'o', 'f', ' ', 'C', 'o', 'k', 'e', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '2', '~', 'w', '~');
+setfloat(mark, 0, 0, 0);}}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)< 1){
+setint(0x08bde55c, getint(0x08bde55c)-2);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)+20);
+setshort(0x08e90DD8, 1, 'S', 'l', 'u', 'r', 'p', '.', '.', '.', 0);}
+
+
+#cheat Teleport to the Biplane
+teleport(-1266.37, -1076.81, 14.87)
+
+
+#cheat The Learjet
+setint(pplayer+0x5bc, 0xffffff);
+setchar(pplayer+0xCB8, 0x2);
+setchar(pplayer+0x5B0, 0xE);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb+0xC, 0x0);
+setchar(0x09f69054, 1);
+ptow = getint(0x0994f460);
+if(ptow){
+setchar(pplayer+0xCB8, 0x0);
+setchar(pplayer+0x5B0, 0x0);
+door = getchar(pplayer+0x8B4);
+check = getshort(ptow+0x56);}
+checkid = getshort(pcar+0x56);
+if(ptow&&checkid&&checkid == 222&&check&&check == 368){
+setchar(pcar+0x4A, 0x15);
+setshort(ptow+0x56, 7453);}
+if(pcar&&checkid&&checkid == 222&&ptow&&check&&check == 7453){
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x277, 0xEF);
+setfloat(0x8bc8684, 10);
+a1 = getfloat(pcar+0x0);
+a2 = getfloat(pcar+0x4);
+a3 = getfloat(pcar+0x8);
+b1 = getfloat(pcar+0x10);
+b2 = getfloat(pcar+0x14);
+b3 = getfloat(pcar+0x18);
+c1 = getfloat(pcar+0x20);
+c2 = getfloat(pcar+0x24);
+c3 = getfloat(pcar+0x28);
+d1 = getfloat(pcar+0x30);
+d2 = getfloat(pcar+0x34);
+d3 = getfloat(pcar+0x38);
+e1 = getfloat(pcar+0x70);
+e2 = getfloat(pcar+0x74);
+e3 = getfloat(pcar+0x78);
+f1 = getfloat(pcar+0x140);
+f2 = getfloat(pcar+0x144);
+f3 = getfloat(pcar+0x148);
+if(buttons&CTRL_DOWN){
+setfloat(pcar+0x38, d3+5);}
+static obj;
+if(!obj){
+obj = ptow;}
+else{
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}}
+if(obj){
+checkobj = getshort(obj+0x56);}
+if(obj&&checkobj&&checkobj == 7454){
+setchar(pcar+0x49, 0x81);
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3-0.5);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}
+if(obj&&checkobj&&checkobj == 7453&&buttons&CTRL_TRIANGLE&&door != 0x37){
+setshort(obj+0x56, 7454);}
+if(obj&&checkobj&&checkobj == 7454&&door == 0x37){
+setshort(obj+0x56, 7453);}
+if(obj&&checkobj&&checkobj == 7454&&buttons&CTRL_TRIANGLE){
+setchar(pcar+0x49, 0x82);}
+if(pcar&&checkid&&checkid != 222){
+setchar(pcar+0x277, 0x20);}
+#off
+obj = state = 0;
+setchar(0x09f69054, 0);
+setchar(pcar+0x277, 0x20);
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x4A, 0x18);
+
+
+#cheat Marker Color Changer
+mark = 0x8c62EA0;
+static counter;
+static menu;
+static R;
+static G;
+static B;
+R = getchar(mark+0x2c);
+G = getchar(mark+0x2d);
+B = getchar(mark+0x2e);
+if( menu == 0 ){
+n = getchar(mark+0x2c);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'R', 'e', 'd', ':', ' ', hund, dec, unit, 0 );}
+if( menu == 1 ){
+n = getchar(mark+0x2d);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'G', 'r', 'e', 'e', 'n', ':', ' ', hund, dec, unit, 0 );}
+if( menu == 2 ){
+n = getchar(mark+0x2e);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'B', 'l', 'u', 'e', ':', ' ', hund, dec, unit, 0 );}
+if(buttons&CTRL_LEFT){
+if(menu == 0){
+R--;}
+if(menu == 1){
+G--;}
+if(menu == 2){
+B--;}}
+if(buttons&CTRL_RIGHT){
+if(menu == 0){
+R++;}
+if(menu == 1){
+G++;}
+if(menu == 2){
+B++;}}
+if(press&CTRL_DOWN&&menu < 2){
+menu++;}
+if(press&CTRL_UP&&menu > 0){
+menu--;}
+setchar(mark+0x2c, R, G, B);
+
+
+#cheat Spawn Peds
+setchar(0x8BB329C, 0);
+if(buttons&CTRL_LTRIGGER&&buttons&CTRL_CROSS){
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+for(i=0; 0x98b4a40+i<=0x98ecf90; i+=0xd10){
+if(0x98b4a40+i != pplayer){
+setfloat(0x98b4a40+i+0x30, playerx+1, playery+1, playerz+1);
+setchar(0x98b4a40+i+0x894, 0x0);
+setchar(0x98b4a40+i+0x8b4, 0x0);}}}
+
+
+#cheat Spawn Peds (No Ghost Peds)
+if(buttons&CTRL_LTRIGGER&&buttons&CTRL_CROSS){
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+for(i=0; 0x98b4a40+i<=0x98ecf90; i+=0xd10){
+if(0x98b4a40+i != pplayer&&!getint(0x98b4a40+i+0x480)){
+setfloat(0x98b4a40+i+0x30, playerx+1, playery+1, playerz+1);
+setchar(0x98b4a40+i+0x894, 0x0);
+setchar(0x98b4a40+i+0x8b4, 0x0);}}}
+
+
+#cheat Enterable Mendez Mansion
+static A;
+XA1 = 17.55;
+YA1 = 1151.16;
+ZA1 = 23.53;
+XA2 = 17.22;
+YA2 = 1153.69;
+ZA2 = -193.79;
+if(!A){
+A = 1;}
+checkxA1 = XA1 - getfloat(pobj+0x30);
+checkyA1 = YA1 - getfloat(pobj+0x34);
+checkzA1 = ZA1 - getfloat(pobj+0x38);
+if(sqrt(checkxA1*checkxA1+checkyA1*checkyA1+checkzA1*checkzA1) < 1){
+setfloat(pobj+0x30,XA2,YA2,ZA2);}
+static B;
+XB1 = 17.22;
+YB1 = 1149.71;
+ZB1 = -193.79;
+XB2 = 17.34;
+YB2 = 1147.48;
+ZB2 = 23.53;
+if(!B){
+B = 1;}
+checkxB1 = XB1 - getfloat(pobj+0x30);
+checkyB1 = YB1 - getfloat(pobj+0x34);
+checkzB1 = ZB1 - getfloat(pobj+0x38);
+if(sqrt(checkxB1*checkxB1+checkyB1*checkyB1+checkzB1*checkzB1) < 1){
+setfloat(pobj+0x30,XB2,YB2,ZB2);}
+static C;
+XC1 = 22.81;
+YC1 = 1185.83;
+ZC1 = 19.55;
+XC2 = 35.78;
+YC2 = 1166.48;
+ZC2 = -200.19;
+if(!C){
+C = 1;}
+checkxC1 = XC1 - getfloat(pobj+0x30);
+checkyC1 = YC1 - getfloat(pobj+0x34);
+checkzC1 = ZC1 - getfloat(pobj+0x38);
+if(sqrt(checkxC1*checkxC1+checkyC1*checkyC1+checkzC1*checkzC1) < 1){
+setfloat(pobj+0x30,XC2,YC2,ZC2);}
+static D;
+XD1 = 38.68;
+YD1 = 1165.86;
+ZD1 = -200.19;
+XD2 = 22.89;
+YD2 = 1189.25;
+ZD2 = 19.64;
+if(!D){
+D = 1;}
+checkxD1 = XD1 - getfloat(pobj+0x30);
+checkyD1 = YD1 - getfloat(pobj+0x34);
+checkzD1 = ZD1 - getfloat(pobj+0x38);
+if(sqrt(checkxD1*checkxD1+checkyD1*checkyD1+checkzD1*checkzD1) < 1){
+setfloat(pobj+0x30,XD2,YD2,ZD2);}
+static E;
+XE1 = 28.69;
+YE1 = 1176.42;
+ZE1 = -200.19;
+XE2 = 28.76;
+YE2 = 1171.24;
+ZE2 = -200.19;
+if(!E){
+E = 1;}
+checkxE1 = XE1 - getfloat(pobj+0x30);
+checkyE1 = YE1 - getfloat(pobj+0x34);
+checkzE1 = ZE1 - getfloat(pobj+0x38);
+if(sqrt(checkxE1*checkxE1+checkyE1*checkyE1+checkzE1*checkzE1) < 1){
+setfloat(pobj+0x30,XE2,YE2,ZE2);}
+static F;
+XF1 = 28.71;
+YF1 = 1174.68;
+ZF1 = -200.19;
+XF2 = 28.72;
+YF2 = 1180.05;
+ZF2 = -197.51;
+if(!F){
+F = 1;}
+checkxF1 = XF1 - getfloat(pobj+0x30);
+checkyF1 = YF1 - getfloat(pobj+0x34);
+checkzF1 = ZF1 - getfloat(pobj+0x38);
+if(sqrt(checkxF1*checkxF1+checkyF1*checkyF1+checkzF1*checkzF1) < 1){
+setfloat(pobj+0x30,XF2,YF2,ZF2);}
+static G;
+XG1 = 17.55;
+YG1 = 1177.53;
+ZG1 = 23.53;
+XG2 = 31.78;
+YG2 = 1172.53;
+ZG2 = -200.19;
+if(!G){
+G = 1;}
+checkxG1 = XG1 - getfloat(pobj+0x30);
+checkyG1 = YG1 - getfloat(pobj+0x34);
+checkzG1 = ZG1 - getfloat(pobj+0x38);
+if(sqrt(checkxG1*checkxG1+checkyG1*checkyG1+checkzG1*checkzG1) < 1){
+setfloat(pobj+0x30,XG2,YG2,ZG2);}
+static H;
+XH1 = 35.18;
+YH1 = 1172.36;
+ZH1 = -200.19;
+XH2 = 17.71;
+YH2 = 1180.93;
+ZH2 = 23.53;
+if(!H){
+H = 1;}
+checkxH1 = XH1 - getfloat(pobj+0x30);
+checkyH1 = YH1 - getfloat(pobj+0x34);
+checkzH1 = ZH1 - getfloat(pobj+0x38);
+if(sqrt(checkxH1*checkxH1+checkyH1*checkyH1+checkzH1*checkzH1) < 1){
+setfloat(pobj+0x30,XH2,YH2,ZH2);}
+if(getfloat(pplayer+0x38) <= -100.00){
+setchar(0x8bb11dc,2);
+setchar(0x9a6341b,2);}
+pickup = 0x08C6A330;
+setfloat(pickup, 16.99, 1165.82, -193.79);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01FB);
+setchar(pickup + 0x38, 0x0D);
+pickup += 0x40;
+setfloat(pickup, 7.85, 1185.98, -193.79);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D2);
+setchar(pickup + 0x38, 0x0D);
+pickup += 0x40;
+setfloat(pickup, 22.09, 1182.94, -193.79);
+setint(pickup + 0x2C, 0x100);
+setshort(pickup + 0x34, 0x01B3);
+setchar(pickup + 0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, 16.84, 1186.87, -187.86);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01F9);
+setchar(pickup + 0x38, 0x0D);
+pickup += 0x40;
+setfloat(pickup, 11.82, 1182.92, -187.86);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D4);
+setchar(pickup + 0x38, 0x0D);
+pickup += 0x40;
+setfloat(pickup, 25.64, 1167.49, -193.79);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01DA);
+setchar(pickup + 0x38, 0x0D);
+pickup += 0x40;
+setfloat(pickup, 22.02, 1185.76, -193.79);
+setint(pickup + 0x2C, 0x100);
+setshort(pickup + 0x34, 0x014A);
+setchar(pickup + 0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, 20.18, 1180.28, -193.79);
+setint(pickup + 0x2C, 0x100);
+setshort(pickup + 0x34, 0x016B);
+setchar(pickup + 0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, 23.93, 1180.64, -193.79);
+setint(pickup + 0x2C, 0x100);
+setshort(pickup + 0x34, 0x016C);
+setchar(pickup + 0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, 35.88, 1152.71, -193.80);
+setint(pickup + 0x2C, 0x100);
+setshort(pickup + 0x34, 0x0260);
+setchar(pickup + 0x38, 0x0B);
+pickup += 0x40;
+marker = 0x08BF7B40;
+setfloat(marker, 17.56, 1151.27, 22.53);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, 17.24, 1149.71, -194.79);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, 22.82, 1185.83, 18.55);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, 17.55, 1177.53, 22.53);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, 35.18, 1172.43, -201.19);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, 38.68, 1165.89, -201.19);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+icon = 0x08E8EFC0;
+setfloat(icon, 22.02, 1185.76, -193.79);
+setchar(icon+0x19, 0x06);
+icon += 0x30;
+
+
+#cheat house on pole
+moveto(907.29,-181.50,20.00); object(0x1CA4,90,0,78);
+move(-2.53,-0.52,0.00); object(0x1CA4,90,0,78);
+move(3.23,-3.85,0.00); object(0x1CA4,90,0,86);
+move(-2.20,0.03,-0.10); object(0x1CA4,90,0,82);
+move(4.88,0.50,0.00); object(0x1CA4,90,0,270);
+move(-0.81,4.09,-0.10); object(0x1CA4,90,0,266);
+move(1.25,0.10,0.00); object(0x1CA4,90,0,267);
+move(1.35,-4.32,0.00); object(0x1CA4,90,0,270);
+move(1.78,0.10,0.00); object(0x1CA4,90,0,271);
+move(-0.41,3.60,0.00); object(0x1CA4,90,0,271);
+move(1.17,0.64,0.00); object(0x1CA4,90,0,259);
+move(-9.94,1.79,2.20); object(0x1CA4,85,270,270);
+move(5.21,0.62,0.00); object(0x1CA4,85,270,270);
+move(-3.59,1.03,-0.20); object(0x1CA4,85,270,82);
+move(-3.67,-3.37,0.00); object(0x1CA4,85,270,22);
+move(4.50,1.93,0.00); object(0x1CA4,85,270,103);
+move(4.15,-0.22,0.00); object(0x1CA4,85,270,137);
+move(2.13,-1.83,0.00); object(0x1CA4,85,270,165);
+move(0.66,-2.30,0.00); object(0x1CA4,85,270,184);
+move(-0.64,-2.57,0.00); object(0x1CA4,85,270,214);
+move(-1.54,-2.04,0.00); object(0x1CA4,85,270,263);
+move(-2.57,0.63,0.00); object(0x1CA4,85,270,271);
+move(-2.70,-0.01,0.00); object(0x1CA4,85,270,274);
+move(-0.71,7.72,0.00); object(0x1CA4,85,270,41);
+move(-2.79,-2.90,0.00); object(0x1CA4,85,270,350);
+move(-12.20,-5.05,-7.30); object(0x1CA4,90,210,170);
+move(3.38,0.59,1.90); object(0x1CA4,90,210,170);
+move(3.70,0.70,2.10); object(0x1CA4,90,210,170);
+move(5.05,1.13,1.20); object(0x1CA4,90,190,166);
+move(2.67,0.83,0.50); object(0x1CA4,90,190,171);
+move(7.72,1.68,3.90); object(0x1CA4,90,180,179);
+move(-0.71,-3.02,0.00); object(0x1CA4,90,180,213);
+move(-2.50,-1.98,0.00); object(0x1CA4,90,180,250);
+move(-3.13,-0.08,0.00); object(0x1CA4,90,180,287);
+move(-3.54,5.18,0.00); object(0x1CA4,90,180,4);
+move(0.91,2.51,0.00); object(0x1CA4,90,180,35);
+move(2.75,1.92,0.00); object(0x1CA4,90,180,75);
+move(3.05,-1.90,0.00); object(0x1CA4,90,180,121);
+move(-2.80,-4.59,0.00); object(0x1CA4,90,180,118);
+move(3.36,-0.22,0.00); object(0x1CA4,90,180,190);
+move(-0.13,2.32,0.00); object(0x1CA4,90,180,163);
+move(0.30,2.39,0.00); object(0x1CA4,90,180,145);
+move(-3.21,-1.33,0.00); object(0x1CA4,90,180,119);
+move(-1.57,0.56,0.00); object(0x1CA4,90,180,100);
+move(-1.03,-2.27,0.00); object(0x1CA4,90,180,130);
+move(1.55,-2.34,0.00); object(0x1CA4,90,180,163);
+move(6.01,2.66,-3.80); object(0x1CB3,0,355,339);
+move(0.15,-0.97,0.00); object(0x1CB3,0,355,3);
+move(-4.09,-0.37,0.00); object(0x1CB5,0,355,79);
+move(3.39,-3.43,1.50); object(0x1C91,0,355,17);
+move(-6.49,7.27,0.70); object(0x0155,0,0,301);
+move(2.58,-6.67,0.00); object(0x0151,0,0,174);
+move(-0.91,-0.56,0.00); object(0x0150,0,0,193);
+move(-0.85,0.06,0.00); object(0x014D,0,0,220);
+move(2.82,-0.03,-0.30); object(0x01CB,0,0,169);
+move(-4.69,6.39,-1.30); object(0x01CD,0,0,323);
+move(6.00,-0.11,0.90); object(0x01FB,0,0,248);
+move(-0.77,0.91,0.00); object(0x0201,0,0,261);
+move(-7.14,-2.20,0.20); object(0x0264,0,0,248);
+
+
+
+
+
+
+
+
+
+
+#cheat New Construction
+moveto(-1011.70,-860.99,14.65);  object(0x1CB2,0,270,317);
+move(-9.33,10.20,0.00);  object(0x1CB2,0,270,315);
+move(-6.48,6.57,0.00);  object(0x1CB2,0,270,315);
+move(16.09,-23.45,0.00);  object(0x1CB2,0,270,226);
+move(-4.54,4.65,0.00);  object(0x1CB2,0,270,226);
+move(-3.93,4.55,0.00);  object(0x1CB2,0,270,226);
+move(-4.02,4.75,0.00);  object(0x1CB2,0,270,226);
+move(-4.33,4.44,0.00);  object(0x1CB2,0,270,226);
+move(-3.35,3.44,0.00);  object(0x1CB2,0,270,226);
+move(-1.05,1.07,0.00);  object(0x1CB2,0,270,226);
+move(-1.68,1.72,0.00);  object(0x1CB2,0,270,226);

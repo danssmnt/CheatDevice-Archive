@@ -1,0 +1,117 @@
+Pointer to Player
+if(pplayer){
+ENTER ACTION HERE}
+
+Pointer to Player (On Foot+In Car)
+if(pobj){
+ENTER ACTION HERE}
+
+Pointer to Ped
+pped = getint(0x08BA1D70);
+if(pped){
+ENTER ACTION HERE}
+
+Pointer to all Peds
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10)
+if(0x098b4a40 + i != player){
+setfloat(0x098b4a40+i+ADRESS,  VALUE);}
+
+Set Character Bleeding
+setchar(pplayer + 0x000001CB, 8);
+
+Set Character Bleeding 2
+setchar(pplayer+0x1cb, 0x3f);
+
+Infinate Health
+pped = getint(0x08BA1D70);
+if(pped){
+setfloat(pped+0x4e4, 10000);}
+
+Character Dies
+pped = getint(0x08BA1D70);
+if(pped){
+setfloat(pped+0x4e4, 0);}
+
+#cheat Burned Character
+setchar(pplayer + 0x4A, 32);
+
+Freeze Character
+setfloat(pplayer+0x140, getfloat(pplayer+0x140)+getfloat(pplayer+0x10)==0);
+setfloat(pplayer+0x144, getfloat(pplayer+0x144)+getfloat(pplayer+0x14)==0);
+setfloat(pplayer+0x148, getfloat(pplayer+0x148)+getfloat(pplayer+0x18)==0);
+
+Heavy Character
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+setfloat(pplayer + 0x128, 0, 0);
+
+Transfer Character in Car
+static pprev;
+static delay;
+if (delay > 0)
+delay--;
+if (pcar){
+pbump = getint(pcar + 0x0150);
+if (pbump){
+modelid = getshort(pbump + 0x0056);
+if (modelid){
+setint(pplayer + 0x450,  pbump);
+setint(pplayer + 0x480,  pbump);
+setint(pplayer + 0x484,  pbump);
+setint(pbump + 0x384,  pplayer);
+setint(pcar + 0x384,  0);
+setint(0x08bb4064,  pbump);
+setint(0x08bc7f10,  pbump);
+setint(0x08bc85f0,  pbump);
+setchar(pbump + 0x675,  0x90);
+setchar(pcar + 0x675,  0x80);
+delay = 180;
+pprev = pcar; // no backseats
+}}}
+
+#cheat Recruit Character as Bodyguard (Thanks DDM !)
+pped = getint(0x08BA1D70); //Pointer to aimed at ped
+static yourped;
+if(pped&&!yourped)
+yourped=pped; //If aimed at a ped, save its address in the memory
+if(yourped){
+setchar(yourped+0x87c, 0x1e);
+//setchar(yourped+0x8B4, 0x0);
+//setchar(yourped+0x8C4, 0x0);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+if(pped && pped != yourped){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);
+} else {
+setchar(yourped+0x894, 0xC); //If not in a car, make that ped follow you
+setint(yourped+0x890, pplayer); //Lets the ped know who to follow}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11); //If in a car, make that ped get in the car
+setint(yourped+0x484, pcar);  //Makes the ped know what car to get into
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_LTRIGGER && press & CTRL_TRIANGLE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;}}
+
+Have Parachute
+static Active;
+if(getchar(pplayer+0x1c9)==0x10) {//In air?
+if(!Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  'O',  ' ',  't',  'o',  ' ',  'u',  's',  'e',  ' ',  'p',  'a',  'r',  'a',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  '/',  '\\',  ' ',  't',  'o',  ' ',  'r',  'e',  'l',  'e ',  'a',  's',  'e',  ' ',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(buttons & CTRL_CIRCLE) Active = true;
+if(buttons & CTRL_TRIANGLE) Active = false;
+if(Active) setfloat(pplayer+0x148,  getfloat(pplayer+0x148)*0.9); 
+//Give Some Control
+if(Active) {
+if(ystick < -0.5) {
+setfloat(pplayer+0x140,  getfloat(pplayer+0x10)*0.2);
+setfloat(pplayer+0x144,  getfloat(pplayer+0x14)*0.2);}
+else setfloat(pplayer+0x140,  getfloat(pplayer+0x140)*0.99,  getfloat(pplayer+0x144)*0.99);
+setfloat(pplayer + 0x0078,  -0.01 * xstick);}}
+else Active = false;
+
+

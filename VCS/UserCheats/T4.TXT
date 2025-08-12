@@ -1,0 +1,1484 @@
+#cheat Entrance Marker Placement
+static mark;
+mark = 0x8c62EA0;
+setfloat(mark,getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38)+1);
+
+This cheat places a marker over Vic`s head !
+The problem is that the marker will only spawn, if another marker is actually near you, otherwise it won`t appear !
+
+#cheat Diving Mod
+if(getchar(pplayer + 0x01DB)
+{
+// Superman Cheat here
+}
+else
+{
+// Deactivate Superman Cheat
+}
+
+
+Use this to get fast access to a Biplane:
+
+#cheat Teleport to the Biplane
+teleport(-1266.37, -1076.81, 14.87)
+
+And this is the cheat which turns the Biplane into the Learjet:
+
+#cheat The Learjet
+setshort(0x98A2F70, 1, ' ', 'L', 'e', 'a', 'r', 'j', 'e', 't', 0);
+setint(pplayer+0x5bc, 0xffffff);
+setchar(pplayer+0xCB8, 0x2);
+setchar(pplayer+0x5B0, 0xE);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb+0xC, 0x0);
+setchar(0x09f69054, 1);
+ptow = getint(0x0994f460);
+if(ptow){
+setchar(pplayer+0xCB8, 0x0);
+setchar(pplayer+0x5B0, 0x0);
+door = getchar(pplayer+0x8B4);
+check = getshort(ptow+0x56);}
+checkid = getshort(pcar+0x56);
+if(ptow&&checkid&&checkid == 222&&check&&check == 368){
+setchar(pcar+0x4A, 0x15);
+setshort(ptow+0x56, 7453);}
+if(pcar&&checkid&&checkid == 222&&ptow&&check&&check == 7453){
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x277, 0xEF);
+setfloat(0x8bc8684, 10);
+a1 = getfloat(pcar+0x0);
+a2 = getfloat(pcar+0x4);
+a3 = getfloat(pcar+0x8);
+b1 = getfloat(pcar+0x10);
+b2 = getfloat(pcar+0x14);
+b3 = getfloat(pcar+0x18);
+c1 = getfloat(pcar+0x20);
+c2 = getfloat(pcar+0x24);
+c3 = getfloat(pcar+0x28);
+d1 = getfloat(pcar+0x30);
+d2 = getfloat(pcar+0x34);
+d3 = getfloat(pcar+0x38);
+e1 = getfloat(pcar+0x70);
+e2 = getfloat(pcar+0x74);
+e3 = getfloat(pcar+0x78);
+f1 = getfloat(pcar+0x140);
+f2 = getfloat(pcar+0x144);
+f3 = getfloat(pcar+0x148);
+if(buttons&CTRL_DOWN){
+setchar(0x08E937B5, 0x01);
+setfloat(pcar+0x38, d3+5);}
+static obj;
+if(!obj){
+obj = ptow;}
+else{
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}}
+if(obj){
+checkobj = getshort(obj+0x56);}
+if(obj&&checkobj&&checkobj == 7454){
+setchar(pcar+0x49, 0x81);
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3-0.5);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}
+if(obj&&checkobj&&checkobj == 7453&&buttons&CTRL_TRIANGLE&&door != 0x37){
+setshort(obj+0x56, 7454);}
+if(obj&&checkobj&&checkobj == 7454&&door == 0x37){
+setshort(obj+0x56, 7453);}
+if(obj&&checkobj&&checkobj == 7454&&buttons&CTRL_TRIANGLE){
+setchar(pcar+0x49, 0x82);}
+if(pcar&&checkid&&checkid != 222){
+setchar(pcar+0x277, 0x20);}
+#off
+obj = state = 0;
+setchar(0x09f69054, 0);
+setchar(pcar+0x277, 0x20);
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x4A, 0x18);
+setshort(0x98A2F70, 1, ' ', 'B', 'i', 'p', 'l', 'a', 'n', 'e', 0);
+
+#cheat The Corpse of Johnny Wotniz
+//Made by Nerner
+//With thanks to DDM and Upaluppa
+static state;
+setint(pplayer+0x680, 0x00ffffff);
+setchar(pplayer+0x674, 0x26);
+camera=getchar(pplayer+0x789);
+if(buttons&CTRL_RTRIGGER&&camera == 0x9&&presslow & CTRL_CIRCLE ){
+state = 1;}
+if(state == 1){
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', '!');
+setshort(0x08E931FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', '!');
+setshort(0x08E933FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', '!');} 
+setchar(0x08E93604, 0x1);
+static Marker;
+X1 = -1055.54;
+Y1 = -272.94;
+Z1 = 11.40;
+setshort(0x08e90bd8, 1, 'F', 'I', 'N ', 'D', ' ', ' H', 'I', 'S', ' ', 'C', 'O',
+'R', 'P', 'S', 'E', ' ', '!',0);
+if(!Marker){ for(rot = 0;rot<270;rot += 6.0){
+moveto(X1+cos(rot)*2,Y1+sin(rot)*2,Z1);object(0x1ce5,0,0,-rot+90);}
+Marker = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<2){
+setshort(0x08e90DD8, 1, ' ', 'M', 'I', 'S', 'S', 'I', 'O', 'N', ' ', 'P', 'A',
+'S', 'S', 'E', 'D', '!', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '+', '$', '1', '0', '0', '0', '0 ', '0', '!',0);
+setint(0x08bde55c, getint(0x08bde55c)+100000);
+playerx = getfloat(pplayer + 0x030);
+playery = getfloat(pplayer + 0x034);
+playerz = getfloat(pplayer + 0x038);
+teleport( -1087.31, 356.47, 11.27);}
+static pina;
+static pinasp;
+static inRoom;
+static rpZ;
+static rotpiece;
+static gstate;
+if(!rotpiece){
+moveto(-609.36, -1406.18, 14.23);
+pina = object(0x1C91, 0, 0, 0);
+pinasp = 1;
+moveto(-716.86, -1091.65, 9.42);
+rotpiece = object(0x1CD5, 0, 0, 90);
+moveto(-750.51, -1091.65, 9.42); object(0x1CD5, 0, 0, 90);
+move(11.03, 0.09, 0.00); object(0x1CD5, 0, 0, 90);
+move(11.10, 0.09, 0.00); object(0x1CD5, 0, 0, 90);
+move(22.59, 0.19, 0.00); object(0x1CD5, 0, 0, 90);
+move(11.23, 0.10, 0.00); object(0x1CD5, 0, 0, 90);
+move(11.18, 0.10, 0.00); object(0x1CD5, 0, 0, 90);
+move(8.93, -4.72, 0.00); object(0x1CB2, 0, 270, 0);
+move(0.12, -14.40, 0.00); object(0x1CB2, 0, 270, 0);
+move(0.12, -14.40, 0.00); object(0x1CB2, 0, 270, 0);
+move(6.76, 0.00, 0.00); object(0x1CB2, 0, 270, 0);
+move(-0.18, 14.60, 0.00); object(0x1CB2, 0, 270, 0);
+move(-0.17, 14.20, 0.00); object(0x1CB2, 0, 270, 0);
+move(-9.96, -5.12, 1.80); object(0x1CB2, 0, 0, 0);
+move(0.18, -14.50, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.11, -9.30, 0.00); object(0x1CB2, 0, 0, 0);
+move(12.76, 28.95, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.03, -14.40, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.03, -14.50, 0.00); object(0x1CB2, 0, 0, 0);
+move(-7.18, 36.08, 0.00); object(0x1CB2, 0, 0, 270);
+move(0.59, -43.34, -5.00); object(0x1CB2, 0, 0, 270);
+move(-6.24, -7.27, -0.10); object(0x1CB2, 0, 0, 180);
+move(0.16, -14.50, 0.00); object(0x1CB2, 0, 0, 180);
+move(7.18, -7.26, 0.00); object(0x1CB2, 0, 0, 90);
+move(14.40, 0.11, 0.00); object(0x1CB2, 0, 0, 90);
+move(-8.65, 21.71, 0.00); object(0x1CB2, 0, 0, 180);
+move(7.28, -7.17, 0.00); object(0x1CB2, 0, 0, 90);
+move(-5.51, -7.36, 0.00); object(0x1CB2, 0, 85, 0);
+move(6.75, 0.05, 0.40); object(0x1CB2, 0, 85, 0);
+move(6.78, 0.05, 0.20); object(0x1CB2, 0, 90, 0);
+move(6.76, 0.05, 0.00); object(0x1CB2, 0, 90, 0);
+move(6.70, 0.05, 0.00); object(0x1CB2, 0, 90, 0);
+move(-7.00, 7.34, 2.40); object(0x1CB2, 0, 0, 270);
+move(3.00, -0.00, 0.00); object(0x1CB2, 0, 0, 270);
+move(-0.02, -14.62, 0.00); object(0x1CB2, 0, 0, 270);
+move(-1.50, 0.00, 0.00); object(0x1CB2, 0, 0, 270);
+move(16.22, 3.34, -2.40); object(0x1CB2, 0, 90, 270);
+move(0.04, 6.79, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.01, 1.08, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.07, -11.36, 2.50); object(0x1CB2, 0, 0, 270);
+move(0.00, 0.00, 6.50); object(0x1CB2, 0, 0, 270);
+move(0.00, 0.00, 6.60); object(0x1CB2, 0, 0, 270);
+move(0.00, 0.00, 6.70); object(0x1CB2, 0, 0, 270);
+move(-7.29, 7.24, -13.30); object(0x1CB2, 0, 0, 180);
+move(0.00, 0.00, 6.60); object(0x1CB2, 0, 0, 180);
+move(0.00, 0.00, 6.70); object(0x1CB2, 0, 0, 180);
+move(14.58, 0.03, -19.60); object(0x1CB2, 0, 0, 180);
+move(0.00, 0.00, 6.80); object(0x1CB2, 0, 0, 180);
+move(0.00, 0.00, 6.20); object(0x1CB2, 0, 0, 180);
+move(-7.25, 7.46, -13.30); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, 6.60); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, 6.70); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, 6.50); object(0x1CB2, 0, 0, 90);
+move(0.02, -3.34, 3.40); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.81, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.01, -1.18, 0.00); object(0x1CB2, 0, 90, 90);
+move(10.61, 3.83, -6.70); object(0x1CB2, 0, 90, 180);
+moveto(-607.49, -1153.60, 25.66); object(0x1CB2, 0, 90, 0);
+move(3.35, 0.03, 3.40); object(0x1CB2, 0, 0, 0);
+move(-7.13, 7.28, 0.00); object(0x1CB2, 0, 0, 270);
+move(0.98, -18.06, -3.40); object(0x1CB2, 0, 90, 270);
+move(0.03, -6.64, 0.00); object(0x1CB2, 0, 90, 270);
+move(14.50, 0.07, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.03, -6.73, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.03, -6.69, 0.00); object(0x1CB2, 0, 90, 270);
+move(-14.60, -0.07, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.03, -6.77, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.07, -6.74, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.03, -6.82, 0.00); object(0x1CB2, 0, 90, 270);
+move(-7.35, 36.64, 3.20); object(0x1CB2, 0, 0, 0);
+move(0.01, -14.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.01, -14.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.00, -3.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(29.44, 0.02, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.01, 14.50, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.01, 14.50, 0.00); object(0x1CB2, 0, 0, 0);
+move(-8.65, 10.93, 0.00); object(0x1CB2, 0, 0, 270);
+move(1.50, -0.01, 0.00); object(0x1CB2, 0, 0, 270);
+move(7.16, -7.11, 0.00); object(0x1CB2, 0, 0, 0);
+move(-21.99, -43.35, -3.10); object(0x1CB2, 0, 90, 270);
+move(14.69, 3.28, 3.00); object(0x1CB2, 0, 0, 270);
+move(-14.60, -10.04, -3.00); object(0x1CB2, 0, 90, 270);
+moveto(-617.59, -1214.22, 28.86); object(0x1CB2, 0, 0, 180);
+move(14.77, -1.17, 0.00); object(0x1CB2, 0, 0, 180);
+move(-7.39, -3.90, -3.20); object(0x1CB2, 0, 90, 270);
+move(-7.38, 3.90, 3.20); object(0x1CB2, 0, 0, 180);
+move(0.18, -14.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(14.65, 0.18, 0.00); object(0x1CB2, 0, 0, 180);
+move(-7.27, 7.17, -6.50); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, -6.70); object(0x1CB2, 0, 0, 90);
+move(-0.01, -3.33, -3.40); object(0x1CB2, 0, 270, 90);
+move(-0.02, -6.77, 0.00); object(0x1CB2, 0, 270, 90);
+move(-0.02, -6.81, 0.00); object(0x1CB2, 0, 270, 90);
+move(0.01, 2.59, 16.50); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, -6.80); object(0x1CB2, 0, 0, 90);
+move(7.28, 7.16, 0.10); object(0x1CB2, 0, 0, 0);
+move(0.00, 0.00, -6.80); object(0x1CB2, 0, 0, 0);
+move(-14.37, -0.13, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.00, 0.10, 6.80); object(0x1CB2, 0, 0, 180);
+move(7.02, -16.50, -9.80); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.91, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.80, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.84, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.05, 26.68, 6.30); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.69, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.81, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.82, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -6.31, 0.00); object(0x1CB2, 0, 90, 90);
+move(-7.06, 22.25, -3.10); object(0x1CB2, 0, 0, 180);
+move(0.12, -14.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.03, -3.70, 0.00); object(0x1CB2, 0, 0, 180);
+move(13.80, -0.37, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.15, 14.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.14, 4.30, 0.00); object(0x1CB2, 0, 0, 0);
+moveto(-610.07, -1273.53, 12.20); object(0x1CB2, 0, 90, 90);
+move(-0.12, -6.73, 0.05); object(0x1CB2, 0, 90, 90);
+move(-14.57, 13.33, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.80, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.47, 0.00); object(0x1CB2, 0, 90, 90);
+move(29.09, 0.18, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.04, 6.75, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.04, 6.34, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.11, -19.90, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.60, -0.09, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.50, -0.09, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.10, 16.86, 2.80); object(0x1CB2, 0, 0, 90);
+move(29.19, 0.18, 0.00); object(0x1CB2, 0, 0, 90);
+move(7.13, -7.34, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.05, -5.70, 0.00); object(0x1CB2, 0, 0, 180);
+move(-43.62, -0.39, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.05, 5.90, 0.00); object(0x1CB2, 0, 0, 180);
+move(7.39, -12.76, -6.10); object(0x1CB2, 0, 0, 90);
+move(14.50, -0.02, 0.00); object(0x1CB2, 0, 0, 90);
+move(14.50, -0.02, 0.00); object(0x1CB2, 0, 0, 90);
+move(7.34, -7.28, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.04, -14.40, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.04, -14.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(-29.00, 29.51, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.04, -14.70, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.04, -14.50, 0.00); object(0x1CB2, 0, 0, 180);
+move(-7.46, 36.00, 6.10); object(0x1CB2, 0, 0, 90);
+move(7.33, -7.29, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.15, -14.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.15, -14.10, 0.00); object(0x1CB2, 0, 0, 180);
+move(28.78, -0.31, 0.00); object(0x1CB2, 0, 0, 180);
+move(-28.76, -0.29, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.00, 0.00, -6.20); object(0x1CB2, 0, 0, 180);
+move(28.65, 14.78, 6.20); object(0x1CB2, 0, 0, 180);
+move(-0.14, 14.50, 0.00); object(0x1CB2, 0, 0, 180);
+move(-21.17, -37.31, -6.20); object(0x1CB2, 0, 0, 276);
+move(-0.12, 0.77, 0.00); object(0x1CB2, 0, 0, 270);
+move(14.20, 0.09, 0.00); object(0x1CB2, 0, 0, 270);
+move(-0.08, -3.43, 3.30); object(0x1CB2, 0, 90, 270);
+move(-14.00, -0.09, 0.00); object(0x1CB2, 0, 90, 270);
+move(4.29, 44.99, 0.10); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.20, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.20, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.30, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.40, 0.00); object(0x1C8B, 90, 0, 0);
+move(0.02, -2.20, 0.00); object(0x1C8B, 90, 0, 0);
+moveto(-674.29, -1095.96, 14.56); object(0x1CB2, 0, 90, 0);
+move(0.11, -14.30, 0.00); object(0x1CB2, 0, 90, 0);
+move(0.12, -14.50, 0.00); object(0x1CB2, 0, 90, 0);
+move(6.06, 0.05, 0.00); object(0x1CB2, 0, 90, 0);
+move(-0.12, 14.70, 0.00); object(0x1CB2, 0, 90, 0);
+move(-0.06, 14.10, 0.00); object(0x1CB2, 0, 90, 0);
+move(20.99, -57.61, -2.10); object(0x1CB2, 0, 90, 180);
+move(6.82, 0.06, 0.00); object(0x1CB2, 0, 90, 180);
+move(4.54, 0.03, 0.00); object(0x1CB2, 0, 90, 180);
+move(24.39, 3.90, 19.80); object(0x1CB2, 0, 90, 270);
+move(0.05, -6.68, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.01, -1.34, 0.00); object(0x1CB2, 0, 90, 270);
+move(1.26, -76.13, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.80, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.81, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.07, 10.00, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.75, 0.00); object(0x1CB2, 0, 90, 270);
+move(14.71, -1.33, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.67, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.81, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.79, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.72, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.75, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.05, 6.60, 0.00); object(0x1CB2, 0, 90, 270);
+move(-14.50, -0.11, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.05, -6.42, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.06, -6.78, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.06, -6.77, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.06, -6.83, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.02, -6.75, 0.00); object(0x1CB2, 0, 90, 270);
+move(-14.50, -89.34, -13.90); object(0x1CB2, 0, 90, 270);
+move(-0.02, 6.82, 0.00); object(0x1CB2, 0, 90, 270);
+move(-0.01, 6.81, 0.00); object(0x1CB2, 0, 90, 270);
+move(14.50, 0.04, 0.00); object(0x1CB2, 0, 90, 270);
+move(14.40, 0.04, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.02, -6.77, 0.00); object(0x1CB2, 0, 90, 270);
+move(-14.40, -0.04, 0.00); object(0x1CB2, 0, 90, 270);
+move(0.02, -6.79, 0.00); object(0x1CB2, 0, 90, 270);
+move(14.50, 0.04, 0.00); object(0x1CB2, 0, 90, 270);
+moveto(-595.63, -1293.83, 18.19); object(0x1CB2, 0, 90, 90);
+move(-14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.02, -6.69, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.02, -6.72, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.02, -6.69, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.02, -6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.50, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.02, -6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.40, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.01, -3.00, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.50, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+moveto(-595.71, -1344.22, 12.09); object(0x1CB2, 0, 90, 90);
+move(-14.00, -0.02, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.01, -6.77, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.29, 3.40, 3.40); object(0x1CB2, 0, 0, 90);
+move(7.26, 6.60, -0.40); object(0x1CB2, 0, 0, 0);
+move(-28.93, -0.13, 0.00); object(0x1CB2, 0, 0, 0);
+move(7.00, 3.74, 3.30); object(0x1CB2, 0, 90, 90);
+move(14.30, -0.02, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.29, -6.76, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.57, 6.88, 0.00); object(0x1CB2, 0, 90, 90);
+move(-15.16, -6.96, 0.00); object(0x1CB2, 0, 90, 90);
+moveto(-609.69, -1357.80, 12.09); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.81, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.75, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.74, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.71, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.04, -6.70, 0.00); object(0x1CB2, 0, 90, 90);
+moveto(-602.53, -1354.95, 15.53); object(0x1CB2, 0, 0, 0);
+move(0.15, -18.10, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.12, -14.50, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.12, -13.70, 0.00); object(0x1CB2, 0, 0, 0);
+move(-14.43, -0.12, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.12, 14.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.13, 14.70, 0.00); object(0x1CB2, 0, 0, 0);
+move(-0.22, 16.30, -0.10); object(0x1CB2, 0, 0, 0);
+move(0.02, -2.20, 0.00); object(0x1CB2, 0, 0, 0);
+move(7.30, 6.96, 2.80); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.73, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.55, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.79, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.72, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.69, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.74, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.00, -6.46, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.30, -0.78, 0.00); object(0x1CB2, 0, 90, 90);
+moveto(-602.50, -1366.96, 15.53); object(0x1CB2, 0, 0, 0);
+move(-53.33, 206.19, -6.40); object(0x1CB2, 0, 0, 90);
+move(-14.30, -0.10, 0.00); object(0x1CB2, 0, 0, 90);
+move(-7.18, 7.24, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.14, 14.50, 0.00); object(0x1CB2, 0, 0, 180);
+move(12.95, 0.33, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.00, -0.40, 0.00); object(0x1CB2, 0, 0, 180);
+move(7.34, -7.09, 0.00); object(0x1CB2, 0, 0, 90);
+move(-11.91, -7.41, -4.60); object(0x1CB2, 0, 290, 180);
+move(4.56, 14.50, 6.71); object(0x1CB2, 0, 0, 0);
+move(-12.91, -0.10, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.11, -14.30, 0.00); object(0x1CB2, 0, 0, 0);
+move(7.30, -7.26, 0.00); object(0x1CB2, 0, 0, 270);
+move(12.20, 0.00, 0.00); object(0x1CB2, 0, 0, 270);
+move(0.60, 14.30, 0.00); object(0x1CB2, 0, 0, 270);
+move(-16.83, 7.18, 3.30); object(0x1CB2, 0, 90, 0);
+move(0.10, -14.20, 0.00); object(0x1CB2, 0, 90, 0);
+move(6.18, 0.04, 0.00); object(0x1CB2, 0, 90, 0);
+move(-0.10, 14.20, 0.00); object(0x1CB2, 0, 90, 0);
+move(6.79, -14.15, 0.00); object(0x1CB2, 0, 90, 0);
+move(7.34, 0.05, -1.00); object(0x1CB2, 0, 110, 0);
+move(-6.21, -0.06, 1.00); object(0x1CB2, 0, 90, 0);
+moveto(-609.40, -1411.78, 12.12); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-29.19, 0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.02, -6.75, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.02, -6.79, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.50, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.70, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.02, -6.79, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.02, -6.72, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.50, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.70, 0.04, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.01, -3.40, 3.40); object(0x1CB2, 0, 0, 90);
+move(14.50, -0.04, 0.00); object(0x1CB2, 0, 0, 90);
+move(14.60, -0.04, 0.00); object(0x1CB2, 0, 0, 90);
+move(0.21, 33.84, 0.00); object(0x1CB2, 0, 0, 270);
+move(-29.30, 0.12, 0.00); object(0x1CB2, 0, 0, 270);
+move(-7.20, -26.48, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.16, 14.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.05, 4.60, 0.00); object(0x1CB2, 0, 0, 180);
+move(43.96, -0.12, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.04, -19.20, 0.00); object(0x1CB2, 0, 0, 180);
+move(-0.10, 9.20, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.21, 10.00, 6.70); object(0x1CB2, 0, 0, 180);
+move(-0.05, -14.50, 0.00); object(0x1CB2, 0, 0, 180);
+move(0.05, -4.70, 0.00); object(0x1CB2, 0, 0, 180);
+move(-7.40, 26.53, 0.00); object(0x1CB2, 0, 0, 90);
+move(-29.20, 0.24, 0.00); object(0x1CB2, 0, 0, 90);
+move(14.70, -0.13, 0.00); object(0x1CB2, 0, 0, 90);
+move(0.00, 0.00, -0.70); object(0x1CB2, 0, 0, 90);
+move(-22.12, -7.28, 0.70); object(0x1CB2, 0, 0, 0);
+move(0.11, -14.60, 0.00); object(0x1CB2, 0, 0, 0);
+move(0.04, -4.80, 0.00); object(0x1CB2, 0, 0, 0);
+move(7.43, -7.15, 0.00); object(0x1CB2, 0, 0, 270);
+move(14.60, 0.07, 0.00); object(0x1CB2, 0, 0, 270);
+move(14.60, 0.07, 0.00); object(0x1CB2, 0, 0, 270);
+move(-24.78, 15.34, -8.90); object(0x1CA4, 0, 0, 0);
+move(1.81, -2.56, 0.00); object(0x1CA4, 0, 0, 270);
+move(-4.30, -0.02, 0.00); object(0x1CA4, 0, 0, 270);
+move(2.49, -1.80, 0.00); object(0x1CA4, 0, 0, 359);
+move(21.29, 0.26, 0.00); object(0x1CA4, 0, 0, 359);
+move(1.80, 1.78, 0.00); object(0x1CA4, 0, 0, 270);
+move(-4.30, -0.03, 0.00); object(0x1CA4, 0, 0, 270);
+move(2.58, 1.79, 0.00); object(0x1CA4, 0, 0, 180);
+move(-2.25, 0.25, 1.90); object(0x1C98, 0, 270, 180);
+move(4.10, 0.03, 0.00); object(0x1C98, 0, 270, 180);
+move(-21.29, -0.13, 0.00); object(0x1C98, 0, 270, 180);
+move(-4.00, -0.02, 0.00); object(0x1C98, 0, 270, 180);
+move(12.85, -12.78, -3.40); object(0x1C90, 0, 0, 180);
+moveto(-594.70, -1438.84, 25.56); object(0x1CB2, 0, 90, 90);
+move(-14.50, 0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.70, 0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.76, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.50, -0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(14.60, -0.11, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.65, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.78, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.82, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.60, 0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.03, -6.86, 0.00); object(0x1CB2, 0, 90, 90);
+move(-0.03, -6.70, 0.00); object(0x1CB2, 0, 90, 90);
+move(-14.60, 0.07, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.74, 0.00); object(0x1CB2, 0, 90, 90);
+move(0.03, 6.71, 0.00); object(0x1CB2, 0, 90, 90);
+move(12.19, -21.75, -12.30); object(0x1CB7, 0, 0, 251);
+move(0.00, -3.19, -0.50); object(0x1CA4, 0, 0, 270);
+move(5.29, 0.01, 0.00); object(0x1CA4, 0, 0, 270);
+move(-2.75, -1.82, 0.00); object(0x1CA4, 0, 0, 0);
+move(0.90, -0.00, 0.00); object(0x1CA4, 0, 0, 0);
+move(0.21, 4.34, 0.00); object(0x1CA4, 0, 0, 0);
+move(-0.62, -2.72, -0.50); object(0x1CB1, 0, 0, 270);
+move(0.00, 0.00, 0.00); object(0x1CA5, 0, 0, 270);
+setfloat(pplayer + 0x30, -761.31, -1117.41, 11.07);}
+if(getfloat(pplayer + 0x30) < -677.56 && getfloat(pplayer + 0x30) > -750.74 && getfloat(pplayer + 0x34) < -1080.25 && getfloat(pplayer + 0x34) > -1103.97){
+selectobject(rotpiece);
+setfloat(rotpiece, cos(rpZ), -sin(rpZ));
+setfloat(rotpiece+0x10, sin(rpZ), cos(rpZ));
+propagateobject();
+rpZ++;}
+wl = 0x96C96B0;
+check = getfloat(wl);
+if(getfloat(pplayer + 0x30) < -617.56 && getfloat(pplayer + 0x30) > -631.94 && getfloat(pplayer + 0x34) < -1146.64 && getfloat(pplayer + 0x34) > -1160.22 && check <= 27){
+setfloat(wl, getfloat(wl) +0.4);}
+else if(getfloat(pplayer + 0x30) < -603.06 && getfloat(pplayer + 0x30) > -617.24 && getfloat(pplayer + 0x34) < -1237.47 && getfloat(pplayer + 0x34) > -1270.44 && check <= 17){
+setfloat(wl, getfloat(wl) +0.4);}
+else if(check >= 6){
+setfloat(wl, getfloat(wl) -0.4);}
+if(getfloat(pplayer + 0x30) < -588.78 && getfloat(pplayer + 0x30) > -616.79 && getfloat(pplayer + 0x34) < -1290.73 && getfloat(pplayer + 0x34) > -1333.6 && getfloat(pplayer + 0x38) < 7){
+setshort(pplayer+0x4e6, 0x0);}
+if(getfloat(pplayer + 0x30) < -602.78 && getfloat(pplayer + 0x30) > -616.44 && getfloat(pplayer + 0x34) < -1347.97 && getfloat(pplayer + 0x34) > -1407.59 && getfloat(pplayer + 0x38) > 13){
+inRoom = 1;}
+else inRoom = 0;
+if(inRoom){
+selectobject(pina);
+dx = getfloat(pplayer+0x30) - getfloat(pina+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(pina+0x34);
+setfloat(pina + 0x30, getfloat(pina + 0x30) + dx * 0.03 * pinasp);
+setfloat(pina + 0x34, getfloat(pina + 0x34) + dy * 0.03 * pinasp); 
+pinasp *= 0.995;
+dx = getfloat(pina+0x30) - getfloat(pplayer+0x30);
+dy = getfloat(pina+0x34) - getfloat(pplayer+0x34);
+if(sqrt(dx*dx) < 2 && sqrt(dy*dy) < 2){
+setfloat(pplayer+0x4e4, 0);}
+propagateobject();}
+if(getfloat(pplayer + 0x30) < -607.93 && getfloat(pplayer + 0x30) > -609.21 && getfloat(pplayer + 0x34) < -1436.35 && getfloat(pplayer + 0x34) > -1438 && getfloat(pplayer + 0x38) > 13){
+setfloat(pplayer + 0x30, -761.31, -1117.41, 11.07);
+setint(pplayer+0x5d8, 0x00ffffff);
+setint(pplayer+0x5f4, 0x00ffffff);
+setint(pplayer+0x610, 0x00ffffff);
+setint(pplayer+0x5bc, 0x00ffffff);
+setint(pplayer+0x62c, 0x00ffffff);
+setint(pplayer+0x648, 0x00ffffff);
+setint(pplayer+0x664, 0x00ffffff);
+setint(0x08bde560, getint(0x08bde560) + 0x10000000);}
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -598.05, -1428.88, 14);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, -619.45, -1429.17, 14);
+
+The Story:
+Johnny Wotniz, the meanest drug dealer in Vice Point is dead, the only problem is that no-one believes that fact, you have been employed by a newspaper to take a picture of his dead body, the only problem is that his body lies in a crypt full of traps like the skywalker and the water elavator, watch out for the pinata guard. Take a picture of his dead body with the camera that has been placed in your inventory, escape from the crypt, and then take the picture to the printworks, where the printers are ready to make sure that everyone believes that Johnny Wotniz is dead.
+Reward: +$100000
+
+#cheat Black Shopkeepers
+setchar(0x093793A2, 4);
+setchar(0x093793B8, 0, 0, 0);
+
+All shopkeepers wear black clothes !
+They look like gangsters now, don't you think ?
+
+This one works for all peds:
+
+#cheat Funny colored Peds
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+setshort(0x098B4A40 + x + 0x56, 11);
+}
+
+#cheat Make Vance Dance
+pweapon = getchar(pplayer+0x789);
+if(buttons&CTRL_CIRCLE&&pweapon == 3){
+setchar(pplayer+0x550, 1);
+plock = getchar(pplayer+0x1c9);
+if(plock == 5){
+setchar(pplayer+0x550, 0);
+setchar(pplayer+0x1c8, 3);
+setchar(pplayer+0x1c9, 4);}}
+#off
+setchar(pplayer+0x550, 0);
+
+Just equip the pistol and try to fire it to do the Vance Dance !
+
+#cheat No Traffic Sound
+setchar(0x08BB194C, 0x01);
+
+#cheat Beep Sound
+setchar(0x08E937B5, 0x01);
+off();
+
+#cheat Dark Textures
+setshort(0x08B8EAC4, 0, 0, 0);
+sethex(0x08B8EAC6, 0, 0, 0);
+
+#cheat Removes the Weapon Pictures from the HUD
+setchar(0x08BAFAB0, 0x01);
+
+#cheat Funny Location Names
+setchar(0x08E90BD5, 0x06);
+setchar(0x08E90BD7, 0x09);
+
+#cheat Makes the players shadow flicker
+setfloat(0x08BC7E60, -1077.40, 312.63, 11.26);
+
+Probably related to the Shadow Spawn Function.
+
+#cheat Radar with map
+setchar(0x08E937A8, 0x00);
+
+#cheat Radar without map
+setchar(0x08E937A8, 0x01);
+
+#cheat No radar
+setchar(0x08E937A8, 0x02);
+
+Here are infinite mission time cheats for two specific missions:
+
+#cheat Infinite Time in Turn on, tune in, bug out
+setchar(0x9F932D8, 84);
+setchar(0x9F6D934, 0);
+#off
+setchar(0x9F932D8, 20);
+
+#cheat Infinite Time in Burning Bridges
+setchar(0x9F932D8, 75);
+setchar(0x9F6DD18, 0);
+#off
+setchar(0x9F932D8, 20);
+
+If you have one of those cheats activated you can always replay the corresponding mission by simply starting the Taxidriver submission !
+
+This cheat removes the annoying exhaust and burnout smoke effects which slow down the game:
+
+#cheat No Exhaust/Tyre Smoke
+setchar(0x9569b94, 0, 0, 0);
+setchar(0x9569c9c, 0, 0, 0);
+setchar(0x9569b90, 0x0);
+setchar(0x9569c62, 0x0);
+setchar(0x9569c98, 0x0);
+off()
+
+#cheat Wheelsize Changer
+static start;
+if (!start)
+size = 0;
+start = 1;
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+size = size-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+size = size+1;}
+setfloat(0x935E198, size);
+setfloat(0x936E2D8, size);
+setfloat(0x936E578, size);
+setfloat(0x936CB38, size);
+setfloat(0x936C0B8, size);
+setfloat(0x936A678, size);
+setfloat(0x936A3D8, size);
+setfloat(0x936A138, size);
+setfloat(0x9369BF8, size);
+setfloat(0x9369958, size);
+setfloat(0x93696B8, size);
+setfloat(0x9369418, size);
+setfloat(0x9369178, size);
+setfloat(0x9368ED8, size);
+setfloat(0x9368C38, size);
+setfloat(0x9368998, size);
+setfloat(0x93679D8, size);
+setfloat(0x9367738, size);
+setfloat(0x9366778, size);
+setfloat(0x93664D8, size);
+setfloat(0x9365F98, size);
+setfloat(0x9365CF8, size);
+setfloat(0x9365A58, size);
+setfloat(0x9364A98, size);
+setfloat(0x93647F8, size);
+setfloat(0x9364558, size);
+setfloat(0x9363058, size);
+setfloat(0x9362098, size);
+setfloat(0x9360B98, size);
+setfloat(0x9360658, size);
+setfloat(0x9360118, size);
+setfloat(0x935FE78, size);
+setfloat(0x935FBD8, size);
+setfloat(0x935F158, size);
+setfloat(0x935EC18, size);
+setfloat(0x935E438, size);
+
+Hold the LTRIGGER and press LEFT or RIGHT to decrease/increase the wheelsize !
+
+#cheat Move the Screen Upwards
+setchar(0x08E75216, 0x13);
+setchar(0x08E75A56, 0x13);
+
+#cheat A Screen in the Screen
+setchar(0x08E75205, 0x04);
+setchar(0x08E75A45, 0x04);
+
+#cheat Vic is left and Vic is right
+setchar(0x08E75201, 0x84);
+setchar(0x08E75A41, 0x84);
+
+#cheat 3 Screens at once
+setchar(0x08E75209, 0x07);
+setchar(0x08E75A49, 0x07);
+
+#cheat Purple * 2
+setchar(0x08E75210, 0x06);
+setchar(0x08E75A50, 0x06);
+
+#cheat Screw the Screen
+setchar(0x08E75205, 0x03);
+setchar(0x08E75A45, 0x03);
+
+#cheat Shoplifter Reloaded
+state = getchar(0x09f69054);
+mission = 2;
+clear = 2;
+if(getfloat(pobj + 0x38) <= -100.00){
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, 414.78, 1090.80, -201.00);
+static Marker1;
+X1 = 414.78;
+Y1 = 1090.80;
+Z1 = -199.83;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(state == 1&&getfloat(pobj + 0x38) <= -100.00){
+setfloat(mark, 0, 0, 0);}
+if(state == 0&&sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+clear = 1;
+mission = 1;}
+if(mission == 1){
+setchar(0x08BB329C, 0xFF);
+setchar(0x09f69054, 1);
+setfloat(mark, 0, 0, 0);
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'M', 'a', 'l', 'l', ' ', 'S', 'e',
+'c', 'u', 'r', 'i', 't', 'y', '~', 'w', '~', 0);}
+if(clear == 1){
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+clear = 0;}
+if(state == 1&&getfloat(pobj + 0x38) >= -100.00){
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'M', 'a', 'l', 'l', ' ', 'S', 'e',
+'c', 'u', 'r', 'i', 't', 'y', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setchar(0x08BB329C, 0);
+setchar(0x09f69054, 0);
+mission = 0;}
+
+
+#cheat Teleport to the Taxi
+pspawn = 0x8E81290;
+setint(pspawn, 183);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+moveto(-1077.40, 312.63, 11.26); object(0x1d31,0,0,0);
+moveto(-1063.19, 312.05, 11.27); object(0x1d31,0,0,0);
+moveto(-1063.08, 334.78, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.03, 335.52, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.91, 320.80, 11.27); object(0x1d31,0,0,0);
+moveto(-1085.16, 320.45, 11.27); object(0x1d31,0,0,0);
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Taxi Mod
+static speed;
+static currentx;
+static currenty;
+static currentz;
+if(buttons&CTRL_TRIANGLE&&!pcar){
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);}
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 11.26;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 11.27;
+checkpoint3x = -1063.08;
+checkpoint3y = 334.78;
+checkpoint3z = 11.27;
+checkpoint4x = -1104.03;
+checkpoint4y = 335.52;
+checkpoint4z = 11.27;
+checkpoint5x = -1104.91;
+checkpoint5y = 320.80;
+checkpoint5z = 11.27;
+checkpoint6x = -1085.16;
+checkpoint6y = 320.45;
+checkpoint6z = 11.27;
+checkpoint7x = -1077.40;
+checkpoint7y = 312.63;
+checkpoint7z = 11.26;
+if(!currentx&&pcar){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);
+setfloat(opp + 0x30, -1077.40, 312.63, 11.26);
+speed = 0.01;}
+if(pcar){
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + d3 * speed);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 5 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.01;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.01;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.01;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.01;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.01;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.01;}
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat illegal drug store
+moveto(-1096.28,293.57,17.36); object(0x1CA6,0,0,92);
+move(-1.18,-7.77,-6.10); object(0x1C9D,0,0,290);
+move(-0.36,-0.39,0.00); object(0x1C9D,0,0,296);
+move(0.20,-0.33,0.00); object(0x1C9D,0,0,296);
+move(-0.23,-0.22,0.00); object(0x1C9D,0,0,300);
+move(-0.76,-0.05,0.00); object(0x1C9D,0,0,307);
+move(-13.70,17.34,-0.10); object(0x1CA7,0,0,114);
+move(0.90,0.94,0.00); object(0x1CA7,0,0,128);
+move(1.36,0.59,0.00); object(0x1CA7,0,0,145);
+move(1.79,-0.51,0.00); object(0x1CA7,0,0,164);
+move(12.43,-3.83,1.30); object(0x1CB7,0,0,271);
+move(-16.75,-15.24,0.60); object(0x1C91,0,0,28);
+move(-0.51,3.34,0.00); object(0x1904,0,0,273);
+move(1.94,-0.79,0.00); object(0x1904,0,0,306);
+move(1.05,-1.85,0.00); object(0x1904,0,0,353);
+move(-2.08,18.32,0.00); object(0x0159,0,0,45);
+move(2.75,-0.61,0.00); object(0x0159,0,0,62);
+move(-1.96,-1.76,0.00); object(0x0159,0,0,32);
+move(8.18,-18.20,0.00); object(0x0157,0,0,262);
+move(-2.19,0.17,0.00); object(0x0157,0,0,287);
+move(-0.32,0.02,0.00); object(0x0156,0,0,290);
+move(1.12,-0.10,0.00); object(0x0150,0,0,277);
+move(0.95,-0.01,0.00); object(0x014A,0,0,266);
+pspawn = 0x08E81290; 
+setint(pspawn, 212); 
+setfloat(pspawn + 4, -1105.26,294.49,12.26);
+pickup = 0x08C6A330;
+setfloat(pickup, -1105.58,303.14,12.26);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x0167);
+setchar(pickup + 0x38, 0x01);
+pickup += 0x40;
+setfloat(pickup, 1104.88,284.39,12.26);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x0162 );
+setchar(pickup + 0x38, 0x01);
+pickup += 0x40;
+setfloat(pickup, -1112.91,290.05,12.26);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D3);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1113.00,294.69,12.26);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D3);
+setchar(pickup + 0x38, 0x03);
+teleport(-1089.68,294.51,12.26);
+
+#cheat dutchguy's stuntpack BETA(with a office and some guns)
+moveto(-608.88,-277.47,13.75); object(0x1CB4,0,0,62);
+move(-3.25,-15.51,-0.90); object(0x1CB2,0,0,316);
+move(-8.61,1.23,0.00); object(0x1CB2,0,0,227);
+move(2.21,-2.20,3.30); object(0x1CB2,0,265,49);
+move(2.30,-2.64,0.00); object(0x1CB2,0,265,52);
+move(-3.16,-3.86,-5.00); object(0x1CA7,5,355,17);
+move(-1.62,0.17,0.00); object(0x1CA7,5,355,35);
+move(3.02,0.69,0.00); object(0x1CA7,5,355,6);
+move(2.02,1.05,0.00); object(0x1CA7,5,355,339);
+move(-9.83,1.89,1.20); object(0x1CCE,0,0,101);
+move(1.53,-2.48,0.00); object(0x1CCE,0,0,65);
+move(9.26,8.28,1.50); object(0x1CE5,0,265,10);
+move(0.52,-0.74,0.00); object(0x1CE5,0,265,20);
+move(-0.51,0.56,0.00); object(0x1CE5,0,215,11);
+move(0.60,-0.55,0.00); object(0x1CE5,0,150,20);
+move(1.14,-0.37,0.00); object(0x1CE5,0,90,15);
+move(0.00,0.00,0.00); object(0x1CE5,0,335,15);
+move(-0.07,-0.07,-0.50); object(0x1CE5,0,200,15);
+move(0.54,-1.03,0.50); object(0x1CE5,0,200,29);
+move(0.05,-0.16,-0.50); object(0x1CE5,0,155,31);
+move(-0.25,0.18,0.80); object(0x1CE5,0,180,28);
+move(0.37,-1.65,-3.10); object(0x1CF9,0,0,117);
+move(-1.26,-1.02,0.00); object(0x1D00,0,0,224);
+move(-2.87,6.14,0.00); object(0x1D03,0,0,152);
+move(-3.81,-3.99,0.00); object(0x1D04,0,0,85);
+move(0.31,-0.10,1.20); object(0x1D44,70,315,310);
+move(0.12,0.32,0.00); object(0x1D4F,70,315,314);
+move(8.23,0.02,1.60); object(0x1CE5,0,290,92);
+pickup = 0x08C6A330;
+setfloat(pickup, -641.61,-335.66,12.05);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x0159);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, 
+-618.49,-290.61,12.05);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x0160);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -645.61,-330.41,12.05);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x0162);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -643.31,-333.31,12.05);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x016C);
+setchar(pickup + 0x38, 0x03);
+pspawn = 0x08E81290;
+setint(pspawn, 268);
+setfloat(pspawn + 4, -639.09,-353.31,13.28);
+pspawn += 0x30;
+setint(pspawn, 208); 
+setfloat(pspawn + 4, -655.10,-306.56,9.94);
+pspawn += 0x30;
+setint(pspawn, 260); 
+setfloat(pspawn + 4, -588.49,-327.36,11.71);
+teleport(-620.05,-344.70,12.28);
+
+#cheat Dutchguy's car racket
+moveto(-1394.73,-729.98,13.77); object(0x1D6D,0,0,184);
+move(12.01,13.08,2.80); object(0x1CB2,0,0,6);
+move(-22.78,0.73,0.00); object(0x1CB2,0,0,6);
+move(20.89,0.01,3.20); object(0x1CB2,0,265,7);
+move(-8.80,0.24,0.00); object(0x1CB2,0,265,7);
+move(-6.06,0.20,0.00); object(0x1CB2,0,265,7);
+move(-2.96,0.10,0.00); object(0x1CB2,0,265,7);
+move(24.48,-3.53,-2.60); object(0x1CB4,0,0,137);
+move(-27.24,5.43,-2.00); object(0x1CB7,0,0,273);
+pspawn = 0x08E81290;
+setint(pspawn, 204); 
+setfloat(pspawn + 4, -1407.95,-705.72,14.87);
+pspawn += 0x30;
+setint(pspawn, 205); 
+setfloat(pspawn + 4, -1403.34,-709.69,14.87);
+pspawn += 0x30;
+setint(pspawn, 270); 
+setfloat(pspawn + 4, -1364.85,-719.48,14.87);
+pspawn += 0x30;
+setint(pspawn, 279); 
+setfloat(pspawn + 4, -1364.85,-719.48,14.87);
+pspawn += 0x30;
+setint(pspawn, 232); 
+setfloat(pspawn + 4, -1404.63,-701.51,14.87);
+pickup = 0x08C6A330;
+setfloat(pickup, -1383.30,-711.43,14.97);
+setint(pickup + 0x2C, 99999);
+setshort(pickup + 0x34, 0x015F);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1383.56,-713.76,14.87);
+setint(pickup + 0x2C, 9999);
+setshort(pickup + 0x34, 0x0169);
+setchar(pickup + 0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1384.04,-717.53,14.87);
+setint(pickup + 0x2C, 9999);
+setshort(pickup + 0x34, 0x015B);
+setchar(pickup + 0x38, 0x03);
+teleport(-1400.38,-723.33,14.97);
+
+#cheat Dutchguy's vehicle spawn field
+//alot of cars and other things more versions coming!!
+vehicle = 0x08E80A20;
+setint(vehicle, 275);
+setfloat(vehicle + 0x4, -1500.97,-739.68,14.87);
+vehicle += 0x30;
+setint(vehicle, 222);
+setfloat(vehicle + 0x4, -1485.03,-739.15,14.87);
+vehicle += 0x30;
+setint(vehicle, 260);
+setfloat(vehicle + 0x4, -1473.38,-735.38,14.87);
+vehicle += 0x30;
+setint(vehicle, 246);
+setfloat(vehicle + 0x4, -1461.04,-733.95,14.87);
+vehicle += 0x30;
+setint(vehicle, 268);
+setfloat(vehicle + 0x4, -1443.44,-731.32,14.87);
+vehicle += 0x30;
+setint(vehicle, 208);
+setfloat(vehicle + 0x4, -1436.37,-731,36,14.87);
+vehicle += 0x30;
+setint(vehicle, 265);
+setfloat(vehicle + 0x4, -1425.62,-733.65,14.87);
+vehicle += 0x30;
+setint(vehicle, 212);
+setfloat(vehicle + 0x4, -1417.85,-734.44,14.87);
+teleport(-1441.50,-709.67,14.87);
+
+
+#cheat Tribute to Upaluppa
+//Spawns many different pickups and vehicles at the Compound
+//All weapons (including ones already previously there) are spawned with infinite ammo
+//This is a special thanks to Upaluppa for all the time he has
+//put into researching cheats in VCS.
+moveto(-1116.94,334.92,11.37); object(0x1CA4,0,0,12);
+move(4.01,-0.88,0.00); object(0x1CA4,0,0,12);
+move(4.05,-0.89,0.00); object(0x1CA4,0,0,12);
+move(3.89,-0.85,0.00); object(0x1CA4,0,0,12);
+move(3.00,-0.66,0.00); object(0x1CA4,0,0,12);
+move(-14.60,3.20,0.80); object(0x1CA4,0,0,12);
+move(4.10,-0.90,0.00); object(0x1CA4,0,0,12);
+move(3.79,-0.83,0.00); object(0x1CA4,0,0,12);
+move(4.45,-0.97,0.00); object(0x1CA4,0,0,12);
+move(2.28,-0.50,0.00); object(0x1CA4,0,0,12);
+move(1.66,1.36,-1.00); object(0x1CA4,0,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,0,0,269);
+move(-0.42,19.00,0.00); object(0x1CA4,0,0,269);
+move(0.21,-9.50,0.00); object(0x1CA4,0,0,269);
+move(0.30,-13.80,1.00); object(0x1CA4,0,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,0,0,269);
+move(-0.21,9.50,0.00); object(0x1CA4,0,0,269);
+move(-0.21,9.50,0.00); object(0x1CA4,0,0,269);
+move(-0.88,-0.12,1.30); object(0x1CA4,90,0,269);
+move(0.09,-4.10,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.10,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.00,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(-2.80,-0.06,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.20,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.20,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.20,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.10,0.00); object(0x1CA4,90,0,269);
+move(-0.08,3.80,0.00); object(0x1CA4,90,0,269);
+move(-2.74,-0.06,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.00,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(0.10,-4.40,0.00); object(0x1CA4,90,0,269);
+move(-2.85,0.74,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.10,0.00); object(0x1CA4,90,0,269);
+move(-0.07,3.00,0.00); object(0x1CA4,90,0,269);
+move(-2.07,-0.05,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.10,0.00); object(0x1CA4,90,0,269);
+move(0.10,-4.40,0.00); object(0x1CA4,90,0,269);
+move(0.10,-4.40,0.00); object(0x1CA4,90,0,269);
+move(0.09,-4.20,0.00); object(0x1CA4,90,0,269);
+move(0.05,-2.50,0.00); object(0x1CA4,90,0,269);
+move(-2.80,0.64,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.30,0.00); object(0x1CA4,90,0,269);
+move(-0.09,4.20,0.00); object(0x1CA4,90,0,269);
+move(0.58,3.91,0.00); object(0x1CA4,90,0,281);
+move(0.75,4.03,0.00); object(0x1CA4,90,0,281);
+move(0.73,3.93,0.00); object(0x1CA4,90,0,281);
+move(-3.95,-20.26,0.00); object(0x1CA4,90,0,282);
+move(0.93,4.30,0.00); object(0x1CA4,90,0,282);
+move(0.51,2.35,0.00); object(0x1CA4,90,0,282);
+move(11.76,-10.16,0.00); object(0x1CA4,90,0,194);
+move(-3.40,0.83,0.00); object(0x1CA4,90,0,194);
+move(-3.40,0.83,0.00); object(0x1CA4,90,0,194);
+move(-3.01,0.74,0.00); object(0x1CA4,90,0,194);
+move(-1.55,0.38,0.00); object(0x1CA4,90,0,194);
+move(-2.04,0.50,0.00); object(0x1CA4,90,0,194);
+move(14.38,-3.52,0.00); object(0x1CA4,90,0,194);
+move(1.16,-0.14,0.00); object(0x1CA4,90,0,270);
+move(2.16,14.02,-0.40); object(0x1CA4,75,0,269);
+move(2.61,0.06,-0.70); object(0x1CA4,75,0,269);
+move(2.49,0.05,-0.60); object(0x1CA4,75,0,269);
+move(2.46,0.05,-0.30); object(0x1CA4,90,0,269);
+move(1.46,0.03,0.00); object(0x1CA4,90,0,269);
+move(-0.79,-3.22,-0.30); object(0x1CA4,105,0,179);
+move(0.05,-2.50,-0.70); object(0x1CA4,105,0,179);
+move(0.03,-1.40,-0.30); object(0x1CA4,105,0,179);
+move(-0.31,9.00,0.00); object(0x1CA4,0,0,179);
+move(-3.14,-0.07,0.00); object(0x1CA4,0,0,179);
+move(-3.70,-0.08,0.00); object(0x1CA4,0,0,179);
+move(2.18,0.05,0.80); object(0x1CA4,0,345,179);
+move(-2.84,-0.06,0.60); object(0x1CA4,0,345,179);
+move(0.10,-4.50,0.00); object(0x1CA4,0,345,179);
+move(2.92,0.06,-0.70); object(0x1CA4,0,345,179);
+move(-2.48,-0.05,0.00); object(0x1CA4,0,0,179);
+move(9.57,2.81,-0.80); object(0x1CA4,0,0,89);
+move(0.08,-3.80,-0.40); object(0x1CA4,0,15,89);
+move(-4.30,-0.09,0.00); object(0x1CA4,0,15,89);
+move(0.04,-2.00,-0.50); object(0x1CA4,0,15,89);
+move(4.37,0.10,0.00); object(0x1CA4,0,15,89);
+moveto(-1106.74,356.39,14.00); object(0x1CA4,70,0,0);
+moveto(-1165.18,324.50,9.36); object(0x1CA4,75,0,90);
+move(-2.31,-0.01,-0.60); object(0x1CA4,75,0,90);
+move(-2.59,-0.01,-0.70); object(0x1CA4,75,0,90);
+move(-2.68,-0.01,-0.70); object(0x1CA4,75,0,90);
+move(-2.73,-0.01,-0.70); object(0x1CA4,75,0,90);
+move(-2.92,-0.01,-0.30); object(0x1CA4,90,0,90);
+move(-2.88,-0.01,0.00); object(0x1CA4,90,0,90);
+move(-2.89,-0.02,0.00); object(0x1CA4,90,0,90);
+move(-0.02,4.30,0.00); object(0x1CA4,90,0,90);
+move(0.04,-8.60,0.00); object(0x1CA4,90,0,90);
+//Vehicles
+pspawn = 0x08E81290;
+//Rhino
+setint(pspawn, 246);
+setfloat(pspawn + 4, -1106.20, 288.51, 12.26, 270);
+pspawn += 0x30;
+//Patriot
+setint(pspawn, 209);
+setfloat(pspawn + 4, -1107.34, 296.46, 12.26, 270);
+pspawn += 0x30;
+//Streetfighter
+setint(pspawn, 252);
+setfloat(pspawn + 4, -1073.77, 281.43, 11.26, 0);
+pspawn += 0x30;
+//Little Willie
+setint(pspawn, 173);
+setfloat(pspawn + 4, -1106.64, 359.80, 15.96, 270);
+pspawn += 0x30;
+//Infernus
+setint(pspawn, 270);
+setfloat(pspawn + 4, -1065.67, 351.27, 11.27, 180);
+pspawn += 0x30;
+//Stinger
+setint(pspawn, 254);
+setfloat(pspawn + 4, -1061.64, 351.27, 15.96, 180);
+pspawn += 0x30;
+//ATV
+setint(pspawn, 230);
+setfloat(pspawn + 4, -1073.32, 344.02, 15.96, 270);
+pspawn += 0x30;
+//Hunter
+setint(pspawn, 275);
+setfloat(pspawn + 4, -1129.98, 298.07, 11.27, 0);
+pspawn += 0x30;
+//Jetski
+setint(pspawn, 233);
+setfloat(pspawn + 4, -1183.76, 332.15, 5.88, 90);
+pspawn += 0x30;
+//Tropic
+setint(pspawn, 250);
+setfloat(pspawn + 4, -1183.76, 313.91, 8, 90);
+//Weapons
+pickup = 0x08C6A330;
+//Rocket Launcher
+setfloat(pickup, -1102.57, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0167);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1105, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0156);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1108, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0170);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0166);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1094.14, 343.38, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x016C);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1101.52, 356.71, 14.90);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x016F);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1103.38, 356.71, 14.90);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0165);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1182.78, 312.96, 9.51);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0156);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 341.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01D3);
+setchar(pickup+0x38, 0x03);
+//Bribes
+for(i = 0; i < 6; i++){
+pickup += 0x40;
+setfloat(pickup, -1092.81-i*3, 306.87, 12.26);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01DA);
+setchar(pickup+0x38, 0x03);
+}
+for(add = 0x08C69FB0; add <= 0x8C6A1F0; add+=0x40)
+setint(add+0x2C, 1000000);
+off(); 
+
+The six police bribes remind me of those good old days when I was playing GTA III...
+
+#cheat Vehicle Roof Attachment
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped&&press&CTRL_UP)
+yourped=pped;
+if(yourped){
+setfloat(yourped+0x4E4, 100.0);
+setfloat(yourped+0x4E8, 100.0);
+setint(yourped+0x5d8, 0xffffff);
+setint(yourped+0x5f4, 0xffffff);
+setint(yourped+0x610, 0xffffff);
+setint(yourped+0x5bc, 0xffffff);
+setint(yourped+0x62c, 0xffffff);
+setint(yourped+0x648, 0xffffff);
+setint(yourped+0x664, 0xffffff);
+setint(yourped+0x680, 0xffffff);
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+pped = getint(0x08BA1D70);
+if(pped&&pped != yourped){
+static enemy;
+enemy=pped;
+if(enemy){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, enemy);
+health = getfloat(enemy+0x4e4);
+if(health == 0){
+enemy=0;
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+if(yourped&&!getint(yourped+0x480)){
+x1 = getfloat(pobj+0x30);
+y1 = getfloat(pobj+0x34);
+z1 = getfloat(pobj+0x38);
+static obj;
+if(!obj){
+moveto(x1,y1,z1);
+obj = object(0x1CA4,90,0,0);}
+else{
+selectobject(obj);
+setfloat(obj+0x30, getfloat(pobj+0x30));
+setfloat(obj+0x34, getfloat(pobj+0x34));
+setfloat(obj+0x38, getfloat(pobj+0x038)+1);
+propagateobject();}
+x2 = getfloat(pobj+0x30);
+y2 = getfloat(pobj+0x34);
+z2 = getfloat(pobj+0x38);
+setfloat(yourped+0x30,x2);
+setfloat(yourped+0x34,y2);
+setfloat(yourped+0x38,z2+1.5);}}}
+if(yourped){
+pfollow = getchar(yourped+0x894);
+if(pfollow == 0xC&&buttons&CTRL_CROSS&&press&CTRL_UP){
+setchar(yourped+0x894, 0x31);
+yourped=0;}
+if(yourped){
+health2 = getfloat(yourped+0x4e4);
+if(health2 == 0){
+yourped=0;}}}
+#off
+obj = state = 0;
+setchar(yourped+0x894, 0x31);
+yourped=0;
+
+#cheat Spawn Helicopter
+pspawn = 0x08E81290;
+setint(pspawn, 262);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26)
+
+#cheat Air Taxi
+static speed;
+static currentx;
+static currenty;
+static currentz;
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 11.26;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 20.00;
+checkpoint3x = getfloat(0x9a63428);
+checkpoint3y = getfloat(0x9a6342c);
+checkpoint3z = 15.00;
+if(!currentx&&pcar){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);
+setfloat(opp+0x30, -1077.40, 312.63, 11.26);
+speed = 0.01;}
+if(pcar){
+setfloat(opp+0x30, getfloat(opp+0x30)+d1 * speed);
+setfloat(opp+0x34, getfloat(opp+0x34)+d2 * speed);
+setfloat(opp+0x38, getfloat(opp+0x38)+d3 * speed);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 5 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else if(currentx == checkpoint2x){
+currentx = setfloat(opp+0x30,getfloat(0x9a63428),getfloat(0x9a6342c),-500);
+currentz = checkpoint3z;
+speed = 0.01;}
+else if(currentz == checkpoint3z){
+setfloat(opp+0x38, 11.26);
+speed = 0.01;}
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+Since I've created the "Helicopter Mod" which is very similar to this cheat I might let this idea die...
+
+#cheat Flash FM
+setchar(pcar+0x2b7, 0);
+setchar(0x8bb11dc, 0);
+setchar(0x9a6341b, 0);
+
+#cheat V Rock
+setchar(pcar+0x2b7, 1);
+setchar(0x8bb11dc, 1);
+setchar(0x9a6341b, 1);
+
+#cheat Paradise
+setchar(pcar+0x2b7, 2);
+setchar(0x8bb11dc, 2);
+setchar(0x9a6341b, 2);
+
+#cheat VCPR
+setchar(pcar+0x2b7, 3);
+setchar(0x8bb11dc, 3);
+setchar(0x9a6341b, 3);
+
+#cheat VCFL Radio
+setchar(pcar+0x2b7, 4);
+setchar(0x8bb11dc, 4);
+setchar(0x9a6341b, 4);
+
+#cheat The Wave 103
+setchar(pcar+0x2b7, 5);
+setchar(0x8bb11dc, 5);
+setchar(0x9a6341b, 5);
+
+#cheat Fresh 105 FM
+setchar(pcar+0x2b7, 6);
+setchar(0x8bb11dc, 6);
+setchar(0x9a6341b, 6);
+
+#cheat Espantoso
+setchar(pcar+0x2b7, 7);
+setchar(0x8bb11dc, 7);
+setchar(0x9a6341b, 7);
+
+#cheat Emotion 98.3
+setchar(pcar+0x2b7, 8);
+setchar(0x8bb11dc, 8);
+setchar(0x9a6341b, 8);
+
+#cheat Radio Off
+setchar(pcar+0x2b7, 9);
+setchar(0x8bb11dc, 9);
+setchar(0x9a6341b, 9);
+
+#cheat Custom Soundtracks
+setchar(pcar+0x2b7, 10);
+setchar(0x8bb11dc, 10);
+setchar(0x9a6341b, 10);
+
+#cheat Spawn Fast Food Vendor
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00, 0xC5, 0xFF,
+0xE0, 0x43, 0xDD, 0x52, 0x89, 0x44);
+setchar(0x08BF3870, 0xB3, 0xDD, 0x48, 0xC3, 0x7B, 0x00, 0x00, 0x00, 0xB3, 0x4A,
+0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,
+0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,
+0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,
+0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,
+0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,
+0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);

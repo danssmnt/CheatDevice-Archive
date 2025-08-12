@@ -1,0 +1,121 @@
+#cheat Chrome Cars
+//ID: 19516
+//Score: 5
+//Author: psphacker108
+//Category: Button Cheats
+//Description: Simple Makes all cars Chrome Plated in the game No Button cheat required.Found by psphacker108
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-18.gif
+//Time: 06/04/2007 19:16:25
+//Working: Yes
+setchar(0x8bad856, 01);
+off#
+setchar(0x8bad856, 00);
+
+#cheat Chrome Custom
+//ID: 19515
+//Score: 5
+//Author: psphacker108
+//Category: Vehicle
+//Description: Chrome Custom makes silver neon, cool exhaust colors, lambo doors and spinners!
+//Credit to waterbottle lambo doors, and nos, thanks to Vettefan for Spinners and car neon, Chrome Found by psphacker108.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/screen7-5.jpg
+//Time: 06/04/2007 19:15:13
+//Working: Yes
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+{
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+}
+R = 228;
+G = 228;
+B = 228;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  R,  G,  B);} 
+{
+setchar(0x09569B94, 18, 53, 173);
+}
+setfloat(0x936E818, 0.8);
+{
+setint(0x08C739B0,   270);
+}
+setchar(0x8bad856, 01);
+{
+if(buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+}
+
+#cheat KEI's SAFEHOUSE
+//ID: 19514
+//Score: 4
+//Author: KEI(Japanese)
+//Category: Location Mods
+//Description: This is my first mod in VCS.
+//My safehouse in the hotel.
+//More pictures here
+//http://safehouse2.blog82.fc2.com/blog-entry-138.html#more
+//(Used Japanese)
+//
+//EDITED BY: psphacker108 on 06/04/07 22:30:04
+//Image: http://blog82.fc2.com/s/safehouse2/file/safe-dyning.jpg
+//Time: 06/04/2007 11:13:14
+//Working: Yes
+teleport(-75.64, -1227.72, 23.94); 
+moveto(-78.25, -1224.71, 22.84);  object(0x1D39, 0, 0, 92);
+move(-6.48, -1.40, 0.40);  object(0x1CE8, 0, 0, 191);
+move(16.25, -3.36, 0.00);  object(0x1CEA, 0, 0, 5);
+move(0.62, 0.06, -0.40);  object(0x1D03, 0, 0, 10);
+move(-1.19, 0.02, 0.00);  object(0x1D03, 0, 0, 359);
+move(-15.70, 4.19, 0.80);  object(0x1CFF, 0, 0, 247);
+move(5.43, -7.24, 0.30);  object(0x1CD3, 0, 0, 216);
+move(0.96, 0.34, 0.00);  object(0x1CD3, 0, 0, 297);
+move(0.25, 0.88, -0.10);  object(0x1CEC, 0, 0, 322);
+move(-0.59, 0.15, 0.10);  object(0x1CF2, 0, 0, 195);
+move(-0.04, -0.93, 0.00);  object(0x0158, 0, 0, 340);
+move(-6.14, -3.30, -0.40);  object(0x1D01, 0, 0, 28);
+move(-0.60, 2.46, -0.50);  object(0x1CD2, 0, 0, 270);
+move(8.03, 1.37, 0.90);  object(0x0262, 0, 0, 158);
+move(-6.61, -3.81, -0.10);  object(0x01D4, 0, 0, 209);
+move(0.60, -0.03, 0.00);  object(0x01D4, 0, 0, 209);
+move(0.60, -0.04, 0.00);  object(0x01D4, 0, 0, 209);
+move(0.44, 0.14, -0.20);  object(0x0163, 270, 0, 20);
+move(-2.43, 12.39, -0.10);  object(0x1D14, 0, 0, 125);
+move(13.14, 1.63, -0.60);  object(0x1CFA, 0, 0, 1);
+move(2.40, 0.24, 0.00);  object(0x1D4E, 0, 0, 1);
+move(-5.50, -0.49, 0.90);  object(0x1CED, 0, 0, 36);
+move(0.23, 0.28, 0.00);  object(0x1CF1, 0, 0, 41);
+move(-1.41, 0.12, 0.00);  object(0x1D4F, 0, 35, 255);
+move(-0.72, -1.67, -0.90);  object(0x1CCC, 0, 0, 294);
+move(-8.62, -4.67, 1.70);  object(0x0154, 0, 70, 273);
+move(11.48, 5.05, -1.30);  object(0x01CD, 0, 0, 17);
+move(1.61, -12.61, 0.00);  object(0x01CD, 0, 0, 106);
+move(-12.25, 13.64, 0.40);  object(0x01FB, 0, 0, 320);
+move(5.95, -8.42, 0.00);  object(0x01D2, 0, 0, 219);
+move(15.11, 8.54, -0.90);  object(0x1CF5, 0, 0, 90);
+move(1.26, -1.16, 0.00);  object(0x1D05, 0, 0, 133);
+move(0.04, 0.03, 0.40);  object(0x1CF0, 0, 0, 113);
+move(0.10, -1.92, -0.40);  object(0x1CF8, 0, 0, 176);
+move(0.17, -2.59, 0.00);  object(0x1CF8, 0, 0, 176);
+move(-0.40, 1.27, 0.70);  object(0x01F9, 0, 0, 267);
+move(-1.77, 5.17, 0.70);  object(0x015F, 0, 325, 166);
+move(0.70, -0.07, 0.00);  object(0x015F, 0, 325, 166);
+move(0.60, -0.06, 0.00);  object(0x015F, 0, 325, 166);
+

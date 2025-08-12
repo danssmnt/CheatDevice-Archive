@@ -1,0 +1,433 @@
+#cheat Ultimate Safehouse's
+//ID: 19031
+//Score: 78
+//Author: Destruction
+//Category: Vehicle
+//Description: This yet another vehicle spawn cheat . . .
+//This spawns quite a few vehicles at ALL your safe houses.
+//Clymenus Suite: Maverick on 2nd helipad, Infernus and a Squalo at the dock
+//Compound: Hunter, Rhino, Washington, Patriot, PCJ-600, Gang Rancher, Sabre a
+//Image: none
+//Time: 13/12/2006 05:38:32
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   90); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   0); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   90); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   246); 
+setfloat(pspawn + 4,   -1111.63,   298.80,   12.32,   180); 
+pspawn += 0x30;
+setint(pspawn,   221); 
+setfloat(pspawn + 4,   -1061.00,   293.81,   12.17,   0); 
+pspawn += 0x30;
+setint(pspawn,   275); 
+setfloat(pspawn + 4,   -1104.25,   293.81,   22.02,   270); 
+pspawn += 0x30;
+setint(pspawn,   213); 
+setfloat(pspawn + 4,   245.22,   -184.29,   29.08,   90); 
+pspawn += 0x30;
+setint(pspawn,   257); 
+setfloat(pspawn + 4,   226.39,   -130.54,   6.93,   0); 
+pspawn += 0x30;
+setint(pspawn,   270); 
+setfloat(pspawn + 4,   264.86,   -153.60,   11.72,   270); 
+pspawn += 0x30;
+setint(pspawn,  212); 
+setfloat(pspawn + 4,  -801.37,  -1178.76,  10.96,  290); 
+pspawn += 0x30;
+setint(pspawn,  233); 
+setfloat(pspawn + 4,  -729.4,  -1148.9,  6.0,  20);
+pspawn += 0x30;
+setint(pspawn,  256); 
+setfloat(pspawn + 4,  -820.13,  -1198.75,  11.11,  180);
+pspawn += 0x30;
+
+#cheat Drive on the Wild Side
+//ID: 18737
+//Score: 73
+//Author: psphacker108
+//Category: Vehicle
+//Description: active while in a car or else you will spin like crazy! Vic will be on the side of the car that you get into! you can see him actually driving ( will not work on bikes) Works on helicopters  when you want this off turn off  everything goes back to normal.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2.gif
+//Time: 17/11/2006 04:40:21
+//Working: Yes
+setchar(pplayer + 0x000001CA, 60);
+
+#cheat Always have minigun 2
+//ID: 18578
+//Score: 103
+//Author: parm
+//Category: Weapons
+//Description: With this cheat on you will always have minigun 2 (the one used in helicopter missions) in your inventory.
+//Image: none
+//Time: 06/11/2006 22:35:49
+//Working: Yes
+setchar(pplayer+0x63C,  0x22);
+
+
+#cheat Teleport To medical helicopter
+//ID: 18555
+//Score: 153
+//Author: sauron92
+//Category: Teleport
+//Description: Teleport To the medical helicopter
+//
+//EDITED BY: psphacker108 on 06/11/06 05:55:38
+//Image: none
+//Time: 05/11/2006 19:53:51
+//Working: Yes
+teleport(-188.13,  -982.59,  11.36)
+
+#cheat HomeBase for Heli
+//ID: 18524
+//Score: 79
+//Author: That_PSP_Guy
+//Category: Teleport
+//Description: Above HomeBase for Heli for first few missions in the game. I made this so you wouldn't spawn in the ground with the Helicoptor. Have fun.
+//Image: none
+//Time: 05/11/2006 06:46:42
+//Working: Yes
+teleport(-869.43, -1071.51, 138.24)
+
+#cheat Working Helicoptor
+//ID: 18522
+//Score: 206
+//Author: That_PSP_Guy
+//Category: Teleport
+//Description: HELICOPTOR!!! Flying is fun! :)
+//Image: none
+//Time: 05/11/2006 06:19:52
+//Working: Yes
+teleport(391.20, -500.50, 22.47)
+
+#cheat Mansion Expansion Pack *Update*
+//ID: 19196
+//Score: 97
+//Author: Durka Durka Mahn
+//Category: Location Mods
+//Description: After taking over Diaz's Mansion, you decide to give the back a renovation! 2 Helicopters, 4 boats, a hovercraft, a plane, a quad bike, a Splitz 6 ATV, and a crotch-rocket bike all await inside this new construction! The expansion includes a drughouse, a second helipad, a dock, and a stunt ramp! Check out http://z10.invisionfree.com/CheatSync_Forums/index.php?showtopic=936&st=30&#entry10838228 for more pics. *Update* I put the garage code into this so it will now run in one code. Enjoy!
+//Image: http://img523.imageshack.us/img523/36/screen6cx7.png
+//Time: 03/01/2007 01:54:22
+//Working: Yes
+static obj;
+static state;
+top = 16.65;
+bottom = 12.65;
+if(!obj)
+{
+moveto(-274.79,  -649.25,  12.65);
+obj = object(0x1CB2,  0,  0,  90);
+moveto(-260.07,  -652.27,  9.26);  object(0x1CB2,  90,  90,  0);
+move(-14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.50,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-0.04,  -6.57,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.50,  -0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.60,  -0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-0.04,  -6.80,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.40,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-0.04,  -6.78,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.60,  -0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.40,  -0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-0.04,  -6.80,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.40,  0.10,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-0.03,  -3.34,  -3.40);  object(0x1CB2,  0,  0,  90);
+move(14.50,  -0.04,  0.00);  object(0x1CB2,  0,  0,  90);
+move(14.60,  -0.04,  0.00);  object(0x1CB2,  0,  0,  90);
+move(7.25,  7.24,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.12,  14.40,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.12,  14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-43.38,  -28.84,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.11,  14.60,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.05,  6.90,  0.00);  object(0x1CB2,  0,  0,  180);
+move(17.98,  -35.76,  0.80);  object(0x1CB2,  90,  110,  90);
+move(6.69,  0.02,  0.00);  object(0x1CB2,  90,  110,  90);
+move(1.02,  0.00,  0.00);  object(0x1CB2,  90,  110,  90);
+move(18.01,  14.12,  6.00);  object(0x1CB2,  0,  0,  0);
+move(-0.15,  14.70,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.04,  4.10,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-43.43,  0.06,  0.00);  object(0x1CB2,  0,  0,  0);
+move(0.15,  -14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(0.04,  -4.20,  0.00);  object(0x1CB2,  0,  0,  0);
+move(7.12,  -7.19,  0.00);  object(0x1CB2,  0,  0,  270);
+move(28.90,  -0.09,  0.00);  object(0x1CB2,  0,  0,  270);
+move(0.10,  33.11,  0.00);  object(0x1CB2,  0,  0,  270);
+move(-29.10,  0.09,  0.00);  object(0x1CB2,  0,  0,  270);
+move(-0.02,  -3.39,  3.40);  object(0x1CB2,  90,  90,  180);
+move(14.50,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(0.04,  -6.80,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-14.60,  -0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-14.50,  -0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(0.04,  -6.66,  0.00);  object(0x1CB2,  90,  90,  180);
+move(14.50,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(0.04,  -6.73,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-14.50,  -0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-14.70,  -0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(0.04,  -6.42,  0.00);  object(0x1CB2,  90,  90,  180);
+move(14.60,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+move(14.50,  0.10,  0.00);  object(0x1CB2,  90,  90,  180);
+moveto(-368.81,  -637.35,  12.76);  object(0x1CB2,  0,  0,  0);
+move(-0.13,  11.80,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-19.54,  -0.02,  0.00);  object(0x1CB2,  0,  0,  0);
+move(0.13,  -11.70,  0.00);  object(0x1CB2,  0,  0,  0);
+move(7.31,  -7.38,  0.00);  object(0x1CB2,  0,  0,  270);
+move(5.00,  0.01,  0.00);  object(0x1CB2,  0,  0,  270);
+move(-0.19,  26.40,  0.00);  object(0x1CB2,  0,  0,  90);
+move(-5.00,  -0.03,  0.00);  object(0x1CB2,  0,  0,  90);
+move(0.03,  -3.34,  3.40);  object(0x1CB2,  90,  90,  180);
+move(5.00,  -0.02,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-0.02,  -6.67,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-5.00,  0.02,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-0.02,  -6.82,  0.00);  object(0x1CB2,  90,  90,  180);
+move(5.00,  -0.02,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-0.02,  -6.11,  0.00);  object(0x1CB2,  90,  90,  180);
+move(-5.00,  0.02,  0.00);  object(0x1CB2,  90,  90,  180);
+move(18.76,  19.56,  -3.80);  object(0x1CB2,  90,  60,  180);
+move(-0.02,  -6.77,  0.00);  object(0x1CB2,  90,  60,  180);
+move(-0.02,  -6.74,  0.00);  object(0x1CB2,  90,  60,  180);
+move(-0.02,  -6.09,  0.00);  object(0x1CB2,  90,  60,  180);
+move(-1.51,  -3.25,  -3.00);  object(0x1CB2,  30,  0,  90);
+move(0.07,  26.27,  0.00);  object(0x1CB2,  30,  0,  90);
+move(-30.81,  -3.41,  3.10);  object(0x1CB2,  90,  240,  0);
+move(0.04,  -6.77,  0.00);  object(0x1CB2,  90,  240,  0);
+move(0.04,  -6.76,  0.00);  object(0x1CB2,  90,  240,  0);
+move(0.04,  -5.98,  0.00);  object(0x1CB2,  90,  240,  0);
+move(1.92,  -3.41,  -2.80);  object(0x1CB2,  330,  0,  90);
+move(-0.15,  26.27,  0.00);  object(0x1CB2,  330,  0,  90);
+move(7.70,  -2.13,  5.90);  object(0x1CB2,  90,  105,  90);
+move(6.79,  -0.04,  0.00);  object(0x1CB2,  90,  105,  90);
+move(6.19,  0.06,  0.00);  object(0x1CB2,  90,  105,  90);
+move(-0.01,  14.20,  0.60);  object(0x1CB2,  90,  80,  90);
+move(-6.79,  -0.07,  0.00);  object(0x1CB2,  90,  80,  90);
+move(-6.04,  -0.06,  0.00);  object(0x1CB2,  90,  80,  90);
+moveto(-369.36,  -660.92,  6.86);  object(0x1CB2,  90,  90,  0);
+move(-14.60,  0.04,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-3.90,  0.01,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-3.92,  -10.75,  0.00);  object(0x1CB2,  90,  90,  270);
+move(0.16,  -14.50,  0.00);  object(0x1CB2,  90,  90,  270);
+move(26.19,  14.50,  0.00);  object(0x1CB2,  90,  90,  270);
+move(0.16,  -14.50,  0.00);  object(0x1CB2,  90,  90,  270);
+move(-29.34,  0.09,  -3.30);  object(0x1CB2,  0,  0,  0);
+move(-0.12,  14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.06,  6.90,  0.00);  object(0x1CB2,  0,  0,  0);
+move(26.15,  -6.99,  0.00);  object(0x1CB2,  0,  0,  0);
+move(0.12,  -14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-7.35,  21.81,  0.00);  object(0x1CB2,  0,  0,  270);
+move(-7.30,  -0.05,  0.00);  object(0x1CB2,  0,  0,  270);
+move(-5.15,  -7.24,  0.00);  object(0x1CB2,  0,  0,  180);
+move(0.11,  -14.60,  0.00);  object(0x1CB2,  0,  0,  180);
+move(26.40,  0.19,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.11,  14.50,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.15,  6.70,  0.00);  object(0x1CB2,  0,  0,  180);
+moveto(-303.67,  -652.58,  9.30);  object(0x1CB2,  90,  90,  0);
+move(-14.60,  -0.08,  0.00);  object(0x1CB2,  90,  90,  0);
+move(0.04,  -6.80,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.50,  0.08,  0.00);  object(0x1CB2,  90,  90,  0);
+move(0.04,  -6.81,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.50,  -0.08,  0.00);  object(0x1CB2,  90,  90,  0);
+move(0.04,  -6.79,  0.00);  object(0x1CB2,  90,  90,  0);
+move(14.30,  0.08,  0.00);  object(0x1CB2,  90,  90,  0);
+move(0.03,  -6.02,  0.00);  object(0x1CB2,  90,  90,  0);
+move(-14.30,  -0.08,  0.00);  object(0x1CB2,  90,  90,  0);
+move(0.02,  -3.44,  -3.40);  object(0x1CB2,  0,  0,  90);
+move(14.20,  0.08,  0.00);  object(0x1CB2,  0,  0,  90);
+move(-21.49,  7.18,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.03,  14.50,  0.00);  object(0x1CB2,  0,  0,  180);
+move(-0.01,  4.80,  0.00);  object(0x1CB2,  0,  0,  180);
+move(92.21,  49.83,  3.40);  object(0x1CB2,  90,  90,  90);
+move(-16.32,  -69.15,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.03,  7.80,  0.00);  object(0x1CB2,  90,  90,  90);
+move(6.80,  0.02,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.05,  -14.60,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.07,  21.29,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-6.79,  -0.02,  0.00);  object(0x1CB2,  90,  90,  90);
+move(6.82,  -35.78,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.05,  -14.60,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.03,  -7.60,  0.00);  object(0x1CB2,  90,  90,  90);
+move(6.80,  0.02,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.05,  14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-0.04,  11.10,  0.00);  object(0x1CB2,  90,  90,  90);
+move(3.10,  -14.39,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.05,  -14.60,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.05,  -14.50,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.05,  -14.40,  0.00);  object(0x1CB2,  90,  90,  90);
+move(0.04,  -11.30,  0.00);  object(0x1CB2,  90,  90,  90);
+move(-12.65,  -7.22,  -3.40);  object(0x1CB2,  0,  0,  90);
+move(8.80,  0.01,  0.00);  object(0x1CB2,  0,  0,  90);
+move(7.21,  7.20,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.06,  14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.06,  14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.06,  14.50,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.06,  14.60,  0.00);  object(0x1CB2,  0,  0,  0);
+move(-0.05,  12.20,  0.00);  object(0x1CB2,  0,  0,  0);
+moveto(-254.64,  -652.06,  9.70);  object(0x01C2,  0,  0,  43);
+move(-0.88,  0.65,  0.00);  object(0x01C2,  0,  0,  30);
+move(-0.10,  -1.67,  0.00);  object(0x01C2,  0,  0,  34);
+move(-1.38,  1.54,  0.20);  object(0x01C1,  0,  0,  14);
+move(-1.75,  -0.39,  0.00);  object(0x01C1,  0,  0,  353);
+move(0.83,  0.19,  1.20);  object(0x01C1,  0,  0,  3);
+move(-2.20,  -0.37,  -1.30);  object(0x01BF,  0,  0,  338);
+move(-121.71,  0.18,  -2.50);  object(0x01BE,  0,  0,  0);
+move(1.00,  -0.01,  0.00);  object(0x01BE,  0,  0,  0);
+move(1.00,  -0.01,  0.00);  object(0x01BE,  0,  0,  0);
+move(1.00,  -0.01,  0.00);  object(0x01BE,  0,  0,  0);
+move(-0.60,  0.00,  0.90);  object(0x01BE,  0,  0,  0);
+move(-1.20,  0.01,  0.00);  object(0x01BE,  0,  0,  0);
+move(-2.86,  -0.14,  -0.80);  object(0x01BE,  0,  0,  346);
+moveto(-280.76,  -682.29,  10.85);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.50,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(0.00,  0.00,  3.30);  object(0x1904,  0,  0,  270);
+move(-2.60,  -0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(-2.60,  -0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(-2.60,  -0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(-2.60,  -0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(-2.60,  -0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(0.00,  0.00,  0.30);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(2.60,  0.01,  0.00);  object(0x1904,  0,  0,  270);
+move(-23.87,  28.97,  4.90);  object(0x1CB4,  0,  0,  60);
+move(-93.49,  1.63,  -12.40);  object(0x1CB3,  0,  0,  93);
+move(-0.06,  -0.95,  0.00);  object(0x1CB3,  0,  0,  93);
+move(-0.90,  0.05,  0.00);  object(0x1CB3,  0,  0,  93);
+move(0.06,  1.04,  0.00);  object(0x1CB3,  0,  0,  93);
+move(60.71,  -5.71,  3.70);  object(0x1CA8,  0,  0,  180);
+move(0.02,  -15.80,  0.00);  object(0x1CA8,  0,  0,  180);
+move(7.91,  -9.30,  0.00);  object(0x1CA8,  0,  0,  90);
+move(13.10,  0.02,  0.00);  object(0x1CA8,  0,  0,  90);
+move(-20.94,  7.85,  0.00);  object(0x1CA8,  0,  0,  180);
+move(27.14,  -5.10,  -1.21);  object(0x1C9D,  0,  0,  227);
+moveto(-251.65,  -623.48,  2.28);  object(0x1C92,  0,  0,  34);
+move(-14.34,  -57.79,  7.00);  object(0x1CCD,  0,  0,  126);
+move(0.93,  -0.10,  0.00);  object(0x1CCD,  0,  0,  127);
+move(-55.58,  9.38,  0.10);  object(0x1CD5,  0,  0,  192);
+move(-1.93,  8.57,  5.20);  object(0x1CD6,  0,  0,  76);
+move(0.74,  -14.27,  0.00);  object(0x1CD6,  0,  0,  11);
+move(84.46,  -5.02,  -3.90);  object(0x1CA8,  0,  0,  90);
+move(-7.70,  0.06,  0.00);  object(0x1CA8,  0,  0,  90);
+move(15.53,  7.79,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.07,  15.70,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.07,  15.80,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.07,  15.70,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.08,  15.90,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.02,  4.80,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-139.52,  -36.61,  6.00);  object(0x01C2,  0,  0,  241);
+move(-18.07,  -0.44,  0.00);  object(0x01C2,  0,  0,  220);
+move(122.71,  -3.83,  -6.50);  object(0x01C5,  0,  0,  180);
+move(2.66,  0.02,  0.00);  object(0x01C5,  0,  0,  180);
+move(-242.22,  19.54,  0.70);  object(0x1CA8,  0,  0,  180);
+move(0.03,  -13.00,  0.00);  object(0x1CA8,  0,  0,  180);
+move(7.95,  -7.79,  0.00);  object(0x1CA8,  0,  0,  270);
+move(15.80,  0.12,  0.00);  object(0x1CA8,  0,  0,  270);
+move(7.85,  7.87,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.04,  27.59,  0.00);  object(0x1CA8,  0,  0,  180);
+move(-0.96,  -18.91,  -1.20);  object(0x01D0,  0,  0,  80);
+move(-0.50,  10.97,  0.00);  object(0x01D0,  0,  0,  62);
+move(1.84,  -10.66,  0.20);  object(0x01B8,  0,  0,  348);
+move(0.08,  10.04,  0.00);  object(0x01B8,  0,  0,  313);
+move(-16.55,  -23.95,  0.00);  object(0x01B8,  0,  0,  90);
+move(-14.34,  12.29,  0.00);  object(0x01B8,  0,  0,  181);
+move(15.48,  16.61,  0.00);  object(0x01B8,  0,  0,  275);
+move(-21.61,  2.77,  1.00);  object(0x1CA8,  0,  0,  140);
+move(-7.86,  13.40,  0.00);  object(0x1CA8,  0,  0,  160);
+setfloat(pobj + 0x30, -261.37,  -627.72,  10.35);
+}
+else
+{
+    selectobject(obj);
+    if(state == 0)
+    {
+         if(getfloat(pplayer+0x30) < -267 &&getfloat(pplayer+0x30) > -282 &&getfloat(pplayer+0x34) < 
+
+-636.73&&getfloat(pplayer+0x34) > -655.96) state = 1;
+         else state = 2;
+    }
+    if(state == 1)
+    {
+         if(getfloat(obj+0x38) >= top) state = 0;
+         else setfloat(obj + 0x38,  getfloat(obj+0x38) + 0.04);
+    }
+    else if(state == 2)
+    {
+         if(getfloat(obj+0x38) <= bottom) state = 0;
+         else setfloat(obj + 0x38,  getfloat(obj+0x38) - 0.04);
+    }
+    propagateobject();
+}
+pspawn = 0x08E81290;
+setint(pspawn,   263);
+setfloat(pspawn + 4,   -478.74,  -631.65,  10.37,   0);
+pspawn += 0x30;
+setint(pspawn,   278);
+setfloat(pspawn + 4,   -397.77,  -687.82,  6.00,   180);
+pspawn += 0x30;
+setint(pspawn,   264);
+setfloat(pspawn + 4,   -384.31,  -690.02,  6.00,   180);
+pspawn += 0x30;
+setint(pspawn,   247);
+setfloat(pspawn + 4,   -372.25,  -686.85,  6.00,   180);
+pspawn += 0x30;
+setint(pspawn,   248);
+setfloat(pspawn + 4,   -359.53,  -689.44,  6.00,   180);
+pspawn += 0x30;
+setint(pspawn,   233);
+setfloat(pspawn + 4,   -274.43,  -694.61,  6.00,   90);
+pspawn += 0x30;
+setint(pspawn,   198);
+setfloat(pspawn + 4,   -392.09,  -653.71,  7.96,   180);
+pspawn += 0x30;
+setint(pspawn,   230);
+setfloat(pspawn + 4,   -435.48,  -617.95,  10.37,   90);
+pspawn += 0x30;
+setint(pspawn,   275);
+setfloat(pspawn + 4,   -278.90,  -592.08,  12.84,   0);
+pspawn += 0x30;
+setint(pspawn,   170);
+setfloat(pspawn + 4,   -266.08,  -630.22,  10.35,   90);
+pspawn += 0x30;
+setint(pspawn,   212);
+setfloat(pspawn + 4,   -257.14,  -617.43,  10.34,   140);
+pspawn += 0x30;
+
+#off
+obj = state = 0;
+
+
+#cheat Shadow car
+//ID: 19085
+//Score: 38
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make any car your driving in have the shadow under the car. Can't see the car's shell basically. Work's on plane's (except helicopter)
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-1.gif
+//Time: 21/12/2006 17:29:18
+//Working: Yes
+sethex(pcar + 0x4D,  26);
+

@@ -1,0 +1,1093 @@
+#cheat Mini Bike
+setchar(pcar + 0x50E, 0x7f);
+#off
+setchar(pcar + 0x50E, 0x1c);
+
+#cheat Your Bike Has No Front Wheel
+setchar(pcar + 0x50F, 0x79);
+#off
+setchar(pcar + 0x50F, 0x3f);
+
+#cheat Rocket fist grenade in custom weapon set
+setchar(8A93AD0, 10)
+
+#cheat low waves
+setfloat(0x08B5E458, 0);
+setfloat(0x08B386C8, 0);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat 1 foot waves
+setfloat(0x08B5E458, 1);
+setfloat(0x08B386C8, 1);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat 5 foot waves
+setfloat(0x08B5E458, 5);
+setfloat(0x08B386C8, 5);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat 10 foot waves
+setfloat(0x08B5E458, 10);
+setfloat(0x08B386C8, 10);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat 20 foot waves
+setfloat(0x08B5E458, 20);
+setfloat(0x08B386C8, 20);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat ridiculous waves
+setfloat(0x08B5E458, 50);
+setfloat(0x08B386C8, 50);
+#off
+setfloat(0x08B386C8, .25);
+
+#cheat Stick taxi drivers
+setchar(0x09b45f03, 140);
+setchar(0x09b45f07, 62);
+setchar(0x09b45f0b, 63);
+#cheat Stick Off
+setchar(0x09b45f03, 62);
+setchar(0x09b45f07, 63);
+setchar(0x09b45f0b, 63);
+
+#cheat replace bat with a big pointy piece of metal
+setchar(0x09D419FD,0xe ,1)
+
+#cheat Cricket Bat
+setchar(0x09D419A2, 0xFF);
+
+#cheat Very long uzi
+setfloat(0x09D5e240, 2)
+
+#cheat mini Assualt Rifle
+setfloat(0x09D53210, 0.125, 0.0625, 0.1875)
+setfloat(0x09D53220, 0.0529802739620208740, 0.00805418565869331360, 0.0420752018690109250)
+
+#cheat Walk On The Sky
+//ID: 4310
+//Score: 10
+//Author: Jeffrey van den Hondel
+//Category: Player
+//Description: easy turn on the cheat if you wanne stop furt turn the cheat of and then step in a car
+//Image: http://img317.imageshack.us/img317/1124/video19rf.gif
+//Time: 02/02/2006 14:28:58
+//Working: Yes
+setfloat(pplayer + 0x000000A0, -8);
+
+#cheat Heavy Toni
+//by vettefan88
+//Makes Toni extremely heavy allowing him to plow through traffic
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+setfloat(pplayer + 0x128, 0, 0);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat Giant Toni
+// by matt420bad
+setchar(099d441e, 0xff)
+// camera distance by Vettefan
+setfloat(0x08B833DC, 8.5);
+
+#cheat Huge Tony
+// by matt420bad
+setchar(099d4422, 0xff)
+setchar(099d441e, 0xff)
+// camera distance by Vettefan
+setfloat(0x08B833DC, 17);
+
+// by vettefan
+#cheat Super Punch
+setchar(pplayer + 0x0bb3, 0x01);
+
+#cheat Lamborghini Doors
+//by vettefan
+//enter vehicle once for it to work.
+setfloat(pcar + 0x3d8, 1);
+setfloat(pcar + 0x400, 0, -1.26, 1);
+setfloat(pcar + 0x438, 1);
+setfloat(pcar + 0x460, 0, -1.26, 1);
+
+#cheat ultimate locked cam
+setchar(0x08B8344C, 4)
+setchar(pplayer + 0x560, 1);
+#off
+setchar(pplayer + 0x560, 0);
+
+#cheat Lock Camera
+setchar(pplayer + 0x560, 1);
+#off
+setchar(pplayer + 0x560, 0);
+
+#cheat Time travel mission select, must load again to go back in time
+// by Mister Enchilada
+// to go back in time to Portland, you must load the savegame again while the cheat is enabled
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 8); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 8); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 9); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 5); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 6); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Matts Blood Mod
+setchar(0x08E308E3, 64); setchar(0x08E308F3, 64);
+setchar(0x08E308E7, 64); setchar(0x08E308F7, 64);
+setchar(0x08E308EB, 64); setchar(0x08E308FB, 64);
+setchar(0x08E308EF, 64); setchar(0x08E308FF, 64);
+setchar(0x08E30903, 64); setchar(0x08E30913, 64);
+setchar(0x08E30907, 64); setchar(0x08E30917, 64);
+setchar(0x08E3090B, 64); setchar(0x08E3091B, 64);
+setchar(0x08E3090F, 64); setchar(0x08E3091F, 64);
+setchar(0x08E30923, 64); setchar(0x08E30933, 64);
+setchar(0x08E30927, 64); setchar(0x08E30937, 64);
+setchar(0x08E3092B, 64); setchar(0x08E3093B, 64);
+setchar(0x08E3092F, 64); setchar(0x08E3093F, 64);
+setchar(0x08E30943, 64); setchar(0x08E30943, 64);
+setchar(0x08E30947, 64); setchar(0x08E30947, 64);
+setchar(0x08E3094B, 64); setchar(0x08E3094B, 64);
+setchar(0x08E3094F, 64); setchar(0x08E3094F, 64);
+setchar(0x08E30953, 64); setchar(0x08E30963, 64);
+setchar(0x08E30957, 64); setchar(0x08E30967, 64);
+setchar(0x08E3095B, 64); setchar(0x08E3096B, 64);
+setchar(0x08E3095F, 64); setchar(0x08E3096F, 64);
+setchar(0x08E30973, 64); setchar(0x08E30983, 64);
+setchar(0x08E30977, 64); setchar(0x08E30987, 64);
+setchar(0x08E3097B, 64); setchar(0x08E3098B, 64);
+setchar(0x08E3097F, 64); setchar(0x08E3098F, 64);
+setchar(0x08E30993, 64); setchar(0x08E309A3, 64);
+setchar(0x08E30997, 64); setchar(0x08E309A7, 64);
+setchar(0x08E3099B, 64); setchar(0x08E309AB, 64);
+setchar(0x08E3099F, 64); setchar(0x08E309AF, 64);
+setchar(0x08E309B3, 64); setchar(0x08E309C3, 64);
+setchar(0x08E309B7, 64); setchar(0x08E309C7, 64);
+setchar(0x08E309BB, 64); setchar(0x08E309CB, 64);
+setchar(0x08E309BF, 64); setchar(0x08E309CF, 64);
+setchar(0x08E309D3, 64); setchar(0x08E309E3, 64);
+setchar(0x08E309D7, 64); setchar(0x08E309E7, 64);
+setchar(0x08E309DB, 64); setchar(0x08E309EB, 64);
+setchar(0x08E309DF, 64); setchar(0x08E309EF, 64);
+setchar(0x08E309F3, 64); setchar(0x08E309F7, 64);
+setchar(0x08E309FB, 64); setchar(0x08E309FF, 64);
+setchar(0x08E30A03, 64); setchar(0x08E30A13, 64);
+setchar(0x08E30A07, 64); setchar(0x08E30A17, 64);
+setchar(0x08E30A0B, 64); setchar(0x08E30A1B, 64);
+setchar(0x08E30A0F, 64); setchar(0x08E30A1F, 64);
+setchar(0x08E30A23, 64); setchar(0x08E30A33, 64);
+setchar(0x08E30A27, 64); setchar(0x08E30A37, 64);
+setchar(0x08E30A2B, 64); setchar(0x08E30A3B, 64);
+setchar(0x08E30A2F, 64); setchar(0x08E30A3F, 64);
+setchar(0x08E30A43, 64); setchar(0x08E30A43, 64);
+setchar(0x08E30A47, 64); setchar(0x08E30A47, 64);
+setchar(0x08E30A4B, 64); setchar(0x08E30A4B, 64);
+setchar(0x08E30A4F, 64); setchar(0x08E30A4F, 64);
+setchar(0x08E30A53, 64); setchar(0x08E30A63, 64);
+setchar(0x08E30A57, 64); setchar(0x08E30A67, 64);
+setchar(0x08E30A5B, 64); setchar(0x08E30A6B, 64);
+setchar(0x08E30A5F, 64); setchar(0x08E30A6F, 64);
+setchar(0x08E30A73, 64); setchar(0x08E30A83, 64);
+setchar(0x08E30A77, 64); setchar(0x08E30A87, 64);
+setchar(0x08E30A7B, 64); setchar(0x08E30A8B, 64);
+setchar(0x08E30A7F, 64); setchar(0x08E30A8F, 64);
+setchar(0x08E30A93, 64); setchar(0x08E30AA3, 64);
+setchar(0x08E30A97, 64); setchar(0x08E30AA7, 64);
+setchar(0x08E30A9B, 64); setchar(0x08E30AAB, 64);
+setchar(0x08E30A9F, 64); setchar(0x08E30AAF, 64);
+setchar(0x08E30AB3, 64); setchar(0x08E30AC3, 64);
+setchar(0x08E30AB7, 64); setchar(0x08E30AC7, 64);
+setchar(0x08E30ABB, 64); setchar(0x08E30ACB, 64);
+setchar(0x08E30ABF, 64); setchar(0x08E30ACF, 64);
+setchar(0x08E30AD3, 64); setchar(0x08E30AE3, 64);
+setchar(0x08E30AD7, 64); setchar(0x08E30AE7, 64);
+setchar(0x08E30ADB, 64); setchar(0x08E30AEB, 64);
+setchar(0x08E30ADF, 64); setchar(0x08E30AEF, 64);
+setchar(0x08E30AF3, 64); setchar(0x08E30AF7, 64);
+setchar(0x08E30AFB, 64); setchar(0x08E30AFF, 64);
+setchar(0x08E30B03, 64); setchar(0x08E30B13, 64);
+setchar(0x08E30B07, 64); setchar(0x08E30B17, 64);
+setchar(0x08E30B0B, 64); setchar(0x08E30B1B, 64);
+setchar(0x08E30B0F, 64); setchar(0x08E30B1F, 64);
+setchar(0x08E30B23, 64); setchar(0x08E30B33, 64);
+setchar(0x08E30B27, 64); setchar(0x08E30B37, 64);
+setchar(0x08E30B2B, 64); setchar(0x08E30B3B, 64);
+setchar(0x08E30B2F, 64); setchar(0x08E30B3F, 64);
+setchar(0x08E30B43, 64); setchar(0x08E30B43, 64);
+setchar(0x08E30B47, 64); setchar(0x08E30B47, 64);
+setchar(0x08E30B4B, 64); setchar(0x08E30B4B, 64);
+setchar(0x08E30B4F, 64); setchar(0x08E30B4F, 64);
+setchar(0x08E30B53, 64); setchar(0x08E30B63, 64);
+setchar(0x08E30B57, 64); setchar(0x08E30B67, 64);
+setchar(0x08E30B5B, 64); setchar(0x08E30B6B, 64);
+setchar(0x08E30B5F, 64); setchar(0x08E30B6F, 64);
+setchar(0x08E30B73, 64); setchar(0x08E4E413, 64);
+setchar(0x08E30B77, 64); setchar(0x08E4E423, 64);
+setchar(0x08E30B7B, 64);
+setchar(0x08E30B7F, 64); 
+
+#cheat Missions: Home, The Offer, Bone Voyeur, Snappy Dresser, Shop 'Til You Strop
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 1); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 1); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 1); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 1); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 1); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Slacker, Ho Selecta, Don 60 Sec, Lil China, Taken for a Ride
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 2); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 2); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 2); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 2); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 2); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Dealing Revenge, Frighteners, Volatile, Grease Sucho, Booby Prize
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 3); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 3); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 3); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 3); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 3); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Snuff, Rollercoaster, Blow Up Dolls, Dead Meat, Bike Heat
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 4); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 4); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 4); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 4); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 4); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Smash Grab, Contra, Sal's Salvation, No Son of Mine, Overdose of Trouble
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 5); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 5); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 5); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 5); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 5); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Hot Wheels, Sindacco Sabotage, Guns of Leone
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 6); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 6); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 6); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 6); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 6); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Chainsaw, Trouble w/Triads, Calm Before Storm
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 7); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 7); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 7); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 6); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 6); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Missions: Driving Mr Leone, The Made Man
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 8); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 8); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 8); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 6); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 6); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat teleport to RC's Monster Park
+teleport(-1071.48, -929.18, 11.11)
+//By RCisPIMP
+#cheat fire leave on!!
+setfloat(08B89E40, -1072.43, -933.96, 21.51)
+setchar(08B89E30,1)
+setfloat(08B89E80, -1071.00, -934.44, 21.61)
+setchar(08B89E70,1)
+setfloat(8B89EC0, -1074.07, -934.28, 21.61)
+setchar(8B89EB0,1)
+setfloat(08B89F00,-964.57, -913.42, 12.57)
+setchar(08B89Ef0,1)
+setfloat(08B89F40,-962.83, -913.53, 12.57)
+setchar(08B89F30,1)
+setfloat(08B89F80,-961.00, -913.68, 12.57)
+setchar(08B89F70,1)
+setfloat(08B89Fc0,-959.40, -913.85, 12.57)
+setchar(08B89Fb0,1)
+setfloat(08B8a000,-959.55, -916.46, 12.57)
+setchar(08B89Ff0,1)
+setfloat(08B8a040,-961.22, -917.29, 12.57)
+setchar(08B8a030,1)
+setfloat(08B8a080,-962.50, -915.55, 12.57)
+setchar(08B8a070,1)
+setfloat(08B8a0c0,-963.89, -916.70, 12.57)
+setchar(08B8a0b0,1)
+setfloat(08B8a100,-964.86, -917.56, 12.57)
+setchar(08B8a0f0,1)
+#cheat RC's Monster Park
+moveto(-1022.20,-917.69,12.22);  object(0x01BF,45,0,92);
+move(0.24,8.00,0.00);  object(0x01BF,45,0,92);
+move(-0.48,-15.80,0.00);  object(0x01BF,45,0,92);
+move(2.30,-0.12,2.30);  object(0x01BF,45,0,91);
+move(0.18,8.10,0.00);  object(0x01BF,45,0,91);
+move(0.17,7.70,0.00);  object(0x01BF,45,0,91);
+move(1.69,0.12,1.50);  object(0x01BF,35,0,92);
+move(-0.18,-8.00,0.00);  object(0x01BF,35,0,92);
+move(-0.27,-7.80,0.00);  object(0x01BF,35,0,92);
+move(-5.48,15.98,-4.70);  object(0x01BF,55,0,94);
+move(-0.51,-7.88,0.00);  object(0x01BF,55,0,94);
+move(0.35,-7.74,0.20);  object(0x01BF,60,0,92);
+move(1.98,7.34,1.30);  object(0x01BF,55,0,91);
+moveto(-1008.79,-917.48,11.43);  object(0x0DB7,0,0,2);
+move(3.60,-0.10,0.00);  object(0x0DB7,0,0,2);
+move(3.60,-0.10,0.00);  object(0x0DB7,0,0,2);
+move(4.02,-3.26,-0.20);  object(0x0DB6,315,0,272);
+move(0.06,2.00,0.00);  object(0x0DB6,315,0,272);
+move(0.05,1.90,0.00);  object(0x0DB6,315,0,272);
+move(-118.62,20.03,-0.60);  object(0x0DB6,0,0,180);
+move(-2.38,-4.09,0.00);  object(0x0DB6,0,0,180);
+move(-2.62,3.70,0.00);  object(0x0DB6,0,0,180);
+move(-2.37,-4.29,0.00);  object(0x0DB6,0,0,180);
+move(5.12,-4.67,0.00);  object(0x0DB6,0,0,180);
+move(-2.94,0.30,0.00);  object(0x0DB6,0,0,180);
+move(6.96,1.25,0.00);  object(0x0DB6,0,0,180);
+move(0.00,0.00,0.50);  object(0x0DB6,0,0,180);
+move(0.04,-0.20,0.40);  object(0x0DB6,0,0,180);
+move(3.25,-0.32,-0.90);  object(0x0DB6,325,0,270);
+move(0.32,-1.77,0.00);  object(0x0DB6,325,0,270);
+moveto(-1075.01,-887.89,9.81);  object(0x0F25,0,0,2);
+move(4.06,-77.16,0.20);  object(0x0F25,0,0,184);
+move(-0.45,7.24,3.00);  object(0x0F25,0,0,185);
+move(-1.34,23.78,6.90);  object(0x021C,90,0,85);
+move(0.00,0.00,5.10);  object(0x021C,90,0,85);
+move(3.94,-0.70,-2.40);  object(0x021C,0,0,85);
+move(-8.18,1.44,0.00);  object(0x021C,0,0,85);
+moveto(-1096.70,-939.16,10.61);  object(0x0218,0,0,209);
+move(0.77,1.37,0.00);  object(0x0218,0,0,209);
+move(0.74,1.32,0.00);  object(0x0218,0,0,209);
+move(0.58,1.04,0.00);  object(0x0218,0,0,209);
+move(0.00,0.00,0.90);  object(0x0218,0,0,209);
+move(-0.94,-1.69,0.00);  object(0x0218,0,0,209);
+move(-0.85,-1.98,0.00);  object(0x0218,0,0,207);
+move(-0.00,0.00,0.90);  object(0x0218,0,0,208);
+move(1.38,-0.72,-1.80);  object(0x0218,0,0,209);
+move(1.39,2.49,0.00);  object(0x0218,0,0,209);
+move(-21.11,-1.21,-0.10);  object(0x0DB6,0,0,179);
+move(-0.03,-0.05,0.60);  object(0x0DB6,0,0,179);
+move(-2.79,1.56,-0.40);  object(0x0DB6,0,0,179);
+move(-3.05,1.71,0.00);  object(0x0DB6,0,0,179);
+move(-4.99,0.08,0.00);  object(0x0DB6,0,0,179);
+move(-5.21,-1.34,0.00);  object(0x0DB6,0,0,179);
+move(2.53,-1.41,0.00);  object(0x0DB6,0,0,179);
+move(5.16,-1.83,0.00);  object(0x0DB6,0,0,179);
+move(0.00,0.00,0.50);  object(0x0DB6,0,0,179);
+move(-0.16,3.42,-0.40);  object(0x0DB6,345,0,179);
+moveto(-1118.72,-937.47,11.31);  object(0x0251,345,0,153);
+move(19.80,-1.49,0.00);  object(0x0251,345,0,108);
+move(0.00,0.00,0.00);  object(0x0251,345,0,108);
+move(2.28,3.00,0.00);  object(0x0251,345,0,108);
+move(-1.27,-1.13,0.00);  object(0x0251,345,0,108);
+move(1.76,2.84,0.00);  object(0x0251,345,0,108);
+move(-23.55,-9.44,0.00);  object(0x0251,345,0,229);
+move(-7.07,2.18,0.10);  object(0x0251,345,0,355);
+move(-37.81,-4.02,1.30);  object(0x01BF,40,0,275);
+move(1.11,0.02,-0.70);  object(0x01BF,55,0,276);
+move(0.78,7.46,0.00);  object(0x01BF,55,0,276);
+move(-1.32,0.14,0.60);  object(0x01BF,40,0,276);
+move(-4.15,0.41,0.00);  object(0x01BF,40,0,96);
+move(-0.77,-7.76,0.00);  object(0x01BF,40,0,96);
+move(-0.89,0.09,-0.60);  object(0x01BF,55,0,96);
+move(0.78,7.86,0.00);  object(0x01BF,55,0,96);
+moveto(-1142.90,-916.79,12.71);  object(0x01BF,20,0,273);
+move(1.06,7.86,-1.20);  object(0x01BF,20,0,274);
+move(0.93,0.07,0.00);  object(0x01BF,60,0,270);
+move(0.01,-7.90,0.00);  object(0x01BF,60,0,270);
+move(-0.59,-0.02,0.90);  object(0x01BF,45,0,274);
+move(-0.16,8.07,0.00);  object(0x01BF,45,0,272);
+move(-4.02,-7.83,0.30);  object(0x01BF,25,0,93);
+move(-1.92,0.11,-0.90);  object(0x01BF,55,0,93);
+move(0.78,-0.04,0.60);  object(0x01BF,45,0,93);
+move(0.63,7.88,0.00);  object(0x01BF,45,0,93);
+move(0.08,0.10,0.00);  object(0x01BF,35,0,91);
+move(129.59,-18.21,7.50);  object(0x0251,0,0,92);
+move(0.08,2.40,0.00);  object(0x0251,0,0,92);
+move(0.10,2.90,0.00);  object(0x0251,0,0,92);
+move(0.16,4.70,0.00);  object(0x0251,0,0,92);
+move(0.11,3.10,0.00);  object(0x0251,0,0,92);
+move(0.15,4.20,0.00);  object(0x0251,0,0,92);
+moveto(-1123.49,-904.40,11.11);  object(0x0DB6,0,0,1);
+move(7.41,7.24,0.10);  object(0x0DB6,0,0,180);
+move(-9.05,-4.61,-0.50);  object(0x0DB6,0,30,184);
+move(-34.19,7.58,0.70);  object(0x0DB7,0,0,269);
+move(0.01,-4.21,0.00);  object(0x0DB7,0,0,269);
+move(0.14,8.41,0.00);  object(0x0DB7,0,0,269);
+move(2.80,-12.51,-0.10);  object(0x0DB6,315,0,357);
+move(-2.00,-0.11,0.00);  object(0x0DB6,315,0,357);
+move(-9.56,6.35,-0.20);  object(0x0DB6,315,0,89);
+move(-0.04,2.80,0.00);  object(0x0DB6,315,0,89);
+moveto(-1236.55,-945.38,11.44);  object(0x0DB7,0,0,273);
+move(0.20,3.89,0.00);  object(0x0DB7,0,0,273);
+move(8.10,-0.43,-0.10);  object(0x0DB6,325,0,273);
+move(-0.19,-3.49,0.00);  object(0x0DB6,325,0,273);
+move(-6.11,8.00,-0.10);  object(0x0DB6,325,0,185);
+move(-2.59,0.22,0.00);  object(0x0DB6,325,0,185);
+move(5.40,22.43,-0.60);  object(0x0DB6,0,30,14);
+move(-1.75,0.33,0.00);  object(0x0DB6,0,325,14);
+move(1.28,11.03,0.00);  object(0x0DB6,0,325,14);
+move(2.02,-0.23,0.00);  object(0x0DB6,0,30,14);
+move(11.06,-1.93,0.00);  object(0x0DB6,0,30,14);
+move(-1.64,0.43,0.00);  object(0x0DB6,0,330,14);
+move(-1.26,-11.29,0.00);  object(0x0DB6,0,330,14);
+move(1.77,-0.59,0.00);  object(0x0DB6,0,30,14);
+move(-19.52,3.73,0.00);  object(0x0DB6,0,30,14);
+move(-1.70,0.64,0.00);  object(0x0DB6,0,330,14);
+move(-0.41,9.97,0.00);  object(0x0DB6,0,330,14);
+move(1.66,-0.29,0.00);  object(0x0DB6,0,30,14);
+move(-11.76,-9.10,-0.13);  object(0x0218,0,0,249);
+move(-0.47,1.24,0.00);  object(0x0218,0,0,249);
+move(-1.22,-0.46,0.00);  object(0x0218,0,0,249);
+move(2.52,0.96,0.00);  object(0x0218,0,0,249);
+move(-0.58,1.53,0.00);  object(0x0218,0,0,249);
+move(-1.40,-0.53,0.00);  object(0x0218,0,0,249);
+move(-1.31,-0.50,0.00);  object(0x0218,0,0,249);
+move(0.00,0.00,0.80);  object(0x0218,0,0,249);
+move(1.31,0.50,0.00);  object(0x0218,0,0,249);
+move(1.40,0.53,0.00);  object(0x0218,0,0,249);
+move(-0.58,1.52,-0.90);  object(0x0218,0,0,249);
+move(-1.59,-0.60,0.00);  object(0x0218,0,0,249);
+move(-1.22,-0.46,0.00);  object(0x0218,0,0,249);
+move(-0.63,1.27,1.10);  object(0x0251,0,0,273);
+move(2.10,0.62,0.00);  object(0x0251,0,0,4);
+move(0.59,-2.84,1.50);  object(0x0251,0,0,4);
+#cheat TABLE TOP
+moveto(-962.21,-916.53,12.06);  object(0x01BF,90,0,94);
+move(-0.42,-7.14,-2.30);  object(0x01BF,90,35,92);
+move(0.79,14.29,0.00);  object(0x01BF,90,325,92);
+moveto(-968.68,-916.08,10.64);  object(0x01BF,65,0,94);
+move(12.90,-1.01,0.30);  object(0x01BF,70,0,274);
+#cheat Half pipe
+moveto(-877.35,-900.66,11.34);  object(0x01BF,55,0,2);
+move(7.70,-0.23,0.00);  object(0x01BF,55,0,2);
+move(0.11,2.30,1.70);  object(0x01BF,35,0,2);
+move(-7.79,0.29,0.00);  object(0x01BF,35,0,2);
+move(0.02,1.30,1.80);  object(0x01BF,15,0,2);
+move(7.80,-0.25,0.00);  object(0x01BF,15,0,2);
+move(0.03,0.79,1.60);  object(0x01BF,0,0,2);
+move(-7.90,0.26,0.00);  object(0x01BF,0,0,2);
+moveto(-877.68,-945.36,11.73);  object(0x01BF,55,0,181);
+move(7.80,-0.09,0.00);  object(0x01BF,55,0,181);
+move(-0.03,-2.75,2.20);  object(0x01BF,35,0,181);
+move(-7.80,0.09,0.00);  object(0x01BF,35,0,181);
+move(-0.02,-1.90,3.20);  object(0x01BF,15,0,181);
+move(7.80,-0.09,0.00);  object(0x01BF,15,0,181);
+move(-0.00,-0.72,2.30);  object(0x01BF,0,0,181);
+move(-7.90,0.08,0.00);  object(0x01BF,0,0,181);
+#cheat Monster BF
+// by Edison Carter,Vettefan,skiller
+setfloat(0x09441DA0  + 0x4c, 1.5);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945ACA0 , -.75);
+setfloat(0x0945C6E8 - 0x945C6E0 + 0x945ACA0 , .5);
+setfloat(0x0945C798 - 0x945C6E0 + 0x945ACA0 , .5);
+setfloat(0x0945C7A0 - 0x945C6E0 + 0x945ACA0 , 0);
+setfloat(0x0945C7A8 - 0x945C6E0 + 0x945ACA0 , .6);
+setint(0x08E38A38, 155);
+
+#cheat Fast Clouds
+setfloat(0x08B386C8, 32, 32, 32, 32, 32, 32, 32, 32);
+
+#cheat NO TRAFFIC
+//BY: Vettefan
+// this cheat will remove all traffic from the streets
+//get in a car BEFORE entering this cheat.
+//leaving your car will cause it to dissapear
+//de-activate the cheat to make cars atart appearing again
+setchar(0x0997B088, 1);
+setchar(0x0997B768, 1);
+setchar(0x0997BE48, 1);
+setchar(0x0997C528, 1);
+setchar(0x0997CC08, 1);
+setchar(0x0997D2E8, 1);
+setchar(0x0997D9C8, 1);
+setchar(0x0997E0A8, 1);
+setchar(0x0997E788, 1);
+setchar(0x0997EE68, 1);
+setchar(0x0997F548, 1);
+setchar(0x0997FC28, 1);
+setchar(0x09989A48, 1);
+setchar(0x0998A128, 1);
+setchar(0x0998A808, 1);
+setchar(0x0998AEE8, 1);
+setchar(0x0998B5C8, 1);
+setchar(0x0998BCA8, 1);
+setchar(0x0998C388, 1);
+setchar(0x0998CA68, 1);
+setchar(0x0998D148, 1);
+setchar(0x0998D828, 1);
+setchar(0x0998DF08, 1);
+setchar(0x0998E5E8, 1);
+setchar(0x0998ECC8, 1);
+setchar(0x0998F3A8, 1);
+setchar(0x0998FA88, 1);
+setchar(0x09990168, 1);
+setchar(0x09990848, 1);
+setchar(0x09990F28, 1);
+setchar(0x09991608, 1);
+setchar(0x09991CE8, 1);
+setchar(0x099923C8, 1);
+setchar(0x09992AA8, 1);
+setchar(0x09993188, 1);
+setchar(0x09993868, 1);
+setchar(0x09993F48, 1);
+setchar(0x09994628, 1);
+setchar(0x09989368, 1);
+setchar(0x09988C88, 1);
+setchar(0x099885A8, 1);
+setchar(0x09987EC8, 1);
+setchar(0x099877E8, 1);
+setchar(0x09987108, 1);
+setchar(0x09986A28, 1);
+setchar(0x09986348, 1);
+setchar(0x09985C68, 1);
+setchar(0x09985588, 1);
+setchar(0x09984EA8, 1);
+setchar(0x099847C8, 1);
+setchar(0x099840E8, 1);
+setchar(0x09983A08, 1);
+setchar(0x09983328, 1);
+setchar(0x09982C48, 1);
+setchar(0x09982568, 1);
+setchar(0x09981E88, 1);
+setchar(0x099817A8, 1);
+setchar(0x099810C8, 1);
+setchar(0x099809E8, 1);
+setchar(0x09980308, 1);
+setchar(0x0998A708, 1);
+setchar(pcar + 0x00000048, 0);
+
+#cheat NO TRAFFIC
+setchar(0x0997B088, 1);
+setchar(0x0997B768, 1);
+setchar(0x0997BE48, 1);
+setchar(0x0997C528, 1);
+setchar(0x0997CC08, 1);
+setchar(0x0997D2E8, 1);
+setchar(0x0997D9C8, 1);
+setchar(0x0997E0A8, 1);
+setchar(0x0997E788, 1);
+setchar(0x0997EE68, 1);
+setchar(0x0997F548, 1);
+setchar(0x0997FC28, 1);
+setchar(0x09989A48, 1);
+setchar(0x0998A128, 1);
+setchar(0x0998A808, 1);
+setchar(0x0998AEE8, 1);
+setchar(0x0998B5C8, 1);
+setchar(0x0998BCA8, 1);
+setchar(0x0998C388, 1);
+setchar(0x0998CA68, 1);
+setchar(0x0998D148, 1);
+setchar(0x0998D828, 1);
+setchar(0x0998DF08, 1);
+setchar(0x0998E5E8, 1);
+setchar(0x0998ECC8, 1);
+setchar(0x0998F3A8, 1);
+setchar(0x0998FA88, 1);
+setchar(0x09990168, 1);
+setchar(0x09990848, 1);
+setchar(0x09990F28, 1);
+setchar(0x09991608, 1);
+setchar(0x09991CE8, 1);
+setchar(0x099923C8, 1);
+setchar(0x09992AA8, 1);
+setchar(0x09993188, 1);
+setchar(0x09993868, 1);
+setchar(0x09993F48, 1);
+setchar(0x09994628, 1);
+setchar(0x09989368, 1);
+setchar(0x09988C88, 1);
+setchar(0x099885A8, 1);
+setchar(0x09987EC8, 1);
+setchar(0x099877E8, 1);
+setchar(0x09987108, 1);
+setchar(0x09986A28, 1);
+setchar(0x09986348, 1);
+setchar(0x09985C68, 1);
+setchar(0x09985588, 1);
+setchar(0x09984EA8, 1);
+setchar(0x099847C8, 1);
+setchar(0x099840E8, 1);
+setchar(0x09983A08, 1);
+setchar(0x09983328, 1);
+setchar(0x09982C48, 1);
+setchar(0x09982568, 1);
+setchar(0x09981E88, 1);
+setchar(0x099817A8, 1);
+setchar(0x099810C8, 1);
+setchar(0x099809E8, 1);
+setchar(0x09980308, 1);
+setchar(0x0998A708, 1);
+setchar(pcar + 0x00000048, 0);
+
+#cheat NO PEDS
+//One ped will exist.
+setfloat(099542b0-cb0, 0,0,0)
+setfloat(099542b0-0x1960, 0,0,0)
+setfloat(099542b0-0x2610, 0,0,0)
+setfloat(099542b0-0x32c0, 0,0,0)
+setfloat(099542b0-0x3F70, 0,0,0)
+setfloat(099542b0-0x4c20, 0,0,0)
+setfloat(099542b0-0x58d0, 0,0,0)
+setfloat(099542b0, 0,0,0)
+setfloat(0994c3d0, 0,0,0)
+setfloat(0994dd30, 0,0,0)
+setfloat(099542b0+cb0, 0,0,0)
+setfloat(099542b0+0x1960, 0,0,0)
+setfloat(099542b0+0x2610, 0,0,0)
+setfloat(099542b0+0x32c0, 0,0,0)
+setfloat(099542b0+0x3F70, 0,0,0)
+setfloat(099542b0+0x4c20, 0,0,0)
+setfloat(099542b0+0x58d0, 0,0,0)
+setfloat(099542b0+0x6580, 0,0,0)
+setfloat(099542b0+0x7230, 0,0,0)
+setfloat(099542b0+0x7ee0, 0,0,0)
+setfloat(099542b0+0x8b90, 0,0,0)
+setfloat(099542b0+0x9840, 0,0,0)
+setfloat(099542b0+0xa4f0, 0,0,0)
+setfloat(099542b0+0xb1a0, 0,0,0)
+setfloat(099542b0+0xbe50, 0,0,0)
+setfloat(099542b0+0xcb00, 0,0,0)
+setfloat(099542b0+0xd7b0, 0,0,0)
+setfloat(099542b0+0xe460, 0,0,0)
+setfloat(099542b0+0xf110, 0,0,0)
+setfloat(099542b0+0xfdc0, 0,0,0)
+setfloat(099542b0+0x10a70, 0,0,0)
+setfloat(099542b0+0x11720, 0,0,0)
+setfloat(099542b0+0x123d0, 0,0,0)
+setfloat(099542b0+0x13080, 0,0,0)
+setfloat(099542b0+0x13d30, 0,0,0)
+setfloat(099542b0+0x149e0, 0,0,0)
+setfloat(099542b0+0x15690, 0,0,0)
+setfloat(099542b0+0x16340, 0,0,0)
+setfloat(099542b0+0x16ff0, 0,0,0)
+setfloat(099542b0+0x17ca0, 0,0,0)
+setfloat(099542b0+0x18950, 0,0,0)
+setfloat(099542b0+0x19600, 0,0,0)
+setfloat(099542b0+0x1a2b0, 0,0,0)
+setfloat(099542b0+0x1af60, 0,0,0)
+setfloat(099542b0+0x1bc10, 0,0,0)
+setfloat(099542b0+0x1c8c0, 0,0,0)
+setfloat(099542b0+0x1d570, 0,0,0)
+setfloat(099542b0+0x1e220, 0,0,0)
+setfloat(099542b0+0x1eed0, 0,0,0)
+setfloat(099542b0+0x1fb80, 0,0,0)
+setfloat(099542b0+0x20830, 0,0,0)
+setfloat(099542b0+0x214e0, 0,0,0)
+setfloat(099542b0+0x22190, 0,0,0)
+setfloat(099542b0+0x22e40, 0,0,0)
+setfloat(099542b0+0x23af0, 0,0,0)
+setfloat(099542b0+0x247a0, 0,0,0)
+setfloat(099542b0+0x25450, 0,0,0)
+setfloat(099542b0+0x26100, 0,0,0)
+setfloat(099542b0+0x26db0, 0,0,0)
+setfloat(099542b0+0x27a60, 0,0,0)
+setfloat(099542b0+0x28710, 0,0,0)
+setfloat(099542b0+0x293c0, 0,0,0)
+setfloat(099542b0+0x2a070, 0,0,0)
+setfloat(099542b0+0x2ad20, 0,0,0)
+setfloat(099542b0+0x2b9d0, 0,0,0)
+setfloat(099542b0+0x2c680, 0,0,0)
+setfloat(099542b0+0x2d330, 0,0,0)
+setfloat(099542b0+0x2dfe0, 0,0,0)
+setfloat(099542b0+0x2ec90, 0,0,0)
+setfloat(099542b0+0x2f940, 0,0,0) 
+
+#cheat only bikes drivin on the streets
+//ID: 5744
+//Score: 1
+//Author: Waterbottle
+//Category: Vehicle
+//Description: this removes all cars driving on the streets (bikes still there). don't always work if you are on a bike. also cars withnoone in them still are there
+//Image: none
+//Time: 19/03/2006 14:21:06
+//Working: Unknown
+setint(0x0997B040 + 0x618, 2000000000);
+setint(0x0997B720 + 0x618, 2000000000);
+setint(0x0997BE00 + 0x618, 2000000000);
+setint(0x0997C4E0 + 0x618, 2000000000);
+setint(0x0997CBC0 + 0x618, 2000000000);
+setint(0x0997D2A0 + 0x618, 2000000000);
+setint(0x0997D980 + 0x618, 2000000000);
+setint(0x0997E060 + 0x618, 2000000000);
+setint(0x0997E740 + 0x618, 2000000000);
+setint(0x0997EE20 + 0x618, 2000000000);
+setint(0x0997F500 + 0x618, 2000000000);
+setint(0x0997FBE0 + 0x618, 2000000000);
+setint(0x099802C0 + 0x618, 2000000000);
+setint(0x099809A0 + 0x618, 2000000000);
+setint(0x09981080 + 0x618, 2000000000);
+setint(0x09981760 + 0x618, 2000000000);
+setint(0x09981E40 + 0x618, 2000000000);
+setint(0x09982520 + 0x618, 2000000000);
+setint(0x09982C00 + 0x618, 2000000000);
+setint(0x099832E0 + 0x618, 2000000000);
+setint(0x099839C0 + 0x618, 2000000000);
+setint(0x099840A0 + 0x618, 2000000000);
+setint(0x09984780 + 0x618, 2000000000);
+setint(0x09984E60 + 0x618, 2000000000);
+setint(0x09985540 + 0x618, 2000000000);
+setint(0x09985C20 + 0x618, 2000000000);
+setint(0x09986300 + 0x618, 2000000000);
+setint(0x099869E0 + 0x618, 2000000000);
+setint(0x099870C0 + 0x618, 2000000000);
+setint(0x099877A0 + 0x618, 2000000000);
+setint(0x09987E80 + 0x618, 2000000000);
+setint(0x09988560 + 0x618, 2000000000);
+setint(0x09988C40 + 0x618, 2000000000);
+setint(0x09989320 + 0x618, 2000000000);
+setint(0x09989A00 + 0x618, 2000000000);
+setint(0x0998A0E0 + 0x618, 2000000000);
+setint(0x0998A6C0 + 0x618, 2000000000);
+setint(0x0998A7C0 + 0x618, 2000000000);
+setint(0x0998AEA0 + 0x618, 2000000000);
+setint(0x0998B580 + 0x618, 2000000000);
+setint(0x0998BC60 + 0x618, 2000000000);
+setint(0x0998C340 + 0x618, 2000000000);
+setint(0x0998CA20 + 0x618, 2000000000);
+setint(0x0998D100 + 0x618, 2000000000);
+setint(0x0998D7E0 + 0x618, 2000000000);
+setint(0x0998DEC0 + 0x618, 2000000000);
+setint(0x0998E5A0 + 0x618, 2000000000);
+setint(0x0998EC80 + 0x618, 2000000000);
+setint(0x0998F360 + 0x618, 2000000000);
+setint(0x0998FA40 + 0x618, 2000000000);
+setint(0x09990120 + 0x618, 2000000000);
+setint(0x09990800 + 0x618, 2000000000);
+setint(0x09990EE0 + 0x618, 2000000000);
+setint(0x099915C0 + 0x618, 2000000000);
+setint(0x09991CA0 + 0x618, 2000000000);
+setint(0x09992380 + 0x618, 2000000000);
+setint(0x09992A60 + 0x618, 2000000000);
+setint(0x09993140 + 0x618, 2000000000);
+setint(0x09993820 + 0x618, 2000000000);
+setint(0x09993F00 + 0x618, 2000000000);
+setint(0x099945E0 + 0x618, 2000000000);
+//edited by Waterbottle on 19.03.2006 15:28:46
+
+#cheat Peds have flamethrowers
+setchar(0x994B6F0 + 0x05E8, 0x1F);
+setchar(0x994D050 + 0x05E8, 0x1F);
+*Edited for length* i had 2 look through so many pages on tha cheat develope topic thanks 4 tha cheat when u make it
+
+#cheat Peds have flamethrowers
+setchar(0x994B6F0 + 0x05E8, 0x1F);
+setchar(0x994D050 + 0x05E8, 0x1F);
+setchar(0x994DD00 + 0x05E8, 0x1F);
+setchar(0x994E9B0 + 0x05E8, 0x1F);
+setchar(0x994F660 + 0x05E8, 0x1F);
+setchar(0x9950310 + 0x05E8, 0x1F);
+setchar(0x9950FC0 + 0x05E8, 0x1F);
+setchar(0x9951C70 + 0x05E8, 0x1F);
+setchar(0x9952920 + 0x05E8, 0x1F);
+setchar(0x99535D0 + 0x05E8, 0x1F);
+setchar(0x9954280 + 0x05E8, 0x1F);
+setchar(0x9954390 + 0x05E8, 0x1F);
+setchar(0x9954F30 + 0x05E8, 0x1F);
+setchar(0x9955040 + 0x05E8, 0x1F);
+setchar(0x9955BE0 + 0x05E8, 0x1F);
+setchar(0x9956890 + 0x05E8, 0x1F);
+setchar(0x9957540 + 0x05E8, 0x1F);
+setchar(0x99581F0 + 0x05E8, 0x1F);
+setchar(0x9958EA0 + 0x05E8, 0x1F);
+setchar(0x9959B50 + 0x05E8, 0x1F);
+setchar(0x995A800 + 0x05E8, 0x1F);
+setchar(0x995B4B0 + 0x05E8, 0x1F);
+setchar(0x995C160 + 0x05E8, 0x1F);
+setchar(0x995CE10 + 0x05E8, 0x1F);
+setchar(0x995CE10 + 0x05E8, 0x1F);
+setchar(0x995DAC0 + 0x05E8, 0x1F);
+setchar(0x995E7A0 + 0x05E8, 0x1F);
+setchar(0x995F420 + 0x05E8, 0x1F);
+setchar(0x99600D0 + 0x05E8, 0x1F);
+setchar(0x9960D80 + 0x05E8, 0x1F);
+setchar(0x9961A30 + 0x05E8, 0x1F);
+setchar(0x99626E0 + 0x05E8, 0x1F);
+setchar(0x9964770 + 0x05E8, 0x1F);
+setchar(0x9964CF0 + 0x05E8, 0x1F);
+setchar(0x99659A0 + 0x05E8, 0x1F);
+setchar(0x9966650 + 0x05E8, 0x1F);
+setchar(0x9967300 + 0x05E8, 0x1F);
+setchar(0x9967FB0 + 0x05E8, 0x1F);
+setchar(0x9968C60 + 0x05E8, 0x1F);
+setchar(0x9969910 + 0x05E8, 0x1F);
+setchar(0x996A5C0 + 0x05E8, 0x1F);
+setchar(0x996B270 + 0x05E8, 0x1F);
+setchar(0x996BF20 + 0x05E8, 0x1F);
+setchar(0x996CBD0 + 0x05E8, 0x1F);
+setchar(0x996D880 + 0x05E8, 0x1F);
+setchar(0x996E530 + 0x05E8, 0x1F);
+setchar(0x996F1E0 + 0x05E8, 0x1F);
+setchar(0x996FE90 + 0x05E8, 0x1F);
+setchar(0x9970B40 + 0x05E8, 0x1F);
+setchar(0x99717F0 + 0x05E8, 0x1F);
+setchar(0x99724A0 + 0x05E8, 0x1F);
+setchar(0x9973150 + 0x05E8, 0x1F);
+setchar(0x9973E00 + 0x05E8, 0x1F);
+setchar(0x9974AB0 + 0x05E8, 0x1F);
+setchar(0x9975760 + 0x05E8, 0x1F);
+setchar(0x9976410 + 0x05E8, 0x1F);
+setchar(0x99770C0 + 0x05E8, 0x1F);
+setchar(0x9977D70 + 0x05E8, 0x1F);
+setchar(0x9978A20 + 0x05E8, 0x1F);
+setchar(0x99796D0 + 0x05E8, 0x1F);
+setchar(0x997A380 + 0x05E8, 0x1F);
+setchar(pplayer +0x05E8, 0x12);
+
+#cheat Toni Has A "Free Spirit"
+//Hit ON and you will leave Tonis "body", hit OFF to go back. You can use this like the dummy glitch in halo 2!
+setchar(pplayer + 0x00000042, 171);
+#off
+setchar(pplayer + 0x00000042, 170);
+
+#cheat Godmode (Get on a PCJ first!)
+//To use, get on a PCJ, turn the code on, then off. To walk on walls, turn bikes drive on walls, to have the heavy bike effect, turn on the heavy bike cheat! Thnx to some peoples codes that are in this to make it all happen. NOTE- On the last line u might n
+setchar(09a9f94a, 0x27)
+setchar(09a9f96a, 0x27)
+setchar(09a9f98a, 0x27)
+setchar(09a9f9aa, 0x27)
+setchar(pplayer + 0x0000034C, 1);
+setchar(pcar + 0x0046, 19);
+setchar(pcar + 0x42, 1)
+
+#cheat Ghost 1469.99, -554.49, 5.93...
+setchar(0x08E4E9C0, 193);
+setfloat(0x08E4E9C4, 1469.99, -554.49, 5.93);
+setfloat(0x08E4E9D0, 0);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Ghost 1469.99, -554.49, 5.93...
+setchar(0x08E4E9C0, 193);
+setfloat(0x08E4E9C4, 1469.99, -554.49, 5.93);
+setfloat(0x08E4E9D0, 0);
+
+#cheat 1st person
+setfloat(0x08B833DC, -1.0)
+setchar(pplayer + 0x19A, 0x02); 
+
+#cheat Pearlescent Colors 101-119
+setchar(0x0944FAF4, 0x77, 0x77, 0, 0xFF);//color slot 101
+setchar(0x0944FAF8, 0x77, 0x77, 0x77, 0xFF);//color slot 102
+setchar(0x0944FAFC, 0x77, 0, 0, 0xFF);//color slot 103
+setchar(0x0944FB00, 0x77, 0, 0x77, 0xFF);//color slot 104
+setchar(0x0944FB04, 0x77, 0, 0xff, 0xFF);//color slot 105
+setchar(0x0944FB08, 0x77, 0xff, 0xff, 0xFF);//color slot 106
+setchar(0x0944FB0C, 0x77, 0xff, 0, 0xFF);//color slot 107
+setchar(0x0944FB10, 0x77, 0xff, 0x77, 0xFF);//color slot 108
+setchar(0x0944FB14, 0x77, 0x77, 0xff, 0xFF);//color slot 109
+setchar(0x0944FB18, 0xff, 0xff, 0x77, 0xFF);//color slot 110
+setchar(0x0944FB1C, 0xff, 0x77, 0x77, 0xFF);//color slot 111
+setchar(0x0944FB20, 0xff, 0x77, 0, 0xFF);//color slot 112
+setchar(0x0944FB24, 0xff, 0, 0x77, 0xFF);//color slot 113
+setchar(0x0944FB28, 0xff, 0x77, 0xff, 0xFF);//color slot 114
+setchar(0x0944FB2C, 0, 0x77, 0x77, 0xFF);//color slot 115
+setchar(0x0944FB30, 0, 0, 0x77, 0xFF);//color slot 116
+setchar(0x0944FB34, 0, 0x77, 0, 0xFF);//color slot 117
+setchar(0x0944FB38, 0, 0x77, 0xff, 0xFF);//color slot 118
+setchar(0x0944FB3C, 0, 0x77, 0x77, 0xFF);//color slot 119
+
+#cheat Missions: Home, The Offer, Bone Voyeur, Snappy Dresser, Shop 'Til You Strop
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 1); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 1); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 1); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 1); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 1); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat Play as special character(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6d);
+off()
+
+#cheat Staunton Donald Love 5 Love and Bullets
+setint(0x09F6C0B4, 0, 5);
+
+#cheat SSV Donald Love 1 Panlantic Land Grab
+setint(0x09F6C300, 0, 1);
+
+#cheat SSV Donald Love 2 Stop The Press
+setint(0x09F6C300, 0, 2);
+
+#cheat Portland JD 2 Don in 60 Seconds
+setint(0x09F6BFD8, 0, 2);
+
+#cheat Portland Ma 4 Dead Meat
+setint(0x09F6BFE4, 0, 4);
+
+#cheat Play as special character(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6d);
+off()
+
+#cheat 2 Play as special character more that 1(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6E);
+off()
+
+#cheat 3 Play as special characters more that 1(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6f);
+off()
+
+#cheat 3 Play as special characters more that 1(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6f);
+off()
+
+#cheat 2 Play as special character more that 1(MUST FIRST START MISSION)
+setchar(pplayer+0x58, 0x6E);
+off()
+
+#cheat Staunton Donald Love 5 Love and Bullets
+setint(0x09F6C0B4, 0, 5);
+
+#cheat SSV Donald Love 1 Panlantic Land Grab
+setint(0x09F6C300, 0, 1);
+
+#cheat SSV Donald Love 2 Stop The Press
+setint(0x09F6C300, 0, 2);
+
+#cheat Missions: Home, The Offer, Bone Voyeur, Snappy Dresser, Shop 'Til You Strop
+// by Mister Enchilada
+// load the savegame again while the cheat is enabled to activate
+// first number is 0=enabled 1=completed, second number is mission number
+// Portland
+setint(0x09F6BFC0, 0, 1); // Vincenzo Cilli (max 8)
+setint(0x09F6BFCC, 0, 1); // Salvatore Leone (max 9)
+setint(0x09F6BFD8, 0, 1); // JD O'Toole (max 9)
+setint(0x09F6BFE4, 0, 1); // Ma Cipriani (max 6)
+setint(0x09F6BFF0, 0, 1); // Maria (max 6)
+// Staunton Island
+setint(0x09F6C09C, 0, 1); // Salvatore Leone
+setint(0x09F6C0A8, 0, 1); // McAffrey
+setint(0x09F6C0B4, 0, 1); // Donald Love
+setint(0x09F6C0C0, 0, 1); // Church
+// Shoreside Vale
+setint(0x09F6C2F4, 0, 1); // Salvatore Leone
+setint(0x09F6C300, 0, 1); // Donald Love
+setint(0x09F6C30C, 0, 1); // Toshiko Kasen
+
+#cheat SSV Toshiko 3 A Date With Death
+setint(0x09F6C30C, 0, 3);
+
+#cheat SSV donald love missons
+setint(0x09F6C2F4, 0, 6);
+

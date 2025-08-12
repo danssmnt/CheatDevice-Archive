@@ -1,0 +1,265 @@
+Infinite Ammo Pistols
+setint(pplayer+0x5d8, 0x00ffffff);
+
+Infinite Ammo Shotguns
+setint(pplayer+0x5f4, 0x00ffffff);
+
+Infinite Ammo Submachine Guns
+setint(pplayer+0x610, 0x00ffffff);
+
+Infinite Ammo Grenades
+setint(pplayer+0x5bc, 0x00ffffff);
+
+Infinite Ammo Machine Guns
+setint(pplayer+0x62c, 0x00ffffff);
+
+Infinite Ammo Heavy Weapons
+setint(pplayer+0x648, 0x00ffffff);
+
+Infinite Ammo Sniper
+setint(pplayer+0x664, 0x00ffffff);
+
+Infinite Ammo Tools
+setint(pplayer+0x680, 0x00ffffff);
+
+No Reloading
+setint(pplayer+0x5d4,  2);
+setint(pplayer+0x5f0,  2);
+setint(pplayer+0x60c,  2);
+setint(pplayer+0x5b8,  2);
+setint(pplayer+0x628,  2);
+setint(pplayer+0x644,  2);
+setint(pplayer+0x660,  2);
+
+Infinite Ammo for Ped
+setint(pped+0x5d8,   0x00ffffff);
+setint(pped+0x5f4,   0x00ffffff);
+setint(pped+0x610,   0x00ffffff);
+setint(pped+0x5bc,   0x00ffffff);
+setint(pped+0x62c,   0x00ffffff);
+setint(pped+0x648,   0x00ffffff);
+setint(pped+0x664,   0x00ffffff);
+setint(pped+0x680,   0x00ffffff);
+
+Super Sub Machine Guns
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed}
+off();
+
+Super Shotguns
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed}
+off();
+
+Super Machine Guns
+for(i=0; i<2; i++){
+sub=0x095FFEA0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed}
+off();
+
+Super Pistols
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's sp}
+off();
+
+Super Thrown Weapons
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setshort(sub+0x40, 0x0E);//Allow run and throw
+setfloat(sub+0x44, 0.25, 0.25, 0.25);//Set firing speed to Minigun's speed}
+off();
+
+Super Heavy Weapons
+for(i=0; i<4; i++){
+sub=0x09600060+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed}
+off();
+
+FIST
+setchar(pped+0x578, 0x00);
+setchar(pped+0x789, 0x00);
+
+BRASS KNUCLES
+setchar(pped+0x578,    0x01);
+setchar(pped+0x789, 0x00);
+
+LITTLE KNIFE
+setchar(pped+0x594, 0x02);
+setchar(pped+0x789, 0x01);
+
+GOLF CLUB
+setchar(pped+0x594, 0x03);
+setchar(pped+0x789, 0x01);
+
+KNIGHT STICK
+setchar(pped+0x594, 0x04);
+setchar(pped+0x789, 0x01);
+
+KNIFE
+setchar(pped+0x594, 0x05);
+setchar(pped+0x789, 0x01);
+
+BAT
+setchar(pped+0x594, 0x06);
+setchar(pped+0x789, 0x01);
+
+AXE
+setchar(pped+0x594, 0x07);
+setchar(pped+0x789, 0x01);
+
+CANE
+setchar(pped+0x594, 0x08);
+setchar(pped+0x789, 0x01);
+
+MECHETTY
+setchar(pped+0x594, 0x09);
+setchar(pped+0x789, 0x01);
+
+KATANA
+setchar(pped+0x594, 0x0a);
+setchar(pped+0x789, 0x01);
+
+SAW
+setchar(pped+0x594, 0x0b);
+setchar(pped+0x789, 0x01);
+
+GRENADE
+setchar(pped+0x5B0, 0x0c);
+setchar(pped+0x789, 0x02);
+
+GRENADE2
+setchar(pped+0x5B0, 0x0d);
+setchar(pped+0x789, 0x02);
+
+REMOTE MINES
+setchar(pped+0x5B0, 0x0e);
+setchar(pped+0x789, 0x02);
+
+NOTHING
+setchar(pped+0x5B0, 0x0f);
+setchar(pped+0x789, 0x02);
+
+TEAR GAS
+setchar(pped+0x5B0, 0x10);
+setchar(pped+0x789, 0x02);
+
+MOLTOV
+setchar(pped+0x5B0, 0x11);
+setchar(pped+0x789, 0x02);
+
+ROCKET
+setchar(pped+0x5B0, 0x12);
+setchar(pped+0x789, 0x02);
+
+PISTOL
+setchar(pped+0x5CC, 0x13);
+setchar(pped+0x789, 0x03);
+
+HANDGUN
+setchar(pped+0x5CC, 0x14);
+setchar(pped+0x789, 0x03);
+
+SHOTGUN
+setchar(pped+0x5E8, 0x15);
+setchar(pped+0x789, 0x04);
+
+SHOTGUN2
+setchar(pped+0x5E8,    0x16);
+setchar(pped+0x789, 0x04);
+
+SHOTGUN3
+setchar(pped+0x5E8, 0x17);
+setchar(pped+0x789, 0x04);
+
+UZI
+setchar(pped+0x604, 0x18);
+setchar(pped+0x789, 0x05);
+
+UZI2
+setchar(pped+0x604, 0x19);
+setchar(pped+0x789, 0x05);
+
+SILENT UZI
+setchar(pped+0x604, 0x1A);
+setchar(pped+0x789, 0x05);
+
+2HAND UZI
+setchar(pped+0x604, 0x1B);
+setchar(pped+0x789, 0x05);
+
+2HAND UZI2
+setchar(pped+0x620, 0x1C);
+setchar(pped+0x789, 0x06);
+
+AK47
+setchar(pped+0x620, 0x1D);
+setchar(pped+0x789, 0x06);
+
+SNIPER
+setchar(pped+0x658, 0x1E);
+setchar(pped+0x789, 0x08);
+
+SNIPER2
+setchar(pped+0x658, 0x1F);
+setchar(pped+0x789, 0x08);
+
+ROCKET LAUNCHER
+setchar(pped+0x63C, 0x20);
+setchar(pped+0x789, 0x07);
+
+FLAMETHROWER
+setchar(pped+0x63C, 0x21);
+setchar(pped+0x789, 0x07);
+
+MINIGUN2
+setchar(pped+0x63C, 0x22);
+setchar(pped+0x789, 0x07);
+
+CHAINGUN
+setchar(pped+0x63C, 0x23);
+setchar(pped+0x789, 0x07);
+
+REMOTE SWITCH
+setchar(pped+0x674, 0x24);
+setchar(pped+0x789, 0x09);
+
+GLITCH
+setchar(pped+0x674, 0x25);
+setchar(pped+0x789, 0x09);
+
+CAMERA
+setchar(pped+0x674, 0x26);
+setchar(pped+0x789, 0x09);
+
+BINOCULARS
+setchar(pped+0x674, 0x27);
+setchar(pped+0x789, 0x09);

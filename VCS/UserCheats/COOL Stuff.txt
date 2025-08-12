@@ -1,0 +1,1232 @@
+#cheat Blue Hydrant Spray
+//ID: 19538
+//Score: 24
+//Author: psphacker108
+//Category: Environment
+//Description: this makes the Hydrant Spray Blue when hit.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-8.gif
+//Time: 14/04/2007 21:03:25
+//Working: Yes
+sethex(0x956a770, 0x00, 0x00, 0xff);
+
+#cheat Purple Hydrant Spray
+//ID: 19537
+//Score: 22
+//Author: psphacker108
+//Category: Environment
+//Description: This makes the color of the hydrant spray purple when hit.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-21.gif
+//Time: 14/04/2007 21:02:45
+//Working: Yes
+sethex(0x956a770, 0xff, 0x00, 0xff);
+
+#cheat Sweet Text Mod
+//ID: 19536
+//Score: 25
+//Author: BOY 999
+//Category: Text Mods
+//Description: The words "CheatSync Is The Best" appear on the screen. 
+//
+//Pretty awesome. 
+//
+//EDITED BY: psphacker108 on 14/04/07 21:54:24
+//Image: none
+//Time: 14/04/2007 20:18:18
+//Working: Yes
+setshort(0x08e90bd8, 1, 'C', 'h', 'e', 'a', 't', 'S', 'y', 'n', 'c', ' ', 'I', 's', ' ', 'T', 'h', 'e', ' ', 'B', 'e', 's', 't', 0); 
+
+
+
+#cheat A Little Text Mod
+//ID: 19534
+//Score: 24
+//Author: BOY 999
+//Category: Text Mods
+//Description: This txt mod makes the words "GTA VCS!!!!" appear on the screen....
+//
+//EDITED BY: psphacker108 on 14/04/07 22:57:36
+//Image: none
+//Time: 14/04/2007 20:14:42
+//Working: Yes
+setshort(0x08e90bd8, 1, 'G', 'T', 'A', ' ', 'V', 'C', 'S', ' ', 'R', 'u', 'l', 'e', 's', '!', '!', '!', '!', 0); 
+
+#cheat Destroy Last Entered Vehicle
+//ID: 19529
+//Score: 40
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: The last parked vehicle will be destroyed when you get into a new car. Thanks to psphacker108 for the idea.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-7.gif
+//Time: 13/04/2007 19:15:34
+//Working: Yes
+static old;
+static new;
+if(pcar && !old) {
+old = pcar;
+new = 0;
+}
+if(pcar && !new && pcar != old) {
+new = pcar;
+setfloat(old + 0x27c, 0);
+old = 0;
+}
+
+#cheat The Ring of Fire
+//ID: 19528
+//Score: 64
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: 10 fires will surround you in the shape of a circle! Hit O to release the Ring, and any vehicles caught in the ring when you release it will catch fire and blow up! Hit Down to lock the ring size.
+//Image: http://img256.imageshack.us/img256/4190/video1rn0.gif
+//Time: 13/04/2007 16:25:04
+//Working: Yes
+static counter;
+static dist;
+static lockdist;
+static lockx;
+static locky;
+static lockz;
+static lockon;
+x = getfloat(pobj + 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj + 0x38);
+if(press & CTRL_CIRCLE) {
+lockx = x;
+locky = y;
+lockz = z;
+}
+if(buttons & CTRL_CIRCLE) {
+dist += 0.5;
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, lockx + cos(0) * dist,  locky + sin(0) * dist,  lockz);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, lockx + cos(36) * dist,  locky + sin(36) * dist,  lockz);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, lockx + cos(72) * dist,  locky + sin(72) * dist,  lockz);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  lockx + cos(108) * dist,  locky + sin(108) * dist,  lockz);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, lockx + cos(144) * dist,  locky + sin(144) * dist,  lockz);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, lockx + cos(180) * dist,  locky + sin(180) * dist,  lockz);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, lockx + cos(216) * dist,  locky + sin(216) * dist,  lockz);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  lockx + cos(252) * dist,  locky + sin(252) * dist,  lockz);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, lockx + cos(288) * dist,  locky + sin(288) * dist,  lockz);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, lockx + cos(324) * dist,  locky + sin(324) * dist,  lockz);
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = lockx - getfloat(cars+0x30);
+         dy = locky - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+else {
+if(dist > 3.0) {
+dist -= 0.5;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+if(dist < 3.0) {
+dist += 0.5;
+}
+else if(press & CTRL_DOWN && !lockon) {
+lockdist = dist;
+lockon = 1;
+}
+else if(press & CTRL_DOWN && lockon) {
+lockon = 0;
+}
+if(lockon) {
+dist = lockdist;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, x + cos(0) * dist,  y + sin(0) * dist,  z);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, x + cos(36) * dist,  y + sin(36) * dist,  z);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, x + cos(72) * dist,  y + sin(72) * dist,  z);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  x + cos(108) * dist,  y + sin(108) * dist,  z);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, x + cos(144) * dist,  y + sin(144) * dist,  z);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, x + cos(180) * dist,  y + sin(180) * dist,  z);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, x + cos(216) * dist,  y + sin(216) * dist,  z);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  x + cos(252) * dist,  y + sin(252) * dist,  z);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, x + cos(288) * dist,  y + sin(288) * dist,  z);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, x + cos(324) * dist,  y + sin(324) * dist,  z);
+}
+#off
+setchar(0x08bb32c8,    0); 
+
+#cheat Disables wait for ferris wheel to stop
+//ID: 19526
+//Score: 24
+//Author: psphacker108
+//Category: Text Mods
+//Description: When you go up to the chundler wheel you will not get that annoying message wait for ferris wheel to stop.
+//Image: none
+//Time: 13/04/2007 06:37:00
+//Working: Yes
+setchar(0x98ad4c8, 0x00);
+
+#cheat Teleport Last Entered Car to You (Down)
+//ID: 19523
+//Score: 41
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Whilst on, the last entered car you were in will be teleported to you when you hit down. Please note that the cheat must be on before you get out of the last entered vehicle
+//Image: none
+//Time: 11/04/2007 00:45:32
+//Working: Yes
+if(pcar) {
+old = pcar; }
+if(press & CTRL_DOWN&&!pcar) {
+setfloat(old + 0x30,    getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) *  5.0); 
+setfloat(old + 0x34,    getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) *  5.0); 
+setfloat(old + 0x38,    getfloat(pplayer + 0x38) + 1.0); 
+}
+
+#cheat Teleport to strange neons
+//ID: 19522
+//Score: 36
+//Author: KEI(Japanese)
+//Category: Teleport
+//Description: Telepore to strange things like neons in the hotel.
+//Please look at Image!
+//
+//
+//EDITED BY: psphacker108 on 11/04/07 07:12:18
+//Image: http://blog82.fc2.com/s/safehouse2/file/kimogara.jpg
+//Time: 10/04/2007 10:41:20
+//Working: Yes
+teleport(230.55, -1228.41, 13.60);
+moveto(229.92, -1228.38, 12.17);  object(0x1CA4, 90, 0, 91);
+
+
+#cheat Peds never bleed
+//ID: 19521
+//Score: 29
+//Author: psphacker108
+//Category: Pedestrians
+//Description: This makes any ped you shoot, smack or run over never bleed.(cops included) 
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-3.gif
+//Time: 10/04/2007 05:05:47
+//Working: Yes
+setchar(0x9567DA8,  0x00); 
+
+
+#cheat The Launch Pad
+//ID: 19519
+//Score: 59
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This is a car launching pad, designed to shoot you all across Vice City! Simply line your car up with one of the tubes, set the boost amount, hit O, and you're off! Up and Down will change the amount of boost, which is displayed on your money meter. Hold R and Right to respawn to the Launch Pad.
+//Image: http://www.themaxone.net/images/video1.gif
+//Time: 09/04/2007 18:02:26
+//Working: Yes
+static MakeConstruction;
+static boost;
+thrust = boost * 0.00333; 
+if(!MakeConstruction) {
+moveto(-229.56, -1078.36, 83.78);  object(0x1CD5, 350, 0, 310);
+move(-4.32, 3.67, 1.90);  object(0x1CD5, 340, 0, 310);
+move(-1.66, 1.35, 0.70);  object(0x1CD5, 330, 0, 310);
+move(17.51, 3.71, -2.70);  object(0x1CD5, 350, 0, 350);
+move(-1.20, 6.49, 2.10);  object(0x1CD5, 340, 0, 350);
+move(-0.84, 4.52, 2.60);  object(0x1CD5, 330, 0, 350);
+move(14.96, -16.02, -4.50);  object(0x1CD5, 350, 0, 40);
+move(5.09, 6.04, 2.30);  object(0x1CD5, 340, 0, 40);
+move(4.26, 5.04, 3.20);  object(0x1CD5, 330, 0, 40);
+move(-0.60, -21.12, -5.60);  object(0x1CD5, 350, 0, 70);
+move(8.82, 3.24, 2.40);  object(0x1CD5, 340, 0, 70);
+move(6.67, 2.45, 3.40);  object(0x1CD5, 330, 0, 70);
+move(-47.98, -17.97, -5.70);  object(0x1CD5, 350, 0, 240);
+move(-6.07, -3.49, 2.10);  object(0x1CD5, 340, 0, 240);
+move(-7.17, -4.12, 3.80);  object(0x1CD5, 330, 0, 240);
+move(17.71, 4.58, -5.90);  object(0x1CA4, 0, 0, 222);
+move(3.29, -2.92, 0.00);  object(0x1CA4, 0, 0, 222);
+move(3.86, -1.39, 0.00);  object(0x1CA4, 0, 0, 180);
+move(1.70, 0.01, 0.00);  object(0x1CA4, 0, 0, 180);
+move(3.62, 1.89, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.26, 2.67, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.00, 2.37, 0.00);  object(0x1CA4, 0, 0, 130);
+move(-0.17, 9.09, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.54, 1.28, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-7.30, 6.08, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.77, 1.47, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-9.42, 1.14, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.85, -3.35, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-0.13, -0.15, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-6.29, -7.38, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.08, -2.43, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-1.36, -3.57, 0.00);  object(0x1CA4, 0, 0, 270);
+move(1.80, -3.21, 0.00);  object(0x1CA4, 0, 0, 220);
+move(1.61, -1.35, 0.00);  object(0x1CA4, 0, 0, 220);
+MakeConstruction = 1;
+boost = 1000;
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+}
+setshort(0x08e90bd8, 1, 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ':', ' ', 'O', ' ', '-', ' ', 'L', 'a', 'u', 'n', 'c', 'h', ', ', ' ', 'U', 'p', ' ', 
+
+'a', 'n', 'd', ' ', 'D', 'o', 'w', 'n', ' ', '-', ' ', 'C', 'h', 'a', 'n', 'g', 'e', ' ', 'B', 'o', 'o', 's', 't', ' ', 'A', 'm', 'o', 'u', 'n', 't', ', ', ' ', 
+
+'R', ' ', '+', ' ', 'R', 'i', 'g', 'h', 't', ' ', '-', ' ', 'R', 'e', 's', 'e', 't', ' ', 'C', 'a', 'r', 0);
+if(press & CTRL_CIRCLE) {
+    setfloat(pcar+0x140,  getfloat(pcar+0x140)+getfloat(pcar+0x10)*thrust);
+    setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar+0x14)*thrust); 
+}
+if(buttons & CTRL_DOWN) {
+boost -= 5;
+}
+else if(buttons & CTRL_UP) {
+boost += 5;
+}
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_RIGHT) {
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+setfloat(pcar + 0x140, 0, 0, 0);
+}
+setint(0x08bde55c, boost, boost);
+
+#cheat Destroy All Police and Army Vehicles
+//ID: 19518
+//Score: 49
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: While this code is on, any and all police cars, motorcycles, helicopters, SWAT Vans, FBI vehicles, and Army vehicles will be destroyed as soon as they appear on-screen! Thanks to Waterbottle for his code used in this.
+//Image: none
+//Time: 09/04/2007 03:46:03
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         checkID = getshort(p + 0x56);
+         if(p != pcar && checkID == 193 || checkID == 204 || checkID == 207 || checkID == 218 || checkID == 221 || checkID == 234 || checkID == 246 || checkID == 260 || checkID == 261 || checkID == 268 || checkID == 279 || checkID == 191) setfloat(p + 0x27c,  0);
+     }
+}
+#off
+setchar(0x08bb32c8,   0); 
+
+#cheat big bright yellow Exhaust
+//ID: 19517
+//Score: 33
+//Author: duhdho
+//Category: Vehicle
+//Description: car exhaust is big bright yellow
+//
+//EDITED BY: psphacker108 on 07/04/07 21:20:40
+//Image: none
+//Time: 07/04/2007 20:50:41
+//Working: Yes
+//Made by duhdho thanks to psphacker108 for Exhaust Color Changer
+setchar(0x09569B94, 255, 247, 83);
+setchar(0x09569B90, 0x10);
+
+
+#cheat Chrome Cars
+//ID: 19516
+//Score: 47
+//Author: psphacker108
+//Category: Button Cheats
+//Description: Simple Makes all cars Chrome Plated in the game No Button cheat required.Found by psphacker108
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-18.gif
+//Time: 06/04/2007 19:16:25
+//Working: Yes
+setchar(0x8bad856, 01);
+off#
+setchar(0x8bad856, 00);
+
+#cheat Chrome Custom
+//ID: 19515
+//Score: 60
+//Author: psphacker108
+//Category: Vehicle
+//Description: Chrome Custom makes silver neon, cool exhaust colors, lambo doors and spinners!
+//Credit to waterbottle lambo doors, and nos, thanks to Vettefan for Spinners and car neon, Chrome Found by psphacker108.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/screen7-5.jpg
+//Time: 06/04/2007 19:15:13
+//Working: Yes
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+{
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+}
+R = 228;
+G = 228;
+B = 228;
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  R,  G,  B);} 
+{
+setchar(0x09569B94, 18, 53, 173);
+}
+setfloat(0x936E818, 0.8);
+{
+setint(0x08C739B0,   270);
+}
+setchar(0x8bad856, 01);
+{
+if(buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+}
+
+#cheat KEI's SAFEHOUSE
+//ID: 19514
+//Score: 43
+//Author: KEI(Japanese)
+//Category: Location Mods
+//Description: This is my first mod in VCS.
+//My safehouse in the hotel.
+//More pictures here
+//http://safehouse2.blog82.fc2.com/blog-entry-138.html#more
+//(Used Japanese)
+//
+//EDITED BY: psphacker108 on 06/04/07 22:30:04
+//Image: http://blog82.fc2.com/s/safehouse2/file/safe-dyning.jpg
+//Time: 06/04/2007 11:13:14
+//Working: Yes
+teleport(-75.64, -1227.72, 23.94); 
+moveto(-78.25, -1224.71, 22.84);  object(0x1D39, 0, 0, 92);
+move(-6.48, -1.40, 0.40);  object(0x1CE8, 0, 0, 191);
+move(16.25, -3.36, 0.00);  object(0x1CEA, 0, 0, 5);
+move(0.62, 0.06, -0.40);  object(0x1D03, 0, 0, 10);
+move(-1.19, 0.02, 0.00);  object(0x1D03, 0, 0, 359);
+move(-15.70, 4.19, 0.80);  object(0x1CFF, 0, 0, 247);
+move(5.43, -7.24, 0.30);  object(0x1CD3, 0, 0, 216);
+move(0.96, 0.34, 0.00);  object(0x1CD3, 0, 0, 297);
+move(0.25, 0.88, -0.10);  object(0x1CEC, 0, 0, 322);
+move(-0.59, 0.15, 0.10);  object(0x1CF2, 0, 0, 195);
+move(-0.04, -0.93, 0.00);  object(0x0158, 0, 0, 340);
+move(-6.14, -3.30, -0.40);  object(0x1D01, 0, 0, 28);
+move(-0.60, 2.46, -0.50);  object(0x1CD2, 0, 0, 270);
+move(8.03, 1.37, 0.90);  object(0x0262, 0, 0, 158);
+move(-6.61, -3.81, -0.10);  object(0x01D4, 0, 0, 209);
+move(0.60, -0.03, 0.00);  object(0x01D4, 0, 0, 209);
+move(0.60, -0.04, 0.00);  object(0x01D4, 0, 0, 209);
+move(0.44, 0.14, -0.20);  object(0x0163, 270, 0, 20);
+move(-2.43, 12.39, -0.10);  object(0x1D14, 0, 0, 125);
+move(13.14, 1.63, -0.60);  object(0x1CFA, 0, 0, 1);
+move(2.40, 0.24, 0.00);  object(0x1D4E, 0, 0, 1);
+move(-5.50, -0.49, 0.90);  object(0x1CED, 0, 0, 36);
+move(0.23, 0.28, 0.00);  object(0x1CF1, 0, 0, 41);
+move(-1.41, 0.12, 0.00);  object(0x1D4F, 0, 35, 255);
+move(-0.72, -1.67, -0.90);  object(0x1CCC, 0, 0, 294);
+move(-8.62, -4.67, 1.70);  object(0x0154, 0, 70, 273);
+move(11.48, 5.05, -1.30);  object(0x01CD, 0, 0, 17);
+move(1.61, -12.61, 0.00);  object(0x01CD, 0, 0, 106);
+move(-12.25, 13.64, 0.40);  object(0x01FB, 0, 0, 320);
+move(5.95, -8.42, 0.00);  object(0x01D2, 0, 0, 219);
+move(15.11, 8.54, -0.90);  object(0x1CF5, 0, 0, 90);
+move(1.26, -1.16, 0.00);  object(0x1D05, 0, 0, 133);
+move(0.04, 0.03, 0.40);  object(0x1CF0, 0, 0, 113);
+move(0.10, -1.92, -0.40);  object(0x1CF8, 0, 0, 176);
+move(0.17, -2.59, 0.00);  object(0x1CF8, 0, 0, 176);
+move(-0.40, 1.27, 0.70);  object(0x01F9, 0, 0, 267);
+move(-1.77, 5.17, 0.70);  object(0x015F, 0, 325, 166);
+move(0.70, -0.07, 0.00);  object(0x015F, 0, 325, 166);
+move(0.60, -0.06, 0.00);  object(0x015F, 0, 325, 166);
+
+#cheat Blue Laser Exhaust
+//ID: 19512
+//Score: 51
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Exhaust on your car go like disco light's beaming down. Color Blue. Works on any car.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-2.gif
+//Time: 03/04/2007 21:38:15
+//Working: Yes
+setchar(0x9569B90, 0x70, 0x00, 0x00, 0x00, 0x0f, 0x5f, 0xff, 0x00);
+setchar(0x9569Ba7, 0x50);
+
+
+#cheat Green Laser Exhaust
+//ID: 19511
+//Score: 41
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Exhaust on your car go like disco light's beaming down. Color Green. Works on any car.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video4-3.gif
+//Time: 03/04/2007 21:37:43
+//Working: Yes
+setchar(0x9569B90, 0x70, 0x00, 0x00, 0x00, 0x00, 0xff, 0x00, 0x00);
+setchar(0x9569Ba7, 0x50);
+
+#cheat Green Car Flame
+//ID: 19550
+//Score: 34
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes all Car Flame (except explosion) Green.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video6-1.gif
+//Time: 14/04/2007 21:22:08
+//Working: Yes
+setchar(0x95687fc, 0x00, 0xff, 0x00);
+
+#cheat Blue Car Flame
+//ID: 19549
+//Score: 30
+//Author: psphacker108
+//Category: Vehicle
+//Description: All Flame from car (besides explosion) Will Be Blue.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video7-1.gif
+//Time: 14/04/2007 21:20:59
+//Working: Yes
+setchar(0x95687fc, 0x00, 0x00, 0xff);
+
+#cheat Rhino Smoke Blue
+//ID: 19548
+//Score: 28
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes Rhino Smoke Blue
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-25.gif
+//Time: 14/04/2007 21:19:01
+//Working: Yes
+setchar(0x9568350, 0x00, 0x00, 0x80, 0x3f, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff);
+
+#cheat Impact Rhino Rocket Color Red
+//ID: 19546
+//Score: 26
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes Impact Rhino Rocket Color Red.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-26.gif
+//Time: 14/04/2007 21:17:20
+//Working: Yes
+setchar(0x9568f30, 0x00, 0x00, 0x00, 0x00, 0xff, 0x00, 0x00);
+
+#cheat Red Rhino Rocket Color
+//ID: 19545
+//Score: 27
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes red Rocket Fire color for the Rhino.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-9.gif
+//Time: 14/04/2007 21:16:27
+//Working: Yes
+setchar(0x9569560, 0x00, 0x00, 0x00, 0x00, 0xff, 0x00, 0x00);
+
+#cheat Fire Burn Out Smoke
+//ID: 19543
+//Score: 46
+//Author: psphacker108
+//Category: Vehicle
+//Description: 10,000 th code in the database For a special code I made Fire Burn out Smoke,One Version only so take advantage of it Cheatsync will only get to 10,00 once so I made that code never to be made again like the 10,000 mark :) enjoy.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-11.gif
+//Time: 14/04/2007 21:09:17
+//Working: Yes
+setchar(0x9569c90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x3f, 0x00, 0x00, 0x00, 0x00, 0xff, 0x20, 0x00);
+
+#cheat Blue Rhino Rocket color
+//ID: 19542
+//Score: 24
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes Blue Rhino Rocket fire color.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-22.gif
+//Time: 14/04/2007 21:08:17
+//Working: Yes
+setchar(0x9569560, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff);
+
+#cheat pink Rhino Rocket Color
+//ID: 19541
+//Score: 23
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes Pink Rhino Rocket Color.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-5.gif
+//Time: 14/04/2007 21:07:34
+//Working: Yes
+setchar(0x9569560, 0x00, 0x00, 0x00, 0x00, 0xff, 0x00, 0x89);
+
+#cheat Hydrant Sprays stright up
+//ID: 19540
+//Score: 26
+//Author: psphacker108
+//Category: Environment
+//Description: This makes the Hydrant Spray go stright up in the air! 
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video5-2.gif
+//Time: 14/04/2007 21:06:10
+//Working: Yes
+sethex(0x956a733, 0x00);
+
+#cheat Red Hydrant Spray
+//ID: 19539
+//Score: 24
+//Author: psphacker108
+//Category: Environment
+//Description: this makes the hydrant spray color Red when hit.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-4.gif
+//Time: 14/04/2007 21:05:28
+//Working: Yes
+sethex(0x956a770, 0xff, 0x00, 0x00);
+
+#cheat Blue Collision Dust (first)
+//ID: 19557
+//Score: 28
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes Blue Collision Dust on your car.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-6.gif
+//Time: 14/04/2007 21:29:23
+//Working: Yes
+setchar(0x9569984, 0x00, 0x00, 0xff);
+
+#cheat Green Car Collision Dust (Second)
+//ID: 19558
+//Score: 30
+//Author: psphacker108
+//Category: Vehicle
+//Description: this Makes Green Car collision dust ( Second Particle) 
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3-7.gif
+//Time: 14/04/2007 21:30:23
+//Working: Yes
+setchar(0x9569a99, 0x00, 0xff, 0x00);
+
+#cheat light Blue Rocket Fire
+//ID: 19561
+//Score: 38
+//Author: psphacker108
+//Category: Weapons
+//Description: This makes the Rocket Launchers Rockets All Blue when Fired.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-24.gif
+//Time: 14/04/2007 22:11:25
+//Working: Yes
+setchar(0x9569fb0, 0x00, 0xa0, 0x00, 0x00, 0x00, 0xff);
+
+#cheat Pink Rocket Fire
+//ID: 19562
+//Score: 37
+//Author: psphacker108
+//Category: Weapons
+//Description: This makes the Rocket fire from the rocket launcher Pink.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-10.gif
+//Time: 14/04/2007 22:13:07
+//Working: Yes
+setchar(0x9569fb0, 0x00, 0xa0, 0x00, 0x00, 0xff, 0x00);
+
+#cheat Blue Car smoke
+//ID: 19555
+//Score: 34
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes one Particle go Blue on car smoke.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-23.gif
+//Time: 14/04/2007 21:27:35
+//Working: Yes
+setchar(0x9568b14, 0x00, 0x00, 0xff);
+
+
+#cheat Red Car Spark
+//ID: 19554
+//Score: 35
+//Author: psphacker108
+//Category: Vehicle
+//Description: When you hit the wall your sparks that come off the metal will be Red. check video.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video9-1.gif
+//Time: 14/04/2007 21:26:40
+//Working: Yes
+setchar(0x9567a94, 0xff, 0x00, 0x00);
+
+#cheat Green car spark
+//ID: 19553
+//Score: 27
+//Author: psphacker108
+//Category: Vehicle
+//Description: When you hit a wall the sparks off the metal will be Green.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video7.gif
+//Time: 14/04/2007 21:25:56
+//Working: Yes
+setchar(0x9567a94, 0x00, 0xff, 0x00);
+
+#cheat Blue car Spark
+//ID: 19552
+//Score: 25
+//Author: psphacker108
+//Category: Vehicle
+//Description: When you hit a wall the sparks off the metal will be Blue.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video8-1.gif
+//Time: 14/04/2007 21:25:17
+//Working: Yes
+setchar(0x9567a94, 0x00, 0x00, 0xff);
+
+#cheat Red Car Flame
+//ID: 19551
+//Score: 28
+//Author: psphacker108
+//Category: Vehicle
+//Description: All car Flame will be Bright Red.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video8-2.gif
+//Time: 14/04/2007 21:22:41
+//Working: Yes
+setchar(0x95687fc, 0xff, 0x00, 0x00);
+
+#cheat Boat Vehicles
+//ID: 19566
+//Score: 37
+//Author: psphacker108
+//Category: Vehicle
+//Description: Grab a Car, Get near water facing the island you want to head to.Then activate code you will be going straight throwds the opisote island like your in a boat! you will be in the water moving ! No steering, no speed control one set speed. HINT use hover cars to get camera closer,Watch the video, A cool code indeed. Make's the Splitz 6 water travel much faster! Ignore the Extra :} error it has to work that way...
+//Image: http://img134.imageshack.us/img134/9316/video4wu0.gif
+//Time: 22/04/2007 07:10:05
+//Working: Yes
+static turbo;
+if(pcar)
+{
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));  
+if(speed<1.8) 
+{ 
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);  
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005); 
+if(turbo<1.6)
+}
+
+#cheat Teleport to Turbo Atomic Nuke
+//ID: 19568
+//Score: 39
+//Author: psphacker108
+//Category: Environment
+//Description: Turbo Atomic Nuke! Can you say Boom? Here's the teleport for it. Make sure you download the Turbo Atomic Nuke code 2.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/screen1-18.jpg
+//Time: 24/04/2007 06:57:55
+//Working: Yes
+teleport(-577.88, -451.38, 11.29);
+
+#cheat Turbo Atomic Nuke
+//ID: 19569
+//Score: 52
+//Author: psphacker108
+//Category: Environment
+//Description: Turbo Atomic Nuke! Can you say Boom? Look at the video teleport's you to rocket launcher and the Turbo Atomic Nuke is not far away. Added Rocket Fire effect's for that special touch. Credit to DDM for the fire effect. Fire will slow down the game I recommend 333MHZ for the fix, More Code's to be released in the next few day's.
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-27.gif
+//Time: 24/04/2007 06:59:44
+//Working: Yes
+setchar(0x9569fb0,  0x00,  0xa0,  0x00,  0x00,  0x00,  0xff);
+setchar(0x958fb0, 0x00, 0x00, 0xff);
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -593.40, -462.94, 11.29);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, -595.08, -458.48, 11.29);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, -595.14, -455.58, 11.29);
+}
+moveto(-567.89, -488.01, 16.28);  object(0x01C2, 0, 40, 85);
+move(0.14, -1.49, 1.50);  object(0x01C2, 0, 40, 85);
+move(0.17, -1.89, 0.00);  object(0x01C2, 0, 145, 85);
+move(0.09, -1.00, -1.60);  object(0x01C2, 0, 145, 85);
+move(3.29, 3.24, -4.51);  object(0x01C2, 0, 145, 86);
+move(0.07, -1.00, 0.00);  object(0x01C2, 0, 145, 86);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 86);
+move(246.09, 100.05, 0.51);  object(0x01C2, 0, 145, 14);
+move(0.78, -0.19, 0.00);  object(0x01C2, 0, 145, 14);
+move(0.39, -0.09, 0.00);  object(0x01C2, 0, 145, 14);
+move(-23.12, -4.82, -1.54);  object(0x01C2, 0, 145, 267);
+move(-0.05, 1.00, 0.00);  object(0x01C2, 0, 145, 267);
+move(-0.03, 0.70, 0.00);  object(0x01C2, 0, 145, 267);
+move(6.56, -12.08, -0.00);  object(0x01C2, 0, 145, 185);
+move(-0.90, 0.08, 0.00);  object(0x01C2, 0, 145, 185);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 185);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 185);
+
+#cheat Ride in back of Limo
+//ID: 19570
+//Score: 33
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's vic Ride in the back of the limo, Made by vettefan Found for all vehicles by psphacker108.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-28.gif
+//Time: 24/04/2007 19:48:17
+//Working: Yes
+//thanks to Vettefan88
+setfloat(0x9367a24, -2.1);
+
+#cheat Pearlescent Pink
+//ID: 19572
+//Score: 19
+//Author: walshyboy
+//Category: Vehicle
+//Description: Turns the car you enter Pearlescent Pink
+//
+//
+//Image: none
+//Time: 25/04/2007 20:29:41
+//Working: Yes
+setchar(pcar + 0x00000224, 239, 39, 154);
+setchar(pcar + 0x00000228, 239, 39, 154);
+
+
+#cheat Instant Black Paintjob
+//ID: 19577
+//Score: 23
+//Author: DeathdogDirusVII
+//Category: Vehicle
+//Description: This handy little mod will make your car have a black paintjob as soon as you get in the car or when you enable the cheat. Make sure you keep it on for it to work fully.
+//
+//
+//
+//EDITED BY: psphacker108 on 13/05/07 22:20:29
+//Image: none
+//Time: 28/04/2007 23:15:32
+//Working: Yes
+setchar(pcar + 0x00000224,   0,   0,   0);  
+setchar(pcar + 0x00000228,   0,   0,   0);
+
+#cheat GTA IV Text Mod
+//ID: 19587
+//Score: 22
+//Author: BOY 999
+//Category: Text Mods
+//Description: This makes the Text "GTA IV" appear on the screen during Gameplay. 
+//
+//EDITED BY: psphacker108 on 05/05/07 01:42:59
+//Image: none
+//Time: 04/05/2007 19:31:15
+//Working: Yes
+setshort(0x08e90bd8, 1, 'G', 'T', 'A', ' ', 'I', 'V', 0); 
+
+
+
+#cheat White Exhaust
+//ID: 19589
+//Score: 17
+//Author: BOY 999
+//Category: Vehicle
+//Description: All the Exhaust Smoke features are at 255 :D
+//All in a White color. 
+//Enjoy
+//
+//EDITED BY: psphacker108 on 05/05/07 01:43:59
+//
+//EDITED BY: psphacker108 on 13/05/07 22:20:13
+//Image: none
+//Time: 04/05/2007 19:34:09
+//Working: Yes
+//Made with Exhaust Color Changer by psphacker108
+setchar(0x09569B94, 255, 255, 255);
+setchar(0x09569B90, 0x10);
+
+#cheat Rain Color Modifier V1
+//ID: 19563
+//Score: 43
+//Author: psphacker108
+//Category: Environment
+//Description: Using this code you can change the colors of the rain in the game! 4 colors are set nothing else yet. You can turn off the code Rain stays on at the selected color. (Looks better in game play then in video)
+//Controls
+//DOWN_BLUE RAIN
+//LEFT_RED RAIN
+//RIGHT_GREEN RAIN
+//UP_PURPLE RAIN
+//
+//thanks to Ja750 for the idea.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-12.gif
+//Time: 15/04/2007 05:01:19
+//Working: Yes
+setchar(0x8bb3e00, 0x02);
+if(buttons & CTRL_DOWN)
+{
+setchar(0x956a5e4, 0x00, 0x00, 0xff);
+}
+if(buttons & CTRL_LEFT)
+{
+setchar(0x956a5e4, 0xff, 0x00, 0x00);
+}
+if(buttons & CTRL_RIGHT)
+{
+setchar(0x956a5e4, 0x00, 0xff, 0x00);
+}
+if(buttons & CTRL_UP)
+{
+setchar(0x956a5e4, 0x99, 0x00, 0x9f);
+}
+
+#cheat Light Control
+//ID: 19650
+//Score: 7
+//Author: psphacker108
+//Category: Environment
+//Description: The Christmas lights near 101 bayshore ave you can now control! 
+//
+//Controls:
+//LEFT_ Moves the lights back on the deck.
+//RIGHT_ Moves them over above your head.
+//DOWN_Turns them off.
+//UP_ Turns them back on.
+//
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-30.gif
+//Time: 24/05/2007 15:06:36
+//Working: Yes
+if(buttons & CTRL_RIGHT)
+setchar(0x9460815, 0x00);
+{
+setchar(0x946081a, 0x35);
+}
+if(buttons & CTRL_LEFT)
+setchar(0x9460815, 0xb0);
+{
+setchar(0x946081a, 0x55);
+}
+if(buttons & CTRL_DOWN)
+{
+setchar(0x9460817, 0xD4);
+}
+if(buttons & CTRL_UP)
+{
+setchar(0x9460817, 0xC4);
+}
+
+#cheat Shift the world of the boat
+//ID: 19726
+//Score: 2
+//Author: psphacker108
+//Category: Environment
+//Description: You can Now shift the world of the small boat near the pay n spray in little haiti.By pressing LEFT to move twords the city, RIGHT going twords water, Watch Video. ( Thanks to vettefan for code setup) If you turn off the code the world of the boat dissapears.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-31.gif
+//Time: 31/05/2007 06:33:28
+//Working: Yes
+if (buttons & CTRL_LEFT)
+setfloat(0x9442030, getfloat(0x9442030)-.1);
+if (buttons & CTRL_RIGHT) 
+setfloat(0x9442030, getfloat(0x9442030)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Raise the World of the Boat
+//ID: 19727
+//Score: 2
+//Author: psphacker108
+//Category: Environment
+//Description: This allows you to Raise the World of the Boat in little haiti, Watch Video. if you turn off the code the world or lights and solid goes to.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-32.gif
+//Time: 31/05/2007 06:35:29
+//Working: Yes
+if (buttons & CTRL_UP) 
+setfloat(0x9442038, getfloat(0x9442038)-.1);
+if (buttons & CTRL_DOWN) 
+setfloat(0x9442038, getfloat(0x9442038)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat tallest building (floored)
+//ID: 19692
+//Score: 4
+//Author: creepers
+//Category: Environment
+//Description: you can now walk if you use the cheat just turn it off again to not make it slower,use superman cheat to go there easier
+//note that its not fullly floored the whole rooftop,just 1/8 of it.
+//the 2nd update will be much wider and much better
+//UPDATEE!!!:the WHOLE rooftop covered in a FEW minutes.i started again with 1 bar left on my psp then when i was finished,there was no bars left at my psp
+//3rd update will be fast.
+//ill put a teleport and add a pic
+//
+//MUST SEE 
+//cheat is kinda heavy
+//covers like 15 kb
+//update 3 :teleport added and pic
+//update 4:teleport is a bit buggy,teleport 2 times to make the floors disappear less
+//
+//EDITED BY: psphacker108 on 30/05/07 15:58:02
+//Image: http://img157.imageshack.us/img157/7840/screen1hc1.png
+//Time: 28/05/2007 05:32:41
+//Working: Yes
+moveto(-382.57, 1293.13, 372.04);  object(0x1CA4, 90, 0, 126);
+move(1.73, -1.24, -0.02);  object(0x1CA4, 90, 0, 126);
+move(2.12, -1.52, 0.05);  object(0x1CA4, 90, 0, 126);
+move(-2.26, -3.17, -0.01);  object(0x1CA4, 90, 0, 126);
+move(-1.77, 0.90, -0.07);  object(0x1CA4, 90, 0, 126);
+move(-2.28, 1.64, 0.06);  object(0x1CA4, 90, 0, 126);
+move(2.46, -1.77, 0.02);  object(0x1CA4, 90, 0, 326);
+move(13.08, -19.38, 0.00);  object(0x1CA4, 90, 0, 326);
+move(6.84, 8.11, 0.00);  object(0x1CA4, 90, 0, 43);
+move(2.30, -1.65, 0.00);  object(0x1CA4, 90, 0, 208);
+move(-1.31, -2.42, 0.00);  object(0x1CA4, 90, 0, 208);
+move(0.18, 6.87, 0.00);  object(0x1CA4, 90, 0, 2);
+move(-1.68, 2.19, 0.00);  object(0x1CA4, 90, 0, 322);
+move(-2.27, 2.91, 0.00);  object(0x1CA4, 90, 0, 322);
+move(-2.03, 2.60, 0.00);  object(0x1CA4, 90, 0, 322);
+move(-3.87, 4.98, 0.00);  object(0x1CA4, 90, 0, 322);
+move(-4.91, -0.06, 0.00);  object(0x1CA4, 90, 0, 270);
+move(-11.99, -4.44, 0.00);  object(0x1CA4, 90, 0, 243);
+move(-6.20, -6.61, 0.00);  object(0x1CA4, 90, 0, 178);
+move(-3.70, -0.14, 0.00);  object(0x1CA4, 90, 0, 178);
+move(-0.50, 2.71, 0.00);  object(0x1CA4, 90, 0, 269);
+move(0.97, 3.10, 0.00);  object(0x1CA4, 90, 0, 304);
+move(1.99, 2.29, 0.00);  object(0x1CA4, 90, 0, 310);
+move(0.95, 1.16, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.04, 2.47, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.48, 3.01, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.73, 3.32, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.29, 2.78, 0.00);  object(0x1CA4, 90, 0, 310);
+move(1.97, 2.39, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.61, 3.16, 0.00);  object(0x1CA4, 90, 0, 310);
+move(1.78, 2.16, 0.00);  object(0x1CA4, 90, 0, 310);
+move(1.97, 2.39, 0.00);  object(0x1CA4, 90, 0, 310);
+move(0.77, 1.95, 0.00);  object(0x1CA4, 90, 0, 310);
+move(2.84, -1.75, 0.00);  object(0x1CA4, 90, 0, 232);
+move(2.03, -3.11, 0.00);  object(0x1CA4, 90, 0, 232);
+move(1.87, -2.73, 0.00);  object(0x1CA4, 90, 0, 232);
+move(2.02, -2.99, 0.00);  object(0x1CA4, 90, 0, 232);
+move(1.50, -2.13, 0.00);  object(0x1CA4, 90, 0, 232);
+move(2.78, -2.96, 0.00);  object(0x1CA4, 90, 0, 220);
+move(1.91, -1.77, 0.00);  object(0x1CA4, 90, 0, 220);
+move(2.78, -2.72, 0.00);  object(0x1CA4, 90, 0, 224);
+move(2.83, -2.57, 0.00);  object(0x1CA4, 90, 0, 222);
+move(0.45, -0.40, 0.00);  object(0x1CA4, 90, 0, 222);
+move(3.28, -2.21, 0.00);  object(0x1CA4, 90, 0, 213);
+move(2.94, -1.90, 0.00);  object(0x1CA4, 90, 0, 213);
+move(3.29, -2.08, 0.00);  object(0x1CA4, 90, 0, 208);
+move(3.27, -1.72, 0.00);  object(0x1CA4, 90, 0, 208);
+move(3.01, -1.58, 0.00);  object(0x1CA4, 90, 0, 208);
+move(1.59, -0.84, 0.00);  object(0x1CA4, 90, 0, 208);
+move(-0.20, -1.86, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-3.15, -2.29, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.87, -1.83, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.77, -1.64, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.02, -1.47, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.75, -2.00, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.60, -1.52, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.02, -1.47, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.07, -1.41, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-1.86, -1.35, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.30, -1.09, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.10, -1.53, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-2.02, -1.47, 0.00);  object(0x1CA4, 90, 0, 144);
+move(-3.21, -1.11, 0.00);  object(0x1CA4, 90, 0, 176);
+move(-3.50, -0.13, 0.00);  object(0x1CA4, 90, 0, 176);
+move(-0.44, 2.64, 0.00);  object(0x1CA4, 90, 0, 266);
+move(-0.21, 2.69, 0.00);  object(0x1CA4, 90, 0, 266);
+move(0.39, 3.94, 0.00);  object(0x1CA4, 90, 0, 266);
+move(-0.09, 3.60, 0.00);  object(0x1CA4, 90, 0, 266);
+move(-0.08, 4.11, 0.00);  object(0x1CA4, 90, 0, 266);
+move(-0.15, 1.89, 0.00);  object(0x1CA4, 90, 0, 266);
+move(-0.45, 3.52, 0.00);  object(0x1CA4, 90, 0, 259);
+move(-1.84, 0.47, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-2.30, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-3.00, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-2.70, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-2.50, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-3.90, 0.02, 0.00);  object(0x1CA4, 90, 0, 180);
+move(0.01, 1.58, 0.00);  object(0x1CA4, 90, 0, 180);
+move(0.01, 2.04, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-2.80, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-0.01, -1.25, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-2.30, 0.01, 0.00);  object(0x1CA4, 90, 0, 180);
+move(0.02, 3.97, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-0.01, -1.69, 0.00);  object(0x1CA4, 90, 0, 180);
+move(3.61, 3.09, 0.00);  object(0x1CA4, 90, 0, 180);
+move(-0.40, -0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.06, -2.41, 0.00);  object(0x1CA4, 90, 0, 181);
+move(1.60, -0.04, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.13, 5.40, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.63, -1.19, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.50, -0.09, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.17, -6.91, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.04, 1.62, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.07, 2.98, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.13, 5.15, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-1.10, 0.03, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.04, 1.71, 0.00);  object(0x1CA4, 90, 0, 181);
+move(4.10, -0.10, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.05, -2.23, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.17, -6.74, 0.00);  object(0x1CA4, 90, 0, 181);
+move(1.05, -2.13, 0.00);  object(0x1CA4, 90, 0, 181);
+move(1.91, 0.55, 0.00);  object(0x1CA4, 90, 0, 181);
+move(1.68, -0.94, 0.00);  object(0x1CA4, 90, 0, 181);
+move(1.70, -0.04, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.06, 2.59, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.04, 1.50, 0.00);  object(0x1CA4, 90, 0, 181);
+move(2.66, 2.25, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.60, -0.09, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.06, -2.57, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-2.50, 0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.07, -2.89, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.18, 7.82, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.05, 2.20, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-3.20, 0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-3.87, 1.64, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.04, 2.12, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.05, 2.50, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-2.80, 0.05, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.05, -2.47, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-1.63, -1.43, 0.00);  object(0x1CA4, 90, 0, 181);
+move(7.70, -0.15, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.30, -0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.10, -0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.10, -0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(2.80, -0.05, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.05, -2.59, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.06, -3.11, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.02, 0.90, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-3.10, 0.06, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.04, 2.34, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-1.90, 0.04, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.09, -4.92, 0.00);  object(0x1CA4, 90, 0, 181);
+move(2.80, -0.05, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.17, -8.96, 0.00);  object(0x1CA4, 90, 0, 181);
+move(11.80, 1.53, 0.00);  object(0x1CA4, 90, 0, 173);
+move(-0.71, 5.49, 0.00);  object(0x1CA4, 90, 0, 173);
+move(-4.91, 3.46, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.08, 4.24, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.04, -2.25, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.59, -0.76, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.04, -2.13, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.10, -5.10, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.60, -0.07, 0.00);  object(0x1CA4, 90, 0, 181);
+move(0.05, 2.40, 0.00);  object(0x1CA4, 90, 0, 181);
+move(-0.57, 1.81, 0.00);  object(0x1CA4, 90, 0, 181);
+move(3.70, -5.48, 0.00);  object(0x1CA4, 90, 0, 326);
+move(-0.77, 2.33, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-0.07, -4.10, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-18.25, -5.26, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-0.96, 3.31, 0.00);  object(0x1CA4, 90, 0, 344);
+move(0.47, -1.64, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-1.26, 4.37, 0.00);  object(0x1CA4, 90, 0, 344);
+move(1.45, 1.83, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-4.01, 13.91, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-0.67, 2.31, 0.00);  object(0x1CA4, 90, 0, 344);
+move(-0.63, 1.70, 0.00);  object(0x1CA4, 90, 0, 339);
+move(-1.61, -1.96, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.65, 3.64, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.04, -0.92, 0.00);  object(0x1CA4, 90, 0, 246);
+move(10.24, 4.65, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.15, -0.98, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.26, -1.02, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.99, -0.90, 0.00);  object(0x1CA4, 90, 0, 246);
+move(0.26, 2.10, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.14, 2.07, 0.00);  object(0x1CA4, 90, 0, 246);
+move(1.08, 1.26, 0.00);  object(0x1CA4, 90, 0, 246);
+move(3.18, -7.01, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.37, -0.62, 0.00);  object(0x1CA4, 90, 0, 246);
+move(1.04, -3.15, 0.00);  object(0x1CA4, 90, 0, 246);
+move(1.66, 0.75, 0.00);  object(0x1CA4, 90, 0, 246);
+move(0.70, -1.55, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.19, 0.99, 0.00);  object(0x1CA4, 90, 0, 246);
+move(0.70, -1.55, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.64, 5.83, 0.00);  object(0x1CA4, 90, 0, 246);
+move(0.74, -1.64, 0.00);  object(0x1CA4, 90, 0, 246);
+move(7.68, -14.41, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.82, -0.82, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.44, 0.99, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-1.75, -0.79, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.73, -1.24, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-0.40, -3.26, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.29, -0.17, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.58, 1.17, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.99, -0.51, 0.00);  object(0x1CA4, 90, 0, 246);
+move(2.93, -1.31, 0.00);  object(0x1CA4, 90, 0, 246);
+move(1.40, -3.10, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-2.62, -1.19, 0.00);  object(0x1CA4, 90, 0, 246);
+move(-5.37, 1.68, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.49, -1.48, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.13, -1.89, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.27, -0.96, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-3.61, -0.39, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.44, -0.40, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.38, -2.32, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.79, 0.40, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.46, 0.87, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.93, -1.56, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.26, -2.11, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.92, -1.55, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.39, -2.32, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-3.15, -1.35, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.23, 2.06, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.57, 2.64, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.32, -0.53, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.66, -1.59, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.32, 3.89, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.15, -1.93, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.57, -2.05, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.41, -2.36, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.03, -0.61, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.72, -2.38, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.49, 1.48, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-0.89, 1.50, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.75, -2.35, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.89, -1.13, 0.00);  object(0x1CA4, 90, 0, 329);
+move(11.77, 7.01, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.92, 1.74, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.15, 1.28, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.83, 1.69, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.70, 2.31, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.41, 1.43, 0.00);  object(0x1CA4, 90, 0, 329);
+move(3.43, 2.05, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.21, 2.03, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.83, -1.69, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-3.01, -1.79, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.53, 1.97, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-0.93, 1.56, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.75, 1.64, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.41, 2.36, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.15, -3.61, 0.00);  object(0x1CA4, 90, 0, 329);
+move(1.37, 0.82, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-6.96, -4.14, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.21, 2.04, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.61, -4.37, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.32, -0.54, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-3.18, -1.89, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.53, 2.57, 0.00);  object(0x1CA4, 90, 0, 329);
+move(0.40, -0.68, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-2.66, -1.59, 0.00);  object(0x1CA4, 90, 0, 329);
+move(-1.85, -3.15, 0.00);  object(0x1CA4, 90, 0, 329);
+move(2.32, 1.38, 0.00);  object(0x1CA4, 90, 0, 329);
+teleport(-364.26, 1283.05, 374.50);
+

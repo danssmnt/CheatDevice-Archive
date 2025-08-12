@@ -1,0 +1,292 @@
+#cheat Water Everywhere
+//by edisoncarter
+//activate this once to place water under the entire map of vice city
+if (getchar(0x954A000) != 0)
+{
+  for (p = 0x9549D80; p < 0x954E580; p++)
+      setchar(p, 0x00);
+}
+
+#cheat Water Height Modifier (Left or Right)
+//by vettefan88
+//press left and right to modify the height of the water in vice city.
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0,  getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0,  getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0,  6);
+
+#cheat Wave Size/Speed Modifier (Up or Down)
+//by vettefan
+//press up and down to mess with the height/speed of the waves
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0, Wave);
+
+#cheat Water Height Changer (Press X+Left or Right)
+//Hold down cross and go left and right to change water level
+//Thanks to vettefan88
+static Number;
+if (Number == 0)
+Number = 0;
+
+if (buttons & CTRL_LEFT && (buttons & CTRL_CROSS))
+{
+setfloat(0x96C96B0, getfloat(0x96C96B0)-0.1);
+Number=Number-0.1;
+
+
+}
+
+
+if (buttons & CTRL_RIGHT && (buttons & CTRL_CROSS))
+
+{
+
+setfloat(0x96C96B0, getfloat(0x96C96B0)+0.1);
+Number= Number+0.1;
+
+}
+
+if (getchar(0x954A000) != 0)
+{
+  for (p = 0x9549D80; p < 0x954E580; p += 4)
+      setint(p, 0);
+}
+
+
+
+if (buttons & CTRL_CROSS)
+
+{
+n = Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 'm', 0 );
+else
+   setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 'm', 0 );
+}
+
+#off
+setfloat(0x96C96B0, getfloat(0x96C96B0));
+setshort( 0x08e90bd8, 1,' ', 0 );
+
+#cheat Wave Size+Speed Changer (Press X+Up or Down)
+
+//Hold down cross and go up and down to change wave size/speed
+//Thanks to vettefan88
+
+static Number;
+if (Number == 0)
+Number = 0;
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN && (buttons & CTRL_CROSS))
+{
+Number=Number-0.1;
+Wave=Wave-.1;
+}
+
+if (buttons & CTRL_UP && (buttons & CTRL_CROSS))
+{
+Number= Number+0.1;
+Wave=Wave+.1;
+}
+
+setfloat(0x8bb3bb0,  Wave);
+
+if (buttons & CTRL_CROSS)
+
+{
+n = Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+ hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+     setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 0 );
+else
+     setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+#off
+
+setfloat(0x8bb3bb0, Wave);
+
+#cheat Air+Water Color Changer (use at 21h30)
+//although colour appears on bottom of screen
+//it depends on the time of day, these are based
+// at around 21:30
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Weather = 0;
+}
+
+static name;
+if (name == 0)
+name = 1;
+
+if (press & CTRL_LEFT && (getchar(0x8bb3df8) != 0))
+{   name = name - 1;}
+
+if (press & CTRL_RIGHT && (getchar(0x8bb3df8) != 0))
+{    name=name + 1;}
+
+if (name == 1)
+{setshort( 0x08e90bd8, 1,'P','a','l','e',' ','G','r','e','e','n',  0 );
+ (Weather=1);}
+if (name == 2)
+{setshort( 0x08e90bd8, 1,'L','i','g','h','t',' ','B','l','u','e',  0 );
+ (Weather=3);}
+if (name == 3)
+{setshort( 0x08e90bd8, 1,'M','i','s','t','y',' ','G','r','e','e','n',  0 );
+ (Weather=6);}
+if (name == 4)
+{setshort( 0x08e90bd8, 1,'G','r','e','y',  0 );
+ (Weather=7);}
+if (name == 5)
+{setshort( 0x08e90bd8, 1,'D','a','r','k',' ','B','l','u','e',  0 );
+ (Weather=18);}
+if (name == 6)
+{setshort( 0x08e90bd8, 1,'P','u','r','p','l','e', 0 );
+ (Weather=22);}
+if (name == 7)
+{setshort( 0x08e90bd8, 1,'B','l','u','e',  0 );
+ (Weather=35);}
+
+if (press & CTRL_CROSS)
+
+{
+setchar(0x8bb3e00,  -(Weather));
+setchar(0x8bb3df8,  -(Weather));
+setchar(0x8bb458c,  -(Weather));
+}
+
+#cheat Weather Changer (Press X+Up or Down)
+// By vettefan88
+// press up and down to modify the weather in Vice City Stories.
+// it automatically starts off on sunny weather, and the higher you go in the weather, the weirder it gets...
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (buttons & CTRL_CROSS) && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (buttons & CTRL_CROSS) && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00,  weather);
+setchar(0x8bb3df8,  weather);
+setchar(0x8bb458c,  weather);
+
+#cheat Weather Changer Menu Version
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Weather = 0;
+}
+
+static name;
+if (name == 0)
+name = 1;
+
+if (press & CTRL_LEFT && (getchar(0x8bb3df8) != 0))
+{   name = name - 1;}
+
+if (press & CTRL_RIGHT && (getchar(0x8bb3df8) != 0))
+{    name=name + 1;}
+
+if (name == 1)
+{setshort( 0x08e90bd8, 1,'S','u','n','n','y',  0 );
+ (Weather=1);}
+if (name == 2)
+{setshort( 0x08e90bd8, 1,'R','a','i','n',  0 );
+ (Weather=2);}
+if (name == 3)
+{setshort( 0x08e90bd8, 1,'C','l','o','u','d','y',  0 );
+ (Weather=5);}
+if (name == 4)
+{setshort( 0x08e90bd8, 1,'D','a','r','k',' ','C','l','o','u','d','s',  0 );
+ (Weather=6);}
+
+
+if (press & CTRL_CROSS)
+
+{
+setchar(0x8bb3e00,  (Weather));
+setchar(0x8bb3df8,  (Weather));
+setchar(0x8bb458c,  (Weather));
+}
+
+
+
+#cheat real time clock
+setint(0x8bb3b3c, 60000);
+#off
+setint(0x8bb3b3c, 1000);
+
+#cheat set clock (Press R+Up Down Left Right)
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);
+}
+
+
+#cheat freeze clock
+setint(0x8bb3b3c, 99999999999999999999999);
+#off
+setint(0x8bb3b3c, 99999999999999999999999;
+
+

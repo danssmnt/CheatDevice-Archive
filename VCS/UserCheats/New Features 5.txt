@@ -1,0 +1,503 @@
+#cheat Bulldozer
+//ID: 19023
+//Score: 129
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat allows you to pick up other cars and smash them up!
+//Controls- While holding R, touch a car to pick it up - Hit O to smash the car into the ground - Hit down to toss the car - Hit R to retrieve the last picked up car.
+//Image: http://img146.imageshack.us/img146/5170/video1qi8.gif
+//Time: 12/12/2006 00:18:03
+//Working: Yes
+static onoff;
+
+if(getint(pcar + 0x150))
+{
+ppedc = getint(pcar + 0x150);
+}
+if(ppedc&&buttons & CTRL_RTRIGGER&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+onoff = 1;
+}
+if(onoff&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+setfloat(ppedc + 0x30,  getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 7.5);
+setfloat(ppedc + 0x34,  getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 7.5);
+setfloat(ppedc + 0x38,  getfloat(pplayer + 0x38) + 2.5);
+setfloat(ppedc + 0x70, 0, 0, 0);
+if(press & CTRL_CIRCLE)
+{
+setfloat(ppedc + 0x0148, -1.2);
+setfloat(ppedc + 0x027C, getfloat(ppedc + 0x027C) - 250);
+onoff = 0;
+}
+else
+{
+setfloat(ppedc + 0x0148, 0);
+}
+if(press & CTRL_DOWN)
+{
+boost = 5;
+thrust = boost * 0.00333; 
+setfloat(ppedc + 0x0140,   getfloat(ppedc + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(ppedc + 0x0144,   getfloat(ppedc + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(ppedc + 0x0148,   getfloat(ppedc + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+onoff = 0;
+}
+}
+
+#cheat Push over cars
+//ID: 19003
+//Score: 86
+//Author: psphacker108
+//Category: Player
+//Description: This cheat will allow you to run/walk into a car and make it move around like the driver has no controll, and with this you can walk on the tops of cars if you hit it just right! Admins leave seprate! look for the off code down below.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-2.gif
+//Time: 09/12/2006 04:11:06
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x52);
+
+#cheat Power Driving
+//ID: 18764
+//Score: 190
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: An inspiration from Power Jump, this let's you fly while in a car!
+//Controls:
+//X: Accelerate, Square: Brake, O: Increase upward speed, Analog Down: Increase Forward Speed, Analog Up: Stay On Ground/Descend, Down: Keep Car Leveled
+//Works now!
+//Image: http://www.rottenbakon.com/ddm/PD.gif
+//Time: 18/11/2006 21:10:35
+//Working: Yes
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78, -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148, +Up);
+}
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+setfloat(pcar + 0x0000027C,   1000000000);
+setfloat(pcar + 0x0000010C,   0);
+static ZLoc;
+if(press & CTRL_DOWN)
+{
+ZLoc = getfloat(pcar + 0x38);
+}
+if(buttons & CTRL_DOWN)
+{
+Power = 0;
+setfloat(pcar + 0x38, ZLoc);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+
+#cheat Remote Control Vehicle
+//ID: 18742
+//Score: 197
+//Author: dwinch
+//Category: Vehicle
+//Description: Gif shows how it works first, then examples of things you can do!
+//Great for making video clips of stunts.
+//Two camera modes, stationary/follow car.
+//Hellis are sketchy all others work fine. Now one cheat!
+//any questions pm me at gtaforums.com: Winchy
+//
+//
+//Image: http://smg.photobucket.com/albums/v514/Winchy/RCV.gif
+//Time: 17/11/2006 19:12:23
+//Working: Yes
+static Text;
+if (!Text)
+{
+setshort(0x8E90BD8, 1, 'O', '+', 'U', 'p', '=', 'L', 'e', 'a', 'v', 'e', ' ', 'c', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'D', 'o', 'w', 'n', '=', 'R', 'e', 't', 'u', 'r', 'n', ' ', ' ', ' ', 'N', 'o', 't', 'e', '=', 'H', 'U', 'D', '/', 'R', 'a', 'd', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'L', 'e', 'f', 't', '/', 'R', 'i', 'g', 'h', 't', '=', 'C', 'a', 'm', 0);
+}
+setchar(pplayer+0x4C, 0x10, 0x20);
+if (press & CTRL_CIRCLE&&press & CTRL_UP)
+{
+Text = true;
+setchar(pplayer+0x8B4, 0x36);
+setchar(pplayer+0x8B4, 0x38);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+if (press & CTRL_NOTE)
+{
+setchar(0x9A63413, getchar(0x9A63413) ^ 0x02);
+setchar(0x9A63418, getchar(0x9A63418) ^ 0x01);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_CIRCLE&&press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+#off
+{
+setchar(pplayer+0x4C, 0x00, 0x00);
+setchar(0x9A63413, 0x00);
+setchar(0x9A63418, 0x01);
+}
+
+//Made by dwinch
+//Thanks to Waterbottle and DDM
+
+#cheat Pet Car
+//ID: 18718
+//Score: 165
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat will make the last entered car follow you! To use this, turn it on, get into a car, then get out. Then use these controls:
+//R+Up- Turn On Follow
+//R+Down- Turn Off Follow
+//R+O- Blow up car
+//Down- Car hop (Best if follow is OFF)
+//R+ Analog- Spin
+//Image: http://img294.imageshack.us/img294/7374/video1km2.gif
+//Time: 15/11/2006 16:12:00
+//Working: Yes
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,  +0.2);
+}
+
+#cheat Drive On Water!
+//ID: 18678
+//Score: 338
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This cheat will allow any vehicle you are in to drive on water. Control Setup 1 recommeded.
+//X: accelerate, Analog: rotate, R: hand brake, [] Reverse
+//
+//Thanks to Durka Durka Mahn for the cheat idea ;)
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/drivewater.gif
+//Time: 12/11/2006 01:01:08
+//Working: Yes
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+   static speed;
+   //set the car ontop of the water
+   setfloat(pcar+0x38, getfloat(0x96C96B0)+0.8);
+   setfloat(pcar+0x8, 0);
+   setfloat(pcar+0x18, 0);
+   setfloat(pcar+0x20, 0, 0, 0);
+   setfloat(pcar+0x148, 0);
+   //hand brake
+   if(buttons & CTRL_RTRIGGER) 
+   {
+   speed*=0.9;
+   handb = 2.5;
+   } else handb = 1;
+   //rotate the vehicle
+   if(speed > 0.1)
+           setfloat(pcar+0x78, -0.015 * xstick * handb);
+   else if(speed < -0.1)
+           setfloat(pcar+0x78, 0.015 * xstick * handb);
+   //accelerte
+   if(buttons & CTRL_CROSS) 
+   {
+   if(speed < 0)
+           speed += 0.02; 
+   if(speed < 0.7)
+           speed += 0.02; 
+   }
+   else
+   if(buttons & CTRL_SQUARE)
+   {
+   if(speed > 0)
+           speed -= 0.02; 
+   if(speed > -0.5)
+           speed -= 0.02; 
+   }
+   else speed *= 0.95;
+   //add speed to car
+   setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+   setfloat(pcar+0x144, getfloat(pcar)*speed);
+}
+
+#cheat Remote Control Bike
+//ID: 18639
+//Score: 114
+//Author: dwinch
+//Category: Vehicle
+//Description: See gif for better idea of what it does.
+//I cannot add the whole thing here, apparently there are errors (I assume as it is more than one code), so the rest is in the readme:
+//http://www.filelodge.com/files/room49/1424824/Remote%20Control%20Bike.txt
+//Image: http://www.filelodge.com/files/room49/1424824/th_RCB.gif
+//Time: 10/11/2006 19:35:41
+//Working: Yes
+//get on bike, get off, use this (turn on/off QUICKLY)
+//must be a few feet away from bike
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Remote Control Ped!
+//ID: 18569
+//Score: 276
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: aim at a ped and press /\ to take controll of it.
+//When you are in controll of a ped you can rotate it with the analog stick.
+//Use analog upward to move ped.
+//Press L+R to kill the ped you are in controll of.
+//Requires cheatdevice 2.1 or higher.
+//Image: none
+//Time: 06/11/2006 17:46:55
+//Working: Yes
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+    setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+    setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+    }
+
+//kill ped
+if(press & CTRL_LTRIGGER && press & CTRL_RTRIGGER) rot = 0;
+if(buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER) {
+rot+=25;
+if(rot>2000) { setfloat(address+0x4e4, 0); setint(0x09fc73f8, 0); }
+}
+
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894, 0x10);
+else setchar(address+0x894, 0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+#cheat Invisible Jetpack
+//ID: 18559
+//Score: 340
+//Author: edisoncarter
+//Category: Player
+//Description: Same controls as in San Andreas.
+//Image: http://www1.cheatdevice.com/gta/VCSJetpack1.gif
+//Time: 06/11/2006 00:50:04
+//Working: Yes
+// By Edison Carter
+// same controls as in San Andreas
+{
+    dx = 0; dy = 0; dz = 0;
+
+    // forward thrust
+    thrust = -ystick * 0.005;
+    if (ystick < -0.1 && (buttons & CTRL_CROSS))
+        thrust = -ystick * 0.024;
+    dx += getfloat(pplayer + 0x0010) * thrust;
+    dy += getfloat(pplayer + 0x0014) * thrust;
+    dz += getfloat(pplayer + 0x0018) * thrust;
+
+    // strafe left
+    if (buttons & CTRL_LTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * -0.00333;
+        dy += getfloat(pplayer + 0x0004) * -0.00333;
+        dz += getfloat(pplayer + 0x0008) * -0.00333;
+    }
+
+    // strafe right
+    if (buttons & CTRL_RTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * 0.00333;
+        dy += getfloat(pplayer + 0x0004) * 0.00333;
+        dz += getfloat(pplayer + 0x0008) * 0.00333;
+    }
+
+    // lift
+    lift = 0.0068;
+    if (buttons & CTRL_SQUARE)
+        lift -= 0.007;
+    if (buttons & CTRL_CROSS)
+    {
+        setshort(pplayer+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * 0.006;
+        else
+            lift += 0.006;
+    }
+    dx += getfloat(pplayer + 0x0020) * lift;
+    dy += getfloat(pplayer + 0x0024) * lift;
+    dz += getfloat(pplayer + 0x0028) * lift;
+
+    // add vector to velocity
+    gameplayspeed = getfloat(0x08bb3b58);
+    setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+    setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+    setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+    // rotational control
+    setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+    // never roll when falling, thanks to theY4Kman
+    setfloat(pplayer + 0x1C4,  0.0);
+}
+
+#cheat Money Modifier
+//ID: 18545
+//Score: 173
+//Author: magical trevor
+//Category: Player
+//Description: this modifys your money in the game
+//CONTROLS
+//RTRIGGER + UP: money goes up by 1000
+//RTRIGGER + DOWN: money goes down by 1000
+//RTRIGGER + LEFT: money goes down by 2000
+//RTRIGGER + RIGHT: money goes up by 2000
+//Image: none
+//Time: 05/11/2006 17:18:01
+//Working: Yes
+ if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_UP&&getint(0x08bde55c)<999999999))
+{
+setint(0x08bde55c,  getint(0x08bde55c)+1000);
+}
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_RIGHT&&getint(0x08bde55c)<999999999))
+{
+setint(0x08bde55c,  getint(0x08bde55c)+2000);
+}
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_DOWN&&getint(0x08bde55c)>000000000))
+{
+setint(0x08bde55c,  getint(0x08bde55c)-1000);
+} 
+if((pressmed & CTRL_RTRIGGER && pressmed & CTRL_LEFT&&getint(0x08bde55c)>000000000))
+{
+setint(0x08bde55c,  getint(0x08bde55c)-2000);
+} 
+
+#cheat Car Hop (Hit Down)
+//ID: 18514
+//Score: 150
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and get in a vehicle then hit down and your car will pop up into the air, in a controlled amount.
+//Image: none
+//Time: 04/11/2006 21:42:32
+//Working: Yes
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148, +0.2);
+}
+
+#cheat Remote Controlled Bike
+//ID: 18444
+//Score: 152
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Stand next to the bike you want to remort control then activate the cheat and quickly disable it,  as you leave the bike and you can remote control it.
+//Image: none
+//Time: 03/11/2006 00:13:28
+//Working: Yes
+setchar(pplayer+0x894, 0x12);
+#off
+setchar(pplayer+0x894, 0x10);
+

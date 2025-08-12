@@ -1,0 +1,580 @@
+#cheat Set Mission Attempts to 500 and something million
+//ID: 19774
+//Score: 1
+//Author: Xsjado
+//Category: Player Stats
+//Description: changes your mission attempts in the stat menu to 500 and something million
+//
+//EDITED BY: psphacker108 on 14/06/07 16:03:42
+//Image: none
+//Time: 13/06/2007 10:59:28
+//Working: Yes
+setshort(0x08BB3D1E, 8010);
+#off
+setshort(0x08BB3D1E, 0);
+
+#cheat Pez Dispenser
+//ID: 19768
+//Score: 17
+//Author: Durka Durka Mahn
+//Category: Pointless
+//Description: Touch 5 different cars and they will appear above you! Hit O to launch the top car, and hold R and hit O to launch them all at the same time!
+//Image: http://www.themaxone.net/video2.gif
+//Time: 09/06/2007 04:46:02
+//Working: Yes
+static car1;
+static car2;
+static car3;
+static car4;
+static car5;
+static getRidoftheCars;
+touchCheck = getint(pobj + 0x150);
+if(touchCheck && getshort(touchCheck + 0x56) < 279 && getshort(touchCheck + 0x56) > 150) {
+	if(!car5) {
+		car5 = touchCheck;
+	}
+	if(!car4&&car5&&touchCheck != car5) {
+		car4 = touchCheck;
+	}
+	if(!car3&&car5&&car4&&touchCheck != car4&&touchCheck != car5) {
+		car3 = touchCheck;
+	}
+	if(!car2&&car5&&car4&&car3&&touchCheck != car5&&touchCheck != car4&&touchCheck != 
+
+car3) {
+		car2 = touchCheck;
+	}
+	if(!car1&&car5&&car4&&car3&&car2&&touchCheck != car5&&touchCheck != 
+
+car4&&touchCheck != car3&&touchCheck != car2) {
+		car1 = touchCheck;
+	}
+}
+if(car4 && !car5) {
+	car5 = car4;
+	car4 = 0;
+}
+if(car3 && !car4 && car5) {
+	car4 = car3;
+	car3 = 0;
+ }
+if(car3 && !car4 && !car5) {
+	car5 = car3;
+	car3 = 0;
+ }
+if(car3 && !car4) {
+	car4 = car3;
+	car3 = 0;
+ }
+if(car2 && !car3 && car4 && car5) {
+	car3 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && !car4 && car5) {
+	car4 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && !car4 && !car5) {
+	car5 = car2;
+	car2 = 0;
+ }
+if(car2 && !car3 && car4 && car5) {
+	car3 = car2;
+	car2 = 0;
+ }
+if(car1 && !car2 && car3 && car4 && car5) {
+	car2 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && car4 && car5) {
+	car3 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && !car4 && car5) {
+	car4 = car1;
+	car1 = 0;
+ }
+if(car1 && !car2 && !car3 && !car4 && !car5) {
+	car5 = car1;
+	car1 = 0;
+ }
+if(car1) {		
+	setfloat(car1 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 2.5);
+	setfloat(car1 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car1+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car1+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car1+0x140,  0,  0,  0);
+	setfloat(car1+0x70,  0,  0,  0);
+}
+if(car2) {
+	setfloat(car2 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 5);
+	setfloat(car2 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car2+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car2+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car2+0x140,  0,  0,  0);
+	setfloat(car2+0x70,  0,  0,  0);
+}
+if(car3) {
+	setfloat(car3 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 7.5);
+	setfloat(car3 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car3+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car3+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car3+0x140,  0,  0,  0);
+	setfloat(car3+0x70,  0,  0,  0);
+}
+if(car4) {
+	setfloat(car4 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 10);
+	setfloat(car4 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car4+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car4+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car4+0x140,  0,  0,  0);
+	setfloat(car4+0x70,  0,  0,  0);
+}
+if(car5) {
+	setfloat(car5 + 0x30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38) + 12.5);
+	setfloat(car5 + 0x00,  getfloat(pobj),  getfloat(pobj+4),  getfloat(pobj+8));
+	setfloat(car5+0x10,  getfloat(pobj+0x10),  getfloat(pobj+0x14),  getfloat( pobj+0x18));
+	setfloat(car5+0x20,  getfloat(pobj+0x20),  getfloat(pobj+0x24),  getfloat( pobj+0x28));
+	setfloat(car5+0x140,  0,  0,  0);
+	setfloat(car5+0x70,  0,  0,  0);
+}
+if(press & CTRL_CIRCLE) {
+	if(car5) {
+		setfloat(car5+0x140,  getfloat(car5+0x140)+getfloat(car5+0x10)+0.1);
+		setfloat(car5+0x144,  getfloat(car5+0x144)+getfloat(car5+0x14)+0.1);
+		car5 = 0;
+	}
+}
+if(buttons & CTRL_RTRIGGER && press & CTRL_CIRCLE) {
+	if(car1) {
+		setfloat(car1+0x140,  getfloat(car1+0x140)+getfloat(car1+0x10)+0.1);
+		setfloat(car1+0x144,  getfloat(car1+0x144)+getfloat(car1+0x14)+0.1);
+		car1 = 0;
+	}
+	if(car2) {
+		setfloat(car2+0x140,  getfloat(car2+0x140)+getfloat(car2+0x10)+0.1);
+		setfloat(car2+0x144,  getfloat(car2+0x144)+getfloat(car2+0x14)+0.1);
+		car2 = 0;
+	}
+	if(car3) {
+		setfloat(car3+0x140,  getfloat(car3+0x140)+getfloat(car3+0x10)+0.1);
+		setfloat(car3+0x144,  getfloat(car3+0x144)+getfloat(car3+0x14)+0.1);
+		car3 = 0;
+	}
+	if(car4) {
+		setfloat(car4+0x140,  getfloat(car4+0x140)+getfloat(car4+0x10)+0.1);
+		setfloat(car4+0x144,  getfloat(car4+0x144)+getfloat(car4+0x14)+0.1);
+		car4 = 0;
+	}
+	if(car5) {
+		setfloat(car5+0x140,  getfloat(car5+0x140)+getfloat(car5+0x10)+0.1);
+		setfloat(car5+0x144,  getfloat(car5+0x144)+getfloat(car5+0x14)+0.1);
+		car5 = 0;
+	}
+}
+#off
+car1 = car2 = car3 = car4 = car5 = 0;
+
+#cheat Teleport To And Back V1
+//ID: 19758
+//Score: 4
+//Author: emcp
+//Category: Teleport
+//Description: This cheat allows you to teleport to a specified location by pressing R + up and then by pressing R + down you can return to the location you were when you first teleported
+//
+//after each teleport you have to turn the cheat back on this is to stop constant teleporting in the cheat device (if theres a way around this please tell me thanks)
+//
+//this is useful if you make a construction like a hide away and you are being chased by police you can cool down in the hideaway and return back to the spot you were
+//
+//this is the first version i dont think it works in cars that will work very very soon and more features
+//
+//EDITED BY: Durka Durka Mahn on 07/06/07 19:05:01 Fixed!
+//
+//EDITED BY: Durka Durka Mahn on 09/06/07 03:27:54
+//Image: none
+//Time: 07/06/2007 18:52:05
+//Working: Yes
+//My First Cheat Created For VCS
+//Created By Emmet Mc Poland (emcp)
+if(press & CTRL_UP && buttons & CTRL_RTRIGGER)
+{
+x = getfloat(pobj+ 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj+ 0x38); 
+}
+if(press & CTRL_DOWN && buttons & CTRL_RTRIGGER) {
+setfloat(pobj+0x30, x, y, z);
+}
+
+#cheat Custom Gravity
+//ID: 19757
+//Score: 13
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Use the D-Pad to change the gravity along the X/Y axi.
+//Image: none
+//Time: 07/06/2007 01:23:42
+//Working: Yes
+gravity = 0.002;
+static speed;
+static menu;
+if(press & CTRL_RIGHT) {
+	menu = 1;
+	speed = 0;
+}
+if(press & CTRL_LEFT) {
+	menu = 2;
+	speed = 0;
+}
+if(press & CTRL_UP) {
+	menu = 3;
+	speed = 0;
+}
+if(press & CTRL_DOWN) {
+	menu = 4;
+	speed = 0;
+}
+if(menu == 1) {
+	if(!getint(pobj+0x150)) {
+		speed += gravity;
+		setfloat(pobj+0x30, getfloat(pobj+0x30) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 2) {
+	if(!getint(pobj+0x150)) {
+		speed -= gravity;
+		setfloat(pobj+0x30, getfloat(pobj+0x30) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 3) {
+	if(!getint(pobj+0x150)) {
+		speed += gravity;
+		setfloat(pobj+0x34, getfloat(pobj+0x34) + speed);
+	} else {
+		speed = 0;
+	}
+}
+if(menu == 4) {
+	if(!getint(pobj+0x150)) {
+		speed -= gravity;
+		setfloat(pobj+0x34, getfloat(pobj+0x34) + speed);
+	} else {
+		speed = 0;
+	}
+} 
+setshort(0x08e90bd8, 1, 'U', 's', 'e', ' ', 't', 'h', 'e', ' ', 'D', '-', 'P', 'a', 'd', ' ', 't', 'o', ' ', 'c', 'h', 'a', 'n', 'g', 'e', ' ', 'y', 
+
+'o', 'u', 'r', ' ', 'G', 'r', 'a', 'v', 'i', 't', 'y', '!', 0); 
+
+#cheat longest ramp
+//ID: 19754
+//Score: 11
+//Author: creepers
+//Category: Location Mods
+//Description: man this is long!
+//
+//sometimes parts disapppear due to many parts
+//
+//
+//
+//EDITED BY: psphacker108 on 06/06/07 05:42:15
+//Image: http://img61.imageshack.us/img61/1552/screen1zj1.png
+//Time: 06/06/2007 02:05:32
+//Working: Yes
+moveto(479.38, -558.07, 13.32);  object(0x1CB2, 90, 240, 104);
+move(-2.77, -11.53, 6.80);  object(0x1CB2, 90, 240, 104);
+move(-2.83, -11.73, 6.90);  object(0x1CB2, 90, 240, 104);
+move(-2.67, -12.24, 7.20);  object(0x1CB2, 90, 240, 101);
+move(-2.39, -12.48, 7.20);  object(0x1CB2, 90, 240, 101);
+move(-2.53, -12.60, 7.20);  object(0x1CB2, 90, 240, 101);
+move(-2.24, -11.95, 7.00);  object(0x1CB2, 90, 240, 101);
+move(-2.19, -11.78, 6.60);  object(0x1CB2, 90, 240, 101);
+move(-1.87, -9.52, 5.60);  object(0x1CB2, 90, 240, 101);
+move(-2.35, -11.59, 6.60);  object(0x1CB2, 90, 240, 101);
+move(-2.44, -11.91, 6.60);  object(0x1CB2, 90, 240, 101);
+move(-2.31, -11.82, 6.90);  object(0x1CB2, 90, 240, 101);
+move(-2.12, -11.53, 6.70);  object(0x1CB2, 90, 240, 101);
+move(-2.35, -11.95, 6.80);  object(0x1CB2, 90, 240, 101);
+move(-2.43, -12.23, 7.20);  object(0x1CB2, 90, 240, 101);
+move(-2.03, -10.47, 6.20);  object(0x1CB2, 90, 240, 101);
+move(-2.30, -11.77, 6.90);  object(0x1CB2, 90, 240, 101);
+move(-2.28, -11.72, 6.90);  object(0x1CB2, 90, 240, 101);
+move(-2.29, -11.74, 6.70);  object(0x1CB2, 90, 240, 101);
+move(-2.43, -12.26, 7.10);  object(0x1CB2, 90, 240, 101);
+move(-2.20, -11.39, 6.60);  object(0x1CB2, 90, 240, 100);
+move(-2.09, -11.77, 6.80);  object(0x1CB2, 90, 240, 100);
+move(-2.15, -12.35, 7.20);  object(0x1CB2, 90, 240, 100);
+move(-2.18, -12.32, 7.20);  object(0x1CB2, 90, 240, 100);
+move(-2.13, -11.94, 6.90);  object(0x1CB2, 90, 240, 100);
+move(-1.95, -11.04, 6.20);  object(0x1CB2, 90, 240, 100);
+move(-1.92, -10.90, 6.30);  object(0x1CB2, 90, 240, 100);
+move(-2.15, -12.19, 7.20);  object(0x1CB2, 90, 240, 100);
+move(-2.17, -12.25, 7.10);  object(0x1CB2, 90, 240, 100);
+move(-2.20, -12.37, 7.30);  object(0x1CB2, 90, 240, 100);
+move(-2.00, -11.62, 6.80);  object(0x1CB2, 90, 240, 100);
+move(-2.13, -12.11, 7.10);  object(0x1CB2, 90, 240, 100);
+move(-2.09, -11.90, 6.90);  object(0x1CB2, 90, 240, 100);
+move(-2.11, -11.98, 6.90);  object(0x1CB2, 90, 240, 100);
+move(-2.37, -12.20, 7.10);  object(0x1CB2, 90, 240, 102);
+move(-2.64, -12.15, 7.10);  object(0x1CB2, 90, 240, 102);
+move(-2.61, -11.71, 6.80);  object(0x1CB2, 90, 240, 102);
+move(-2.35, -11.89, 7.00);  object(0x1CB2, 90, 240, 100);
+move(-2.06, -12.29, 7.10);  object(0x1CB2, 90, 240, 99);
+move(-1.81, -11.37, 6.61);  object(0x1CB2, 90, 240, 99);
+move(-2.01, -12.45, 7.10);  object(0x1CB2, 90, 240, 99);
+move(-1.89, -11.96, 7.00);  object(0x1CB2, 90, 240, 99);
+move(-1.88, -12.36, 7.30);  object(0x1CB2, 90, 240, 99);
+move(-1.90, -12.01, 7.00);  object(0x1CB2, 90, 240, 99);
+move(-1.81, -11.63, 6.90);  object(0x1CB2, 90, 240, 99);
+move(-1.93, -11.72, 6.70);  object(0x1CB2, 90, 240, 99);
+move(-1.70, -11.32, 6.60);  object(0x1CB2, 90, 240, 98);
+move(-1.61, -11.19, 6.50);  object(0x1CB2, 90, 240, 98);
+move(-1.65, -11.38, 6.50);  object(0x1CB2, 90, 240, 98);
+move(-1.50, -11.17, 6.50);  object(0x1CB2, 90, 240, 98);
+move(-1.73, -12.11, 7.10);  object(0x1CB2, 90, 240, 98);
+move(-1.60, -11.57, 6.80);  object(0x1CB2, 90, 240, 98);
+move(-1.77, -12.30, 6.90);  object(0x1CB2, 90, 240, 98);
+move(-1.65, -12.25, 7.10);  object(0x1CB2, 90, 240, 97);
+move(-1.48, -12.27, 7.20);  object(0x1CB2, 90, 240, 97);
+move(-1.25, -10.15, 6.00);  object(0x1CB2, 90, 240, 97);
+move(-1.42, -11.46, 6.60);  object(0x1CB2, 90, 240, 97);
+move(-1.41, -11.91, 6.80);  object(0x1CB2, 90, 240, 97);
+move(-1.43, -12.00, 6.90);  object(0x1CB2, 90, 240, 97);
+move(-1.36, -12.39, 7.00);  object(0x1CB2, 90, 240, 96);
+move(-1.32, -12.49, 7.22);  object(0x1CB2, 90, 240, 96);
+move(-1.30, -12.29, 7.00);  object(0x1CB2, 90, 240, 96);
+move(-1.37, -12.63, 7.20);  object(0x1CB2, 90, 240, 96);
+move(-1.22, -12.10, 7.00);  object(0x1CB2, 90, 240, 96);
+move(-1.21, -12.38, 7.20);  object(0x1CB2, 90, 240, 96);
+move(-1.37, -12.59, 7.30);  object(0x1CB2, 90, 240, 96);
+move(-1.29, -12.13, 7.10);  object(0x1CB2, 90, 240, 96);
+move(-1.27, -12.37, 7.20);  object(0x1CB2, 90, 240, 96);
+move(-1.27, -12.52, 7.10);  object(0x1CB2, 90, 240, 96);
+move(-1.30, -12.14, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.28, -12.04, 6.90);  object(0x1CB2, 90, 240, 96);
+move(-1.21, -11.65, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.08, -12.60, 7.20);  object(0x1CB2, 90, 240, 94);
+move(-0.86, -12.44, 7.20);  object(0x1CB2, 90, 240, 94);
+move(-0.76, -11.22, 6.40);  object(0x1CB2, 90, 240, 94);
+move(-0.94, -12.29, 7.10);  object(0x1CB2, 90, 240, 94);
+move(-0.81, -12.13, 7.00);  object(0x1CB2, 90, 240, 94);
+move(-0.79, -11.43, 6.60);  object(0x1CB2, 90, 240, 94);
+move(-0.93, -11.45, 6.50);  object(0x1CB2, 90, 240, 95);
+move(-1.16, -11.76, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.19, -12.00, 7.10);  object(0x1CB2, 90, 240, 96);
+move(-1.17, -10.84, 6.30);  object(0x1CB2, 90, 240, 96);
+move(-1.21, -11.55, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.25, -11.77, 6.90);  object(0x1CB2, 90, 240, 96);
+move(-1.30, -12.05, 6.90);  object(0x1CB2, 90, 240, 96);
+move(-1.23, -12.22, 7.20);  object(0x1CB2, 90, 240, 96);
+move(-1.13, -11.17, 6.50);  object(0x1CB2, 90, 240, 96);
+move(-1.29, -11.97, 6.90);  object(0x1CB2, 90, 240, 96);
+move(-1.21, -11.56, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.23, -11.70, 6.80);  object(0x1CB2, 90, 240, 96);
+move(-1.13, -10.63, 6.20);  object(0x1CB2, 90, 240, 96);
+move(-1.26, -11.23, 6.50);  object(0x1CB2, 90, 240, 96);
+move(-1.19, -11.42, 6.50);  object(0x1CB2, 90, 240, 96);
+move(-1.13, -11.14, 6.40);  object(0x1CB2, 90, 240, 96);
+move(-1.20, -10.97, 6.20);  object(0x1CB2, 90, 240, 96);
+move(-1.23, -11.11, 6.30);  object(0x1CB2, 90, 240, 96);
+move(-1.09, -10.94, 6.40);  object(0x1CB2, 90, 240, 96);
+move(-1.26, -11.82, 6.70);  object(0x1CB2, 90, 240, 96);
+move(-1.20, -11.48, 6.70);  object(0x1CB2, 90, 240, 96);
+move(-1.29, -11.97, 6.90);  object(0x1CB2, 90, 240, 96);
+move(-1.31, -12.10, 7.00);  object(0x1CB2, 90, 240, 96);
+move(-1.23, -11.63, 6.70);  object(0x1CB2, 90, 240, 96);
+move(-1.55, -13.36, 4.20);  object(0x1CB2, 90, 265, 97);
+move(-6.48, 0.78, 0.00);  object(0x1CB2, 90, 265, 97);
+move(-6.48, 0.76, 0.00);  object(0x1CB2, 90, 265, 97);
+move(1.62, 13.00, 3.00);  object(0x1CB2, 90, 240, 278);
+move(1.69, 11.93, 7.00);  object(0x1CB2, 90, 240, 278);
+move(1.66, 11.91, 6.90);  object(0x1CB2, 90, 240, 278);
+move(1.75, 12.22, 7.10);  object(0x1CB2, 90, 240, 278);
+move(1.76, 12.26, 7.10);  object(0x1CB2, 90, 240, 278);
+move(1.48, 10.63, 6.30);  object(0x1CB2, 90, 240, 278);
+move(1.79, 12.41, 7.10);  object(0x1CB2, 90, 240, 278);
+move(1.60, 11.70, 6.80);  object(0x1CB2, 90, 240, 277);
+move(1.42, 11.09, 6.40);  object(0x1CB2, 90, 240, 277);
+move(1.35, 11.21, 6.50);  object(0x1CB2, 90, 240, 277);
+move(1.59, 11.62, 6.51);  object(0x1CB2, 90, 240, 278);
+move(1.73, 12.12, 7.10);  object(0x1CB2, 90, 240, 278);
+move(1.74, 12.15, 6.40);  object(0x1CB2, 90, 245, 278);
+move(1.78, 12.35, 5.80);  object(0x1CB2, 90, 245, 278);
+move(1.70, 11.92, 5.50);  object(0x1CB2, 90, 245, 278);
+move(1.71, 12.28, 5.50);  object(0x1CB2, 90, 245, 278);
+move(1.83, 12.41, 6.40);  object(0x1CB2, 90, 240, 277);
+move(1.44, 11.56, 6.50);  object(0x1CB2, 90, 240, 277);
+move(1.73, 12.51, 7.10);  object(0x1CB2, 90, 240, 279);
+move(1.63, 9.32, 5.77);  object(0x1CB2, 90, 240, 280);
+teleport(485.33, -535.53, 10.95)
+
+#cheat max out bullets that hit stat
+//ID: 19776
+//Score: 1
+//Author: creepers
+//Category: Player Stats
+//Description: lol,first cheat
+//
+//EDITED BY: psphacker108 on 15/06/07 04:42:19
+//Image: none
+//Time: 14/06/2007 12:02:20
+//Working: Yes
+setint(0x08BB41D0, 2147483647);
+
+#cheat safehouse dividers
+//ID: 19777
+//Score: 2
+//Author: creepers
+//Category: Location Mods
+//Description: keeps your cars and motorcycles organized :D
+//
+//EDITED BY: psphacker108 on 14/06/07 16:17:02
+//Image: none
+//Time: 14/06/2007 12:04:58
+//Working: Yes
+moveto(261.23, -139.87, 12.58);  object(0x1CB2, 0, 0, 291);
+move(0.43, 1.80, -0.70);  object(0x1CB2, 0, 0, 295);
+move(-2.23, -4.76, 0.49);  object(0x1CB2, 0, 0, 295);
+move(-1097.21, -1054.40, -0.36);  object(0x1CB2, 0, 0, 250);
+move(-269.97, 1557.99, -0.35);  object(0x1CB2, 0, 0, 267);
+
+#cheat Splitz 6  Has Big Tires.
+//ID: 19789
+//Score: 2
+//Author: GTA M4573R
+//Category: Vehicle
+//Description: Splitz 6  Has Big Tires. Very awesome.
+//
+//Made with Wheel Size Changer by psphacker108
+//
+//
+//
+//EDITED BY: psphacker108 on 14/06/07 20:11:19
+//Image: none
+//Time: 14/06/2007 20:04:17
+//Working: Yes
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935E198, 1);
+
+#cheat The Bomb Shelter
+//ID: 19790
+//Score: 1
+//Author: psphacker108
+//Category: Pointless
+//Description: This Makes a Bomb Shelter, Storage area with Cash every wheres and packages you've got it made. 
+//Image: http://i66.photobucket.com/albums/h257/pspman108/screen2-27.jpg
+//Time: 14/06/2007 20:13:00
+//Working: Yes
+moveto(-1010.88, -806.61, 13.39);  object(0x1CA4, 0, 0, 33);
+move(-3.24, 0.76, 0.00);  object(0x1CA4, 0, 0, 354);
+move(-3.69, -0.67, 0.00);  object(0x1CA4, 0, 0, 346);
+move(-3.92, -0.14, 0.00);  object(0x1CA4, 0, 0, 10);
+move(-3.81, -0.57, 0.00);  object(0x1CA4, 0, 0, 331);
+move(-2.67, -3.22, 0.00);  object(0x1CA4, 0, 0, 288);
+move(-0.18, -2.99, 0.00);  object(0x1CA4, 0, 0, 259);
+move(2.39, -3.62, 0.00);  object(0x1CA4, 0, 0, 215);
+move(3.61, -1.32, 0.00);  object(0x1CA4, 0, 0, 177);
+move(13.25, 8.45, 0.00);  object(0x1CA4, 0, 0, 89);
+move(0.07, -3.90, 0.00);  object(0x1CA4, 0, 0, 89);
+move(-1.20, -2.96, 0.00);  object(0x1CA4, 0, 0, 142);
+move(-2.42, -1.75, 0.00);  object(0x1CA4, 0, 0, 149);
+move(-3.50, -1.04, -0.10);  object(0x1CA4, 0, 0, 175);
+move(-2.37, 0.40, 0.00);  object(0x1CA4, 0, 0, 206);
+move(7.92, 10.08, -1.10);  object(0x1CA5, 0, 0, 36);
+move(0.24, 0.32, 0.00);  object(0x1CA5, 0, 0, 36);
+move(0.24, 0.32, 0.00);  object(0x1CA5, 0, 0, 36);
+move(-0.32, 0.23, 0.00);  object(0x1CA5, 0, 0, 36);
+move(-0.18, -0.24, 0.00);  object(0x1CA5, 0, 0, 36);
+move(-0.24, -0.32, 0.00);  object(0x1CA5, 0, 0, 36);
+move(-0.45, 1.02, 0.50);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.27, -0.42, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.25, -0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.25, -0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.25, -0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.25, -0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.00, 0.00, 0.10);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.25, 0.16, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.17, 0.11, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-0.34, 0.22, 0.00);  object(0x1CB0, 0, 0, 33);
+move(0.17, -0.11, 0.00);  object(0x1CB0, 0, 0, 33);
+move(-1.18, 0.79, -0.60);  object(0x1CB3, 0, 0, 273);
+move(-0.80, -0.03, 0.00);  object(0x1CB3, 0, 0, 273);
+move(-0.70, -0.03, 0.00);  object(0x1CB3, 0, 0, 273);
+move(0.02, -0.56, 0.00);  object(0x1CB3, 0, 0, 273);
+move(0.70, 0.03, 0.00);  object(0x1CB3, 0, 0, 273);
+move(0.80, 0.03, 0.00);  object(0x1CB3, 0, 0, 273);
+move(4.10, -4.32, -0.20);  object(0x1CD2, 0, 0, 87);
+move(-0.23, 3.99, 0.00);  object(0x1CD2, 0, 0, 29);
+move(-6.87, 1.14, 0.00);  object(0x1CD4, 0, 0, 346);
+move(-1.74, -0.45, 0.00);  object(0x1CD4, 0, 0, 346);
+move(0.70, 0.08, 1.20);  object(0x1CE6, 0, 0, 346);
+move(-1.14, -11.47, 0.00);  object(0x1CE6, 0, 0, 196);
+move(2.76, 11.35, -0.60);  object(0x1CEB, 0, 0, 180);
+move(0.00, 0.00, 0.60);  object(0x1CEB, 0, 0, 180);
+move(0.00, 0.00, 0.60);  object(0x1CEB, 0, 0, 180);
+move(9.91, -8.51, 1.40);  object(0x1CF4, 0, 0, 291);
+move(-4.81, 3.14, -3.20);  object(0x1CF5, 0, 0, 86);
+move(-3.32, -1.69, -0.00);  object(0x1CF7, 0, 0, 175);
+move(-1.02, -0.07, 0.00);  object(0x1CF7, 0, 0, 175);
+move(-10.82, 0.43, -0.10);  object(0x1CF8, 0, 0, 345);
+move(-0.58, 4.08, 0.20);  object(0x1CF9, 0, 0, 310);
+move(4.91, 1.65, 0.30);  object(0x1CFB, 0, 0, 8);
+move(-1.10, -0.03, 0.00);  object(0x1CFB, 0, 0, 8);
+move(-0.94, -0.12, 0.00);  object(0x1CFB, 0, 0, 358);
+move(2.41, -8.81, -0.30);  object(0x1CFC, 0, 0, 183);
+move(4.72, -0.95, 0.20);  object(0x1D00, 0, 0, 186);
+move(-7.34, 4.85, -0.50);  object(0x1D01, 0, 0, 270);
+move(0.05, -0.30, 0.00);  object(0x1D01, 0, 0, 270);
+move(0.09, -0.49, 0.00);  object(0x1D01, 0, 0, 270);
+move(0.10, -0.59, 0.00);  object(0x1D01, 0, 0, 270);
+move(-0.33, 1.87, 0.00);  object(0x1D01, 0, 0, 270);
+move(5.05, 3.41, 0.80);  object(0x1D03, 0, 0, 170);
+move(-0.29, -0.08, 0.00);  object(0x1D03, 0, 0, 170);
+move(1.71, -2.41, -0.40);  object(0x1D04, 0, 0, 257);
+move(2.34, -5.75, 0.10);  object(0x1D14, 0, 0, 325);
+move(-0.42, -0.30, 0.00);  object(0x1D14, 0, 0, 333);
+move(-0.41, -0.21, 0.00);  object(0x1D14, 0, 0, 341);
+move(-0.10, 0.22, 0.00);  object(0x1D14, 0, 0, 341);
+move(0.48, 0.27, 0.00);  object(0x1D14, 0, 0, 331);
+move(5.05, 5.11, 0.60);  object(0x1D14, 0, 0, 282);
+move(-0.25, 0.03, 0.00);  object(0x1D14, 0, 0, 282);
+move(-0.30, 0.04, 0.00);  object(0x1D14, 0, 0, 282);
+move(-0.26, -0.47, 0.00);  object(0x1D14, 0, 0, 282);
+move(0.02, 0.47, 0.00);  object(0x1D14, 0, 0, 274);
+move(-0.91, -0.87, -0.70);  object(0x1D14, 0, 0, 289);
+move(0.07, 0.58, 0.00);  object(0x1D14, 0, 0, 274);
+move(-0.19, 0.85, 0.00);  object(0x1D14, 0, 0, 251);
+move(-0.40, -0.39, 0.00);  object(0x1D14, 0, 0, 186);
+move(0.06, -0.67, 0.00);  object(0x1D14, 0, 0, 205);
+move(0.00, 0.30, 0.00);  object(0x1D14, 0, 0, 196);
+move(-0.05, 0.80, 0.00);  object(0x1D14, 0, 0, 196);
+move(-0.05, -1.53, 0.00);  object(0x1D14, 0, 0, 203);
+move(0.21, 0.19, 0.00);  object(0x1D14, 0, 0, 203);
+move(1.50, 4.93, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.24, 0.39, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.27, 0.14, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.27, 0.14, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.18, 0.09, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.27, 0.14, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.27, 0.14, 0.00);  object(0x1D14, 0, 0, 138);
+move(1.33, -0.70, 0.00);  object(0x1D14, 0, 0, 138);
+move(-0.86, -0.49, 0.40);  object(0x1D14, 0, 30, 123);
+move(0.19, -0.05, 0.00);  object(0x1D14, 0, 30, 123);
+move(0.19, -0.05, 0.00);  object(0x1D14, 0, 30, 123);
+move(-0.88, 0.20, 0.00);  object(0x1D14, 0, 30, 123);
+move(-0.29, 0.07, 0.00);  object(0x1D14, 0, 30, 123);
+move(0.68, -0.16, 0.00);  object(0x1D14, 0, 30, 123);
+move(0.00, 0.00, 0.00);  object(0x1D14, 0, 30, 123);
+move(-1.47, -0.61, 1.10);  object(0x1D1A, 0, 0, 121);
+move(9.34, -10.77, 2.60);  object(0x1CB4, 0, 0, 237);
+teleport(-1019.04, -812.44, 13.27)
+

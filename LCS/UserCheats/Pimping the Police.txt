@@ -1,0 +1,2496 @@
+#cheat PAWNMOBILE - PIMPED: 157-POLICAR
+//ID: 6134
+//Score: 146
+//Author: Waterbottle
+//Category: Pimp My Garage
+//Description: this creates a mod of the police car and places it in the staunton garage. This car looks uber great when driving on the water with the cars can drive on water cheat. becouse it has a mild resemblence of a boat. now also PMG'ed
+//Image: http://www.waterbottle.y4kstudios.com/pawnmobile.gif
+//Time: 03/04/2006 17:57:10
+//Working: Yes
+setchar(09b5e276, 255)
+setchar(09b609f6, 0xd0)
+setchar(09b609fa, 0x80)
+setchar(09b67ec6, 0xff)
+setchar(0x09b609d4, 0x6f);
+setchar(0x09b688ba, 0xc0);
+setchar(0x09b5eb3a, 0xac);
+setchar(0x09b5723a, 0x67, 0x3f);
+setchar(0x09b57248, 0x0e, 0x35, 0x00, 0x2e);
+setchar(0x09b56918, 0x0e, 0x35, 0xac, 0x3e);
+setchar(0x09b56917, 0xbf);
+setchar(0x09b56906, 0xb1,0x41);
+setchar(0x09b5690a, 0xcf, 0x3f);
+setchar(0x09b5d168, 7)
+setchar(0x09b5b488, 7)
+setchar(0x09b67ea8, 4)
+setchar(0x09b5e258, 4)
+setint(0x08E38A64, 157);
+setshort(0992fda0, 0x50, 0x61, 0x77, 0x6E, 0)
+setfloat(09692aa0, 1.0191326141357422)
+setchar(09692AFE, 0)
+setfloat(09692AD4, 4, 0.0625)
+setfloat(09692AB0, -0.4)
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 251);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1400);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.3);
+setfloat(0x945ae54, -0.14999);
+setfloat(0x945ae58, 0.5);
+setfloat(0x945ae1c, 1.51733);
+setfloat(0x945ae20, 1.51733);
+setfloat(0x945ae14, 0.003);
+setfloat(0x945ae30, 0.52);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 34);
+setfloat(0x945ae48, 1.6);
+setfloat(0x945ae4c, 0.1);
+setfloat(0x945ae64, 0.15);
+setfloat(0x945ae5c, 0.3);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0);
+setfloat(0x945adb8, -0.19999);
+setchar(0x945adc0, 70);
+setfloat(0x945ae3c, 1);
+setfloat(0x945ae40, 0.5);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb5c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb1c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+//edited by Waterbottle on 16.04.2006 22:57:51
+
+#cheat Convertable Police Car
+//ID: 6130
+//Score: 380
+//Author: Fenn
+//Category: Vehicle
+//Description: Makes the Police car a convertable
+//Image: none
+//Time: 03/04/2006 11:27:28
+//Working: Yes
+setchar(09B609FB, 4A);
+
+#cheat Police Trucks
+//ID: 8277
+//Score: 5
+//Author: khaine
+//Category: Pimp My Garage
+//Description: The first one is a police truck where it looks like the back of the police car was cut off and turned into a truck.
+//Image: none
+//Time: 21/04/2006 00:16:11
+//Working: Yes
+//by Khaine
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.975);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.475);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.0015);
+setfloat(0x945ae30, 0.525);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.285);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+
+#cheat All police cars are lowriders (US version only)
+//ID: 6152
+//Score: 53
+//Author: Waterbottle
+//Category: Vehicle
+//Description: this lowers all police cars so they are almost like a lowrider.
+//Image: none
+//Time: 03/04/2006 22:44:58
+//Working: Yes
+setfloat(09b609f8, 1.1484375)
+setfloat(09b60a08, 0.05)
+setfloat(09b5b4a8, 1.2)
+setfloat(09b5b4b8, 0.0)
+setfloat(09b5d188, 1.2)
+setfloat(09b5d198, 0.0)
+setfloat(09b5e278, 1.2)
+setfloat(09b5e288, 0.0)
+setfloat(09b67ec8, 1.2)
+setfloat(09b67ed8, 0.0)
+setfloat(09b57238, 1.3)
+setfloat(09b688b8, 1.3)
+setfloat(09b56908, 1.7421875)
+setfloat(09b5eb28, 1.7421875)
+
+//edited by Waterbottle on 04.04.2006 14:07:14
+
+#cheat Staunton Safehouse Garage Car 1 Type Mod (Police Car)
+//ID: 4749
+//Score: 10
+//Author: Skiller
+//Category: Garage Codes
+//Description: Replace Car 1 With Police Car
+//Image: none
+//Time: 03/02/2006 13:52:00
+//Working: Yes
+//SubCategory: Staunton Safehouse Garage
+setint(0x08E38A38, 157);
+
+
+#cheat All Cars Act Like Police Car
+//ID: 4089
+//Score: 104
+//Author: TeamOverload
+//Category: Vehicle
+//Description: All Cars Act Like Police Car
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//by TeamOverload
+//Same Instructions
+setchar(pcar + 0x058, 0x9D);
+
+
+#cheat Portland Safehouse Garage Car 1 Type Mod (Police Car)
+//ID: 4339
+//Score: 52
+//Author: Skiller
+//Category: Garage Codes
+//Description: Replace Car 1 With Police Car
+//Image: none
+//Time: 03/02/2006 13:52:00
+//Working: Yes
+//SubCategory: Portland Safehouse Garage
+setint(0x08e38988, 157);
+
+
+#cheat Portland Safehouse Garage Car 2 Type Mod (Police Car)
+//ID: 4421
+//Score: 10
+//Author: Skiller
+//Category: Garage Codes
+//Description: Replace Car 2 With Police Car
+//Image: none
+//Time: 03/02/2006 13:52:00
+//Working: Yes
+//SubCategory: Portland Safehouse Garage
+setint(0x08e389b4, 157);
+
+
+#cheat SSV SafeHouse Garage Car 1 Type Mod (Police Car)
+//ID: 4503
+//Score: 10
+//Author: Skiller
+//Category: Garage Codes
+//Description: Replace Car 1 With Police Car
+//Image: none
+//Time: 03/02/2006 13:52:00
+//Working: Yes
+//SubCategory: SSV SafeHouse Garage
+setint(0x08e38ae8, 157);
+
+
+#cheat White Police Car
+//ID: 8281
+//Score: 55
+//Author: khaine
+//Category: Misc
+//Description: it's a police car... without the ''police bit''. This'll make all police cars white with a gold hood and no visable cop lights.
+//Image: none
+//Time: 21/04/2006 00:29:17
+//Working: Yes
+//by Khaine
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+
+
+#cheat Police Trucks
+//ID: 8278
+//Score: 8
+//Author: khaine
+//Category: Pimp My Garage
+//Description: The first one is a police truck where it looks like the back of the police car was cut off and turned into a truck.
+//Image: none
+//Time: 21/04/2006 00:21:22
+//Working: Yes
+//by Khaine
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.975);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.475);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.0015);
+setfloat(0x945ae30, 0.525);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.285);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+
+#cheat Police Car (DUB EDITION)
+//ID: 17650
+//Score: 71
+//Author: BOY 999
+//Category: Pimp My Garage
+//Description: This is a police car (boring) but all DUBBED out!!!! With nice 20" sport alloys and twin exhausts with blue nos this is a police car that has obviously been DUBBED up!!!! Also with high speeds and better handling, this is an ELITE style police car!!!!!
+//Image: none
+//Time: 22/09/2006 18:57:05
+//Working: Yes
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.85);
+setfloat(0x945ae54, -0.0125);
+setfloat(0x945ae1c, 1.15);
+setfloat(0x945ae20, 1.15);
+setfloat(0x945ae14, 0.00538);
+sethex(0x945ae60, 0x83, 0x91, 0x00, 0x01);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb20, 0xFF, 0xFF, 0x00);
+sethex(0x944faf8, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat the Fuzz (pimped)
+//ID: 17612
+//Score: 21
+//Author: dakota
+//Category: Pimp My Garage
+//Description: a pimp version which will make all of the police cars look like the pictured one
+//Image: none
+//Time: 20/09/2006 23:57:49
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x20, 0x46, 0x75, 0x7a, 0x7a);
+setchar(0x945ae12, 0x6);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.80);
+setfloat(0x945ad90, 1400);
+setfloat(0x945ad98, 3);
+setfloat(0x945ae50, .85);
+setfloat(0x945ae54, -0.85);
+setfloat(0x945ae1c, 1.975);
+setfloat(0x945ae20, 1.975);
+setfloat(0x945ae14, 0.0005);
+setfloat(0x945ae38, 60);
+setfloat(0x945ae48, 1.34375);
+setfloat(0x945ae5c, 0.9875);
+setchar(0x945adc0, 0);
+setfloat(0x945ae40, 2);
+setfloat(0x945ad9c, 0.125);
+sethex(0x945ae60, 0x03, 0x91, 0x00, 0x04);
+sethex(0x944fb34, 0xFF, 0xFF, 0x00);
+sethex(0x944fb58, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Police
+//ID: 16869
+//Score: 19
+//Author: jesta-sweet
+//Category: Pimp My Garage
+//Description: Modded police car
+//Image: none
+//Time: 29/08/2006 19:48:27
+//Working: Yes
+setchar(0x945ae12, 0x6);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.875);
+setfloat(0x945ae54, -0.01);
+setfloat(0x945ae1c, 1.35);
+setfloat(0x945ae20, 1.35);
+setfloat(0x945ae14, 0.00338);
+setfloat(0x945ae30, 0.6375);
+setfloat(0x945ae48, 0.34375);
+setfloat(0x945ae64, 0.09);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0xac, 0xb7, 0x00, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb34, 0xFF, 0xFF, 0x00);
+sethex(0x944faf4, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat sweet A$$ police car
+//ID: 16312
+//Score: 29
+//Author: dakota
+//Category: Pimp My Garage
+//Description: DOWNLOAD IT TO FIND OUT!
+//Image: none
+//Time: 11/08/2006 20:26:02
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x20, 0x46, 0x75, 0x7a, 0x7a);
+setchar(0x945ae12, 0x6);
+setshort(0x9442110, 254);
+setfloat(0x944210c, 2.5);
+setfloat(0x945ad90, 1200);
+setfloat(0x945ad98, 1.75);
+setfloat(0x945ae50, 3.75);
+setfloat(0x945ae54, 2.555555);
+setfloat(0x945ae58, 0.50);
+setfloat(0x945ae1c, 5);
+setfloat(0x945ae20, 5);
+setfloat(0x945ae14, 0.00013);
+setfloat(0x945ae38, 45);
+setfloat(0x945ae4c, 0.1);
+setfloat(0x945ae5c, 999);
+setfloat(0x945adb4, 0.3375);
+setfloat(0x945ae3c, 9999999999999999999999999999999999999999999999);
+setfloat(0x945ae40, 9999);
+setfloat(0x945ad9c, 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999);
+sethex(0x945ae60, 0x03, 0x91, 0x00, 0x04);
+sethex(0x944fb2c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb3c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Police Headquaters
+//ID: 16163
+//Score: 127
+//Author: penguinsrule
+//Category: Location Mods
+//Description: This is a police station what has a police maverick and pad, 2 enforcers, 2 fbi cars, 2 police cars and weapons used by police
+//
+//EDITED BY: magical trevor on 07/08/06 14:09:12
+//EDITED BY: penguinsrule on 07/08/06 21:43:17
+//
+//
+//Image: http://telmaz.no-ip.info:3249/pictures/telpolicev1.gif
+//Time: 07/08/2006 13:49:57
+//Working: Yes
+moveto(80.53, -1663.15, 26.86);  object(0x01BF, 0, 0, 90);
+move(-0.04, 8.00, 0.00);  object(0x01BF, 0, 0, 90);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 0, 0, 90);
+move(-0.04, 7.80, 0.00);  object(0x01BF, 0, 0, 90);
+move(0.16, -31.40, 0.00);  object(0x01BF, 0, 0, 90);
+move(-4.09, -3.95, 0.00);  object(0x01BF, 0, 0, 180);
+move(-8.00, -0.06, 0.00);  object(0x01BF, 0, 0, 180);
+move(-8.00, -0.06, 0.00);  object(0x01BF, 0, 0, 180);
+move(-8.00, -0.06, 0.00);  object(0x01BF, 0, 0, 180);
+move(-7.80, -0.06, 0.00);  object(0x01BF, 0, 0, 180);
+move(-3.66, 4.12, 0.00);  object(0x01BF, 0, 0, 270);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 0, 0, 270);
+move(-0.05, 8.00, 0.00);  object(0x01BF, 0, 0, 270);
+move(-0.05, 8.00, 0.00);  object(0x01BF, 0, 0, 270);
+move(-0.04, 7.90, 0.00);  object(0x01BF, 0, 0, 270);
+move(35.63, -32.47, 3.10);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.64, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.02, 6.50, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.47, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 5.55, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.37, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.00, 1.04, 0.00);  object(0x01BF, 90, 0, 180);
+move(-31.55, -32.71, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.33, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.61, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.32, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.23, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.01, 6.53, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.00, 1.01, 0.00);  object(0x01BF, 90, 0, 180);
+move(25.26, -32.32, 0.00);  object(0x01BF, 90, 0, 90);
+move(-5.92, -0.05, 0.00);  object(0x01BF, 90, 0, 90);
+move(-5.44, -0.04, 0.00);  object(0x01BF, 90, 0, 90);
+move(-5.65, -0.01, 0.00);  object(0x01BF, 90, 0, 90);
+move(-2.08, -0.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(0.69, 31.88, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.38, 0.02, 0.00);  object(0x01BF, 90, 0, 270);
+move(6.70, 0.02, 0.00);  object(0x01BF, 90, 0, 270);
+move(4.60, 0.01, 0.00);  object(0x01BF, 90, 0, 270);
+move(5.95, 0.01, 0.00);  object(0x01BF, 90, 0, 270);
+move(1.63, 0.01, 0.00);  object(0x01BF, 90, 0, 270);
+move(-5.95, -24.14, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.05, 8.00, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.05, 7.70, 0.00);  object(0x01BF, 90, 0, 90);
+move(-0.01, 1.30, 0.00);  object(0x01BF, 90, 0, 90);
+move(-6.97, 3.07, 0.00);  object(0x01BF, 90, 0, 0);
+move(-7.70, 0.02, 0.00);  object(0x01BF, 90, 0, 0);
+move(-3.80, 0.01, 0.00);  object(0x01BF, 90, 0, 0);
+move(-2.81, -5.24, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.07, -7.90, 0.00);  object(0x01BF, 90, 0, 270);
+move(0.06, -7.50, 0.00);  object(0x01BF, 90, 0, 270);
+move(7.14, -2.38, 0.00);  object(0x01BF, 90, 0, 180);
+move(7.60, -0.06, 0.00);  object(0x01BF, 90, 0, 180);
+move(-11.69, 7.46, -3.30);  object(0x01BF, 180, 0, 270);
+move(-0.01, 7.90, 0.00);  object(0x01BF, 180, 0, 270);
+move(4.02, 4.39, 0.00);  object(0x01BF, 180, 0, 0);
+move(7.00, -0.01, 0.00);  object(0x01BF, 180, 0, 0);
+move(3.90, -4.19, 0.00);  object(0x01BF, 180, 0, 90);
+move(0.02, -7.70, 0.00);  object(0x01BF, 180, 0, 90);
+move(0.00, -0.40, 0.00);  object(0x01BF, 180, 0, 90);
+move(-14.92, 8.22, 0.00);  object(0x01BF, 180, 0, 270);
+move(23.50, 15.20, 0.00);  object(0x01BF, 180, 0, 180);
+move(-31.70, -0.23, 0.00);  object(0x01BF, 180, 0, 180);
+move(7.90, 0.06, 0.00);  object(0x01BF, 180, 0, 180);
+move(15.90, 0.12, 0.00);  object(0x01BF, 180, 0, 180);
+move(13.56, 9.04, 0.00);  object(0x01F3, 0, 0, 0);
+move(-10.00, 0.00, 0.00);  object(0x01F3, 0, 0, 0);
+move(-34.10, 0.01, 0.00);  object(0x01F3, 0, 0, 0);
+move(9.90, 0.00, 0.00);  object(0x01F3, 0, 0, 0);
+move(-14.64, -4.70, 0.00);  object(0x01F3, 0, 0, 269);
+move(0.14, -9.80, 0.00);  object(0x01F3, 0, 0, 269);
+move(0.14, -10.20, 0.00);  object(0x01F3, 0, 0, 269);
+move(0.14, -9.90, 0.00);  object(0x01F3, 0, 0, 269);
+move(0.05, -3.30, 0.00);  object(0x01F3, 0, 0, 269);
+move(4.03, -8.02, 0.00);  object(0x01F3, 0, 0, 216);
+move(48.89, 40.30, 0.00);  object(0x01F3, 0, 0, 90);
+move(0.09, -9.90, 0.00);  object(0x01F3, 0, 0, 90);
+move(0.09, -9.90, 0.00);  object(0x01F3, 0, 0, 90);
+move(0.09, -9.90, 0.00);  object(0x01F3, 0, 0, 90);
+move(0.09, -9.90, 0.00);  object(0x01F3, 0, 0, 90);
+move(0.08, -8.90, 0.00);  object(0x01F3, 0, 0, 90);
+move(-4.91, -3.85, 0.00);  object(0x01F3, 0, 0, 187);
+move(-9.73, 1.20, 0.00);  object(0x01F3, 0, 0, 187);
+move(-9.83, 1.21, 0.00);  object(0x01F3, 0, 0, 187);
+move(-8.53, 2.67, 0.00);  object(0x01F3, 0, 0, 211);
+move(-8.42, 3.11, 0.00);  object(0x01F3, 0, 0, 192);
+setchar(0x08E4E9EC, 158);
+setchar(0x08E4E9EC + 0x18, 0x01);
+setfloat(0x08E4E9f0, 77.47, -1661.24, 26.08, 0);
+setchar(0x08E4Ea44, 158);
+setchar(0x08E4Ea44 + 0x18, 0x01);
+setfloat(0x08E4Ea48, 77.47, -1646.24, 26.08, 0);
+setchar(0x08E4Eac8, 157);
+setchar(0x08E4Eac8 + 0x18, 0x01);
+setfloat(0x08E4Eacc, 43.56, -1667.91, 26.04, 0);
+setchar(0x08E4Eb78, 157);
+setchar(0x08E4Eb78 + 0x18, 0x01);
+setfloat(0x08E4Eb7c, 43.56, -1659.91, 26.04, 0);
+setchar(0x08E4Eba4, 148);
+setchar(0x08E4Eba4 + 0x18, 0x01);
+setfloat(0x08E4Eba8, 43.56, -1651.91, 26.04, 0);
+setchar(0x08E4Ebfc, 148);
+setchar(0x08E4Ebfc + 0x18, 0x01);
+setfloat(0x08E4Ec00, 43.56, -1643.91, 26.04, 0);
+setchar(0x8E4EAF4, 215);
+setchar(0x8E4EAF4 + 0x18, 0x01);
+setfloat(0x8E4EAF8, 60.24, -1655.15, 26.09, 0);
+setfloat(0x08E2DFE0, 51.94, -1672.70, 26.05);
+setint(0x08E2DFF4, 0);
+setchar(0x08E2DFFC, 0xff, 0xff);
+setshort(0x08E2E006, 0x010f);
+setchar(0x08E2E012, 0x0f);
+setchar(0x08E2E013, 0x00);
+setchar(0x08E2D030, 0xff);
+setfloat(0x08E2E040, 53.94, -1672.70, 26.05);
+setint(0x08E2E054, 0);
+setchar(0x08E2E05C, 0xff, 0xff);
+setshort(0x08E2E066, 0x106);
+setchar(0x08E2E072, 0x0f);
+setchar(0x08E2E073, 0x00);
+setchar(0x08E2D090, 0xff);
+setfloat(0x08E2E0A0, 55.94, -1672.70, 26.05);
+setint(0x08E2E0B4, 0);
+setchar(0x08E2E0BC, 0xff, 0xff);
+setshort(0x08E2E0C6, 0x113);
+setchar(0x08E2E0D2, 0x0f);
+setchar(0x08E2E0D3, 0x00);
+setchar(0x08E2D0F0, 0xff);
+setfloat(0x08E2E100, 57.94, -1672.70, 26.05);
+setint(0x08E2E114, 0);
+setchar(0x08E2E11C, 0xff, 0xff);
+setshort(0x08E2E126, 0x11a);
+setchar(0x08E2E132, 0x0f);
+setchar(0x08E2E133, 0x00);
+setchar(0x08E2D150, 0xff);
+setfloat(0x08E2E160, 59.94, -1672.70, 26.05);
+setint(0x08E2E174, 0);
+setchar(0x08E2E17C, 0xff, 0xff);
+setshort(0x08E2E186, 0x117);
+setchar(0x08E2E192, 0x0f);
+setchar(0x08E2E193, 0x00);
+setchar(0x08E2D1B0, 0xff);
+setfloat(0x08E2E1C0, 61.94, -1672.70, 26.05);
+setint(0x08E2E1D4, 0);
+setchar(0x08E2E1DC, 0xff, 0xff);
+setshort(0x08E2E1E6, 0x11d);
+setchar(0x08E2E1F2, 0x0f);
+setchar(0x08E2E1F3, 0x00);
+setchar(0x08E2D210, 0xff);
+teleport(59.35, -1631.51, 26.15)
+
+#cheat Copper car
+//ID: 16086
+//Score: 22
+//Author: migg
+//Category: Pimp My Garage
+//Description: a bit more insane than the averidge police car
+//Image: none
+//Time: 05/08/2006 19:12:37
+//Working: Yes
+setshort(0x992FDA0, 0x63, 0x6f, 0x70, 0x70, 0x65, 0x72);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.45);
+setfloat(0x945ad90, 0001);
+setfloat(0x945ad98, 1.975);
+setfloat(0x945ae50, 0.575);
+setfloat(0x945ae54, -0.01);
+setfloat(0x945ae58, 0.975);
+setfloat(0x945ae1c, 1.55);
+setfloat(0x945ae20, 1.55);
+setfloat(0x945ae14, 0.00775);
+setfloat(0x945ae4c, 0.1875);
+setfloat(0x945ae64, 0.0);
+setfloat(0x945ae3c, 0.99375);
+setfloat(0x945ae40, 0.45);
+setfloat(0x945ad9c, 0.0);
+sethex(0x945ae60, 0x13, 0xb1, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb30, 0xFF, 0xFF, 0x00);
+sethex(0x944fb00, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat piggy
+//ID: 15803
+//Score: 14
+//Author: greggy-walters
+//Category: Pimp My Garage
+//Description: pimped police car
+//Image: none
+//Time: 01/08/2006 14:53:35
+//Working: Unknown
+setshort(0x992FDA0, 0x20, 0x50, 0x69, 0x67, 0x67, 0x79);
+setchar(0x945ae10, 0x46);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.75);
+setfloat(0x945ad90, 1500);
+setfloat(0x945ad98, 0.7);
+setfloat(0x945ae1c, 1.5);
+setfloat(0x945ae20, 1.5);
+setfloat(0x945ae14, 0.0075);
+setfloat(0x945ae30, 0.75);
+setfloat(0x945ae34, 0.5);
+setfloat(0x945ae64, 0.5);
+setfloat(0x945ae5c, 0.075);
+setfloat(0x945adb4, 0);
+setchar(0x945adc0, 99);
+setfloat(0x945ae3c, 0.8);
+setfloat(0x945ae40, 0.5);
+setfloat(0x945ad9c, 0.000001);
+sethex(0x945ae60, 0x82, 0x91, 0x00, 0x03);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944faf4, 0xFF, 0xFF, 0x00);
+sethex(0x944fb0c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat PIMPIN POLICE
+//ID: 15110
+//Score: 30
+//Author: lewis-666-2k6
+//Category: Pimp My Garage
+//Description: TOATALY PIMPED POLICE CAR
+//$ SPORT ALLOYS $
+//$ BLUE SMOKE $
+//DO MISSIONS IN IT AND BE THE COOLEST WHEN U BUST SOMEONES ASS
+//Image: none
+//Time: 19/07/2006 23:19:49
+//Working: Yes
+setchar(0x945ae11, 0x44);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.175);
+setfloat(0x945ad90, 4150);
+setfloat(0x945ae50, 0.425);
+setfloat(0x945ae54, -0.575);
+setfloat(0x945ae58, 0.6875);
+setfloat(0x945ae1c, 0.7);
+setfloat(0x945ae20, 0.7);
+setfloat(0x945ae14, 0.00337);
+setfloat(0x945ae30, 0.45);
+setfloat(0x945ae34, 0.25);
+setfloat(0x945ae48, 1.4375);
+setfloat(0x945ae64, 0.345);
+setfloat(0x945ae5c, 0.325);
+setfloat(0x945adb0, -0.15);
+setchar(0x945adc0, 51);
+setfloat(0x945ad9c, 0.25);
+sethex(0x945ae60, 0xbf, 0xf7, 0x03, 0x05);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb18, 0xFF, 0xFF, 0x00);
+sethex(0x944fb08, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat SPIKY DEATH TRAP POLICE CARS!!!
+//ID: 14948
+//Score: 48
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Takes possible window tinting colors and sticks to the top and sides of police cars. This is VERY funny. This is the first thing found with Matt420Bad's Hex's that is physical and visual instead of just visual. Run in 333 MHZ to stop it from lagging the g
+//Image: none
+//Time: 17/07/2006 18:38:55
+//Working: Yes
+//By Haddenjms A.K.A YGTBK
+setchar(0x09B609D4, 54)
+setchar(0x09B609D4, 150)
+
+#cheat Red Police Cars W Burned Out Front and Back Lights
+//ID: 14880
+//Score: 23
+//Author: Haddenjms
+//Category: Pimp My Garage
+//Description: turns all Police cars red and makes the headlights dissapeer. Credit to Matt420Bad for the Hex.
+//Image: none
+//Time: 17/07/2006 02:55:27
+//Working: Yes
+setchar(0x09B609D4, 18)
+
+#cheat Blues Mobile
+//ID: 14484
+//Score: 15
+//Author: barkee
+//Category: Pimp My Garage
+//Description: A bargain”, very close in resembelance to the dodge x service police car used by the Blues Brothers in the film.
+//www.ammunation.org
+//Image: none
+//Time: 10/07/2006 22:25:14
+//Working: Yes
+//By Ammunation.org
+setshort(0x992FC02, 0x42, 0x6c, 0x75, 0x65, 0x73);
+setchar(0x9459882, 0x6);
+setshort(0x943fa00, 252);
+setfloat(0x945980c, 0.125);
+sethex(0x94598d0, 0x02, 0xc0, 0x20, 0x04);
+sethex(0x944fb04, 0x00, 0x00, 0x00);
+sethex(0x944fb54, 0xA2, 0xC9, 0xC8);
+setint(0x8E38A38, 132);
+setchar(0x8E38A5C, 105, 125);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Law Enforcement Car Park
+//ID: 14389
+//Score: 55
+//Author: rashon125
+//Category: Vehicle
+//Description: Spawns the Rhino, Barracks OL, Enforcer, FBI Cruiser, and Police Car across the street from the Portland Docks.
+//Image: none
+//Time: 08/07/2006 19:37:52
+//Working: Yes
+//Police
+setchar(0x08E4Ebfc, 157);
+setchar(0x08E4Ebfc + 0x18, 0x01);
+setfloat(0x08E4Ec00, 1338.15, -834.09, 15.00, 270);
+//FBI Cruiser
+setchar(0x08E4E9EC, 148);
+setchar(0x08E4E9EC + 0x18, 0x01);
+setfloat(0x08E4E9f0, 1338.01, -830.93, 15.01, 270);
+//Enforcer
+setchar(0x08E4Ea44, 158);
+setchar(0x08E4Ea44 + 0x18, 0x01);
+setfloat(0x08E4Ea48, 1339.13, -825.76, 15.00, 270);
+//Barracks OL
+setchar(0x08E4Ea70, 188);
+setchar(0x08E4Ea70 + 0x18, 0x01);
+setfloat(0x08E4Ea74, 1339.55, -809.68, 15.00, 270);
+//Rhino
+setchar(0x08E4Eac8, 162);
+setchar(0x08E4Eac8 + 0x18, 0x01);
+setfloat(0x08E4Eacc, 1337.41, -806.12, 15.01, 270);
+off()
+
+#cheat Vigilanti Mission Helper
+//ID: 13982
+//Score: 20
+//Author: wm123
+//Category: Pimp My Garage
+//Description: This ride is the improved police car great for doing the vigilanti missions as its Bullet proof (indistructable), improved handeling acceleration and speed, 4wd and brighter lights. (+[___]+)
+//Image: none
+//Time: 01/07/2006 17:04:26
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x20, 0x20, 0x39, 0x39, 0x39);
+setshort(0x9442110, 254);
+setfloat(0x944210c, 0.95);
+setfloat(0x945ae54, -0.1375);
+setfloat(0x945ae14, 0.00313);
+setfloat(0x945ae64, 0.42);
+sethex(0x945ae60, 0x02, 0x91, 0x00, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb4c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Pimped out Police Enforcer
+//ID: 13594
+//Score: 25
+//Author: rashon125
+//Category: Pimp My Garage
+//Description: This is a faster enforcer that goes as fast as a police car so you won't lose control a lot. Again, it's bullet, damage, and fire proof which is good for vigilante missions.
+//Image: none
+//Time: 22/06/2006 22:43:48
+//Working: Yes
+setfloat(0x945ae88, 0.75);
+setfloat(0x945af0c, 0.95133);
+setfloat(0x945af10, 0.95133);
+setfloat(0x945af04, 0.003);
+setfloat(0x945af2c, 0.75);
+setfloat(0x945af30, 0.5);
+setfloat(0x945ae8c, 0);
+sethex(0x945af50, 0x27, 0x00, 0x00, 0x00);
+sethex(0x944fb0c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb24, 0xFF, 0x00, 0xFF);
+setint(0x8E38988, 158);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Pimped out Police Car
+//ID: 13591
+//Score: 33
+//Author: rashon125
+//Category: Pimp My Garage
+//Description: Next I'll have Pimp My Garage cars for more law enforcement vechicles. This is a bullet proof car good for vigilante missions. This car is also faster.
+//Image: none
+//Time: 22/06/2006 22:34:41
+//Working: Yes
+setfloat(0x945ad98, 0.8);
+setfloat(0x945ae1c, 1.01333);
+setfloat(0x945ae20, 1.01333);
+setfloat(0x945ae14, 0.003);
+setfloat(0x945ae40, 0.53);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x00);
+sethex(0x944fb54, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setint(0x8E38988, 157);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Pump-Action Shotgun Spawn at Portland LCPD
+//ID: 13318
+//Score: 37
+//Author: rashon125
+//Category: Weapons
+//Description: You know that every time you go inside a police car you get 5 shotgun shells. You'll get way more in this weapon pickup.
+//Image: none
+//Time: 20/06/2006 02:21:47
+//Working: Yes
+//Created Using Pickup Creator
+//By RASAL
+setfloat(0x08e2d800, 1138.21, -691.04, 14.98);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0x1, 0x1);
+setshort(0x08e2d826, 0x115);
+setchar(0x08e2d832, 0x0f);
+setchar(0x08e2d833, 0x00);
+setchar(0x08e2d850, 0xff);
+
+#cheat All Police cars are able to fly!
+//ID: 13171
+//Score: 52
+//Author: Aksel
+//Category: Pimp My Garage
+//Description: All police cars act like helicopters!
+//
+//Image: http://img147.imageshack.us/img147/224/video16xb.gif
+//Time: 18/06/2006 19:42:53
+//Working: Yes
+setfloat(0x945ae1c, 1.1);
+setfloat(0x945ae20, 1.1);
+sethex(0x945ae60, 0x02, 0x90, 0x02, 0x01);
+sethex(0x944fb14, 0xFF, 0xFF, 0x00);
+sethex(0x944fb08, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat HEX
+//ID: 12949
+//Score: 144
+//Author: DoteStudios
+//Category: Pimp My Garage
+//Description:  This is the new freak police. HEX is a combonation of every crazy and screwed up police cars! It has its top down, boat shape, trunk space, no floor, weird tires, metal hood, and when it is taken apart it is only tires! Help from xFinch713x
+//
+//
+//Image: http://www.photohosting.info/uploads/6db49fc56a.gif
+//Time: 15/06/2006 15:46:42
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x20, 0x20, 0x48, 0x45, 0x58);
+setchar(09b5e276, 255)
+setchar(09b609f6, 0xd0)
+setchar(09b609fa, 0x80)
+setchar(09b67ec6, 0xff)
+setchar(0x09b609d4, 0x6f);
+setchar(0x09b688ba, 0xc0);
+setchar(0x09b5eb3a, 0xac);
+setchar(0x09b5723a, 0x67, 0x3f);
+setchar(0x09b57248, 0x0e, 0x35, 0x00, 0x2e);
+setchar(0x09b56918, 0x0e, 0x35, 0xac, 0x3e);
+setchar(0x09b56917, 0xbf);
+setchar(0x09b56906, 0xb1, 0x41);
+setchar(0x09b5690a, 0xcf, 0x3f);
+setchar(0x09b5d168, 7)
+setchar(0x09b5b488, 7)
+setchar(0x09b67ea8, 4)
+setchar(0x09b5e258, 4)
+setint(0x08E38A64, 157);
+setfloat(09692aa0, 1.0191326141357422)
+setchar(09692AFE, 0)
+setfloat(09692AD4, 4, 0.0625)
+setfloat(09692AB0, -0.4)
+sethex(0x945ae61, 0x01);
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 49);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x83, 0xd1, 0x00, 0x07);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb28, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+setchar(0x09692A84, 0x30);
+setchar(0x09692AA2, 0x10);
+setchar(0x09692AA3, 0x3F);
+setchar(0x09692AD7, 0x40);
+setchar(0x09692ACE, 0x13);
+setchar(0x09b609fb, 64);
+setchar(0x09F6C4C0, 1);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+setchar(0x09F6C4C0, 1);
+//cheat setchar(0x09B60E3E, 4);
+setchar(0x09B60E3E, 4);
+//cheat setchar(0x09B60E0E, 4);
+setchar(0x09B60E0E, 4);
+//cheat setchar(0x09B688DE, 1);
+setchar(0x09B688DE, 1);
+setchar(0x09F6C4C0, 1);
+teleport(292.22, -440.37, 26.02);
+
+#cheat the pimp police car
+//ID: 12358
+//Score: 17
+//Author: psphacker108
+//Category: Pimp My Garage
+//Description: JUST LOOK AT THE PICTURE!!! THIS BABY IS THE BEST COP CAR OUT THERE SIMPLY PUT IN THE chrome plate all cars code for better looking results
+//
+//CODE IS All Vehicles Chrome Plated
+//TRIANGLE, R1, L1, DOWN, DOWN, R1, R1, TRIANGLE 
+//
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/pimpo.jpg
+//Time: 08/06/2006 00:52:20
+//Working: Yes
+setshort(0x992FDA0, 0x50, 0x49, 0x4d, 0x50, 0x20, 0x4f);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x45);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.6375);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.125);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x01);
+setchar(0x967E6FC, 0xFF, 0x10, 0x00);
+sethex(0x944fb38, 0xFF, 0xFF, 0x23);
+sethex(0x944fb5c, 0x1C, 0x5F, 0xB8);
+setint(0x8E38988, 157);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat TUNER COP
+//ID: 12325
+//Score: 78
+//Author: mcfustino
+//Category: Pimp My Garage
+//Description: the best police car ever!!!!!
+//it does over 355
+//with tuning bumpers and cool roof
+//and the car is white
+//sorry pic is coming
+//Image: none
+//Time: 07/06/2006 14:07:14
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x54, 0x75, 0x6e, 0x65, 0x72);
+setchar(0x945ae12, 0x3);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1200);
+setfloat(0x945ad98, 1.175);
+setfloat(0x945ae50, 0.09);
+setfloat(0x945ae54, -0.02);
+setfloat(0x945ae58, 0.6);
+setfloat(0x945ae1c, 50);
+setfloat(0x945ae20, 50);
+setfloat(0x945ae14, 0.00363);
+setfloat(0x945ae30, 0.48);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 0.8);
+setfloat(0x945ae4c, 0.2);
+setfloat(0x945ae64, 0.4);
+setfloat(0x945ae5c, 0.6);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, -0.19999);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 70);
+setfloat(0x945ae3c, 0.9);
+setfloat(0x945ae40, 0.5175);
+setfloat(0x945ad9c, 0.9);
+sethex(0x945ae60, 0x02, 0x91, 0x00, 0x07);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb00, 0xFF, 0xFF, 0x00);
+sethex(0x944faf8, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+setfloat(09b609f8, 1.1484375)
+setfloat(09b60a08, 0.05)
+setfloat(09b5b4a8, 1.2)
+setfloat(09b5b4b8, 0.0)
+setfloat(09b5d188, 1.2)
+setfloat(09b5d198, 0.0)
+setfloat(09b5e278, 1.2)
+setfloat(09b5e288, 0.0)
+setfloat(09b67ec8, 1.2)
+setfloat(09b67ed8, 0.0)
+setfloat(09b57238, 1.3)
+setfloat(09b688b8, 1.3)
+setfloat(09b56908, 1.7421875)
+setfloat(09b5eb28, 1.7421875)
+
+#cheat Bandit - PIMPED: 157-POLICAR
+//ID: 11520
+//Score: 23
+//Author: Spwngebob
+//Category: Pimp My Garage
+//Description: Goes a little faster than the Yakuza Stinger, and accererates a litter faster too. Get ready for the fastest police car ever
+//Image: none
+//Time: 27/05/2006 00:27:46
+//Working: Yes
+setshort(0x992FDA0, 0x42, 0x61, 0x6e, 0x64, 0x69, 0x74);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 1.00500);
+setfloat(0x945ae20, 1.00500);
+setfloat(0x945ae14, 0.00130);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.125);
+sethex(0x945ae60, 0x02, 0xb1, 0x00, 0x04);
+setchar(0x967E6FC, 0xFF, 0x10, 0x00);
+sethex(0x944fb4c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb08, 0xFF, 0xFF, 0x00);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Cheif wigam police car
+//ID: 11215
+//Score: 51
+//Author: lozzo55
+//Category: Pimp My Garage
+//Description: Cheif wigam police car out of the simpsons it is so funny to drive.
+//
+//
+//
+//Image: none
+//Time: 23/05/2006 11:50:49
+//Working: Yes
+setshort(0x992FDA0, 0x20, 0x77, 0x69, 0x67, 0x61, 0x6d);
+setchar(0x945ae12, 0x10);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.95);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.5375);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.3);
+sethex(0x945ae60, 0x83, 0x91, 0x00, 0x04);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb4c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb44, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Freak Police
+//ID: 11020
+//Score: 294
+//Author: DoteStudios
+//Category: Pimp My Garage
+//Description:  A police car with every detail! It has the gold, freak, and rainbow tires cheats! It is awesome!
+//Get the lamborghini door cheat if you wish to have them on the car.
+//
+//may only work on the us version
+//
+//Image: none
+//Time: 21/05/2006 03:11:21
+//Working: Yes
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 251);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x09692A84, 0x30);
+setchar(0x09692AA2, 0x10);
+setchar(0x09692AA3, 0x3F);
+setchar(0x09692AD7, 0x40);
+setchar(0x09692ACE, 0x13);
+setchar(0x09b609fb, 64);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+setchar(0x09F6C4C0, 1);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.3);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x00);
+setchar(0x967E6FC, 0xFF, 0xFF, 0xFF);
+sethex(0x944faf4, 0xFF, 0xFF, 0x00);
+sethex(0x944fb40, 0xFF, 0x00, 0xFF);
+setchar(0x08b33e32, 1);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+setchar(0x09b609d4, 0x30);
+teleport(292.22, -440.37, 26.02);
+
+#cheat xFinch713x's WHITE Custom Cop Car (157-POLICAR)
+//ID: 10870
+//Score: 150
+//Author: xFinch713x
+//Category: Vehicle
+//Description: This cheat spawns a custom ALL WHITE cop car in staunton garage with custom settings.
+//CHECK PIC
+//MANY THANKS TO MATT420BAD FOR THE WHITE POLICE CARS!!!
+//Image: http://i62.photobucket.com/albums/h91/xFinch713x/WhiteCopCar.jpg
+//Time: 19/05/2006 01:40:04
+//Working: Yes
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+setchar(0x09692A84, 0x30);
+setchar(0x09692AA2, 0x10);
+setchar(0x09692AA3, 0x3F);
+setchar(0x09692AD7, 0x40);
+setchar(0x09692ACE, 0x13);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);;
+setchar(0x09F6C4C0, 1);
+setfloat(0x945ae1c, 1.425);
+setfloat(0x945ae20, 1.425);
+setfloat(0x945ad90, 1000);
+setfloat(0x945ad9c, 0.0);
+setfloat(0x945ae64, 0.000005);
+setint(0x08E38A38, 157);
+sethex(0x8E38A58, FF);
+setchar(0x09F6C4C0, 1);
+setchar(0x08b33e32, 1);
+teleport(292.22, -440.37, 26.02);
+
+#cheat Scream - PIMPED: 157-POLICAR
+//ID: 10835
+//Score: 38
+//Author: Spwngebob
+//Category: Pimp My Garage
+//Description: Scream as loud as you can.
+//THE END OF TIME IS HERE, And so is the average Police Car
+//Image: none
+//Time: 18/05/2006 15:17:07
+//Working: Yes
+setshort(0x992FDA0, 0x53, 0x63, 0x72, 0x65, 0x61, 0x6d);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 2);
+setfloat(0x945ad90, 3362.5);
+setfloat(0x945ad98, 0.95);
+setfloat(0x945ae50, 0.50);
+setfloat(0x945ae54, -0.01);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 1);
+setfloat(0x945ae20, 1);
+setfloat(0x945ae14, 0.004);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 36);
+setfloat(0x945ae48, 2);
+setfloat(0x945ae4c, 1);
+setfloat(0x945ae64, 0.045);
+setfloat(0x945ae5c, 0.5);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x0b, 0xf1, 0x00, 0x07);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb58, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat pimped police car
+//ID: 10724
+//Score: 20
+//Author: maddmonkey0
+//Category: Pimp My Garage
+//Description: its a car specially designed for those vigilante missions u may want car stays level
+//Image: none
+//Time: 17/05/2006 19:28:39
+//Working: Yes
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.675);
+setfloat(0x945ad90, 1562.5);
+setfloat(0x945ad98, 1.4);
+setfloat(0x945ae50, 0.75);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 1.325);
+setfloat(0x945ae20, 1.325);
+setfloat(0x945ae14, 0.00788);
+setfloat(0x945ae30, 0.6);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 43.75);
+setfloat(0x945ae48, 1.90625);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.8875);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x03, 0x90, 0x00, 0x07);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb28, 0x00, 0x00, 0x00);
+sethex(0x944fb38, 0xFF, 0xFF, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat heavy armor police car
+//ID: 10721
+//Score: 65
+//Author: chrindal
+//Category: Vehicle
+//Description: police used for dangerous crimes. it is fast and can trample cars on the way
+//Image: http://img108.imageshack.us/img108/4337/screen17nl.png
+//Time: 17/05/2006 18:33:59
+//Working: Yes
+setshort(0x992FDAE, 0x20, 0x20, 0x66, 0x6f, 0x72, 0x63, 0x65, 0x72);
+setchar(0x945af02, 0x5);
+setchar(0x945af01, 0x50);
+setchar(0x945af00, 0x34);
+setshort(0x94422a0, 250);
+setfloat(0x944229c, 2.00);
+setfloat(0x945ae80, 8200);
+setfloat(0x945ae88, 0.7);
+setfloat(0x945af40, 0.2625);
+setfloat(0x945af44, -0.7875);
+setfloat(0x945af48, 0.5);
+setfloat(0x945af0c, 0.925);
+setfloat(0x945af10, 0.925);
+setfloat(0x945af04, 0.00213);
+setfloat(0x945af20, 0.45);
+setfloat(0x945af24, 0);
+setfloat(0x945af28, 27);
+setfloat(0x945af38, 0.7);
+setfloat(0x945af3c, 0.08);
+setfloat(0x945af54, 0.32);
+setfloat(0x945af4c, 0.4625);
+setfloat(0x945aea0, 0);
+setfloat(0x945aea4, 0);
+setfloat(0x945aea8, -0.19999);
+setchar(0x945aeb0, 85);
+setfloat(0x945af2c, 0.7);
+setfloat(0x945af30, 0.46);
+setfloat(0x945ae8c, 0.024);
+sethex(0x945af50, 0x27, 0x00, 0x00, 0x01);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb30, 0xFF, 0xFF, 0x00);
+sethex(0x944fb08, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 158);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Polica
+//ID: 10045
+//Score: 33
+//Author: Aspire
+//Category: Pimp My Garage
+//Description: The police car that has been used in the germany super-highway. But this one is highly reccomended for the police of LCS, Or  for you if you fancy the night shift!
+//
+//(Notice connections in my car names yet?)
+//Image: none
+//Time: 11/05/2006 16:48:33
+//Working: Yes
+setshort(0x992FDA0, 0x50, 0x6f, 0x6c, 0x69, 0x63, 0x61);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.80);
+setfloat(0x945ad90, 1562.5);
+setfloat(0x945ad98, 1);
+setfloat(0x945ae50, 0.3375);
+setfloat(0x945ae54, -0.01);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 1.475);
+setfloat(0x945ae20, 1.475);
+setfloat(0x945ae14, 0.00413);
+setfloat(0x945ae30, 0.625);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.21875);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0.3375);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.89375);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x03, 0x90, 0x00, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb3c, 0xFF, 0xFF, 0x00);
+sethex(0x944fafc, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Pimped out police car Sport wheels
+//ID: 9544
+//Score: 25
+//Author: psphacker108
+//Category: Pimp My Garage
+//Description: has sport wheels on a cop car!!!? unheard of right... not till me try it out now!! you will be happy
+//
+//thanks for creating this cheat sync and edison carter!!!!!
+//Image: http://www.cheatsync.net/pmg/images/cars/157.jpg
+//Time: 07/05/2006 02:14:46
+//Working: Yes
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.3);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x00);
+sethex(0x944fb2c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb54, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Copter Police Car Made into Heli
+//ID: 9458
+//Score: 24
+//Author: K3B4B5T4R
+//Category: Pimp My Garage
+//Description: Use the Hover car cheat to fly or get in wide open space!
+//Image: none
+//Time: 06/05/2006 20:25:06
+//Working: Yes
+setchar(09b5e276, 255)
+setchar(09b609f6, 0xd0)
+setchar(09b609fa, 0x80)
+setchar(09b67ec6, 0xff)
+setchar(0x09b609d4, 0x6f);
+setchar(0x09b688ba, 0xc0);
+setchar(0x09b5eb3a, 0xac);
+setchar(0x09b5723a, 0x67, 0x3f);
+setchar(0x09b57248, 0x0e, 0x35, 0x00, 0x2e);
+setchar(0x09b56918, 0x0e, 0x35, 0xac, 0x3e);
+setchar(0x09b56917, 0xbf);
+setchar(0x09b56906, 0xb1, 0x41);
+setchar(0x09b5690a, 0xcf, 0x3f);
+setchar(0x09b5d168, 7)
+setchar(0x09b5b488, 7)
+setchar(0x09b67ea8, 4)
+setchar(0x09b5e258, 4)
+setint(0x08E38A64, 157);
+setshort(0992fda0, 0x50, 0x61, 0x77, 0x6E, 0)
+setfloat(09692aa0, 1.0191326141357422)
+setchar(09692AFE, 0)
+setfloat(09692AD4, 4, 0.0625)
+setfloat(09692AB0, -0.4)
+setshort(0x992FDA0, 0x43, 0x6f, 0x70, 0x74, 0x65, 0x72);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 43);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x83, 0xd1, 0x02, 0x07);
+sethex(0x944fb04, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.975);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.475);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.0015);
+setfloat(0x945ae30, 0.525);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.285);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b609f6, 80);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 144);
+setchar(0x09b60a06, 239);
+setchar(0x09b60a07, 62);
+setchar(0x09b60a0a, 76);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb22, 231);
+setchar(0x09b5eb23, 63);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 31);
+setchar(0x09b5eb2b, 64);
+setchar(0x09b5eb36, 34);
+setchar(0x09b5eb37, 63);
+setchar(0x09b5eb3a, 237);
+setchar(0x09b5eb3b, 62);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 207);
+setchar(0x09b57247, 190);
+setchar(0x09b5724a, 85);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 160);
+setchar(0x09b5e286, 23);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 255);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 66);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 160);
+setchar(0x09b67ed6, 23);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 255);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 70);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 187);
+setchar(0x09b688c7, 63);
+setchar(0x09b688ca, 64);
+setchar(0x09b688cb, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+setchar(0x09b5e2ce, 2);
+setchar(0x09b5e38e, 6);
+setchar(0x09b67f1e, 2);
+setchar(0x09b67fde, 6);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 256);
+setfloat(0x944210c, 1);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.675);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.2375);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.00187);
+setfloat(0x945ae30, 0.5125);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.24);
+setfloat(0x945ae5c, 0.1);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x944fb0c, 0xFF, 0xFF, 0x00);
+sethex(0x944faf4, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+setchar(pplayer + 0xB84, 0x00);
+setshort(0x992FDA0, 0x4f, 0x77, 0x6e, 0x61, 0x67, 0x65);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.45);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 49);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x83, 0xd1, 0x00, 0x07);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb28, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+//cheat setchar(0x09B60E3E, 4);
+setchar(0x09B60E3E, 4);
+//cheat setchar(0x09B60E0E, 4);
+setchar(0x09B60E0E, 4);
+//cheat setchar(0x09B688DE, 1);
+setchar(0x09B688DE, 1);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);
+setfloat(0x094420C0 + 0x5c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.35);
+setfloat(0x094420C0 + 0x6c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.40);
+setfloat(0x094420C0 + 0x7c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.45);
+
+#cheat Police Trucks
+//ID: 9183
+//Score: 51
+//Author: badcrap
+//Category: Pimp My Garage
+//Description: The first one is a police truck where it looks like the back of the police car was cut off and turned into a truck.
+//Image: none
+//Time: 04/05/2006 01:09:40
+//Working: Yes
+//by matt420bad
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.975);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.475);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.0015);
+setfloat(0x945ae30, 0.525);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.285);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+
+#cheat police car pimped
+//ID: 9095
+//Score: 24
+//Author: walshy789
+//Category: Pimp My Garage
+//Description: a funny car
+//Image: none
+//Time: 02/05/2006 15:07:18
+//Working: Yes
+setshort(0x992FDA0, 0x70, 0x6f, 0x6f, 0x6f, 0x6f, 0x6f);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x45);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.525);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 1.125);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.6);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 60);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.125);
+sethex(0x945ae60, 0xbf, 0xf7, 0x03, 0x03);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb20, 0xFF, 0x0D, 0x08);
+sethex(0x944fb14, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Police Car All Jacked Up
+//ID: 8298
+//Score: 4
+//Author: gman8338
+//Category: Pimp My Garage
+//Description: Jacked Up PO PO Car
+//Image: none
+//Time: 21/04/2006 04:17:29
+//Working: Yes
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 254);
+setfloat(0x944210c, 1.20);
+setfloat(0x945ad90, 1450);
+setfloat(0x945ad98, 1.125);
+setfloat(0x945ae50, 0.5375);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 1.2);
+setfloat(0x945ae20, 1.2);
+setfloat(0x945ae14, 0.00313);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 0.8125);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.6);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 11);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 10);
+sethex(0x945ae60, 0x83, 0x91, 0x00, 0x01);
+setchar(0x967E6FC, 0xFF, 0xFF, 0x00);
+sethex(0x944fb00, 0xFF, 0xFF, 0x00);
+sethex(0x944fb24, 0xFF, 0x00, 0xFF);
+setint(0x8E38AE8, 157);
+sethex(0x8E38B0E, 0x01, 0x00);
+teleport(-789.61, 300.62, 49.05);
+setchar(pplayer + 0xB84, 0x00);
+
+
+#cheat POLICECAR
+//ID: 19008
+//Score: 32
+//Author: wildfire93
+//Category: Pimp My Garage
+//Description: funny police car.
+//
+//EDITED BY: psphacker108 on 09/12/06 19:24:47
+//Image: none
+//Time: 09/12/2006 19:22:19
+//Working: Yes
+setchar(0x945ae12, 0x4);
+setchar(0x945ae11, 0x44);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.2);
+setfloat(0x945ae50, 0.325);
+setfloat(0x945ae1c, 0.975);
+setfloat(0x945ae20, 0.975);
+setfloat(0x945ae64, 0.57);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0xaa, 0xd1, 0x00, 0x05);
+sethex(0x944fb38, 0xFF, 0xFF, 0x00);
+sethex(0x944fb50, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat police car
+//ID: 18921
+//Score: 46
+//Author: pimpinpimp
+//Category: Pimp My Garage
+//Description: My police car
+//
+//EDITED BY: psphacker108 on 28/11/06 18:51:34
+//Image: none
+//Time: 26/11/2006 12:45:14
+//Working: Yes
+setshort(0x9442110, 250);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x00);
+sethex(0x944fb00, 0xFF, 0xFF, 0x00);
+sethex(0x944fafc, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Da Law (police Car)
+//ID: 18367
+//Score: 25
+//Author: Lance_Dalt
+//Category: Pimp My Garage
+//Description: Pimped out cop car
+//Image: none
+//Time: 30/10/2006 06:10:09
+//Working: Yes
+setshort(0x992FDA0, 0x44, 0x61, 0x20, 0x4c, 0x61, 0x77);
+setchar(0x945ae11, 0x44);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.025);
+setfloat(0x945ad90, 3250);
+setfloat(0x945ad98, 1.05);
+setfloat(0x945ae50, 0.4125);
+sethex(0x945ae60, 0x03, 0x91, 0x00, 0x07);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944faf8, 0xFF, 0xFF, 0x00);
+sethex(0x944fb00, 0xFF, 0x00, 0xFF);
+setint(0x8E38988, 157);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Police Misc
+//ID: 18122
+//Score: 53
+//Author: Original
+//Category: Misc
+//Description: This cheat will activate Matt420bad pop up police but also have a police car in the staunton island garage!!! ALL the credit goes to Matt420Bad.
+//Image: none
+//Time: 13/10/2006 11:19:56
+//Working: Yes
+//Created Using Vehicle Spawner
+//By RASAL
+setchar(0x08E4E9C0, 157);
+setfloat(0x08E4E9C4, 272.15, -422.6, 26.02);
+setfloat(0x08E4E9D0, 0);
+//Credit goes 2 Matt420Bad
+setchar(pcar + 0x257, 0x60);
+
+#cheat Police Station Upgrade
+//ID: 18020
+//Score: 61
+//Author: polipolipoli
+//Category: Environment
+//Description: Police station in portland has LOADS OF WEAPONS and 2 more POLICE CARS and a ENFORCER!!!!
+//so when u get busted in portland u can collect loads of weapons!!!!
+//remember to get police station 2
+//also u get $99999999
+//Image: http://www.gta-lcs.net/images/cnt/voitures/police.png
+//Time: 08/10/2006 10:59:45
+//Working: Yes
+//weapon 1
+setfloat(0x08e2d800, 1154.09, -635.87, 18.90);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0xff, 0xff)
+setshort(0x08e2d826, 0x103)
+setchar(0x08e2d832, 0x0f)
+setchar(0x08e2d833, 0x00)
+setchar(0x08e2d850, 0xff)
+//weapon 2
+setfloat(0x08E2E400, 1153.91, -637.49, 18.90);
+setint(0x08E2E414, 0);
+setchar(0x08E2E41C, 0xff, 0xff);
+setshort(0x08E2E426, 0x106);
+setchar(0x08E2E432, 0x0f);
+setchar(0x08E2E433, 0x00);
+setchar(0x08E2D450, 0xff);
+//weapon 3
+setfloat(0x08e2d860, 1154.16, -639.52, 18.90);
+setint(0x08e2d874, 0);
+setchar(0x08E2D87C, 0xff, 0xff)
+setshort(0x08e2d886, 0x113)
+setchar(0x08e2d892, 0x0f)
+setchar(0x08e2d893, 0x00)
+setchar(0x08e2d8b0, 0xff)
+//weapon 4
+setfloat(0x08e2d8c0, 1153.91, -641.44, 18.90);
+setint(0x08e2d8d4, 0);
+setchar(0x08e2d8dC, 0xff, 0xff);
+setshort(0x08e2d8e6, 0x118);
+setchar(0x08e2d8f2, 0x0f);
+setchar(0x08e2d8f3, 0x00);
+setchar(0x08e2d910, 0xff);
+//weapon 5
+setfloat(0x08e2d920, 1153.81, -643.72, 18.90);
+setint(0x08e2d934, 0);
+setchar(0x08e2d93C, 0xff, 0xff);
+setshort(0x08e2d946, 0x117);
+setchar(0x08e2d952, 0x0f);
+setchar(0x08e2d953, 0x00);
+setchar(0x08e2d970, 0xff);
+//weapon 6
+setfloat(0x08e2d980, 1170.42, -644.61, 18.90);
+setint(0x08e2d994, 0);
+setchar(0x08e2d99C, 0xff, 0xff);
+setshort(0x08e2d9a6, 0x11e);
+setchar(0x08e2d9b2, 0x0f);
+setchar(0x08e2d9b3, 0x00);
+setchar(0x08e2d9d0, 0xff);
+//weapon 7
+setfloat(0x08e2da40, 1153.91, -649.34, 18.90);
+setint(0x08e2da54, 0);
+setchar(0x08e2da5C, 0xff, 0xff);
+setshort(0x08e2da66, 0x122);
+setchar(0x08e2da72, 0x0f);
+setchar(0x08e2da73, 0x00);
+setchar(0x08e2da90, 0xff);
+//weapon 8
+setfloat(0x08e2daa0, 1153.92, -646.79, 18.90);
+setint(0x08e2dab4, 0);
+setchar(0x08e2dabC, 0xff, 0xff);
+setshort(0x08e2dac6, 0x124);
+setchar(0x08e2dad2, 0x0f);
+setchar(0x08e2dad3, 0x00);
+setchar(0x08e2daf0, 0xff);
+setfloat(0x08e2d800, 1173.91, -644.28, 18.90);
+setint(0x08e2d814, 0);
+setchar(0x08E2D81C, 0x999999999999999999999999999999999999999999999999, 0x999999999999999999999999999999999999999999999999);
+setshort(0x08e2d826, 0x123);
+setchar(0x08e2d832, 0x0f);
+setchar(0x08e2d833, 0x00);
+setchar(0x08e2d850, 0xff);
+//1 vehicle
+setchar(0x08E4Ebfc, 157);
+setchar(0x08E4Ebfc + 0x18, 0x01);
+setfloat(0x08E4Ec00, 1150.84, -648.34, 14.60, 270);
+//2 vehicle
+setchar(0x08E4E9EC, 158);
+setchar(0x08E4E9EC + 0x18, 0x01);
+setfloat(0x08E4E9f0, 1173.45, -658.51, 19.04, 180);
+//3 vehicle
+setchar(0x08E4Ea44, 157);
+setchar(0x08E4Ea44 + 0x18, 0x01);
+setfloat(0x08E4Ea48, 1150.37, -640.45, 14.50, 225);
+
+#cheat 999 Forces Car #1
+//ID: 17972
+//Score: 60
+//Author: BOY 999
+//Category: Pimp My Garage
+//Description: This is the car #1 in thr 999 forces!!! A police car with nice 20" DUBZ and twin exhausts with blue nos!!! Also with high speeds and swifty handling; you'll catch criminals easy......
+//Image: none
+//Time: 05/10/2006 17:01:17
+//Working: Yes
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.85);
+setfloat(0x945ae54, -0.1375);
+setfloat(0x945ae1c, 1.275);
+setfloat(0x945ae20, 1.275);
+setfloat(0x945ae14, 0.00388);
+sethex(0x945ae60, 0x83, 0x91, 0x00, 0x01);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb40, 0xFF, 0xFF, 0x00);
+sethex(0x944fb58, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+

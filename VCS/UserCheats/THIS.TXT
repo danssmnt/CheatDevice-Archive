@@ -1,0 +1,1318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="keywords" content=" Post cheats for CheatDevice here., PSP, PlayStation Portable, PSP News, PSP Forums, PSP Games, Sony PSP, PSP Homebrew, Homebrew, PSP Hack, 360, Xbox 360, Xbox 360 news, Xbox 360 reviews, Xbox 360 screenshots, PS3, PlayStation 3 News, PlayStation 3 Screenshots, Nintendo Revolution, NDS, Nintendo DS, Nintendo DS hack, Nintendo DS Homebrew, Nintendo DS games, Xbox 360 Games, Playstation 3 Games" />
+    <meta name="description" content="[Archive]  Post cheats for CheatDevice here. PSP Games" />
+    
+    <title> Post cheats for CheatDevice here. [Archive]  - QJ.NET Forums</title>
+    <link rel="stylesheet" type="text/css" href="http://forums.qj.net/archive/archive.css" />
+</head>
+<body>
+<div class="pagebody">
+<div id="navbar"><a href="http://forums.qj.net/archive/index.php">QJ.NET Forums</a> &gt; <a href="http://forums.qj.net/archive/index.php/f-293.html">All QJ Forums</a> &gt; <a href="http://forums.qj.net/archive/index.php/f-192.html">Gaming Forums</a> &gt; <a href="http://forums.qj.net/archive/index.php/f-48.html">QJ.NET Sony PSP Forums</a> &gt; <a href="http://forums.qj.net/archive/index.php/f-3.html">PSP Chat</a> &gt; <a href="http://forums.qj.net/archive/index.php/f-6.html">PSP Games</a> &gt;  Post cheats for CheatDevice here.</div>
+<hr />
+<div class="pda"><a href="http://forums.qj.net/archive/index.php/t-76948.html?pda=1" rel="nofollow">PDA</a></div>
+<p class="largefont">View Full Version : <a href="http://forums.qj.net/showthread.php?t=76948">Post cheats for CheatDevice here.</a></p>
+<hr />
+
+<div class="post"><div class="posttop"><div class="username">Durka Durka Mahn</div><div class="date">11-03-2006, 01:43 PM</div></div><div class="posttext">Post any cheats you have made for the VCS CD by Edison Carter here. Feel free to also post them over at cheatsync.net/app.<br />
+<br />
+Here's mine so far, will be making a weapon switcher soon aswell, and maybe even an in-game car changer (changes the cars in your garage if you hit a button.)<br />
+<br />
+#cheat Hold L or R to change taxi fare amount<br />
+ if ((buttons &amp; CTRL_RTRIGGER))<br />
+{<br />
+setint(0x09F6D7B0, getint(0x09F6D7B0)+1);<br />
+}<br />
+ if ((buttons &amp; CTRL_LTRIGGER))<br />
+{<br />
+setint(0x09F6D7B0, getint(0x09F6D7B0)-1);<br />
+}<br />
+<br />
+#cheat Up and Down change wanted Level<br />
+ if ((buttons &amp; CTRL_UP&amp;&amp;getint(pplayer+0x00000910)&lt;6))<br />
+{<br />
+setint(pplayer+0x00000910, getint(pplayer+0x00000910)+1);<br />
+}<br />
+ if ((buttons &amp; CTRL_DOWN&amp;&amp;getint(pplayer+0x00000910)&gt;0))<br />
+{<br />
+setint(pplayer+0x00000910, getint(pplayer+0x00000910)-1);<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Captain Bodymod</div><div class="date">11-03-2006, 01:50 PM</div></div><div class="posttext">edit..</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Ranmax09</div><div class="date">11-04-2006, 12:01 AM</div></div><div class="posttext">Is there any for Flying cars? or driving cars in water?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SkyLine_</div><div class="date">11-04-2006, 01:17 AM</div></div><div class="posttext">OK Here's a code a guy called TSF442 made....all credit to him.....<br />
+<br />
+Spawn every single car in the first garage. Leave the code on till the door opens.<br />
+<br />
+#cheat splitz-6 ATV in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 170);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+
+
+#cheat admiral in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 171);
+#off
+setint(0x08C739B0, 0);
+
+
+#cheat cheetah in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 172);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+<br />
+
+
+#cheat little willie in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 173);
+#off
+setint(0x08C739B0, 0);
+
+
+<br />
+<br />
+#cheat baggage in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 174);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat banshee in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 175);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+<br />
+
+
+#cheat perennial in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 176);
+#off
+setint(0x08C739B0, 0);
+
+
+<br />
+<br />
+#cheat blista compact in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 177);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+<br />
+#cheat BMX(with no basket on front)in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 178);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat BMX(with basket on front)in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 179);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat bobcat in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 180);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat bulldozer in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 181);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat burrito in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 182);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat cabbie in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 183);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat caddy in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 184);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat speeder(no name)in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 185);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat Polaris V8 in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 186);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat deluxo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 187);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat armedilo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 188);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat air ambulance in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 189);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat wintergreen in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 190);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat WPD wintergreen in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 191);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat esperante in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 192);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat FBI washington in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 193);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat firetruck in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 194);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat glendale in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 195);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat greenwood in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 196);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat hermes in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 197);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat Bovver '64 in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 198);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat Idaho in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 199);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat landstalker in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 200);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat manana in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 201);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat ventoso in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 202);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat oceanic in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 203);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat vcpd cheetah in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 204);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sanchez in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 205);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat stallion in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 206);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat VCPD cruiser in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 207);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat domestobot in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 208);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat patriot in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 209);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat pony in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 210);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sentinel in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 211);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat pcj-600 in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 212);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat maverick in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 213);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat reefer in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 214);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat speeder in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 215);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat linerunner in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 216);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat walton in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 217);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat barracks ol in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 218);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat police boat in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 219);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat flatbed in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 220);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat barracks in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 221);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat biplane in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 222);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat moonbeam in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 223);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat rumpo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 224);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat yola in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 225);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat taxi in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 226);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat ambulance in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 227);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat stretch in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 228);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat faggio in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 229);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat quad in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 230);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat biker angel in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 231);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+<br />
+#cheat freeway in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 232);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat jetski in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 232);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat swat van in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 234);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat boxville in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 235);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat benson in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 236);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat coach in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 237);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat mule in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 238);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat voodoo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 239);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat securicar in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 240);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat trashmaster in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 241);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat yanke in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 243);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat mr.whoopee in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 244);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sandking in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 245);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat rhino in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 246);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat dinghy in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 247);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat marquis in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 248);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat rio in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 249);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat tropic in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 250);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat forklift in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 251);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat streetfighter in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 252);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat virgo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 253);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat stinger in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 254);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat bf injection in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 255);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat pheonix in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 256);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat squalo II in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 257);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+
+
+#cheat jetmax in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 258);
+#off
+setint(0x08C739B0, 0);
+
+
+#cheat mesa grande in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 259);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat vcn macerick in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 260);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat vcpd maverick in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 261);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sparrow in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 262);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sea sparrow in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 263);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat violator in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 264);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat cholo sabre in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 265);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat comet in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 266);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat cuban hermes in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 267);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat FBI rancher in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 268);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat gang rancher in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 269);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat infernus in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 270);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat regina in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 271);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sabre in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 272);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sabre turbo in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 273);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat sentinel XS in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 274);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat hunter in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 275);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat washington in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 276);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat coast gaurd in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 277);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat skimmer in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 278);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat VCPD maverick(Back Doors Open)in garage<br />
+//By TSF442<br />
+//Leave on until garage door opens<br />
+//all cars are red unless there is a car with another color first<br />
+setint(0x08C739B0, 279);<br />
+#off<br />
+setint(0x08C739B0, 0);<br />
+<br />
+#cheat Teleport to Open area<br />
+teleport(-799.70, -1256.84, 12.00);<br />
+<br />
+#cheat Teleport to Ocean<br />
+teleport(-684.48, -1137.85, 9.00);<br />
+<br />
+<br />
+Enjoy!!!:tup:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Waterbottle</div><div class="date">11-04-2006, 05:00 AM</div></div><div class="posttext">I guess I'll post everything I've made...<br />
+#cheat All Red Baloons Burst. w/ Rewards<br />
+address = 0x09f6a200;<br />
+for(i=0;i&lt;99;i++) {<br />
+setint(address+4*i, 1);<br />
+}<br />
+setshort(0x08bb3d3c, 99);<br />
+off();<br />
+<br />
+#cheat Bouncy!<br />
+//Ported from VCS Cheater<br />
+//Edit 0.8 in first line to make bouncing go higher/lower<br />
+BounceAmount = 0.8;<br />
+rot = getfloat(0x09fc73f0);<br />
+setfloat(pplayer + 0x4E4, 150.0);//health<br />
+if(getshort(pplayer+0x1C8)!=0x1020) { setfloat(pplayer+0x148,BounceAmount); setshort(pplayer+0x1c8, 0x1020);<br />
+if(ystick &lt; -0.5) {<br />
+setfloat(pplayer+0x140,getfloat(pplayer+0x10));<br />
+setfloat(pplayer+0x144,getfloat(pplayer+0x14));<br />
+}<br />
+}<br />
+if(xstick &lt; -0.5) rot += 2;<br />
+if(xstick &gt; 0.5) rot -= 2;<br />
+setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));<br />
+setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));<br />
+setfloat(0x09fc73f0, rot); <br />
+<br />
+#cheat NOS<br />
+//Hold O while driving to use NOS<br />
+if(buttons &amp; CTRL_CIRCLE) {<br />
+speed = 0.0;<br />
+if(getfloat(pcar+0x140)&gt;0) { speed+=getfloat(pcar+0x140); }<br />
+else { speed-=getfloat(pcar+0x140); }<br />
+if(getfloat(pcar+0x144)&gt;0) { speed+=getfloat(pcar+0x144); }<br />
+else { speed-=getfloat(pcar+0x144); }<br />
+if(speed&lt;175/75) {<br />
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);<br />
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);<br />
+}<br />
+}<br />
+<br />
+#cheat Infinite Ammo<br />
+setint(pplayer+0x5d8, 0x00ffffff);<br />
+setint(pplayer+0x5f4, 0x00ffffff);<br />
+setint(pplayer+0x610, 0x00ffffff);<br />
+setint(pplayer+0x5bc, 0x00ffffff);<br />
+setint(pplayer+0x62c, 0x00ffffff);<br />
+setint(pplayer+0x648, 0x00ffffff);<br />
+setint(pplayer+0x664, 0x00ffffff);<br />
+<br />
+#cheat Locked Car Doors<br />
+//Ported from theY4Kman's version for LCS.<br />
+setshort(pcar+0x232, 0x0101);<br />
+#off<br />
+setshort(pcar+0x232, 0);<br />
+<br />
+#cheat Weapons<br />
+setchar(pplayer+0x594, 0x0b);//chainsaw<br />
+setchar(pplayer+0x5B0, 0x10);//teargas<br />
+setchar(pplayer+0x5CC, 0x14);//some handgun<br />
+setchar(pplayer+0x5E8, 0x15);//M16<br />
+setchar(pplayer+0x604, 0x18);//uzi<br />
+setchar(pplayer+0x620, 0x1C);<br />
+setchar(pplayer+0x63C, 0x23);//mini gun<br />
+setchar(pplayer+0x658, 0x1E);//sniper<br />
+<br />
+#cheat No reloading<br />
+setint(pplayer+0x5d4, 2);<br />
+setint(pplayer+0x5f0, 2);<br />
+setint(pplayer+0x60c, 2);<br />
+setint(pplayer+0x5b8, 2);<br />
+setint(pplayer+0x628, 2);<br />
+setint(pplayer+0x644, 2);<br />
+setint(pplayer+0x660, 2);<br />
+<br />
+#cheat Infinite Breath<br />
+setfloat(pplayer + 0x82C, 2.0);<br />
+<br />
+#cheat Remote Controlled Bike<br />
+//Stand next to the bike you want to remort control then activate the cheat and quickly disable it, as you leave the bike and you can remote control it.<br />
+setchar(pplayer+0x894, 0x12);<br />
+#off<br />
+setchar(pplayer+0x894, 0x10);<br />
+<br />
+#cheat 999, 999, 999$<br />
+setint(0x08bde55c, 999999999, 999999999);<br />
+<br />
+#cheat Lamborghini Doors<br />
+//Ported from vettefan88's version for LCS.<br />
+setfloat(pcar+0x450, 0, -1.2566371, 0);<br />
+setfloat(pcar+0x480, 0, -1.2566371, 0);<br />
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);<br />
+<br />
+#cheat Infinite Health<br />
+setfloat(pplayer + 0x4E4, 150.0);<br />
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);<br />
+<br />
+#cheat Infinite armor<br />
+setfloat(pplayer + 0x4E8, 150.0);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Durka Durka Mahn</div><div class="date">11-04-2006, 06:10 AM</div></div><div class="posttext">Here's another. Quite funny. Hit O while in a car and it'll catch fire.<br />
+<br />
+#cheat Kamakazee!!!!<br />
+  if ((buttons &amp; CTRL_CIRCLE))<br />
+{<br />
+setfloat(pcar + 0x0000027C, 0x0);<br />
+}</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Waterbottle</div><div class="date">11-04-2006, 06:26 AM</div></div><div class="posttext">Ported Superman from VCS Cheater..<br />
+<br />
+Controlls, for people that havn't tried it before, X accend, [] decend, Analog Stick rotate and fly forwards, R Move fast.<br />
+<br />
+In LCS there were a float in pplayer that stored the players rotation in radians, wern't able to find that in VCS.. So it's a bit messed up when you take off.. But it's the best I'm able to get it with out that value or acos/asin<br />
+<br />
+#cheat Superman<br />
+//By Waterbottle<br />
+rot = getfloat(0x09fc73f0);<br />
+pstartfly = getshort(pplayer+0x1C8);<br />
+setfloat(pplayer + 0x4E4, 150.0);//health<br />
+if(buttons &amp; CTRL_RTRIGGER) speedmult = 1.5;  else speedmult = 0.3;<br />
+    if(buttons &amp; CTRL_CROSS) {<br />
+                   setshort(pplayer+0x1C8, 0x1020);<br />
+                   setfloat(pplayer+0x148, speedmult/2);<br />
+                   }<br />
+    else if(buttons &amp; CTRL_SQUARE &amp;&amp; pstartfly==0x1020) setfloat(pplayer+0x148, -speedmult/2);<br />
+    else if(pstartfly==0x1020) setfloat(pplayer+0x148, 0);<br />
+    if(xstick &lt; -0.5 &amp;&amp; pstartfly==0x1020) rot += 2;<br />
+    if(xstick &gt; 0.5 &amp;&amp; pstartfly==0x1020) rot -= 2;<br />
+    if(pstartfly==0x1020) {<br />
+    setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));<br />
+    setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));<br />
+    }<br />
+    if(ystick &lt; -0.5 &amp;&amp; pstartfly==0x1020) {<br />
+                   setfloat(pplayer+0x140, -sin(rot)*speedmult);<br />
+                   setfloat(pplayer+0x144, cos(rot)*speedmult);<br />
+              } else if(pstartfly==0x1020) setfloat(pplayer+0x140, 0, 0);<br />
+setfloat(0x09fc73f0, rot);</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-04-2006, 06:54 AM</div></div><div class="posttext">I only have cw cheat codes for the EURO version. I have bout 50 codes.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SkyLine_</div><div class="date">11-04-2006, 07:30 AM</div></div><div class="posttext">LOL Kamakazze Rocks!!!!!! Trying Superman now....:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-04-2006, 07:53 AM</div></div><div class="posttext">Were and how to I put these codes in????</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Waterbottle</div><div class="date">11-04-2006, 08:04 AM</div></div><div class="posttext">Were and how to I put these codes in????<br />
+ms0:/cheats/vcs/file.txt</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">myschoo</div><div class="date">11-04-2006, 08:21 AM</div></div><div class="posttext">hello guys can u tell me what do i do with this codes? should i just copy and paste them to *.txt and then put on my MS or something?<br />
+thx<br />
+<br />
+edit. erm 3 new posts kk :)</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">|DarK|_|LigHtZ|</div><div class="date">11-04-2006, 08:31 AM</div></div><div class="posttext">you must rename file to cheats en then its gonna work<br />
+-= Double Post =-<br />
+yeah just copy paste and then put in de this directory: ms0:/cheats/vcs/(and here comes youre file with cheats(you mute rename youre text file to cheats))<br />
+grtzz |DarK|_|LigHtZ|<br />
+<br />
+ps. sorry for my bad english</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">myschoo</div><div class="date">11-04-2006, 08:42 AM</div></div><div class="posttext">woo this is great burning cars are fun :D<br />
+http://img85.imageshack.us/img85/8456/video1jw8.gif<br />
+how do u make them guys?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Durka Durka Mahn</div><div class="date">11-04-2006, 02:17 PM</div></div><div class="posttext">Lol that's my cheat :p<br />
+<br />
+Please post any new cheats on Cheatsync.net/app. Thanks.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">K3NNY</div><div class="date">11-04-2006, 02:38 PM</div></div><div class="posttext">is there a heavy cars cheat yet?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-04-2006, 02:47 PM</div></div><div class="posttext">So i just make a text called &quot;cheat&quot; in the vcs folder??</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-04-2006, 03:44 PM</div></div><div class="posttext">So i just make a text called &quot;cheat&quot; in the vcs folder??<br />
+doesnt have to be....<br />
+-= Double Post =-<br />
+anyone eles working on any cheats?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-04-2006, 03:48 PM</div></div><div class="posttext">Ok. So now 1 of the codes makes me always be in a car and when I get out i have to hold X to move and go up at the same time.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-04-2006, 06:06 PM</div></div><div class="posttext">anyone eles gonna add any codes......<br />
+<br />
+Its time like these i wish i knew how to hex edit and all that...:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-04-2006, 06:09 PM</div></div><div class="posttext">Go to there site</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-04-2006, 08:14 PM</div></div><div class="posttext">thiers like 3.....and one that i think got all the latest cheats is like members only....really dont feel like applying...:(</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">Durka Durka Mahn</div><div class="date">11-04-2006, 09:03 PM</div></div><div class="posttext">Here's thew most up-to-date list of VCS cheats. Also post them at this link aswell..<br />
+<br />
+Cheatsync VCS Page (http://www.cheatsync.net/app/?search=&amp;game=Vice+City+Stories&amp;cats= Player%2CVehicle%2CWeapons%2CTeleport%2CCamera%2CPedestrians%2CGarage+Codes %2CButton+Cheats%2CEnvironment%2CAudio%2CInteriors%2CPimp+My+Garage%2CLocat ion+Mods%2CFlight+School%2CDriving+School%2CBike+School%2CBoat+School%2CRoa d+Island%2CText+Mods%2CPlayer+Stats%2CPointless%2CMisc&amp;order=)</div></d iv><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-04-2006, 09:16 PM</div></div><div class="posttext">*must create accout on the site*<br />
+<br />
+NOOOOO i cant......tooo lazy!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">|DarK|_|LigHtZ|</div><div class="date">11-05-2006, 01:58 AM</div></div><div class="posttext">can someone make a freeze everyting cheat please i need it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-05-2006, 11:17 AM</div></div><div class="posttext">They might have it on the site that durka suggested....</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">|DarK|_|LigHtZ|</div><div class="date">11-05-2006, 11:36 AM</div></div><div class="posttext">no they dont have it</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">tRySt</div><div class="date">11-05-2006, 11:50 AM</div></div><div class="posttext">is there a non-button cheat for weapon set 2? does anyone have the code?</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-05-2006, 11:55 AM</div></div><div class="posttext">#cheat Teleport to EASTER EGG: Balls On Building <br />
+teleport(283.50,  5.45,  11.07);<br />
+<br />
+I posted this here first because I need someone to test this. <br />
+<br />
+Your time might have to be somewere in between 02:00 - 04:00.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SkyLine_</div><div class="date">11-05-2006, 01:56 PM</div></div><div class="posttext">LOL...best easter egg ever....:D</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">The_Kills</div><div class="date">11-05-2006, 05:35 PM</div></div><div class="posttext">#cheat Teleport to EASTER EGG: Balls On Building <br />
+teleport(283.50,  5.45,  11.07);<br />
+<br />
+I posted this here first because I need someone to test this. <br />
+<br />
+Your time might have to be somewere in between 02:00 - 04:00.<br />
+ LOL:ROFL:</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">_twopoint</div><div class="date">11-05-2006, 06:34 PM</div></div><div class="posttext">Im serious. I need someone to test it for me.</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">hOmeBoYPiNoY</div><div class="date">11-12-2006, 06:51 PM</div></div><div class="posttext">Someone needs to make a code to make you high like * SPOILER * <br />
+<br />
+THAT ONE MISSION WHERE YOU GET HIGH AND HAVE TO GET THE DRUGS BACK!</div></div><hr />
+
+
+<div class="post"><div class="posttop"><div class="username">SkyLine_</div><div class="date">11-13-2006, 09:00 AM</div></div><div class="posttext">The camera goes all weird...:D</div></div><hr />
+
+
+<div id="copyright">vBulletin&reg; v3.7.2, Copyright &copy;2000-2009, Jelsoft Enterprises Ltd.</div>
+</div>
+</body>
+</html>
+
+
+
+
+#cheat Stretch at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 215,0,0, 255); //Color2
+ setshort(0x98a334e, 1, 'S','t','r','e','t','c','h', 0); 
+ //Wheels
+ setfloat(0x93679D8, 1.62, 1.62); //wheel size
+ setfloat(0x96319e0+0x6c, 1.63); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, 'F', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.41); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.13); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.23); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 1.66); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0.7); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 30); //Steering Lock
+ setfloat(0x96319e0+0xbc, 2200); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 10000); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, -0.15); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat 112 at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 244); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 203,0,0, 255); //Color2
+ setshort(0x98a33de, 1, '1','1','2', 0); 
+ //Wheels
+ setfloat(0x936A3D8, 1.73, 1.73); //wheel size
+ setfloat(0x9632900+0x6c, 2.4); //Traction Multiplier
+ setfloat(0x9632900+0xc4, 1.08); //Traction Loss
+ setfloat(0x9632900+0x70, 0.44); //Traction Bias
+ //Engine
+ setchar(0x9632900+0x5c, 'F', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9632900+0x7c, 0.36); //Suspension Upper Limit
+ setfloat(0x9632900+0x80, -0.11); //Suspension Lower Limit
+ setfloat(0x9632900+0x78, 0.25); //Suspension Damping Level
+ setfloat(0x9632900+0x74, 1.26); //Suspension Force Level
+ setfloat(0x9632900+0x84, 0.5); //Suspension Bias
+ setfloat(0x9632900+0x88, 0.7); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9632900+0x68, 37); //Steering Lock
+ setfloat(0x9632900+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9632900+0xc0, 1500); //Turn Mass
+ setfloat(0x9632900+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9632900+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9632900+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat assd at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,255,0, 255); //Color2
+ setshort(0x98a334e, 1, 'a','s','s','d', 0); 
+ //Wheels
+ setfloat(0x93679D8, 1.28, 1.28); //wheel size
+ setfloat(0x96319e0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 1); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 30); //Steering Lock
+ setfloat(0x96319e0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 1500); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust

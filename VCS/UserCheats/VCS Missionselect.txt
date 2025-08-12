@@ -1,0 +1,21 @@
+#cheat Mission Select!
+//BY: Vettefan88
+//Hold R and press left and right to toggle between missions
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+money = getint(0x08bde55c);
+}
+setint(0x08bde55c, money, money);
+if (buttons & CTRL_RTRIGGER)
+{
+setint(0x08bde55c, mission, mission);
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+}
+setchar(0x9F932D8, mission);
+

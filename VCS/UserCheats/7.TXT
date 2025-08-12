@@ -1,0 +1,518 @@
+#cheat Racer!
+static gotten;
+dx = x - getfloat(opp+0x30);
+dy = y - getfloat(opp+0x34);
+setfloat(opp + 0x30,   getfloat(opp + 0x30) + dx * 0.03);
+setfloat(opp + 0x34,   getfloat(opp + 0x34) + dy * 0.03);  
+setfloat(opp + 0x38, 11.30);
+if(!gotten&&getint(pobj+0x150))
+{
+x = -638.01;
+y = -486.57;
+opp = getint(pobj + 0x150);
+setfloat(opp + 0x30, -286.36, -479.83, 11.30);
+gotten = 1;
+}
+if(x == -638.01&&y == -486.57&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -637.88;
+y = -431.38;
+}
+if(x == -637.88&&y == -431.38&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -625.43;
+y = -402.98;
+}
+if(x == -625.43&&y == -402.98&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -576.10;
+y = -369.26;
+}
+if(x == -576.10&&y == -369.26&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -431.85;
+y = -353.90;
+}
+if(x == -431.85&&y == -353.90&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -333.02;
+y = -357.48;
+}
+if(x == -333.02&&y == -357.48&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -290.63;
+y = -374.91;
+}
+if(x == -290.63&&y == -374.91&&getfloat(opp+0x30)==x&&getfloat(opp+0x34)==y)
+{
+x = -286.36;
+y = -479.83;
+}
+
+#cheat Race Opponent!
+static speed;
+static lap;
+static currentx;
+static currenty;
+checkpoint1x = -638.01;
+checkpoint1y = -486.57;
+checkpoint2x = -637.88;
+checkpoint2y = -431.38;
+checkpoint3x = -625.43;
+checkpoint3y = -402.98;
+checkpoint4x = -576.10;
+checkpoint4y = -369.26;
+checkpoint5x = -431.85;
+checkpoint5y = -353.90;
+checkpoint6x = -333.02;
+checkpoint6y = -357.48;
+checkpoint7x = -290.63;
+checkpoint7y = -374.91;
+if(!currentx&&getint(pobj+0x150))
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+setfloat(opp + 0x30, -286.36, -479.83, 11.30);
+speed = 0.0009;
+}
+setfloat(opp + 0x30,   getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34,   getfloat(opp + 0x34) + dy * speed);  
+setfloat(opp + 0x38, 11.30);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+if(sqrt(checkx*checkx+checky*checky) < 5 )
+{
+ if(currentx == checkpoint1x && !lap)
+ {
+   currentx = checkpoint2x;
+   currenty = checkpoint2y;
+   lap = 1;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint2x)
+ {
+   currentx = checkpoint3x;
+   currenty = checkpoint3y;
+   speed = 0.009;
+ }
+ else if(currentx == checkpoint3x)
+ {
+   currentx = checkpoint4x;
+   currenty = checkpoint4y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint4x)
+ {
+   currentx = checkpoint5x;
+   currenty = checkpoint5y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint5x)
+ {
+   currentx = checkpoint6x;
+   currenty = checkpoint6y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint6x)
+ {
+   currentx = checkpoint7x;
+   currenty = checkpoint7y;
+   speed = 0.005;
+ }
+ else if(currentx == checkpoint7x)
+ {
+   currentx = checkpoint1x;
+   currenty = checkpoint1y;
+   speed = 0.0009;
+ }
+ dx = currentx - getfloat(opp+0x30);
+ dy = currenty - getfloat(opp+0x34);
+}
+#off
+currentx = currenty = gotten = opp = 0;
+
+#cheat Red Radar Disc
+R = 255;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Green Radar Disc
+R = 0;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Blue Radar Disc
+R = 0;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat White Radar Disc
+R = 255;
+G = 255;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+
+#cheat Purple Radar Disc
+R = 80;
+G = 0;
+B = 80;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Turquoise Radar Disc
+R = 0;
+G = 255;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Yellow Radar Disc
+R = 255;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Orange Radar Disc
+R = 255;
+G = 80;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Lime Green Radar Disc
+R = 80;
+G = 255;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Pink Radar Disc
+R = 255;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Hot Pink Radar Disc
+R = 255;
+G = 0;
+B = 80;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Sky Blue Radar Disc
+R = 0;
+G = 175;
+B = 255;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Black Blue Radar Disc
+R = 0;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++)
+{setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat Red Health/Armor Outlines
+R = 255;
+G = 0;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Green Health/Armor Outlines
+R = 0;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Blue Health/Armor Outlines
+R = 0;
+G = 0;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat White Health/Armor Outlines
+R = 255;
+G = 255;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+
+#cheat Purple Health/Armor Outlines
+R = 80;
+G = 0;
+B = 80;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Turquoise Health/Armor Outlines
+R = 0;
+G = 255;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Yellow Health/Armor Outlines
+R = 255;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Orange Health/Armor Outlines
+R = 255;
+G = 80;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Lime Green Health/Armor Outlines
+R = 80;
+G = 255;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Pink Health/Armor Outlines
+R = 255;
+G = 0;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Hot Pink Health/Armor Outlines
+R = 255;
+G = 0;
+B = 80;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Sky Blue Health/Armor Outlines
+R = 0;
+G = 175;
+B = 255;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat Black Health/Armor Outlines
+R = 0;
+G = 0;
+B = 0;
+for(outline=0;outline<16;outline++)
+{setchar(0x96e1c20+4*outline, R, G, B);}
+off();
+
+#cheat real time clock
+setint(0x8bb3b3c, 60000);
+#off
+setint(0x8bb3b3c, 1000);
+
+#cheat set clock
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);
+}
+
+#cheat Pop out police VCS
+setchar(pcar + 0x267, 0x75);
+off()
+
+#cheat Pop out police OFF
+setchar(pcar + 0x267, 0x44);
+off()
+
+#cheat Hikiwara Tuning Supercharged Sabre
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+// Spinners by (dont know)
+static rotation;
+if (rotation == 0)
+{
+rotation = 1040;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 1040;}
+// Nos By Edison Carter and Waterbottle
+// Not much of a moddification to this Brilliant code, but its a longterm affect,
+// Hold circle  To drive at normal speed
+// Slow down's square with gradual, good for a thrash or a race
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat The Mysterious Banshee
+static state;
+DifficultLevel = 50;
+ if(state)
+     setshort(pcar+0x232,  0x0101);
+ else
+ {
+     setint(0x08C739B0,  175);
+     setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+     setfloat(0x08C739C0,  3.1415);
+     if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+     {
+     state = 1;
+     time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+     }
+ }
+ if(state == 1)
+ {
+ setshort(0x08e90bd8,  1,  'O',  'h',  ',',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+ if(newtime - 2 > time)
+        {
+        state = 2;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        }
+ }
+ if(state == 2)
+ {
+ setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        if(newtime - 2 > time)
+        {
+        state = 3;
+        health = 150;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        }
+ }
+ if(state == 3)
+ {
+ setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 3 > time)
+{
+state = 4;
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+}
+if(speed < DifficultLevel)
+    health -= 0.5;
+else if(health < 150)
+    health += 0.5;
+
+ setfloat(pplayer+0x4e8, health);
+
+      if(health <= 0)
+{
+setfloat(pcar+0x27c, 0);
+state = 0;
+}
+ }
+ if(state == 4)
+ {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 4 < time)
+            setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ',',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ',', ' ',  'N',  'O',  'W',  '!', 0);
+      else time = 0;
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ if(speed < DifficultLevel + 10)
+          health -= 0.5;
+      else if(health < 150)
+          health += 0.5;
+
+ setfloat(pplayer+0x4e8, health);
+
+      if(health <= 0)
+      {
+      setfloat(pcar+0x27c, 0);
+      state = 0;
+      }
+ if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)
+      {
+      state = 5;
+      time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      }
+ }
+ if(state == 5)
+ {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 2 > time)
+     state = 6;
+ }
+ if(state == 6)
+ {
+ setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ',', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+if(buttons & CTRL_UP)
+{
+state = 0;
+setshort(pcar+0x232,  0);
+}
+ }
+#off
+state = 0;
+setshort(pcar+0x232,  0); 
+

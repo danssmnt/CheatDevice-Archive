@@ -1,0 +1,732 @@
+#cheat Fire Circles
+kinda=0x8BBBD50;
+if(press & CTRL_UP){
+setchar(0x8BBBD50, 0x0a);
+setchar(0x8BBBD83, 0x4a);
+setchar(0x8BBBD84, 0x04);
+setchar(0x8BBBD85, 0x01);
+setchar(0x8BBBD8C, 0xFF);
+setfloat(kinda+0x10, getfloat(pcar+0x30),getfloat(pcar+0x34),getfloat(pcar+0x38));
+}
+
+
+#cheat NUKE VICE CITY
+explosion=0x08BBBD50;
+static count;
+if(count%150==0){
+   setchar(explosion, 0x0a);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+   explosion+=0x50;
+   setchar(explosion, 0x04);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xFE);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+}
+count++;
+
+//Press Circle to send a shockwave out of your vehicle, destroying anything in its path. Hold O to continuously release shockwaves.
+#cheat Shockwave (Hold O to release)
+explosion=0x08BBBD50;
+static count;
+if(buttons&CTRL_CIRCLE){
+if(count%30==0){
+   setchar(explosion, 0x0a);
+   setfloat(explosion+0x10, getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38));
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 50.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+   explosion+=0x50;
+   setchar(explosion, 0x04);
+   setfloat(explosion+0x10, getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38));
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 50.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xFE);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+}
+   count++;
+}
+else count=0;
+
+//Aim at anything and shoot and explosions will be set off at your target.
+#cheat Spawn Explosion on Target (O when aiming)
+if(buttons&CTRL_RTRIGGER&&buttons&CTRL_CIRCLE){
+explosion=0x08BBBD50;
+setchar(explosion, 0xa);
+setfloat(explosion+0x10, getfloat(0x08ba1d50), getfloat(0x08ba1d54), getfloat(0x08ba1d58));
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+explosion+=0x50;
+setchar(explosion, 0x4);
+setfloat(explosion+0x10, getfloat(0x08ba1d50), getfloat(0x08ba1d54), getfloat(0x08ba1d58));
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+}
+
+#cheat blue katana
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff);
+setchar( ,0x00,0x00,0xff); 
+
+#cheat Sentinel Gramp - PIMPED: 172-MAFIACR
+setshort(0x992FEE2, 0x53, 0x65, 0x6e, 0x74, 0x69, 0x6e, 0x65, 0x6c, 0x20, 0x47, 0x72, 0x61, 0x6d, 0x70);
+setchar(0x945bd11, 0x45);
+setchar(0x945bd10, 0x34);
+setshort(0x9443880, 250);
+setfloat(0x944387c, 1.50);
+setfloat(0x945bc90, 0);
+sethex(0x945bd60, 0x13, 0xa1, 0x00, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb20, 0xFF, 0xFF, 0x00);
+sethex(0x944fb40, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 172);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+#cheat ???? - PIMPED: 146-CHEETAH
+setshort(0x992FCE8, 0x26, 0x23, 0x31, 0x32, 0x34, 0x32, 0x34, 0x3b, 0x26, 0x23, 0x31, 0x32, 0x34, 0x32, 0x36, 0x3b, 0x26, 0x23, 0x33, 0x36, 0x38, 0x39, 0x35, 0x3b, 0x26, 0x23, 0x31, 0x32, 0x33, 0x36, 0x37, 0x3b);
+setchar(0x945a4b1, 0x45);
+setchar(0x945a4b0, 0x34);
+setfloat(0x9440fdc, 1.2);
+setfloat(0x945a430, 0);
+sethex(0x945a500, 0x87, 0xc1, 0x00, 0x05);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb10, 0x00, 0xB3, 0xB0);
+sethex(0x944fb3c, 0x00, 0xB3, 0xB0);
+setint(0x8E38A38, 146);
+setchar(0x8E38A5C, 108, 119);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+#cheat Bully - PIMPED: 140-STRETCH
+setshort(0x992FC96, 0x20, 0x20, 0x42, 0x75, 0x6c, 0x6c, 0x79);
+setchar(0x945a001, 0x45);
+setchar(0x945a000, 0x34);
+setshort(0x9440680, 250);
+setfloat(0x944067c, 2.0);
+setfloat(0x9459f80, 0);
+setfloat(0x945a054, 2.0);
+sethex(0x945a050, 0x87, 0xc1, 0x00, 0x05);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb2c, 0x1C, 0x5F, 0xB8);
+sethex(0x944fb0c, 0x1C, 0x5F, 0xB8);
+setint(0x8E38A38, 140);
+setchar(0x8E38A5C, 115, 107);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+#cheat Terminator - PIMPED: 139-TRASHM
+setshort(0x992FC7E, 0x20, 0x54, 0x65, 0x72, 0x6d, 0x69, 0x6e, 0x61, 0x74, 0x6f, 0x72);
+setchar(0x9459f12, 0x6);
+setchar(0x9459f11, 0x45);
+setchar(0x9459f10, 0x34);
+setshort(0x94404f0, 250);
+setfloat(0x94404ec, 0.1);
+setfloat(0x9459e90, 0);
+sethex(0x9459f60, 0xa7, 0x85, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb00, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 139);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00); 
+
+#cheat Fire Ball
+kinda=0x8BBBD50;
+if(press & CTRL_UP){
+setchar(0x8BBBD50,  0x0a);
+setchar(0x8BBBD83,  0x4a);
+setchar(0x8BBBD84,  0x04);
+setchar(0x8BBBD85,  0x01);
+setchar(0x8BBBD8C,  0xFF);
+setfloat(kinda+0x10,  getfloat(pcar+0x30),  getfloat(pcar+0x34),  getfloat(pcar+0x38));
+}
+
+#cheat M 249 Always loaded and Maxed
+setchar(0x98B5080,  0x00);
+setchar(0x98B5074,  0x00);
+setchar(0x98B507C,  0x22);
+setchar(0x98B5089,  0xff);
+
+#cheat DDM's ModShop v 4
+static Exit;
+static counter;
+static rotation;
+static Spinners;
+static car;
+static Tires;
+static Doors;
+static Nos;
+static menu;
+static stateIn;
+static Start;
+static R;
+static G;
+static B;
+static R2;
+static G2;
+static B2;
+if(getfloat(pcar + 0x30) >=258.71 && getfloat(pcar + 0x30) <= 268.65 && getfloat(pcar + 0x34) >= -146.48 && getfloat(pcar + 0x34) <= -138.07)
+{
+stateIn = 1;
+car = pcar;
+R = getchar(pcar + 0x224);
+G = getchar(pcar + 0x225);
+B = getchar(pcar + 0x226);
+R2 = getchar(pcar + 0x228);
+G2 = getchar(pcar + 0x229);
+B2 = getchar(pcar + 0x22A);
+}
+if(stateIn && getfloat(pcar + 0x140) == 0 && getfloat(pcar + 0x144) == 0)
+{
+Start = 1;
+setfloat(pcar + 0x30, -140.79, -1420.82, 4.90);
+xRightHandVector = getfloat(pobj + 0x0000);
+yRightHandVector = getfloat(pobj + 0x0004);
+zRightHandVector = getfloat(pobj + 0x0008);
+xForwardVector = getfloat(pobj + 0x0010);
+yForwardVector = getfloat(pobj + 0x0014);
+zForwardVector = getfloat(pobj + 0x0018);
+xUpVector = getfloat(pobj + 0x0020);
+yUpVector = getfloat(pobj + 0x0024);
+zUpVector = getfloat(pobj + 0x0028);
+xRotationalMomentum = getfloat(pobj + 0x0070);
+yRotationalMomentum = getfloat(pobj + 0x0074);
+zRotationalMomentum = getfloat(pobj + 0x0078);
+xVelocity = getfloat(pobj + 0x0140);
+yVelocity = getfloat(pobj + 0x0144);
+}
+
+if(Start)
+{
+stateIn = 0;
+setfloat(pobj + 0x0000, xRightHandVector);
+setfloat(pobj + 0x0004, yRightHandVector);
+setfloat(pobj + 0x0008, zRightHandVector);
+setfloat(pobj + 0x0010, xForwardVector);
+setfloat(pobj + 0x0014, yForwardVector);
+setfloat(pobj + 0x0018, zForwardVector);
+setfloat(pobj + 0x0020, xUpVector);
+setfloat(pobj + 0x0024, yUpVector);
+setfloat(pobj + 0x0028, zUpVector);
+setfloat(pobj + 0x0070, xRotationalMomentum);
+setfloat(pobj + 0x0074, yRotationalMomentum);
+setfloat(pobj + 0x0078, zRotationalMomentum);
+setfloat(pobj + 0x0140, 0, 0);
+if( menu == 0 )
+{
+int = R;
+setshort( 0x08e90bd8, 1, 'R', ':', ' ', 0 );
+}
+if( menu == 1 )
+{
+int = G;
+setshort( 0x08e90bd8, 1, 'G', ':', ' ', 0 );
+}
+if( menu == 2 )
+{
+int = B;
+setshort( 0x08e90bd8, 1, 'B', ':', ' ', 0 );
+}
+if( menu == 3 )
+{
+int = R2;
+setshort( 0x08e90bd8, 1, 'R', '2', ':', ' ', 0 );
+}
+if( menu == 4 )
+{
+int = G2;
+setshort( 0x08e90bd8, 1, 'G', '2', ':', ' ', 0 );
+}
+if( menu == 5 )
+{
+int = B2;
+setshort( 0x08e90bd8, 1, 'B', '2', ':', ' ', 0 );
+}
+size = 0;
+for(i = 1; i < int; i*=10) size+=2;
+for(i = 0; int > 0; i+=2 )
+{
+if( menu < 3)
+{
+setshort(0x08e90bdc+size-i, '0' + (int % 10));
+int = int(int/=10);
+}
+else if( menu > 2)
+{
+setshort(0x08e90bde+size-i, '0' + (int % 10));
+int = int(int/=10);
+}
+}
+if( menu == 6 && !Nos)
+{
+if(press & CTRL_CROSS)
+Nos = 1;
+setshort( 0x08e90bd8, 1, 'N', 'o', 's', ' ', 'o', 'f', 'f', 0);
+}
+else if( menu == 6 && Nos)
+{
+if(press & CTRL_CROSS)
+Nos = 0;
+setshort( 0x08e90bd8, 'N', 'o', 's', ' ', 'o', 'n', 0);
+
+}
+if( menu == 7 && !Doors)
+{
+if(press & CTRL_CROSS)
+Doors = 1;
+setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'f', 'f', 0);
+}
+else if( menu == 7 && Doors)
+{
+if(press & CTRL_CROSS)
+Doors = 0;
+setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'n', 0);
+}
+if( menu == 8 && !Tires)
+{
+if(press & CTRL_CROSS)
+Tires = 1;
+setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'f', 'f', 0);
+}
+else if( menu == 8 && Tires)
+{
+if(press & CTRL_CROSS)
+Tires = 0;
+setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'n', 0);
+}
+if( menu == 9 && !Spinners)
+{
+if(press & CTRL_CROSS)
+Spinners = 1;
+setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'f', 'f', 0);
+}
+else if( menu == 9 && Spinners)
+{
+if(press & CTRL_CROSS)
+Spinners = 0;
+setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'n', 0);
+}
+if(buttons & CTRL_LEFT)
+{
+if(menu == 0)
+R--;
+if(menu == 1)
+G--;
+if(menu == 2)
+B--;
+if(menu == 3)
+R2--;
+if(menu == 4)
+G2--;
+if(menu == 5)
+B2--;
+}
+if(buttons & CTRL_RIGHT)
+{
+if(menu == 0)
+R++;
+if(menu == 1)
+G++;
+if(menu == 2)
+B++;
+if(menu == 3)
+R2++;
+if(menu == 4)
+G2++;
+if(menu == 5)
+B2++;
+}
+if(buttons & CTRL_CIRCLE)
+{
+Start = 0;
+setfloat(pcar + 0x30, -191.57, -1392.88, 145.00);
+setfloat(pcar + 0x30, 277.13, -146.65, 15);
+menu = 0;
+Exit = 1;
+}
+if(press & CTRL_DOWN && menu < 9)
+menu++;
+if(press & CTRL_UP && menu > 0)
+menu--;
+setchar(pcar + 0x224, R, G, cool.gif;
+setchar(pcar + 0x228, R2, G2, B2);
+}
+if(Exit)
+{
+setfloat(pobj + 0x0000, xRightHandVector);
+setfloat(pobj + 0x0004, yRightHandVector);
+setfloat(pobj + 0x0008, zRightHandVector);
+setfloat(pobj + 0x0010, xForwardVector);
+setfloat(pobj + 0x0014, yForwardVector);
+setfloat(pobj + 0x0018, zForwardVector);
+setfloat(pobj + 0x0020, xUpVector);
+setfloat(pobj + 0x0024, yUpVector);
+setfloat(pobj + 0x0028, zUpVector);
+setfloat(pobj + 0x0070, xRotationalMomentum);
+setfloat(pobj + 0x0074, yRotationalMomentum);
+setfloat(pobj + 0x0078, zRotationalMomentum);
+setfloat(pobj + 0x0140, 0, 0, 0);
+Exit = 0;
+}
+if(Nos && !stateIn && !Start && pcar == car)
+{
+if(buttons & CTRL_CIRCLE && buttons & CTRL_CROSS) {
+
+speed = 0.0;
+setchar(0x09569B90, 0x10);
+setchar(0x09569B94, 0, 127, 255);
+if(getfloat(pcar+0x140)>0)
+{
+speed+=getfloat(pcar+0x140);
+}
+else
+{
+speed-=getfloat(pcar+0x140);
+}
+
+if(getfloat(pcar+0x144)>0)
+{
+speed+=getfloat(pcar+0x144);
+}
+else
+{
+speed-=getfloat(pcar+0x144);
+}
+
+if(speed<175/75)
+{
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+
+}
+else
+{
+setchar(0x09569B90, 0x4);
+setchar(0x09569B94, 63, 63, 63);
+}
+}
+
+if(Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+}
+else if(!Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 1.2566371, 0, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 1.2566371, 0, 0);
+}
+if(Tires && pcar == car)
+{
+setshort(pcar+0x3b6, 0, 0);//cars
+setshort(pcar+0x434, 0);//bikes
+}
+if(Spinners && pcar == car)
+{
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644, spin, spin, spin, spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+}
+
+
+#cheat coordinate teleport
+//Press triangle for the first number,
+//x for the second and circle for the final teleport
+
+static Number;
+if (Number == 0)
+Number = 0;
+
+
+static XYZ;
+if (XYZ == 0)
+XYZ = 1;
+
+static X;
+if (X == 0)
+X = 0;
+
+static Y;
+if (Y == 0)
+Y = 0;
+
+static Z;
+if (Z == 0)
+Z = 0;
+
+
+
+if (buttons & CTRL_UP && (XYZ==1))
+
+{
+Number=Number+1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1, 'X', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, 'X', '=', ' ', hund, dec, unit, '.', fract, 0 );
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==1))
+{
+Number=Number-1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1, 'X', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, 'X', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+if (buttons & CTRL_TRIANGLE && (XYZ==1))
+{ X=Number;
+XYZ=2;
+
+}
+
+
+if (buttons & CTRL_UP && (XYZ==2))
+
+{
+Number=Number+1;
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1, 'Y', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, 'Y', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==2))
+{
+Number=Number-1;
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1, 'Y', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, 'Y', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+if (buttons & CTRL_CROSS && (XYZ==2))
+{ Y=Number;
+XYZ=3;
+}
+
+
+
+
+if (buttons & CTRL_UP && (XYZ==3))
+
+{
+Number=Number+1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1, 'Z', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, 'Z', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==3))
+{
+Number=Number-1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+setshort( 0x08e90bd8, 1,'Z','=', '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1,'Z','=', ' ', hund, dec, unit, '.', fract, 0 );
+}
+
+
+if (buttons & CTRL_CIRCLE && (XYZ==3))
+{ Z=Number;
+XYZ=1;
+teleport(Z,X,Y);
+}
+
+
+#cheat Explosive Sphere
+for( rot = 0; rot < 360; rot += 7.2 )
+{
+moveto(getfloat(pplayer+0x30) + cos(rot) * 5, getfloat(pplayer+0x34) + sin(rot) * 5, getfloat(pplayer+0x38)); object(0x01c2, 0, 0, -rot + 90);
+}
+for( rot2 = 0; rot2 < 360; rot2 += 7.2 )
+{
+moveto(getfloat(pplayer+0x30), getfloat(pplayer+0x34) + sin(rot2) * 5, getfloat(pplayer+0x38) + cos(rot2) * 5); object(0x01c2, rot2 + 90, 0, 0);
+}
+for( rot3 = 0; rot3 < 360; rot3 += 7.2 )
+{
+moveto(getfloat(pplayer+0x30) + cos(rot3) * 5, getfloat(pplayer+0x34) , getfloat(pplayer+0x38) + sin(rot3) * 5); object(0x01c2, 90, -rot3 + 90, 0);
+}
+off();
+
+
+#cheat Firecrackers!
+for( x = 0; x < 120; x += 0.8 )
+{
+moveto(getfloat(pplayer+0x30) + x, getfloat(pplayer+0x34), getfloat(pplayer+0x38)); object(0x01c2, 0, 0, 0);
+}
+off();
+
+#cheat Pink Rocket Fire
+setchar(0x9569fb0, 0x00, 0xa0, 0x00, 0x00, 0xff, 0x00);
+

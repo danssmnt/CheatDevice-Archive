@@ -1,0 +1,432 @@
+#cheat Water Height Modifier
+//by vettefan
+//press left and right to adjust the water level
+//turn the cheat off to reset the level back to normal
+// most parts of land don't have water under them so there will just be a void over most land
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat 100% bonuses
+//by vettefan
+//unlocks the ability to watch the cutscenes at your safehouse.
+setfloat(0x08BB3CF0, 250);
+
+// water everywhere
+if (getchar(0x954A000) != 0)
+{
+   for (p = 0x9549D80; p < 0x954E580; p++)
+       setchar(p, 0x00);
+}
+
+#cheat All Weapons (33)
+//By Sousanator
+//credit to: vettefan/edisoncarter for run once varible thing,   and Waterbottle for weapon locations and infinite ammo
+setint(pplayer+0x5d8,  0x00ffffff);
+setint(pplayer+0x5f4,  0x00ffffff);
+setint(pplayer+0x610,  0x00ffffff);
+setint(pplayer+0x5bc,  0x00ffffff);
+setint(pplayer+0x62c,  0x00ffffff);
+setint(pplayer+0x648,  0x00ffffff);
+setint(pplayer+0x664,  0x00ffffff);
+
+static weaponHolding;
+
+if (pressslow & CTRL_LEFT) {
+ weaponHolding--;
+} else if (pressslow & CTRL_RIGHT) {
+ weaponHolding++;
+}
+if (weaponHolding > 35) {
+ weaponHolding=0;
+} else if (weaponHolding < 0) {
+ weaponHolding=35;
+}
+
+if (weaponHolding==0){
+ setchar(pplayer+0x578,   0x00);
+ setchar(pplayer+0xCB8,   0x00);//FIST
+} else if (weaponHolding==1){
+ setchar(pplayer+0x578,   0x01);//BRASS KNUCKLES
+ setchar(pplayer+0xCB8,   0x00);
+} else if (weaponHolding==2){
+ setchar(pplayer+0x594,   0x02);//LITTLE KNIFE
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==3){
+ setchar(pplayer+0x594,   0x03);//GOLF CLUB
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==4){
+ setchar(pplayer+0x594,   0x04);//KNIGHT STICK
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==5){
+ setchar(pplayer+0x594,   0x05);//KNIFE
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==6){
+ setchar(pplayer+0x594,   0x06);//BAT
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==7){
+ setchar(pplayer+0x594,   0x07);//AXE
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==8){
+ setchar(pplayer+0x594,   0x08);//CANE
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==9){
+ setchar(pplayer+0x594,   0x09);//MECHETTY
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==10){
+ setchar(pplayer+0x594,   0x0A);//KATANA
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==11){
+ setchar(pplayer+0x594,   0x0B);//SAW
+ setchar(pplayer+0xCB8,   0x01);
+} else if (weaponHolding==12){
+ setchar(pplayer+0x5B0,   0x0C);//GRENADE
+ setchar(pplayer+0xCB8,   0x02);
+} else if (weaponHolding==13){
+ setchar(pplayer+0x5B0,   0x0D);//GRENADE2
+ setchar(pplayer+0xCB8,   0x02);
+} else if (weaponHolding==14){
+ setchar(pplayer+0x5B0,   0x0E);//REMOTE MINES
+ setchar(pplayer+0xCB8,   0x02);
+} else if (weaponHolding==15){
+ setchar(pplayer+0x5B0,   0x10);//TEAR GAS
+ setchar(pplayer+0xCB8,   0x02);
+} else if (weaponHolding==16){
+ setchar(pplayer+0x5B0,   0x11);//MOLTOV
+ setchar(pplayer+0xCB8,   0x02);
+} else if (weaponHolding==17){
+ setchar(pplayer+0x5CC,   0x13);//PISTOL
+ setchar(pplayer+0xCB8,   0x03);
+} else if (weaponHolding==18){
+ setchar(pplayer+0x5CC,   0x14);//HANDGUN
+ setchar(pplayer+0xCB8,   0x03);
+} else if (weaponHolding==19){
+ setchar(pplayer+0x5E8,   0x15);//SHOTGUN
+ setchar(pplayer+0xCB8,   0x04);    
+} else if (weaponHolding==20){
+ setchar(pplayer+0x5E8,   0x16);//SHOTGUN2
+ setchar(pplayer+0xCB8,   0x04);
+} else if (weaponHolding==21){
+ setchar(pplayer+0x5E8,   0x17);//SHOTGUN3
+ setchar(pplayer+0xCB8,   0x04);
+} else if (weaponHolding==22){
+ setchar(pplayer+0x604,   0x18);//UZI
+ setchar(pplayer+0xCB8,   0x05);
+} else if (weaponHolding==23){
+ setchar(pplayer+0x604,   0x19);//UZI2
+ setchar(pplayer+0xCB8,   0x05);
+} else if (weaponHolding==24){
+ setchar(pplayer+0x604,   0x1A);//SILENT UZI
+ setchar(pplayer+0xCB8,   0x05);
+} else if (weaponHolding==25){
+ setchar(pplayer+0x604,   0x1B);//2HAND UZI
+ setchar(pplayer+0xCB8,   0x05);
+} else if (weaponHolding==26){
+ setchar(pplayer+0x620,   0x1C);//2HAND UZI2
+ setchar(pplayer+0xCB8,   0x06);
+} else if (weaponHolding==27){
+ setchar(pplayer+0x620,   0x1D);//AK47
+ setchar(pplayer+0xCB8,   0x06);
+} else if (weaponHolding==28){
+ setchar(pplayer+0x658,   0x1E);//SNIPER
+ setchar(pplayer+0xCB8,   0x08);
+} else if (weaponHolding==29){
+ setchar(pplayer+0x658,   0x1F);//SNIPER2
+ setchar(pplayer+0xCB8,   0x08);
+} else if (weaponHolding==30){
+ setchar(pplayer+0x63C,   0x20);//ROCKET LAUNCHER
+ setchar(pplayer+0xCB8,   0x07);
+} else if (weaponHolding==31){
+ setchar(pplayer+0x63C,   0x21);//FLAMETHROWER
+ setchar(pplayer+0xCB8,   0x07);
+} else if (weaponHolding==32){
+ setchar(pplayer+0x63C,   0x22);//MINIGUN2
+ setchar(pplayer+0xCB8,   0x07);
+} else if (weaponHolding==33){
+ setchar(pplayer+0x63C,   0x23);//CHAINGUN
+ setchar(pplayer+0xCB8,   0x07);
+} else if (weaponHolding==34){
+ //setchar(pplayer+0x578,   0x26);//CAMERA(not working)
+ setchar(pplayer+0xCB8,   0x00);
+} else if (weaponHolding==35){
+ //remote switch for remote grenade/ bombs ect.
+ setchar(pplayer+0xCB8,   0x09);
+}
+
+#cheat Wave Size/Speed Modifier
+//by vettefan
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0, Wave);
+
+#cheat no peds
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098e9b50; i+=0xd10) {
+if(0x098b4a40 + i != player) setchar(0x098b4a40 + i + 0x4c, 1);
+}
+
+#cheat kill all peds
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098e9b50; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+
+#cheat all peds invincible
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098e9b50; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 150);
+}
+
+
+#cheat RCB use FIRST
+//enters last used vehicle as passenger (your bike)
+//must be a few feet away from bike(turn on/off QUICKLY)
+//if you get stuck just jump
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Remote control bike
+//R+UP control bike, R+DOWN get back on bike
+//When on bike pressing triangle will give you control of yourself and the bike
+//Getting on/off AGAIN will control just vic
+if (press & CTRL_RTRIGGER&&press & CTRL_UP)
+setchar(pplayer+0x8B4, 0x36);
+if (press & CTRL_RTRIGGER&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+
+#cheat RCB Camera
+//PLEASE NOTE-
+//vic will stand up straight once LEFT is pressed
+//LEFT camera follows bike
+//RIGHT camera is stationary
+static fInit;
+if (!fInit)
+{
+fInit = true;
+setchar(pplayer+0x8B4, 0x02);
+}
+if (press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+
+#cheat Busted
+//turn on then off
+setchar(pplayer+0x8B4, 0x41);
+
+#cheat Wasted
+//turn on then off
+setchar(pplayer+0x8B4, 0x3A);
+
+
+#cheat no cars
+car = getint(0x08bb4064);//address of pcar
+for(i=0; 0x098edcc0+i<=0x099019a0; i+=0x820) {
+if(0x098edcc0 + i != car) setchar(0x098edcc0 + i + 0x4c, 1);
+}
+
+#cheat All cars start burning, then blow up
+car = getint(0x08bb4064);//address of pcar
+for(i=0; 0x098edcc0+i<=0x099019a0; i+=0x820) {
+if(0x098edcc0 + i != car) setfloat(0x098edcc0 + i + 0x27c, 0);
+}
+//Aggresive drivers, thanks to edisoncarter
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0); 
+
+#cheat No Cars
+static counter;
+if (counter++ % 30 == 0)
+{
+   for (p = 0x098edcc0; p <= 0x099019a0; p += 0x820)
+   {
+       if (p != pcar) setchar(p + 0x4c, 1);
+   }
+}
+
+#cheat Force Blast
+for (pped = 0x098b4a40; pped <= 0x098e9b50; pped += 0xd10)
+{
+   if (pped == pplayer)
+       continue;
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   setshort(pped + 0x01c8, 0x1020);
+   setfloat(pped + 0x0140, dx * 0.2);
+   setfloat(pped + 0x0144, dy * 0.2);
+   setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+off();
+
+#cheat Force Blast
+if ((buttons & CTRL_UP) && (buttons & CTRL_TRIANGLE) && (buttons & CTRL_RTRIGGER))
+{
+  for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+  {
+      if (p == pplayer)
+          continue;
+      dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+      dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+      setshort(p + 0x01c8,  0x1020);
+      setfloat(p + 0x0140,  dx * 0.2);
+      setfloat(p + 0x0144,  dy * 0.2);
+      setfloat(p + 0x0148,  (fabs(dx) + fabs(dy)) * 0.05);
+  }
+}
+
+#cheat Media Attention Meter
+// By Edison Carter
+// displays your newsworthiness when you go on a killing spree
+setshort(0x08bb41ac, 1);
+setint(0x089bb648, 0);
+setint(0x089bb65c, 0);
+setint(0x089bb66c, 0);
+#off
+setshort(0x08bb41ac, 0);
+setint(0x089bb648, 0x450100db);
+setint(0x089bb65c, 0x450100d6);
+setint(0x089bb66c, 0x144000d2);
+
+#cheat Replace Reni Radar Blip with 'V'
+//by vettefan
+//it should replace the 'R' representing Reni on the radar with a 'V' representing vettefan
+setchar(0x96cda40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x96cda50, 0x10, 0x11, 0x00, 0x00, 0x00, 0x00, 0x11, 0x11);
+setchar(0x96cda60, 0x10, 0x11, 0x01, 0x00, 0x00, 0x00, 0x11, 0x11);
+setchar(0x96cda70, 0x10, 0x11, 0x01, 0x00, 0x00, 0x10, 0x11, 0x01);
+setchar(0x96cda80, 0x00, 0x11, 0x11, 0x00, 0x00, 0x11, 0x11, 0x00);
+setchar(0x96cda90, 0x00, 0x11, 0x11, 0x00, 0x00, 0x11, 0x11, 0x00);
+setchar(0x96cdaa0, 0x00, 0x11, 0x11, 0x00, 0x10, 0x11, 0x01, 0x00);
+setchar(0x96cdab0, 0x00, 0x10, 0x11, 0x01, 0x10, 0x11, 0x01, 0x00);
+setchar(0x96cdac0, 0x00, 0x10, 0x11, 0x01, 0x11, 0x11, 0x00, 0x00);
+setchar(0x96cdad0, 0x00, 0x00, 0x11, 0x01, 0x11, 0x11, 0x00, 0x00);
+setchar(0x96cdae0, 0x00, 0x00, 0x11, 0x01, 0x11, 0x01, 0x00, 0x00);
+setchar(0x96cdaf0, 0x00, 0x00, 0x11, 0x11, 0x11, 0x01, 0x00, 0x00);
+setchar(0x96cdb00, 0x00, 0x00, 0x10, 0x11, 0x11, 0x00, 0x00, 0x00);
+setchar(0x96cdb10, 0x00, 0x00, 0x10, 0x11, 0x01, 0x00, 0x00, 0x00);
+setchar(0x96cdb20, 0x00, 0x00, 0x00, 0x11, 0x01, 0x00, 0x00, 0x00);
+setchar(0x96cdb30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x96cdb40, 0x00, 0x00, 0x00, 0x00, 0xd0, 0x00, 0x00, 0xff);
+off()
+
+#cheat Wanted Level Modifier 3.0
+// Wanted Level Modifier (Originally coded by Durka Durka Mahn,  but edited by theY4Kman)
+if(getint(0x8C5ED90) == 00) wantedlevel = getint(pplayer+0x910);
+else wantedlevel = wantedlevel;
+if ((press & CTRL_UP) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel < 6)) wantedlevel++;
+if ((press & CTRL_DOWN) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel > 0)) wantedlevel--;
+setint(pplayer+0x910,  wantedlevel);
+setint(0x8C5ED90,  01);
+#off
+setint(0x8C5ED90,  00);
+
+#cheat Do Stuff to Peds
+//credit to Waterbottle,  Edison Carter,  ADePSP and Vettefan88(?)
+setshort(0x08e90bd8,   1,   'A',  'i',  'm',  'e',  'd',  ' ',  'a',  't',  ' ',  'P',  'e',  'd',  ' ',  '(',  '[',  ' ',  ']',  '=',  'P',  'u',  's',  'h',  ' ',  'O',  '=',  'K',  'i',  'l',  'l',  ' ',  'L',  '=',  'C',  'o',  'n',  't',  'r',  'o',  'l',  ' ',  'X',  '=',  'B',  'r',  'i',  'n',  'g',  ')',  ' ',  'L',  '+',  '/',  '\\',  '=',  'B',  'l',  'a',  's',  't',  ' ',  'R',  '+',  '/',  '\\',  '=',  'A',  'l',  'l',  ' ',  'D',  'i',  'e',   0);
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_SQUARE) {
+//Force Punch,  by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+  dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+  dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+  setshort(pped + 0x01c8,   0x1020);
+  setfloat(pped + 0x0140,   dx * 0.2);
+  setfloat(pped + 0x0144,   dy * 0.2);
+  setfloat(pped + 0x0148,   (fabs(dx) + fabs(dy)) * 0.05);
+  pdone = pped;
+}
+if (pped == 0)
+{
+  pdone = 0;
+}
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam,  by edison
+if (pped != 0)
+{
+  dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+  dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+  dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+  setshort(pped + 0x01c8,   0x1020);
+  setfloat(pped + 0x0140,   -dx * 0.05);
+  setfloat(pped + 0x0144,   -dy * 0.05);
+  setfloat(pped + 0x0148,   -dz * 0.05);
+}
+}
+if(buttons & CTRL_CIRCLE) {
+if (pped != 0)
+ setfloat(pped + 0x4e4,   0);
+}
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30,  pedx);
+setfloat(address+0x34,  pedy);
+setfloat(address,  cos(rot)); setfloat(address+0x4,  sin(rot));
+setfloat(address+0x10,  -sin(rot)); setfloat(address+0x14,  cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+  setfloat(0x09fc73e0,  getfloat(address+0x30)-sin(rot)*0.1);
+  setfloat(0x09fc73e4,  getfloat(address+0x34)+cos(rot)*0.1);
+  }
+//leave or eneter vehicle,  only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894,  0x10);
+else setchar(address+0x894,  0x12);
+}
+
+setfloat(0x09fc73c8,  rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_LTRIGGER) {
+setint(0x09fc73f8,  getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0,  getfloat(address+0x30));
+setfloat(0x09fc73e4,  getfloat(address+0x34));
+setfloat(0x09fc73c8,  0);
+}
+//Force Blast
+if ((buttons & CTRL_TRIANGLE) && (buttons & CTRL_LTRIGGER))
+{
+ for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)  
+ {  
+     if (p == pplayer)  
+         continue;  
+     dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);  
+     dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);  
+     setshort(p + 0x01c8,   0x1020);  
+     setfloat(p + 0x0140,   dx * 0.2);  
+     setfloat(p + 0x0144,   dy * 0.2);  
+     setfloat(p + 0x0148,   (fabs(dx) + fabs(dy)) * 0.05);  
+ }  
+}
+//Kill All Peds
+
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_TRIANGLE) {  
+player = getint(0x08bc8170);//address of pplayer  
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {  
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4,   0);  
+}  
+}
+

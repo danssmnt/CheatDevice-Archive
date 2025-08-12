@@ -1,0 +1,114 @@
+  #cheat Hud On
+  setchar(0x09a63418, 1);
+
+  #cheat Hud Off
+  setchar(0x09a63418, 0);
+
+  #cheat Max Money
+  setint(0x08bde55c, 99999999, 99999999);
+
+  #cheat No Money
+  setint(0x08bde55c, 0, 0);
+
+  #cheat Time is 9:30am
+  setchar(0x08bb3b40, 9, 30);
+
+  // by winchy
+  #cheat Invisible Vic
+  setchar(pplayer + 0x4C, 0x10, 0x20);
+  #off
+  setchar(pplayer + 0x4C, 0, 0);
+
+  // by chrislawrance
+  #cheat Lock Camera
+  setchar(pplayer + 0x550, 1);
+  #off
+  setchar(pplayer + 0x550, 0);
+
+  setchar(0x08bde55c, 255);
+  setchar(0x08bde55c, -1);
+  setchar(0x08bde55c, 0xff);
+  setchar(0x08bde55c, 0xFF);
+  setchar(0x08bde55c, 0b11111111);
+  sethex(0x08bde55c, ff);
+
+
+  setint(pcar + 0x1234, getint(pcar + 0x1234) + 1);
+
+  p1 = 0x08901234;
+  setchar(p1, getchar(p1) + 1); // increment
+  setchar(p1, getchar(p1) & 0xFE); // clear a bit
+  setchar(p1, getchar(p1) ^ 0x02); // flip a bit
+  setchar(p1, getchar(p1) | 0x08); // set a bit
+  setchar(p1, getchar(p1) | 0b00001000); // set a bit could also be done this way
+
+  static fInit;
+  if (!fInit)
+  {
+     fInit = true;
+     // anything here runs just once
+  }
+
+  #cheat Rocket Boost 4
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 4.0;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+     // rotational control
+     setfloat(pcar + 0x0078, -0.03 * xstick);
+  }
+
+#cheat New Construction
+moveto(401.64,290.55,11.68);  object(0x1CA4,0,0,188);
+move(-3.86,0.55,0.00);  object(0x1CA4,0,0,188);
+move(-5.94,0.85,0.00);  object(0x1CA4,0,0,188);
+move(-3.56,0.51,0.00);  object(0x1CA4,0,0,188);
+move(-3.76,0.54,0.00);  object(0x1CA4,0,0,188);
+move(-1.77,-1.49,-0.10);  object(0x1CA4,0,0,100);
+move(-2.76,-1.98,0.00);  object(0x1CA4,0,0,188);
+move(-3.57,0.48,0.00);  object(0x1CA4,0,0,188);
+move(-1.69,-1.38,0.00);  object(0x1CA4,0,0,92);
+move(-0.12,-3.50,0.00);  object(0x1CA4,0,0,92);
+move(-0.20,-5.80,0.00);  object(0x1CA4,0,0,92);
+move(-0.13,-3.70,0.00);  object(0x1CA4,0,0,92);
+move(-0.12,-3.60,0.00);  object(0x1CA4,0,0,92);
+move(-0.13,-3.70,0.00);  object(0x1CA4,0,0,92);
+move(17.43,22.12,0.00);  object(0x1CA4,0,0,96);
+move(-0.64,-5.76,0.00);  object(0x1CA4,0,0,96);
+move(0.15,-1.70,0.00);  object(0x1CA4,0,0,8);
+move(4.06,-0.57,0.00);  object(0x1CA4,0,0,8);
+move(5.74,-0.80,0.00);  object(0x1CA4,0,0,8);
+move(1.98,-0.28,0.00);  object(0x1CA4,0,0,8);
+move(-17.49,2.53,0.00);  object(0x1CA4,0,0,9);
+move(-1.79,-0.43,0.00);  object(0x1CA4,0,0,96);
+move(0.65,5.66,0.00);  object(0x1CA4,0,0,96);
+move(0.26,2.29,0.00);  object(0x1CA4,0,0,96);
+move(15.43,-7.94,-0.10);  object(0x1CA4,0,0,94);
+move(-2.94,9.05,0.00);  object(0x1CA4,0,0,95);
+move(-0.47,-5.58,0.00);  object(0x1CA4,0,0,95);
+move(3.35,-1.71,0.00);  object(0x1CA4,0,0,93);
+move(-3.80,-3.75,0.00);  object(0x1CA4,0,0,95);
+move(-0.58,-5.67,0.00);  object(0x1CA4,0,0,95);
+move(1.60,-1.72,0.00);  object(0x1CA4,0,0,5);
+move(5.68,-0.50,0.00);  object(0x1CA4,0,0,5);
+move(1.99,-0.18,0.00);  object(0x1CA4,0,0,5);
+move(-9.49,-0.28,0.00);  object(0x1CA4,0,0,94);
+move(-0.35,-5.59,0.00);  object(0x1CA4,0,0,94);
+move(-0.22,-3.49,0.00);  object(0x1CA4,0,0,94);
+move(-13.82,17.21,0.00);  object(0x1CA4,0,0,187);
+move(-1.81,-1.29,0.00);  object(0x1CA4,0,0,97);
+move(-3.84,-1.87,0.00);  object(0x1CA4,0,0,185);
+
+#cheat New Construction
+moveto(394.88,287.10,10.75);  object(0x1C9E,0,0,152);
+move(0.58,-0.02,-0.10);  object(0x1C9C,0,0,159);
+move(-2.11,1.66,1.80);  object(0x1C91,0,0,9);
+move(-4.54,1.65,0.00);  object(0x1C91,0,0,181);
+move(-2.18,0.38,0.00);  object(0x1CA2,0,0,194);
+move(0.14,-0.04,0.00);  object(0x1CA1,0,0,192);

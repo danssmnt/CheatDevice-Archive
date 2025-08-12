@@ -1,0 +1,104 @@
+#cheat Diving Mod
+setfloat(0x08BC8030, 0, 0, 0); 
+setfloat(0x08BC80B0, 0, 0, 1440); 
+setfloat(0x08BC86C0, 10); 
+setchar(0x08E93604, 0x01);
+setshort(0x08E92FFC, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'U', 'p', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'D', 'i', 'v', 'e', ' ', 'D', 'o', 'w', 'n', ' ', 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'C', 'o', 'm', 'e', ' ', 'U', 'p');
+setshort(0x08E931FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'U', 'p', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'D', 'i', 'v', 'e', ' ', 'D', 'o', 'w', 'n', ' ', 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'C', 'o', 'm', 'e', ' ', 'U', 'p');
+setshort(0x08E933FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'U', 'p', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'D', 'i', 'v', 'e', ' ', 'D', 'o', 'w', 'n', ' ', 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', '&', ' ', '~', 'h', '~', 'A', 'n', 'a', 'l', 'o', 'g', ' ', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 'T', 'o', ' ' ,'C', 'o', 'm', 'e', ' ', 'U', 'p');
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+setfloat(pplayer + 0x128, 0, 0);
+static height;
+if(!height)
+ height = getfloat(pplayer+0x38);
+static Zdeg;
+ if(!Zdeg)
+ Zdeg = getfloat(pplayer+0x8d0);
+
+ static st;
+ static speed;
+ setfloat(pplayer+0x1c8, 0x1020);
+ setfloat(pplayer+0x38, height);
+ setfloat(pplayer+0x148, 0);
+ Zdeg += xstick * 1.5;
+ if(ystick)
+ {
+ Xdeg = getfloat(pplayer) * -10 * ystick;
+ Ydeg = getfloat(pplayer+4) * -10 * ystick;
+ }
+ else Ydeg = Xdeg = 0;
+
+ if(buttons & CTRL_CROSS)
+ {
+ if(speed < 0)
+         speed += 0.02;
+ if(speed < 0.75)
+         speed += 0.01;
+ }
+ else
+ if(buttons & CTRL_SQUARE)
+ {
+ if(speed > 0)
+         speed -= 0.015;
+ if(speed > -0.4)
+         speed -= 0.008;
+ }
+ else speed *= 0.95;
+
+ setfloat(pplayer+0x00, cos(Ydeg) * cos(Zdeg));
+ setfloat(pplayer+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+ setfloat(pplayer+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+ setfloat(pplayer+0x10, cos(Ydeg) * sin(Zdeg));
+ setfloat(pplayer+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+ setfloat(pplayer+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+ setfloat(pplayer+0x20, -sin(Ydeg));
+ setfloat(pplayer+0x24, sin(Xdeg) * cos(Ydeg));
+ setfloat(pplayer+0x28, cos(Xdeg) * cos(Ydeg));
+
+ setfloat(pplayer+0x140, -getfloat(pplayer+4)*speed);
+ setfloat(pplayer+0x144, getfloat(pplayer)*speed);
+ if(!(getchar(pplayer+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pplayer) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 
+setfloat(pplayer + 0xD0, 70, 100);
+setchar(0x08E93604, 0x00);
+
+
+
+#cheat Monster Truck
+pspawn = 0x08E81290; 
+setint(pspawn, 209); 
+setfloat(pspawn + 4, -1041.73, -761.80, 11.57, 90);
+
+//Basics
+setshort(0x98a325a, 1, 'M','o','n','s','t','e','r', 0); 
+setshort(0x08e90DD8, 1, ' ', 'G', 'o', ' ', 'B', 'e', 'h', 'i', 'n', 'd', ' ', 'S', 'u', 'n', 's', 'h', 'i', 'n', 'e', ' ', 'A', 'u', 't', 'o', 's', 0);
+
+//Wheels
+setfloat(0x93647F8, 1.5, 1.5); //wheel size
+setfloat(0x96309c0+0x6c, 0.95); //Traction Multiplier
+setfloat(0x96309c0+0xc4, 0.75); //Traction Loss
+setfloat(0x96309c0+0x70, 0.5); //Traction Bias
+
+//Engine
+setchar(0x96309c0+0x5c, '4', 'D', 6); // Drive type / Engine type / Gears
+
+//Suspension
+setfloat(0x96309c0+0x7c, 0); //Suspension Upper Limit
+setfloat(0x96309c0+0x80, -0.75); //Suspension Lower Limit
+setfloat(0x96309c0+0x78, 5); //Suspension Damping Level
+setfloat(0x96309c0+0x74, 0.6); //Suspension Force Level
+setfloat(0x96309c0+0x84, 0.5); //Suspension Bias
+setfloat(0x96309c0+0x88, 1); //Anti-Dive Multiplier
+
+//Handling
+setfloat(0x96309c0+0x68, 35); //Steering Lock
+setfloat(0x96309c0+0xbc, 6000); //Vehilce Mass
+setfloat(0x96309c0+0xc0, 6000); //Turn Mass
+setfloat(0x96309c0+0xa0, 0); //Centre of Mass - X
+setfloat(0x96309c0+0xa4, 0); //Centre of Mass - Y
+setfloat(0x96309c0+0xa8, 0); //Centre of Mass - Z 

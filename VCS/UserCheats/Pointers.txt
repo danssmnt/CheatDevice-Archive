@@ -1,0 +1,47 @@
+Pointer to Player
+if(pplayer){
+ENTER ACTION HERE}
+
+Pointer to Player (On Foot+In Car)
+if(pobj){
+ENTER ACTION HERE}
+
+Pointer to Ped
+pped = getint(0x08BA1D70);
+if(pped){
+ENTER ACTION HERE}
+
+Pointer to all Peds
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10)
+if(0x098b4a40 + i != player){
+setfloat(0x098b4a40+i+ADRESS,  VALUE);}
+
+Pointer to Car
+if(pcar){
+ENTER ACTION HERE}
+
+Pointer to all Cars
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820)
+if(p != pcar){
+setchar(p+ADRESS, VALUE);}
+
+Pointer to Object
+obj = object(VALUE,X,Y,Z);
+if(object){
+selectobject(obj);
+setfloat(obj + ADRESS, VALUE);}
+
+Pointer to what you touch
+p = getint(pobj + 0x150);
+if (p){
+ENTER ACTION HERE}
+
+Pointer to what you aim at
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(buttons & CTRL_CROSS){
+setfloat(POINTER + 30, aimx);
+setfloat(POINTER + 34, aimy);
+setfloat(POINTER + 38, aimz);}

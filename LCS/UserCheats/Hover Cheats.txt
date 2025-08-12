@@ -1,0 +1,3989 @@
+#cheat Hoverbike
+//ID: 4098
+//Score: 178
+//Author: begabamboo, supacasey & Ollie199090
+//Category: Vehicle
+//Description: Hoverbike
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Hoverbike
+//By begabamboo, supacasey & Ollie199090
+setchar(pcar + 0x50a, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x50f, 0xff);
+#off
+setchar(pcar + 0x50a, 0xa5);
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+
+
+#cheat Hover Car
+//ID: 3967
+//Score: 125
+//Author: Butterballer360
+//Category: Vehicle
+//Description: Hover Car
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pcar + 0x0142, 0x01)
+#off
+setchar(pcar + 0x0142, 0x02)
+//It still ha vertical wheels, but you can fly, I still have to tweak a few details to make it easier to move, but I wanted to rease the progress thus far of flying with semi limited movement. Gain momentum before activating for easier movement (fixing that bug now ) Workks on bikes as well
+
+
+#cheat Low Hovering
+//ID: 5255
+//Score: 14
+//Author: Sousanator
+//Category: Vehicle
+//Description: The lowest you can hover, without touching the ground,, only works on PCJ600,,  only works on cheatdevice's previous to v9
+//Image: none
+//Time: 24/02/2006 02:11:24
+//Working: Unknown
+setchar(09a9f94a, 0xf9)
+setchar(09a9f94b, 0xbe)
+setchar(09a9f96a, 0xf9)
+setchar(09a9f96b, 0xbe)
+setchar(09a9f98a, 0xf9)
+setchar(09a9f98b, 0xbe)
+setchar(09a9f9aa, 0xf9)
+setchar(09a9f9ab, 0xbe)
+
+//edited by Sousanator on 2/25/2006 8:52:55 PM
+
+#cheat High Hovering
+//ID: 5254
+//Score: 20
+//Author: Sousanator
+//Category: Vehicle
+//Description: The highest you can hover without heavy bike cheat on,, only works on PCJ600,,  only works on cheatdevice's previous to v9
+//Image: none
+//Time: 24/02/2006 02:09:51
+//Working: Yes
+setchar(09a9f94a, 0xc5)
+setchar(09a9f96a, 0xc5)
+setchar(09a9f98a, 0xc5)
+setchar(09a9f9aa, 0xc5)
+
+//edited by Sousanator on 2/25/2006 8:51:10 PM
+
+#cheat Heavy Hovering
+//ID: 5253
+//Score: 17
+//Author: Sousanator
+//Category: Vehicle
+//Description: The highest you can hover, while heavy bike cheat is on,, only on PCJ600,, only works on cheatdevice's previous to v9
+//Image: none
+//Time: 24/02/2006 02:08:04
+//Working: Yes
+setchar(09a9f94a, 0x4e)
+setchar(09a9f96a, 0x4e)
+setchar(09a9f98a, 0x4e)
+setchar(09a9f9aa, 0x4e)
+
+//edited by Sousanator on 2/25/2006 8:51:40 PM
+
+#cheat Hoverbike (no tires)
+//ID: 5252
+//Score: 20
+//Author: Sousanator
+//Category: Vehicle
+//Description: Makes it look like theres no tires, thus creating the hoverbike
+//Image: none
+//Time: 24/02/2006 02:00:26
+//Working: Yes
+setfloat(0x08B562E0, 0);
+#off
+setfloat(0x08B562E0, 1);
+// rela82me: US save works
+
+//edited by rela82me on 2/23/2006 9:43:29 PM
+
+#cheat Hoverbike
+//ID: 5248
+//Score: 28
+//Author: Sousanator
+//Category: Vehicle
+//Description: by Sousanator and Ollie199090 (also removes front wheel cover) Peds have it too
+//Image: none
+//Time: 24/02/2006 01:36:15
+//Working: Yes
+setfloat(0x08B562E0, 0);
+setchar(pcar + 0x50F, 0x50);
+#off
+setfloat(0x08B562E0, 1);
+setchar(pcar + 0x50F, 0x3f);
+// rela82me: works US save
+
+//edited by rela82me on 2/23/2006 9:45:56 PM
+
+#cheat hover craft
+//ID: 4166
+//Score: 65
+//Author: me
+//Category: Vehicle
+//Description: new car, hovercraft
+//Image: none
+//Time: 22/01/2006 02:50:56
+//Working: No
+setchar(0x250, 05)
+
+
+#cheat Hovercar (no wheels) ENABLE INDESTRUCTABLE CAR
+//ID: 4104
+//Score: 31
+//Author: Ne0n
+//Category: Vehicle
+//Description: !! Enable 'Your car is: Indestructable' or your car will blow up !! The car launches into the sky when you enable this, teleport when you land in water.
+//Image: none
+//Time: 18/01/2006 18:35:31
+//Working: Yes
+setchar(pcar + 0x4eb, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x52b, 0xff);
+setchar(pcar + 0x54b, 0xff);
+#off
+setchar(pcar + 0x4eb, 0x41);
+setchar(pcar + 0x50b, 0x41);
+setchar(pcar + 0x52b, 0x41);
+setchar(pcar + 0x54b, 0x41);
+
+
+#cheat Normal Hovering
+//ID: 5256
+//Score: 19
+//Author: Sousanator
+//Category: Vehicle
+//Description: The normal height you are at,, basically only needed when you use the change bike tire size button cheat,,, only works on PCJ600,,  only works on cheatdevice's previous to v9
+//Image: none
+//Time: 24/02/2006 02:12:58
+//Working: Yes
+setchar(09a9f94a, 0x27)
+setchar(09a9f96a, 0x27)
+setchar(09a9f98a, 0x27)
+setchar(09a9f9aa, 0x27)
+
+//edited by Sousanator on 2/25/2006 8:52:07 PM
+
+#cheat Hover Low
+//ID: 5301
+//Score: 18
+//Author: Sousanator
+//Category: Vehicle
+//Description: Lowers the bike,, Only works on PCJ600
+//Image: none
+//Time: 26/02/2006 03:40:21
+//Working: Yes
+setchar(0x09a9f8ba, 0xf9);
+setchar(0x09a9f8da, 0xf9);
+setchar(0x09a9f8fa, 0xf9);
+setchar(0x09a9f91a, 0xf9);
+setchar(0x09a9f8bb, 0xbe);
+setchar(0x09a9f8db, 0xbe);
+setchar(0x09a9f8fb, 0xbe);
+setchar(0x09a9f91b, 0xbe);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+setchar(0x09a9f8bb, 0xbf);
+setchar(0x09a9f8db, 0xbf);
+setchar(0x09a9f8fb, 0xbf);
+setchar(0x09a9f91b, 0xbf);
+//theY4Kman: Works with US/CA Version
+//edited by theY4Kman on 2/28/2006 6:26:16 PM
+
+#cheat Airport island
+//ID: 5300
+//Score: 29
+//Author: tonycipriani213
+//Category: Location Mods
+//Description: A island that hovers above the airport
+//Image: http://img104.imageshack.us/img104/7379/screen38ai.png
+//Time: 26/02/2006 01:21:58
+//Working: Yes
+moveto(-1526.97,-823.51,23.92);  object(0x0F01,90,0,270);
+move(6.90,0.04,0.00);  object(0x0F01,90,0,270);
+move(7.02,0.03,0.10);  object(0x0F01,90,0,270);
+move(6.51,-0.10,0.00);  object(0x0F01,90,0,272);
+move(6.46,-0.02,0.00);  object(0x0F01,90,0,270);
+move(-0.60,8.14,4.40);  object(0x01BF,270,0,90);
+move(-16.64,2.42,-4.30);  object(0x0F37,90,0,90);
+move(1.08,5.28,1.90);  object(0x0F25,0,0,182);
+move(-4.02,-15.72,-1.80);  object(0x0F01,90,0,270);
+move(18.48,12.29,2.70);  object(0x01E4,0,0,180);
+move(3.97,-4.37,0.00);  object(0x01E4,0,0,272);
+move(-31.40,-1.56,-0.10);  object(0x0F35,0,0,0);
+move(12.72,12.95,2.80);  object(0x0F74,0,0,180);
+move(18.12,-7.71,-3.40);  object(0x0F2B,0,0,156);
+move(-9.53,33.22,0.00);  object(0x0F1D,0,0,336);
+move(9.04,-38.93,-0.80);  object(0x0F36,0,0,270);
+move(-2.82,-15.06,1.90);  object(0x0F9A,0,0,0);
+move(-26.49,0.33,-0.10);  object(0x0F98,0,0,90);
+move(0.60,14.16,0.00);  object(0x0FBC,0,0,270);
+move(-1.10,24.45,6.70);  object(0x0FBE,15,330,127);
+move(13.83,-39.44,-6.80);  object(0x0DB7,0,0,270);
+move(-6.96,20.21,-0.60);  object(0x0DB6,0,0,180);
+move(20.80,-2.82,6.50);  object(0x0DD6,0,0,180);
+teleport(-1510.73, -817.72, 27.88);
+
+//edited by ADePSP on 27/02/2006 14:14:00
+
+#cheat Hover High Stable
+//ID: 5328
+//Score: 21
+//Author: Sousanator
+//Category: Vehicle
+//Description: a more stable version,, only for PCJ600, best when heavy bike is OFF, only works on CD v.9
+//Image: none
+//Time: 26/02/2006 23:23:25
+//Working: Yes
+setchar(0x09a9f8ba, 100000);
+setchar(0x09a9f8da, 100000);
+setchar(0x09a9f8fa, 100000);
+setchar(0x09a9f91a, 100000);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+//theY4Kman: Works with US/CA Version
+//edited by theY4Kman on 2/28/2006 6:25:41 PM
+
+#cheat Feels like a Hover Bike
+//ID: 5327
+//Score: 20
+//Author: Sousanator
+//Category: Vehicle
+//Description: Raises the bike, and is a bit wabaly, and removes the wheels,, and now you got a perfect hoverbike,, only works on PCJ600,, only works on CD v.9,, best when heavy bike cheat is OFF
+//Image: none
+//Time: 26/02/2006 23:20:47
+//Working: Yes
+setchar(0x09a9f8ba, 0xe0);
+setchar(0x09a9f8da, 0xe0);
+setchar(0x09a9f8fa, 0xe0);
+setchar(0x09a9f91a, 0xe0);
+setfloat(0x08B562E0, 0);
+setchar(pcar + 0x50F, 0x50);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+setfloat(0x08B562E0, 1);
+setchar(pcar + 0x50F, 0x3f);
+
+//edited by ADePSP on 27/02/2006 14:35:36
+
+#cheat Heavy Hovering
+//ID: 5304
+//Score: 20
+//Author: Sousanator
+//Category: Vehicle
+//Description: The highest you can raise the bike while heavy bike cheat is ON,,  only works on PCJ600,, now works with CDv9
+//Image: none
+//Time: 26/02/2006 03:44:27
+//Working: Yes
+setchar(0x09a9f8ba, 0x50);
+setchar(0x09a9f8da, 0x50);
+setchar(0x09a9f8fa, 0x50);
+setchar(0x09a9f91a, 0x50);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+
+//edited by SWAT_KILLER on 2006/2/25 ¤U¤È 03:23:12
+
+#cheat Hover High
+//ID: 5303
+//Score: 21
+//Author: Sousanator
+//Category: Vehicle
+//Description: Hovers a bit higher,,only works on PCJ600,, now works with CDv9
+//Image: none
+//Time: 26/02/2006 03:42:58
+//Working: Yes
+setchar(0x09a9f8ba, 0x7d);
+setchar(0x09a9f8da, 0x7d);
+setchar(0x09a9f8fa, 0x7d);
+setchar(0x09a9f91a, 0x7d);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+
+//edited by SWAT_KILLER on 2006/2/25 ¤U¤È 03:23:39
+
+#cheat Hover Normal
+//ID: 5302
+//Score: 22
+//Author: Sousanator
+//Category: Vehicle
+//Description: Hovers at the normal height,, only works on PCJ600,, now works with CDv9
+//Image: none
+//Time: 26/02/2006 03:42:02
+//Working: Yes
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+//theY4Kman: Works with US/CA Version
+//edited by theY4Kman on 2/28/2006 6:25:58 PM
+
+#cheat Hover even Higher
+//ID: 5329
+//Score: 28
+//Author: Sousanator
+//Category: Vehicle
+//Description: Hover's a bit higher then high hovering,, only works on PCJ600,, best when heavy bike cheat is OFF,, works only on CD v.9
+//Image: none
+//Time: 26/02/2006 23:26:03
+//Working: Yes
+setchar(0x09a9f8ba, 0xc5);
+setchar(0x09a9f8da, 0xc5);
+setchar(0x09a9f8fa, 0xc5);
+setchar(0x09a9f91a, 0xc5);
+#off
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+//theY4Kman: Works with US/CA Version
+//edited by theY4Kman on 2/28/2006 6:25:28 PM
+
+#cheat Execution Chamber
+//ID: 5365
+//Score: 54
+//Author: ADePSP
+//Category: Location Mods
+//Description: Creates a hovering glass chamber into which you lure pedestrians only to teleport out of it leaving them trapped inside. You then shoot the positioned barrels to blow the trapped peds to bits... (See video for demonstration)
+//Image: none
+//Time: 01/03/2006 17:58:14
+//Working: Yes
+//NOTE: REQUIRES THE "TELEPORT OUTSIDE EXECUTION CHAMBER" CHEAT
+moveto(255.45,-400.25,30); object(0x0CDB,90,0,180);
+move(0.00,5,0.00); object(0x0CDB,90,0,180);
+move(5,0.00,0.00); object(0x0CDB,90,0,180);
+move(0.00,-5,0.00); object(0x0CDB,90,0,180);
+moveto(252.95,-400.25,32.5); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+move(0.00,0.00,5); object(0x0CDB,0,90,90);
+move(0.00,-5,0.00); object(0x0CDB,0,90,90);
+moveto(262.95,-400.25,32.5); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+move(0.00,0.00,5); object(0x0CDB,0,90,90);
+move(0.00,-5,0.00); object(0x0CDB,0,90,90);
+moveto(255.45,-402.75,32.5); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+move(0.00,0.00,5); object(0x0CDB,0,0,180);
+move(-5,00,0.00); object(0x0CDB,0,0,180);
+moveto(255.45,-392.75,32.5); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+move(0.00,0.00,5); object(0x0CDB,0,0,180);
+move(-5,00,0.00); object(0x0CDB,0,0,180);
+moveto(254.2,-401.5,28.75); object(0x0CDB,90,0,180);
+move(0.00,5,0.00); object(0x0CDB,90,0,180);
+move(0.00,5,0.00); object(0x0CDB,90,0,180);
+move(5,0.00,0.00); object(0x0CDB,90,0,180);
+move(0.00,-5,0.00); object(0x0CDB,90,0,180);
+move(0.00,-5,0.00); object(0x0CDB,90,0,180);
+move(5,0.00,0.00); object(0x0CDB,90,0,180);
+move(0.00,5,0.00); object(0x0CDB,90,0,180);
+move(0.00,5,0.00); object(0x0CDB,90,0,180);
+moveto(251.7,-401.5,31.25); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+moveto(266.7,-401.5,31.25); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+move(0.00,5,0.00); object(0x0CDB,0,90,90);
+moveto(254.2,-404,31.25); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+moveto(254.2,-389,31.25); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+move(5,00,0.00); object(0x0CDB,0,0,180);
+moveto(257.95,-397.75,30); object(0x021C,90,0,180);
+moveto(257.95,-397.75,28.75); object(0x021C,90,0,180);
+moveto(258,-405,38.8); object(0x01BF,300,0,180); 
+move(0.00,-5.91,-3.38); object(0x01BF,300,0,180); 
+move(0.00,-5.91,-3.38); object(0x01BF,300,0,180); 
+move(0.00,-5.91,-3.38); object(0x01BF,300,0,180); 
+move(0.00,-5.91,-3.38); object(0x01BF,300,0,180); 
+teleport(257.19,-354.84, 26.02);
+setchar(0x08B48E29, 1);
+
+//edited by ADePSP on 02/03/2006 02:41:07
+
+#cheat Cool hover bike thingy with no wheels.
+//ID: 5478
+//Score: 135
+//Author: Joe.G
+//Category: Vehicle
+//Description: It looks like your hovering trick people you know and say its a star wars bike or somethin like that. i usually put gravity on .1 and rocket boost on 2 so it appears its a futeristic bike
+//Image: http://i36.photobucket.com/albums/e14/6391347/futurebike.gif
+//Time: 06/03/2006 20:18:15
+//Working: Yes
+setfloat(0x08B562E0, 0);
+#off
+setfloat(0x08B562E0, 1);
+
+//edited by Waterbottle on 12.03.2006 14:17:43
+
+#cheat True hoverbike
+//ID: 6768
+//Score: 43
+//Author: gior_9220001
+//Category: Vehicle
+//Description: //An improved hoverbike. Works with all bikes but the best with PCJ-600. This cheat will give you: a hoverbike with no wheels, different driving sound, PCJ-600's will be renamed to SKYBIKE, it won't leave any skidmarks to make it more realistic. Turn on n
+//Image: none
+//Time: 15/04/2006 22:00:38
+//Working: Yes
+setfloat(0x08B562E0, 0); 
+setchar(0x09a9f8ba, 100000); 
+setchar(0x09a9f8da, 100000); 
+setchar(0x09a9f8fa, 100000); 
+setchar(0x09a9f91a, 100000); 
+setchar(pcar + 0x00000267, 255) 
+setchar(pcar + 0x000005B0, 0); 
+setchar(pcar + 0x000006CC, 0); 
+setchar(pcar + 0x000006C8, 0); 
+setchar(pcar + 0x000006D4, 0); 
+setchar(pcar + 0x000006D0, 0); 
+setshort(0x99450E2, 0x73, 0x6B,0x79, 0x62, 0x69, 0x6B, 0x65); 
+setchar(0x09a9f8ba, 0x7d); 
+setchar(0x09a9f8da, 0x7d); 
+setchar(0x09a9f8fa, 0x7d); 
+setchar(0x09a9f91a, 0x7d); 
+#off 
+setfloat(0x08B562E0, 1); 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(pcar + 0x00000267, 0) 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+
+#cheat Spinnin Razor
+//ID: 6629
+//Score: 13
+//Author: adnLCS
+//Category: Pimp My Garage
+//Description: Turn on da hovercar on and off when use this, good affect like flying saucer. its a little uneasy do. in case u cant see it, theres a pink+blck paint job with red exhaust
+//Image: http://i61.photobucket.com/albums/h42/aron_13/razor.jpg
+//Time: 15/04/2006 12:29:04
+//Working: Yes
+sethex(0x945cf31, 0x01);
+sethex(0x945cf32, 0x01);
+setchar(0x945cee2, 0x5);
+setchar(0x945cee1, 0x50);
+setchar(0x945cee0, 0x34);
+setshort(0x9444e60, 254);
+setfloat(0x9444e5c, 1.80);
+setfloat(0x945ce60, 1800);
+setfloat(0x945ce68, 1.775);
+setfloat(0x945cf20, 0.3625);
+setfloat(0x945cf24, -0.01);
+setfloat(0x945cf28, 0.5875);
+setfloat(0x945ceec, 1.175);
+setfloat(0x945cef0, 1.175);
+setfloat(0x945cee4, 0.006);
+setfloat(0x945cf00, 0.5625);
+setfloat(0x945cf04, 0);
+setfloat(0x945cf08, 35);
+setfloat(0x945cf18, 1.0625);
+setfloat(0x945cf1c, 0.2);
+setfloat(0x945cf34, 0.25);
+setfloat(0x945cf2c, 0.3);
+setfloat(0x945ce80, 0);
+setfloat(0x945ce84, 0);
+setfloat(0x945ce88, -0.19999);
+setchar(0x945ce90, 75);
+setfloat(0x945cf0c, 0.9375);
+setfloat(0x945cf10, 0.4875);
+setfloat(0x945ce6c, 7.625);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb14, 0xF9, 0x90, 0xC9);
+sethex(0x944fb00, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 186);
+setchar(0x8E38A5C, 109, 104);
+sethex(0x8E38A5E, 0x01, 0xFF);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+//edited by ADePSP on 15/04/2006 12:06:46
+
+#cheat spiderman bike
+//ID: 6432
+//Score: 23
+//Author: hazbo
+//Category: Pimp My Garage
+//Description: this isnt a normal pcj it is like spiderman but jumps when you press x lol and it is quite hard to control but very amusing and funny and if you put the hovercar on then land on a roof and hold x you start bouncing on the roof, good for jumping off buildi
+//Image: none
+//Time: 15/04/2006 05:32:33
+//Working: Yes
+sethex(0x945d4d1, 0x01);
+sethex(0x945d4d2, 0x01);
+setchar(0x945d482, 0x28);
+setchar(0x945d481, 0x50);
+setchar(0x945d480, 0x34);
+setshort(0x9446c10, 250);
+setfloat(0x9446c0c, 0.90);
+setfloat(0x945d400, 500);
+setfloat(0x945d408, 5.9);
+setfloat(0x945d4c0, 0.99);
+setfloat(0x945d4c4, -0.15999);
+setfloat(0x945d4c8, 0.5);
+setfloat(0x945d48c, 5.999999999999);
+setfloat(0x945d490, 5.999999999999);
+setfloat(0x945d484, 5.999);
+setfloat(0x945d4a0, 0.5);
+setfloat(0x945d4a4, 0.5);
+setfloat(0x945d4a8, 45);
+setfloat(0x945d4b8, 0.85);
+setfloat(0x945d4bc, 0.15);
+setfloat(0x945d4d4, 9);
+setfloat(0x945d4cc, 0);
+setfloat(0x945d420, 0);
+setfloat(0x945d424, 0.05);
+setfloat(0x945d428, -0.08999);
+setchar(0x945d430, 2000);
+setfloat(0x945d4ac, 5.9);
+setfloat(0x945d4b0, 5.9);
+setfloat(0x945d40c, 0.0);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944faf4, 0xFF, 0xFF, 0x00);
+sethex(0x944fb4c, 0xFF, 0x00, 0xFF);
+setint(0x8E38AE8, 205);
+setchar(0x8E38B0C, 101, 123);
+sethex(0x8E38B0E, 0x01, 0x00);
+teleport(-789.61, 300.62, 49.05);
+setchar(pplayer + 0xB84, 0x00);
+
+//edited by hazbo on 22-04-2006 15:55:45
+
+#cheat hover man
+//ID: 6164
+//Score: 40
+//Author: minimesh
+//Category: Player
+//Description: push square and man will hover around with control
+//Image: none
+//Time: 04/04/2006 09:13:19
+//Working: Yes
+//Time: 04/04/2006 9:12:00
+
+#cheat Cool hover bike thingy with no wheels
+//ID: 5962
+//Score: 95
+//Author: mark123
+//Category: Pointless
+//Description: //It looks like your hovering trick people you know and say its a star wars bike or somethin like that. i usually put gravity on .1 and rocket boost on 2 so it appears its a futeristic bike
+//Image: none
+//Time: 27/03/2006 21:26:35
+//Working: Yes
+setfloat(0x08B562E0, 0); 
+#off 
+setfloat(0x08B562E0, 1); 
+
+
+#cheat LCS Maze-Staunton Island
+//ID: 5813
+//Score: 60
+//Author: Pancho
+//Category: Environment
+//Description: A big maze hovering above the ocean, watch out for traps (really) I am hoping to add fire on the nest one, so dont cheat, it can be pretty fun! *You may end up below it a couple times wait for it to load, or get in bike and speed forawrd, or be standing s
+//Image: http://i3.photobucket.com/albums/y88/Gtaplaya14/screen3.jpg
+//Time: 21/03/2006 03:25:20
+//Working: Yes
+moveto(270.15, 397.90, 161.00);  object(0x0204, 90, 0, 281);
+move(1.73, -0.33, 0.00);  object(0x0204, 90, 0, 281);
+move(5.14, 4.62, 0.00);  object(0x0204, 90, 0, 281);
+move(-9.66, 0.76, 0.00);  object(0x0204, 90, 0, 100);
+move(7.72, 8.99, 0.00);  object(0x0204, 90, 0, 101);
+move(-3.34, 0.69, 0.00);  object(0x0204, 90, 0, 100);
+move(-2.36, 0.43, 0.10);  object(0x0204, 90, 0, 100);
+move(9.04, -1.54, -0.10);  object(0x0204, 90, 0, 281);
+move(-12.61, -7.96, 2.00);  object(0x0204, 0, 0, 100);
+move(1.70, 9.96, 0.00);  object(0x0204, 0, 0, 100);
+move(8.49, 5.80, 0.00);  object(0x0204, 0, 0, 191);
+move(-6.48, -16.48, 0.00);  object(0x0204, 0, 0, 102);
+move(5.09, -0.82, 0.00);  object(0x0204, 0, 0, 103);
+move(-0.27, 10.18, 0.00);  object(0x0204, 0, 0, 282);
+move(6.14, -18.37, 0.00);  object(0x0204, 0, 0, 13);
+move(3.74, 2.55, 0.00);  object(0x0204, 0, 0, 193);
+move(-1.72, 6.99, 0.00);  object(0x0204, 0, 0, 9);
+move(0.04, 11.25, 0.00);  object(0x0204, 0, 0, 9);
+move(7.64, 1.87, -0.05);  object(0x0204, 0, 0, 191);
+move(2.84, -8.36, 0.00);  object(0x0204, 0, 0, 282);
+move(-27.08, 8.51, 0.00);  object(0x0204, 0, 0, 190);
+move(-0.68, -2.91, 0.00);  object(0x0204, 0, 0, 192);
+move(1.89, -22.79, 0.00);  object(0x0204, 0, 0, 101);
+move(-7.26, 0.95, -0.20);  object(0x0204, 0, 0, 189);
+move(18.30, 13.26, 0.20);  object(0x0204, 0, 0, 280);
+move(12.67, 5.03, 0.30);  object(0x0204, 0, 0, 190);
+move(-2.28, 4.63, -2.00);  object(0x0204, 90, 0, 191);
+move(-0.62, -4.10, 0.00);  object(0x0204, 90, 0, 10);
+move(-0.83, -4.01, 0.00);  object(0x0204, 90, 0, 11);
+move(-0.68, -3.55, 0.00);  object(0x0204, 90, 0, 11);
+move(-0.79, -4.07, 0.00);  object(0x0204, 90, 0, 11);
+move(-0.62, -4.07, 0.00);  object(0x0204, 90, 0, 12);
+move(-4.98, -2.86, -0.40);  object(0x0204, 90, 0, 13);
+move(-0.97, -4.02, 0.00);  object(0x0204, 90, 0, 12);
+move(-0.82, -3.92, 0.00);  object(0x0204, 90, 0, 12);
+move(-10.77, -0.24, 0.20);  object(0x0204, 90, 0, 102);
+move(1.61, -0.34, 0.00);  object(0x0204, 90, 0, 102);
+move(2.62, 4.27, 2.20);  object(0x0204, 0, 0, 100);
+move(-5.03, -12.23, -2.50);  object(0x01BF, 90, 0, 11);
+move(27.59, 35.03, 1.70);  object(0x0251, 0, 0, 106);
+move(2.16, -9.02, 0.60);  object(0x0204, 0, 0, 100);
+move(2.89, 10.08, 0.00);  object(0x0204, 0, 0, 10);
+move(1.35, -3.37, 0.00);  object(0x0204, 0, 0, 10);
+move(4.15, 5.49, 0.00);  object(0x0204, 0, 0, 10);
+move(4.64, -8.37, 0.00);  object(0x0204, 0, 0, 101);
+move(-3.16, 5.98, -2.20);  object(0x0204, 90, 0, 11);
+move(-4.22, -2.42, 0.10);  object(0x0204, 90, 0, 192);
+move(-0.61, -3.52, 0.00);  object(0x0204, 90, 0, 191);
+move(-0.41, -4.19, 0.00);  object(0x0204, 90, 0, 191);
+move(-0.92, -3.90, 0.00);  object(0x0204, 90, 0, 190);
+move(-0.91, -3.62, 0.00);  object(0x0204, 90, 0, 190);
+move(-0.83, -1.53, 0.20);  object(0x0204, 90, 0, 190);
+move(0.37, 4.41, 0.00);  object(0x0204, 90, 0, 190);
+move(0.44, -0.51, 0.00);  object(0x0204, 90, 0, 221);
+move(2.68, 3.11, 0.00);  object(0x0204, 90, 0, 221);
+move(-4.60, 3.37, 0.00);  object(0x0204, 90, 0, 186);
+move(-0.00, -0.01, 0.00);  object(0x0204, 90, 0, 186);
+move(3.05, 4.16, 0.00);  object(0x0204, 90, 0, 186);
+move(-1.06, 5.49, -1.60);  object(0x0204, 90, 15, 19);
+move(7.91, -7.08, 1.60);  object(0x0204, 90, 0, 96);
+move(3.41, -3.91, 0.00);  object(0x0204, 90, 0, 98);
+move(-15.92, -11.86, 0.00);  object(0x0204, 90, 0, 188);
+move(-0.91, -3.85, 0.00);  object(0x0204, 90, 0, 188);
+move(-0.63, -2.68, 0.00);  object(0x0204, 90, 0, 188);
+move(-0.39, -1.67, 0.00);  object(0x0204, 90, 0, 188);
+move(9.27, -1.22, 0.00);  object(0x0204, 90, 0, 100);
+move(3.59, -0.65, 0.00);  object(0x0204, 90, 0, 100);
+move(1.79, 10.29, 0.00);  object(0x0204, 90, 0, 100);
+move(5.70, 14.91, 2.10);  object(0x0204, 0, 0, 99);
+move(0.85, 10.31, -0.12);  object(0x0204, 0, 0, 11);
+move(-8.31, -25.88, 0.00);  object(0x0204, 0, 0, 98);
+move(-4.29, 0.49, 0.00);  object(0x0204, 0, 0, 190);
+move(7.01, -2.97, 0.00);  object(0x0204, 0, 0, 100);
+move(3.29, 8.90, 0.00);  object(0x0204, 0, 0, 99);
+move(2.65, -9.79, 0.00);  object(0x0204, 0, 0, 0);
+move(-14.30, -3.33, 0.00);  object(0x0204, 0, 0, 279);
+move(2.44, 18.17, 0.00);  object(0x0204, 0, 0, 279);
+move(-3.61, -2.72, 0.00);  object(0x0204, 0, 0, 103);
+move(7.45, -24.93, 0.00);  object(0x0204, 0, 0, 97);
+move(-9.27, 6.55, 0.00);  object(0x0204, 0, 0, 188);
+move(2.03, -6.15, 0.00);  object(0x0204, 0, 0, 190);
+move(-8.10, 3.75, 0.00);  object(0x0204, 0, 0, 186);
+move(-11.32, 13.44, 0.00);  object(0x0204, 0, 0, 190);
+move(14.99, -5.25, 0.00);  object(0x0204, 0, 0, 233);
+move(-5.29, -1.79, 0.00);  object(0x0204, 0, 0, 7);
+move(-11.06, -3.25, 0.00);  object(0x0204, 0, 0, 285);
+move(-3.19, 3.51, 0.00);  object(0x0204, 0, 0, 281);
+move(1.87, -13.37, 0.00);  object(0x0204, 0, 0, 191);
+move(-6.23, 8.75, 0.00);  object(0x0204, 0, 0, 277);
+move(8.75, -9.37, 0.00);  object(0x0204, 0, 0, 279);
+move(2.87, 4.46, 0.00);  object(0x0204, 0, 0, 193);
+move(4.70, -8.45, 0.00);  object(0x0204, 0, 0, 107);
+move(3.60, 1.60, 0.00);  object(0x0204, 0, 0, 101);
+move(-3.53, -7.82, -1.60);  object(0x01B7, 0, 90, 195);
+move(-10.99, 11.68, 0.00);  object(0x0204, 90, 0, 193);
+move(21.95, 9.51, -0.40);  object(0x0204, 90, 0, 281);
+move(-3.68, 0.74, 0.00);  object(0x0204, 90, 0, 281);
+move(-4.25, 0.23, 0.00);  object(0x0204, 90, 0, 294);
+move(-4.39, 2.42, 0.00);  object(0x0204, 90, 0, 294);
+move(4.46, -11.24, 0.00);  object(0x0204, 90, 0, 276);
+move(-3.12, 1.38, 0.00);  object(0x0204, 90, 0, 279);
+move(-3.00, 0.75, 0.00);  object(0x0204, 90, 0, 279);
+move(-2.33, 0.58, 0.00);  object(0x0204, 90, 0, 279);
+move(-3.44, 0.85, 0.00);  object(0x0204, 90, 0, 279);
+move(-3.00, -0.56, 0.00);  object(0x0204, 90, 0, 294);
+move(-2.92, 2.25, 0.00);  object(0x0204, 90, 0, 285);
+move(16.31, -12.63, 0.00);  object(0x0204, 90, 0, 105);
+move(-0.34, 0.11, 0.00);  object(0x0204, 90, 355, 105);
+move(-1.29, -8.37, 0.60);  object(0x0FB4, 0, 0, 100);
+move(-25.28, 15.68, 0.00);  object(0x0FB3, 0, 0, 218);
+move(1.93, 1.93, -0.70);  object(0x0FB3, 0, 0, 202);
+move(5.05, -1.12, 0.00);  object(0x0FB3, 0, 0, 202);
+move(16.33, -16.23, 0.70);  object(0x0FB4, 0, 0, 159);
+move(1.11, -0.05, 2.00);  object(0x0FB4, 0, 0, 172);
+move(-0.16, 0.43, -1.90);  object(0x0FB8, 0, 0, 164);
+move(0.22, -1.12, 0.00);  object(0x0FB8, 0, 0, 164);
+move(0.20, 0.76, 0.00);  object(0x0FB8, 0, 0, 171);
+move(11.51, 29.86, -0.40);  object(0x0FB8, 0, 0, 294);
+move(-33.35, -13.65, 5.50);  object(0x0FAF, 0, 0, 291);
+move(1.12, 26.92, -5.40);  object(0x0FAE, 0, 0, 339);
+move(28.32, -16.45, 0.40);  object(0x0FB7, 0, 0, 339);
+move(17.52, 21.22, -0.30);  object(0x0F90, 0, 0, 108);
+move(-19.14, -21.73, -0.50);  object(0x0EDA, 0, 0, 339);
+move(-26.32, -7.76, 0.20);  object(0x0249, 0, 0, 2);
+move(-0.28, 0.36, 0.00);  object(0x0249, 0, 0, 2);
+move(0.31, 0.27, 0.00);  object(0x0249, 0, 0, 357);
+move(-1.14, 0.61, 0.00);  object(0x0249, 0, 0, 1);
+move(-0.83, -1.74, 5.30);  object(0x025D, 0, 0, 198);
+move(5.06, -0.20, -5.30);  object(0x021C, 0, 0, 192);
+move(-0.14, 0.82, 0.10);  object(0x021C, 0, 0, 254);
+move(-0.19, -0.35, 1.10);  object(0x021C, 0, 0, 254);
+move(0.43, 1.02, -1.10);  object(0x021C, 0, 0, 254);
+move(-0.29, -0.18, 1.10);  object(0x021C, 0, 0, 254);
+move(-0.24, -0.44, 0.00);  object(0x021C, 0, 0, 254);
+move(0.00, 0.00, 0.50);  object(0x021C, 0, 0, 254);
+move(0.00, 0.00, 0.80);  object(0x021C, 0, 0, 254);
+move(0.00, 0.00, -2.30);  object(0x021C, 0, 0, 254);
+move(17.92, -17.21, 0.60);  object(0x021C, 0, 0, 41);
+teleport(265.89, 374.32, 161.93);
+//edited by Pancho on 3/21/2006 4:14:37 PM
+
+#cheat True hoverbike *UPDATED*
+//ID: 5541
+//Score: 1624
+//Author: ssjkevin
+//Category: Vehicle
+//Description: An improved hoverbike. Works with all bikes but the best with PCJ-600. This cheat will give you: a hoverbike with no wheels, different driving sound, PCJ-600's will be renamed to SKYBIKE, it won't leave any skidmarks to make it more realistic. Turn on nev
+//Image: none
+//Time: 10/03/2006 18:33:48
+//Working: Yes
+setfloat(0x9446c0c, 1.775);
+setfloat(0x945d48c, 1.3);
+setfloat(0x945d484, 0.005);
+setchar(0x8E38A5C, 125, 121);
+setfloat(0x08B562E0, 0);
+setchar(0x09a9f8ba, 100000);
+setchar(0x09a9f8da, 100000);
+setchar(0x09a9f8fa, 100000);
+setchar(0x09a9f91a, 100000);
+setchar(pcar + 0x00000267, 255)
+setchar(pcar + 0x000005B0, 0);
+setchar(pcar + 0x000006CC, 0);
+setchar(pcar + 0x000006C8, 0);
+setchar(pcar + 0x000006D4, 0);
+setchar(pcar + 0x000006D0, 0);
+setshort(0x99450E2, 0x73, 0x6B, 0x79, 0x62, 0x69, 0x6B, 0x65);
+setchar(0x09a9f8ba, 0x7d);
+setchar(0x09a9f8da, 0x7d);
+setchar(0x09a9f8fa, 0x7d);
+setchar(0x09a9f91a, 0x7d);
+setfloat(0x08B562E0, 0);
+setchar(pcar + 0x50F, 0x50);
+#off
+setfloat(0x08B562E0, 1);
+setchar(pcar + 0x50F, 0x3f);
+setfloat(0x08B562E0, 1);
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(pcar + 0x00000267, 0)
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+setchar(0x09a9f91a, 0x27);
+//edited by vettefan88 on 3/12/2006 11:44:28 AM
+
+#cheat Every Car Hovers!
+//ID: 9929
+//Score: 95
+//Author: xFinch713x
+//Category: Pimp My Garage
+//Description: This Cheat Makes every car in the game hover! except bikes and rhino
+//Image: none
+//Time: 09/05/2006 23:00:32
+//Working: Yes
+setfloat(0x943f6dc, 0.00000000001);
+setfloat(0x945cd44, -1);
+setfloat(0x943f86c, 0.00000000001);
+setfloat(0x94597d4, -1);
+setfloat(0x943fb8c, 0.00000000001);
+setfloat(0x94599b4, -1);
+setfloat(0x943fd1c, 0.00000000001);
+setfloat(0x9459aa4, -1);
+setfloat(0x943feac, 0.00000000001);
+setfloat(0x9459b94, -1);
+setfloat(0x94401cc, 0.00000000001);
+setfloat(0x9459d74, -1);
+setfloat(0x944035c, 0.00000000001);
+setfloat(0x9459e64, -1);
+setfloat(0x94404ec, 0.00000000001);
+setfloat(0x9459f54, -1);
+setfloat(0x944003c, 0.00000000001);
+setfloat(0x9459c84, -1);
+setfloat(0x944067c, 0.00000000001);
+setfloat(0x945a044, -1);
+setfloat(0x944080c, 0.00000000001);
+setfloat(0x945a134, -1);
+setfloat(0x943f9fc, 0.00000000001);
+setfloat(0x94598c4, -1);
+setfloat(0x944099c, 0.00000000001);
+setfloat(0x945a224, -1);
+setfloat(0x9440b2c, 0.00000000001);
+setfloat(0x945c204, -1);
+setfloat(0x9440cbc, 0.00000000001);
+setfloat(0x945a314, -1);
+setfloat(0x9440e4c, 0.00000000001);
+setfloat(0x945a404, -1);
+setfloat(0x9440fdc, 0.00000000001);
+setfloat(0x945a4f4, -1);
+setfloat(0x944116c, 0.00000000001);
+setfloat(0x945a5e4, -1);
+setfloat(0x94412fc, 0.00000000001);
+setfloat(0x945a6d4, -1);
+setfloat(0x944148c, 0.00000000001);
+setfloat(0x945a7c4, -1);
+setfloat(0x944161c, 0.00000000001);
+setfloat(0x945a8b4, -1);
+setfloat(0x94417ac, 0.00000000001);
+setfloat(0x945a9a4, -1);
+setfloat(0x944193c, 0.00000000001);
+setfloat(0x945aa94, -1);
+setfloat(0x9441acc, 0.00000000001);
+setfloat(0x945ab84, -1);
+setfloat(0x9441c5c, 0.00000000001);
+setfloat(0x945ac74, -1);
+setfloat(0x9441dec, 0.00000000001);
+setfloat(0x945ad64, -1);
+setfloat(0x9441f7c, 0.00000000001);
+setfloat(0x9459b94, -1);
+setfloat(0x944210c, 0.00000000001);
+setfloat(0x945ae54, -1);
+setfloat(0x944229c, 0.00000000001);
+setfloat(0x945af44, -1);
+setfloat(0x944242c, 0.00000000001);
+setfloat(0x945b034, -1);
+setfloat(0x94425bc, 0.00000000001);
+setfloat(0x945b124, -1);
+setfloat(0x944274c, 0.00000000001);
+setfloat(0x945b214, -1);
+setfloat(0x9442a6c, 0.00000000001);
+setfloat(0x945b3f4, -1);
+setfloat(0x9442bfc, 0.00000000001);
+setfloat(0x945b7b4, -1);
+setfloat(0x9442d8c, 0.00000000001);
+setfloat(0x945b8a4, -1);
+setfloat(0x9442f1c, 0.00000000001);
+setfloat(0x945b994, -1);
+setfloat(0x94430ac, 0.00000000001);
+setfloat(0x945ba84, -1);
+setfloat(0x944323c, 0.00000000001);
+setfloat(0x945bb74, -1);
+setfloat(0x944355c, 0.00000000001);
+setfloat(0x945c2f4, -1);
+setfloat(0x94436ec, 0.00000000001);
+setfloat(0x945c3e4, -1);
+setfloat(0x944387c, 0.00000000001);
+setfloat(0x945bd54, -1);
+setfloat(0x9443a0c, 0.00000000001);
+setfloat(0x945c4d4, -1);
+setfloat(0x9443b9c, 0.00000000001);
+setfloat(0x945c5c4, -1);
+setfloat(0x9443d2c, 0.00000000001);
+setfloat(0x945c6b4, -1);
+setfloat(0x9443ebc, 0.00000000001);
+setfloat(0x945c7a4, -1);
+setfloat(0x944404c, 0.00000000001);
+setfloat(0x945c894, -1);
+setfloat(0x94441dc, 0.00000000001);
+setfloat(0x945c984, -1);
+setfloat(0x944436c, 0.00000000001);
+setfloat(0x945c024, -1);
+setfloat(0x94444fc, 0.00000000001);
+setfloat(0x945c114, -1);
+setfloat(0x944468c, 0.00000000001);
+setfloat(0x945ca74, -1);
+setfloat(0x944481c, 0.00000000001);
+setfloat(0x945a314, -1);
+setfloat(0x94449ac, 0.00000000001);
+setfloat(0x945cb64, -1);
+setfloat(0x9444b3c, 0.00000000001);
+setfloat(0x945cc54, -1);
+setfloat(0x9444ccc, 0.00000000001);
+setfloat(0x945ce34, -1);
+setfloat(0x9444e5c, 0.00000000001);
+setfloat(0x945cf24, -1);
+setfloat(0x9444fec, 0.00000000001);
+setfloat(0x945d014, -1);
+setfloat(0x944517c, 0.00000000001);
+setfloat(0x945b3f4, -1);
+setfloat(0x944530c, 0.00000000001);
+setfloat(0x945d1f4, -1);
+setfloat(0x944549c, 0.00000000001);
+setfloat(0x945d2e4, -1);
+setfloat(0x944562c, 0.00000000001);
+setfloat(0x945d3d4, -1);
+setfloat(0x94433cc, 0.00000000001);
+setfloat(0x945bc64, -1);
+
+#cheat MEGATOMIC BOMB
+//ID: 9893
+//Score: 88
+//Author: JUMPMAN2006
+//Category: Misc
+//Description: ALL U NEED TO DO IS PUT ON HOVER CARS, THEN KNOCK THEN DOWN AND LEAVE YOUR CAR ON TOP OF THEM, RUN TO THE END ABOVE YOUR GARAGE AD FIRE, ATOMIC BOMB
+//
+//PS:WORKING ON MOVING THEN TO A BUSY AREA ON THE MAP
+//Image: none
+//Time: 09/05/2006 17:59:56
+//Working: Yes
+//BUILD THE FLOOR
+moveto(272.15, -422.6, 90); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+//BUILD WALL 1
+moveto(271.75, -422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 2
+moveto(273.35, -422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 3
+moveto(272.15, -423.15, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD WALL 4
+moveto(272.15, -420.95, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD ROOF
+moveto(272.15, -422.6, 93.2); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+teleport(272.15, -422.6, 110);
+//BUILD THE FLOOR
+moveto(422.6, 422.6, 90); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+//BUILD WALL 1
+moveto(422.2, 422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 2
+moveto(424.6, 422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 3
+moveto(422.6, 422.05, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD WALL 4
+moveto(422.6, 425.35, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD ROOF
+moveto(422.6, 422.6, 92.4); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+teleport(422.6, 422.6, 110);
+setshort(0x9930094, 0x76, 0x38, 0x20, 0x6e, 0x69, 0x6e, 0x6a, 0x61);
+setchar(0x945cfd2, 0x6);
+setchar(0x945cfd1, 0x50);
+setchar(0x945cfd0, 0x52);
+setshort(0x9444ff0, 250);
+setfloat(0x9444fec, 1);
+setfloat(0x945cf50, 1200);
+setfloat(0x945cf58, 0.75);
+setfloat(0x945d010, 0.05);
+setfloat(0x945d014, -0.14999);
+setfloat(0x945d018, 0.45);
+setfloat(0x945cfdc, 1.175);
+setfloat(0x945cfe0, 1.175);
+setfloat(0x945cfd4, 0.00462);
+setfloat(0x945cff0, 0.58);
+setfloat(0x945cff4, 0);
+setfloat(0x945cff8, 30);
+setfloat(0x945d008, 1);
+setfloat(0x945d00c, 0.13);
+setfloat(0x945d024, 0.15);
+setfloat(0x945d01c, 0.3);
+setfloat(0x945cf70, 0);
+setfloat(0x945cf74, -0.14999);
+setfloat(0x945cf78, -0.19999);
+setchar(0x945cf80, 70);
+setfloat(0x945cffc, 0.9);
+setfloat(0x945d000, 0.48);
+setfloat(0x945cf5c, 0.9);
+sethex(0x945d020, 0x03, 0x00, 0x00, 0x07);
+sethex(0x944fb08, 0x60, 0x53, 0x4D);
+sethex(0x944fb14, 0x00, 0x00, 0x00);
+setint(0x8E38988, 187);
+setchar(0x8E389AC, 106, 109);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Copter Police Car Made into Heli
+//ID: 9458
+//Score: 25
+//Author: K3B4B5T4R
+//Category: Pimp My Garage
+//Description: Use the Hover car cheat to fly or get in wide open space!
+//Image: none
+//Time: 06/05/2006 20:25:06
+//Working: Yes
+setchar(09b5e276, 255)
+setchar(09b609f6, 0xd0)
+setchar(09b609fa, 0x80)
+setchar(09b67ec6, 0xff)
+setchar(0x09b609d4, 0x6f);
+setchar(0x09b688ba, 0xc0);
+setchar(0x09b5eb3a, 0xac);
+setchar(0x09b5723a, 0x67, 0x3f);
+setchar(0x09b57248, 0x0e, 0x35, 0x00, 0x2e);
+setchar(0x09b56918, 0x0e, 0x35, 0xac, 0x3e);
+setchar(0x09b56917, 0xbf);
+setchar(0x09b56906, 0xb1, 0x41);
+setchar(0x09b5690a, 0xcf, 0x3f);
+setchar(0x09b5d168, 7)
+setchar(0x09b5b488, 7)
+setchar(0x09b67ea8, 4)
+setchar(0x09b5e258, 4)
+setint(0x08E38A64, 157);
+setshort(0992fda0, 0x50, 0x61, 0x77, 0x6E, 0)
+setfloat(09692aa0, 1.0191326141357422)
+setchar(09692AFE, 0)
+setfloat(09692AD4, 4, 0.0625)
+setfloat(09692AB0, -0.4)
+setshort(0x992FDA0, 0x43, 0x6f, 0x70, 0x74, 0x65, 0x72);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.7);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 43);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x83, 0xd1, 0x02, 0x07);
+sethex(0x944fb04, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09b609f6, 48);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 160);
+setchar(0x09b60a06, 15);
+setchar(0x09b60a07, 63);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 255);
+setchar(0x09b5eb36, 231);
+setchar(0x09b5eb37, 62);
+setchar(0x09b5eb3a, 12);
+setchar(0x09b5eb3b, 63);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 23);
+setchar(0x09b57247, 191);
+setchar(0x09b5724a, 59);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 32);
+setchar(0x09b5e286, 231);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 32);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 64);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 32);
+setchar(0x09b67ed6, 231);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 32);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 48);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 135);
+setchar(0x09b688c7, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x6);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x52);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 0.975);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.475);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.0015);
+setfloat(0x945ae30, 0.525);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.285);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b609f6, 80);
+setchar(0x09b609f7, 64);
+setchar(0x09b609fa, 144);
+setchar(0x09b60a06, 239);
+setchar(0x09b60a07, 62);
+setchar(0x09b60a0a, 76);
+setchar(0x09b5690a, 160);
+setchar(0x09b5eb22, 231);
+setchar(0x09b5eb23, 63);
+setchar(0x09b5eb26, 128);
+setchar(0x09b5eb27, 65);
+setchar(0x09b5eb2a, 31);
+setchar(0x09b5eb2b, 64);
+setchar(0x09b5eb36, 34);
+setchar(0x09b5eb37, 63);
+setchar(0x09b5eb3a, 237);
+setchar(0x09b5eb3b, 62);
+setchar(0x09b57236, 160);
+setchar(0x09b57237, 64);
+setchar(0x09b5723a, 128);
+setchar(0x09b57246, 207);
+setchar(0x09b57247, 190);
+setchar(0x09b5724a, 85);
+setchar(0x09b5724b, 62);
+setchar(0x09b5b4a6, 176);
+setchar(0x09b5b4a7, 64);
+setchar(0x09b5b4aa, 160);
+setchar(0x09b5b4b6, 255);
+setchar(0x09b5b4b7, 62);
+setchar(0x09b5b4ba, 12);
+setchar(0x09b5b4bb, 62);
+setchar(0x09b5d186, 176);
+setchar(0x09b5d187, 64);
+setchar(0x09b5d18a, 160);
+setchar(0x09b5d196, 255);
+setchar(0x09b5d197, 62);
+setchar(0x09b5d19a, 12);
+setchar(0x09b5d19b, 62);
+setchar(0x09b5e276, 64);
+setchar(0x09b5e277, 65);
+setchar(0x09b5e27a, 160);
+setchar(0x09b5e286, 23);
+setchar(0x09b5e287, 189);
+setchar(0x09b5e28a, 255);
+setchar(0x09b5e28b, 61);
+setchar(0x09b67ec6, 66);
+setchar(0x09b67ec7, 65);
+setchar(0x09b67eca, 160);
+setchar(0x09b67ed6, 23);
+setchar(0x09b67ed7, 189);
+setchar(0x09b67eda, 255);
+setchar(0x09b67edb, 61);
+setchar(0x09b688b6, 70);
+setchar(0x09b688b7, 65);
+setchar(0x09b688c6, 187);
+setchar(0x09b688c7, 63);
+setchar(0x09b688ca, 64);
+setchar(0x09b688cb, 63);
+setchar(0x09b5ebae, 3);
+setchar(0x09b5eb7e, 0);
+setchar(0x09b5eb4e, 0);
+setchar(0x09b5ebde, 1);
+setchar(0x09b5ec0e, 0);
+setchar(0x09b5e2ce, 2);
+setchar(0x09b5e38e, 6);
+setchar(0x09b67f1e, 2);
+setchar(0x09b67fde, 6);
+sethex(0x945ae61, 0x01);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x44);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 256);
+setfloat(0x944210c, 1);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.675);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.2375);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.00187);
+setfloat(0x945ae30, 0.5125);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.24);
+setfloat(0x945ae5c, 0.1);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x944fb0c, 0xFF, 0xFF, 0x00);
+sethex(0x944faf4, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 157);
+sethex(0x8E38A5E, 0x01, 0x00);
+setchar(pplayer + 0xB84, 0x00);
+setshort(0x992FDA0, 0x4f, 0x77, 0x6e, 0x61, 0x67, 0x65);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 250);
+setfloat(0x944210c, 1.45);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 49);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0);
+sethex(0x945ae60, 0x83, 0xd1, 0x00, 0x07);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb28, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x09b688de, 3);
+setchar(0x09b67f4e, 1);
+setchar(0x09b6803e, 1);
+setchar(0x09b6806e, 1);
+setchar(0x09b5e2fe, 1);
+setchar(0x09b5e3ee, 1);
+setchar(0x09b5d1de, 0);
+setchar(0x09b5d2fe, 0);
+setchar(0x09b5d32e, 0);
+setchar(0x09b5b4fe, 0);
+setchar(0x09b5b61e, 0);
+setchar(0x09b5725e, 2);
+setchar(0x09b60b0a, 1);
+setchar(0x09b60b09, 21);
+setchar(0x09b60b39, 21);
+setchar(0x09b60b3a, 1);
+setchar(0x09b60bc9, 21);
+setchar(0x09b60bca, 1);
+setchar(0x09b60bf9, 21);
+setchar(0x09b60bfa, 1);
+setchar(0x09b60e0e, 6);
+setchar(0x09b60e3e, 6);
+//cheat setchar(0x09B60E3E, 4);
+setchar(0x09B60E3E, 4);
+//cheat setchar(0x09B60E0E, 4);
+setchar(0x09B60E0E, 4);
+//cheat setchar(0x09B688DE, 1);
+setchar(0x09B688DE, 1);
+setfloat(0x094420C0 + 0x4c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.25);
+setfloat(0x094420C0 + 0x5c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.35);
+setfloat(0x094420C0 + 0x6c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.40);
+setfloat(0x094420C0 + 0x7c, 1);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x945AD90, -.45);
+
+#cheat Floater
+//ID: 9419
+//Score: 72
+//Author: xFinch713x
+//Category: Pimp My Garage
+//Description: A Yakuza Stinger that Looks like a hover Car!
+//
+//Check the Pic
+//
+//It is Damage Proof, Bullet Proof, Explosion Proof, and Fire Proof thnks to vettefan88
+//Image: http://www.freewebs.com/xfinch713x/Cars/Floater.bmp
+//Time: 06/05/2006 19:19:22
+//Working: Yes
+setshort(0x992FF18, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x46, 0x6c, 0x6f, 0x61, 0x74, 0x65, 0x72);
+setchar(0x945c582, 0x7);
+setchar(0x945c581, 0x50);
+setchar(0x945c580, 0x34);
+setshort(0x9443ba0, 250);
+setfloat(0x9443b9c, 0.0000000000000000001);
+setfloat(0x945c500, 900);
+setfloat(0x945c508, 0.825);
+setfloat(0x945c5c4, -1);
+setfloat(0x945c58c, 1.25);
+setfloat(0x945c590, 1.25);
+setfloat(0x945c584, 0.00175);
+setfloat(0x945c5a0, 0.4213);
+setfloat(0x945c5a8, 50);
+setfloat(0x945c5d4, 0.000005);
+setfloat(0x945c5ac, 0.74375);
+setfloat(0x945c5b0, 0.45);
+setfloat(0x945c50c, 0.0);
+sethex(0x945c5d0, 0x90, 0x81, 0x00, 0x00);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb08, 0xFF, 0xFF, 0x00);
+sethex(0x944fb30, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 174);
+sethex(0x8E38A58, FF);
+setchar(0x08b33e32, 1);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat S.O.G.'s Landboat (BF Inj)
+//ID: 9293
+//Score: 73
+//Author: S.O.G.
+//Category: Pimp My Garage
+//Description: This is a strange one. The wheels are invisable, and it's lifted slightly higher that a regualr BF Inj.  All I can say is that you have to try it to understand it.  It's kinda like a hovercar that just hovers, and doesn't fly.  It drives on water too. Enj
+//Image: none
+//Time: 06/05/2006 02:25:31
+//Working: Yes
+setshort(0x992FD86, 0x20, 0x20, 0x20, 0x20, 0x4c, 0x61, 0x6e, 0x64, 0x62, 0x6f, 0x61, 0x74);
+setchar(0x945ad22, 0x4);
+setchar(0x945ad21, 0x44);
+setchar(0x945ad20, 0x34);
+setshort(0x9441df0, 254);
+setfloat(0x9441dec, 0.01);
+setfloat(0x945aca0, 1000);
+setfloat(0x945aca8, 1.0);
+//upper limit
+setfloat(0x945ad60, 0.6);
+//lower limit
+setfloat(0x945ad64, -0.68);
+setfloat(0x945ad68, 0.5);
+setfloat(0x945ad2c, 0.75);
+setfloat(0x945ad30, 0.75);
+setfloat(0x945ad24, 0.002);
+setfloat(0x945ad40, 0.5);
+setfloat(0x945ad44, 0);
+setfloat(0x945ad48, 35);
+//force
+setfloat(0x945ad58, 1.2);
+//damp lvl
+setfloat(0x945ad5c, 0.5);
+setfloat(0x945ad74, 0.38);
+setfloat(0x945ad6c, 0);
+setfloat(0x945acc0, 0);
+setfloat(0x945acc4, 0);
+setfloat(0x945acc8, -0.5);
+setchar(0x945acd0, 80);
+setfloat(0x945ad4c, 1.0);
+setfloat(0x945ad50, 0.5);
+setfloat(0x945acac, 0);
+sethex(0x945ad70, 0x18, 0xa9, 0x00, 0x05);
+sethex(0x944fb44, 0xFF, 0x0D, 0x08);
+sethex(0x944fb50, 0x77, 0x35, 0x39);
+setint(0x8E38AE8, 155);
+setchar(0x8E38B0C, 106, 116);
+sethex(0x8E38B0E, 0x01, 0x00);
+teleport(-789.61, 300.62, 49.05);
+setchar(0x08b33e32, 1);
+
+#cheat Live Tire
+//ID: 9271
+//Score: 527
+//Author: DoteStudios
+//Category: Pimp My Garage
+//Description:  This is a tire that you can drive. Turn on hover mode to use it or else you'll spaz out. It looks like a UFO. For pic go to www.dotestudios.net/gta2.html
+//Image: none
+//Time: 05/05/2006 23:41:17
+//Working: Yes
+setshort(0x992FE9E, 0x4c, 0x69, 0x76, 0x65, 0x20, 0x54, 0x69, 0x72, 0x65);
+setchar(0x945bc22, 0x1);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 3);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 1);
+setfloat(0x945bc60, 0.28);
+setfloat(0x945bc64, -0.07999);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 0.43333);
+setfloat(0x945bc30, 0.43333);
+setfloat(0x945bc24, 0.0032);
+setfloat(0x945bc40, 0.5);
+setfloat(0x945bc44, 0);
+setfloat(0x945bc48, 25);
+setfloat(0x945bc58, 1.6);
+setfloat(0x945bc5c, 0.1);
+setfloat(0x945bc74, 0.2);
+setfloat(0x945bc6c, 0);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.75);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 0);
+sethex(0x945bc70, 0x10, 0x01, 0x00, 0x04);
+sethex(0x944fb54, 0x00, 0x00, 0x00);
+sethex(0x944faf4, 0xDB, 0x0D, 0x08);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 125, 101);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Pimped out rc bandit
+//ID: 8913
+//Score: 13
+//Author: pspman108
+//Category: Pimp My Garage
+//Description: red and jet black!!! Fast put on hover cars for the cool rc sound!!!!!
+//Image: http://www.cheatsync.net/pmg/images/cars/169.jpg
+//Time: 28/04/2006 17:59:00
+//Working: Yes
+setchar(0x945bc22, 0x1);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 0.35);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 1);
+setfloat(0x945bc60, 0.28);
+setfloat(0x945bc64, -0.07999);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 0.43333);
+setfloat(0x945bc30, 0.43333);
+setfloat(0x945bc24, 0.0032);
+setfloat(0x945bc40, 0.5);
+setfloat(0x945bc44, 0);
+setfloat(0x945bc48, 25);
+setfloat(0x945bc58, 1.6);
+setfloat(0x945bc5c, 0.1);
+setfloat(0x945bc74, 0.2);
+setfloat(0x945bc6c, 0);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.75);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 1);
+sethex(0x945bc70, 0x10, 0x00, 0x00, 0x00);
+sethex(0x944fafc, 0xFF, 0x0D, 0x08);
+sethex(0x944fb04, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 103, 105);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat S.O.G.'s Hoverbike
+//ID: 8695
+//Score: 19
+//Author: S.O.G.
+//Category: Pimp My Garage
+//Description: A true hoverbike, it's a black freeway with no wheels, dirty-red exaust, black burnout smoke, no engine sound (because it's a hoverbike) and large red sparks from collisions. It also has a 3-4 foot lift.
+//Image: http://img513.imageshack.us/img513/9999/hoverv14cz.gif
+//Time: 24/04/2006 02:02:21
+//Working: Yes
+setshort(0x993015C, 0x53, 0x4f, 0x47, 0x2d, 0x39, 0x30, 0x30);
+setchar(0x945da22, 0x5);
+setchar(0x945da21, 0x45);
+setchar(0x945da20, 0x52);
+setshort(0x9446f30, 255);
+setfloat(0x9446f2c, 2);
+setfloat(0x945d9a0, 600);
+setfloat(0x945d9a8, 3.33);
+setfloat(0x945da60, 0.6);
+setfloat(0x945da64, -0.6);
+setfloat(0x945da68, 0.5);
+setfloat(0x945da2c, 1.1);
+setfloat(0x945da30, 1.1);
+setfloat(0x945da24, 0.004);
+setfloat(0x945da40, 0.55);
+setfloat(0x945da44, 0);
+setfloat(0x945da48, 40);
+setfloat(0x945da58, 1);
+setfloat(0x945da5c, 0.3);
+setfloat(0x945da74, 0);
+setfloat(0x945da6c, 50);
+setfloat(0x945d9c0, 0);
+setfloat(0x945d9c4, 0);
+setfloat(0x945d9c8, -0.05);
+setchar(0x945d9d0, 103);
+setfloat(0x945da4c, 1);
+setfloat(0x945da50, 0.322);
+setfloat(0x945d9ac, 0.0);
+sethex(0x945da70, 0x03, 0x81, 0x01, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb54, 0x00, 0x00, 0x00);
+sethex(0x944fb4c, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 207);
+setchar(0x8E38A5C, 125, 123);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+sethex(0x967C1FC, 0xFF, 0x20, 0x20);
+sethex(0x967C1F7, 0x41);
+setchar(0x967E790, 0xFF, 0x90, 0x00);
+setchar(0x967E7EA, 0x00);
+//hoverbike by someone other than me
+setfloat(0x08B562E0, 0); 
+setchar(0x09a9f8ba, 100000); 
+setchar(0x09a9f8da, 100000); 
+setchar(0x09a9f8fa, 100000); 
+setchar(0x09a9f91a, 100000); 
+setchar(pcar + 0x00000267, 255) 
+setchar(pcar + 0x000005B0, 0); 
+setchar(pcar + 0x000006CC, 0); 
+setchar(pcar + 0x000006C8, 0); 
+setchar(pcar + 0x000006D4, 0); 
+setchar(pcar + 0x000006D0, 0); 
+setshort(0x99450E2, 0x73, 0x6B,0x79, 0x62, 0x69, 0x6B, 0x65); 
+setchar(0x09a9f8ba, 0x7d); 
+setchar(0x09a9f8da, 0x7d); 
+setchar(0x09a9f8fa, 0x7d); 
+setchar(0x09a9f91a, 0x7d); 
+#off 
+setfloat(0x08B562E0, 1); 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(pcar + 0x00000267, 0) 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+
+
+#cheat True hoverbike
+//ID: 8518
+//Score: 136
+//Author: hioutang
+//Category: Vehicle
+//Description: //An improved hoverbike. Works with all bikes but the best with PCJ-600. This cheat will give you: a hoverbike with no wheels, different driving sound, PCJ-600's will be renamed to SKYBIKE, it won't leave any skidmarks to make it more realistic. Turn on n
+//Image: none
+//Time: 22/04/2006 16:45:31
+//Working: Yes
+setfloat(0x08B562E0, 0); 
+setchar(0x09a9f8ba, 100000); 
+setchar(0x09a9f8da, 100000); 
+setchar(0x09a9f8fa, 100000); 
+setchar(0x09a9f91a, 100000); 
+setchar(pcar + 0x00000267, 255) 
+setchar(pcar + 0x000005B0, 0); 
+setchar(pcar + 0x000006CC, 0); 
+setchar(pcar + 0x000006C8, 0); 
+setchar(pcar + 0x000006D4, 0); 
+setchar(pcar + 0x000006D0, 0); 
+setshort(0x99450E2, 0x73, 0x6B,0x79, 0x62, 0x69, 0x6B, 0x65); 
+setchar(0x09a9f8ba, 0x7d); 
+setchar(0x09a9f8da, 0x7d); 
+setchar(0x09a9f8fa, 0x7d); 
+setchar(0x09a9f91a, 0x7d); 
+#off 
+setfloat(0x08B562E0, 1); 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(pcar + 0x00000267, 0) 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+
+
+#cheat XXX RACER
+//ID: 8509
+//Score: 24
+//Author: GTA LIBERTY CITY
+//Category: Pimp My Garage
+//Description: THE BEST RC TOY U EVER SEEN. USE HOVER CAR MODE AND THEN WATCH IT TRANSFORM  SO TRY IT NOW !!!!!!!!!!!!!!!
+//Image: none
+//Time: 22/04/2006 15:48:51
+//Working: Yes
+setshort(0x992FE9E, 0x58, 0x58, 0x58, 0x20, 0x52, 0x41, 0x43, 0x45, 0x52);
+setchar(0x945bc22, 0x4);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 2.15);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 0.95);
+setfloat(0x945bc60, 0.825);
+setfloat(0x945bc64, -0.07999);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 1.9);
+setfloat(0x945bc30, 1.9);
+setfloat(0x945bc24, 0.0032);
+setfloat(0x945bc40, 0.95);
+setfloat(0x945bc44, 0.9375);
+setfloat(0x945bc48, 25);
+setfloat(0x945bc58, 1.6);
+setfloat(0x945bc5c, 0.19375);
+setfloat(0x945bc74, 1.065);
+setfloat(0x945bc6c, 0);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.75);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 0);
+sethex(0x945bc70, 0xba, 0xe5, 0x00, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb08, 0x00, 0x00, 0x00);
+sethex(0x944fb54, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 106, 125);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+//edited by GTA LIBERTY CITY on 22/04/2006 16:50:33
+
+#cheat Super Cool Magic Spinning Car
+//ID: 7105
+//Score: 12
+//Author: Frazilpop
+//Category: Pimp My Garage
+//Description: It handles auful but drive this car into the sea and prepair for one crazy insane stunt (put hover cars on if you have trouble reaching the sea)
+//Image: none
+//Time: 16/04/2006 19:10:00
+//Working: Yes
+setshort(0x9941808, 0x46, 0x72, 0x61, 0x7a, 0x69, 0x6c, 0x70, 0x6f, 0x70);
+sethex(0x945cf31, 0x01);
+setchar(0x945cee2, 0x5);
+setchar(0x945cee1, 0x44);
+setchar(0x945cee0, 0x34);
+setshort(0x9444e60, 256);
+setfloat(0x9444e5c, 0.77);
+setfloat(0x945ce60, 1);
+setfloat(0x945ce68, 0.45);
+setfloat(0x945cf20, 0.28);
+setfloat(0x945cf24, -0.11999);
+setfloat(0x945cf28, 0.5);
+setfloat(0x945ceec, 1.45);
+setfloat(0x945cef0, 1.45);
+setfloat(0x945cee4, 0.00325);
+setfloat(0x945cf00, 0.5);
+setfloat(0x945cf04, 0);
+setfloat(0x945cf08, 35);
+setfloat(0x945cf18, 1.3125);
+setfloat(0x945cf1c, 0.2);
+setfloat(0x945cf34, 0.25);
+setfloat(0x945cf2c, 0.3);
+setfloat(0x945ce80, 0);
+setfloat(0x945ce84, 0);
+setfloat(0x945ce88, -0.19999);
+setchar(0x945ce90, 20);
+setfloat(0x945cf0c, 0.9);
+setfloat(0x945cf10, 0.47);
+setfloat(0x945ce6c, 0.66667);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb3c, 0x00, 0x00, 0x00);
+sethex(0x944fb38, 0x98, 0x1B, 0x21);
+setint(0x8E38A38, 186);
+setchar(0x8E38A5C, 119, 118);
+sethex(0x8E38A5E, 0x01, 0xFF);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat garage door pipe cool
+//ID: 12058
+//Score: 57
+//Author: psphacker108
+//Category: Player
+//Description: HOver up on a pcj 600 and let this baby fly!!! try it out now.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/doors.jpg
+//Time: 03/06/2006 00:19:06
+//Working: Yes
+moveto(272.15, -422.6, 90); object(0x0211, -0, 0, 90);
+move(1.53, 0.00, -4.7); object(0x0211, -36, 0, 90);
+move(4, 0.00, -2.91); object(0x0211, -72, 0, 90);
+move(4.95, 0.00, -0); object(0x0211, -108, 0, 90);
+move(4, 0.00, 2.91); object(0x0211, -144, 0, 90);
+move(1.53, 0.00, 4.7); object(0x0211, -180, 0, 90);
+move(-1.53, 0.00, 4.7); object(0x0211, -216, 0, 90);
+move(-4, 0.00, 2.91); object(0x0211, -252, 0, 90);
+move(-4.95, 0.00, 0); object(0x0211, -288, 0, 90);
+move(-4, 0.00, -2.91); object(0x0211, -324, 0, 90);
+move(-1.53, 8.5, -4.7); object(0x0211, -0, 0, 90);
+move(1.53, 0.00, -4.7); object(0x0211, -36, 0, 90);
+move(4, 0.00, -2.91); object(0x0211, -72, 0, 90);
+move(4.95, 0.00, -0); object(0x0211, -108, 0, 90);
+move(4, 0.00, 2.91); object(0x0211, -144, 0, 90);
+move(1.53, 0.00, 4.7); object(0x0211, -180, 0, 90);
+move(-1.53, 0.00, 4.7); object(0x0211, -216, 0, 90);
+move(-4, 0.00, 2.91); object(0x0211, -252, 0, 90);
+move(-4.95, 0.00, 0); object(0x0211, -288, 0, 90);
+move(-4, 0.00, -2.91); object(0x0211, -324, 0, 90);
+teleport(272.15, -422.6, 110);
+
+#cheat LEAN MEAN BASEBALL MACHINE!!!!!!!!
+//ID: 11942
+//Score: 57
+//Author: afrojim
+//Category: Pimp My Garage
+//Description: ha ha!! this car is so cool you could get a homerun anyday!! this is a car with baseball bat wheels!!!! and hovers!!! playball!!!!
+//
+//this is not a hoax this really works ~magical trevor
+//
+//EDITED BY: magical trevor on 01/06/06 21:18:32
+//Image: http://img345.imageshack.us/img345/5904/dragon7dy.png
+//Time: 31/05/2006 21:24:56
+//Working: Yes
+setshort(0x99417F4, 0x20, 0x20, 0x20, 0x44, 0x72, 0x61, 0x67, 0x6f, 0x6e);
+setchar(0x945cd02, 0x5);
+setchar(0x945cd01, 0x50);
+setchar(0x945cd00, 0x52);
+setshort(0x943f6e0, 264);
+setfloat(0x943f6dc, 2.10);
+setfloat(0x945cc80, 1400);
+setfloat(0x945cc88, 0.75);
+setfloat(0x945cd40, 0.25);
+setfloat(0x945cd44, -0.0125);
+setfloat(0x945cd48, 0.5);
+setfloat(0x945cd0c, 0.99334);
+setfloat(0x945cd10, 0.99334);
+setfloat(0x945cd04, 0.00438);
+setfloat(0x945cd20, 0.52);
+setfloat(0x945cd24, 0);
+setfloat(0x945cd28, 30);
+setfloat(0x945cd38, 1);
+setfloat(0x945cd3c, 0.2);
+setfloat(0x945cd54, 0.645);
+setfloat(0x945cd4c, 0.3);
+setfloat(0x945cca0, 0);
+setfloat(0x945cca4, -0.19999);
+setfloat(0x945cca8, -0.14999);
+setchar(0x945ccb0, 70);
+setfloat(0x945cd2c, 0.86);
+setfloat(0x945cd30, 0.48);
+setfloat(0x945cc8c, 0.77143);
+sethex(0x945cd50, 0x02, 0x21, 0x00, 0x04);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb5c, 0x34, 0x66, 0xE4);
+sethex(0x944fb44, 0x34, 0x66, 0xE4);
+setint(0x8E38A38, 130);
+setchar(0x8E38A5C, 127, 121);
+sethex(0x8E38A5E, 0x01, 0xFF);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat hove bike
+//ID: 11911
+//Score: 78
+//Author: .::gunter::.
+//Category: Vehicle
+//Description: true hover bike
+//Image: none
+//Time: 31/05/2006 14:05:16
+//Working: Yes
+setshort(0x99450E2, 0x20, 0x20, 0x20, 0x74, 0x69, 0x62, 0x6f);
+setchar(0x945d482, 0x5);
+setchar(0x945d481, 0x50);
+setchar(0x945d480, 0x52);
+setshort(0x9446c10, 255);
+setfloat(0x9446c0c, 1.00);
+setfloat(0x945d400, 500);
+setfloat(0x945d408, 1.6);
+setfloat(0x945d4c0, 1000);
+setfloat(0x945d4c4, -0.15999);
+setfloat(0x945d4c8, 0.5);
+setfloat(0x945d48c, 0.97867);
+setfloat(0x945d490, 0.97867);
+setfloat(0x945d484, 0.004);
+setfloat(0x945d4a0, 0.5);
+setfloat(0x945d4a4, 0);
+setfloat(0x945d4a8, 35);
+setfloat(0x945d4b8, 10);
+setfloat(0x945d4bc, 10);
+setfloat(0x945d4d4, 0);
+setfloat(0x945d4cc, 0);
+setfloat(0x945d420, 0);
+setfloat(0x945d424, 0.05);
+setfloat(0x945d428, -0.08999);
+setchar(0x945d430, 103);
+setfloat(0x945d4ac, 0.9);
+setfloat(0x945d4b0, 0.48);
+setfloat(0x945d40c, 0.6);
+sethex(0x945d4d0, 0x02, 0x01, 0x01, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb10, 0xFF, 0xFF, 0x00);
+sethex(0x944fb1c, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 205);
+setchar(0x8E38A5C, 108, 111);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Audi-RSQ
+//ID: 11894
+//Score: 147
+//Author: DoteStudios
+//Category: Pimp My Garage
+//Description:  This is the car from I Robot! Turn on hover cars,lambo doors, and if you want to all cars are chrome.
+//Image: none
+//Time: 31/05/2006 05:31:14
+//Working: Yes
+setshort(0x9930094, 0x41, 0x75, 0x64, 0x69, 0x2d, 0x52, 0x53, 0x51);
+setchar(0x945cfd2, 0x5);
+setchar(0x945cfd1, 0x50);
+setchar(0x945cfd0, 0x52);
+setshort(0x9444ff0, 250);
+setfloat(0x9444fec, 0);
+setfloat(0x945cf50, 1500);
+setfloat(0x945cf58, 0.75);
+setfloat(0x945d010, 0.05);
+setfloat(0x945d014, -0.16);
+setfloat(0x945d018, 0.45);
+setfloat(0x945cfdc, 1.07);
+setfloat(0x945cfe0, 1.07);
+setfloat(0x945cfd4, 0.0024);
+setfloat(0x945cff0, 0.58);
+setfloat(0x945cff4, 0);
+setfloat(0x945cff8, 30);
+setfloat(0x945d008, 1);
+setfloat(0x945d00c, 0.13);
+setfloat(0x945d024, 0.15);
+setfloat(0x945d01c, 0.3);
+setfloat(0x945cf70, 0);
+setfloat(0x945cf74, -0.14999);
+setfloat(0x945cf78, -0.19999);
+setchar(0x945cf80, 70);
+setfloat(0x945cffc, 0.9);
+setfloat(0x945d000, 0.48);
+setfloat(0x945cf5c, 0);
+sethex(0x945d020, 0x80, 0x80, 0x00, 0x04);
+sethex(0x944fb38, 0xFF, 0xFF, 0x00);
+sethex(0x944fafc, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 187);
+setchar(0x8E38A5C, 102, 102);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Useless Police Vehicles
+//ID: 11698
+//Score: 28
+//Author: Spwngebob
+//Category: Pimp My Garage
+//Description: All the wheels have been stolen. So now No-One can drive the cars. (Unless you use the Hover Cars cheat)
+//Image: none
+//Time: 28/05/2006 22:06:32
+//Working: Yes
+//Police
+setshort(0x992FDA0, 0x20, 0x20, 0x20, 0x20, 0x20, 0x3f);
+setchar(0x945ae12, 0x5);
+setchar(0x945ae11, 0x50);
+setchar(0x945ae10, 0x34);
+setshort(0x9442110, 251);
+setfloat(0x944210c, 0);
+setfloat(0x945ad90, 1600);
+setfloat(0x945ad98, 0.75);
+setfloat(0x945ae50, 0.28);
+setfloat(0x945ae54, -0.16999);
+setfloat(0x945ae58, 0.55);
+setfloat(0x945ae1c, 0.97333);
+setfloat(0x945ae20, 0.97333);
+setfloat(0x945ae14, 0.001);
+setfloat(0x945ae30, 0.53);
+setfloat(0x945ae34, 0);
+setfloat(0x945ae38, 35);
+setfloat(0x945ae48, 1.1);
+setfloat(0x945ae4c, 0.12);
+setfloat(0x945ae64, 0.2);
+setfloat(0x945ae5c, 0);
+setfloat(0x945adb0, 0);
+setfloat(0x945adb4, 0.15);
+setfloat(0x945adb8, -0.24999);
+setchar(0x945adc0, 75);
+setfloat(0x945ae3c, 0.85);
+setfloat(0x945ae40, 0.51);
+setfloat(0x945ad9c, 0.3);
+sethex(0x945ae60, 0x02, 0x90, 0x00, 0x00);
+sethex(0x944fb24, 0xFF, 0xFF, 0x00);
+sethex(0x944fb40, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+//Enforcer
+setshort(0x992FDAE, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x3f);
+setchar(0x945af02, 0x5);
+setchar(0x945af01, 0x44);
+setchar(0x945af00, 0x34);
+setshort(0x94422a0, 255);
+setfloat(0x944229c, 0);
+setfloat(0x945ae80, 5000);
+setfloat(0x945ae88, 0.65);
+setfloat(0x945af40, 0.3);
+setfloat(0x945af44, -0.17999);
+setfloat(0x945af48, 0.5);
+setfloat(0x945af0c, 0.72133);
+setfloat(0x945af10, 0.72133);
+setfloat(0x945af04, 0.00096);
+setfloat(0x945af20, 0.45);
+setfloat(0x945af24, 0);
+setfloat(0x945af28, 27);
+setfloat(0x945af38, 0.7);
+setfloat(0x945af3c, 0.08);
+setfloat(0x945af54, 0.32);
+setfloat(0x945af4c, 0);
+setfloat(0x945aea0, 0);
+setfloat(0x945aea4, 0);
+setfloat(0x945aea8, -0.19999);
+setchar(0x945aeb0, 85);
+setfloat(0x945af2c, 0.7);
+setfloat(0x945af30, 0.46);
+setfloat(0x945ae8c, 0.024);
+sethex(0x945af50, 0x27, 0x00, 0x00, 0x00);
+sethex(0x944fb44, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+//Rhino
+setshort(0x992FDFE, 0x20, 0x20, 0x20, 0x20, 0x3f);
+setchar(0x945b2c2, 0x4);
+setchar(0x945b2c1, 0x44);
+setchar(0x945b2c0, 0x34);
+setshort(0x94428e0, 255);
+setfloat(0x94428dc, 0);
+setfloat(0x945b240, 25000);
+setfloat(0x945b248, 1);
+setfloat(0x945b300, 0.3);
+setfloat(0x945b304, -0.14999);
+setfloat(0x945b308, 0.5);
+setfloat(0x945b2cc, 0.52133);
+setfloat(0x945b2d0, 0.52133);
+setfloat(0x945b2c4, 0.0016);
+setfloat(0x945b2e0, 0.5);
+setfloat(0x945b2e4, 0);
+setfloat(0x945b2e8, 35);
+setfloat(0x945b2f8, 1);
+setfloat(0x945b2fc, 0.05);
+setfloat(0x945b314, 1.12);
+setfloat(0x945b30c, 0);
+setfloat(0x945b260, 0);
+setfloat(0x945b264, 0);
+setfloat(0x945b268, -0.49999);
+setchar(0x945b270, 90);
+setfloat(0x945b2ec, 0.8);
+setfloat(0x945b2f0, 0.5);
+setfloat(0x945b24c, 0.0072);
+sethex(0x945b310, 0x03, 0x40, 0x00, 0x00);
+sethex(0x944fb54, 0xFF, 0xFF, 0x00);
+sethex(0x944fb28, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+//FBI Cruiser
+setshort(0x992FD0C, 0x55, 0x73, 0x65, 0x6c, 0x65, 0x73, 0x73, 0x20, 0x43, 0x61, 0x72);
+setchar(0x945a692, 0x5);
+setchar(0x945a691, 0x50);
+setchar(0x945a690, 0x52);
+setshort(0x9441300, 251);
+setfloat(0x94412fc, 0);
+setfloat(0x945a610, 1600);
+setfloat(0x945a618, 0.85);
+setfloat(0x945a6d0, 0.28);
+setfloat(0x945a6d4, -0.11999);
+setfloat(0x945a6d8, 0.5);
+setfloat(0x945a69c, 0.97333);
+setfloat(0x945a6a0, 0.97333);
+setfloat(0x945a694, 0.002);
+setfloat(0x945a6b0, 0.53);
+setfloat(0x945a6b4, 0);
+setfloat(0x945a6b8, 35);
+setfloat(0x945a6c8, 1.2);
+setfloat(0x945a6cc, 0.12);
+setfloat(0x945a6e4, 0.2);
+setfloat(0x945a6dc, 0);
+setfloat(0x945a630, 0);
+setfloat(0x945a634, 0);
+setfloat(0x945a638, -0.11999);
+setchar(0x945a640, 75);
+setfloat(0x945a6bc, 0.85);
+setfloat(0x945a6c0, 0.5);
+setfloat(0x945a61c, 0.3);
+sethex(0x945a6e0, 0x02, 0x80, 0x00, 0x00);
+sethex(0x944fb4c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb24, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+//Barracks OL
+setshort(0x992FE22, 0x42, 0x6f, 0x6f, 0x20, 0x48, 0x69, 0x73, 0x73, 0x21, 0x21, 0x21);
+setchar(0x945b3b2, 0x5);
+setchar(0x945b3b1, 0x44);
+setchar(0x945b3b0, 0x34);
+setshort(0x9445180, 255);
+setfloat(0x944517c, 0);
+setfloat(0x945b330, 10500);
+setfloat(0x945b338, 0.65);
+setfloat(0x945b3f0, 0.47);
+setfloat(0x945b3f4, -0.16999);
+setfloat(0x945b3f8, 0.5);
+setfloat(0x945b3bc, 0.612);
+setfloat(0x945b3c0, 0.612);
+setfloat(0x945b3b4, 0.0008);
+setfloat(0x945b3d0, 0.4);
+setfloat(0x945b3d4, 0);
+setfloat(0x945b3d8, 27);
+setfloat(0x945b3e8, 1.2);
+setfloat(0x945b3ec, 0.05);
+setfloat(0x945b404, 0.62);
+setfloat(0x945b3fc, 0);
+setfloat(0x945b350, 0);
+setfloat(0x945b354, 0);
+setfloat(0x945b358, 0);
+setchar(0x945b360, 90);
+setfloat(0x945b3dc, 0.7);
+setfloat(0x945b3e0, 0.47);
+setfloat(0x945b33c, 0.04952);
+sethex(0x945b400, 0x22, 0x60, 0x00, 0x00);
+sethex(0x944fb00, 0xFF, 0xFF, 0x00);
+sethex(0x944fb4c, 0xFF, 0x00, 0xFF);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Glass Vert Ramp (tested)
+//ID: 11623
+//Score: 52
+//Author: V.
+//Category: Location Mods
+//Description: This is a glass vert ramp it reach it you need  a bike than turn on hover cars and fly upwards...watch out this will break if you hit into it  hard..
+//The aim is to drive up the vert ramp than when coming down hit into the ramp causeing it to smash
+//Image: http://www.cheatsync.net/tools/mkobj/const_hpipe_glass.jpg
+//Time: 28/05/2006 10:09:19
+//Working: Yes
+moveto(272.15, -422.6, 90); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+move(-31.56, 5, -0); object(0x0CDB, -0, 0, 90);
+move(0.77, 0.00, -4.88); object(0x0CDB, -18, 0, 90);
+move(2.24, 0.00, -4.4); object(0x0CDB, -36, 0, 90);
+move(3.49, 0.00, -3.49); object(0x0CDB, -54, 0, 90);
+move(4.4, 0.00, -2.24); object(0x0CDB, -72, 0, 90);
+move(4.88, 0.00, -0.77); object(0x0CDB, -90, 0, 90);
+move(4.88, 0.00, 0.77); object(0x0CDB, -108, 0, 90);
+move(4.4, 0.00, 2.24); object(0x0CDB, -126, 0, 90);
+move(3.49, 0.00, 3.49); object(0x0CDB, -144, 0, 90);
+move(2.24, 0.00, 4.4); object(0x0CDB, -162, 0, 90);
+move(0.77, 0.00, 4.88); object(0x0CDB, -180, 0, 90);
+
+#cheat Bum Flyer
+//ID: 11620
+//Score: 347
+//Author: Rayvinmaasta
+//Category: Vehicle
+//Description: LOL... Magic Carpet... bum style
+//
+//Edit: Best if used on Hover Cars mode...so please enable Hover Cars first..
+//Image: http://img97.imageshack.us/img97/6909/screen19ec.png
+//Time: 28/05/2006 05:31:02
+//Working: Yes
+setchar(0x945bc22, 0x6);
+setchar(0x945bc21, 0x50);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 2.40);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 1.475);
+setfloat(0x945bc60, 0.625);
+setfloat(0x945bc64, -0.07999);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 1.975);
+setfloat(0x945bc30, 1.975);
+setfloat(0x945bc24, 0.01);
+setfloat(0x945bc40, 0.5);
+setfloat(0x945bc44, 0);
+setfloat(0x945bc48, 46.25);
+setfloat(0x945bc58, 1.6);
+setfloat(0x945bc5c, 0.1);
+setfloat(0x945bc74, 0.2);
+setfloat(0x945bc6c, 0.65);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.5);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 1);
+sethex(0x945bc70, 0x93, 0xa0, 0x01, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb28, 0x00, 0x00, 0x00);
+sethex(0x944fb38, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 114, 118);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat aston martin v12- james bond car!!
+//ID: 11164
+//Score: 101
+//Author: kly45
+//Category: Pimp My Garage
+//Description: Its the aston martin v12 james bond car!!
+//works well with cheats like invisible car hover car, and all cars drive on water just so it can be a true bond car..
+//
+//edited by magical trev: PIMP MY GARAGE!! NOT THE VEHICLE SECTION!
+//
+//EDITED BY: magical trev
+//Image: file:///Volumes/KYLES%20PSP/PSP/PHOTO/screen2.bmp
+//Time: 22/05/2006 16:20:58
+//Working: Yes
+setshort(0x992FC0E, 0x20, 0x61, 0x6d, 0x20, 0x56, 0x31, 0x32);
+setchar(0x9459972, 0x5);
+setchar(0x9459971, 0x50);
+setchar(0x9459970, 0x52);
+setshort(0x943fb90, 254);
+setfloat(0x943fb8c, 0.7);
+setfloat(0x94598f0, 1400);
+setfloat(0x94598f8, 0.75);
+setfloat(0x94599b0, 0.25);
+setfloat(0x94599b4, -0.09999);
+setfloat(0x94599b8, 0.5);
+setfloat(0x945997c, 0.99334);
+setfloat(0x9459980, 0.99334);
+setfloat(0x9459974, 0.004);
+setfloat(0x9459990, 0.52);
+setfloat(0x9459994, 0);
+setfloat(0x9459998, 30);
+setfloat(0x94599a8, 1);
+setfloat(0x94599ac, 0.2);
+setfloat(0x94599c4, 0.4);
+setfloat(0x94599bc, 0.425);
+setfloat(0x9459910, 0);
+setfloat(0x9459914, -0.19999);
+setfloat(0x9459918, -0.23999);
+setchar(0x9459920, 70);
+setfloat(0x945999c, 0.86);
+setfloat(0x94599a0, 0.48);
+setfloat(0x94598fc, 0.77143);
+sethex(0x94599c0, 0x06, 0x81, 0x00, 0x04);
+sethex(0x944fb50, 0x65, 0x66, 0x6B);
+sethex(0x944fb14, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 133);
+setchar(0x8E38A5C, 124, 109);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Rumpo in wheeles
+//ID: 11150
+//Score: 130
+//Author: deanoyabbadabba
+//Category: Vehicle
+//Description: Must: Put hover cheat on fly somwhere high (must be in rumpo) away from buildings then turn on then the rumpo is in wheeles see pic
+//Image: http://img106.imageshack.us/img106/5523/rumpoinwheeles9ha.gif
+//Time: 22/05/2006 09:25:06
+//Working: Yes
+setfloat(0x0944323C, 30);
+//OFF
+setfloat(0x0944323C, 0.7);
+
+#cheat All cars in Staunton garage are flyable deloreans
+//ID: 10767
+//Score: 172
+//Author: vettefan88
+//Category: Garage Codes
+//Description: This will make every car in your staunton garage a delorean, and automatcally capable of flying even without hover cars.
+//Image: none
+//Time: 17/05/2006 23:58:21
+//Working: Yes
+setint(0x8E38A38, 187);
+setchar(0x8E38A5C, 13, 0);
+setint(0x8E38A90, 187);
+setchar(0x8E38AB4, 13, 0);
+setint(0x8E38A64, 187);
+setchar(0x8E38A88, 13, 0);
+setfloat(0x8E38A3C, 301, -426.5, 26, 0);
+setfloat(0x8E38A68, 297.5, -426.5, 26, 0);
+setfloat(0x8E38A94, 294, -426.5, 26, 0);
+
+#cheat Sumg World
+//ID: 10448
+//Score: 64
+//Author: pspboy
+//Category: Environment
+//Description: The world looks as if smug is here. durty air and pollution. use in hovercar mode
+//Image: none
+//Time: 14/05/2006 18:28:10
+//Working: Yes
+setchar(0x08b5e090, 860, 533);
+
+#cheat Neon Glow World
+//ID: 10447
+//Score: 178
+//Author: pspboy
+//Category: Environment
+//Description: Neon glow world. best in hovercar mode
+//Image: none
+//Time: 14/05/2006 18:25:16
+//Working: Yes
+setchar(0x08b5e090, 458, 466);
+
+#cheat Blue Glow World
+//ID: 10446
+//Score: 64
+//Author: pspboy
+//Category: Environment
+//Description: The world glows blue! best in hover car mode.
+//Image: none
+//Time: 14/05/2006 18:24:29
+//Working: Yes
+setchar(0x08b5e090, 460, 899);
+
+#cheat killE.R.
+//ID: 10080
+//Score: 37
+//Author: Haddenjms
+//Category: Pimp My Garage
+//Description: when your hit by this you go 2 the ER and u dont come back and youve been killed! Complete with invisi-rotating bumper, front trunk and roof. It flies like an airplane but works even better with hover car IS A MUST HAVE! Download now!
+//Image: none
+//Time: 11/05/2006 22:35:46
+//Working: Yes
+setshort(0x99417F4, 0x20, 0x20, 0x20, 0x4b, 0x49, 0x4c, 0x4c, 0x45, 0x52);
+setchar(0x945cd02, 0x6);
+setchar(0x945cd01, 0x45);
+setchar(0x945cd00, 0x34);
+setshort(0x943f6e0, 254);
+setfloat(0x943f6dc, 1.375);
+setfloat(0x945cc80, 1400);
+setfloat(0x945cc88, 0.75);
+setfloat(0x945cd40, 0.4875);
+setfloat(0x945cd44, -0.0125);
+setfloat(0x945cd48, 0.5);
+setfloat(0x945cd0c, 1.125);
+setfloat(0x945cd10, 1.125);
+setfloat(0x945cd04, 0.00475);
+setfloat(0x945cd20, 0.52);
+setfloat(0x945cd24, 0.3);
+setfloat(0x945cd28, 31.875);
+setfloat(0x945cd38, 1);
+setfloat(0x945cd3c, 0.33125);
+setfloat(0x945cd54, 0.57);
+setfloat(0x945cd4c, 0.3);
+setfloat(0x945cca0, 0);
+setfloat(0x945cca4, -0.19999);
+setfloat(0x945cca8, -0.14999);
+setchar(0x945ccb0, 70);
+setfloat(0x945cd2c, 0.86);
+setfloat(0x945cd30, 0.48);
+setfloat(0x945cc8c, 1.5);
+sethex(0x945cd50, 0xab, 0xe7, 0x02, 0x04);
+sethex(0x944fb24, 0x77, 0x35, 0x39);
+sethex(0x944fb10, 0x77, 0x35, 0x39);
+setint(0x8E38988, 130);
+setchar(0x8E389AC, 113, 108);
+sethex(0x8E389AE, 0x01, 0xFF);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Yazuka Hovercar
+//ID: 10002
+//Score: 22
+//Author: rick
+//Category: Pimp My Garage
+//Description: A car that is not purly made from pmg, the extra codes were added in by me, but not made by me, and please rate this it is an awsome vehicle! The haven x hova was based off of this, because I helped create it!
+//Image: none
+//Time: 11/05/2006 00:54:14
+//Working: Yes
+// By Rick
+setshort(0x992FF18, 0x59, 0x61, 0x6b, 0x75, 0x7a, 0x61, 0x20, 0x48, 0x6f, 0x76, 0x61, 0x63, 0x61, 0x72);
+sethex(0x945c5d1, 0x01);
+setchar(0x967E6FC, 0x00, 0x88, 0xFF);
+setchar(0x967E824, 0xFF, 0x00, 0x00);
+setchar(0x945c580, 0x34);
+setshort(0x9443ba0, 250);
+setfloat(0x9443b9c, 0);
+setfloat(0x945c500, 1400);
+setfloat(0x945c508, 1.85);
+setfloat(0x945c5c0, 0.55);
+setfloat(0x945c5c4, -1);
+setfloat(0x945c5c8, 0.5);
+setfloat(0x945c58c, 1.225);
+setfloat(0x945c590, 1.225);
+setfloat(0x945c584, 0.00562);
+setfloat(0x945c5a0, 0.5);
+setfloat(0x945c5a4, 0);
+setfloat(0x945c5a8, 30);
+setfloat(0x945c5b8, 1.4);
+setfloat(0x945c5bc, 0.25625);
+setfloat(0x945c5d4, 0.25);
+setfloat(0x945c5cc, 0.3);
+setfloat(0x945c520, 0);
+setfloat(0x945c524, -0.19999);
+sethex(0x967E6A5, 40, 1C, 47, CD, CC, CC, 3D, 0A, D7, A3, 3B, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 01, 00, 60, 00, F6, FF, FF, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, A6, 9B, 44, BB, 60, 00, 00, 00, D0, 07, 00, 00, CD, CC, CC, 3D, 8F, C2, F5, 3C, 42, 60, 65, 3C, 02, 00, 00, 00, 00, 00, 00, 00, 00, 00, 80, 3F, 00, 00, 00, 00, 96, 91, 32, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 00, 9C, 7C, B7, 08, 00, 00, 00, 00, 0F);
+setchar(0x945c530, 75);
+setfloat(0x945c5ac, 0.8);
+setfloat(0x945c5b0, 0.53);
+setfloat(0x945c50c, 0);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF)
+setint(0x8E38A38, 174);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+setchar(0x08b33e32, 1);
+#off
+setchar(0x08b33e32, 0);
+
+#cheat Haven X Hova Car
+//ID: 9996
+//Score: 194
+//Author: mz8691
+//Category: Pimp My Garage
+//Description: The Haven X is a hova car made way before the hover car cheat was made.it's the first of its kind.real fast and a real nice car color!..
+//more more info/pics:
+//http://www.cheatsync.net/forum/viewtopic.php?t=399&highlight=haven
+//Image: http://i41.photobucket.com/albums/e296/mz8691/7d4fcce1.jpg
+//Time: 10/05/2006 20:55:56
+//Working: Yes
+// By MZ8691
+// help from rick
+setshort(0x992FCE8, 0x48, 0x65, 0x76, 0x65, 0x6e, 0x2a, 0x58);
+sethex(0x945a501, 0x01);
+setchar(0x945a4b2, 0x5);
+setchar(0x945a4b1, 0x50);
+setchar(0x945a4b0, 0x34);
+setshort(0x9440fe0, 250);
+setfloat(0x9440fdc, 0);
+setfloat(0x945a430, 1200);
+setfloat(0x945a438, 0.8);
+setfloat(0x945a4f0, 0.1);
+setfloat(0x945a4f4, -1);
+setfloat(0x945a4f8, 0.5);
+setfloat(0x945a4bc, 1.06534);
+setfloat(0x945a4c0, 1.06534);
+setfloat(0x945a4b4, 0.0024);
+setfloat(0x945a4d0, 0.48);
+setfloat(0x945a4d4, 0);
+setfloat(0x945a4d8, 35);
+setfloat(0x945a4e8, 0.8);
+setfloat(0x945a4ec, 0.2);
+setfloat(0x945a504, 0.4);
+setfloat(0x945a4fc, 0.6);
+setfloat(0x945a450, 0);
+setfloat(0x945a454, -0.19999);
+setfloat(0x945a458, -0.24999);
+setchar(0x945a460, 70);
+setfloat(0x945a4dc, 0.9);
+setfloat(0x945a4e0, 0.5);
+setfloat(0x945a43c, 0.9);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb14, 0x82, 0xFE, 0xFE);
+sethex(0x944fb44, 0x82, 0xFE, 0xFE);
+setint(0x8E38A38, 146);
+setchar(0x8E38A5C, 109, 121);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat ghost rider!
+//ID: 15945
+//Score: 19
+//Author: shano-02
+//Category: Pimp My Garage
+//Description: pimped freeway made 2 look like a famous marvel supervillans motorbike it hovers with orange exhaust works best with flamingwheels cheat. handelings pretty good 2!
+//Image: none
+//Time: 04/08/2006 00:29:12
+//Working: Yes
+//created by shano-02.
+//created by using pmgp.
+setchar(0x945da22, 0x4);
+setchar(0x945da21, 0x50);
+setchar(0x945da20, 0x46);
+setshort(0x9446f30, 254);
+setfloat(0x9446f2c, 1.01400);
+setfloat(0x945d9a0, 800);
+setfloat(0x945d9a8, 1.22000);
+setfloat(0x945da60, 0.96400);
+setfloat(0x945da64, -0.74700);
+setfloat(0x945da68, 0.55000);
+setfloat(0x945da2c, 1.08067);
+setfloat(0x945da30, 1.08067);
+setfloat(0x945da24, 0.00395);
+setfloat(0x945da40, 0.60000);
+setfloat(0x945da44, 0.45000);
+setfloat(0x945da48, 38.00000);
+setfloat(0x945da58, 1.11750);
+setfloat(0x945da5c, 0.25000);
+setfloat(0x945da74, 1.05600);
+setfloat(0x945da6c, 0.45500);
+setfloat(0x945d9c0, 0.00000);
+setfloat(0x945d9c4, 0.10000);
+setfloat(0x945d9c8, 0.00000);
+setfloat(0x945da4c, 0.82000);
+setfloat(0x945da50, 0.53550);
+setfloat(0x945d9ac, 0.40000);
+sethex(0x945da70, 0x93, 0xa1, 0x01, 0x00);
+sethex(0x967E6FC, 0xFF, 0x10, 0x00);
+sethex(0x944faf0, 0x00, 0x00, 0x00);
+sethex(0x944faf4, 0xff, 0x00, 0xff);
+setint(0x8E38A38, 207);
+setchar(0x8E38A5C, 100, 101);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat  Star Wars Hovering Bike
+//ID: 15938
+//Score: 105
+//Author: Hugo Eduardo
+//Category: Vehicle
+//Description: Can hover, faster than a flying car!!!!!
+//Try it please!!!!
+//put gravity on 1 and rocket in 2
+//Image: none
+//Time: 03/08/2006 21:22:28
+//Working: Yes
+setfloat(0x08B562E0, 0);
+
+#cheat Star Wars Speeder Bike 2!!!
+//ID: 15887
+//Score: 60
+//Author: scarfield
+//Category: Pimp My Garage
+//Description: A better made bike than I made last time. It has a great GLOWING GREEN paintjob, fast speeds, a blazing accel.
+//
+//Turn on Hover Cars!!!
+//Image: http://img392.imageshack.us/my.php?image=video3mp6.gif
+//Time: 03/08/2006 02:31:17
+//Working: Yes
+setshort(0x993016C, 0x53, 0x70, 0x65, 0x65, 0x64, 0x65, 0x72);
+setchar(0x945d662, 0x14);
+setchar(0x945d661, 0x45);
+setchar(0x945d660, 0x34);
+setfloat(0x94473dc, 0);
+setfloat(0x945d6a4, -0.025);
+setfloat(0x945d66c, 1.3);
+setfloat(0x945d670, 1.3);
+setfloat(0x945d664, 0.0055);
+setfloat(0x945d5ec, 0);
+sethex(0x945d6b0, 0x03, 0x81, 0x11, 0x06);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fb24, 0x05, 0xFF, 0x00);
+sethex(0x944faf8, 0x05, 0xFF, 0x00);
+setint(0x8E38A38, 210);
+setchar(0x8E38A5C, 113, 102);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Star Wars Environment
+//ID: 15851
+//Score: 57
+//Author: Hugo Eduardo
+//Category: Pimp My Garage
+//Description: ENJOY!!
+//HOVERING VEHICLES!!
+//COOL COLOR ENVIRONMENT!!
+//AND A LOT MORE!!!
+//NOTE: WHEN YOU RIDE A CAR IT WILL GO INMEDIATLY UP, BEWARE THE FAAAAAAALS!!!!
+//THIS CHEAT CAMES WITH A SPACE SHIP!!
+//Image: none
+//Time: 01/08/2006 23:49:39
+//Working: Yes
+setchar(0x945b0e1, 0x44);
+setfloat(0x945b120, 5);
+setfloat(0x945b124, 5);
+setfloat(0x945b0e4, 0.009);
+setfloat(0x945b11c, 0.03125);
+setchar(0x945b090, 27);
+setfloat(0x945b10c, 0.86875);
+setfloat(0x945b110, 0.5025);
+sethex(0x945b130, 0x83, 0xe1, 0x02, 0x00);
+setchar(0x967E6FC, 0xFF, 0xFF, 0x00);
+sethex(0x944fb2c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb14, 0xA2, 0xAF, 0xC8);
+setint(0x8E38A38, 160);
+setchar(0x8E38A5C, 115, 109);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Flying RC Bandit
+//ID: 15741
+//Score: 34
+//Author: Hiddos
+//Category: Pimp My Garage
+//Description: My first PMGP-Car is a flying RC Bandit, without wheels..
+//
+//-To get it out of the garage Activate Hover Cars, then fly out, Deactivate Hover Cars and happy flying!-
+//Image: http://i59.photobucket.com/albums/g285/Hiddos/GTA/FlyingRCBandit.jpg
+//Time: 31/07/2006 14:50:58
+//Working: Yes
+setchar(0x945bc22, 0x1);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x34);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 0.35000);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 1.00000);
+setfloat(0x945bc60, 0.28000);
+setfloat(0x945bc64, 0.00000);
+setfloat(0x945bc68, 0.50000);
+setfloat(0x945bc2c, 0.76333);
+setfloat(0x945bc30, 0.76333);
+setfloat(0x945bc24, 0.00390);
+setfloat(0x945bc40, 0.50000);
+setfloat(0x945bc44, 0.00000);
+setfloat(0x945bc48, 25.00000);
+setfloat(0x945bc58, 1.60250);
+setfloat(0x945bc5c, 0.10000);
+setfloat(0x945bc74, 1.20000);
+setfloat(0x945bc6c, 0.00000);
+setfloat(0x945bbc0, 0.00000);
+setfloat(0x945bbc4, 0.00000);
+setfloat(0x945bbc8, -0.29999);
+setfloat(0x945bc4c, 0.75000);
+setfloat(0x945bc50, 0.48000);
+setfloat(0x945bbac, 0.00000);
+sethex(0x945bc70, 0x10, 0x81, 0x02, 0x00);
+sethex(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944faf4, 0x00, 0x00, 0x73);
+sethex(0x944faf0, 0x00, 0x00, 0xaa);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 101, 100);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat 3300 - Satanic Coach
+//ID: 15594
+//Score: 31
+//Author: rob_obrien2@hotmail.com
+//Category: Pimp My Garage
+//Description: A Black Coach  that Hovers a few feet off the ground and Has no wheels. real "Heavy metal rockstar tour bus" appearance. see picture.
+//Image: http://www.freewebs.com/crocodilius/3300.jpg
+//Time: 28/07/2006 12:41:19
+//Working: Yes
+setshort(0x992FE66, 0x20, 0x33, 0x33, 0x30, 0x30);
+setshort(0x9442d90, 256);
+setfloat(0x9442d8c, -0.1);
+setfloat(0x945b7e0, 10000);
+setfloat(0x945b8a4, -1.10);
+setfloat(0x945b86c, 0.8);
+setfloat(0x945b870, 0.8);
+setfloat(0x945b7ec, 0.000000);
+sethex(0x945b8b0, 0x40, 0xc1, 0x00, 0x04);
+setchar(0x967E6FC, 0xFF, 0xFF, 0x00);
+sethex(0x944fb40, 0x00, 0x00, 0x00);
+sethex(0x944fb24, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 165);
+setchar(0x8E38A5C, 120, 113);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat hover harley ( bike )
+//ID: 15521
+//Score: 21
+//Author: acerjak
+//Category: Pimp My Garage
+//Description: this bike hovers on its own without the hover cheat!!!!!      great speeds and handling. 1 off the first hover bikes made... plus leaves no skid marks to make it more realistic!!!
+//Image: http://img74.imageshack.us/my.php?image=screen1wx4.png
+//Time: 26/07/2006 14:53:01
+//Working: Yes
+setchar(0x945d932, 0x5);
+setshort(0x94470c0, 250);
+setfloat(0x94470bc, 2.40);
+setfloat(0x945d970, 0.975);
+setfloat(0x945d974, 0);
+setfloat(0x945d93c, 1.65);
+setfloat(0x945d940, 1.65);
+setfloat(0x945d934, 0.0085);
+setfloat(0x945d950, 0.9125);
+setfloat(0x945d958, 40.625);
+setfloat(0x945d968, 1.90625);
+setfloat(0x945d96c, 0.5);
+setfloat(0x945d95c, 1);
+setfloat(0x945d960, 0.46125);
+setfloat(0x945d8bc, 0);
+sethex(0x945d980, 0x83, 0x81, 0x01, 0x01);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb50, 0xFF, 0xFF, 0x00);
+sethex(0x944fb14, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 208);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat SkyPed - HoverBike Moped
+//ID: 15254
+//Score: 40
+//Author: rob_obrien2@hotmail.com
+//Category: Pimp My Garage
+//Description: A Very Simple Mod - a White Moped that Hovers. Can still do normal stuff like wheelie's. Apologies to all  that the name says "piagio" - the bike was originally intended to just be a slightly quicker but stll driveable moped. i done something wrong and...
+//Image: http://www.freewebs.com/crocodilius/skyped%203.bmp
+//Time: 22/07/2006 09:54:51
+//Working: Yes
+setshort(0x993014E, 0x50, 0x69, 0x61, 0x67, 0x69, 0x6f);
+setchar(0x945d572, 0x4);
+setchar(0x945d571, 0x44);
+setchar(0x945d570, 0x34);
+setshort(0x9446da0, 251);
+setfloat(0x9446d9c, 1.65);
+setfloat(0x945d57c, 1.25);
+setfloat(0x945d580, 1.25);
+setfloat(0x945d574, 0.00462);
+setfloat(0x945d4fc, 0);
+sethex(0x945d5c0, 0x13, 0x81, 0x01, 0x00);
+sethex(0x944fb30, 0xFD, 0xFD, 0xF5);
+sethex(0x944fb28, 0xFD, 0xFD, 0xF5);
+setint(0x8E38988, 206);
+setchar(0x8E389AC, 116, 114);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat "Super-Ban!" (Superman's Banshee)
+//ID: 14855
+//Score: 40
+//Author: Haddenjms
+//Category: Pimp My Garage
+//Description: Superman can't keep up with his own car! You stole this from him at his movie debut. He knows you took it but can never catch up! This car is super fast, red and blue, siver exhaust, can fly (use hover cars), fold up doors (use lambo doors), and is PIMPIN
+//Image: none
+//Time: 16/07/2006 18:30:48
+//Working: Yes
+setshort(0x992FDD4, 0x53, 0x75, 0x70, 0x65, 0x72, 0x2d, 0x42, 0x61, 0x6e, 0x21);
+setchar(0x945b0e2, 0x6);
+setchar(0x945b0e1, 0x45);
+setchar(0x945b0e0, 0x46);
+setfloat(0x94425bc, 1.225);
+setfloat(0x945b060, 1200);
+setfloat(0x945b068, 1.575);
+setfloat(0x945b120, 0.3625);
+setfloat(0x945b128, 0.5375);
+setfloat(0x945b0ec, 1.95);
+setfloat(0x945b0f0, 1.95);
+setfloat(0x945b0e4, 0.00925);
+setfloat(0x945b100, 0.8375);
+setfloat(0x945b108, 48.75);
+sethex(0x967e6fc, 0xBF, 0xC9, 0xB6);
+setfloat(0x945b118, 2.301);
+setfloat(0x945b11c, 0.2);
+setfloat(0x945b134, 0.465);
+setfloat(0x945b12c, 0.475);
+setchar(0x945b090, 53);
+setfloat(0x945b10c, 0.99);
+setfloat(0x945b06c, 0);
+sethex(0x945b130, 0x83, 0x21, 0x00, 0x04);
+sethex(0x944faf8, 0xF4, 0x00, 0x00);
+sethex(0x944fb38, 0x00, 0x00, 0xF4);
+setint(0x8E38A38, 160);
+setchar(0x8E38A5C, 102, 118);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat the simpsons frinks hover bike
+//ID: 14830
+//Score: 30
+//Author: breakunit
+//Category: Pimp My Garage
+//Description: frinks hover bike from simpsons tv show and hit and run game (please turn on hover cars before activation of this cheat)
+//Image: none
+//Time: 16/07/2006 10:05:30
+//Working: Yes
+setshort(0x99450E2, 0x20, 0x20, 0x66, 0x72, 0x69, 0x6e, 0x6b);
+setchar(0x945d481, 0x45);
+setchar(0x945d480, 0x34);
+setfloat(0x9446c0c, 0);
+setfloat(0x945d48c, 1.4);
+setfloat(0x945d490, 1.4);
+setfloat(0x945d484, 0.00713);
+setfloat(0x945d4d4, 0.015);
+sethex(0x945d4d0, 0x02, 0x80, 0x01, 0x00);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb08, 0xFF, 0x0D, 0x08);
+sethex(0x944fb48, 0xFF, 0xFF, 0xFF);
+setint(0x8E38A38, 205);
+setchar(0x8E38A5C, 106, 122);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Portland Tower
+//ID: 14179
+//Score: 87
+//Author: admac21
+//Category: Location Mods
+//Description: The portland tower is the first of three towers to be built (one on each island) located at the consruction site. The tower has six stories + rooftop, exellent vantage points for sniping in any direction. You can also land helis and hover cars on the roof
+//Image: http://i53.photobucket.com/albums/g63/admac21/screen2.jpg
+//Time: 04/07/2006 14:36:38
+//Working: Yes
+moveto(932.34, -197.03, 6.30);  object(0x01BF, 0, 0, 120);
+move(-0.05, -6.78, 0.00);  object(0x01BF, 0, 0, 60);
+move(5.83, -3.40, 0.00);  object(0x01BF, 0, 0, 0);
+move(5.91, 3.42, 0.00);  object(0x01BF, 0, 0, 300);
+move(0.70, 5.62, -0.70);  object(0x01BF, 0, 90, 240);
+move(-7.53, 4.62, 0.00);  object(0x01BF, 0, 90, 180);
+move(2.09, -6.25, 1.40);  object(0x01BF, 270, 320, 121);
+move(3.74, -3.60, 2.30);  object(0x01BF, 270, 0, 120);
+move(-4.81, -2.84, 0.00);  object(0x01BF, 270, 0, 0);
+move(-5.16, 2.95, 0.00);  object(0x01BF, 270, 0, 60);
+move(-0.07, 5.76, 0.00);  object(0x01BF, 270, 0, 120);
+move(4.93, 3.03, 0.00);  object(0x01BF, 270, 0, 180);
+move(5.23, -3.13, 0.00);  object(0x01BF, 270, 0, 240);
+move(-4.17, -2.57, 1.70);  object(0x01BF, 270, 150, 150);
+move(-6.14, 4.14, -0.50);  object(0x0246, 0, 0, 30);
+move(-1.11, -1.90, 0.00);  object(0x0246, 0, 0, 30);
+move(0.08, -4.87, 0.00);  object(0x0246, 0, 0, 330);
+move(0.99, -1.74, 0.00);  object(0x0246, 0, 0, 330);
+move(4.36, -2.60, 0.00);  object(0x0246, 0, 0, 270);
+move(2.00, 0.01, 0.00);  object(0x0246, 0, 0, 270);
+move(4.39, 2.48, 0.00);  object(0x0246, 0, 0, 210);
+move(0.96, 1.64, 0.00);  object(0x0246, 0, 0, 210);
+move(0.12, 5.04, 0.00);  object(0x0246, 0, 0, 150);
+move(-7.41, 4.46, 0.00);  object(0x0246, 0, 0, 90);
+move(1.90, 0.01, 1.70);  object(0x0246, 0, 0, 90);
+move(4.38, -2.57, 0.00);  object(0x0246, 0, 0, 150);
+move(-7.68, -5.35, -2.88);  object(0x0F90, 0, 0, 300);
+move(-0.07, -0.12, 0.00);  object(0x0F90, 0, 0, 300);
+move(-0.12, -0.22, 0.00);  object(0x0F90, 0, 0, 300);
+move(-0.14, -0.25, 0.00);  object(0x0F90, 0, 0, 300);
+move(2.95, -4.40, 3.80);  object(0x01BF, 270, 0, 0);
+move(-5.18, 3.01, 0.00);  object(0x01BF, 270, 0, 60);
+move(-0.10, 5.99, 0.00);  object(0x01BF, 270, 0, 120);
+move(5.12, 2.97, 0.00);  object(0x01BF, 270, 0, 180);
+move(5.22, -2.88, 0.00);  object(0x01BF, 270, 0, 240);
+move(-0.01, -5.86, 0.00);  object(0x01BF, 270, 0, 300);
+move(1.02, 0.33, 2.70);  object(0x0246, 0, 0, 210);
+move(-1.01, -1.73, 0.00);  object(0x0246, 0, 0, 210);
+move(-4.23, -2.41, 0.00);  object(0x0246, 0, 0, 270);
+move(-2.10, 0.01, 0.00);  object(0x0246, 0, 0, 270);
+move(-4.39, 2.47, 0.00);  object(0x0246, 0, 0, 330);
+move(-0.89, 1.57, 0.00);  object(0x0246, 0, 0, 330);
+move(-0.01, 5.07, 0.00);  object(0x0246, 0, 0, 30);
+move(1.11, 1.90, 0.00);  object(0x0246, 0, 0, 30);
+move(4.37, 2.43, 0.00);  object(0x0246, 0, 0, 90);
+move(1.70, 0.01, 0.00);  object(0x0246, 0, 0, 90);
+move(4.41, -2.52, 0.00);  object(0x0246, 0, 0, 150);
+move(1.03, -1.83, 0.00);  object(0x0246, 0, 0, 150);
+move(-5.30, -2.57, -0.13);  object(0x01BF, 270, 140, 150);
+move(-5.71, -2.66, 2.50);  object(0x01BF, 90, 0, 240);
+move(-0.15, 5.56, 0.00);  object(0x01BF, 90, 0, 300);
+move(4.82, 3.21, 0.00);  object(0x01BF, 90, 0, 0);
+move(5.27, -2.86, 0.00);  object(0x01BF, 90, 0, 60);
+move(0.05, -6.10, 0.00);  object(0x01BF, 90, 0, 120);
+move(-5.17, -2.73, 0.00);  object(0x01BF, 90, 0, 180);
+move(0.31, 6.12, 2.50);  object(0x01BF, 90, 320, 150);
+move(5.88, -2.94, 0.31);  object(0x0246, 0, 0, 30);
+move(-1.01, -1.73, 0.00);  object(0x0246, 0, 0, 30);
+move(-4.42, -2.47, 0.00);  object(0x0246, 0, 0, 90);
+move(-1.70, -0.01, 0.00);  object(0x0246, 0, 0, 90);
+move(-4.49, 2.66, 0.00);  object(0x0246, 0, 0, 150);
+move(-0.89, 1.57, 0.00);  object(0x0246, 0, 0, 150);
+move(0.01, 5.07, 0.00);  object(0x0246, 0, 0, 210);
+move(0.99, 1.74, 0.00);  object(0x0246, 0, 0, 210);
+move(4.25, 2.51, 0.00);  object(0x0246, 0, 0, 270);
+move(2.00, -0.00, 0.00);  object(0x0246, 0, 0, 270);
+move(4.14, -2.45, 0.00);  object(0x0246, 0, 0, 330);
+move(1.14, -2.00, 0.00);  object(0x0246, 0, 0, 330);
+move(-11.26, -5.28, 2.20);  object(0x01BF, 270, 0, 60);
+move(-0.07, 6.02, 0.00);  object(0x01BF, 270, 0, 120);
+move(5.08, 2.83, 0.00);  object(0x01BF, 270, 0, 180);
+move(4.79, -3.00, 0.00);  object(0x01BF, 270, 0, 240);
+move(0.43, -6.12, 0.00);  object(0x01BF, 270, 0, 300);
+move(-5.26, -2.71, 0.00);  object(0x01BF, 270, 0, 0);
+move(0.71, 5.64, 3.10);  object(0x01BF, 270, 40, 330);
+move(5.60, -2.21, -0.10);  object(0x0246, 270, 0, 210);
+move(-1.10, -1.91, 0.00);  object(0x0246, 270, 0, 210);
+move(-4.09, -2.30, 0.00);  object(0x0246, 270, 0, 270);
+move(-2.20, 0.00, 0.00);  object(0x0246, 270, 0, 270);
+move(-4.11, 2.34, 0.00);  object(0x0246, 270, 0, 330);
+move(-1.13, 2.00, 0.00);  object(0x0246, 270, 0, 330);
+move(0.07, 4.81, 0.00);  object(0x0246, 270, 0, 30);
+move(1.11, 1.90, 0.00);  object(0x0246, 270, 0, 30);
+move(4.13, 2.50, 0.00);  object(0x0246, 270, 0, 90);
+move(2.10, 0.02, 0.00);  object(0x0246, 270, 0, 90);
+move(3.84, -2.57, 0.00);  object(0x0246, 270, 0, 150);
+move(1.20, -2.08, 0.00);  object(0x0246, 270, 0, 150);
+move(-11.10, -5.21, 2.67);  object(0x01BF, 270, 0, 60);
+move(-0.06, 5.94, 0.00);  object(0x01BF, 270, 0, 121);
+move(5.15, 3.11, 0.00);  object(0x01BF, 270, 0, 180);
+move(4.67, -3.14, 0.00);  object(0x01BF, 270, 0, 240);
+move(0.27, -5.88, 0.00);  object(0x01BF, 270, 0, 299);
+move(-4.97, -3.11, 0.00);  object(0x01BF, 270, 0, 0);
+move(0.26, 6.59, 2.50);  object(0x01BF, 270, 40, 330);
+move(0.98, -7.20, -0.40);  object(0x0246, 270, 0, 270);
+move(-2.40, -0.02, 0.00);  object(0x0246, 270, 0, 270);
+move(-4.17, 2.33, 0.00);  object(0x0246, 270, 0, 330);
+move(-1.08, 1.91, 0.00);  object(0x0246, 270, 0, 330);
+move(0.09, 4.85, 0.00);  object(0x0246, 270, 0, 30);
+move(1.19, 2.09, 0.00);  object(0x0246, 270, 0, 30);
+move(4.18, 2.41, 0.00);  object(0x0246, 270, 0, 90);
+move(1.70, 0.00, 0.00);  object(0x0246, 270, 0, 90);
+move(4.01, -2.37, 0.00);  object(0x0246, 270, 0, 150);
+move(1.34, -2.35, 0.00);  object(0x0246, 270, 0, 150);
+move(-0.96, -6.46, 0.00);  object(0x0246, 270, 0, 210);
+move(1.04, 1.82, 0.00);  object(0x0246, 270, 0, 210);
+move(-11.19, -0.49, 2.90);  object(0x01BF, 270, 0, 60);
+move(5.01, -3.27, 0.00);  object(0x01BF, 270, 0, 0);
+move(5.46, 3.18, 0.00);  object(0x01BF, 270, 0, 300);
+move(-0.26, 6.20, 0.00);  object(0x01BF, 270, 0, 240);
+move(-5.05, 3.30, 0.00);  object(0x01BF, 270, 0, 180);
+move(-5.22, -3.36, 0.00);  object(0x01BF, 270, 0, 121);
+teleport(939.59, -179.28, 4.77);
+
+#cheat The Green Dragon by bob108
+//ID: 14022
+//Score: 22
+//Author: bob108
+//Category: Pimp My Garage
+//Description: This is not as good as my other but it packs a punch. Put on Hover Cars and youll have a flying beast. Put on Heavy Cars and youll have a monster of destruction.
+//Image: none
+//Time: 02/07/2006 04:16:02
+//Working: Yes
+setshort(0x992FC96, 0x20, 0x44, 0x72, 0x61, 0x67, 0x6f, 0x6e);
+setchar(0x945a002, 0x6);
+setchar(0x945a000, 0x34);
+setfloat(0x944067c, 0.975);
+setfloat(0x9459f80, 4375);
+setfloat(0x9459f88, 0.725);
+setfloat(0x945a044, -0.4);
+setfloat(0x945a00c, 1.575);
+setfloat(0x945a010, 1.575);
+setfloat(0x945a004, 0.008);
+setfloat(0x945a028, 36.875);
+setfloat(0x945a054, 0.3);
+setfloat(0x945a04c, 0.325);
+setchar(0x9459fb0, 0);
+setfloat(0x9459f8c, 0);
+sethex(0x945a050, 0x83, 0xc1, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0x10, 0x00);
+sethex(0x944fb54, 0x0B, 0xFF, 0x00);
+sethex(0x944fb38, 0x0B, 0xFF, 0x00);
+setint(0x8E38A38, 140);
+setchar(0x8E38A5C, 125, 118);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Penthouse
+//ID: 13466
+//Score: 67
+//Author: barkee
+//Category: Location Mods
+//Description: Penthouse on the top of one of the few solid roofed buildings in staunton. Contains A Garage, Hovering weapon garden, balcony, 2 dtory house with observation deck upstairs and a wonderful view of the airport.
+//
+//www.ammunation.org
+//Image: http://tom.psprus.com/penthouse.jpg
+//Time: 21/06/2006 12:41:00
+//Working: Yes
+//By Ammunation.org
+moveto(-922.83, 298.05, 36.12);  object(0x063E, 270, 0, 84);
+move(0.60, -5.57, 0.00);  object(0x063E, 270, 0, 84);
+move(-3.53, -0.38, 0.10);  object(0x063E, 270, 0, 84);
+move(-0.59, 5.47, 0.00);  object(0x063E, 270, 0, 84);
+move(23.46, 1.83, 0.20);  object(0x063F, 270, 0, 48);
+move(3.77, -4.14, 0.00);  object(0x063F, 270, 0, 48);
+move(-2.42, -2.21, 0.00);  object(0x063F, 270, 0, 48);
+move(-3.77, 4.14, 0.00);  object(0x063F, 270, 0, 48);
+move(13.85, 106.72, 8.60);  object(0x0640, 270, 0, 233);
+move(-3.23, 4.33, 0.00);  object(0x0640, 270, 0, 233);
+move(2.23, 1.67, 0.00);  object(0x0640, 270, 0, 233);
+move(3.17, -4.25, 0.00);  object(0x0640, 270, 0, 233);
+move(-371.91, -148.24, 23.80);  object(0x082B, 270, 0, 184);
+move(1473.71, -1225.11, 46.54);  object(0x09F1, 240, 0, 99);
+move(-4.64, -7.75, 4.70);  object(0x0239, 0, 0, 89);
+move(-0.15, 7.42, 1.10);  object(0x01BF, 0, 0, 89);
+move(4.28, -11.43, 0.60);  object(0x01BF, 0, 0, 180);
+move(-0.22, 15.29, 0.00);  object(0x01BF, 0, 0, 178);
+move(4.06, -3.86, 0.00);  object(0x01BF, 0, 0, 90);
+move(-0.03, -7.58, 0.00);  object(0x01BF, 0, 0, 90);
+move(-3.96, -0.53, 2.80);  object(0x01BF, 90, 0, 180);
+move(-0.08, 8.68, 0.00);  object(0x01BF, 90, 0, 180);
+move(-0.05, 3.32, 2.70);  object(0x01BF, 0, 0, 180);
+move(0.15, -15.25, 0.00);  object(0x01BF, 0, 0, 180);
+move(3.93, 3.72, 0.00);  object(0x01BF, 0, 0, 270);
+move(0.00, 7.53, 0.00);  object(0x01BF, 0, 0, 270);
+move(-6.58, 0.75, -2.70);  object(0x0F36, 0, 0, 88);
+move(-0.67, -3.16, 0.60);  object(0x1004, 0, 0, 35);
+move(-0.98, 5.89, -0.50);  object(0x1004, 0, 0, 118);
+move(0.36, -8.92, -4.60);  object(0x023A, 0, 0, 96);
+move(-0.12, -3.21, 7.20);  object(0x0CDB, 0, 0, 90);
+move(-0.16, 5.04, 0.00);  object(0x0CDB, 0, 0, 90);
+move(-0.21, 5.05, 0.00);  object(0x0CDB, 0, 0, 90);
+move(2.67, 1.77, -17.50);  object(0x0F01, 45, 0, 2);
+move(9.23, -13.74, -0.20);  object(0x0F37, 90, 0, 2);
+move(-11.52, -0.13, 20.60);  object(0x09F0, 0, 0, 270);
+move(-0.00, 1.00, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.80, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 1.00, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.60, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.60, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.50, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.90, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.80, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.60, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 1.00, -0.10);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.80, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.80, 0.00);  object(0x09F0, 0, 0, 270);
+move(-0.00, 0.70, 0.00);  object(0x09F0, 0, 0, 270);
+move(6.44, -3.60, 2.20);  object(0x01BF, 45, 0, 270);
+move(0.00, -7.40, 0.00);  object(0x01BF, 45, 0, 270);
+move(-4.52, -0.00, 0.20);  object(0x01BF, 315, 0, 270);
+move(-0.00, 7.30, 0.00);  object(0x01BF, 315, 0, 270);
+move(2.02, 3.97, -1.70);  object(0x0CDB, 0, 315, 355);
+move(0.13, -15.18, 0.10);  object(0x0CDB, 0, 315, 180);
+move(-0.00, -7.43, -14.30);  object(0x0215, 0, 315, 180);
+move(0.00, 5.76, 4.70);  object(0x0CD1, 0, 0, 180);
+move(3.95, 0.96, -0.40);  object(0x0220, 0, 0, 357);
+move(3.21, -4.05, -7.30);  object(0x084C, 0, 0, 357);
+move(13.23, 11.60, 6.60);  object(0x0FAA, 0, 0, 180);
+move(-5.44, 0.30, 0.80);  object(0x01EA, 0, 0, 90);
+move(-7.84, 4.33, -19.00);  object(0x0104, 0, 0, 337);
+move(1.95, -20.38, 19.40);  object(0x010A, 0, 0, 92);
+move(-1.29, -0.17, 0.40);  object(0x010F, 0, 0, 92);
+move(-1.19, -0.16, 0.00);  object(0x0110, 0, 0, 92);
+move(-1.09, -0.15, 0.00);  object(0x0113, 0, 0, 92);
+move(0.31, -2.29, 0.00);  object(0x0116, 0, 0, 92);
+move(1.09, 0.15, 0.00);  object(0x011C, 0, 0, 92);
+move(1.19, 0.16, 0.00);  object(0x011E, 0, 0, 92);
+move(0.89, 0.12, 0.00);  object(0x011F, 0, 0, 92);
+move(0.26, -2.29, 0.00);  object(0x0121, 0, 0, 92);
+move(-1.44, 0.88, 0.00);  object(0x011B, 0, 0, 92);
+move(-1.10, -0.10, 0.00);  object(0x0114, 0, 0, 92);
+move(-0.89, -0.13, 0.00);  object(0x0104, 0, 0, 92);
+move(-0.89, -0.13, 0.00);  object(0x0105, 0, 0, 92);
+move(-1.03, 0.84, 0.00);  object(0x0106, 0, 0, 92);
+move(-0.79, -0.12, 0.00);  object(0x0124, 0, 0, 92);
+move(4.13, 4.82, -0.40);  object(0x01F3, 0, 0, 180);
+move(-0.75, -4.88, -1.30);  object(0x01BF, 270, 0, 180);
+move(2.56, 0.01, 0.00);  object(0x01BF, 270, 0, 180);
+move(-1.37, -3.42, 1.30);  object(0x01F3, 0, 0, 0);
+move(-4.84, 0.90, -1.20);  object(0x01F0, 0, 0, 270);
+move(9.99, 0.18, -0.10);  object(0x01F0, 0, 0, 270);
+move(-1.64, 9.51, 0.00);  object(0x0272, 0, 0, 270);
+teleport(232.74, -959.80, 120.95);
+
+#cheat Team America Spottwoode's Limo
+//ID: 13395
+//Score: 25
+//Author: JT456
+//Category: Pimp My Garage
+//Description: "Please, Gary, step into my car." Normal white stretch for TA Mt. Rushmore Base. Turn on the Hover Cars cheat to make
+//it "VALMORPHANIZE."
+//Image: none
+//Time: 20/06/2006 19:20:31
+//Working: Yes
+sethex(0x945a050, 0x02, 0x80, 0x00, 0x00);
+sethex(0x944fb0c, 0xFF, 0xFF, 0xFF);
+sethex(0x944fb14, 0xFF, 0xFF, 0xFF);
+setint(0x8E38AE8, 140);
+setchar(0x8E38B0C, 107, 109);
+sethex(0x8E38B0E, 0x01, 0x00);
+teleport(-789.61, 300.62, 49.05);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Star Wars Speeder Bike!!! (tested)
+//ID: 13169
+//Score: 53
+//Author: scarfield
+//Category: Pimp My Garage
+//Description: A redish, orange speeder from Star Wars.
+//
+//Turn on Hover Cars
+//
+//DON'T DELETE THIS!!!
+//Image: http://img391.imageshack.us/my.php?image=video27qx.gif
+//Time: 18/06/2006 18:48:42
+//Working: Yes
+setchar(0x945d662, 0x6);
+setchar(0x945d661, 0x44);
+setchar(0x945d660, 0x46);
+setshort(0x94473e0, 250);
+setfloat(0x94473dc, 0);
+setfloat(0x945d66c, 1.2);
+setfloat(0x945d670, 1.2);
+setfloat(0x945d664, 0.00538);
+setfloat(0x945d5ec, 0);
+sethex(0x945d6b0, 0x03, 0x41, 0x11, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb24, 0xFF, 0x0D, 0x08);
+sethex(0x944fb44, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 210);
+setchar(0x8E38A5C, 113, 121);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Another Shooting Balcony
+//ID: 12658
+//Score: 55
+//Author: canar
+//Category: Teleport
+//Description: A little balcony to shoot from, with no access but a hovercar or teleport.
+//Image: http://img107.imageshack.us/my.php?image=screen14on.png
+//Time: 11/06/2006 12:56:07
+//Working: Yes
+//Created Using Teleport Creator
+//By RASAL
+teleport(338.84, -1412.39, 63.49);
+
+#cheat Flash Hovering Pearlescent Stretch
+//ID: 12446
+//Score: 37
+//Author: robopanda
+//Category: Pimp My Garage
+//Description: This thing has a pearlescent paint job, floats high in the air, won't flip, nice turn radias and great speed. You'll be sure to love this baby!!!
+//
+//check the pic
+//
+//DOWNLOAD YOU WILL LOVE IT!!
+//credit to mz8691 for paint
+//Image: http://i63.photobucket.com/albums/h158/robollama/screen1.jpg
+//Time: 08/06/2006 23:07:25
+//Working: Yes
+setshort(0x992FC96, 0x20, 0x20, 0x46, 0x6c, 0x61, 0x73, 0x68);
+setchar(0x945a002, 0x5);
+setchar(0x945a001, 0x45);
+setchar(0x945a000, 0x34);
+setshort(0x9440680, 254);
+setfloat(0x944067c, 0);
+setfloat(0x9459f80, 2200);
+setfloat(0x9459f88, 0.6);
+setfloat(0x945a040, 0.35);
+setfloat(0x945a044, -2);
+setfloat(0x945a048, 0.5);
+setfloat(0x945a00c, 1.85);
+setfloat(0x945a010, 1.85);
+setfloat(0x945a004, 0.00937);
+setfloat(0x945a020, 0.4);
+setfloat(0x945a024, 0);
+setfloat(0x945a028, 30);
+setfloat(0x945a038, 1.1);
+setfloat(0x945a03c, 0.07);
+setfloat(0x945a054, 0.2);
+setfloat(0x945a04c, 0);
+setfloat(0x9459fa0, 0);
+setfloat(0x9459fa4, 0);
+setfloat(0x9459fa8, -2);
+setchar(0x9459fb0, 75);
+setfloat(0x945a02c, 0.8);
+setfloat(0x945a030, 0.5);
+setfloat(0x9459f8c, 0.65455);
+sethex(0x945a050, 0x03, 0x80, 0x00, 0x04);
+sethex(0x944fb44, 0xA2, 0xC9, 0xC8);
+sethex(0x944fafc, 0xA2, 0xC9, 0xC8);
+setint(0x8E38A38, 140);
+setchar(0x8E38A5C, 121, 103);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat THE BUMBLE BEE V1.01
+//ID: 12440
+//Score: 20
+//Author: emcp
+//Category: Pimp My Garage
+//Description: THIS IS A BANSHEE THAT LOOKS AND FLIES 
+//LIKE A BEE IT HAS A BLACK AND YELLOW PAINT JOB AND IT HANDLES PERFECTLY AND HOVERS LOVELY 
+//the only prob is that you have to use hover cars to get it out of the garage move around for a while in hover cars and the
+//Image: http://i5.tinypic.com/123qedh.jpg
+//Time: 08/06/2006 22:22:36
+//Working: Yes
+setshort(0x992FDD4, 0x54, 0x68, 0x65, 0x20, 0x42, 0x65, 0x65);
+setchar(0x945b0e2, 0x6);
+setchar(0x945b0e1, 0x50);
+setchar(0x945b0e0, 0x52);
+setshort(0x94425c0, 250);
+setfloat(0x94425bc, 0.95);
+setfloat(0x945b060, 1400);
+setfloat(0x945b068, 1.075);
+setfloat(0x945b120, 0.3);
+setfloat(0x945b124, -0.14999);
+setfloat(0x945b128, 0.5);
+setfloat(0x945b0ec, 1.4);
+setfloat(0x945b0f0, 1.4);
+setfloat(0x945b0e4, 0.00462);
+setfloat(0x945b100, 0.52);
+setfloat(0x945b104, 0);
+setfloat(0x945b108, 34);
+setfloat(0x945b118, 1.6);
+setfloat(0x945b11c, 0.1);
+setfloat(0x945b134, 0.15);
+setfloat(0x945b12c, 0.3);
+setfloat(0x945b080, 0);
+setfloat(0x945b084, 0);
+setfloat(0x945b088, -0.19999);
+setchar(0x945b090, 70);
+setfloat(0x945b10c, 0.89);
+setfloat(0x945b110, 0.5);
+setfloat(0x945b06c, 0);
+sethex(0x945b130, 0x83, 0xa1, 0x02, 0x00);
+sethex(0x944faf4, 0xFF, 0xFF, 0x00);
+sethex(0x944fb10, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 160);
+setchar(0x8E38A5C, 101, 108);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat The PIMP BOAT!!!
+//ID: 12142
+//Score: 58
+//Author: ozanhhh
+//Category: Pimp My Garage
+//Description: The PIMP BOAT!!!
+//
+//set Hover Cars on, and fly the boat to the water. then you can you sail!!!
+//
+//its not are Category (Pimp My Boat) so,
+//i put it in Pimp My Garage...! hehe...!
+//
+//So Kom on brows, pimp boat,s!!!
+//
+//
+//--=!!! (TAKE IT, ITS VERY GOD) !!!=-
+//Image: http://img151.imageshack.us/img151/4345/screen55ss.png
+//Time: 03/06/2006 22:43:40
+//Working: Yes
+//by OzanHHH
+setint(0x08E38A38, 194);
+setchar(0x8E38A5C, 121, 107);
+setchar(0x945a001, 0x44);
+teleport(292.22, -440.37, 26.02);
+
+#cheat S P A Z I O
+//ID: 12117
+//Score: 24
+//Author: wm123
+//Category: Pimp My Garage
+//Description: This is soooooooooo mental it sounds like a cow on drugs and is constantly hovering and has other stupid things to
+//Image: none
+//Time: 03/06/2006 19:44:51
+//Working: Yes
+setshort(0x993014E, 0x73, 0x70, 0x61, 0x7a, 0x69, 0x6f);
+setchar(0x945d572, 0x3);
+setchar(0x945d571, 0x45);
+setchar(0x945d570, 0x46);
+setshort(0x9446da0, 255);
+setfloat(0x9446d9c, 0.0);
+setfloat(0x945d4f0, 200);
+setfloat(0x945d4f8, 1.8);
+setfloat(0x945d5b0, 0.12);
+setfloat(0x945d5b4, -0.16999);
+setfloat(0x945d5b8, 0.5);
+setfloat(0x945d57c, 0.67867);
+setfloat(0x945d580, 0.67867);
+setfloat(0x945d574, 0.00163);
+setfloat(0x945d590, 0.5);
+setfloat(0x945d594, 0);
+setfloat(0x945d598, 35);
+setfloat(0x945d5a8, 1);
+setfloat(0x945d5ac, 0.15);
+setfloat(0x945d5c4, 10);
+setfloat(0x945d5bc, 0);
+setfloat(0x945d510, 0);
+setfloat(0x945d514, 0.05);
+setfloat(0x945d518, -0.09999);
+setchar(0x945d520, 103);
+setfloat(0x945d59c, 0.9);
+setfloat(0x945d5a0, 0.48);
+setfloat(0x945d4fc, 0.62857);
+sethex(0x945d5c0, 0x93, 0x61, 0x01, 0x04);
+sethex(0x944faf8, 0xFF, 0xFF, 0x00);
+sethex(0x944fb5c, 0xFF, 0xFF, 0x00);
+setint(0x8E38A38, 206);
+setchar(0x8E38A5C, 102, 127);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat I390DF
+//ID: 19277
+//Score: 79
+//Author: fordmustang
+//Category: Pimp My Garage
+//Description: its a hover car from the year 2191  super fast 
+//(you need hover cheat on) go faster then light with the bost cheat 
+//
+//EDITED BY: psphacker108 on 20/01/07 16:05:08
+//Image: none
+//Time: 18/01/2007 03:25:22
+//Working: Yes
+setshort(0x992FCB4, 0x20, 0x20, 0x49, 0x33, 0x39, 0x30, 0x44, 0x46);
+setchar(0x945a1e2, 0x6);
+setchar(0x945a1e0, 0x46);
+setfloat(0x944099c, 0);
+setfloat(0x945a168, 0);
+setfloat(0x945a224, -0.01);
+setfloat(0x945a228, 0);
+setfloat(0x945a1ec, 1.425);
+setfloat(0x945a1f0, 1.425);
+setfloat(0x945a1e4, 0.01);
+setfloat(0x945a218, 0);
+setfloat(0x945a20c, 0);
+setfloat(0x945a210, 0);
+sethex(0x945a230, 0x80, 0x81, 0x20, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb18, 0xFF, 0x0D, 0x08);
+sethex(0x944fb54, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 142);
+setchar(0x8E38A5C, 110, 125);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Hovering cheetah
+//ID: 18412
+//Score: 43
+//Author: Gta Lad
+//Category: Pimp My Garage
+//Description: This is a cheetah that hovers. The future car.....dunno??!! Well it has a blue paintjob and twin exhausts spurting out blue nos. It has no wheels, thats why it floats. It speeds are very high and its handling is superb. This car is way awesome so enjoy!!!
+//Image: none
+//Time: 31/10/2006 21:32:09
+//Working: Yes
+setshort(0x992FCE8, 0x20, 0x20, 0x48, 0x6f, 0x76, 0x65, 0x72);
+setchar(0x945a4b2, 0x6);
+setfloat(0x9440fdc, -99999999999999999999999999999999999999999999999999999999999999900000000000000000000000000999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999);
+setfloat(0x945a4f4, -0.2125);
+setfloat(0x945a4bc, 1.175);
+setfloat(0x945a4c0, 1.175);
+setfloat(0x945a4b4, 0.004);
+sethex(0x945a500, 0x83, 0x81, 0x00, 0x01);
+setchar(0x967E6FC, 0x00, 0x00, 0xFF);
+sethex(0x944fb3c, 0x1C, 0x5F, 0x9D);
+sethex(0x944fb08, 0x1C, 0x5F, 0x9D);
+setint(0x8E38A38, 146);
+setchar(0x8E38A5C, 119, 106);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+//Although it has no tires, you must first activate hover cars. 
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat BMW XXX 2028 concept!
+//ID: 18322
+//Score: 46
+//Author: adamek
+//Category: Pimp My Garage
+//Description: Awesome BMW! Funny with hover cars cheat!
+//
+//Image: none
+//Time: 27/10/2006 13:28:09
+//Working: Yes
+setshort(0x992FEE2, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x42, 0x4d, 0x57);
+setchar(0x945bd12, 0x6);
+setshort(0x9443880, 250);
+setfloat(0x945bd1c, 1.126);
+setfloat(0x945bd20, 1.125);
+setfloat(0x945bd14, 0.00388);
+sethex(0x945bd60, 0x83, 0x81, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb0c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb24, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 172);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat HoverPCJ 1000
+//ID: 18260
+//Score: 38
+//Author: Juztin1
+//Category: Pimp My Garage
+//Description: The all new Hover Pcj -1000
+//Image: none
+//Time: 22/10/2006 05:05:00
+//Working: Yes
+setshort(0x9446c10, 250);
+setfloat(0x9446c0c, 1.45);
+setfloat(0x945d4c0, 0.3);
+setfloat(0x945d48c, 1.275);
+setfloat(0x945d490, 1.275);
+setfloat(0x945d484, 0.00438);
+setfloat(0x945d4bc, 0.125);
+setfloat(0x945d420, -0.3);
+setfloat(0x945d424, -0.3);
+setfloat(0x945d428, -0.3375);
+setfloat(0x945d40c, 0);
+sethex(0x945d4d0, 0x02, 0x81, 0x01, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb0c, 0x00, 0x00, 0x00);
+sethex(0x944fb10, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 205);
+setchar(0x8E38A5C, 107, 108);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat HOVER KRAFT
+//ID: 18133
+//Score: 40
+//Author: mr game
+//Category: Pimp My Garage
+//Description: put hover cheat on for the banshee to move its cool
+//
+//EDITED BY: psphacker108 on 28/10/06 19:38:00
+//Image: none
+//Time: 14/10/2006 00:33:57
+//Working: Yes
+setfloat(0x94425bc, 0);
+sethex(0x945b130, 0x83, 0x21, 0x00, 0x00);
+sethex(0x944fb2c, 0x00, 0x00, 0x00);
+sethex(0x944fb34, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 160);
+setchar(0x8E38A5C, 115, 117);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat All bikes hover  3 times faster.
+//ID: 18037
+//Score: 85
+//Author: GTAmaxlord
+//Category: Vehicle
+//Description: Download, watch, enjoy...
+//Image: none
+//Time: 08/10/2006 17:31:43
+//Working: Yes
+setfloat(0x9446c0c, 1.775);
+setfloat(0x945d48c, 1.3);
+setfloat(0x945d484, 0.005);
+setchar(0x8E38A5C, 125, 121);
+setfloat(0x08B562E0, 0);
+setchar(0x09a9f8ba, 100000);
+setchar(0x09a9f8da, 100000);
+setchar(0x09a9f8fa, 100000);
+setchar(0x09a9f91a, 100000);
+setchar(pcar + 0x00000267, 255)
+setchar(pcar + 0x000005B0, 0);
+setchar(pcar + 0x000006CC, 0);
+setchar(pcar + 0x000006C8, 0);
+setchar(pcar + 0x000006D4, 0);
+setchar(pcar + 0x000006D0, 0);
+setshort(0x99450E2, 0x73, 0x6B, 0x79, 0x62, 0x69, 0x6B, 0x65);
+setchar(0x09a9f8ba, 0x7d);
+setchar(0x09a9f8da, 0x7d);
+setchar(0x09a9f8fa, 0x7d);
+setchar(0x09a9f91a, 0x7d);
+setfloat(0x08B562E0, 0);
+setchar(pcar + 0x50F, 0x50);
+#off
+setfloat(0x08B562E0, 1);
+setchar(pcar + 0x50F, 0x3f);
+setfloat(0x08B562E0, 1);
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(pcar + 0x00000268, 0)
+setchar(0x09a9f8ba, 0x27);
+setchar(0x09a9f8da, 0x27);
+setchar(0x09a9f8fa, 0x27);
+setchar(0x09a9f91a, 0x27);
+setchar(0x09a9f91a, 0x27);
+
+#cheat Makes all Spawned Bikes Drivable
+//ID: 16902
+//Score: 61
+//Author: xFinch713x
+//Category: Vehicle
+//Description: Makes all the spawned bikes driavable, but not really, have to use hover cars, doesnt freeze the game
+//
+//used pmg to make
+//
+//or go here to see the pic-
+//http://i62.photobucket.com/albums/h91/xFinch713x/4199041c.gif
+//Image: http://static.filefront.com/images/personal/x/xFinch713x/43105/yzkdcjjuqz.jpg
+//Time: 31/08/2006 01:25:31
+//Working: Yes
+sethex(0x945d7a0, 0x13, 0x01, 0x01, 0x00);
+sethex(0x945d5c0, 0x13, 0x00, 0x01, 0x00);
+sethex(0x945d5c0, 0x13, 0x00, 0x01, 0x00);
+sethex(0x945d4d0, 0x12, 0x01, 0x01, 0x00);
+sethex(0x945d5c0, 0x13, 0x00, 0x01, 0x00);
+sethex(0x945da70, 0x13, 0x01, 0x01, 0x00);
+sethex(0x945d980, 0x13, 0x01, 0x01, 0x00);
+sethex(0x945d890, 0x13, 0x00, 0x01, 0x00);
+sethex(0x945d6b0, 0x13, 0x00, 0x11, 0x00);
+
+#cheat Hover Craft: V8 Ghost
+//ID: 16833
+//Score: 58
+//Author: Zrholman187
+//Category: Pimp My Garage
+//Description: This is a V8 Ghost that is fun to drive around in "hover cars mode" with.
+//*It's black and red
+//*Has two exhust pipes
+//*Large Tires
+//*Purple Exhust Smoke
+//
+//-Hope you enjoy!
+//Image: http://img219.imageshack.us/my.php?image=hcv8glt6.gif
+//Time: 27/08/2006 23:58:12
+//Working: Yes
+setchar(0x945cfd2, 0x5);
+setchar(0x945cfd1, 0x50);
+setchar(0x945cfd0, 0x52);
+setshort(0x9444ff0, 250);
+setfloat(0x9444fec, 1.82400);
+setfloat(0x945cf50, 1380);
+setfloat(0x945cf58, 0.75000);
+setfloat(0x945d010, 0.05000);
+setfloat(0x945d014, -0.14999);
+setfloat(0x945d018, 0.45000);
+setfloat(0x945cfdc, 1.06534);
+setfloat(0x945cfe0, 1.06534);
+setfloat(0x945cfd4, 0.00240);
+setfloat(0x945cff0, 0.74000);
+setfloat(0x945cff4, 0.00000);
+setfloat(0x945cff8, 30.00000);
+setfloat(0x945d008, 1.00000);
+setfloat(0x945d00c, 0.13000);
+setfloat(0x945d024, 0.15000);
+setfloat(0x945d01c, 0.30000);
+setfloat(0x945cf70, 0.00000);
+setfloat(0x945cf74, -0.14999);
+setfloat(0x945cf78, -0.19999);
+setfloat(0x945cffc, 0.90000);
+setfloat(0x945d000, 0.48000);
+setfloat(0x945cf5c, 0.90000);
+sethex(0x945d020, 0x80, 0xa1, 0x00, 0x07);
+sethex(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944faf0, 0x00, 0x00, 0x00);
+sethex(0x944faf4, 0xff, 0x00, 0x00);
+setint(0x8E38A38, 187);
+setchar(0x8E38A5C, 100, 101);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat dr.sh*tto
+//ID: 16627
+//Score: 16
+//Author: thermonuclearwar
+//Category: Pimp My Garage
+//Description: its a hover car, but dont be fooled thinking its got good handilin, your wrong, i've seen sh*t handle better
+//Image: none
+//Time: 22/08/2006 15:30:55
+//Working: Yes
+//hovercar
+//dont turn too much
+setshort(0x993002A, 0x20, 0x20, 0x20, 0x20, 0x64, 0x72, 0x2e, 0x73, 0x68, 0x2a, 0x74, 0x74, 0x6f);
+setfloat(0x9444ccc, 0.000001);
+setfloat(0x945cd78, 1.075);
+setfloat(0x945ce34, -0.8);
+sethex(0x945ce40, 0x00, 0x20, 0x00, 0x00);
+sethex(0x944fb28, 0x02, 0xFF, 0x00);
+sethex(0x944fb40, 0x00, 0x6D, 0x02);
+setint(0x8E38A38, 185);
+setchar(0x8E38A5C, 114, 120);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat The Biggest Bomb I Ever made to Date
+//ID: 16509
+//Score: 52
+//Author: 0123456789
+//Category: Misc
+//Description: Use the hover car cheat to fly in the air and look for the explosive barrels, which should be pretty easy to find.Then land on one of the soild roofs, Get out of your car. Then take out your Sniper Rifle and blast the explosive barrels. Thats all there is
+//Image: none
+//Time: 17/08/2006 20:00:44
+//Working: Yes
+//BUILD THE FLOOR
+moveto(272.15, -422.6, 90); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+//BUILD WALL 1
+moveto(271.75, -422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 2
+moveto(276.55, -422.6, 90.4); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, -1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 0.00, 0.8); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+move(0.00, 1.1, 0.00); object(0x021C, 0, 90, 90);
+//BUILD WALL 3
+moveto(272.15, -423.15, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD WALL 4
+moveto(272.15, -416.55, 90.55); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(-0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.00, 0.00, 1.1); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+move(0.8, 00, 0.00); object(0x021C, 0, 0, 180);
+//BUILD ROOF
+moveto(272.15, -422.6, 94.24); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, 1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.8, 0.00, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+move(0.00, -1.1, 0.00); object(0x021C, 90, 0, 180);
+
+#cheat XF Injection
+//ID: 16246
+//Score: 49
+//Author: rob_obrien2@hotmail.com
+//Category: Pimp My Garage
+//Description: The XF Injection is a Modded BF that Floats, is faster, has no Wheels, The Exhaust Pours Red Smoke and it is Invincible. Works Well With the Hover Cars Cheat.
+//Made By Skunkator of PSP-Heaven's GTA Modding Crew
+//Image: http://www.freewebs.com/crocodilius/XF%5FInjection.jpg
+//Time: 09/08/2006 13:32:13
+//Working: Yes
+setshort(0x992FD86, 0x78, 0x66);
+setchar(0x945ad20, 0x34);
+setshort(0x9441df0, 251);
+setfloat(0x9441dec, 0);
+setfloat(0x945aca0, 800);
+setfloat(0x945ad64, -1);
+setfloat(0x945acac, 0);
+sethex(0x945ad70, 0x1f, 0xad, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944faf8, 0x00, 0x00, 0x00);
+sethex(0x944fb34, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 155);
+setchar(0x8E38A5C, 102, 117);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat G5 X
+//ID: 16212
+//Score: 36
+//Author: micstyle
+//Category: Pimp My Garage
+//Description: HOVERING DODO PLANE WITH LIGHTING SPEED!
+//Image: none
+//Time: 08/08/2006 05:48:48
+//Working: Yes
+setshort(0x992FE5C, 0x47, 0x35, 0x20, 0x58);
+setchar(0x945b772, 0x4);
+setfloat(0x9442bfc, 0);
+setfloat(0x945b7b0, 0.925);
+setfloat(0x945b7b4, -0.9875);
+setfloat(0x945b77c, 2);
+setfloat(0x945b780, 2);
+setfloat(0x945b774, 2);
+setfloat(0x945b7a8, 2.375);
+setfloat(0x945b7c4, 0);
+setfloat(0x945b6fc, 0);
+sethex(0x945b7c0, 0x03, 0x81, 0x04, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb4c, 0xFF, 0xFF, 0x00);
+sethex(0x944fb04, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 164);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat cool pcj
+//ID: 16089
+//Score: 22
+//Author: borgbuddy123
+//Category: Pimp My Garage
+//Description: cool pcj with big wheels but you cant see them so it looks to be hovering. its fun doing stoppies. 
+//youll like it.
+//Image: none
+//Time: 05/08/2006 20:48:19
+//Working: Yes
+setchar(0x945d482, 0x6);
+setchar(0x945d481, 0x44);
+setshort(0x9446c10, 250);
+setfloat(0x9446c0c, 2.00);
+setfloat(0x945d4c0, 0.3);
+setfloat(0x945d4c4, -0.3375);
+setfloat(0x945d48c, 1.85);
+setfloat(0x945d490, 1.85);
+setfloat(0x945d484, 0.00875);
+setfloat(0x945d4ac, 0.68125);
+sethex(0x945d4d0, 0x02, 0x01, 0x01, 0x05);
+sethex(0x944fb00, 0x00, 0x00, 0x00);
+sethex(0x944fb08, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 205);
+setchar(0x8E38A5C, 104, 106);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat pimped out pcj-600
+//ID: 15991
+//Score: 10
+//Author: borgbuddy123
+//Category: Pimp My Garage
+//Description: A cool black and pink pcj-600 I made the wheels really huge so it looks like the bike is hovering but it is not. do A stoppie it is cool
+//Image: none
+//Time: 04/08/2006 17:20:41
+//Working: Unknown
+setchar(0x945d482, 0x6);
+setshort(0x9446c10, 250);
+setfloat(0x9446c0c, 2.35);
+setfloat(0x945d4c0, 0.3625);
+setfloat(0x945d4c4, -0.4);
+setfloat(0x945d48c, 2);
+setfloat(0x945d490, 2);
+setfloat(0x945d484, 0.00738);
+setfloat(0x945d4a8, 41.25);
+setfloat(0x945d4d4, 0.405);
+setfloat(0x945d40c, 0);
+sethex(0x945d4d0, 0x02, 0x81, 0x01, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb28, 0x00, 0x00, 0x00);
+sethex(0x944faf4, 0xFF, 0x00, 0xFF);
+setint(0x8E38A38, 205);
+setchar(0x8E38A5C, 114, 101);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+

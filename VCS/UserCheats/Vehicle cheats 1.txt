@@ -1,0 +1,1154 @@
+#cheat Spawn a Washington at Compound Safehouse
+//ID: 19019
+//Score: 36
+//Author: Destruction
+//Category: Vehicle
+//Description: Spawn's a Washington at safehouse.
+//
+//EDITED BY: psphacker108 on 13/12/06 02:22:01
+//Image: none
+//Time: 12/12/2006 00:12:52
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   0); 
+pspawn += 0x30;
+
+#cheat Compound w/ more cars.
+//ID: 19018
+//Score: 37
+//Author: Destruction
+//Category: Vehicle
+//Description: Adds a Rhino, Ammo Truck. . .
+//I'm looking to add a Hunter soon.
+//
+//EDITED BY: psphacker108 on 13/12/06 02:21:31
+//Image: none
+//Time: 12/12/2006 00:11:55
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   0); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   0); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   0); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   0); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   0); 
+pspawn += 0x30;
+setint(pspawn,   246); 
+setfloat(pspawn + 4,   -1111.63,   298.80,   12.32,   0); 
+pspawn += 0x30;
+setint(pspawn,   221); 
+setfloat(pspawn + 4,   -1061.00,   293.81,   12.17,   0); 
+pspawn += 0x30;
+
+#cheat Make the Compound like MTA's Robber Spawn
+//ID: 19017
+//Score: 32
+//Author: Destruction
+//Category: Vehicle
+//Description: Spawns a Patriot, Sabre, Washington, PCJ-600, and a Gang Rancher.
+//
+//EDITED BY: psphacker108 on 17/12/06 02:00:55
+//Image: none
+//Time: 12/12/2006 00:09:53
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   0); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   0); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   0); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   0); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   0); 
+pspawn += 0x30;
+
+#cheat Gold Exhuast smoke
+//ID: 18984
+//Score: 73
+//Author: jumpman06
+//Category: Vehicle
+//Description: This code will make all cars exhuast go gold!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:46:28
+//Image: none
+//Time: 06/12/2006 20:56:36
+//Working: Yes
+setchar(0x9569b94, 0xCC, 0x99, 0x33);
+
+#cheat black exhaust smoke
+//ID: 18983
+//Score: 49
+//Author: jumpman06
+//Category: Vehicle
+//Description: The regular old black exhuast smoke.
+//
+//EDITED BY: psphacker108 on 07/12/06 16:46:56
+//Image: none
+//Time: 06/12/2006 20:55:44
+//Working: Yes
+setchar(0x9569b94, 0x33, 0x00, 0x00);
+
+#cheat Green Exhaust smoke
+//ID: 18982
+//Score: 52
+//Author: jumpman06
+//Category: Vehicle
+//Description: Green Exhaust smoke
+//
+//EDITED BY: psphacker108 on 07/12/06 16:47:08
+//Image: none
+//Time: 06/12/2006 20:55:15
+//Working: Yes
+setchar(0x9569b94, 0x00, 0xff, 0x00);
+
+#cheat red exhaust smoke
+//ID: 18981
+//Score: 56
+//Author: jumpman06
+//Category: Vehicle
+//Description: red exhaust smoke.
+//
+//EDITED BY: psphacker108 on 07/12/06 16:47:49
+//Image: none
+//Time: 06/12/2006 20:54:11
+//Working: Yes
+setchar(0x9569b94, 0xCC, 0x00, 0x00);
+
+#cheat Blue exhaust smoke
+//ID: 18980
+//Score: 64
+//Author: jumpman06
+//Category: Vehicle
+//Description: Blue exhaust smoke.
+//
+//EDITED BY: psphacker108 on 07/12/06 16:48:08
+//Image: none
+//Time: 06/12/2006 20:53:35
+//Working: Yes
+setchar(0x9569b94, 0x33, 0x00, 0xff);
+
+#cheat Spawn Patriot in Shelter at Safehouse
+//ID: 18978
+//Score: 48
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn Patriot in Shelter at compond safehouse!Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 20:14:24
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  209); 
+setfloat(pspawn + 4,  -1107.33,  286.71,  12.17,  0); 
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Spawn Rhino in Shelter at Safehouse
+//ID: 18977
+//Score: 46
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn Rhino in Shelter at compond safehouse! Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 20:13:28
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  246); 
+setfloat(pspawn + 4,  -1107.94,  301.01,  12.17,  0); 
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Spawn a Ventoso at Safehouse
+//ID: 18976
+//Score: 45
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn's a Ventoso (Moped) at Compound Safehouse! Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 19:57:32
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  202); 
+setfloat(pspawn + 4,  -1085.25,  317.76,  10.93,  0); 
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Spawn a Streetfighter at Safehouse
+//ID: 18975
+//Score: 46
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn a Streetfighter at Compound Safehouse! Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 19:32:34
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  252); 
+setfloat(pspawn + 4,  -1110.25,  335.31,  10.76,  0); 
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.2);
+
+#cheat No Car Wheels
+//ID: 19048
+//Score: 47
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Any car you get in will have no wheels, and you can still drive! (Doesn't work with motorcycles)
+//Image: none
+//Time: 16/12/2006 18:05:37
+//Working: Yes
+setfloat(pcar + 0x688, 5);
+setfloat(pcar + 0x68C, 5);
+setfloat(pcar + 0x690, 5);
+setfloat(pcar + 0x694, 5);
+
+#cheat Car Diamond
+//ID: 19036
+//Score: 123
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Make a gang on the streets of Vice City! Turn the code on and touch any 4 cars, and they will follow you, protecting you in a solid diamond shaped formation.
+//Image: http://img243.imageshack.us/img243/2286/video2nd6.gif
+//Time: 14/12/2006 01:24:21
+//Working: Yes
+static UM;
+static L;
+static R;
+static BM;
+
+if(!R||!L||!UM||!BM)
+{
+    setshort(0x08e90bd8,   1,   'K', 'e', 'e', 'p', ' ', 't', 'o', 'u', 'c', 'h', 'i', 'n', 'g', ' ', 'c', 'a', 'r', 's', '!',  0);
+}
+
+gcar = getint(pobj + 0x150);
+
+if (gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+        UM = gcar;
+}
+
+if(UM)
+{
+setfloat(UM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  9.0);
+setfloat(UM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  9.0); 
+setfloat(UM + 0x38,   getfloat(pcar + 0x38));
+setfloat(UM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(UM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(UM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(UM+0x140, 0, 0, 0);
+setfloat(UM+0x70, 0, 0, 0);
+setfloat(UM+0x27C, 1000);
+gcar = getint(UM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+BM = gcar;
+}
+}
+
+if(BM)
+{
+setfloat(BM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  -7.5);
+setfloat(BM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  -7.5); 
+setfloat(BM + 0x38,   getfloat(pcar + 0x38));
+setfloat(BM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(BM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(BM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(BM+0x140, 0, 0, 0);
+setfloat(BM+0x70, 0, 0, 0);
+setfloat(BM+0x27C, 1000);
+gcar = getint(BM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+L = gcar;
+}
+}
+
+if(L)
+{
+setfloat(L + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *   6.0);
+setfloat(L + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *   6.0); 
+setfloat(L + 0x38,   getfloat(pcar + 0x38));
+setfloat(L + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(L+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(L+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(L+0x140, 0, 0, 0);
+setfloat(L+0x70, 0, 0, 0);
+setfloat(L+0x27C, 1000);
+gcar = getint(L + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+R = gcar;
+}
+}
+
+if(R)
+{
+setfloat(R + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *  -6.0);
+setfloat(R + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *  -6.0); 
+setfloat(R + 0x38,   getfloat(pcar + 0x38));
+setfloat(R + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(R+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(R+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(R+0x140, 0, 0, 0);
+setfloat(R+0x70, 0, 0, 0);
+setfloat(R+0x27C, 1000);
+gcar = getint(R + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+UL = gcar;
+}
+}
+
+#off
+UM = BM = L = R = 0;
+
+
+#cheat Compound w/ more cars V.2
+//ID: 19032
+//Score: 59
+//Author: Destruction
+//Category: Vehicle
+//Description: This one adds the Hunter to the Compound Safehouse. All the vehicles also have correct angles now.
+//Image: none
+//Time: 13/12/2006 05:41:15
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   270); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   270); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   90); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   246); 
+setfloat(pspawn + 4,   -1111.63,   298.80,   12.32,   180); 
+pspawn += 0x30;
+setint(pspawn,   221); 
+setfloat(pspawn + 4,   -1061.00,   293.81,   12.17,   0); 
+pspawn += 0x30;
+setint(pspawn,   275); 
+setfloat(pspawn + 4,   -1104.25,   293.81,   22.02,   270); 
+pspawn += 0x30;
+
+#cheat Ultimate Safehouse's
+//ID: 19031
+//Score: 78
+//Author: Destruction
+//Category: Vehicle
+//Description: This yet another vehicle spawn cheat . . .
+//This spawns quite a few vehicles at ALL your safe houses.
+//Clymenus Suite: Maverick on 2nd helipad, Infernus and a Squalo at the dock
+//Compound: Hunter, Rhino, Washington, Patriot, PCJ-600, Gang Rancher, Sabre a
+//Image: none
+//Time: 13/12/2006 05:38:32
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   90); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   0); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   90); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   246); 
+setfloat(pspawn + 4,   -1111.63,   298.80,   12.32,   180); 
+pspawn += 0x30;
+setint(pspawn,   221); 
+setfloat(pspawn + 4,   -1061.00,   293.81,   12.17,   0); 
+pspawn += 0x30;
+setint(pspawn,   275); 
+setfloat(pspawn + 4,   -1104.25,   293.81,   22.02,   270); 
+pspawn += 0x30;
+setint(pspawn,   213); 
+setfloat(pspawn + 4,   245.22,   -184.29,   29.08,   90); 
+pspawn += 0x30;
+setint(pspawn,   257); 
+setfloat(pspawn + 4,   226.39,   -130.54,   6.93,   0); 
+pspawn += 0x30;
+setint(pspawn,   270); 
+setfloat(pspawn + 4,   264.86,   -153.60,   11.72,   270); 
+pspawn += 0x30;
+setint(pspawn,  212); 
+setfloat(pspawn + 4,  -801.37,  -1178.76,  10.96,  290); 
+pspawn += 0x30;
+setint(pspawn,  233); 
+setfloat(pspawn + 4,  -729.4,  -1148.9,  6.0,  20);
+pspawn += 0x30;
+setint(pspawn,  256); 
+setfloat(pspawn + 4,  -820.13,  -1198.75,  11.11,  180);
+pspawn += 0x30;
+
+#cheat Make The Compound like the Robber spawn V.2
+//ID: 19030
+//Score: 42
+//Author: Destruction
+//Category: Vehicle
+//Description: Its the same as the other I just fixed the angles of the cars
+//Image: none
+//Time: 13/12/2006 05:34:25
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   276); 
+setfloat(pspawn + 4,   -1074.58,   308.97,   10.86,   270); 
+pspawn += 0x30;
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   270); 
+pspawn += 0x30; 
+setint(pspawn,   209); 
+setfloat(pspawn + 4,   -1102.53,   300.59,   11.86,   180); 
+pspawn += 0x30;
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   270); 
+pspawn += 0x30;
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   180); 
+pspawn += 0x30;
+
+
+#cheat Hood Surfing
+//ID: 19029
+//Score: 80
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and touch any other car when you're in one yourself. Your car will pop up right above the car you touched and you will follow every single move it makes, making an illusion of surfing!
+//Image: http://img144.imageshack.us/img144/4248/video1kw8.gif
+//Time: 13/12/2006 01:20:25
+//Working: Yes
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30,  getfloat(surfee + 0x30) + getfloat(surfee + 0x10) * - 2.0);
+setfloat(pcar + 0x34,  getfloat(surfee + 0x34) + getfloat(surfee + 0x14) * -2.0);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+setfloat(pcar+0x140, 0, 0, 0);
+setfloat(pcar+0x70, 0, 0, 0);
+}
+#off
+surfee = 0;
+
+#cheat Spawn a Hunter at The Compound Safe House
+//ID: 19026
+//Score: 61
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Same as the others takes some time to load! Teleport away then back again!
+//Image: none
+//Time: 12/12/2006 12:01:31
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,   275);  
+setfloat(pspawn + 4,   -1081.47,   321.87,   11.27,   90);  
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+
+#cheat Grasshopper
+//ID: 19024
+//Score: 66
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Another vehicle code, this one will allow you to clear over buildings with the touch of a button! To use simply get a good amount of speed and then hit down on the d-pad for a HUGE burst of air!
+//Image: none
+//Time: 12/12/2006 00:42:21
+//Working: Yes
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148,  +0.8);
+boost = 1.5;
+thrust = boost * 0.01;
+setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+}
+
+#cheat Bulldozer
+//ID: 19023
+//Score: 91
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat allows you to pick up other cars and smash them up!
+//Controls- While holding R, touch a car to pick it up - Hit O to smash the car into the ground - Hit down to toss the car - Hit R to retrieve the last picked up car.
+//Image: http://img146.imageshack.us/img146/5170/video1qi8.gif
+//Time: 12/12/2006 00:18:03
+//Working: Yes
+static onoff;
+
+if(getint(pcar + 0x150))
+{
+ppedc = getint(pcar + 0x150);
+}
+if(ppedc&&buttons & CTRL_RTRIGGER&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+onoff = 1;
+}
+if(onoff&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+setfloat(ppedc + 0x30,  getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 7.5);
+setfloat(ppedc + 0x34,  getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 7.5);
+setfloat(ppedc + 0x38,  getfloat(pplayer + 0x38) + 2.5);
+setfloat(ppedc + 0x70, 0, 0, 0);
+if(press & CTRL_CIRCLE)
+{
+setfloat(ppedc + 0x0148, -1.2);
+setfloat(ppedc + 0x027C, getfloat(ppedc + 0x027C) - 250);
+onoff = 0;
+}
+else
+{
+setfloat(ppedc + 0x0148, 0);
+}
+if(press & CTRL_DOWN)
+{
+boost = 5;
+thrust = boost * 0.00333; 
+setfloat(ppedc + 0x0140,   getfloat(ppedc + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(ppedc + 0x0144,   getfloat(ppedc + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(ppedc + 0x0148,   getfloat(ppedc + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+onoff = 0;
+}
+}
+
+#cheat  Spawn a Sabre at Compound
+//ID: 19022
+//Score: 39
+//Author: Destruction
+//Category: Vehicle
+//Description: Spawns a Sabre just outside of the safehouse.
+//
+//EDITED BY: psphacker108 on 13/12/06 05:04:15
+//Image: none
+//Time: 12/12/2006 00:15:23
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   272); 
+setfloat(pspawn + 4,   -1004.38,   331.20,   10.86,   0); 
+pspawn += 0x30;
+
+#cheat Spawn a Gang Rancher Compound at Safehouse
+//ID: 19021
+//Score: 35
+//Author: Destruction
+//Category: Vehicle
+//Description: Spawn's a Gang Rancher Compound at Safehouse
+//
+//EDITED BY: psphacker108 on 13/12/06 02:18:20
+//Image: none
+//Time: 12/12/2006 00:14:32
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   269); 
+setfloat(pspawn + 4,   -1109.66,   339.21,   10.87,   0); 
+pspawn += 0x30;
+
+#cheat Spawn a PCJ-600 at Compound
+//ID: 19020
+//Score: 43
+//Author: Destruction
+//Category: Vehicle
+//Description: Spawns a PCJ-600 at compond.
+//
+//EDITED BY: psphacker108 on 13/12/06 02:27:29
+//Image: none
+//Time: 12/12/2006 00:13:20
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,   212); 
+setfloat(pspawn + 4,   -1062.73,   355.30,   11.29,   0); 
+pspawn += 0x30;
+
+#cheat Pearlescent Blue
+//ID: 19133
+//Score: 35
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent paint,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:30:44
+//Image: none
+//Time: 29/12/2006 17:30:34
+//Working: Yes
+setchar(pcar + 0x00000224, 110, 193, 239);
+setchar(pcar + 0x00000228, 110, 193, 239);
+
+
+#cheat Pearlescent Paint Purple
+//ID: 19130
+//Score: 34
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent Paint,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:31:44
+//Image: none
+//Time: 29/12/2006 14:02:10
+//Working: Yes
+setchar(pcar + 0x00000224, 154, 39, 239);
+setchar(pcar + 0x00000228, 154, 39, 239);
+
+
+#cheat Car Neon
+//ID: 19090
+//Score: 91
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Gives your curent car a blue round light under it.
+//
+//the light will flicker off at times, because of the instability in the way I spawn objects.
+//
+//thanks to psphacker for the idea
+//Image: none
+//Time: 21/12/2006 20:17:53
+//Working: Yes
+static obj;
+static old1;
+static old2;
+static old3;
+static old4;
+if(obj)
+{
+   setfloat(obj + 0x30, old1, old2, old3);
+   setshort(obj + 0x56, old4);
+}
+if(obj = getint(0x0994f460))
+{
+   old1 = getfloat(obj + 0x30);
+   old2 = getfloat(obj + 0x34);
+   old3 = getfloat(obj + 0x38);
+   old4 = getshort(obj + 0x56);
+   setfloat(obj + 0x30, getfloat(pcar+0x30), getfloat(pcar+0x34), getfloat(pcar+0x38));
+   setshort(obj + 0x56, 0x1d47);
+}
+
+#cheat Bump Transference
+//ID: 19089
+//Score: 78
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When you bump another car, Vic transfers into that car instantly. If it's a ped driven car, it continues driving like a ped and you're along for the ride. If you hit a car you've driven before, you will be fully driving the car you hit.
+//Image: none
+//Time: 21/12/2006 18:39:19
+//Working: Yes
+static pprev;
+static delay;
+if (delay > 0)
+   delay--;
+if (pcar)
+{
+   pbump = getint(pcar + 0x0150);
+   if (pbump && (pbump != pprev || delay == 0))
+   {
+       modelid = getshort(pbump + 0x0056);
+       if (modelid >= 170 && modelid <= 280)
+       {
+           setint(pplayer + 0x450, pbump);
+           setint(pplayer + 0x480, pbump);
+           setint(pplayer + 0x484, pbump);
+           setint(pbump + 0x384, pplayer);
+           setint(pcar + 0x384, 0);
+           setint(0x08bb4064, pbump);
+           setint(0x08bc7f10, pbump);
+           setint(0x08bc85f0, pbump);
+           setchar(pbump + 0x675, 0x90);
+           setchar(pcar + 0x675, 0x80);
+           delay = 180;
+           pprev = pcar; // no backsies
+       }
+   }
+}
+
+#cheat Car Semi-Burnt
+//ID: 19088
+//Score: 43
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make your car semi-burnt you can still see the first car color dimmed out when you get in.( Fully Drivable)
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-4.gif
+//Time: 21/12/2006 17:46:18
+//Working: Yes
+sethex(pcar + 0x4A,  79);
+#off
+sethex(pcar + 0x4A,   59);
+
+#cheat Shadow car
+//ID: 19085
+//Score: 38
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make any car your driving in have the shadow under the car. Can't see the car's shell basically. Work's on plane's (except helicopter)
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-1.gif
+//Time: 21/12/2006 17:29:18
+//Working: Yes
+sethex(pcar + 0x4D,  26);
+
+#cheat Biplane propeller stop's
+//ID: 19084
+//Score: 39
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Biplane's propeller's stop Helpful if you use for hover car's feature or you hate that annoying propeller sound and the movement. to turn off simply turn off get out and back in.Thank's to ADePSP
+//Image: http://img103.imageshack.us/my.php?image=video1zj1.gif
+//Time: 21/12/2006 17:25:15
+//Working: Yes
+sethex(pcar + 0x48, 74);
+#off
+
+#cheat Bike's/car's do stunt's V1
+//ID: 19079
+//Score: 55
+//Author: psphacker108
+//Category: Vehicle
+//Description: This code will allow you to be in mid-air and stay there ( IF you turn it off you will fall) and you can move the Vehicle in a rotation back and forth. turn off and you fall to land really fast. work's with bike's and car's!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-3.gif
+//Time: 20/12/2006 16:36:09
+//Working: Yes
+sethex(pcar + 0x30, 0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x44);
+
+#cheat Compound with Custom Car Spawns! V2
+//ID: 19067
+//Score: 64
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: V1: BF Injection, Cuban, Police Cheetah, Auto Gyro, Six wheel ATV. 
+//
+//V2: BF Injection, Cuban, Police Cheetah, Auto Gyro, Six wheel ATV Plus Domestobot, Ventoso, Streetfighter, Phoenix.
+//Image: none
+//Time: 18/12/2006 12:56:21
+//Working: Yes
+pspawn = 0x08E81290;   
+setint(pspawn,  255);    
+setfloat(pspawn + 4,  -1094.37,  311.42,  11.18,  90);    
+pspawn += 0x30; 
+setint(pspawn,  267);    
+setfloat(pspawn + 4,  -1079.92,  349.21,  11.18,  180);    
+pspawn += 0x30; 
+setint(pspawn,  204);    
+setfloat(pspawn + 4,  -1070.10,  343.47,  11.19,  180);    
+pspawn += 0x30; 
+setint(pspawn,  173);    
+setfloat(pspawn + 4,  -1078.91,  313.72,  10.95,  0);    
+pspawn += 0x30; 
+setint(pspawn,  170);    
+setfloat(pspawn + 4,  -1086.78,  362.27,  10.98,  180);    
+pspawn += 0x30; 
+setint(pspawn,  252); 
+setfloat(pspawn + 4,  -1110.25,  335.31,  10.76,  270); 
+pspawn += 0x30;
+setint(pspawn,  256); 
+setfloat(pspawn + 4,  -1059.17,  353.88,  10.76,  180); 
+pspawn += 0x30;
+setint(pspawn,  208); 
+setfloat(pspawn + 4,  -1069.60,  296.50,  10.76,  0); 
+pspawn += 0x30;
+setint(pspawn,  246); 
+setfloat(pspawn + 4,  -1107.94,  301.01,  12.17,  180); 
+pspawn += 0x30;
+setint(pspawn,  209); 
+setfloat(pspawn + 4,  -1107.33,  286.71,  12.17,  0); 
+pspawn += 0x30;
+setint(pspawn,  202); 
+setfloat(pspawn + 4,  -1085.25,  317.76,  10.93,  0); 
+pspawn += 0x30;
+setint(pspawn,  172); 
+setfloat(pspawn + 4,  -1073.88,  343.15,  10.77,  180); 
+pspawn += 0x30;
+teleport(-1054.93,  319.51,  11.26);
+
+#cheat Compound with Custom Car Spawns! V1
+//ID: 19066
+//Score: 42
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: V1: BF Injection, Cuban, Police Cheetah, Auto Gyro, Six wheel ATV.
+//Image: none
+//Time: 18/12/2006 12:20:14
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,     255);   
+setfloat(pspawn + 4,     -1094.37,     311.42,     11.18,     270);   
+pspawn += 0x30;
+setint(pspawn,    267);   
+setfloat(pspawn + 4,     -1079.92,     349.21,     11.18,    180);   
+pspawn += 0x30;
+setint(pspawn,    204);   
+setfloat(pspawn + 4,     -1070.10,     343.47,     11.19,    180);   
+pspawn += 0x30;
+setint(pspawn,    173);   
+setfloat(pspawn + 4,     -1078.91,     313.72,     10.95,    0);   
+pspawn += 0x30;
+setint(pspawn,    170);   
+setfloat(pspawn + 4,     -1086.78,     362.27,     10.98,    180);   
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Red and black car colour (works good with phonix)
+//ID: 19057
+//Score: 43
+//Author: walshyboy
+//Category: Vehicle
+//Description: Says it all in the Name, Another color cheat.
+//
+//
+//
+//EDITED BY: psphacker108 on 20/12/06 05:24:38
+//Image: none
+//Time: 17/12/2006 09:12:48
+//Working: Yes
+setint(pcar + 0x00000224, 200);
+setint(pcar + 0x00000228, 0);
+
+#cheat Spawn Rhino at Safe House
+//ID: 19049
+//Score: 38
+//Author: four zeros
+//Category: Vehicle
+//Description: Spawn Rhino at Safe House the Compound One!
+//Image: none
+//Time: 16/12/2006 19:31:23
+//Working: Yes
+setint(pspawn,    212);  
+setfloat(pspawn + 4,    -1062.73,    355.30,    11.29,    0);  
+pspawn += 0x30;
+
+#cheat Car Drives Sideways
+//ID: 19215
+//Score: 50
+//Author: DoteStudios
+//Category: Vehicle
+//Description:  This makes the car you are driving in drive sideways. It is just like the jet ski cheat.
+//
+//EDITED BY: psphacker108 on 09/01/07 02:16:17
+//Image: none
+//Time: 04/01/2007 04:19:44
+//Working: Yes
+setchar(pcar + 0x00000003, 0);
+
+#cheat pearlescent orange with black stripe
+//ID: 19141
+//Score: 37
+//Author: walshyboy
+//Category: Vehicle
+//Description: pearlescent orange with black stripe (by black stripe I mean black secondary color, Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:27:55
+//Image: none
+//Time: 29/12/2006 17:38:38
+//Working: Yes
+setchar(pcar + 0x00000224, 255, 143, 52);
+setint(pcar + 0x00000228, 0);
+
+
+#cheat Pearlescent green with black stripe
+//ID: 19140
+//Score: 38
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent green with black stripe,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:28:12
+//Image: none
+//Time: 29/12/2006 17:37:26
+//Working: Yes
+setchar(pcar + 0x00000224, 80, 255, 160);
+setint(pcar + 0x00000228, 0);
+
+#cheat Pearlescent red with black stripe
+//ID: 19139
+//Score: 36
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent red with black stripe,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:28:44
+//Image: none
+//Time: 29/12/2006 17:36:42
+//Working: Yes
+setchar(pcar + 0x00000224, 255, 74, 96);
+setint(pcar + 0x00000228, 0);
+
+
+#cheat Pearlescent Blue with black stripe
+//ID: 19138
+//Score: 37
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent Blue with black stripe,Must be in the vehicle to make it work.
+//
+//EDITED BY: theY4Kman on 31/12/06 04:15:15
+//Image: none
+//Time: 29/12/2006 17:36:02
+//Working: Yes
+setchar(pcar + 0x224, 110, 193, 239);
+setint(pcar + 0x228, 0);
+
+#cheat Pealrescent Purple with black stripe
+//ID: 19137
+//Score: 31
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pealrescent Purple with black stripe,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:29:34
+//Image: none
+//Time: 29/12/2006 17:35:26
+//Working: Yes
+setchar(pcar + 0x00000224, 154, 39, 239);
+setint(pcar + 0x00000228, 0);
+
+#cheat Pearlescent orange
+//ID: 19136
+//Score: 30
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent paint,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:29:57
+//Image: none
+//Time: 29/12/2006 17:33:56
+//Working: Yes
+setchar(pcar + 0x00000224, 255, 143, 52);
+setchar(pcar + 0x00000228, 255, 143, 52);
+
+
+#cheat Pearlescent Green
+//ID: 19135
+//Score: 31
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent paint,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:31:05
+//Image: none
+//Time: 29/12/2006 17:33:02
+//Working: Yes
+setchar(pcar + 0x00000224, 80, 255, 160);
+setchar(pcar + 0x00000228, 80, 255, 160);
+
+
+#cheat Pearlescent red
+//ID: 19134
+//Score: 32
+//Author: walshyboy
+//Category: Vehicle
+//Description: Pearlescent paint,Must be in the vehicle to make it work.
+//
+//EDITED BY: psphacker108 on 29/12/06 21:30:54
+//Image: none
+//Time: 29/12/2006 17:32:07
+//Working: Yes
+setchar(pcar + 0x00000224, 255, 74, 96);
+setchar(pcar + 0x00000228, 255, 74, 96);
+
+
+#cheat Hikiwara tuned Cholo Sabre
+//ID: 19272
+//Score: 44
+//Author: jumpman06
+//Category: Vehicle
+//Description: This is a kinda pmg car, made out of different codes,  its behind sunshine autos main building, where the races are
+//Image: none
+//Time: 16/01/2007 18:07:16
+//Working: Yes
+pspawn = 0x08E81290;  
+setint(pspawn,    265);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(0x098F66E0, 'H', 'i', 'k', 'i', 'w', 'a', 'r', 'a', ' ', 'S', 'a', 'b', 'r', 'e', 0);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+
+static rotation; 
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat straigh line drag
+//ID: 19271
+//Score: 36
+//Author: jumpman06
+//Category: Vehicle
+//Description: make your car DRAG race rly good, best on the airstrip
+//Image: none
+//Time: 16/01/2007 18:02:39
+//Working: Yes
+if(buttons&CTRL_CROSS) 
+{ 
+   setfloat(pcar+0x70,  ystick * getfloat(pcar) / 80); 
+   setfloat(pcar+0x74,  ystick * getfloat(pcar+4) / 80); 
+   setfloat(pcar+0x78,  xstick* getfloat(pcar+8) / 80); 
+} 
+
+#cheat Theory of Chaos Doors
+//ID: 19241
+//Score: 48
+//Author: jumpman06
+//Category: Vehicle
+//Description: Doors That go a little crazy but bassically become CCR or CCX doors..
+//Image: none
+//Time: 09/01/2007 16:40:04
+//Working: Yes
+// By *CH405* & *Theory*
+setfloat(pcar+0x450,  -9,  -65,  -9);
+setfloat(pcar+0x480,  -9,  -65,  -9);
+setfloat(pcar+0x4b0,  -9,  -65,  -9);
+setfloat(pcar+0x4e0,  -9,  -65,  -9);
+
+#cheat No Car Doors
+//ID: 19239
+//Score: 42
+//Author: jumpman06
+//Category: Vehicle
+//Description: Makes your car doors Fake, you can get in where the doors are but they are still there, Vic gets in like theyre not there
+//
+//Image: none
+//Time: 09/01/2007 16:33:39
+//Working: Yes
+// By *CH405* & *Theory*
+setfloat(pcar+0x450,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x480,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x4b0,  3.1,  1.96393,  3.1);
+setfloat(pcar+0x4e0,  3.1,  1.96393,  3.1);
+
+#cheat a bunch of vehicle colors for vcs
+//ID: 19220
+//Score: 54
+//Author: DoteStudios
+//Category: Vehicle
+//Description:  This has a ton of different colors for vehicles in vcs. The list includes basics and neons. The colors include: black, red, yellow, purple, dark green, orange, light gray, white, green, blue, dark blue, dark gray, brown, peach, neon green, neon blue, neon red, neon yellow, neon purple, and neon orange.
+//
+//NOTE: For every space paste, #cheat.
+//Image: none
+//Time: 05/01/2007 21:31:08
+//Working: Yes
+setchar(pcar+0x00000224, 0x00, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0x99, 0x00, 0x00);
+setchar(pcar+0x00000228, 0x99, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0x99, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x00);
+
+setchar(pcar+0x00000224, 0x5e, 0x29, 0x47);
+setchar(pcar+0x00000228, 0x5e, 0x29, 0x47);
+
+setchar(pcar+0x00000224, 0x33, 0x99, 0x00);
+setchar(pcar+0x00000228, 0x33, 0x99, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0x66, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x66, 0x00);
+
+setchar(pcar+0x00000224, 0xcc, 0xcc, 0xcc);
+setchar(pcar+0x00000228, 0xcc, 0xcc, 0xcc);
+
+setchar(pcar+0x00000224, 0xff, 0xff, 0xff);
+setchar(pcar+0x00000228, 0xff, 0xff, 0xff);
+
+setchar(pcar+0x00000224, 0x33, 0xcc, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xcc, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0x66, 0xcc);
+setchar(pcar+0x00000228, 0x00, 0x66, 0xcc);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0x79);
+setchar(pcar+0x00000228, 0x00, 0x00, 0x79);
+
+setchar(pcar+0x00000224, 0x66, 0x33, 0x00);
+setchar(pcar+0x00000228, 0x66, 0x33, 0x00);
+
+setchar(pcar+0x00000224, 0xff, 0xcc, 0x66);
+setchar(pcar+0x00000228, 0xff, 0xcc, 0x66);
+
+setchar(pcar+0x00000224, 0x33, 0xff, 0x00);
+setchar(pcar+0x00000228, 0x33, 0xff, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0xff, 0xff);
+setchar(pcar+0x00000228, 0x00, 0xff, 0xff);
+
+setchar(pcar+0x00000224, 0xff, 0x00, 0x00);
+setchar(pcar+0x00000228, 0xff, 0x00, 0x00);
+
+setchar(pcar+0x00000224, 0x00, 0x00, 0xff);
+setchar(pcar+0x00000228, 0x00, 0x00, 0xff);
+
+setchar(pcar+0x00000224, 0xcc, 0x00, 0xff);
+setchar(pcar+0x00000228, 0xcc, 0x00, 0xff);
+
+setchar(pcar+0x00000224, 0xff, 0x99, 0x55);
+setchar(pcar+0x00000228, 0xff, 0x99, 0x55);
+

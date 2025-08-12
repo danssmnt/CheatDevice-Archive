@@ -1,0 +1,306 @@
+#cheat Glass Purple and Blue Cop Car
+//ID: 18972
+//Score: 60
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Blue and Purple!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//Image: none
+//Time: 06/12/2006 18:35:01
+//Working: Yes
+sethex(0x09ab98f4,  1A); 
+
+#cheat Cream Cop Car
+//ID: 18971
+//Score: 53
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Cream!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//Image: none
+//Time: 06/12/2006 18:33:30
+//Working: Yes
+sethex(0x09ab98f4,  16);
+
+#cheat Purple and Blue Cop Car
+//ID: 18970
+//Score: 55
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Blue and Purple!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:50:30
+//Image: none
+//Time: 06/12/2006 18:32:02
+//Working: Yes
+sethex(0x09ab98f4,  12); 
+
+#cheat Just Plain Weird Cop Car
+//ID: 18728
+//Score: 93
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes cop cars look weird... All make sense when you try this cheat :)
+//Image: none
+//Time: 15/11/2006 23:45:58
+//Working: Yes
+Just Plain Weird Cop Car
+// Turns stuff on the side of you transparent for a brief second, then changes back.
+sethex(0x09AB98F4, FF)
+
+
+#cheat Glass Cop Car
+//ID: 18727
+//Score: 111
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns cop cars into cop cars with weird stuff coming out of it. Mostly has Glass... Though the color changes by what angle you are looking at it...
+//
+//It's too complicated, just download and see for your self!!!
+//
+//EDITED BY: edisoncarter on 18/11/06 00:2
+//Image: none
+//Time: 15/11/2006 23:42:26
+//Working: Yes
+// Glass Cop Car
+sethex(0x09AB98F4, F9);
+
+#cheat Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+//ID: 18726
+//Score: 97
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars look like they were morphed w/ Yu-Gi-Oh... XD
+//
+//EDITED BY: edisoncarter on 18/11/06 00:32:49
+//Image: none
+//Time: 15/11/2006 23:37:43
+//Working: Yes
+// Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+sethex(0x09AB98F4, F0);
+
+
+#cheat Rayman Wheeled Cop Cars
+//ID: 18725
+//Score: 71
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars into Rayman styled cop cars, the wheels dont touch the car... :P Have fun :)
+//
+//EDITED BY: edisoncarter on 18/11/06 00:25:17
+//Image: none
+//Time: 15/11/2006 23:33:16
+//Working: Yes
+sethex(0x09AB98F4, 65)
+
+#cheat Trunk Gone Cops/ Jeep Cop Cars
+//ID: 18724
+//Score: 79
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns all cop cars into jeeps.
+//Image: none
+//Time: 15/11/2006 23:30:16
+//Working: Yes
+Trunk Gone Cops/ Jeep Cop Cars
+sethex(0x09AB98F4, 24)
+
+
+#cheat Vulture Cop Cars (TESTED)
+//ID: 18723
+//Score: 73
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cruiser cars look cool, with spiky edges strictly dark green and black.
+//
+//EDITED BY: edisoncarter on 18/11/06 00:24:58
+//Image: none
+//Time: 15/11/2006 23:26:34
+//Working: Yes
+sethex(0x09AB98F4, 00)
+
+#cheat Normal Cop Car
+//ID: 18705
+//Score: 88
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: If you use one of the cop car mod cheats some of them can get well annoying.....
+//
+//just turn onf cheat and it turns all back to normal the cop car that is.
+//Image: none
+//Time: 14/11/2006 04:23:07
+//Working: Yes
+//By:LILFRK12006
+sethex(0x09AB98F4, 21);
+
+#cheat rainbow ish cop car
+//ID: 18704
+//Score: 98
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: Makes the Cop car rainbow ish but it looks totaly normal.
+//
+//EDITED BY: psphacker108 on 14/11/06 15:53:11
+//Image: http://img489.imageshack.us/img489/1960/copcar11aw9.png
+//Time: 14/11/2006 04:21:14
+//Working: Yes
+//By:Lilfrk12006
+sethex(0x09AB98F4, 30);
+
+#cheat Destroy All Police and Army Vehicles
+//ID: 19518
+//Score: 52
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: While this code is on, any and all police cars, motorcycles, helicopters, SWAT Vans, FBI vehicles, and Army vehicles will be destroyed as soon as they appear on-screen! Thanks to Waterbottle for his code used in this.
+//Image: none
+//Time: 09/04/2007 03:46:03
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         checkID = getshort(p + 0x56);
+         if(p != pcar && checkID == 193 || checkID == 204 || checkID == 207 || checkID == 218 || checkID == 221 || checkID == 234 || checkID == 246 || checkID == 260 || checkID == 261 || checkID == 268 || checkID == 279 || checkID == 191) setfloat(p + 0x27c,  0);
+     }
+}
+#off
+setchar(0x08bb32c8,   0); 
+
+#cheat Pop out Police VCS
+//ID: 19421
+//Score: 57
+//Author: psphacker108
+//Category: Vehicle
+//Description: Pop out Police for VCS! You must use the Vehicle you have in your little haiti garage for this code to work, Turn off with the OFF code Seprate so you can get out but the cops can't get in!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-12.gif
+//Time: 05/03/2007 03:03:06
+//Working: Yes
+setchar(pcar + 0x267, 0x75);
+off()
+
+#cheat pop out police OFF
+//ID: 19420
+//Score: 46
+//Author: psphacker108
+//Category: Vehicle
+//Description: This turn's the Pop out Police code I made off ( It will let you be able to get out of your car)
+//Image: none
+//Time: 05/03/2007 02:49:32
+//Working: Yes
+setchar(pcar + 0x267, 0x44);
+off()
+
+
+#cheat Police Station Wagons
+//ID: 18662
+//Score: 117
+//Author: Matt420bad07
+//Category: Vehicle
+//Description: Makes all police cars look like a station wagon And changes the color of some parts on the car.
+//
+//EDITED BY: Waterbottle on 11/11/06 10:31:32
+//Image: http://img289.imageshack.us/img289/6791/screen1lz3.png
+//Time: 11/11/2006 06:06:55
+//Working: Yes
+setchar(0x09ab96e2, 208);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 255);
+setchar(0x09ab96e7, 64);
+setchar(0x09ab96ea, 128);
+setchar(0x09ab96eb, 63);
+setchar(0x09ab96f6, 4);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 254);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab99fe, 5);
+setchar(0x09ab9a2e, 4);
+setchar(0x09abe776, 64);
+setchar(0x09abe777, 65);
+setchar(0x09abe88e, 3);
+setchar(0x09abe8be, 3);
+setchar(0x09abf746, 64);
+setchar(0x09abf747, 65);
+setchar(0x09abf85e, 3);
+setchar(0x09ac2bce, 4);
+setchar(0x09ac2bfe, 4);
+setchar(0x09abd5ae, 4);
+
+#cheat Custom Police Car
+//ID: 18661
+//Score: 123
+//Author: Matt420bad07
+//Category: Vehicle
+//Description: Totally custom.... cop car.
+//
+//EDITED BY: Waterbottle on 11/11/06 10:32:09
+//Image: none
+//Time: 11/11/2006 06:02:22
+//Working: Yes
+setchar(0x09ab98f4, 4);
+setchar(0x09ab8ce4, 22);
+setchar(0x09ab8d06, 192);
+setchar(0x09ab8d07, 65);
+setchar(0x09ab8d0a, 48);
+setchar(0x09ab8d0b, 64);
+setchar(0x09ab8d16, 4);
+setchar(0x09ab8d17, 190);
+setchar(0x09ab8d1a, 195);
+setchar(0x09ab8d1b, 62);
+setchar(0x09ab8d33, 69);
+setchar(0x09ab85d6, 192);
+setchar(0x09ab85d7, 64);
+setchar(0x09abd57e, 1);
+setchar(0x09abe82e, 2);
+setchar(0x09abe85e, 1);
+setchar(0x09abe776, 208);
+setchar(0x09abf746, 208);
+setchar(0x09abf7fe, 2);
+setchar(0x09abf82e, 2);
+setchar(0x09abf837, 62);
+setchar(0x09abf83b, 62);
+setchar(0x09abe867, 62);
+setchar(0x09abe86b, 62);
+setchar(0x09ac2b9e, 1);
+setchar(0x09ac4126, 180);
+setchar(0x09ac4127, 62);
+setchar(0x09ac412a, 147);
+setchar(0x09ac412b, 60);
+setchar(0x09ac4c3a, 32);
+setchar(0x09ac4c3b, 64);
+setchar(0x09ac4c4a, 96);
+setchar(0x09ac4c4b, 190);
+setchar(0x09ab8d07, 66);
+setchar(0x09ab8d1a, 149);
+setchar(0x09ab9322, 32);
+setchar(0x09ab9357, 0);
+setchar(0x09ab935b, 0);
+setchar(0x09ab9717, 0);
+setchar(0x09ab971b, 0);
+setchar(0x09ab96f6, 237);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 236);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab96e2, 198);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 28);
+setchar(0x09ab96e7, 65);
+setchar(0x09ab96ea, 0);
+setchar(0x09ab96eb, 63);
+setchar(0x09ac1a37, 0);
+setchar(0x09ac1a3b, 0);
+setchar(0x09ac1a07, 0);
+setchar(0x09ac1a0b, 0);
+setchar(0x09ac19d2, 0);
+setchar(0x09ac19d3, 64);
+setchar(0x09ac19d6, 128);
+setchar(0x09ac19d7, 65);
+setchar(0x09ac19da, 16);
+setchar(0x09ac19db, 64);
+setchar(0x09ac19e6, 152);
+setchar(0x09ac19e7, 192);
+setchar(0x09ac19ea, 195);
+setchar(0x09ac19eb, 62);
+

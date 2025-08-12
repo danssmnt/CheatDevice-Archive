@@ -1,0 +1,1449 @@
+#cheat Weather Modifier
+//ID: 18600
+//Score: 144
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to modify the weather in Vice City Stories.
+//it automatically starts  off on sunny weather, and the higher you go in the weather, the weirder it gets...
+//Image: none
+//Time: 08/11/2006 18:08:48
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+weather = 0;
+}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0))
+{weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255))
+{weather = weather + 1;}
+setchar(0x8bb3e00, weather);
+setchar(0x8bb3df8, weather);
+setchar(0x8bb458c, weather);
+
+#cheat All Particles are White
+//ID: 18576
+//Score: 66
+//Author: theY4Kman
+//Category: Environment
+//Description: Changes all the particle colors to white.
+//Image: none
+//Time: 06/11/2006 22:12:38
+//Working: Yes
+// Change these values to change the color
+red = 0xFF;
+green = 0xFF;
+blue = 0xFF;
+particles = 0x9567A10;
+for(i=0; i<=90; i++){
+	currentparticle = i*0x84;
+	setchar(particles + currentparticle, red, green, blue);
+}
+off();
+
+#cheat disable side missions
+//ID: 18570
+//Score: 123
+//Author: Waterbottle
+//Category: Environment
+//Description: This disables all missions, meaning, no more will the annoying side missions pop up when you want to select a cheat.
+//Image: none
+//Time: 06/11/2006 18:21:01
+//Working: Yes
+setchar(0x09f69054, 1);
+#off
+setchar(0x09f69054, 0);
+
+#cheat Skip Nighttime
+//ID: 18568
+//Score: 108
+//Author: edisoncarter
+//Category: Environment
+//Description: At 18:00 rolls the clock forward to 6:00 so you don't have to play in the dark.
+//Image: none
+//Time: 06/11/2006 16:19:37
+//Working: Yes
+if (getchar(0x08bb3b40) >= 18 || getchar(0x08bb3b40) <= 5)
+    setchar(0x08bb3b40, 6, 0);
+
+#cheat All Red Baloons Burst. w/ Rewards
+//ID: 18503
+//Score: 173
+//Author: Waterbottle
+//Category: Environment
+//Description: All Baloons found, Rewards spawn at safehouse
+//Image: none
+//Time: 04/11/2006 18:22:16
+//Working: Yes
+for(i=0;i<99;i++) {
+setint(0x09f6a200+4*i, 1);
+}
+setshort(0x08bb3d3c, 99);
+off();
+
+#cheat A new mission
+//ID: 18941
+//Score: 80
+//Author: NRG500
+//Category: Environment
+//Description: This is a new mission for ViceCityStories.
+//Just enter in the car spawning next to the 101 Bayshore safehouse to start the mission.
+//Image: none
+//Time: 30/11/2006 20:00:48
+//Working: Yes
+//By NRG500
+static etat;
+static chrono;
+static argent;
+
+if(!etat)
+{
+   etat = -1;
+
+   pspawn = 0x08E81290;
+   setint(pspawn,  224);
+   setfloat(pspawn + 4,  -365.03, -527.97, 12.16,  0);
+   pspawn += 0x30; 
+
+   setint(pspawn,  256); 
+   setfloat(pspawn + 4,  -794.46, -1177.70, 10.48, 190); 
+   pspawn += 0x30;
+
+}
+if(getfloat(pcar+0x30) > -796 && getfloat(pcar+0x30) < -792 && getfloat(pcar+0x34) < -1175 && getfloat(pcar+0x34) > -1179 && getshort(pcar+0x56) == 256)
+{
+   etat = 1;
+   temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+}
+if(etat == 1)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+      setshort(0x08e90bd8,   1, ' ', 'G', 'o', ' ', '~',   'b',   '~', 't', 'o',  ' ', 'D', 'i', 'a', 'z',  's',  ' ', 'm', 'a', 'n', 's', 'i', 'o', 'n',  '~',   'w',   '~', ' ', 't', 'o', ' ', 't', 'a', 'k', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'r', 'u', 'g', 's', '.', 0); 
+   else
+   temps = 0;
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511)
+   {
+       etat = 2;
+       temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 2)
+{
+
+   setshort(0x08e90bd8,   1, ' ', 'E', 'n', 't', 'e', 'r', ' ', 'i', 'n', ' ', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '~',   'w',   '~', 0);
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511 && getshort(pcar+0x56) == 224)
+   {
+      etat = 3;
+      setint(pplayer+0x00000910,  3);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 3)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'T', 'h', 'e', ' ', 'c', 'o', 'p', 's', ' ',  'a', 'r', 'e', ' ', 'c', 'h', 'a', 's', 'i',  'n', 'g', ' ', 'y', 'o', 'u', ', ', ' ', 's', 'o', 'w', ' ', 't', 'h', 'e', 'm', 0);
+   else
+   temps = 0;
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   {
+      setshort(0x08e90bd8,   1, ' ',  'C', 'o', 'm', 'e', ' ', 'b', 'a', 'c', 'k', ' ', 'i', 'n', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '.', '~',   'w',   '~', 0);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+
+
+   if(!getint(pplayer+0x00000910))
+   {
+      etat = 4;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 4)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+  
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'O', 'k', ', ', ' ', 'b', 'r', 'i', 'n', 'g', ' ',  'b', 'a', 'c', 'k', ' ', 't', 'h', 'e', ' ', 'g',  'o', 'o', 'd', 's', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 's', 'a', 'f', 'e', 'h', 'o', 'u', 's', 'e', 0);
+   else if( tempsActuel - 10 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'Q', 'u', 'i', 'c', 'k', 'l', 'y', ', ', ' ', 'y',  'o', 'u', ' ', 'd', 'o', 'n', ' ', 't', ' ', 'h',  'a', 'v', 'e', ' ', 'a', ' ', 'l', 'o', 't', ' ', 'o', 'f', ' ', 't', 'i', 'm', 'e', '!', 0);
+   else
+   {   
+      temps = 0;
+      if(!chrono)
+      {
+         chrono = 40;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+      
+      if(tempsActuel - temps2 >=1)
+      {
+         chrono --;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      setshort(0x08e90bd8,   1, 'T', 'i', 'm', 'e', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+      
+      if(chrono ==0)
+      {
+         etat = 10;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      if(getfloat(pcar+0x30) < -794 && getfloat(pcar+0x30) > -815 && getfloat(pcar+0x34) < -1170 && getfloat(pcar+0x34) > -1187)
+      {
+         etat = 5;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+   }
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   setshort(0x08e90bd8,   1, ' ',  'C', 'o', 'm', 'e', ' ', 'b', 'a', 'c', 'k', ' ', 'i', 'n', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '.', '~',   'w',   '~', ' ', 't', 'i', 'm', 'e', ':', ' ', 0x30+chrono/10 , 0x30+chrono%10, 0);
+
+}
+if(etat == 5)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'P', 'a', 'r', 'k', ' ', 't', 'h', 'e', ' ', 'v',  'a', 'n', ' ', 'i', 'n', ' ', 't', 'h', 'e', ' ',  'g', 'a', 'r', 'a', 'g', 'e', ' ', 'a', 'n', 'd', ' ', 'l', 'e', 'a', 'v', 'e', ' ', 'i', 't', '.', 0);
+
+   if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 224)
+   etat = 6;
+
+}
+if(etat == 6)
+{
+   if((pplayer+0x30) > -826 && !pcar)
+   {
+      etat = 7;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat ==7)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90DD8,   1, ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'p', 'a',  's', 's', 'e', 'd',  ', ', ' ', '5', '0', '0', '$', ' ', 'f', 'o', 'r', ' ', 'y', 'o', 'u', ' ', '!', 0);
+   else
+   off();
+
+   if(!argent)
+   {
+      setint(0x08bde55c, getint(0x08bde55c)+500);
+      argent = 1;
+   }
+}
+if(etat ==10)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90DD8,   1, ' ', '~',   'r',   '~', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'f', 'a',  'i', 'l', 'e', 'd', ', ', ' ', 'y', 'o', 'u', ' ',  'a', 'r', 'e', ' ', 't', 'o', 'o', ' ', 's', 'l', 'o', 'w', '~',   'w',   '~', 0);
+   else
+   off();
+}
+
+#cheat Mission Complète
+//ID: 18914
+//Score: 73
+//Author: NRG500
+//Category: Environment
+//Description: Une nouvelle mission pour ViceCityStories, montez dans la phoenix devant la planque de Vice Port pour que la mission se lance.
+//Image: none
+//Time: 25/11/2006 23:52:37
+//Working: Yes
+//By NRG500
+static etat;
+static chrono;
+static argent;
+
+if(!etat)
+{
+   etat = -1;
+
+   pspawn = 0x08E81290;
+   setint(pspawn,  224);
+   setfloat(pspawn + 4,  -365.03, -527.97, 12.16,  0);
+   pspawn += 0x30; 
+
+   setint(pspawn,  256); 
+   setfloat(pspawn + 4,  -794.46, -1177.70, 10.48, 190); 
+   pspawn += 0x30;
+
+}
+if(getfloat(pcar+0x30) > -796 && getfloat(pcar+0x30) < -792 && getfloat(pcar+0x34) < -1175 && getfloat(pcar+0x34) > -1179 && getshort(pcar+0x56) == 256)
+{
+   etat = 1;
+   temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+}
+if(etat == 1)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'V', 'a', ' ', '~',   'b',   '~', 'c', 'h', 'e', 'z', ' ', 'D', 'i', 'a', 'z', '~',   'w',   '~', ' ', 'c', 'h', 'e', 'r', 'c', 'h', 'e', 'r', ' ', 'l', 'a', ' ', 'd', 'r', 'o', 'g', 'u', 'e', '.', 0); 
+   else
+   temps = 0;
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511)
+   {
+       etat = 2;
+       temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 2)
+{
+
+   setshort(0x08e90bd8,   1, ' ', 'M', 'o', 'n', 't', 'e', 's', ' ', 'd', 'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', 0);
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511 && getshort(pcar+0x56) == 224)
+   {
+      etat = 3;
+      setint(pplayer+0x00000910,  3);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 3)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'L', 'e', 's', ' ', 'f', 'l', 'i', 'c', 's', ' ',  's', 'o', 'n', 't', ' ', 'a', ' ', 't', 'a', ' ',  'p', 'o', 'u', 'r', 's', 'u', 'i', 't', 'e', '.', ' ', 'S', 'e', 'm', 'e', '-', 'l', 'e', 's', 0);
+   else
+   temps = 0;
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   {
+      setshort(0x08e90bd8,   1, ' ', 'R', 'e', 'm', 'o', 'n', 't', 'e', 's', ' ', 'd',  'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', 0);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+
+
+   if(!getint(pplayer+0x00000910))
+   {
+      etat = 4;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 4)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+  
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'C', ' ', 'e', 's', 't', ' ', 'b', 'o', 'n', ', ',  ' ', 'r', 'a', 'm', 'e', 'n', 'e', ' ', 'l', 'a',  ' ', 'm', 'a', 'r', 'c', 'h', 'a', 'n', 'd', 'i', 's', 'e', ' ', 'a', ' ', 'l', 'a', ' ', 'p', 'l', 'a', 'n', 'q', 'u', 'e', 0);
+   else if( tempsActuel - 10 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'V', 'i', 't', 'e', ', ', ' ', 't', ' ', 'a', ' ',  'p', 'l', 'u', 's', ' ', 'b', 'e', 'a', 'u', 'c',  'o', 'u', 'p', ' ', 'd', 'e', ' ', 't', 'e', 'm', 'p', 's', ' ', '!', 0);
+   else
+   {   
+      temps = 0;
+      if(!chrono)
+      {
+         chrono = 40;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+      
+      if(tempsActuel - temps2 >=1)
+      {
+         chrono --;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      setshort(0x08e90bd8,   1, 'T', 'e', 'm', 'p', 's', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+      
+      if(chrono ==0)
+      {
+         etat = 10;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      if(getfloat(pcar+0x30) < -794 && getfloat(pcar+0x30) > -815 && getfloat(pcar+0x34) < -1170 && getfloat(pcar+0x34) > -1187)
+      {
+         etat = 5;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+   }
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   setshort(0x08e90bd8,   1, ' ', 'R', 'e', 'm', 'o', 'n', 't', 'e', 's', ' ', 'd',  'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', '.', 'T', 'e', 'm', 'p', 's', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+
+}
+if(etat == 5)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'G', 'a', 'r', 'e', ' ', 'l', 'a', ' ', 'c', 'a',  'm', 'i', 'o', 'n', 'e', 't', 't', 'e', ' ', 'd',  'a', 'n', 's', ' ', 'l', 'e', ' ', 'g', 'a', 'r', 'a', 'g', 'e', ' ', 'e', 't', ' ', 's', 'o', 'r', 't', 0);
+
+   if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 224)
+   etat = 6;
+
+}
+if(etat == 6)
+{
+   if((pplayer+0x30) > -826 && !pcar)
+   {
+      etat = 7;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat ==7)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', '~',   'g',   '~', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'r', 'e',  'u', 's', 's', 'i', 'e', ' ', ', ', 'v', 'o', 'i',  'l', 'a', ' ', '5', '0', '0', '$', ' ', 'p', 'o', 'u', 'r', ' ', 't', 'o', 'i', ' ', '!', '~',   'w',   '~', 0);
+   else
+   off();
+
+   if(!argent)
+   {
+      setint(0x08bde55c, getint(0x08bde55c)+500);
+      argent = 1;
+   }
+}
+if(etat ==10)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', '~',   'r',   '~', 'E', 'c', 'h', 'e', 'q', 'u', 'e', ' ', 'd', 'e',  ' ', 'l', 'a', ' ', 'm', 'i', 's', 's', 'i', 'o',  'n', ' ', ', ', ' ', 't', ' ', 'e', 's', ' ', 't', 'r', 'o', 'p', ' ', 'l', 'e', 'n', 't', ' ', '!', '~',   'w',   '~', 0);
+   else
+   off();
+}
+
+#cheat The Mysterious Banshee
+//ID: 18867
+//Score: 83
+//Author: Waterbottle
+//Category: Environment
+//Description: Enter the banshee spawning in the Bayshore Ave safehouse garage to start a simple mission.
+//
+//The car is fitted with a bomb and you have to drive fast so it dosn't blow up before it's dismantled.
+//Image: none
+//Time: 23/11/2006 22:06:43
+//Working: Yes
+static state;
+DifficultLevel = 50;
+  if(state) 
+      setshort(pcar+0x232,  0x0101); 
+  else
+  {
+      setint(0x08C739B0,  175);
+      setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+      setfloat(0x08C739C0,  3.1415);
+      if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+      {
+      state = 1;
+      time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      }
+  }
+  if(state == 1)
+  {
+  setshort(0x08e90bd8,  1,  'O',  'h',  ', ',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+  if(newtime - 2 > time)
+         {
+         state = 2;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 2)
+  {
+  setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         if(newtime - 2 > time)
+         {
+         state = 3;
+         health = 150;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 3)
+  {
+  setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 3 > time)
+	{
+	state = 4;
+	time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+	}
+	if(speed < DifficultLevel)
+	    health -= 0.5;
+	else if(health < 150)
+	    health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+	{
+	setfloat(pcar+0x27c, 0);
+	state = 0;
+	}
+  }
+  if(state == 4)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 4 < time)
+             setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ', ',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ', ', ' ',  'N',  'O',  'W',  '!', 0);
+       else time = 0;
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  if(speed < DifficultLevel + 10)
+           health -= 0.5;
+       else if(health < 150)
+           health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+       {
+       setfloat(pcar+0x27c, 0);
+       state = 0;
+       }
+  if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)
+       {
+       state = 5;
+       time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       }
+  }
+  if(state == 5)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 2 > time)
+	     state = 6;
+  }
+  if(state == 6)
+  {
+  setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ', ', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+	if(buttons & CTRL_UP)
+	{
+	state = 0;
+	setshort(pcar+0x232,  0); 
+	}
+  }
+#off
+state = 0;
+setshort(pcar+0x232,  0); 
+
+#cheat Remove Stuff In Your Way
+//ID: 18781
+//Score: 109
+//Author: edisoncarter
+//Category: Environment
+//Description: Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, benches, cars, people that get in your way without removing walls or buildings that would cause you to fall through the ground.  Thanks to Waterbottle for Remove Anything.
+//Image: http://www1.cheatdevice.com/gta/VCSRemoveStuffInYourWay.gif
+//Time: 19/11/2006 21:17:46
+//Working: Yes
+// By Edison Carter
+// Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, 
+// benches, cars, people that get in your way without removing walls or
+// buildings that would cause you to fall through the ground.
+// Thanks to Waterbottle for Remove Anything.
+static xRightHandVector;
+static yRightHandVector;
+static zRightHandVector;
+static xForwardVector;
+static yForwardVector;
+static zForwardVector;
+static xUpVector;
+static yUpVector;
+static zUpVector;
+static xRotationalMomentum;
+static yRotationalMomentum;
+static zRotationalMomentum;
+static xVelocity;
+static yVelocity;
+static zVelocity;
+static dHealth;
+static steady;
+pitem = getint(pobj + 0x0150);
+if (pitem)
+{
+    modelid = getshort(pitem + 0x0056);
+    if (modelid < 750 ||
+        modelid == 1515 ||
+        modelid == 2627 ||
+        modelid == 7337 ||
+        modelid == 1820 ||
+        modelid == 1821 ||
+        modelid == 1825 ||
+        modelid == 1826 ||
+        modelid == 1829 ||
+        (modelid >= 2551 && modelid <= 2554) ||
+        (modelid >= 1526 && modelid <= 1536) ||
+        (modelid >= 1217 && modelid <= 1223) ||
+        (modelid >= 1485 && modelid <= 1488))
+    {
+        if (modelid != 1533)
+        {
+            setfloat(pitem + 0x0030, 0, 0, 0);
+            steady = 3;
+        }
+    }
+}
+if (steady > 0)
+{
+    steady--;
+    setfloat(pobj + 0x0000, xRightHandVector);
+    setfloat(pobj + 0x0004, yRightHandVector);
+    setfloat(pobj + 0x0008, zRightHandVector);
+    setfloat(pobj + 0x0010, xForwardVector);
+    setfloat(pobj + 0x0014, yForwardVector);
+    setfloat(pobj + 0x0018, zForwardVector);
+    setfloat(pobj + 0x0020, xUpVector);
+    setfloat(pobj + 0x0024, yUpVector);
+    setfloat(pobj + 0x0028, zUpVector);
+    setfloat(pobj + 0x0070, xRotationalMomentum);
+    setfloat(pobj + 0x0074, yRotationalMomentum);
+    setfloat(pobj + 0x0078, zRotationalMomentum);
+    setfloat(pobj + 0x0140, xVelocity);
+    setfloat(pobj + 0x0144, yVelocity);
+    setfloat(pobj + 0x0148, zVelocity);
+    setfloat(pcar + 0x027c, dHealth);
+}
+else
+{
+    xRightHandVector    = getfloat(pobj + 0x0000);
+    yRightHandVector    = getfloat(pobj + 0x0004);
+    zRightHandVector    = getfloat(pobj + 0x0008);
+    xForwardVector      = getfloat(pobj + 0x0010);
+    yForwardVector      = getfloat(pobj + 0x0014);
+    zForwardVector      = getfloat(pobj + 0x0018);
+    xUpVector           = getfloat(pobj + 0x0020);
+    yUpVector           = getfloat(pobj + 0x0024);
+    zUpVector           = getfloat(pobj + 0x0028);
+    xRotationalMomentum = getfloat(pobj + 0x0070);
+    yRotationalMomentum = getfloat(pobj + 0x0074);
+    zRotationalMomentum = getfloat(pobj + 0x0078);
+    xVelocity           = getfloat(pobj + 0x0140);
+    yVelocity           = getfloat(pobj + 0x0144);
+    zVelocity           = getfloat(pobj + 0x0148);
+    dHealth             = getfloat(pcar + 0x027c);
+}
+
+#cheat Force Touch
+//ID: 18759
+//Score: 149
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: Touch a car or other object (doesn't always work on peds) and they will go flying!
+//Image: http://img396.imageshack.us/img396/192/video1ji3.gif
+//Time: 18/11/2006 19:05:35
+//Working: Yes
+Carplayer = getint(pplayer+0x150);
+Carcar = getint(pcar+0x150);
+boost = 5;
+thrust = boost * 0.00333;
+if(getint(pplayer+0x150))
+{
+setfloat(Carplayer + 0x0140,  getfloat(Carplayer + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(Carplayer + 0x0144,  getfloat(Carplayer + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(Carplayer + 0x0148,  getfloat(Carplayer + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setchar(Carplayer + 0x1c9, getchar(Carplayer + 0x1c9) | 0x10);
+}
+}
+if(getint(pcar+0x150))
+{
+setfloat(Carcar + 0x0140,  getfloat(Carcar + 0x0140) + getfloat(pcar + 0x0010) + thrust);
+setfloat(Carcar + 0x0144,  getfloat(Carcar + 0x0144) + getfloat(pcar + 0x0014) + thrust);
+setfloat(Carcar + 0x0148,  getfloat(Carcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setchar(Carcar + 0x1c9, getchar(Carcar + 0x1c9) | 0x10);
+}
+}
+
+#cheat makes certain things go invisable
+//ID: 18730
+//Score: 58
+//Author: magical trevor
+//Category: Environment
+//Description: VERY random, this cheat can make buildings dissapear, cars dissapear, roads, and even leave torsos walking about!
+//Image: http://img329.imageshack.us/img329/8381/copyofscreen1mb5.jpg
+//Time: 16/11/2006 19:00:49
+//Working: Yes
+sethex(0x087259C7,  0x16);
+
+#cheat Disco Sky
+//ID: 18684
+//Score: 122
+//Author: sokz
+//Category: Environment
+//Description: This cheat will make the sky turn into variety colors like Green and Red.
+//Image: none
+//Time: 12/11/2006 09:00:59
+//Working: Yes
+setchar(0x08bb3b40, 144, 30);
+
+
+#cheat Wave Size/Speed Modifier
+//ID: 18623
+//Score: 145
+//Author: vettefan88
+//Category: Environment
+//Description: press up and down to mess with the wave height and speed. going into positive values will increase the waves speed, while negative values increase the waves height, you can choose between one of the two wave modifications.
+//
+//EDITED BY: Waterbottle on 10/11
+//Image: none
+//Time: 10/11/2006 03:17:02
+//Working: Yes
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN)
+Wave=Wave-.1;
+if (buttons & CTRL_UP)
+Wave=Wave+.1;
+setfloat(0x8bb3bb0, Wave);
+
+#cheat Water Height Modifier
+//ID: 18619
+//Score: 195
+//Author: vettefan88
+//Category: Environment
+//Description: Exactly as the title says. This cheat will allow you to modify the height of the water in VCS by pressing left and right!!
+//
+//there is currently no water under the land, but when out in the water you can raise it up over the bridges, or down below rocks
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/water.gif
+//Time: 09/11/2006 20:23:14
+//Working: Yes
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat VC Stunt Ramp's
+//ID: 19124
+//Score: 54
+//Author: psphacker108
+//Category: Environment
+//Description: Rember the mission in VC that had all of thouse Ramp's? vehicle Spawns included! A ATV,PCJ600 And a Angle biker's bike.Well I have duplicated it almost to come to vcs check the pic, I recommend using rocket boost.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-6.gif
+//Time: 28/12/2006 21:55:57
+//Working: Yes
+moveto(-536.20, 1029.09, 66.63);  object(0x1D0F, 0, 0, 340);
+move(4.13, 1.52, 0.00);  object(0x1D0F, 0, 0, 340);
+move(-51.62, 73.16, -15.20);  object(0x1D0F, 0, 0, 298);
+move(2.14, 4.07, 0.00);  object(0x1D0F, 0, 0, 298);
+move(2.14, 4.07, 0.00);  object(0x1D0F, 0, 0, 298);
+move(-49.59, 17.70, -19.70);  object(0x1D0F, 0, 0, 270);
+move(-0.03, 4.60, 0.00);  object(0x1D0F, 0, 0, 270);
+move(-46.67, -7.44, 7.90);  object(0x1D0F, 350, 0, 271);
+move(3.23, -0.36, 1.20);  object(0x1D0F, 350, 0, 271);
+move(0.08, 4.70, 0.00);  object(0x1D0F, 350, 0, 271);
+move(0.08, 4.50, 0.00);  object(0x1D0F, 350, 0, 271);
+move(-42.36, 29.35, -8.00);  object(0x1D0F, 350, 0, 0);
+move(-4.10, 0.01, 0.00);  object(0x1D0F, 350, 0, 0);
+move(-4.50, 0.01, 0.00);  object(0x1D0F, 350, 0, 0);
+move(38.93, 93.49, -8.00);  object(0x028E, 350, 0, 4);
+move(3.99, -0.29, 0.00);  object(0x028E, 350, 0, 4);
+move(-5.73, 53.74, -3.70);  object(0x028E, 350, 0, 357);
+move(-3.89, -0.24, 0.00);  object(0x028E, 350, 0, 357);
+move(79.04, 53.97, 2.40);  object(0x028E, 350, 0, 89);
+move(-0.08, 3.80, 0.00);  object(0x028E, 350, 0, 89);
+move(93.29, -10.63, 2.50);  object(0x028E, 350, 0, 98);
+move(88.46, 2.75, -0.20);  object(0x02A5, 350, 0, 87);
+move(44.40, 10.57, 4.10);  object(0x02A5, 350, 0, 68);
+move(65.86, 24.58, -2.20);  object(0x02A5, 350, 0, 122);
+move(36.44, -30.94, 0.00);  object(0x02A5, 345, 0, 166);
+move(4.44, -61.32, 0.90);  object(0x02A5, 345, 0, 178);
+move(5.12, -74.94, 10.20);  object(0x02A5, 340, 0, 177);
+move(-32.66, -120.88, 3.80);  object(0x02A5, 340, 0, 202);
+move(-1.19, -2.80, 3.30);  object(0x02A5, 325, 0, 203);
+move(-78.83, -184.67, -6.40);  object(0x02A5, 350, 0, 204);
+pspawn = 0x08E81290;    
+setint(pspawn,    231);     
+setfloat(pspawn + 4,    -531.27,    912.08,   68.43,    0);     
+pspawn += 0x30; 
+setint(pspawn,    230);     
+setfloat(pspawn + 4,    -530.60,    925.75,    68.43,    0);     
+pspawn += 0x30; 
+setint(pspawn,    212);     
+setfloat(pspawn + 4,    -520.77,    931.36,    68.43,    0);     
+pspawn += 0x30; 
+teleport(-526.43, 916.84, 68.43)
+
+
+#cheat Sweet pad
+//ID: 19127
+//Score: 42
+//Author: lindsejj
+//Category: Environment
+//Description: this is an awesome pad at the lil house with the rampage icon i think you will really like this check the pic to see more! updated now with telaport i think you may want to get it quick b4 it drops to the bottom of the list!!!
+//
+//EDITED BY: psphacker108 on 29/12/06 21:32:19
+//Image: http://img407.imageshack.us/img407/9276/screen1rc6.png
+//Time: 29/12/2006 09:09:57
+//Working: No
+moveto(-558.73, 713.42, 22.23);  object(0x1CCE, 0, 0, 354);
+move(-0.98, -26.78, 2.10);  object(0x1CD0, 0, 0, 176);
+move(5.05, 22.64, -2.30);  object(0x1CEA, 0, 0, 338);
+move(-10.01, -15.26, 0.70);  object(0x1CE9, 0, 0, 182);
+move(-0.48, 7.90, -2.60);  object(0x1CEA, 0, 0, 275);
+move(-0.05, -0.60, 0.00);  object(0x1CEA, 0, 0, 275);
+move(-0.04, -0.50, 0.00);  object(0x1CEA, 0, 0, 275);
+move(-0.11, 0.11, 0.60);  object(0x1CEB, 0, 0, 90);
+move(0.21, 0.99, -0.30);  object(0x1CF2, 0, 0, 90);
+move(0.58, -0.05, -0.80);  object(0x1CF4, 0, 0, 90);
+move(5.82, -2.75, 0.10);  object(0x1CF5, 0, 0, 182);
+move(-6.18, -0.63, 0.00);  object(0x1CF9, 0, 0, 269);
+move(-0.02, 1.10, 0.00);  object(0x1CFE, 0, 0, 269);
+move(3.08, 2.24, 0.00);  object(0x1D00, 0, 0, 0);
+move(-0.14, -1.14, 0.10);  object(0x1CF7, 0, 0, 181);
+move(3.05, 9.31, 0.80);  object(0x1D12, 0, 0, 339);
+move(-2.69, -11.91, -0.90);  object(0x1D39, 0, 0, 178);
+teleport(-0.04, -0.50, 0.00);
+
+#cheat Raise The World +1m
+//ID: 19246
+//Score: 51
+//Author: edisoncarter
+//Category: Environment
+//Description: Raises the solid part of everything in the world by 1 meter while the visible part stays the same.  Because of the camera perspective it may look like you're still standing on the ground from some angles.  Use repeatedly to raise further.
+//Image: http://www1.cheatdevice.com/gta/VCSRaiseTheWorld1.gif
+//Time: 11/01/2007 00:10:58
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) + 1.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1.0);
+off();
+
+
+#cheat Lower The World -0.5m
+//ID: 19245
+//Score: 43
+//Author: edisoncarter
+//Category: Environment
+//Description: Lowers the solid part of everything in the world by half a meter.  The visible part stays the same, so it looks like everyone is submerged in concrete.  Use repeatedly to lower further.
+//Image: http://www1.cheatdevice.com/gta/VCSLowerTheWorld1.jpg
+//Time: 11/01/2007 00:04:22
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) - 0.5);
+off();
+
+
+#cheat Jetski Ramp Cource
+//ID: 19122
+//Score: 46
+//Author: psphacker108
+//Category: Environment
+//Description: The first ever water cource for vcs!This will make the whole circle around starfish island all stunt ramp's for Jetski's and other small boat's, Check the video.Over 20 ramp's
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video14-1.gif
+//Time: 28/12/2006 16:45:25
+//Working: Yes
+moveto(-242.55, -243.09, 5.36); object(0x1D0F, 0, 0, 125);
+move(-2.61, -3.79, 0.00); object(0x1D0F, 0, 0, 125);
+move(-2.50, -3.62, 0.00); object(0x1D0F, 0, 0, 125);
+move(-2.39, -3.46, 0.00); object(0x1D0F, 0, 0, 125);
+move(7.33, 10.62, 0.00); object(0x1D0F, 0, 0, 125);
+move(7.63, -4.25, 0.20); object(0x1D0F, 0, 0, 299);
+move(-1.65, -2.97, 0.00); object(0x1D0F, 0, 0, 299);
+move(-2.14, -3.84, 0.00); object(0x1D0F, 0, 0, 299);
+move(-1.90, -3.41, 0.00); object(0x1D0F, 0, 0, 299);
+move(-2.29, -373.78, 0.30); object(0x1D0F, 0, 0, 227);
+move(-3.08, 3.28, 0.00); object(0x1D0F, 0, 0, 227);
+move(-477.84, 351.19, -0.30); object(0x1D0F, 0, 0, 20);
+move(4.24, -1.49, 0.00); object(0x1D0F, 0, 0, 20);
+move(-8.58, 3.04, 0.00); object(0x1D0F, 0, 0, 20);
+move(3.32, 7.77, 0.00); object(0x1D0F, 0, 0, 205);
+move(3.73, -1.71, 0.00); object(0x1D0F, 0, 0, 205);
+move(7.24, -1.04, 0.20); object(0x1D0F, 0, 0, 178);
+move(105.09, 41.46, 0.50); object(0x028E, 0, 0, 71);
+move(1.34, -3.87, 0.00); object(0x028E, 0, 0, 71);
+move(-2.62, 7.56, 0.00); object(0x028E, 0, 0, 71);
+move(7.76, -1.10, -0.10); object(0x028E, 0, 0, 248);
+move(1.51, -3.70, 0.00); object(0x028E, 0, 0, 248);
+move(-2.87, 7.04, 0.00); object(0x028E, 0, 0, 248);
+move(206.02, 5.93, 0.00); object(0x028E, 0, 0, 84);
+move(0.38, -3.68, 0.00); object(0x028E, 0, 0, 84);
+move(234.16, -51.56, 0.00); object(0x028E, 0, 0, 135);
+move(-89.94, -461.11, 0.30); object(0x028E, 0, 0, 229);
+move(-0.91, 2.08, 0.00); object(0x028E, 0, 0, 257);
+move(2.82, -3.36, 0.00); object(0x028E, 0, 0, 200);
+move(-108.37, 82.19, 0.30); object(0x028E, 0, 0, 266);
+move(-296.57, -16.55, 0.00); object(0x028E, 0, 0, 302);
+move(-0.17, -1.23, 0.00); object(0x028E, 0, 0, 266);
+move(-54.55, 90.80, 0.00); object(0x02A5, 0, 0, 140);
+move(4.75, -5.18, 0.00); object(0x02A5, 0, 0, 315);
+move(154.42, 427.30, -0.10); object(0x02A5, 0, 0, 83);
+move(-0.91, 6.94, 0.00); object(0x02A5, 0, 0, 83);
+move(6.68, 1.33, 0.00); object(0x02A5, 0, 0, 258);
+move(1.42, -6.96, 0.00); object(0x02A5, 0, 0, 258);
+move(427.02, -170.22, 0.00); object(0x02A5, 0, 0, 147);
+move(-6.14, -3.95, 0.00); object(0x02A5, 0, 0, 147);
+move(10.07, -2.67, 0.20); object(0x02A5, 0, 0, 325);
+move(-5.30, -3.76, 0.00); object(0x02A5, 0, 0, 325);
+move(-39.58, 58.82, -0.60); object(0x02A5, 0, 0, 321);
+move(-372.05, -419.19, 0.00); object(0x02A5, 0, 0, 98);
+move(-0.96, -6.73, 0.00); object(0x02A5, 0, 0, 98);
+move(-2.31, -5.64, 0.00); object(0x02A5, 0, 0, 132);
+off() 
+
+#cheat VCS Stunt Project V1
+//ID: 19118
+//Score: 35
+//Author: psphacker108
+//Category: Environment
+//Description: This is my VCS Stunt Project, Feature's over 40 ramp's in The area of Vice Point, Washington Beach and Ocean Beach  Only,  This is Version 1, Version 2 will be out soon.Thank's to Jame's.
+//
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-2.gif
+//Time: 28/12/2006 03:25:21
+//Working: Yes
+moveto(-14.82, -1580.52, 8.82);  object(0x1CA6, 270, 225, 191);
+move(2.52, 8.85, 0.00);  object(0x1CA6, 270, 225, 13);
+move(-144.34, 127.07, 1.80);  object(0x1CA6, 270, 220, 25);
+move(-1.81, -3.79, 0.00);  object(0x1CA6, 270, 220, 25);
+move(10.38, 176.15, -0.70);  object(0x1CA6, 270, 220, 180);
+move(-15.06, 2.14, 0.00);  object(0x1CA6, 270, 220, 2);
+move(-5.44, 0.29, 4.70);  object(0x1CA6, 270, 225, 6);
+move(-41.29, 101.90, -3.90);  object(0x1CA6, 270, 230, 60);
+move(139.06, 88.92, -0.20);  object(0x1CA6, 270, 230, 148);
+move(-1.62, 2.64, 0.00);  object(0x1CA6, 270, 230, 148);
+move(46.80, -200.20, -0.20);  object(0x1CA6, 270, 225, 248);
+move(-17.88, -175.97, -0.60);  object(0x1CA6, 270, 225, 276);
+move(-3.58, 0.37, 0.00);  object(0x1CA6, 270, 225, 276);
+move(15.25, -5.78, 0.00);  object(0x1CA6, 270, 225, 95);
+move(-2.49, 0.20, 0.00);  object(0x1CA6, 270, 225, 95);
+move(176.03, -120.32, 0.50);  object(0x1CA6, 270, 225, 159);
+move(41.15, -3.96, -0.70);  object(0x1CA6, 270, 225, 178);
+move(13.92, 84.89, 0.50);  object(0x1CA6, 270, 225, 113);
+move(164.01, 129.73, 1.10);  object(0x1CA6, 270, 225, 132);
+move(-2.62, 1.09, 0.00);  object(0x1CA6, 270, 225, 119);
+move(121.95, 125.15, 0.00);  object(0x1CA6, 270, 225, 140);
+move(44.88, 594.02, 0.00);  object(0x1CA6, 270, 225, 64);
+move(-2.45, -1.70, 0.00);  object(0x1CA6, 270, 225, 55);
+move(-41.61, 78.00, -0.50);  object(0x1CA6, 270, 220, 105);
+move(-10.67, -14.46, -0.90);  object(0x1CA6, 270, 220, 289);
+move(-2.81, 0.72, 0.00);  object(0x1CA6, 270, 220, 289);
+move(5.12, 59.73, 0.80);  object(0x1CA6, 270, 220, 11);
+move(-3.49, 0.35, 3.10);  object(0x1CA6, 270, 220, 11);
+move(27.52, 157.77, -3.00);  object(0x1CA6, 270, 220, 68);
+move(-73.90, 19.05, 2.10);  object(0x1CA6, 270, 220, 47);
+move(-1.61, -2.34, 0.00);  object(0x1CA6, 270, 220, 39);
+move(-135.64, 199.75, -1.10);  object(0x1CA6, 270, 220, 112);
+move(-45.88, 201.19, -1.90);  object(0x1CA6, 270, 225, 40);
+move(251.50, 11.47, 1.00);  object(0x1CA6, 270, 225, 257);
+move(3.21, 110.14, 0.00);  object(0x1CA6, 270, 230, 56);
+move(6.91, 164.18, 0.00);  object(0x1CA6, 270, 225, 79);
+move(-0.43, 2.29, 2.30);  object(0x1CA6, 270, 225, 79);
+move(24.03, 49.41, -1.80);  object(0x1CA6, 270, 225, 276);
+move(-14.21, 98.67, -0.80);  object(0x1CA6, 270, 225, 41);
+move(37.77, 270.52, 0.00);  object(0x1CA6, 270, 225, 101);
+move(3.97, -0.45, 0.00);  object(0x1CA6, 270, 225, 101);
+move(-8.49, 158.96, 4.30);  object(0x1CA6, 270, 225, 244);
+move(-48.31, 257.44, 3.10);  object(0x1CA6, 270, 225, 82);
+move(-6.51, 103.42, -0.40);  object(0x1CA6, 270, 220, 1);
+move(-262.24, -12.42, 0.70);  object(0x1CA6, 270, 225, 346);
+move(0.81, -3.22, 0.00);  object(0x1CA6, 270, 225, 346);
+move(43.03, -142.18, 1.50);  object(0x1CA6, 270, 215, 285);
+move(-4.14, 0.71, 0.00);  object(0x1CA6, 270, 215, 285);
+move(43.71, -253.52, -8.00);  object(0x1CA6, 270, 215, 285);
+move(17.12, 51.23, -0.40);  object(0x1CA6, 270, 230, 125);
+move(-174.07, -256.51, -0.40);  object(0x1CA6, 270, 230, 319);
+move(2.46, -2.35, 0.00);  object(0x1CA6, 270, 230, 319);
+move(237.62, -72.10, 0.00);  object(0x1CA6, 270, 230, 234);
+move(36.22, -313.97, 0.70);  object(0x1CA6, 270, 220, 269);
+move(3.78, 0.38, 0.00);  object(0x1CA6, 270, 220, 269);
+move(-7.15, -229.16, -1.00);  object(0x1CA6, 270, 225, 232);
+move(2.41, 2.25, 0.00);  object(0x1CA6, 270, 225, 232);
+off()
+
+
+#cheat Bobcat in garage
+//ID: 18441
+//Score: 78
+//Author: TSF442
+//Category: Garage Codes
+//Description: Puts bobcat in first garage.
+//Leave on until garage door opens.
+//All cars are red unless there is a car with another color first.
+//Image: http://img433.imageshack.us/img433/1246/video1vk6.gif
+//Time: 02/11/2006 23:53:43
+//Working: Yes
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 180);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Maverick in Garage
+//ID: 19243
+//Score: 45
+//Author: trecool999
+//Category: Garage Codes
+//Description: Puts a Maverick in your Garage. Without the hover cars cheat, you probably have no chance of getting it out :D.
+//Image: none
+//Time: 09/01/2007 19:23:11
+//Working: Yes
+//By Trecool999
+setint(0x08C739B0,  213);
+
+#cheat Tropic In Garage
+//ID: 19242
+//Score: 44
+//Author: trecool999
+//Category: Garage Codes
+//Description: Puts the Tropic boat in your garage. Very annoying to get out but, oh well :P.
+//Image: none
+//Time: 09/01/2007 19:21:40
+//Working: Yes
+//By Trecool999
+setint(0x08C739B0,  250);
+
+#cheat Remote Control Ped!
+//ID: 18569
+//Score: 219
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: aim at a ped and press /\ to take controll of it.
+//When you are in controll of a ped you can rotate it with the analog stick.
+//Use analog upward to move ped.
+//Press L+R to kill the ped you are in controll of.
+//Requires cheatdevice 2.1 or higher.
+//Image: none
+//Time: 06/11/2006 17:46:55
+//Working: Yes
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+    setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+    setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+    }
+
+//kill ped
+if(press & CTRL_LTRIGGER && press & CTRL_RTRIGGER) rot = 0;
+if(buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER) {
+rot+=25;
+if(rot>2000) { setfloat(address+0x4e4, 0); setint(0x09fc73f8, 0); }
+}
+
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894, 0x10);
+else setchar(address+0x894, 0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+#cheat Force Push
+//ID: 18571
+//Score: 226
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped and they go flying!  Kind of like a remote super punch.  Thanks to Waterbottle for finding the address of targetted ped.
+//Image: http://www1.cheatdevice.com/gta/VCSForcePush2.gif
+//Time: 06/11/2006 19:51:11
+//Working: Yes
+// Target a ped and they go flying!
+static pdone;
+pped = getint(0x08BA1D70);
+if (pped != 0 && pped != pdone)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, dx * 0.2);
+    setfloat(pped + 0x0144, dy * 0.2);
+    setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+    pdone = pped;
+}
+if (pped == 0)
+{
+    pdone = 0;
+}
+
+#cheat Tractor Beam
+//ID: 18572
+//Score: 188
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them to you.  Thanks to Waterbottle for finding pointer to targetted ped!
+//Image: http://www1.cheatdevice.com/gta/VCSTractorBeam.gif
+//Time: 06/11/2006 19:56:20
+//Working: Yes
+// Target a ped to pull them towards you
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+
+#cheat Kill All Peds
+//ID: 18630
+//Score: 118
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Press R + /\ to kill all peds.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/death.gif
+//Time: 10/11/2006 18:03:40
+//Working: Yes
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_TRIANGLE) {
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+}
+
+#cheat No Peds
+//ID: 18629
+//Score: 79
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: This will immediatly remove all peds. 333Mhz recommended.
+//Image: none
+//Time: 10/11/2006 18:02:25
+//Working: Yes
+static counter;
+player = getint(0x08bc8170);//address of pplayer 
+if(counter++ % 30 == 0) {
+     for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+             if(p != player) setchar(p + 0x4c, 1);
+     }
+}
+
+#cheat Ped Teleporter
+//ID: 18621
+//Score: 88
+//Author: Durka Durka Mahn
+//Category: Pedestrians
+//Description: Turn on then use Triangle and Up to set a place for peds to teleport to, then target a ped and hit Up and they will teleport to that location.
+//Image: http://img481.imageshack.us/img481/4092/video1jb9.gif
+//Time: 10/11/2006 00:18:31
+//Working: Yes
+pped = getint(0x08BA1D70);
+if((pressmed & CTRL_TRIANGLE&&pressmed & CTRL_UP))
+{
+playerx = getfloat(pplayer + 0x030);
+playery = getfloat(pplayer + 0x034);
+playerz = getfloat(pplayer + 0x038);
+}
+
+if((press & CTRL_UP))
+{
+setfloat(pped + 0x30, playerx);
+setfloat(pped + 0x34, playery);
+setfloat(pped + 0x38, playerz);
+}
+
+#cheat Telekinesis
+//ID: 18601
+//Score: 198
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at a ped to choose it, then press down to go into manual aiming, the ped will fly after what you aim at.
+//
+//Hold X to spin the ped faster and faster.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/tele.gif
+//Time: 08/11/2006 18:26:30
+//Working: Yes
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+
+if(pped && pped<0x9900000) address=pped;
+
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+
+setshort(address+0x1c8, 0x1020);
+
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+
+if(buttons & CTRL_CROSS)
+       rotsp+=0.005;
+  else
+       rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+
+#cheat Aim of Death
+//ID: 18575
+//Score: 138
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at any ped and it will die!
+//Image: http://www.mydatabus.com/public/water/a/death.gif
+//Time: 06/11/2006 21:04:18
+//Working: Yes
+pped = getint(0x08BA1D70);
+if (pped != 0)
+   setfloat(pped + 0x4e4, 0);
+
+#cheat No Aim Target
+//ID: 18574
+//Score: 72
+//Author: theY4Kman
+//Category: Pedestrians
+//Description: (Thanks for the ped pointer, Waterbottle)
+//When you target a ped, there will be no target there. It will only show up when you shoot the person.
+//Image: http://y4kstudios.com/cheatsync/notarg.gif
+//Time: 06/11/2006 20:27:11
+//Working: Yes
+// Thanks, Waterbottle
+sethex(0x08BA1D6F, 00);
+
+#cheat White Aim Target
+//ID: 18573
+//Score: 68
+//Author: theY4Kman
+//Category: Pedestrians
+//Description: [PORT FROM LCS - ORIGINAL AUTHOR: theY4Kman]
+//(Thanks to Waterbottle for the ped pointer)
+//This makes your aim target white.
+//Image: none
+//Time: 06/11/2006 20:18:23
+//Working: Yes
+// Thanks, Waterbottle
+sethex(0x08BA1D6C, FF, FF, FF);
+
+#cheat Blood Is Red Flash
+//ID: 19107
+//Score: 37
+//Author: uuuu
+//Category: Pedestrians
+//Description: This code makes the Blood from ped's almost like in a straight line as it spray's out. no more messy blood.
+//
+//EDITED BY: psphacker108 on 26/12/06 05:21:22
+//Image: none
+//Time: 26/12/2006 04:40:10
+//Working: Yes
+sethex(0x9567da7, 0x41); 
+sethex(0x9567def, 0x3c); 
+sethex(0x9567dbe, 0xff, 0x3f); 
+sethex(0x9567da8, 0x30); 
+sethex(0x9567d58, 0x30); 
+
+
+#cheat Pyrokenesis
+//ID: 18693
+//Score: 174
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at any ped to set it on fire
+//Thanks to DDM for finding a fire pointer, which really is the only hard thing in order to make it.
+//Image: none
+//Time: 12/11/2006 20:14:48
+//Working: Yes
+pped = getint(0x08BA1D70);
+if(pped)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);
+}
+
+#cheat Fireball Slingshot
+//ID: 18688
+//Score: 218
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release.  Thanks to Durka Durka Mahn for fire address.
+//Image: http://www1.cheatdevice.com/gta/VCSFireballSlingshot.gif
+//Time: 12/11/2006 18:17:46
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+static pfireped;
+static nfirecount;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pfireped = pcurrentped;
+        nfirecount = 0;
+        pcurrentped = 0;
+    }
+}
+if (nfirecount++ > 3 && nfirecount < 30 * 30 && pfireped)
+{
+    // thanks to Durka Durka Mahn for fire pointer
+    setchar(0x08be3a20, 1);
+    setfloat(0x08be3a30, getfloat(pfireped + 0x0030), getfloat(pfireped + 0x0034), getfloat(pfireped + 0x0038));
+}
+
+#cheat Ped Slingshot
+//ID: 18682
+//Score: 124
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release!
+//Image: http://www1.cheatdevice.com/gta/VCSPedSlingshot.gif
+//Time: 12/11/2006 06:08:29
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pcurrentped = 0;
+    }
+}
+
+
+#cheat Force Blast
+//ID: 18638
+//Score: 123
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Force push all peds away from you!
+//Image: none
+//Time: 10/11/2006 19:08:36
+//Working: Yes
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+    if (p == pplayer)
+        continue;
+    dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(p + 0x01c8, 0x1020);
+    setfloat(p + 0x0140, dx * 0.2);
+    setfloat(p + 0x0144, dy * 0.2);
+    setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+off();
+
+#cheat All Peds Invincible
+//ID: 18631
+//Score: 62
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: All peds will be invincible, you can not hurt them. 333Mhz recommended.
+//Image: none
+//Time: 10/11/2006 18:04:56
+//Working: Yes
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 150);
+}
+
+#cheat Lock Camera
+//ID: 18663
+//Score: 96
+//Author: dwinch
+//Category: Camera
+//Description: Locks camera in its current state.
+//You can get some nice angles if used during a cutscene.
+//CANNOT be used in cars.
+//Image: http://img.photobucket.com/albums/v514/Winchy/lockedcamera.jpg
+//Time: 11/11/2006 13:32:42
+//Working: Yes
+setchar(pplayer + 0x550,  1);
+#off
+setchar(pplayer + 0x550,  0);
+

@@ -1,0 +1,97 @@
+Programming for CheatDevice
+
+Cheats can be added to CheatDevice by creating text files in the cheats
+directory on the memory card.  Although the syntax looks like C, it's not C.
+None of the C operators and keywords are implemented except + and - and
+what's listed below.
+
+Commands: (case sensitive)
+
+  #cheat Cheat Title
+  #off
+  // comments
+  setchar(startaddress, intvalue, ...);
+  sethex(startaddress, hexintvalue, ...;
+  setshort(startaddress, intvalue, ...);
+  setint(startaddress, intvalue, ...);
+  setfloat(startaddress, floatvalue, ...);
+  teleport(x, y, z);
+
+Formats for numeric constants:
+
+  decimal:    123
+  hex:        0xABCF0 or 0xabcf0
+  binary:     0b00100101101
+  float:      1.23
+  character:  'a', 'b', 'c', '\n'
+  addresses must be hex
+
+Special pointer constants:
+
+  pplayer:   Pointer to player object.
+  pcar:      Pointer to player's car object.  Any command that uses this
+               only executes when the player is in a car.
+  pobj:      Pointer to player object if on foot, or player's car object
+               if in a vehicle.
+
+Some examples:
+
+  // any comments, such as author credits
+  #cheat Teleport: Top of Tall Building
+  teleport(95, -1509, 216.98);
+
+  #cheat Hud On
+  setchar(0x08b59b0a, 1);
+
+  #cheat Hud Off
+  setchar(0x08b59b0a, 0);
+
+  #cheat Max Money
+  setint(0x08b89acc, 99999999);
+  setint(0x08b89ad0, 99999999);
+
+Functions with "..." can write any number of values starting at the given
+address, so Max Money could also be written as:
+
+  #cheat Max Money
+  setint(0x08b89acc, 99999999, 99999999);
+
+  #cheat No Money
+  setint(0x08b89acc, 0, 0);
+
+  #cheat Time is 9:30am
+  setchar(0x08b5e090, 9, 30);
+
+The #off section is used to set a value back to its normal setting and is
+executed a single time when a cheat is turned off.  For example:
+
+  // by vettefan
+  #cheat Invisible Toni
+  setchar(pplayer + 0x19A, 0xE2);
+  #off
+  setchar(pplayer + 0x19A, 0x02);
+
+  // by chrislawrance
+  #cheat Lock Camera
+  setchar(pplayer + 0x560, 1);
+  #off
+  setchar(pplayer + 0x560, 0);
+
+Integer values can be treated as signed or unsigned.  All of the following
+commands set the same value:
+
+  setchar(0x08b89acc, 255);
+  setchar(0x08b89acc, -1);
+  setchar(0x08b89acc, 0xff);
+  setchar(0x08b89acc, 0xFF);
+  setchar(0x08b89acc, 0b11111111);
+  sethex(0x08b89acc, ff);
+
+sethex is just a version of setchar that assumes all values are hex so you
+can leave off the 0x.
+
+Cheat Maker automatically performs region conversion behind the scenes
+so users of the UK version see the same addresses as the US version and
+addresses entered are automatically converted to the correct region.
+There is no need to give different versions of cheats for UK and US
+versions of the game.

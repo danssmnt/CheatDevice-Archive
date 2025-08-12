@@ -1,0 +1,123 @@
+Car Spawn
+pspawn = 0x08E81290;   
+setint(pspawn,  VEHICLE ID);    
+setfloat(pspawn + 4,  -1094.37,  311.42,  11.18,  90);    
+pspawn += 0x30;
+
+Object Spawn
+moveto(478,-161.29,8.7);
+move(2.31,4.43,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+move(0,4.43,0.77);
+move(2.31,0.00,-0.40); object(0x1CA4,90,10,90);
+move(2.91,0.0,0.00);   object(0x1CA4,90,10,90);
+move(2.91,0.0,0.40);   object(0x1CA4,70,10,90);
+move(-8.19,0.0,0.00);  object(0x1CA4,110,10,90);
+
+Fire Spawn
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, 314.57, -168.91, 26.13);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, 356.07, -169.03, 26.13);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, 355.48, -149.23, 26.13);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0, 315.20, -149.39, 26.13);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, 340.20, -148.65, 24.80);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, 327.93, -148.20, 24.80);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, 315.46, -158.34, 23.20);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0, 355.07, -159.45, 23.20);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, 345.86, -167.74, 24.80);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, 326.90, -168.22, 24.80);
+
+Pickup Spawn
+setfloat(0x991C280+0x30,-1077.40,312.63,11.26);
+setshort(0x991C280+0x56,0x1D3);
+
+Spawn Car in 1st Garage
+setint(0x08C739B0, 170);
+
+Spawn Car in 2nd Garage
+setint(0x8C73A70, 170);
+
+Spawn Car in 3rd Garage
+setint(0x8C73B30, 170);
+
+Player Teleport
+teleport(429.41, 645.47, 11.26);
+
+Teleport to Target
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(buttons & CTRL_RTRIGGER&&press & CTRL_CROSS){
+setfloat(pplayer + 0x30, aimx);
+setfloat(pplayer + 0x34, aimy);
+setfloat(pplayer + 0x38, aimz);}
+
+Teleport Last Entered Car to You
+if(pcar) {
+old = pcar; }
+if(press & CTRL_DOWN&&!pcar) {
+setfloat(old + 0x30,    getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) *  5.0); 
+setfloat(old + 0x34,    getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) *  5.0); 
+setfloat(old + 0x38,    getfloat(pplayer + 0x38) + 1.0); }
+
+Ped Teleport
+setshort(0x991C280+0x56,0x159);
+pped = getfloat(0x991C280);
+if((pressmed & CTRL_TRIANGLE&&pressmed & CTRL_UP)){
+playerx = getfloat(pplayer + 0x030);
+playery = getfloat(pplayer + 0x034);
+playerz = getfloat(pplayer + 0x038);}
+if((press & CTRL_UP)){
+setfloat(pped + 0x30,  playerx);
+setfloat(pped + 0x34,  playery);
+setfloat(pped + 0x38,  playerz);}
+
+Set Ped on Fire (Kills)
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);}
+
+Set Ped on Fire (Kills+Keeps Burning)
+static pped;
+if (getint(0x08BA1D70))
+pped = getint(0x08BA1D70);
+if (pped){
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-0.5);}
+
+Set Ped on Fire (No Kill+Keeps Burning)
+static pped;
+if (getint(0x08BA1D70))
+pped = getint(0x08BA1D70);
+if (pped){
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));}
+
+Player/Car Coordinates:
+x = getfloat(pobj+0x30);
+y = getfloat(pobj+0x34);
+z = getfloat(pobj+0x38);
+
+maxx = furthest east the player can be;
+minx = furthest west player can be;
+maxy = furthest north the player can be;
+miny = furthest south the player can be;
+maxz = maximum height the player can be at;
+minz = minimum height the player can be at;
+
+if(x < maxx && x > minx && y < maxy && y > miny && z < maxz && z > minz) {
+Do whatever you want it to do}

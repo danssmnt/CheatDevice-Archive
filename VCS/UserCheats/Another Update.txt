@@ -1,0 +1,109 @@
+#cheat big bright yellow Exhaust
+//ID: 19517
+//Score: 2
+//Author: duhdho
+//Category: Vehicle
+//Description: car exhaust is big bright yellow
+//
+//EDITED BY: psphacker108 on 07/04/07 21:20:40
+//Image: none
+//Time: 07/04/2007 20:50:41
+//Working: Yes
+//Made by duhdho thanks to psphacker108 for Exhaust Color Changer
+setchar(0x09569B94, 255, 247, 83);
+setchar(0x09569B90, 0x10);
+
+
+#cheat The Launch Pad
+//ID: 19519
+//Score: 3
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This is a car launching pad, designed to shoot you all across Vice City! Simply line your car up with one of the tubes, set the boost amount, hit O, and you're off! Up and Down will change the amount of boost, which is displayed on your money meter. Hold R and Right to respawn to the Launch Pad.
+//Image: http://www.themaxone.net/images/video1.gif
+//Time: 09/04/2007 18:02:26
+//Working: Yes
+static MakeConstruction;
+static boost;
+thrust = boost * 0.00333; 
+if(!MakeConstruction) {
+moveto(-229.56, -1078.36, 83.78);  object(0x1CD5, 350, 0, 310);
+move(-4.32, 3.67, 1.90);  object(0x1CD5, 340, 0, 310);
+move(-1.66, 1.35, 0.70);  object(0x1CD5, 330, 0, 310);
+move(17.51, 3.71, -2.70);  object(0x1CD5, 350, 0, 350);
+move(-1.20, 6.49, 2.10);  object(0x1CD5, 340, 0, 350);
+move(-0.84, 4.52, 2.60);  object(0x1CD5, 330, 0, 350);
+move(14.96, -16.02, -4.50);  object(0x1CD5, 350, 0, 40);
+move(5.09, 6.04, 2.30);  object(0x1CD5, 340, 0, 40);
+move(4.26, 5.04, 3.20);  object(0x1CD5, 330, 0, 40);
+move(-0.60, -21.12, -5.60);  object(0x1CD5, 350, 0, 70);
+move(8.82, 3.24, 2.40);  object(0x1CD5, 340, 0, 70);
+move(6.67, 2.45, 3.40);  object(0x1CD5, 330, 0, 70);
+move(-47.98, -17.97, -5.70);  object(0x1CD5, 350, 0, 240);
+move(-6.07, -3.49, 2.10);  object(0x1CD5, 340, 0, 240);
+move(-7.17, -4.12, 3.80);  object(0x1CD5, 330, 0, 240);
+move(17.71, 4.58, -5.90);  object(0x1CA4, 0, 0, 222);
+move(3.29, -2.92, 0.00);  object(0x1CA4, 0, 0, 222);
+move(3.86, -1.39, 0.00);  object(0x1CA4, 0, 0, 180);
+move(1.70, 0.01, 0.00);  object(0x1CA4, 0, 0, 180);
+move(3.62, 1.89, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.71, 3.21, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.26, 2.67, 0.00);  object(0x1CA4, 0, 0, 130);
+move(2.00, 2.37, 0.00);  object(0x1CA4, 0, 0, 130);
+move(-0.17, 9.09, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.54, 1.28, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-7.30, 6.08, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-1.77, 1.47, 0.00);  object(0x1CA4, 0, 0, 40);
+move(-9.42, 1.14, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.85, -3.35, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-0.13, -0.15, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-6.29, -7.38, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-2.08, -2.43, 0.00);  object(0x1CA4, 0, 0, 310);
+move(-1.36, -3.57, 0.00);  object(0x1CA4, 0, 0, 270);
+move(1.80, -3.21, 0.00);  object(0x1CA4, 0, 0, 220);
+move(1.61, -1.35, 0.00);  object(0x1CA4, 0, 0, 220);
+MakeConstruction = 1;
+boost = 1000;
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+}
+setshort(0x08e90bd8, 1, 'C', 'o', 'n', 't', 'r', 'o', 'l', 's', ':', ' ', 'O', ' ', '-', ' ', 'L', 'a', 'u', 'n', 'c', 'h', ', ', ' ', 'U', 'p', ' ', 
+
+'a', 'n', 'd', ' ', 'D', 'o', 'w', 'n', ' ', '-', ' ', 'C', 'h', 'a', 'n', 'g', 'e', ' ', 'B', 'o', 'o', 's', 't', ' ', 'A', 'm', 'o', 'u', 'n', 't', ', ', ' ', 
+
+'R', ' ', '+', ' ', 'R', 'i', 'g', 'h', 't', ' ', '-', ' ', 'R', 'e', 's', 'e', 't', ' ', 'C', 'a', 'r', 0);
+if(press & CTRL_CIRCLE) {
+    setfloat(pcar+0x140,  getfloat(pcar+0x140)+getfloat(pcar+0x10)*thrust);
+    setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar+0x14)*thrust); 
+}
+if(buttons & CTRL_DOWN) {
+boost -= 5;
+}
+else if(buttons & CTRL_UP) {
+boost += 5;
+}
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_RIGHT) {
+setfloat(pcar + 0x30, -214.64, -1089.86, 86);
+setfloat(pcar + 0x140, 0, 0, 0);
+}
+setint(0x08bde55c, boost, boost);
+
+#cheat Destroy All Police and Army Vehicles
+//ID: 19518
+//Score: 5
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: While this code is on, any and all police cars, motorcycles, helicopters, SWAT Vans, FBI vehicles, and Army vehicles will be destroyed as soon as they appear on-screen! Thanks to Waterbottle for his code used in this.
+//Image: none
+//Time: 09/04/2007 03:46:03
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         checkID = getshort(p + 0x56);
+         if(p != pcar && checkID == 193 || checkID == 204 || checkID == 207 || checkID == 218 || checkID == 221 || checkID == 234 || checkID == 246 || checkID == 260 || checkID == 261 || checkID == 268 || checkID == 279 || checkID == 191) setfloat(p + 0x27c,  0);
+     }
+}
+#off
+setchar(0x08bb32c8,   0); 
+

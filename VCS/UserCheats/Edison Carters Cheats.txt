@@ -1,0 +1,1412 @@
+#cheat Car Color Shows Car Health
+//ID: 18562
+//Score: 168
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Your car goes from green to yellow to red to black as it takes damage.  Thanks to vettefan for the car color addresses!
+//Image: http://www1.cheatdevice.com/gta/VCSCarHealthColor.gif
+//Time: 06/11/2006 05:26:14
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health >= 990)
+    setchar(pcar+0x224, 0, 180, 0);
+else if (health >= 650)
+    setchar(pcar+0x224, 255 * (1000 - health) / 350, 255, 0);
+else if (health >= 300)
+    setchar(pcar+0x224, 255, 255 * (health - 300) / 350, 0);
+else if (health >= 280)
+    setchar(pcar+0x224, 128, 0, 0);
+else
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat Your Car Turns Black Before Exploding
+//ID: 18563
+//Score: 78
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When your car turns black, bail!  One more hit and it'll explode!  Thanks to vettefan for the car color addresses.
+//Image: none
+//Time: 06/11/2006 05:34:12
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health < 300)
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat Fast Clock
+//ID: 18605
+//Score: 69
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//
+//EDITED BY: psphacker108 on 08/11/06 23:21:47
+//Image: none
+//Time: 08/11/2006 22:37:35
+//Working: Yes
+setchar(0x08bb2db4, 1);
+#off
+setchar(0x08bb2db4, 0);
+
+#cheat Skip Nighttime
+//ID: 18568
+//Score: 113
+//Author: edisoncarter
+//Category: Environment
+//Description: At 18:00 rolls the clock forward to 6:00 so you don't have to play in the dark.
+//Image: none
+//Time: 06/11/2006 16:19:37
+//Working: Yes
+if (getchar(0x08bb3b40) >= 18 || getchar(0x08bb3b40) <= 5)
+    setchar(0x08bb3b40, 6, 0);
+
+#cheat Force Push
+//ID: 18571
+//Score: 234
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped and they go flying!  Kind of like a remote super punch.  Thanks to Waterbottle for finding the address of targetted ped.
+//Image: http://www1.cheatdevice.com/gta/VCSForcePush2.gif
+//Time: 06/11/2006 19:51:11
+//Working: Yes
+// Target a ped and they go flying!
+static pdone;
+pped = getint(0x08BA1D70);
+if (pped != 0 && pped != pdone)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, dx * 0.2);
+    setfloat(pped + 0x0144, dy * 0.2);
+    setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+    pdone = pped;
+}
+if (pped == 0)
+{
+    pdone = 0;
+}
+
+#cheat Tractor Beam
+//ID: 18572
+//Score: 195
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them to you.  Thanks to Waterbottle for finding pointer to targetted ped!
+//Image: http://www1.cheatdevice.com/gta/VCSTractorBeam.gif
+//Time: 06/11/2006 19:56:20
+//Working: Yes
+// Target a ped to pull them towards you
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+
+#cheat Peds Have Weapons
+//ID: 18606
+//Score: 93
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:38:39
+//Working: Yes
+setchar(0x08baef2c, 1);
+#off
+setchar(0x08baef2c, 0);
+
+
+#cheat Spinners
+//ID: 18692
+//Score: 173
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever your in a vehicle the rims will spin non-stop giving the vehicle spinners.
+//
+//EDITED BY: edisoncarter on 12/11/06 20:10:18
+//Image: none
+//Time: 12/11/2006 19:35:26
+//Working: Yes
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644, spin, spin, spin, spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+
+#cheat Vulture Cop Cars (TESTED)
+//ID: 18723
+//Score: 66
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cruiser cars look cool, with spiky edges strictly dark green and black.
+//
+//EDITED BY: edisoncarter on 18/11/06 00:24:58
+//Image: none
+//Time: 15/11/2006 23:26:34
+//Working: Yes
+sethex(0x09AB98F4, 00)
+
+#cheat Rayman Wheeled Cop Cars
+//ID: 18725
+//Score: 67
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars into Rayman styled cop cars, the wheels dont touch the car... :P Have fun :)
+//
+//EDITED BY: edisoncarter on 18/11/06 00:25:17
+//Image: none
+//Time: 15/11/2006 23:33:16
+//Working: Yes
+sethex(0x09AB98F4, 65)
+
+#cheat Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+//ID: 18726
+//Score: 79
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars look like they were morphed w/ Yu-Gi-Oh... XD
+//
+//EDITED BY: edisoncarter on 18/11/06 00:32:49
+//Image: none
+//Time: 15/11/2006 23:37:43
+//Working: Yes
+// Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+sethex(0x09AB98F4, F0);
+
+
+#cheat Glass Cop Car
+//ID: 18727
+//Score: 89
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns cop cars into cop cars with weird stuff coming out of it. Mostly has Glass... Though the color changes by what angle you are looking at it...
+//
+//It's too complicated, just download and see for your self!!!
+//
+//EDITED BY: edisoncarter on 18/11/06 00:2
+//Image: none
+//Time: 15/11/2006 23:42:26
+//Working: Yes
+// Glass Cop Car
+sethex(0x09AB98F4, F9);
+
+#cheat Guys Follow You
+//ID: 18614
+//Score: 112
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:43:24
+//Working: Yes
+setchar(0x08bacdf5, 1);
+#off
+setchar(0x08bacdf5, 0);
+
+
+#cheat Bobble Head World
+//ID: 18613
+//Score: 94
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.  This is a hidden cheat without a button code.
+//Image: none
+//Time: 08/11/2006 22:43:00
+//Working: Yes
+setchar(0x08bacdf7, 1);
+#off
+setchar(0x08bacdf7, 0);
+
+
+#cheat All Green Lights
+//ID: 18612
+//Score: 86
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:42:26
+//Working: Yes
+setchar(0x08bafd80, 1);
+#off
+setchar(0x08bafd80, 0);
+
+
+#cheat Teleport to Ocean View Hotel Interior
+//ID: 18702
+//Score: 85
+//Author: edisoncarter
+//Category: Teleport
+//Description: Tommy Vercetti's original safehouse hotel.  It's not furnished, but the top floor is solid and it has windows you can look out of.
+//Image: none
+//Time: 13/11/2006 03:48:43
+//Working: Yes
+teleport(221.1, -1274.52, 34.61);
+
+#cheat Teleport to Decoy Van Warehouse Interior
+//ID: 18701
+//Score: 70
+//Author: edisoncarter
+//Category: Teleport
+//Description: Teleport to the warehouse you drove the decoy van from in a mission.  The garage door is closed now and you can't get out.
+//Image: none
+//Time: 13/11/2006 03:45:02
+//Working: Yes
+teleport(-1148.10, -235.04, 11.45);
+
+#cheat Remove Stuff In Your Way
+//ID: 18781
+//Score: 110
+//Author: edisoncarter
+//Category: Environment
+//Description: Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, benches, cars, people that get in your way without removing walls or buildings that would cause you to fall through the ground.  Thanks to Waterbottle for Remove Anything.
+//Image: http://www1.cheatdevice.com/gta/VCSRemoveStuffInYourWay.gif
+//Time: 19/11/2006 21:17:46
+//Working: Yes
+// By Edison Carter
+// Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, 
+// benches, cars, people that get in your way without removing walls or
+// buildings that would cause you to fall through the ground.
+// Thanks to Waterbottle for Remove Anything.
+static xRightHandVector;
+static yRightHandVector;
+static zRightHandVector;
+static xForwardVector;
+static yForwardVector;
+static zForwardVector;
+static xUpVector;
+static yUpVector;
+static zUpVector;
+static xRotationalMomentum;
+static yRotationalMomentum;
+static zRotationalMomentum;
+static xVelocity;
+static yVelocity;
+static zVelocity;
+static dHealth;
+static steady;
+pitem = getint(pobj + 0x0150);
+if (pitem)
+{
+    modelid = getshort(pitem + 0x0056);
+    if (modelid < 750 ||
+        modelid == 1515 ||
+        modelid == 2627 ||
+        modelid == 7337 ||
+        modelid == 1820 ||
+        modelid == 1821 ||
+        modelid == 1825 ||
+        modelid == 1826 ||
+        modelid == 1829 ||
+        (modelid >= 2551 && modelid <= 2554) ||
+        (modelid >= 1526 && modelid <= 1536) ||
+        (modelid >= 1217 && modelid <= 1223) ||
+        (modelid >= 1485 && modelid <= 1488))
+    {
+        if (modelid != 1533)
+        {
+            setfloat(pitem + 0x0030, 0, 0, 0);
+            steady = 3;
+        }
+    }
+}
+if (steady > 0)
+{
+    steady--;
+    setfloat(pobj + 0x0000, xRightHandVector);
+    setfloat(pobj + 0x0004, yRightHandVector);
+    setfloat(pobj + 0x0008, zRightHandVector);
+    setfloat(pobj + 0x0010, xForwardVector);
+    setfloat(pobj + 0x0014, yForwardVector);
+    setfloat(pobj + 0x0018, zForwardVector);
+    setfloat(pobj + 0x0020, xUpVector);
+    setfloat(pobj + 0x0024, yUpVector);
+    setfloat(pobj + 0x0028, zUpVector);
+    setfloat(pobj + 0x0070, xRotationalMomentum);
+    setfloat(pobj + 0x0074, yRotationalMomentum);
+    setfloat(pobj + 0x0078, zRotationalMomentum);
+    setfloat(pobj + 0x0140, xVelocity);
+    setfloat(pobj + 0x0144, yVelocity);
+    setfloat(pobj + 0x0148, zVelocity);
+    setfloat(pcar + 0x027c, dHealth);
+}
+else
+{
+    xRightHandVector    = getfloat(pobj + 0x0000);
+    yRightHandVector    = getfloat(pobj + 0x0004);
+    zRightHandVector    = getfloat(pobj + 0x0008);
+    xForwardVector      = getfloat(pobj + 0x0010);
+    yForwardVector      = getfloat(pobj + 0x0014);
+    zForwardVector      = getfloat(pobj + 0x0018);
+    xUpVector           = getfloat(pobj + 0x0020);
+    yUpVector           = getfloat(pobj + 0x0024);
+    zUpVector           = getfloat(pobj + 0x0028);
+    xRotationalMomentum = getfloat(pobj + 0x0070);
+    yRotationalMomentum = getfloat(pobj + 0x0074);
+    zRotationalMomentum = getfloat(pobj + 0x0078);
+    xVelocity           = getfloat(pobj + 0x0140);
+    yVelocity           = getfloat(pobj + 0x0144);
+    zVelocity           = getfloat(pobj + 0x0148);
+    dHealth             = getfloat(pcar + 0x027c);
+}
+
+#cheat Blendo
+//ID: 18741
+//Score: 138
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Use a car as a weed wacker.  You can be on foot or in a car.  Inspired by the battlebot by the MythBusters.
+//Image: http://www1.cheatdevice.com/gta/VCSBlendo.gif
+//Time: 17/11/2006 18:46:19
+//Working: Yes
+static psel;
+if (psel == 0)
+{
+    setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', ' ', 'c', 'a', 'r', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', 0);
+}
+p = getint(pobj + 0x150);
+if (p && getshort(p + 0x56) >= 170 && getshort(p + 0x56) <= 280)
+{
+    psel = p;
+    setfloat(psel + 0xd0, getfloat(psel + 0xd0) * 3.0);
+    setfloat(psel + 0xd4, getfloat(psel + 0xd4) * 3.0);
+}
+if (psel)
+{
+    setfloat(psel + 0x08, 0);
+    setfloat(psel + 0x18, 0);
+    setfloat(psel + 0x20, 0, 0, 1);
+    setfloat(psel + 0x30, getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 10.0);
+    setfloat(psel + 0x34, getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 10.0);
+    setfloat(psel + 0x38, getfloat(pplayer + 0x38) + 0.5);
+    setfloat(psel + 0x78, getfloat(psel + 0x78) - 0.015);
+    setfloat(psel + 0x027c, 100000.0);
+}
+#off
+psel = 0;
+
+#cheat Bump Transference
+//ID: 19089
+//Score: 84
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When you bump another car, Vic transfers into that car instantly. If it's a ped driven car, it continues driving like a ped and you're along for the ride. If you hit a car you've driven before, you will be fully driving the car you hit.
+//Image: none
+//Time: 21/12/2006 18:39:19
+//Working: Yes
+static pprev;
+static delay;
+if (delay > 0)
+   delay--;
+if (pcar)
+{
+   pbump = getint(pcar + 0x0150);
+   if (pbump && (pbump != pprev || delay == 0))
+   {
+       modelid = getshort(pbump + 0x0056);
+       if (modelid >= 170 && modelid <= 280)
+       {
+           setint(pplayer + 0x450, pbump);
+           setint(pplayer + 0x480, pbump);
+           setint(pplayer + 0x484, pbump);
+           setint(pbump + 0x384, pplayer);
+           setint(pcar + 0x384, 0);
+           setint(0x08bb4064, pbump);
+           setint(0x08bc7f10, pbump);
+           setint(0x08bc85f0, pbump);
+           setchar(pbump + 0x675, 0x90);
+           setchar(pcar + 0x675, 0x80);
+           delay = 180;
+           pprev = pcar; // no backsies
+       }
+   }
+}
+
+#cheat Overpass
+//ID: 19115
+//Score: 62
+//Author: edisoncarter
+//Category: Location Mods
+//Description: Creates an overpass over the Malibu to the Pay'n'Spray in Vice Point.
+//Image: http://www1.cheatdevice.com/gta/VCSOverpass.gif
+//Time: 27/12/2006 23:58:03
+//Working: Yes
+// By Edison Carter
+moveto(478, -161.29, 8.7);
+move(2.31, 4.43, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, 0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 10, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 10, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 10, 90);
+move(0, 4.43, (0.77+0.38)/2);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 5, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 5, 90);
+move(0, 4.43, 0.38);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 5, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 5, 90);
+move(0, 4.43, 0.38);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 5, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 5, 90);
+move(0, 4.43, 0.38);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 5, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 5, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 5, 90);
+move(0, 4.43, 0.38/2);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 90);
+move(0, 4.43, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 90);
+move(0, 4.43, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 90);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 90);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 90);
+move(-0.72*0.25, 4.43, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 85);
+move(-0.72*0.75, 4.4, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 80);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 80);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 80);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 80);
+move(-0.72*1.25, 4.3, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 75);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 75);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 75);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 75);
+move(-0.72*1.75, 4.2, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 70);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 70);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 70);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 70);
+move(-0.72*2.25, 4.1, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 65);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 65);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 65);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 65);
+move(-0.72*2.75, 4.0, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, 0);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, 0, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, 0, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, 0, 60);
+move(-2.10, 3.9, -0.38/2);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -5, 60);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -5, 60);
+move(-2.10, 3.9, -0.38);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.03);   object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -5, 60);
+move(-8.19, 0.0, -0.03);  object(0x1CA4, 110, -5, 60);
+move(-2.10, 3.9, -0.38);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.07);   object(0x1CA4, 90, -5, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -5, 60);
+move(-8.19, 0.0, -0.07);  object(0x1CA4, 110, -5, 60);
+move(-2.10, 3.9, (-0.77-0.38)/2);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.10);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.1);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-2.10, 3.9, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.14);   object(0x1CA4, 90, -10, 60);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 60);
+move(-8.19, 0.0, -0.14);  object(0x1CA4, 110, -10, 60);
+move(-0.72*2.75, 4.0, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 65);
+move(2.91, 0.0, 0.10);   object(0x1CA4, 90, -10, 65);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 65);
+move(-8.19, 0.0, -0.1);  object(0x1CA4, 110, -10, 65);
+move(-0.72*2.25, 4.1, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 70);
+move(2.91, 0.0, 0.07);   object(0x1CA4, 90, -10, 70);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 70);
+move(-8.19, 0.0, -0.07);  object(0x1CA4, 110, -10, 70);
+move(-0.72*1.75, 4.2, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 75);
+move(2.91, 0.0, 0.03);   object(0x1CA4, 90, -10, 75);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 75);
+move(-8.19, 0.0, -0.03);  object(0x1CA4, 110, -10, 75);
+move(-0.72*1.25, 4.3, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 80);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 80);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 80);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 80);
+move(-0.72*0.75, 4.4, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+move(-0.36, 4.43, -0.77);
+move(2.31, 0.00, -0.40); object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.00);   object(0x1CA4, 90, -10, 85);
+move(2.91, 0.0, 0.40);   object(0x1CA4, 70, -10, 85);
+move(-8.19, 0.0, 0.00);  object(0x1CA4, 110, -10, 85);
+teleport(481.39, -168.65, 10.01);
+
+#cheat Teleport to Movie Hotel Interior
+//ID: 18700
+//Score: 79
+//Author: edisoncarter
+//Category: Teleport
+//Description: Teleport to the hotel interior at the end of one of Reni's missions.
+//Image: http://www1.cheatdevice.com/gta/VCSMovieHotelInterior.gif
+//Time: 13/11/2006 03:42:11
+//Working: Yes
+teleport(-65.90, -1225.41, 23.94);
+
+#cheat Lower The World -0.5m
+//ID: 19245
+//Score: 50
+//Author: edisoncarter
+//Category: Environment
+//Description: Lowers the solid part of everything in the world by half a meter.  The visible part stays the same, so it looks like everyone is submerged in concrete.  Use repeatedly to lower further.
+//Image: http://www1.cheatdevice.com/gta/VCSLowerTheWorld1.jpg
+//Time: 11/01/2007 00:04:22
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) - 0.5);
+off();
+
+
+#cheat Raise The World +1m
+//ID: 19246
+//Score: 59
+//Author: edisoncarter
+//Category: Environment
+//Description: Raises the solid part of everything in the world by 1 meter while the visible part stays the same.  Because of the camera perspective it may look like you're still standing on the ground from some angles.  Use repeatedly to raise further.
+//Image: http://www1.cheatdevice.com/gta/VCSRaiseTheWorld1.gif
+//Time: 11/01/2007 00:10:58
+//Working: Yes
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+    setfloat(p + 0x38, getfloat(p + 0x38) + 1.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1.0);
+off();
+
+
+#cheat Invisible Traffic
+//ID: 18607
+//Score: 72
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.  This is a hidden cheat with no button code.
+//Image: none
+//Time: 08/11/2006 22:40:04
+//Working: Yes
+setchar(0x08bb2450, 1);
+#off
+setchar(0x08bb2450, 0);
+
+#cheat White Traffic
+//ID: 18610
+//Score: 73
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.  This is a hidden cheat with no button code.
+//Image: none
+//Time: 08/11/2006 22:41:33
+//Working: Yes
+setchar(0x08bb10d5, 1);
+#off
+setchar(0x08bb10d5, 0);
+
+
+#cheat Black Traffic
+//ID: 18609
+//Score: 76
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:41:00
+//Working: Yes
+setchar(0x08bb10d4, 1);
+#off
+setchar(0x08bb10d4, 0);
+
+
+#cheat Aggressive Drivers
+//ID: 18611
+//Score: 90
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Image: none
+//Time: 08/11/2006 22:41:59
+//Working: Yes
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0);
+
+
+#cheat Invisible Vic
+//ID: 18677
+//Score: 92
+//Author: dwinch
+//Category: Player
+//Description: Makes Vic invisible.
+//Shadow is also not visible.
+//When you get in a car your player skin will be left behind next to the car (shown in gif).
+//Which isn't that bad if you drive off anyway.
+//
+//EDITED BY: edisoncarter on 12/11/06 05:33:28
+//Image: http://smg.photobucket.com/albums/v514/Winchy/th_invisible.gif
+//Time: 12/11/2006 00:50:57
+//Working: Yes
+setchar(pplayer+0x4C, 0x10);
+setchar(pplayer+0x4D, 0x20);
+#off
+setchar(pplayer+0x4C, 0x00);
+setchar(pplayer+0x4D, 0x00);
+
+#cheat Ped Slingshot
+//ID: 18682
+//Score: 129
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release!
+//Image: http://www1.cheatdevice.com/gta/VCSPedSlingshot.gif
+//Time: 12/11/2006 06:08:29
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pcurrentped = 0;
+    }
+}
+
+
+#cheat PCJ-600 and Jet Ski spawn at 101 Bayshore
+//ID: 18681
+//Score: 140
+//Author: edisoncarter
+//Category: Vehicle
+//Description: A PCJ-600 spawns right outside your safehouse at 101 Bayshore Ave and a Jet Ski is waiting at the small dock across the street.
+//Image: none
+//Time: 12/11/2006 03:51:16
+//Working: Yes
+pspawn = 0x08E81290;
+setint(pspawn, 212); // modelid pcj-600
+setfloat(pspawn + 4, -801.37, -1178.76, 10.96, 290); // x, y, z, angle
+pspawn += 0x30;
+setint(pspawn, 233); // modelid jet ski
+setfloat(pspawn + 4, -729.4, -1148.9, 6.0, 20); // x, y, z, angle
+pspawn += 0x30;
+
+#cheat Fireball Slingshot
+//ID: 18688
+//Score: 231
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release.  Thanks to Durka Durka Mahn for fire address.
+//Image: http://www1.cheatdevice.com/gta/VCSFireballSlingshot.gif
+//Time: 12/11/2006 18:17:46
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+static pfireped;
+static nfirecount;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pfireped = pcurrentped;
+        nfirecount = 0;
+        pcurrentped = 0;
+    }
+}
+if (nfirecount++ > 3 && nfirecount < 30 * 30 && pfireped)
+{
+    // thanks to Durka Durka Mahn for fire pointer
+    setchar(0x08be3a20, 1);
+    setfloat(0x08be3a30, getfloat(pfireped + 0x0030), getfloat(pfireped + 0x0034), getfloat(pfireped + 0x0038));
+}
+
+#cheat Media Attention Meter
+//ID: 18640
+//Score: 137
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Displays your newsworthiness when you go on a killing spree.  Improved version: displays any time, you don't have to get up to 6 stars to get it to display.
+//
+//This was an unused hidden cheat with no button code.  The game does not think you cheated from
+//Image: http://www1.cheatdevice.com/gta/VCSMediaAttentionMeter.jpg
+//Time: 10/11/2006 19:39:53
+//Working: Yes
+// By Edison Carter
+// displays your newsworthiness when you go on a killing spree
+setshort(0x08bb41ac, 1);
+setint(0x089bb648, 0);
+setint(0x089bb65c, 0);
+setint(0x089bb66c, 0);
+#off
+setshort(0x08bb41ac, 0);
+setint(0x089bb648, 0x450100db);
+setint(0x089bb65c, 0x450100d6);
+setint(0x089bb66c, 0x144000d2);
+
+
+
+#cheat Force Blast
+//ID: 18638
+//Score: 125
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Force push all peds away from you!
+//Image: none
+//Time: 10/11/2006 19:08:36
+//Working: Yes
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+    if (p == pplayer)
+        continue;
+    dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(p + 0x01c8, 0x1020);
+    setfloat(p + 0x0140, dx * 0.2);
+    setfloat(p + 0x0144, dy * 0.2);
+    setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+off();
+
+#cheat Perfect Traction
+//ID: 18608
+//Score: 114
+//Author: edisoncarter
+//Category: Button Cheats
+//Description: Enable button cheat without the game thinking you cheated.
+//Down = Car Hop
+//Image: none
+//Time: 08/11/2006 22:40:38
+//Working: Yes
+setchar(0x08bb2452, 1);
+#off
+setchar(0x08bb2452, 0);
+
+
+#cheat Rocket Boost 4
+//ID: 18507
+//Score: 168
+//Author: edisoncarter
+//Category: Vehicle
+//Description: The built-in Rocket Boost cheat from LCS converted to cheat script.  Change "boost = 4.0" for different boost amounts.
+//Image: none
+//Time: 04/11/2006 19:26:23
+//Working: Yes
+if (buttons & CTRL_CROSS)                                                                         
+{                                                                                                                                                     
+    boost = 4.0;                                                                                  
+    thrust = boost * 0.00333;                                                
+                                                                                                  
+    // velocity = velocity + forward vector * thrust                                              
+    setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);          
+    setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);          
+    setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);          
+                                                                                                  
+    // rotational control on motorcycles                                                          
+    //if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)                       
+        setfloat(pcar + 0x0078, -0.03 * xstick);                                                  
+}                                                                                                 
+
+
+#cheat Invisible Jetpack
+//ID: 18559
+//Score: 295
+//Author: edisoncarter
+//Category: Player
+//Description: Same controls as in San Andreas.
+//Image: http://www1.cheatdevice.com/gta/VCSJetpack1.gif
+//Time: 06/11/2006 00:50:04
+//Working: Yes
+// By Edison Carter
+// same controls as in San Andreas
+{
+    dx = 0; dy = 0; dz = 0;
+
+    // forward thrust
+    thrust = -ystick * 0.005;
+    if (ystick < -0.1 && (buttons & CTRL_CROSS))
+        thrust = -ystick * 0.024;
+    dx += getfloat(pplayer + 0x0010) * thrust;
+    dy += getfloat(pplayer + 0x0014) * thrust;
+    dz += getfloat(pplayer + 0x0018) * thrust;
+
+    // strafe left
+    if (buttons & CTRL_LTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * -0.00333;
+        dy += getfloat(pplayer + 0x0004) * -0.00333;
+        dz += getfloat(pplayer + 0x0008) * -0.00333;
+    }
+
+    // strafe right
+    if (buttons & CTRL_RTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * 0.00333;
+        dy += getfloat(pplayer + 0x0004) * 0.00333;
+        dz += getfloat(pplayer + 0x0008) * 0.00333;
+    }
+
+    // lift
+    lift = 0.0068;
+    if (buttons & CTRL_SQUARE)
+        lift -= 0.007;
+    if (buttons & CTRL_CROSS)
+    {
+        setshort(pplayer+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * 0.006;
+        else
+            lift += 0.006;
+    }
+    dx += getfloat(pplayer + 0x0020) * lift;
+    dy += getfloat(pplayer + 0x0024) * lift;
+    dz += getfloat(pplayer + 0x0028) * lift;
+
+    // add vector to velocity
+    gameplayspeed = getfloat(0x08bb3b58);
+    setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+    setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+    setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+    // rotational control
+    setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+    // never roll when falling, thanks to theY4Kman
+    setfloat(pplayer + 0x1C4,  0.0);
+}
+

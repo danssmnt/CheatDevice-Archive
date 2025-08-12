@@ -1,0 +1,744 @@
+#cheat The Ring of Fire
+//ID: 19528
+//Score: 74
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: 10 fires will surround you in the shape of a circle! Hit O to release the Ring, and any vehicles caught in the ring when you release it will catch fire and blow up! Hit Down to lock the ring size.
+//Image: http://img256.imageshack.us/img256/4190/video1rn0.gif
+//Time: 13/04/2007 16:25:04
+//Working: Yes
+static counter;
+static dist;
+static lockdist;
+static lockx;
+static locky;
+static lockz;
+static lockon;
+x = getfloat(pobj + 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj + 0x38);
+if(press & CTRL_CIRCLE) {
+lockx = x;
+locky = y;
+lockz = z;
+}
+if(buttons & CTRL_CIRCLE) {
+dist += 0.5;
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, lockx + cos(0) * dist,  locky + sin(0) * dist,  lockz);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, lockx + cos(36) * dist,  locky + sin(36) * dist,  lockz);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, lockx + cos(72) * dist,  locky + sin(72) * dist,  lockz);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  lockx + cos(108) * dist,  locky + sin(108) * dist,  lockz);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, lockx + cos(144) * dist,  locky + sin(144) * dist,  lockz);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, lockx + cos(180) * dist,  locky + sin(180) * dist,  lockz);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, lockx + cos(216) * dist,  locky + sin(216) * dist,  lockz);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  lockx + cos(252) * dist,  locky + sin(252) * dist,  lockz);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, lockx + cos(288) * dist,  locky + sin(288) * dist,  lockz);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, lockx + cos(324) * dist,  locky + sin(324) * dist,  lockz);
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = lockx - getfloat(cars+0x30);
+         dy = locky - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+else {
+if(dist > 3.0) {
+dist -= 0.5;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+if(dist < 3.0) {
+dist += 0.5;
+}
+else if(press & CTRL_DOWN && !lockon) {
+lockdist = dist;
+lockon = 1;
+}
+else if(press & CTRL_DOWN && lockon) {
+lockon = 0;
+}
+if(lockon) {
+dist = lockdist;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, x + cos(0) * dist,  y + sin(0) * dist,  z);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, x + cos(36) * dist,  y + sin(36) * dist,  z);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, x + cos(72) * dist,  y + sin(72) * dist,  z);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  x + cos(108) * dist,  y + sin(108) * dist,  z);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, x + cos(144) * dist,  y + sin(144) * dist,  z);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, x + cos(180) * dist,  y + sin(180) * dist,  z);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, x + cos(216) * dist,  y + sin(216) * dist,  z);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  x + cos(252) * dist,  y + sin(252) * dist,  z);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, x + cos(288) * dist,  y + sin(288) * dist,  z);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, x + cos(324) * dist,  y + sin(324) * dist,  z);
+}
+#off
+setchar(0x08bb32c8,    0); 
+
+#cheat Pet Car
+//ID: 18718
+//Score: 181
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat will make the last entered car follow you! To use this, turn it on, get into a car, then get out. Then use these controls:
+//R+Up- Turn On Follow
+//R+Down- Turn Off Follow
+//R+O- Blow up car
+//Down- Car hop (Best if follow is OFF)
+//R+ Analog- Spin
+//Image: http://img294.imageshack.us/img294/7374/video1km2.gif
+//Time: 15/11/2006 16:12:00
+//Working: Yes
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,  +0.2);
+}
+
+#cheat Touch of Death
+//ID: 18676
+//Score: 248
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: While on, anything you touch (person or vehicle) will die or blow up! No need for weapons with this cheat! (Special Thanks to Waterbottle's help in pointers!!!)
+//
+//Note: This works on foot and in car!
+//Image: http://img295.imageshack.us/img295/320/firecarsde2.gif
+//Time: 12/11/2006 00:47:45
+//Working: Yes
+object = getint(pplayer+0x150);
+carobject = getint(pcar+0x150);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setfloat(object + 0x4e4,  0);
+}
+if(getint(pplayer+0x150)>0x098edcc0&&getint(pplayer+0x150)<0x099019a0)
+{
+setfloat(object + 0x27c,  0);
+} 
+
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setfloat(carobject + 0x4e4,  0);
+}
+if(getint(pcar+0x150)>0x098edcc0&&getint(pcar+0x150)<0x099019a0)
+{
+setfloat(carobject + 0x27c,  0);
+} 
+
+#cheat All Cars Start Burning, Then Blow Up.
+//ID: 18637
+//Score: 115
+//Author: Waterbottle
+//Category: Vehicle
+//Description: All cars will start burning and then a few seconds later blow up.
+//Image: none
+//Time: 10/11/2006 18:51:28
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         if(p != pcar) setfloat(p + 0x27c, 0);
+     }
+}
+setchar(0x08bb32c8,  1);
+#off
+setchar(0x08bb32c8,  0); 
+
+#cheat The Mysterious Banshee
+//ID: 18867
+//Score: 109
+//Author: Waterbottle
+//Category: Environment
+//Description: Enter the banshee spawning in the Bayshore Ave safehouse garage to start a simple mission.
+//
+//The car is fitted with a bomb and you have to drive fast so it dosn't blow up before it's dismantled.
+//Image: none
+//Time: 23/11/2006 22:06:43
+//Working: Yes
+static state;
+DifficultLevel = 50;
+  if(state) 
+      setshort(pcar+0x232,  0x0101); 
+  else
+  {
+      setint(0x08C739B0,  175);
+      setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+      setfloat(0x08C739C0,  3.1415);
+      if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+      {
+      state = 1;
+      time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      }
+  }
+  if(state == 1)
+  {
+  setshort(0x08e90bd8,  1,  'O',  'h',  ', ',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+  if(newtime - 2 > time)
+         {
+         state = 2;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 2)
+  {
+  setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         if(newtime - 2 > time)
+         {
+         state = 3;
+         health = 150;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 3)
+  {
+  setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 3 > time)
+	{
+	state = 4;
+	time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+	}
+	if(speed < DifficultLevel)
+	    health -= 0.5;
+	else if(health < 150)
+	    health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+	{
+	setfloat(pcar+0x27c, 0);
+	state = 0;
+	}
+  }
+  if(state == 4)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 4 < time)
+             setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ', ',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ', ', ' ',  'N',  'O',  'W',  '!', 0);
+       else time = 0;
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  if(speed < DifficultLevel + 10)
+           health -= 0.5;
+       else if(health < 150)
+           health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+       {
+       setfloat(pcar+0x27c, 0);
+       state = 0;
+       }
+  if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)
+       {
+       state = 5;
+       time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       }
+  }
+  if(state == 5)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 2 > time)
+	     state = 6;
+  }
+  if(state == 6)
+  {
+  setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ', ', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+	if(buttons & CTRL_UP)
+	{
+	state = 0;
+	setshort(pcar+0x232,  0); 
+	}
+  }
+#off
+state = 0;
+setshort(pcar+0x232,  0); 
+
+#cheat Turbo Atomic Nuke
+//ID: 19569
+//Score: 62
+//Author: psphacker108
+//Category: Environment
+//Description: Turbo Atomic Nuke! Can you say Boom? Look at the video teleport's you to rocket launcher and the Turbo Atomic Nuke is not far away. Added Rocket Fire effect's for that special touch. Credit to DDM for the fire effect. Fire will slow down the game I recommend 333MHZ for the fix, More Code's to be released in the next few day's.
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-27.gif
+//Time: 24/04/2007 06:59:44
+//Working: Yes
+setchar(0x9569fb0,  0x00,  0xa0,  0x00,  0x00,  0x00,  0xff);
+setchar(0x958fb0, 0x00, 0x00, 0xff);
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -593.40, -462.94, 11.29);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, -595.08, -458.48, 11.29);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, -595.14, -455.58, 11.29);
+}
+moveto(-567.89, -488.01, 16.28);  object(0x01C2, 0, 40, 85);
+move(0.14, -1.49, 1.50);  object(0x01C2, 0, 40, 85);
+move(0.17, -1.89, 0.00);  object(0x01C2, 0, 145, 85);
+move(0.09, -1.00, -1.60);  object(0x01C2, 0, 145, 85);
+move(3.29, 3.24, -4.51);  object(0x01C2, 0, 145, 86);
+move(0.07, -1.00, 0.00);  object(0x01C2, 0, 145, 86);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 86);
+move(246.09, 100.05, 0.51);  object(0x01C2, 0, 145, 14);
+move(0.78, -0.19, 0.00);  object(0x01C2, 0, 145, 14);
+move(0.39, -0.09, 0.00);  object(0x01C2, 0, 145, 14);
+move(-23.12, -4.82, -1.54);  object(0x01C2, 0, 145, 267);
+move(-0.05, 1.00, 0.00);  object(0x01C2, 0, 145, 267);
+move(-0.03, 0.70, 0.00);  object(0x01C2, 0, 145, 267);
+move(6.56, -12.08, -0.00);  object(0x01C2, 0, 145, 185);
+move(-0.90, 0.08, 0.00);  object(0x01C2, 0, 145, 185);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 185);
+move(0.00, 0.00, 0.00);  object(0x01C2, 0, 145, 185);
+
+#cheat Teleport to Turbo Atomic Nuke
+//ID: 19568
+//Score: 45
+//Author: psphacker108
+//Category: Environment
+//Description: Turbo Atomic Nuke! Can you say Boom? Here's the teleport for it. Make sure you download the Turbo Atomic Nuke code 2.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/screen1-18.jpg
+//Time: 24/04/2007 06:57:55
+//Working: Yes
+teleport(-577.88, -451.38, 11.29);
+
+#cheat Ultimate Car Launcher
+//ID: 19231
+//Score: 150
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: The Ultimate Car Launcher! Park a car atop the platform over the 4 small circles, then drop to the bottom and shoot one of the barrels on the very bottom. BOOM the car is gone!
+//Image: http://img183.imageshack.us/img183/9095/video1xf1.gif
+//Time: 08/01/2007 01:47:14
+//Working: Yes
+moveto(-767.14, -1206.59, 13.16);  object(0x1CB2, 270, 65, 66);
+move(5.63, -12.71, 3.10);  object(0x1CB2, 270, 90, 66);
+move(3.00, -6.77, -5.90);  object(0x1CB2, 270, 0, 66);
+move(-1.61, 3.88, 0.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 0.90);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, 0.80);  object(0x01C2, 0, 0, 66);
+move(0.32, -0.73, 0.00);  object(0x01C2, 0, 0, 66);
+move(-0.84, -0.37, 0.00);  object(0x01C2, 0, 0, 66);
+move(-0.32, 0.73, 0.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.50);  object(0x01C2, 0, 0, 66);
+move(0.32, -0.73, 4.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.20);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.80);  object(0x01C2, 0, 0, 66);
+move(0.86, 0.49, 4.30);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.00);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -0.90);  object(0x01C2, 0, 0, 66);
+move(0.00, 0.00, -1.10);  object(0x01C2, 0, 0, 66);
+teleport(-770.87, -1198.80, 11.08);
+
+#cheat Airport Launch Tube
+//ID: 19173
+//Score: 102
+//Author: Durka Durka Mahn
+//Category: Location Mods
+//Description: Made using CheatSync's Construction Builder + Some Modifications. Put a car half way in either side of the construction, then shoot the red barrels and BOOM the car is GONE. You can launch yourself if you put a landmine inside then park the car SLOWLY inside the tube.
+//Image: http://img20.imageshack.us/img20/3999/video1xd8.gif
+//Time: 01/01/2007 15:56:04
+//Working: Yes
+moveto(-1443.30, -1092.13, 15.00); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+move(-0.28, 0.8, -1.03); object(0x01C2, -0, 0, 90);
+move(0.28, 0.00, -1.03); object(0x01C2, -30, 0, 90);
+move(0.75, 0.00, -0.75); object(0x01C2, -60, 0, 90);
+move(1.03, 0.00, -0.28); object(0x01C2, -90, 0, 90);
+move(1.03, 0.00, 0.28); object(0x01C2, -120, 0, 90);
+move(0.75, 0.00, 0.75); object(0x01C2, -150, 0, 90);
+move(0.28, 0.00, 1.03); object(0x01C2, -180, 0, 90);
+move(-0.28, 0.00, 1.03); object(0x01C2, -210, 0, 90);
+move(-0.75, 0.00, 0.75); object(0x01C2, -240, 0, 90);
+move(-1.03, 0.00, 0.28); object(0x01C2, -270, 0, 90);
+move(-1.03, 0.00, -0.28); object(0x01C2, -300, 0, 90);
+move(-0.75, 0.00, -0.75); object(0x01C2, -330, 0, 90);
+teleport(-1443.30, -1092.13, 35);
+
+#cheat Green Car Flame
+//ID: 19550
+//Score: 40
+//Author: psphacker108
+//Category: Vehicle
+//Description: This makes all Car Flame (except explosion) Green.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video6-1.gif
+//Time: 14/04/2007 21:22:08
+//Working: Yes
+setchar(0x95687fc, 0x00, 0xff, 0x00);
+
+#cheat Blue Car Flame
+//ID: 19549
+//Score: 36
+//Author: psphacker108
+//Category: Vehicle
+//Description: All Flame from car (besides explosion) Will Be Blue.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video7-1.gif
+//Time: 14/04/2007 21:20:59
+//Working: Yes
+setchar(0x95687fc, 0x00, 0x00, 0xff);
+
+#cheat Explosive Sphere
+//ID: 19433
+//Score: 83
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: A large Sphere made of 150 Explosive barrels will spawn around Vic. Use it to implode onto a pedestrian or yourself!
+//Image: http://img223.imageshack.us/img223/5449/screen1my4.png
+//Time: 10/03/2007 03:06:25
+//Working: Yes
+for( rot = 0; rot < 360; rot += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30) + cos(rot) * 5, getfloat(pplayer+0x34)   + sin(rot) * 5,  getfloat(pplayer+0x38));  object(0x01c2,  0,  0,  -rot + 90); 
+}
+for( rot2 = 0; rot2 < 360; rot2 += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30), getfloat(pplayer+0x34)   + sin(rot2) * 5,  getfloat(pplayer+0x38) + cos(rot2) * 5);  object(0x01c2,  rot2 + 90,  0,  0); 
+}
+for( rot3 = 0; rot3 < 360; rot3 += 7.2 )
+{
+    moveto(getfloat(pplayer+0x30) + cos(rot3) * 5, getfloat(pplayer+0x34)  ,  getfloat(pplayer+0x38) + sin(rot3) * 5);  object(0x01c2,  90,  -rot3 + 90,  0); 
+}
+off();
+
+#cheat ALL Explosives are Remote Explosives
+//ID: 19053
+//Score: 109
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any rocket or thrown explosive will stay unarmed until you hit X.
+//Image: none
+//Time: 16/12/2006 21:25:34
+//Working: Yes
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C))
+{
+setchar(pexp + 0x0C, 0x0);
+det = 1;
+}
+if(det && buttons & CTRL_CROSS)
+{
+setchar(pexp + 0x0C, 0x1);
+det = 0;
+}
+
+#cheat Thrown Objects turn into Rockets
+//ID: 18844
+//Score: 104
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any weapons thrown (or shot through the rocket launcher) will turn into a rocket. It actually shows the sound and explosion!
+//Image: none
+//Time: 23/11/2006 02:00:50
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb, 0x12);
+}
+
+#cheat DUD Explosives
+//ID: 18842
+//Score: 80
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: All grenades, molotovs, and landmines thrown become useless, and will never blow up. Really cool when using molotovs since they bounce all over the place!
+//Image: none
+//Time: 22/11/2006 23:45:12
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb + 0xC, 0x0);
+}
+
+
+#cheat Explosion Maker
+//ID: 18789
+//Score: 177
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Touch an object and then aim at something. The object will turn into an explosive barrel and will teleport to whatever you aim at. Then shoot it for an impresive explosion! Works best aiming at peds. Thanks to EC for object checkers.
+//Image: http://img82.imageshack.us/img82/5336/video2xp5.gif
+//Time: 19/11/2006 23:47:56
+//Working: Yes
+static Loc;
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(getint(pplayer + 0x150))
+{
+Loc = getint(pplayer + 0x150);
+}
+modelid = getshort(Loc + 0x0056);
+if (modelid < 750 ||
+modelid == 1515 ||
+modelid == 2627 ||
+modelid == 7337 ||
+modelid == 1820 ||
+modelid == 1821 ||
+modelid == 1825 ||
+modelid == 1826 ||
+modelid == 1829 ||
+(modelid >= 2551 && modelid <= 2554) ||
+(modelid >= 1526 && modelid <= 1536) ||
+(modelid >= 1217 && modelid <= 1223) ||
+(modelid >= 1485 && modelid <= 1488))
+{
+if (modelid != 1533&&modelid > 270)
+{
+setshort(Loc + 0x56, 0x1c2);
+setfloat(Loc + 0x30, aimx);
+setfloat(Loc + 0x34, aimy);
+setfloat(Loc + 0x38, aimz);
+}
+}
+
+#cheat Proximity Mines
+//ID: 18627
+//Score: 244
+//Author: xFinch713x
+//Category: Weapons
+//Description: HIDDEN WEAPON
+//
+//Once activated, it will give you proximity mines, in the place of your grenades.  Big explosions if you put multiple down
+//
+//thanks to Sousanator
+//Image: none
+//Time: 10/11/2006 17:16:50
+//Working: Yes
+setchar(pplayer+0x5B0,   0x0E);
+setchar(pplayer+0xCB8,   0x02);
+setint(pplayer+0x5bc,  0x00ffffff);
+off();
+
+#cheat Your Car Turns Black Before Exploding
+//ID: 18563
+//Score: 92
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When your car turns black, bail!  One more hit and it'll explode!  Thanks to vettefan for the car color addresses.
+//Image: none
+//Time: 06/11/2006 05:34:12
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health < 300)
+    setchar(pcar+0x224, 0, 0, 0);
+

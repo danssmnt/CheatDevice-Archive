@@ -1,0 +1,429 @@
+#cheat Unlimited Triad takedown unlimited time+kills
+//ID: 4154
+//Score: 46
+//Author: vettefan88
+//Category: Misc
+//Description: Unlimited time, lots of kills already counted
+//Image: none
+//Time: 21/01/2006 03:08:05
+//Working: Yes
+setchar(09F6F91A, 0xFF);
+setchar(09F6F91C, 0xFF, 0xFF, 0xFF);
+#off
+setchar(09F6F919, 0x00, 0x00);
+
+
+#cheat SKY-999 cheat
+//ID: 6320
+//Score: 42
+//Author: Awesome
+//Category: Vehicle
+//Description: Toys to play around in. Look at Staunton Marquee and it displays an advertisement.
+//Image: none
+//Time: 12/04/2006 04:39:40
+//Working: Yes
+// Replace PCJ-600 with SKY-999
+setfloat(0x08B562E0, 0); 
+setchar(0x09a9f8ba, 100000); 
+setchar(0x09a9f8da, 100000); 
+setchar(0x09a9f8fa, 100000); 
+setchar(0x09a9f91a, 100000); 
+setchar(pcar + 0x00000267, 255) 
+setchar(pcar + 0x000005B0, 0); 
+setchar(pcar + 0x000006CC, 0); 
+setchar(pcar + 0x000006C8, 0); 
+setchar(pcar + 0x000006D4, 0); 
+setchar(pcar + 0x000006D0, 0); 
+setshort(0x99450E2, 0x73, 0x6B, 0x79, 0x2D, 0x39, 0x39, 0x39); 
+setchar(0x09a9f8ba, 0x7d); 
+setchar(0x09a9f8da, 0x7d); 
+setchar(0x09a9f8fa, 0x7d); 
+setchar(0x09a9f91a, 0x7d); 
+#off 
+setfloat(0x08B562E0, 1); 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(pcar + 0x00000267, 0) 
+setchar(0x09a9f8ba, 0x27); 
+setchar(0x09a9f8da, 0x27); 
+setchar(0x09a9f8fa, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+setchar(0x09a9f91a, 0x27); 
+// Advertisement
+setshort(0x08B586C8, 0x53, 0x4B, 0x59, 0x2D, 0x39, 0x39, 0x39, 0x27, 0x73, 0x20, 0x72, 0x75, 0x6C, 0x65);
+
+#cheat AE Bandit
+//ID: 9904
+//Score: 21
+//Author: Aspire
+//Category: Pimp My Garage
+//Description: Bran' new in yer' local toystore, The super fast new pro-vision workin' Jet feuled AE bandit RC car! Buy today!
+//Image: none
+//Time: 09/05/2006 19:46:20
+//Working: Yes
+setshort(0x992FE9E, 0x41, 0x45, 0x20, 0x42, 0x61, 0x6e, 0x64, 0x69, 0x74);
+setchar(0x945bc22, 0x1);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 0.35);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 1);
+setfloat(0x945bc60, 0.3375);
+setfloat(0x945bc64, -0.2125);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 0.85);
+setfloat(0x945bc30, 0.85);
+setfloat(0x945bc24, 0.00387);
+setfloat(0x945bc40, 0.55);
+setfloat(0x945bc44, 0);
+setfloat(0x945bc48, 25);
+setfloat(0x945bc58, 1.71875);
+setfloat(0x945bc5c, 0.1);
+setfloat(0x945bc74, 0.2);
+setfloat(0x945bc6c, 0);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.81875);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 0);
+sethex(0x945bc70, 0x10, 0x00, 0x00, 0x00);
+sethex(0x944fb00, 0x00, 0x00, 0x00);
+sethex(0x944fb50, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 104, 124);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat large toy truck
+//ID: 15970
+//Score: 15
+//Author: ytrewqqwerty
+//Category: Pimp My Garage
+//Description: toy truck is BIG  FAST  and TOTALY PIMPED OUT 
+//==========>
+//colour:black+red
+//tyres:sport 
+//==========>
+//Image: none
+//Time: 04/08/2006 10:28:19
+//Working: Yes
+setchar(0x945bc22, 0x6);
+setchar(0x945bc21, 0x50);
+setchar(0x945bc20, 0x34);
+setfloat(0x94433cc, 0.525);
+setfloat(0x945bba8, 1.425);
+setfloat(0x945bc2c, 2);
+setfloat(0x945bc30, 2);
+setfloat(0x945bc24, 0.01);
+setfloat(0x945bc40, 0.7875);
+setfloat(0x945bc74, 0);
+setchar(0x945bbd0, 10);
+setfloat(0x945bc4c, 0.88125);
+setfloat(0x945bc50, 0.5475);
+setfloat(0x945bbac, 0);
+sethex(0x945bc70, 0x93, 0xe1, 0x01, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb0c, 0xFF, 0x0D, 0x08);
+sethex(0x944fb54, 0x00, 0x00, 0x00);
+setint(0x8E38988, 169);
+setchar(0x8E389AC, 107, 125);
+sethex(0x8E389AE, 0x01, 0x00);
+teleport(1155.71, -257.05, 17.30);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Hide Me
+//ID: 10502
+//Score: 12
+//Author: Aspire
+//Category: Pimp My Garage
+//Description: For all the undercover missions this Toyz van is for you...
+//Image: none
+//Time: 15/05/2006 16:14:52
+//Working: Yes
+setshort(0x993000A, 0x48, 0x69, 0x64, 0x65);
+setchar(0x945a2d2, 0x6);
+setchar(0x945a2d1, 0x50);
+setchar(0x945a2d0, 0x34);
+setshort(0x9444820, 252);
+setfloat(0x944481c, 0.7);
+setfloat(0x945a250, 2462.5);
+setfloat(0x945a258, 0.875);
+setfloat(0x945a310, 0.4);
+setfloat(0x945a314, -0.14999);
+setfloat(0x945a318, 0.25);
+setfloat(0x945a2dc, 1.3);
+setfloat(0x945a2e0, 1.3);
+setfloat(0x945a2d4, 0.00337);
+setfloat(0x945a2f0, 0.8875);
+setfloat(0x945a2f4, 0);
+setfloat(0x945a2f8, 30);
+setfloat(0x945a308, 2.2);
+setfloat(0x945a30c, 0.12);
+setfloat(0x945a324, 0.2);
+setfloat(0x945a31c, 0);
+setfloat(0x945a270, 0);
+setfloat(0x945a274, 0);
+setfloat(0x945a278, -0.29999);
+setchar(0x945a280, 80);
+setfloat(0x945a2fc, 0.95);
+setfloat(0x945a300, 0.5);
+setfloat(0x945a25c, 0);
+sethex(0x945a320, 0x23, 0x01, 0x00, 0x04);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fafc, 0x00, 0x00, 0x00);
+sethex(0x944fb40, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 182);
+setchar(0x8E38A5C, 103, 120);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat XXX RACER
+//ID: 8509
+//Score: 21
+//Author: GTA LIBERTY CITY
+//Category: Pimp My Garage
+//Description: THE BEST RC TOY U EVER SEEN. USE HOVER CAR MODE AND THEN WATCH IT TRANSFORM  SO TRY IT NOW !!!!!!!!!!!!!!!
+//Image: none
+//Time: 22/04/2006 15:48:51
+//Working: Yes
+setshort(0x992FE9E, 0x58, 0x58, 0x58, 0x20, 0x52, 0x41, 0x43, 0x45, 0x52);
+setchar(0x945bc22, 0x4);
+setchar(0x945bc21, 0x45);
+setchar(0x945bc20, 0x52);
+setshort(0x94433d0, 250);
+setfloat(0x94433cc, 2.15);
+setfloat(0x945bba0, 100);
+setfloat(0x945bba8, 0.95);
+setfloat(0x945bc60, 0.825);
+setfloat(0x945bc64, -0.07999);
+setfloat(0x945bc68, 0.5);
+setfloat(0x945bc2c, 1.9);
+setfloat(0x945bc30, 1.9);
+setfloat(0x945bc24, 0.0032);
+setfloat(0x945bc40, 0.95);
+setfloat(0x945bc44, 0.9375);
+setfloat(0x945bc48, 25);
+setfloat(0x945bc58, 1.6);
+setfloat(0x945bc5c, 0.19375);
+setfloat(0x945bc74, 1.065);
+setfloat(0x945bc6c, 0);
+setfloat(0x945bbc0, 0);
+setfloat(0x945bbc4, 0.05);
+setfloat(0x945bbc8, -0.29999);
+setchar(0x945bbd0, 70);
+setfloat(0x945bc4c, 0.75);
+setfloat(0x945bc50, 0.48);
+setfloat(0x945bbac, 0);
+sethex(0x945bc70, 0xba, 0xe5, 0x00, 0x04);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb08, 0x00, 0x00, 0x00);
+sethex(0x944fb54, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 169);
+setchar(0x8E38A5C, 106, 125);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+//edited by GTA LIBERTY CITY on 22/04/2006 16:50:33
+
+#cheat rc car
+//ID: 15603
+//Score: 25
+//Author: jacko
+//Category: Pimp My Garage
+//Description: a banshee with BIG wheels 
+//looks like a rc toy
+//Image: none
+//Time: 28/07/2006 18:47:17
+//Working: Yes
+setshort(0x992FDD4, 0x20, 0x72, 0x63, 0x20, 0x63, 0x61, 0x72);
+setfloat(0x94425bc, 2.175);
+sethex(0x945b130, 0x83, 0x21, 0x00, 0x00);
+setchar(0x967E6FC, 0xFF, 0x00, 0xFF);
+sethex(0x944fb44, 0x00, 0x00, 0x00);
+sethex(0x944fb18, 0xCA, 0xC6, 0xC7);
+setint(0x8E38A38, 160);
+setchar(0x8E38A5C, 121, 110);
+sethex(0x8E38A5E, 0x01, 0xFF);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat RC Race Track 2
+//ID: 11763
+//Score: 95
+//Author: mz8691
+//Category: Location Mods
+//Description: Better then the first!
+//Image: http://i82.photobucket.com/albums/j252/PMGCars/rc%20tracks/screen1.jpg
+//Time: 29/05/2006 16:25:15
+//Working: Yes
+moveto(302.49, -488.97, 37.58);  object(0x01BF, 0, 0, 0);
+move(-0.30, -8.32, 0.00);  object(0x01BF, 0, 0, 0);
+move(-7.80, -0.05, 0.00);  object(0x01BF, 0, 0, 0);
+move(-3.80, -0.02, 0.00);  object(0x01BF, 0, 0, 0);
+move(-12.20, -0.07, 0.00);  object(0x01BF, 0, 0, 0);
+move(-7.00, -0.04, 0.00);  object(0x01BF, 0, 0, 0);
+move(13.26, 3.49, 0.00);  object(0x01BF, 0, 0, 124);
+move(9.89, 4.83, 0.00);  object(0x01BF, 0, 0, 178);
+move(-4.04, -0.55, 0.00);  object(0x01BF, 0, 0, 164);
+move(-3.43, -11.56, 0.00);  object(0x01BF, 0, 0, 265);
+move(-4.30, -0.20, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.50, -7.85, 0.00);  object(0x01BF, 0, 0, 268);
+move(4.32, 0.15, 0.00);  object(0x01BF, 0, 0, 268);
+move(-2.04, -3.92, 0.00);  object(0x01BF, 55, 0, 180);
+move(0.02, -4.57, 3.30);  object(0x01BF, 55, 0, 180);
+move(-0.02, 5.89, -4.20);  object(0x01BF, 55, 0, 180);
+move(2.38, -3.47, 1.00);  object(0x01BF, 0, 0, 265);
+move(0.45, -4.68, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.00, 0.00, 2.00);  object(0x01BF, 0, 0, 265);
+move(-0.50, 5.18, 0.00);  object(0x01BF, 0, 0, 265);
+move(-4.27, -0.95, -2.10);  object(0x01BF, 0, 0, 87);
+move(0.19, -4.10, 0.00);  object(0x01BF, 0, 0, 87);
+move(0.00, 0.00, 2.90);  object(0x01BF, 0, 0, 87);
+move(-0.21, 4.50, 0.00);  object(0x01BF, 0, 0, 87);
+move(2.54, -8.98, 2.30);  object(0x01BF, 90, 0, 268);
+move(0.27, -7.79, 0.00);  object(0x01BF, 90, 0, 268);
+move(0.27, -7.89, 0.00);  object(0x01BF, 90, 0, 268);
+move(0.27, -7.79, 0.00);  object(0x01BF, 90, 0, 268);
+move(0.03, -7.55, 0.00);  object(0x01BF, 90, 0, 268);
+move(0.32, -7.22, -1.90);  object(0x01BF, 90, 330, 268);
+move(0.08, -6.68, -3.90);  object(0x01BF, 90, 330, 269);
+moveto(288.82, -527.26, 37.18);  object(0x01BF, 0, 0, 265);
+move(0.65, -7.77, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.67, -7.97, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.66, -7.87, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.66, -7.87, 0.00);  object(0x01BF, 0, 0, 265);
+move(0.65, -7.67, 0.00);  object(0x01BF, 0, 0, 265);
+move(-8.05, -0.54, 0.00);  object(0x01BF, 0, 0, 89);
+move(-0.13, 8.10, 0.00);  object(0x01BF, 0, 0, 89);
+move(-0.13, 8.00, 0.00);  object(0x01BF, 0, 0, 89);
+move(-0.13, 7.90, 0.00);  object(0x01BF, 0, 0, 89);
+move(-0.13, 7.90, 0.00);  object(0x01BF, 0, 0, 89);
+move(-0.07, 4.50, 0.00);  object(0x01BF, 0, 0, 89);
+move(0.00, 0.00, 3.10);  object(0x01BF, 0, 0, 89);
+move(0.08, -5.20, 0.00);  object(0x01BF, 0, 0, 89);
+move(0.12, -7.80, 0.00);  object(0x01BF, 0, 0, 89);
+move(0.13, -8.00, 0.00);  object(0x01BF, 0, 0, 89);
+move(0.13, -8.10, 0.00);  object(0x01BF, 0, 0, 89);
+move(0.12, -7.30, 0.00);  object(0x01BF, 0, 0, 89);
+move(9.54, -6.19, -2.30);  object(0x01BF, 0, 0, 43);
+move(-7.09, -0.14, 0.00);  object(0x01BF, 0, 0, 39);
+move(5.79, -4.65, 0.00);  object(0x01BF, 0, 0, 39);
+move(6.11, -5.01, 0.00);  object(0x01BF, 0, 0, 39);
+move(5.04, -5.90, 0.00);  object(0x01BF, 0, 0, 62);
+move(-3.94, 10.20, 0.00);  object(0x01BF, 0, 0, 221);
+move(4.17, -3.58, 0.00);  object(0x01BF, 0, 0, 221);
+move(13.53, -2.83, -2.40);  object(0x01BF, 0, 0, 181);
+move(-0.12, -8.00, 0.00);  object(0x01BF, 0, 0, 181);
+move(5.51, 1.52, 0.00);  object(0x01BF, 0, 0, 140);
+move(1.10, 9.01, 0.00);  object(0x01BF, 0, 0, 137);
+move(3.36, 6.58, 0.10);  object(0x01BF, 0, 0, 96);
+move(0.25, -11.11, 0.00);  object(0x01BF, 0, 0, 312);
+move(2.96, 6.69, 0.00);  object(0x01BF, 0, 0, 273);
+move(0.44, 7.59, 0.00);  object(0x01BF, 0, 0, 273);
+move(0.44, 7.59, 0.00);  object(0x01BF, 0, 0, 273);
+move(0.44, 7.59, 0.00);  object(0x01BF, 0, 0, 273);
+move(0.42, 7.29, 0.00);  object(0x01BF, 0, 0, 273);
+move(0.37, 6.39, 0.00);  object(0x01BF, 0, 0, 273);
+move(-2.23, 2.32, 0.00);  object(0x01BF, 0, 0, 238);
+move(-2.59, -26.44, 0.00);  object(0x01BF, 0, 0, 91);
+move(0.10, 8.00, 0.00);  object(0x01BF, 0, 0, 91);
+move(0.08, 7.00, 0.00);  object(0x01BF, 0, 0, 91);
+move(-1.97, 6.86, 0.00);  object(0x01BF, 0, 0, 57);
+move(-4.15, 6.49, 0.00);  object(0x01BF, 0, 0, 57);
+move(1.57, 1.00, 0.00);  object(0x01BF, 0, 0, 57);
+move(3.66, 2.34, 0.00);  object(0x01BF, 0, 0, 57);
+move(-4.72, 6.34, 0.00);  object(0x01BF, 0, 0, 49);
+move(-4.75, -4.07, 0.00);  object(0x01BF, 0, 0, 49);
+move(-2.84, 5.99, 0.00);  object(0x01BF, 0, 0, 75);
+move(-0.06, -0.01, 0.00);  object(0x01BF, 0, 0, 75);
+move(4.69, 4.04, 0.00);  object(0x01BF, 0, 0, 75);
+move(-1.42, 5.32, 0.00);  object(0x01BF, 0, 0, 75);
+move(-5.23, -1.91, 0.00);  object(0x01BF, 0, 0, 74);
+move(6.03, 9.15, 0.00);  object(0x01BF, 0, 0, 112);
+move(-5.94, -1.41, 0.10);  object(0x01BF, 0, 0, 110);
+move(2.76, 7.51, 0.00);  object(0x01BF, 0, 0, 110);
+move(5.76, 1.08, 0.00);  object(0x01BF, 0, 0, 110);
+move(0.43, 7.52, 0.00);  object(0x01BF, 0, 0, 78);
+move(-3.86, 5.53, -0.10);  object(0x01BF, 0, 0, 32);
+move(-3.83, -8.19, 0.00);  object(0x01BF, 0, 0, 31);
+move(-26.37, -8.04, 1.70);  object(0x01BF, 0, 0, 268);
+teleport(302.49, -488.97, 37.58)
+
+#cheat RC Race Track 1
+//ID: 11764
+//Score: 77
+//Author: mz8691
+//Category: Location Mods
+//Description: The first!
+//Image: http://i82.photobucket.com/albums/j252/PMGCars/pics/screen3.jpg
+//Time: 29/05/2006 16:26:20
+//Working: Yes
+moveto(130.95, -1589.12, 28.27);  object(0x01BF, 230, 0, 1);
+move(-0.03, -1.75, -1.50);  object(0x01BF, 230, 0, 1);
+move(0.11, 7.49, 3.60);  object(0x01BF, 270, 0, 1);
+move(7.10, -0.10, 0.00);  object(0x01BF, 270, 0, 1);
+move(6.40, -0.09, 0.00);  object(0x01BF, 270, 0, 1);
+move(5.50, -0.08, 0.00);  object(0x01BF, 270, 0, 1);
+move(5.50, -0.08, 0.00);  object(0x01BF, 270, 0, 1);
+move(5.80, -0.08, 0.00);  object(0x01BF, 270, 0, 1);
+move(3.30, -0.05, 0.00);  object(0x01BF, 270, 0, 1);
+move(-0.15, 5.75, -1.70);  object(0x01BF, 240, 0, 179);
+move(-0.08, 3.40, -1.90);  object(0x01BF, 240, 0, 179);
+move(-0.04, 5.37, -1.70);  object(0x01BF, 270, 0, 178);
+move(-0.18, 4.76, 0.00);  object(0x01BF, 270, 0, 178);
+move(6.66, -2.36, 1.59);  object(0x01BF, 240, 0, 87);
+move(6.93, 0.30, 1.70);  object(0x01BF, 270, 0, 178);
+move(7.89, 0.39, 0.00);  object(0x01BF, 270, 0, 178);
+move(7.79, 0.29, 0.00);  object(0x01BF, 270, 0, 178);
+move(4.64, 2.03, 0.00);  object(0x01BF, 270, 0, 139);
+move(1.68, 3.66, 0.00);  object(0x01BF, 270, 0, 91);
+move(5.66, 1.21, 0.00);  object(0x01BF, 270, 0, 160);
+move(6.91, 2.59, 1.20);  object(0x01BF, 270, 20, 156);
+move(11.03, 4.77, 0.80);  object(0x01BF, 270, 0, 331);
+move(-4.80, -2.69, 0.00);  object(0x01BF, 270, 0, 331);
+move(1.61, 8.17, 0.00);  object(0x01BF, 270, 0, 327);
+move(-3.52, 5.36, 0.00);  object(0x01BF, 270, 0, 327);
+move(-3.76, 5.73, 0.00);  object(0x01BF, 270, 0, 327);
+move(-2.08, 4.51, 0.00);  object(0x01BF, 270, 0, 59);
+move(-3.55, 5.92, 1.40);  object(0x01BF, 270, 25, 59);
+move(-3.45, 5.75, 3.10);  object(0x01BF, 270, 25, 60);
+move(-3.27, 6.72, 1.90);  object(0x01BF, 270, 5, 65);
+move(-3.40, 6.88, -0.80);  object(0x01BF, 270, 15, 245);
+move(-2.90, 6.37, -1.90);  object(0x01BF, 270, 15, 245);
+move(-2.74, 6.00, -1.80);  object(0x01BF, 270, 15, 245);
+move(-2.70, 5.91, -1.80);  object(0x01BF, 270, 15, 245);
+move(-3.03, 6.64, -1.90);  object(0x01BF, 270, 15, 245);
+move(-2.99, 6.55, -1.90);  object(0x01BF, 270, 15, 245);
+move(-2.56, 6.91, -1.80);  object(0x01BF, 270, 15, 255);
+teleport(130.95, -1589.12, 28.27)
+moveto(127.02, -1589.43, 28.07);  object(0x01BF, 0, 0, 91);
+move(0.16, 6.80, 0.00);  object(0x01BF, 0, 0, 91);
+move(4.18, 2.71, 0.00);  object(0x01BF, 0, 0, 181);
+move(6.50, -0.14, 0.00);  object(0x01BF, 0, 0, 181);
+move(18.00, -0.40, 0.00);  object(0x01BF, 0, 0, 181);
+move(4.58, 3.21, 0.00);  object(0x01BF, 0, 0, 88);
+move(-3.69, -3.20, -0.10);  object(0x01BF, 0, 0, 181);
+moveto(160.40, -1569.71, 27.97);  object(0x01BF, 0, 0, 89);
+move(-0.06, 4.50, 0.00);  object(0x01BF, 0, 0, 89);
+move(3.86, 3.99, -0.10);  object(0x01BF, 0, 0, 182);
+move(6.99, -0.29, 0.00);  object(0x01BF, 0, 0, 182);
+move(-2.75, -15.68, 0.00);  object(0x01BF, 0, 0, 268);
+move(0.18, -6.30, 0.00);  object(0x01BF, 0, 0, 268);
+move(-3.84, -3.67, 0.00);  object(0x01BF, 0, 0, 1);
+move(-7.90, 0.07, 0.00);  object(0x01BF, 0, 0, 1);
+move(-18.80, 0.16, 0.00);  object(0x01BF, 0, 0, 1);
+move(-3.40, -3.40, 0.00);  object(0x01BF, 0, 0, 264);
+move(58.38, 27.47, 0.30);  object(0x01BF, 0, 0, 178);
+move(0.59, -6.48, 0.00);  object(0x01BF, 0, 0, 178);
+move(6.92, 2.89, 0.00);  object(0x01BF, 0, 0, 137);
+move(-4.08, 7.43, 0.30);  object(0x01BF, 0, 0, 89);
+move(3.33, 2.78, 0.00);  object(0x01BF, 0, 0, 179);
+move(6.99, 0.80, 0.00);  object(0x01BF, 0, 0, 164);
+

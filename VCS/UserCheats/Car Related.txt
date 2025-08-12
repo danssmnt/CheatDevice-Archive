@@ -1,0 +1,258 @@
+Pointer to Car
+if(pcar){
+ENTER ACTION HERE}
+
+Pointer to all Cars
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820)
+if(p != pcar){
+setchar(p+ADRESS, VALUE);}
+
+Freeze Car
+setfloat(pcar+0x140, getfloat(pcar+0x140)+getfloat(pcar+0x10)==0);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar+0x14)==0);
+setfloat(pcar+0x148, getfloat(pcar+0x148)+getfloat(pcar+0x18)==0);
+
+#cheat Car follows You
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+if(pcar){
+yourcar = pcar;}
+if(press & CTRL_DOWN){
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);}
+
+#cheat Car goes up
+if(pcar){
+yourcar = pcar;}
+if(press & CTRL_DOWN){
+setfloat(yourcar + 0x00000148,  +0.2);}
+
+#cheat Rotate Car
+if(pcar){
+yourcar = pcar;}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER){
+setfloat(yourcar + 0x78,  +0.1);}
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER){
+setfloat(yourcar + 0x78,  getfloat(yourcar + 0x78)-0.01);}
+
+Set Car Speed
+  boost = 4.0;
+  thrust = boost * 0.00333;
+  // velocity = velocity + forward vector * thrust
+  setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+  setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+  setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+  // rotational control on motorcycles
+  //if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)
+      setfloat(pcar + 0x0078,  -0.03 * xstick);
+
+Lamborghini Doors
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+Car catches Fire (Explodes)
+setfloat(pcar + 0x0000027C, 0x0);
+
+Indestructable Vehicle
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+
+No Optical Vehicle Damage
+setchar(pcar+0x80,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00);
+setchar(pcar+0x90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00);
+setchar(pcar+0xA0,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00);
+setchar(pcar+0xB0,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00);
+
+Car On Fire
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+
+#cheat Burnt out Car
+sethex(pcar + 0x4A,  79);
+
+Heavy Car
+if (getfloat(pcar+0xD0) <= 50000);{
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000);
+setfloat(pcar+0xD4, getfloat(pcar+0xD4)*1000);}
+
+#cheat Unfippable
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+
+Indeflatable Tires
+setshort(pcar+0x3b6,  0,  0);
+setshort(pcar+0x434,  0);
+
+Set Carcolor
+setchar(pcar+0x224, RED, GREEN, BLUE);// 1st color
+setchar(pcar+0x228, RED, GREEN, BLUE);// stripe color
+
+Random Car Color
+setfloat(pcar+0x224,  getfloat(pcar+0x20),  getfloat(pcar+0x24));
+
+Lock Doors
+setshort(pcar+0x232,   0x0101);
+
+Pop the Hood
+setchar(pcar + 0x000003BA, 2);
+
+Pop the Boot
+setchar(pcar + 0x000003BB, 2);
+
+Open Right Door
+setchar(pcar + 0x000003BD, 2);
+
+Open Left Door
+setchar(pcar + 0x000003BC, 2);
+
+Lock Hood Position
+setchar(pcar + 0x000003BA, 0);
+
+Lock Boot Position
+setchar(pcar + 0x000003BB, 0);
+
+Lock Right Door Position
+setchar(pcar + 0x000003BD, 0);
+
+Lock Left Door Position
+setchar(pcar + 0x000003BC, 0);
+
+#cheat Make Car follow Path
+static speed;
+static lap;
+static currentx;
+static currenty;
+checkpoint1x = -64.11;
+checkpoint1y = -1573.05;
+checkpoint1z = 14.00;
+checkpoint2x = 107.85;
+checkpoint2y = -1597.52;
+checkpoint2z = 14.00;
+checkpoint3x = 161.38;
+checkpoint3y = -1559.10;
+checkpoint3z = 14.00;
+checkpoint4x = 227.96;
+checkpoint4y = -1406.98;
+checkpoint4z = 14.00;
+checkpoint5x = 310.77;
+checkpoint5y = -939.09;
+checkpoint5z = 14.00;
+checkpoint6x = 503.97;
+checkpoint6y = -520.97;
+checkpoint6z = 14.00;
+checkpoint7x = 503.67;
+checkpoint7y = -380.51;
+checkpoint7z = 14.00;
+checkpoint8x = 503.97;
+checkpoint8y = -520.97;
+checkpoint8z = 14.00;
+checkpoint9x = 310.77;
+checkpoint9y = -939.09;
+checkpoint9z = 14.00;
+checkpoint10x = 227.96;
+checkpoint10y = -1406.98;
+checkpoint10z = 14.00;
+checkpoint11x = 161.38;
+checkpoint11y = -1559.10;
+checkpoint11z = 14.00;
+checkpoint12x = 107.85;
+checkpoint12y = -1597.52;
+checkpoint12z = 14.00;
+checkpoint13x = -64.11;
+checkpoint13y = -1573.05;
+checkpoint13z = 14.00;
+if(!currentx&&getint(pobj+0x150)){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);
+setfloat(opp + 0x30, -70.43, -1608.43, 12.22);
+speed = 0.0005;}
+setfloat(opp + 0x30, getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + dy * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + dz * speed);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 13 ){
+if(currentx == checkpoint1x && !lap){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+lap = 1;
+speed = 0.0004;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint8x;
+currenty = checkpoint8y;
+currentz = checkpoint8z;
+speed = 0.001;}
+else if(currentx == checkpoint8x){
+currentx = checkpoint9x;
+currenty = checkpoint9y;
+currentz = checkpoint9z;
+speed = 0.001;}
+else if(currentx == checkpoint9x){
+currentx = checkpoint10x;
+currenty = checkpoint10y;
+currentz = checkpoint10z;
+speed = 0.001;}
+else if(currentx == checkpoint10x){
+currentx = checkpoint11x;
+currenty = checkpoint11y;
+currentz = checkpoint11z;
+speed = 0.001;}
+else if(currentx == checkpoint11x){
+currentx = checkpoint12x;
+currenty = checkpoint12y;
+currentz = checkpoint12z;
+speed = 0.001;}
+else if(currentx == checkpoint12x){
+currentx = checkpoint13x;
+currenty = checkpoint13y;
+currentz = checkpoint13z;
+speed = 0.001;}
+else if(currentx == checkpoint13x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;}
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+

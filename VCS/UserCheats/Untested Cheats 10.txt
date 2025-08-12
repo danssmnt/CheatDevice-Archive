@@ -1,0 +1,631 @@
+#cheat Vcn Helicopter
+//made with VCS Car Spawner by DDM
+pspawn = 0x08E81290;
+setint(pspawn, 260);
+setfloat(pspawn + 4, -469.57, 1123.63, 64.75);
+pspawn + 4,  227.56,  -129.41,  5.9,  160);
+
+#cheat The Convenient Portals
+//made with Portal Maker by DDM
+static Made;
+X1 = 269.45;
+Y1 = -166.28;
+Z1 = 11.84;
+X2 = -796.30;
+Y2 = -1181.56;
+Z2 = 11.10;
+if(!Made)
+{
+for( rot = 0; rot < 270; rot += 10.8 )
+{
+moveto(X1 + cos(rot) * 3,  Y1 + sin(rot) * 3,  Z1); object(0x1B3,  0,  0,  -rot + 90);
+}
+for( rot2 = 0; rot2 < 270; rot2 += 10.8 )
+{
+moveto(X2 + cos(rot2) * 3,  Y2 + sin(rot2) * 3,  Z2); object(0x1B3,  0,  0,  -rot2 + 90);
+}
+Made = 1;
+}
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 2 )
+{
+setfloat(pobj+0x30,  X2 + 5,  Y2 + 5,  Z2);
+}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 2 )
+{
+setfloat(pobj+0x30,  X1 + 5,  Y1 + 5,  Z1);
+}
+
+
+#cheat button test
+if (getint(0x08bde6b8) == 843854162)
+{
+setint(0x08bde55c,  9999999,  9999999);
+}
+
+
+#cheat ferris wheel stops
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 0);
+
+#cheat ferris wheel speed /2
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, .025);
+
+#cheat ferris wheel speed x2
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, .1);
+
+#cheat ferris wheel speed x10
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, .5);
+
+#cheat ferris wheel speed x20
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 1);
+
+#cheat ferris wheel speed x30
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 1.5);
+
+#cheat ferris wheel speed x40
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 2);
+
+#cheat ferris wheel speed x50
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 2.5);
+
+#cheat ferris wheel speed x60
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 3);
+
+#cheat ferris wheel speed x70
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 3.5);
+
+#cheat ferris wheel speed x80
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 4);
+
+#cheat ferris wheel speed x90
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 4.5);
+
+#cheat ferris wheel speed x100
+//by vettefan88
+setchar(0x8baac40, 255, 1);
+setfloat(0x8baac34, 5);
+
+#cheat Hello World! On Screen
+//Made with DDM's Text Editor
+setshort(0x08e90bd8, 1, 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', 0); 
+
+#cheat Blue  Laser Exhaust
+setchar(0x9569B90,  0x70,  0x00,  0x00,  0x00,  0x0f,  0x5f,  0xff,  0x00);
+setchar(0x9569Ba7,  0x50);
+
+#cheat Mega Green  Laser Exhaust
+setchar(0x9569B90,  0x78,  0x00,  0x00,  0x00,  0x00,  0xff,  0x00);
+setchar(0x9569BA7,  0xc5); 
+
+#cheat Wall Climber
+if(getint(pcar+0x150))
+{
+    boost = 4.0;
+    thrust = boost * 0.00333;
+
+    // velocity = velocity + forward vector * thrust
+    setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+    setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+    setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) + 0.01);
+
+    // rotational control
+    setfloat(pcar + 0x0078,  -0.03 * xstick);
+    // get the player off the ground
+    setshort(pcar + 0x01c8,    0x1020);
+}
+
+#cheat Fire Creator Example
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, 314.57, -168.91, 26.13);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, 356.07, -169.03, 26.13);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, 355.48, -149.23, 26.13);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0, 315.20, -149.39, 26.13);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, 340.20, -148.65, 24.80);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, 327.93, -148.20, 24.80);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, 315.46, -158.34, 23.20);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0, 355.07, -159.45, 23.20);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, 345.86, -167.74, 24.80);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, 326.90, -168.22, 24.80);
+
+
+#cheat PED ANIHALATER
+//Gathered by Steman
+//credits for ALL cheats too Waterbottle, Edison Carter, ADePSP, Vettefan88 and DDM
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_CIRCLE) {
+//Force Blast, by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, dx * 0.2);
+setfloat(pped + 0x0144, dy * 0.2);
+setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+pdone = pped;
+}
+if (pped == 0)
+{
+pdone = 0;
+}
+}
+//Telekinisis
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+if(pped && pped<0x9900000) address=pped;
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+setshort(address+0x1c8, 0x1020);
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+if(buttons & CTRL_CROSS)
+rotsp+=0.005;
+else
+rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+//PyroKinisis {
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_SQUARE)
+if(pped)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam, by edison
+if (pped != 0)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, -dx * 0.05);
+setfloat(pped + 0x0144, -dy * 0.05);
+setfloat(pped + 0x0148, -dz * 0.05);
+}
+}
+//Aim of Death
+if(buttons & CTRL_TRIANGLE) {
+pped = getint(0x08BA1D70);
+if (pped != 0)
+setfloat(pped + 0x4e4, 0);
+}
+//Force Wave
+if ((buttons & CTRL_LTRIGGER) && (buttons & CTRL_CIRCLE))
+{
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+if (p == pplayer)
+continue;
+dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(p + 0x01c8, 0x1020);
+setfloat(p + 0x0140, dx * 0.2);
+setfloat(p + 0x0144, dy * 0.2);
+setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+}
+//Obliterate All Peds
+
+if((buttons & CTRL_LTRIGGER) && (press & CTRL_TRIANGLE)) {
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+}
+
+#cheat Mendez Radar Lime Green
+setchar(0x096CF9E7, 0x00, 0x00, 0xff, 0x00);
+
+#cheat Mendez Radar Red
+setchar(0x096CF9E7, 0x00, 0xff, 0x00, 0x00);
+
+#cheat Renis radar Light blue
+setchar(0x096CDB47, 0x00, 0x00, 0xff);
+
+#cheat Renis radar DARK blue
+setchar(0x096CDB47, 0x00, 0x00, 0x00);
+
+#cheat Renis radar Black
+setchar(0x096CDB47, 0x00, 0x00, 0x00, 0x00);
+
+  
+#cheat Light Control
+if(buttons & CTRL_RIGHT)
+setchar(0x9460815, 0x00);
+{
+setchar(0x946081a, 0x35);
+}
+if(buttons & CTRL_LEFT)
+setchar(0x9460815, 0xb0);
+{
+setchar(0x946081a, 0x55);
+}
+if(buttons & CTRL_DOWN)
+{
+setchar(0x9460817, 0xD4);
+}
+if(buttons & CTRL_UP)
+{
+setchar(0x9460817, 0xC4);
+}
+
+#cheat tallest building (floored)
+moveto(-382.57,  1293.13,  372.04);  object(0x1CA4,  90,  0,  126);
+move(1.73,  -1.24,  -0.02);  object(0x1CA4,  90,  0,  126);
+move(2.12,  -1.52,  0.05);  object(0x1CA4,  90,  0,  126);
+move(-2.26,  -3.17,  -0.01);  object(0x1CA4,  90,  0,  126);
+move(-1.77,  0.90,  -0.07);  object(0x1CA4,  90,  0,  126);
+move(-2.28,  1.64,  0.06);  object(0x1CA4,  90,  0,  126);
+move(2.46,  -1.77,  0.02);  object(0x1CA4,  90,  0,  326);
+move(13.08,  -19.38,  0.00);  object(0x1CA4,  90,  0,  326);
+move(6.84,  8.11,  0.00);  object(0x1CA4,  90,  0,  43);
+move(2.30,  -1.65,  0.00);  object(0x1CA4,  90,  0,  208);
+move(-1.31,  -2.42,  0.00);  object(0x1CA4,  90,  0,  208);
+move(0.18,  6.87,  0.00);  object(0x1CA4,  90,  0,  2);
+move(-1.68,  2.19,  0.00);  object(0x1CA4,  90,  0,  322);
+move(-2.27,  2.91,  0.00);  object(0x1CA4,  90,  0,  322);
+move(-2.03,  2.60,  0.00);  object(0x1CA4,  90,  0,  322);
+move(-3.87,  4.98,  0.00);  object(0x1CA4,  90,  0,  322);
+move(-4.91,  -0.06,  0.00);  object(0x1CA4,  90,  0,  270);
+move(-11.99,  -4.44,  0.00);  object(0x1CA4,  90,  0,  243);
+move(-6.20,  -6.61,  0.00);  object(0x1CA4,  90,  0,  178);
+move(-3.70,  -0.14,  0.00);  object(0x1CA4,  90,  0,  178);
+move(-0.50,  2.71,  0.00);  object(0x1CA4,  90,  0,  269);
+move(0.97,  3.10,  0.00);  object(0x1CA4,  90,  0,  304);
+move(1.99,  2.29,  0.00);  object(0x1CA4,  90,  0,  310);
+move(0.95,  1.16,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.04,  2.47,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.48,  3.01,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.73,  3.32,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.29,  2.78,  0.00);  object(0x1CA4,  90,  0,  310);
+move(1.97,  2.39,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.61,  3.16,  0.00);  object(0x1CA4,  90,  0,  310);
+move(1.78,  2.16,  0.00);  object(0x1CA4,  90,  0,  310);
+move(1.97,  2.39,  0.00);  object(0x1CA4,  90,  0,  310);
+move(0.77,  1.95,  0.00);  object(0x1CA4,  90,  0,  310);
+move(2.84,  -1.75,  0.00);  object(0x1CA4,  90,  0,  232);
+move(2.03,  -3.11,  0.00);  object(0x1CA4,  90,  0,  232);
+move(1.87,  -2.73,  0.00);  object(0x1CA4,  90,  0,  232);
+move(2.02,  -2.99,  0.00);  object(0x1CA4,  90,  0,  232);
+move(1.50,  -2.13,  0.00);  object(0x1CA4,  90,  0,  232);
+move(2.78,  -2.96,  0.00);  object(0x1CA4,  90,  0,  220);
+move(1.91,  -1.77,  0.00);  object(0x1CA4,  90,  0,  220);
+move(2.78,  -2.72,  0.00);  object(0x1CA4,  90,  0,  224);
+move(2.83,  -2.57,  0.00);  object(0x1CA4,  90,  0,  222);
+move(0.45,  -0.40,  0.00);  object(0x1CA4,  90,  0,  222);
+move(3.28,  -2.21,  0.00);  object(0x1CA4,  90,  0,  213);
+move(2.94,  -1.90,  0.00);  object(0x1CA4,  90,  0,  213);
+move(3.29,  -2.08,  0.00);  object(0x1CA4,  90,  0,  208);
+move(3.27,  -1.72,  0.00);  object(0x1CA4,  90,  0,  208);
+move(3.01,  -1.58,  0.00);  object(0x1CA4,  90,  0,  208);
+move(1.59,  -0.84,  0.00);  object(0x1CA4,  90,  0,  208);
+move(-0.20,  -1.86,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-3.15,  -2.29,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.87,  -1.83,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.77,  -1.64,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.02,  -1.47,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.75,  -2.00,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.60,  -1.52,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.02,  -1.47,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.07,  -1.41,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-1.86,  -1.35,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.30,  -1.09,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.10,  -1.53,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-2.02,  -1.47,  0.00);  object(0x1CA4,  90,  0,  144);
+move(-3.21,  -1.11,  0.00);  object(0x1CA4,  90,  0,  176);
+move(-3.50,  -0.13,  0.00);  object(0x1CA4,  90,  0,  176);
+move(-0.44,  2.64,  0.00);  object(0x1CA4,  90,  0,  266);
+move(-0.21,  2.69,  0.00);  object(0x1CA4,  90,  0,  266);
+move(0.39,  3.94,  0.00);  object(0x1CA4,  90,  0,  266);
+move(-0.09,  3.60,  0.00);  object(0x1CA4,  90,  0,  266);
+move(-0.08,  4.11,  0.00);  object(0x1CA4,  90,  0,  266);
+move(-0.15,  1.89,  0.00);  object(0x1CA4,  90,  0,  266);
+move(-0.45,  3.52,  0.00);  object(0x1CA4,  90,  0,  259);
+move(-1.84,  0.47,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-2.30,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-3.00,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-2.70,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-2.50,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-3.90,  0.02,  0.00);  object(0x1CA4,  90,  0,  180);
+move(0.01,  1.58,  0.00);  object(0x1CA4,  90,  0,  180);
+move(0.01,  2.04,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-2.80,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-0.01,  -1.25,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-2.30,  0.01,  0.00);  object(0x1CA4,  90,  0,  180);
+move(0.02,  3.97,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-0.01,  -1.69,  0.00);  object(0x1CA4,  90,  0,  180);
+move(3.61,  3.09,  0.00);  object(0x1CA4,  90,  0,  180);
+move(-0.40,  -0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.06,  -2.41,  0.00);  object(0x1CA4,  90,  0,  181);
+move(1.60,  -0.04,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.13,  5.40,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.63,  -1.19,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.50,  -0.09,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.17,  -6.91,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.04,  1.62,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.07,  2.98,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.13,  5.15,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-1.10,  0.03,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.04,  1.71,  0.00);  object(0x1CA4,  90,  0,  181);
+move(4.10,  -0.10,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.05,  -2.23,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.17,  -6.74,  0.00);  object(0x1CA4,  90,  0,  181);
+move(1.05,  -2.13,  0.00);  object(0x1CA4,  90,  0,  181);
+move(1.91,  0.55,  0.00);  object(0x1CA4,  90,  0,  181);
+move(1.68,  -0.94,  0.00);  object(0x1CA4,  90,  0,  181);
+move(1.70,  -0.04,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.06,  2.59,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.04,  1.50,  0.00);  object(0x1CA4,  90,  0,  181);
+move(2.66,  2.25,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.60,  -0.09,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.06,  -2.57,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-2.50,  0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.07,  -2.89,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.18,  7.82,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.05,  2.20,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-3.20,  0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-3.87,  1.64,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.04,  2.12,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.05,  2.50,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-2.80,  0.05,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.05,  -2.47,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-1.63,  -1.43,  0.00);  object(0x1CA4,  90,  0,  181);
+move(7.70,  -0.15,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.30,  -0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.10,  -0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.10,  -0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(2.80,  -0.05,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.05,  -2.59,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.06,  -3.11,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.02,  0.90,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-3.10,  0.06,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.04,  2.34,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-1.90,  0.04,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.09,  -4.92,  0.00);  object(0x1CA4,  90,  0,  181);
+move(2.80,  -0.05,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.17,  -8.96,  0.00);  object(0x1CA4,  90,  0,  181);
+move(11.80,  1.53,  0.00);  object(0x1CA4,  90,  0,  173);
+move(-0.71,  5.49,  0.00);  object(0x1CA4,  90,  0,  173);
+move(-4.91,  3.46,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.08,  4.24,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.04,  -2.25,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.59,  -0.76,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.04,  -2.13,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.10,  -5.10,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.60,  -0.07,  0.00);  object(0x1CA4,  90,  0,  181);
+move(0.05,  2.40,  0.00);  object(0x1CA4,  90,  0,  181);
+move(-0.57,  1.81,  0.00);  object(0x1CA4,  90,  0,  181);
+move(3.70,  -5.48,  0.00);  object(0x1CA4,  90,  0,  326);
+move(-0.77,  2.33,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-0.07,  -4.10,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-18.25,  -5.26,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-0.96,  3.31,  0.00);  object(0x1CA4,  90,  0,  344);
+move(0.47,  -1.64,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-1.26,  4.37,  0.00);  object(0x1CA4,  90,  0,  344);
+move(1.45,  1.83,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-4.01,  13.91,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-0.67,  2.31,  0.00);  object(0x1CA4,  90,  0,  344);
+move(-0.63,  1.70,  0.00);  object(0x1CA4,  90,  0,  339);
+move(-1.61,  -1.96,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.65,  3.64,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.04,  -0.92,  0.00);  object(0x1CA4,  90,  0,  246);
+move(10.24,  4.65,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.15,  -0.98,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.26,  -1.02,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.99,  -0.90,  0.00);  object(0x1CA4,  90,  0,  246);
+move(0.26,  2.10,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.14,  2.07,  0.00);  object(0x1CA4,  90,  0,  246);
+move(1.08,  1.26,  0.00);  object(0x1CA4,  90,  0,  246);
+move(3.18,  -7.01,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.37,  -0.62,  0.00);  object(0x1CA4,  90,  0,  246);
+move(1.04,  -3.15,  0.00);  object(0x1CA4,  90,  0,  246);
+move(1.66,  0.75,  0.00);  object(0x1CA4,  90,  0,  246);
+move(0.70,  -1.55,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.19,  0.99,  0.00);  object(0x1CA4,  90,  0,  246);
+move(0.70,  -1.55,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.64,  5.83,  0.00);  object(0x1CA4,  90,  0,  246);
+move(0.74,  -1.64,  0.00);  object(0x1CA4,  90,  0,  246);
+move(7.68,  -14.41,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.82,  -0.82,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.44,  0.99,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-1.75,  -0.79,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.73,  -1.24,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-0.40,  -3.26,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.29,  -0.17,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.58,  1.17,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.99,  -0.51,  0.00);  object(0x1CA4,  90,  0,  246);
+move(2.93,  -1.31,  0.00);  object(0x1CA4,  90,  0,  246);
+move(1.40,  -3.10,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-2.62,  -1.19,  0.00);  object(0x1CA4,  90,  0,  246);
+move(-5.37,  1.68,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.49,  -1.48,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.13,  -1.89,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.27,  -0.96,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-3.61,  -0.39,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.44,  -0.40,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.38,  -2.32,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.79,  0.40,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.46,  0.87,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.93,  -1.56,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.26,  -2.11,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.92,  -1.55,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.39,  -2.32,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-3.15,  -1.35,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.23,  2.06,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.57,  2.64,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.32,  -0.53,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.66,  -1.59,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.32,  3.89,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.15,  -1.93,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.57,  -2.05,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.41,  -2.36,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.03,  -0.61,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.72,  -2.38,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.49,  1.48,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-0.89,  1.50,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.75,  -2.35,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.89,  -1.13,  0.00);  object(0x1CA4,  90,  0,  329);
+move(11.77,  7.01,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.92,  1.74,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.15,  1.28,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.83,  1.69,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.70,  2.31,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.41,  1.43,  0.00);  object(0x1CA4,  90,  0,  329);
+move(3.43,  2.05,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.21,  2.03,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.83,  -1.69,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-3.01,  -1.79,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.53,  1.97,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-0.93,  1.56,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.75,  1.64,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.41,  2.36,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.15,  -3.61,  0.00);  object(0x1CA4,  90,  0,  329);
+move(1.37,  0.82,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-6.96,  -4.14,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.21,  2.04,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.61,  -4.37,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.32,  -0.54,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-3.18,  -1.89,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.53,  2.57,  0.00);  object(0x1CA4,  90,  0,  329);
+move(0.40,  -0.68,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-2.66,  -1.59,  0.00);  object(0x1CA4,  90,  0,  329);
+move(-1.85,  -3.15,  0.00);  object(0x1CA4,  90,  0,  329);
+move(2.32,  1.38,  0.00);  object(0x1CA4,  90,  0,  329);
+teleport(-364.26,  1283.05,  374.50);
+
+#cheat Raise the world
+if (buttons & CTRL_UP)
+setfloat(0x9442038, getfloat(0x9442038)-.1);
+if (buttons & CTRL_DOWN)
+setfloat(0x9442038, getfloat(0x9442038)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Shift the World of the Boat
+if (buttons & CTRL_LEFT)
+setfloat(0x9442030, getfloat(0x9442030)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x9442030, getfloat(0x9442030)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Teleport to Move boat World
+teleport(-785.42, -824.36, 11.07);
+
+#cheat vice statue
+moveto(-235.88,-1475.55,5.72);  object(0x1CB2,90,90,194);
+move(1.27,5.10,0.00);  object(0x1CB2,90,90,194);
+move(0.77,-2.55,2.10);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.10,0.00);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(0.87,4.04,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.09,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.30,-1.80,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.00,0.00,4.40);  object(0x1C93,90,0,14);
+move(-2.13,0.54,0.00);  object(0x1C93,90,0,14);
+move(0.52,2.05,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.23,1.66,0.00);  object(0x1C93,90,0,193);
+move(-1.53,0.41,0.00);  object(0x1C93,90,0,188);
+move(-0.44,0.33,0.10);  object(0x1C93,90,0,193);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,193);
+move(1.80,-0.66,-0.10);  object(0x1C93,90,0,193);
+move(-0.52,-2.22,0.00);  object(0x1C93,90,0,193);
+move(-1.85,0.43,0.00);  object(0x1C93,90,0,193);
+move(-0.32,-1.08,0.00);  object(0x1C93,90,0,16);
+move(2.11,-0.62,0.00);  object(0x1C93,90,0,16);
+move(0.00,0.00,4.10);  object(0x1C93,90,0,16);
+move(-1.92,0.56,0.00);  object(0x1C93,90,0,16);
+move(0.14,1.19,0.00);  object(0x1C93,90,0,16);
+move(2.02,-0.59,0.00);  object(0x1C93,90,0,16);
+move(0.64,2.24,0.00);  object(0x1C93,90,0,192);
+move(-1.96,0.40,0.00);  object(0x1C93,90,0,192);
+move(-2.16,0.02,-18.90);  object(0x1C93,0,0,195);
+move(-0.04,-0.06,2.04);  object(0x1C93,0,0,197);
+move(4.01,2.09,-2.15);  object(0x1C93,0,0,102);
+move(0.00,0.00,2.10);  object(0x1C93,0,0,102);
+move(-1.83,0.37,0.09);  object(0x1C93,0,0,102);
+move(0.00,0.00,-1.70);  object(0x1C93,0,0,102);
+move(3.73,-3.82,0.14);  object(0x1C93,0,0,15);
+move(0.00,0.00,1.50);  object(0x1C93,0,0,15);
+move(0.48,1.86,-0.00);  object(0x1C93,0,0,15);
+move(0.01,-0.28,-1.51);  object(0x1C93,0,0,196);
+move(-4.72,-6.28,0.20);  object(0x1C93,0,0,279);
+move(0.00,0.00,1.70);  object(0x1C93,0,0,279);
+move(3.19,0.13,0.00);  object(0x1C93,0,0,12);
+move(-5.88,1.19,0.00);  object(0x1C93,0,0,12);
+move(0.00,0.00,-1.80);  object(0x1C93,0,0,12);
+move(6.00,-1.51,0.12);  object(0x1C93,0,0,14);
+move(-2.32,4.07,22.20);  object(0x1C91,0,0,108);
+
+#cheat easter egg 1
+teleport(-915.48,  -842.81,  12.18);
+#cheat easter egg 2
+teleport(-728.71,  -1417.24,  12.60);
+#cheat easter egg 3
+teleport(-979.90,  267.10,  8.81);
+#cheat easter egg 4
+teleport(415.27,  203.02,  11.95);
+#cheat easter egg 5
+teleport(79.12,  1092.96,  32.60);
+#cheat easter egg 6
+teleport(-1552.07,  1258.80,  8.73);
+#cheat easter egg 7
+teleport(-707.99,  1301.08,  11.76);
+#cheat easter egg 8
+teleport(-0.68,  -1233.04,  23.47);
+#cheat easter egg 9
+teleport(358.45,  1103.05,  -193.60);
+#cheat easter egg 10
+teleport(302.95,  -453.77,  5.74); 
+

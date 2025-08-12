@@ -1,0 +1,1464 @@
+#cheat Lamborghini Doors
+//ID: 18438
+//Score: 348
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This gives your car Lamborghini verticle Doors.
+//
+//Ported from vettefan88's version for LCS.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/lambo.jpg
+//Time: 02/11/2006 22:22:22
+//Working: Yes
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+#cheat Indestructable Vehicle
+//ID: 18437
+//Score: 297
+//Author: vettefan88
+//Category: Vehicle
+//Description: any car your in will not attain any physical damage, or engine damage.
+//Image: none
+//Time: 02/11/2006 20:48:45
+//Working: Yes
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+
+#cheat indeflatable tires
+//ID: 18517
+//Score: 260
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Your tires will never deflate
+//Image: none
+//Time: 05/11/2006 00:34:46
+//Working: Yes
+setshort(pcar+0x3b6, 0, 0);//cars
+setshort(pcar+0x434, 0);//bikes
+
+#cheat Car Hop (Hit Down)
+//ID: 18514
+//Score: 134
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and get in a vehicle then hit down and your car will pop up into the air, in a controlled amount.
+//Image: none
+//Time: 04/11/2006 21:42:32
+//Working: Yes
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148, +0.2);
+}
+
+#cheat Kamakazee!
+//ID: 18513
+//Score: 159
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and hit O and your car will automatically catch fire. Can be useful and is a ton of fun!
+//Image: none
+//Time: 04/11/2006 21:41:24
+//Working: Yes
+ if ((buttons & CTRL_CIRCLE))
+{
+setfloat(pcar + 0x0000027C, 0x0);
+}
+
+#cheat Rocket Boost 4
+//ID: 18507
+//Score: 166
+//Author: edisoncarter
+//Category: Vehicle
+//Description: The built-in Rocket Boost cheat from LCS converted to cheat script.  Change "boost = 4.0" for different boost amounts.
+//Image: none
+//Time: 04/11/2006 19:26:23
+//Working: Yes
+if (buttons & CTRL_CROSS)                                                                         
+{                                                                                                                                                     
+    boost = 4.0;                                                                                  
+    thrust = boost * 0.00333;                                                
+                                                                                                  
+    // velocity = velocity + forward vector * thrust                                              
+    setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);          
+    setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);          
+    setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);          
+                                                                                                  
+    // rotational control on motorcycles                                                          
+    //if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210)                       
+        setfloat(pcar + 0x0078, -0.03 * xstick);                                                  
+}                                                                                                 
+
+
+#cheat NOS
+//ID: 18504
+//Score: 130
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Hold O while driving to use NOS.
+//Screen blurs more the faster you drive.
+//
+//EDITED BY: ADePSP on 04/11/06 19:17:14
+//Image: none
+//Time: 04/11/2006 18:23:13
+//Working: Yes
+if(buttons & CTRL_CIRCLE) {
+
+   speed = 0.0;
+
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+
+#cheat Remote Controlled Bike
+//ID: 18444
+//Score: 128
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Stand next to the bike you want to remort control then activate the cheat and quickly disable it,  as you leave the bike and you can remote control it.
+//Image: none
+//Time: 03/11/2006 00:13:28
+//Working: Yes
+setchar(pplayer+0x894, 0x12);
+#off
+setchar(pplayer+0x894, 0x10);
+
+#cheat Lock Car Doors
+//ID: 18440
+//Score: 193
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Press DOWN to lock/unlock car door, while door is locked nobody can get into your vehicle and you can't get out.
+//
+//Ported from theY4Kman's version for LCS.
+//Image: none
+//Time: 02/11/2006 23:07:08
+//Working: Yes
+if(press & CTRL_DOWN)
+setshort(pcar+0x232, getshort(pcar+0x232) ^ 0x0101);
+#off
+setshort(pcar+0x232, 0);
+
+#cheat Extreme Boost (Hit O)
+//ID: 18544
+//Score: 218
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: A redo of waterbottle's NOS cheat, this will give you an INSTANT shot of boost of speed instead of an overtime boost when you hit O. Very useful for insane jumps and can also be used in big vehicles to ram stuff.
+//Image: http://img212.imageshack.us/img212/9427/2yh5.gif
+//Time: 05/11/2006 16:22:46
+//Working: Yes
+if((press & CTRL_CIRCLE))
+{
+    setfloat(pcar+0x140, getfloat(pcar+0x140)+getfloat(pcar+0x10)+0.1);
+    setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar+0x14)+0.1);
+}
+
+
+
+#cheat Cars never flip!
+//ID: 18549
+//Score: 229
+//Author: rela82me
+//Category: Vehicle
+//Description: ported over from Edison Carter's cheat from LCS
+//Image: none
+//Time: 05/11/2006 17:45:48
+//Working: Yes
+setfloat(pcar + 0x08,  0);
+setfloat(pcar + 0x18,  0);
+
+#cheat Light Cars
+//ID: 18547
+//Score: 103
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will make your car really light, but it will still stay on the ground, it just won't be able to crash through anything.
+//use this to reset the car back to normal after using the heavy cars cheat.
+//Image: none
+//Time: 05/11/2006 17:43:10
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)/1000, getfloat(pcar+0xD4)/1000);
+off()
+
+#cheat Heavy Cars
+//ID: 18546
+//Score: 110
+//Author: vettefan88
+//Category: Vehicle
+//Description: Get into a car and activate this cheat.
+//but only activate it ONCE, as it may crash the game if you do it too many times.
+//it will make your car heavy based on it's current weight, letting the vehicle attain it's regular handling attributes.
+//Image: none
+//Time: 05/11/2006 17:40:18
+//Working: Yes
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000, getfloat(pcar+0xD4)*1000);
+off()
+
+#cheat Remote Control Bike
+//ID: 18639
+//Score: 104
+//Author: dwinch
+//Category: Vehicle
+//Description: See gif for better idea of what it does.
+//I cannot add the whole thing here, apparently there are errors (I assume as it is more than one code), so the rest is in the readme:
+//http://www.filelodge.com/files/room49/1424824/Remote%20Control%20Bike.txt
+//Image: http://www.filelodge.com/files/room49/1424824/th_RCB.gif
+//Time: 10/11/2006 19:35:41
+//Working: Yes
+//get on bike, get off, use this (turn on/off QUICKLY)
+//must be a few feet away from bike
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat All Cars Start Burning, Then Blow Up.
+//ID: 18637
+//Score: 91
+//Author: Waterbottle
+//Category: Vehicle
+//Description: All cars will start burning and then a few seconds later blow up.
+//Image: none
+//Time: 10/11/2006 18:51:28
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+     for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+         if(p != pcar) setfloat(p + 0x27c, 0);
+     }
+}
+setchar(0x08bb32c8,  1);
+#off
+setchar(0x08bb32c8,  0); 
+
+#cheat No Traffic
+//ID: 18636
+//Score: 124
+//Author: Waterbottle
+//Category: Vehicle
+//Description: All cars will dissapear except the one you are in. Allowing you to drive around without any cars getting in your way,
+//Image: none
+//Time: 10/11/2006 18:49:27
+//Working: Yes
+static counter;
+if(counter++ % 30 == 0) {
+  for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+       if(p != pcar) setchar(p + 0x4c, 1);
+  }
+}
+
+#cheat Jet ski's drive sideways
+//ID: 18622
+//Score: 73
+//Author: psphacker108
+//Category: Vehicle
+//Description: when activated make sure your on a jetski make sure your in Open water and Move your analog stick side to side and it will drive side ways makes all vehicles go on there sides to!! jetski acts like a submarine on sharp turns
+//Image: http://img399.imageshack.us/my.php?image=screen1zr4.png
+//Time: 10/11/2006 01:02:27
+//Working: Yes
+setint(pcar + 0x00000000, 19);
+
+#cheat Invisible Car
+//ID: 18620
+//Score: 106
+//Author: dwinch
+//Category: Vehicle
+//Description: Car and Vic inside are invisible.
+//
+//EDITED BY: psphacker108 on 10/11/06 00:36:38
+//Image: none
+//Time: 10/11/2006 00:06:18
+//Working: Yes
+setchar(pcar+0x4A, 0x15);
+#off
+setchar(pcar+0x4A, 0x18);
+
+#cheat Your Car Goes Flipping [LCS>VCS Port]
+//ID: 18604
+//Score: 82
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Press up to activate... Note: This has NOT been tested on boats!!!
+//Image: none
+//Time: 08/11/2006 21:29:50
+//Working: Yes
+if(press & CTRL_UP)
+{
+setfloat(pcar + 0x0000010B, +1B);
+}
+
+#cheat Nitrous Oxide v.2
+//ID: 18567
+//Score: 356
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Updated version of NOS; now with power break.
+//
+//press O to use NOS
+//press [] to use power break (stops you immediatly)
+//
+//Also did so if you press L then NOS won't work, so it dosn't affect drive by's.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/NOS.gif
+//Time: 06/11/2006 16:16:24
+//Working: Yes
+if(buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0) setfloat(pcar+0x140, 0, 0);
+
+#cheat Your Car Turns Black Before Exploding
+//ID: 18563
+//Score: 77
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When your car turns black, bail!  One more hit and it'll explode!  Thanks to vettefan for the car color addresses.
+//Image: none
+//Time: 06/11/2006 05:34:12
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health < 300)
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat Car Color Shows Car Health
+//ID: 18562
+//Score: 163
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Your car goes from green to yellow to red to black as it takes damage.  Thanks to vettefan for the car color addresses!
+//Image: http://www1.cheatdevice.com/gta/VCSCarHealthColor.gif
+//Time: 06/11/2006 05:26:14
+//Working: Yes
+// Thanks to vettefan for car color addresses
+health = getfloat(pcar+0x027c);
+if (health >= 990)
+    setchar(pcar+0x224, 0, 180, 0);
+else if (health >= 650)
+    setchar(pcar+0x224, 255 * (1000 - health) / 350, 255, 0);
+else if (health >= 300)
+    setchar(pcar+0x224, 255, 255 * (health - 300) / 350, 0);
+else if (health >= 280)
+    setchar(pcar+0x224, 128, 0, 0);
+else
+    setchar(pcar+0x224, 0, 0, 0);
+
+#cheat Random Car Color
+//ID: 18551
+//Score: 108
+//Author: vettefan88
+//Category: Vehicle
+//Description: Every time you enter this cheat your car will get a  completely random color. the chances of seeing the same color twice are 1/1000000!
+//
+//EDITED BY: psphacker108 on 06/11/06 05:56:01
+//Image: none
+//Time: 05/11/2006 18:05:01
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+off()
+
+#cheat Disco Vehicle
+//ID: 18550
+//Score: 166
+//Author: vettefan88
+//Category: Vehicle
+//Description: Cars Color will rapidly change colors giving off a "disco" feel. or to some it may be a "seizure" feel.
+//there a literally millions of possible color combinations that can come from this code.
+//Image: none
+//Time: 05/11/2006 18:03:00
+//Working: Yes
+setfloat(pcar+0x224, getfloat(pcar+0x20), getfloat(pcar+0x24));
+
+#cheat Car Stunts 2 (Hold O and use Analog)
+//ID: 18720
+//Score: 127
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Redo of my first version, this one has perfect speed on both left and right, no mess ups, and also now includes FLIPPING! To rotate hold O and use left + right on the analog, then use up and down on the analog to do flips. Make cool combinations as well!
+//Image: http://img517.imageshack.us/img517/4745/flipsyu1.gif
+//Time: 15/11/2006 20:41:17
+//Working: Yes
+if(buttons&CTRL_CIRCLE)
+{
+    setfloat(pcar+0x70, ystick * getfloat(pcar) / 8);
+    setfloat(pcar+0x74, ystick * getfloat(pcar+4) / 8);
+    setfloat(pcar+0x78, -xstick / 8);
+}
+
+
+
+
+#cheat Pet Car
+//ID: 18718
+//Score: 127
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat will make the last entered car follow you! To use this, turn it on, get into a car, then get out. Then use these controls:
+//R+Up- Turn On Follow
+//R+Down- Turn Off Follow
+//R+O- Blow up car
+//Down- Car hop (Best if follow is OFF)
+//R+ Analog- Spin
+//Image: http://img294.imageshack.us/img294/7374/video1km2.gif
+//Time: 15/11/2006 16:12:00
+//Working: Yes
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,  +0.2);
+}
+
+#cheat Car Stunts (Hold O and use analog)
+//ID: 18710
+//Score: 78
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: While on hold O and use the analog stick to do cool spinning stunts in a car. Can be used on land or in air. Tap the buttons to spin longer, hold them to spin faster!
+//Note: Video is kinda crappy, I know. Loads better in-game.
+//Image: http://img182.imageshack.us/img182/803/spinxk9.gif
+//Time: 15/11/2006 00:18:34
+//Working: Yes
+if(xstick < -0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78, +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78, getfloat(pcar + 0x78)-0.02);
+}
+
+#cheat Normal Cop Car
+//ID: 18705
+//Score: 75
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: If you use one of the cop car mod cheats some of them can get well annoying.....
+//
+//just turn onf cheat and it turns all back to normal the cop car that is.
+//Image: none
+//Time: 14/11/2006 04:23:07
+//Working: Yes
+//By:LILFRK12006
+sethex(0x09AB98F4, 21);
+
+#cheat rainbow ish cop car
+//ID: 18704
+//Score: 83
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: Makes the Cop car rainbow ish but it looks totaly normal.
+//
+//EDITED BY: psphacker108 on 14/11/06 15:53:11
+//Image: http://img489.imageshack.us/img489/1960/copcar11aw9.png
+//Time: 14/11/2006 04:21:14
+//Working: Yes
+//By:Lilfrk12006
+sethex(0x09AB98F4, 30);
+
+#cheat Hover Car!
+//ID: 18694
+//Score: 329
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Any vehicle you are in will be able to fly.
+//UP/DOWN: accend/decend
+//ANALOG: rotate/tilt car
+//X: accelerate
+//[]: decelerate, reverse
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/hovervcs.gif
+//Time: 12/11/2006 20:17:35
+//Working: Yes
+static height;
+if(!height)
+  height = getfloat(pcar+0x38);
+static Zdeg;
+  if(!Zdeg)
+  Zdeg = getfloat(pplayer+0x8d0);
+ 
+  static st;
+  static speed;
+  setfloat(pcar+0x1c8, 0x1020);
+  setfloat(pcar+0x38, height);
+  setfloat(pcar+0x148, 0);
+  Zdeg += xstick * 1.5;
+  if(ystick)
+  {
+  Xdeg = getfloat(pcar) * -10 * ystick;
+  Ydeg = getfloat(pcar+4) * -10 * ystick;
+  }
+  else Ydeg = Xdeg = 0;
+
+  if(buttons & CTRL_CROSS)
+  {
+  if(speed < 0)
+          speed += 0.02;
+  if(speed < 0.75)
+          speed += 0.01;
+  }
+  else
+  if(buttons & CTRL_SQUARE)
+  {
+  if(speed > 0)
+          speed -= 0.015;
+  if(speed > -0.4)
+          speed -= 0.008;
+  }
+  else speed *= 0.95;
+
+  if(buttons & CTRL_UP) height+=0.1;
+  if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+ 
+  setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+  setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+  setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+  setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+  setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+  setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+  setfloat(pcar+0x20, -sin(Ydeg));
+  setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+  setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+ 
+  setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+  setfloat(pcar+0x144, getfloat(pcar)*speed);
+  if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 0;
+
+#cheat Spinners
+//ID: 18692
+//Score: 166
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever your in a vehicle the rims will spin non-stop giving the vehicle spinners.
+//
+//EDITED BY: edisoncarter on 12/11/06 20:10:18
+//Image: none
+//Time: 12/11/2006 19:35:26
+//Working: Yes
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644, spin, spin, spin, spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+
+#cheat PCJ-600 and Jet Ski spawn at 101 Bayshore
+//ID: 18681
+//Score: 137
+//Author: edisoncarter
+//Category: Vehicle
+//Description: A PCJ-600 spawns right outside your safehouse at 101 Bayshore Ave and a Jet Ski is waiting at the small dock across the street.
+//Image: none
+//Time: 12/11/2006 03:51:16
+//Working: Yes
+pspawn = 0x08E81290;
+setint(pspawn, 212); // modelid pcj-600
+setfloat(pspawn + 4, -801.37, -1178.76, 10.96, 290); // x, y, z, angle
+pspawn += 0x30;
+setint(pspawn, 233); // modelid jet ski
+setfloat(pspawn + 4, -729.4, -1148.9, 6.0, 20); // x, y, z, angle
+pspawn += 0x30;
+
+#cheat Drive On Water!
+//ID: 18678
+//Score: 286
+//Author: Waterbottle
+//Category: Vehicle
+//Description: This cheat will allow any vehicle you are in to drive on water. Control Setup 1 recommeded.
+//X: accelerate, Analog: rotate, R: hand brake, [] Reverse
+//
+//Thanks to Durka Durka Mahn for the cheat idea ;)
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/drivewater.gif
+//Time: 12/11/2006 01:01:08
+//Working: Yes
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+   static speed;
+   //set the car ontop of the water
+   setfloat(pcar+0x38, getfloat(0x96C96B0)+0.8);
+   setfloat(pcar+0x8, 0);
+   setfloat(pcar+0x18, 0);
+   setfloat(pcar+0x20, 0, 0, 0);
+   setfloat(pcar+0x148, 0);
+   //hand brake
+   if(buttons & CTRL_RTRIGGER) 
+   {
+   speed*=0.9;
+   handb = 2.5;
+   } else handb = 1;
+   //rotate the vehicle
+   if(speed > 0.1)
+           setfloat(pcar+0x78, -0.015 * xstick * handb);
+   else if(speed < -0.1)
+           setfloat(pcar+0x78, 0.015 * xstick * handb);
+   //accelerte
+   if(buttons & CTRL_CROSS) 
+   {
+   if(speed < 0)
+           speed += 0.02; 
+   if(speed < 0.7)
+           speed += 0.02; 
+   }
+   else
+   if(buttons & CTRL_SQUARE)
+   {
+   if(speed > 0)
+           speed -= 0.02; 
+   if(speed > -0.5)
+           speed -= 0.02; 
+   }
+   else speed *= 0.95;
+   //add speed to car
+   setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+   setfloat(pcar+0x144, getfloat(pcar)*speed);
+}
+
+#cheat Police Station Wagons
+//ID: 18662
+//Score: 93
+//Author: Matt420bad07
+//Category: Vehicle
+//Description: Makes all police cars look like a station wagon And changes the color of some parts on the car.
+//
+//EDITED BY: Waterbottle on 11/11/06 10:31:32
+//Image: http://img289.imageshack.us/img289/6791/screen1lz3.png
+//Time: 11/11/2006 06:06:55
+//Working: Yes
+setchar(0x09ab96e2, 208);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 255);
+setchar(0x09ab96e7, 64);
+setchar(0x09ab96ea, 128);
+setchar(0x09ab96eb, 63);
+setchar(0x09ab96f6, 4);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 254);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab99fe, 5);
+setchar(0x09ab9a2e, 4);
+setchar(0x09abe776, 64);
+setchar(0x09abe777, 65);
+setchar(0x09abe88e, 3);
+setchar(0x09abe8be, 3);
+setchar(0x09abf746, 64);
+setchar(0x09abf747, 65);
+setchar(0x09abf85e, 3);
+setchar(0x09ac2bce, 4);
+setchar(0x09ac2bfe, 4);
+setchar(0x09abd5ae, 4);
+
+#cheat Custom Police Car
+//ID: 18661
+//Score: 98
+//Author: Matt420bad07
+//Category: Vehicle
+//Description: Totally custom.... cop car.
+//
+//EDITED BY: Waterbottle on 11/11/06 10:32:09
+//Image: none
+//Time: 11/11/2006 06:02:22
+//Working: Yes
+setchar(0x09ab98f4, 4);
+setchar(0x09ab8ce4, 22);
+setchar(0x09ab8d06, 192);
+setchar(0x09ab8d07, 65);
+setchar(0x09ab8d0a, 48);
+setchar(0x09ab8d0b, 64);
+setchar(0x09ab8d16, 4);
+setchar(0x09ab8d17, 190);
+setchar(0x09ab8d1a, 195);
+setchar(0x09ab8d1b, 62);
+setchar(0x09ab8d33, 69);
+setchar(0x09ab85d6, 192);
+setchar(0x09ab85d7, 64);
+setchar(0x09abd57e, 1);
+setchar(0x09abe82e, 2);
+setchar(0x09abe85e, 1);
+setchar(0x09abe776, 208);
+setchar(0x09abf746, 208);
+setchar(0x09abf7fe, 2);
+setchar(0x09abf82e, 2);
+setchar(0x09abf837, 62);
+setchar(0x09abf83b, 62);
+setchar(0x09abe867, 62);
+setchar(0x09abe86b, 62);
+setchar(0x09ac2b9e, 1);
+setchar(0x09ac4126, 180);
+setchar(0x09ac4127, 62);
+setchar(0x09ac412a, 147);
+setchar(0x09ac412b, 60);
+setchar(0x09ac4c3a, 32);
+setchar(0x09ac4c3b, 64);
+setchar(0x09ac4c4a, 96);
+setchar(0x09ac4c4b, 190);
+setchar(0x09ab8d07, 66);
+setchar(0x09ab8d1a, 149);
+setchar(0x09ab9322, 32);
+setchar(0x09ab9357, 0);
+setchar(0x09ab935b, 0);
+setchar(0x09ab9717, 0);
+setchar(0x09ab971b, 0);
+setchar(0x09ab96f6, 237);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 236);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab96e2, 198);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 28);
+setchar(0x09ab96e7, 65);
+setchar(0x09ab96ea, 0);
+setchar(0x09ab96eb, 63);
+setchar(0x09ac1a37, 0);
+setchar(0x09ac1a3b, 0);
+setchar(0x09ac1a07, 0);
+setchar(0x09ac1a0b, 0);
+setchar(0x09ac19d2, 0);
+setchar(0x09ac19d3, 64);
+setchar(0x09ac19d6, 128);
+setchar(0x09ac19d7, 65);
+setchar(0x09ac19da, 16);
+setchar(0x09ac19db, 64);
+setchar(0x09ac19e6, 152);
+setchar(0x09ac19e7, 192);
+setchar(0x09ac19ea, 195);
+setchar(0x09ac19eb, 62);
+
+#cheat Trunk Gone Cops/ Jeep Cop Cars
+//ID: 18724
+//Score: 66
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns all cop cars into jeeps.
+//Image: none
+//Time: 15/11/2006 23:30:16
+//Working: Yes
+Trunk Gone Cops/ Jeep Cop Cars
+sethex(0x09AB98F4, 24)
+
+
+#cheat Defense Orbs
+//ID: 18752
+//Score: 144
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Touch a car to make it spin around you. Protecting you from anyone coming close to you. If the car touch a car it will also protect you (max 2 cars can protect). cars spin alot faster then the video show.
+//
+//Took some code from edisons blendo cheat...
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/orbs.gif
+//Time: 18/11/2006 17:21:12
+//Working: Yes
+static Orb1;
+static Orb2;
+static rot;
+
+if(!Orb2)
+{
+    setshort(0x08e90bd8,  1,  'T',  'o',  'u' ,  'c',  'h',  ' ',  'a',  ' ',  'c',  'a',  'r',  ' ',  't',  'o',  ' ',  'm',  'a',  'k',  'e',  ' ', 'i',  't',  ' ',  'p',  'r',  'o',  't',  'e',  'c',  't',  ' ',  'y',  'o',  'u', '!',  0);
+}
+
+p = getint(pobj + 0x150);
+
+if (p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+        Orb1 = p;
+}
+
+
+if (Orb1)
+{
+    setfloat(Orb1 + 0x08, 0);
+    setfloat(Orb1 + 0x18, 0);
+    setfloat(Orb1 + 0x20, 0, 0, 1);
+    setfloat(Orb1 + 0x30,  getfloat(pplayer + 0x30) - cos(rot) * 12);
+    setfloat(Orb1 + 0x34,  getfloat(pplayer + 0x34) + sin(rot) * 12);
+    setfloat(Orb1 + 0x38,  getfloat(pplayer + 0x38));
+    setfloat(Orb1 + 0x78,  1);
+    setfloat(Orb1 + 0x027c,  10000.0);
+    rot += 10;
+    p = getint(Orb1 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb2 = p;
+}
+
+if (Orb2)
+{
+    setfloat(Orb2 + 0x08, 0);
+    setfloat(Orb2 + 0x18, 0);
+    setfloat(Orb2 + 0x20, 0, 0, 1);
+    setfloat(Orb2 + 0x30,  getfloat(pplayer + 0x30) - cos(rot+180) * 12);
+    setfloat(Orb2 + 0x34,  getfloat(pplayer + 0x34) + sin(rot+180) * 12);
+    setfloat(Orb2 + 0x38,  getfloat(pplayer + 0x38));
+    setfloat(Orb2 + 0x78,  1);
+    setfloat(Orb2 + 0x027c,  10000.0);
+    p = getint(Orb2 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb1 = p;
+}
+#off
+Orb1 = Orb2 = rot = 0;
+
+#cheat Remote Control Vehicle
+//ID: 18742
+//Score: 150
+//Author: dwinch
+//Category: Vehicle
+//Description: Gif shows how it works first, then examples of things you can do!
+//Great for making video clips of stunts.
+//Two camera modes, stationary/follow car.
+//Hellis are sketchy all others work fine. Now one cheat!
+//any questions pm me at gtaforums.com: Winchy
+//
+//
+//Image: http://smg.photobucket.com/albums/v514/Winchy/RCV.gif
+//Time: 17/11/2006 19:12:23
+//Working: Yes
+static Text;
+if (!Text)
+{
+setshort(0x8E90BD8, 1, 'O', '+', 'U', 'p', '=', 'L', 'e', 'a', 'v', 'e', ' ', 'c', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'D', 'o', 'w', 'n', '=', 'R', 'e', 't', 'u', 'r', 'n', ' ', ' ', ' ', 'N', 'o', 't', 'e', '=', 'H', 'U', 'D', '/', 'R', 'a', 'd', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'L', 'e', 'f', 't', '/', 'R', 'i', 'g', 'h', 't', '=', 'C', 'a', 'm', 0);
+}
+setchar(pplayer+0x4C, 0x10, 0x20);
+if (press & CTRL_CIRCLE&&press & CTRL_UP)
+{
+Text = true;
+setchar(pplayer+0x8B4, 0x36);
+setchar(pplayer+0x8B4, 0x38);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+if (press & CTRL_NOTE)
+{
+setchar(0x9A63413, getchar(0x9A63413) ^ 0x02);
+setchar(0x9A63418, getchar(0x9A63418) ^ 0x01);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_CIRCLE&&press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+#off
+{
+setchar(pplayer+0x4C, 0x00, 0x00);
+setchar(0x9A63413, 0x00);
+setchar(0x9A63418, 0x01);
+}
+
+//Made by dwinch
+//Thanks to Waterbottle and DDM
+
+#cheat Blendo
+//ID: 18741
+//Score: 132
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Use a car as a weed wacker.  You can be on foot or in a car.  Inspired by the battlebot by the MythBusters.
+//Image: http://www1.cheatdevice.com/gta/VCSBlendo.gif
+//Time: 17/11/2006 18:46:19
+//Working: Yes
+static psel;
+if (psel == 0)
+{
+    setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', ' ', 'c', 'a', 'r', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', 0);
+}
+p = getint(pobj + 0x150);
+if (p && getshort(p + 0x56) >= 170 && getshort(p + 0x56) <= 280)
+{
+    psel = p;
+    setfloat(psel + 0xd0, getfloat(psel + 0xd0) * 3.0);
+    setfloat(psel + 0xd4, getfloat(psel + 0xd4) * 3.0);
+}
+if (psel)
+{
+    setfloat(psel + 0x08, 0);
+    setfloat(psel + 0x18, 0);
+    setfloat(psel + 0x20, 0, 0, 1);
+    setfloat(psel + 0x30, getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 10.0);
+    setfloat(psel + 0x34, getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 10.0);
+    setfloat(psel + 0x38, getfloat(pplayer + 0x38) + 0.5);
+    setfloat(psel + 0x78, getfloat(psel + 0x78) - 0.015);
+    setfloat(psel + 0x027c, 100000.0);
+}
+#off
+psel = 0;
+
+#cheat Submarine Vehicles
+//ID: 18738
+//Score: 159
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat allows your car to drive underwater! Just drive into water, turn the cheat on, and use X to drive, analog left and right to steer, and analog up and down to dive and return. Thanks to EC & Rela82me for their codes used in this.
+//Image: http://img98.imageshack.us/img98/1115/yehtx8.gif
+//Time: 17/11/2006 11:32:23
+//Working: Yes
+static UnderWater;
+static Height;
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78, -xstick / 40);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 1.5;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+  }
+
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148, +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148, -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38, Height);
+}
+
+#cheat Drive on the Wild Side
+//ID: 18737
+//Score: 73
+//Author: psphacker108
+//Category: Vehicle
+//Description: active while in a car or else you will spin like crazy! Vic will be on the side of the car that you get into! you can see him actually driving ( will not work on bikes) Works on helicopters  when you want this off turn off  everything goes back to normal.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2.gif
+//Time: 17/11/2006 04:40:21
+//Working: Yes
+setchar(pplayer + 0x000001CA, 60);
+
+#cheat Just Plain Weird Cop Car
+//ID: 18728
+//Score: 78
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes cop cars look weird... All make sense when you try this cheat :)
+//Image: none
+//Time: 15/11/2006 23:45:58
+//Working: Yes
+Just Plain Weird Cop Car
+// Turns stuff on the side of you transparent for a brief second, then changes back.
+sethex(0x09AB98F4, FF)
+
+
+#cheat Glass Cop Car
+//ID: 18727
+//Score: 88
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Turns cop cars into cop cars with weird stuff coming out of it. Mostly has Glass... Though the color changes by what angle you are looking at it...
+//
+//It's too complicated, just download and see for your self!!!
+//
+//EDITED BY: edisoncarter on 18/11/06 00:2
+//Image: none
+//Time: 15/11/2006 23:42:26
+//Working: Yes
+// Glass Cop Car
+sethex(0x09AB98F4, F9);
+
+#cheat Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+//ID: 18726
+//Score: 77
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars look like they were morphed w/ Yu-Gi-Oh... XD
+//
+//EDITED BY: edisoncarter on 18/11/06 00:32:49
+//Image: none
+//Time: 15/11/2006 23:37:43
+//Working: Yes
+// Yu-Gi-Oh (Extra Long) Rainbow Haired Cop Cars
+sethex(0x09AB98F4, F0);
+
+
+#cheat Rayman Wheeled Cop Cars
+//ID: 18725
+//Score: 66
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cars into Rayman styled cop cars, the wheels dont touch the car... :P Have fun :)
+//
+//EDITED BY: edisoncarter on 18/11/06 00:25:17
+//Image: none
+//Time: 15/11/2006 23:33:16
+//Working: Yes
+sethex(0x09AB98F4, 65)
+
+#cheat Vulture Cop Cars (TESTED)
+//ID: 18723
+//Score: 65
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Makes all cop cruiser cars look cool, with spiky edges strictly dark green and black.
+//
+//EDITED BY: edisoncarter on 18/11/06 00:24:58
+//Image: none
+//Time: 15/11/2006 23:26:34
+//Working: Yes
+sethex(0x09AB98F4, 00)
+
+#cheat Car you are driving turns black...[TESTED]
+//ID: 18954
+//Score: 44
+//Author: walshyboy
+//Category: Vehicle
+//Description: Do i really need to describe it...or have a picture...Oh , and im Teknokid btw...
+//Image: none
+//Time: 03/12/2006 16:14:05
+//Working: Yes
+setint(pcar + 0x00000224, 0);
+setint(pcar + 0x00000228, 0);
+
+#cheat Spawn A Skimmer Outside Clymenus Suite
+//ID: 18944
+//Score: 61
+//Author: duff_weird
+//Category: Vehicle
+//Description: Does exactly what it says on the tin. Spawns a Skimmer just outside the Clymenus Suite at the dock. Perfect way to get the skimmer on the second island, seeing as CD crashes and the other one is ages away. Enjoy! (Thanks to EC for spawn code)
+//Image: none
+//Time: 02/12/2006 00:55:35
+//Working: Yes
+pspawn = 0x08E81290;
+setint(pspawn, 278);
+setfloat(pspawn + 4, 227.56, -129.41, 5.9, 160);
+pspawn += 0x30;
+
+#cheat Motorcycles Go Flipping v1
+//ID: 18916
+//Score: 72
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Press up to make your car go flipping into the air. I went from one island to another with this cheat!!! This is more stable than car go flipping. this is untested as a cheat, only in hex editor! I will test and confirm.
+//
+//EDITED BY: ADePSP on 28/11/06 15:
+//Image: none
+//Time: 26/11/2006 03:51:08
+//Working: No
+//Press up to make your car go flipping
+// into the air. I went from one island 
+//to another with this cheat!!! But 
+//through hex editor, this is untested! I 
+//will test and confirm.
+//This is only for motorcycles
+(if pressslow & CTRL_Up)
+{
+sethex(0x00000027, FD)
+}
+
+#cheat Ghost Car
+//ID: 18892
+//Score: 111
+//Author: getdustin
+//Category: Vehicle
+//Description: Allows your car to drive through light posts, people, cars, buildings, fences,and trees(pretty much everything). Right trigger to activate left trigger to deactivate. Thanks to Durka Durka Mahn for acceleration, turning and braking.
+//
+//Image: http://i35.photobucket.com/albums/d157/getdustin/GhostCar.gif
+//Time: 25/11/2006 01:29:35
+//Working: Yes
+//by getdustin
+//right trigger activates and left trigger deactivates
+//Turning, acceleration, and breaking by Durka Durka Mahn
+static Drivable;
+if(buttons&CTRL_RTRIGGER)
+{
+setchar(pcar + 0x49,  81);
+Drivable = 1;
+}
+if(buttons&CTRL_LTRIGGER)
+{
+setchar(pcar + 0x49,  82);
+Drivable = 0;
+}
+if(Drivable)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+if (buttons & CTRL_CROSS) 
+{
+   boost = 0.5;
+   thrust = boost * 0.00333;
+   // velocity = velocity + forward vector * thrust
+   setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+   setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust); 
+   setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+}  
+if(buttons & CTRL_SQUARE)
+{
+  setfloat(pcar + 0x140,  getfloat(pcar + 0x140)*0.95,  getfloat(pcar + 0x144)*0.95 );
+}
+}
+
+
+#cheat Gradation of color
+//ID: 18855
+//Score: 103
+//Author: NRG500
+//Category: Vehicle
+//Description: Your car changes color by making a gradation
+//Image: http://www.libertycitystories.fr/~nrg500/images/autres/video2.gif
+//Time: 23/11/2006 17:36:23
+//Working: Yes
+//By NRG500
+
+static r;
+static rPlus;
+static v;
+static vPlus;
+static b;
+static bPlus;
+
+if(!r && !v && !b)
+{
+   r=255;
+   v=0;
+   b=0;
+}
+
+if(!rPlus  && !vPlus && !bPlus)
+{
+   rPlus = 0;
+   vPlus = 1;
+   bPlus = 1;
+}
+
+
+if(vPlus && !rPlus)
+{
+   v++;
+   r--;
+
+   if(v==255)
+   {
+      vPlus=0;
+      rPlus=1;
+   }
+}
+else if(bPlus && !vPlus)
+{
+   b++;
+   v--;
+
+   if(b==255)
+   {
+      bPlus=0;
+      vPlus=1;
+   }
+}
+else if(rPlus && !bPlus)
+{
+   r++;
+   b--;
+
+   if(r==255)
+   {
+      rPlus=0;
+      bPlus=1;
+   }
+}
+
+setchar(pcar+0x224, r);
+setchar(pcar+0x225, v);
+setchar(pcar+0x226, b);
+
+#cheat Spawn Hunter at Fort Baxter
+//ID: 18821
+//Score: 88
+//Author: jas0nuk
+//Category: Vehicle
+//Description: Spawns a Hunter at Fort Baxter in front of the tank (if you teleport there, it might not appear immediately).
+//Image: none
+//Time: 21/11/2006 17:47:07
+//Working: Yes
+pspawn = 0x08E81290;
+setint(pspawn, 275);
+setfloat(pspawn + 4, -1645.57, -174.74, 14.54, 0);
+pspawn += 0x30;
+
+#cheat Central Locking
+//ID: 18780
+//Score: 129
+//Author: lordsturm
+//Category: Vehicle
+//Description: Only Vic can leave his car, no-one can force him out, and when he hijack's
+//cars, no-one can pull him back out, not even the police.
+//Hold Triangle for a little longer to leave cars.
+//Image: http://img98.imageshack.us/img98/83/centrallockingoi7.png
+//Time: 19/11/2006 21:08:42
+//Working: Yes
+if(buttons & CTRL_TRIANGLE)
+{setshort(pcar+0x232,  0);
+} else {
+setshort(pcar+0x232,  0x0101);
+}
+#off
+setshort(pcar+0x232,  0);
+
+#cheat Drive W/out car.
+//ID: 18779
+//Score: 88
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: This is cool.
+//It makes you drive around like you where in the car but he car stays in place and if you crash the car the car that is sitting there will smash up.
+//
+//
+//EDITED BY: psphacker108 on 21/11/06 04:42:36
+//Image: http://img69.imageshack.us/img69/9735/video1zj7.gif
+//Time: 19/11/2006 19:03:11
+//Working: Yes
+//BY:LILFRK12006
+//WARNING:TUNN OFF THE FIRST CAR BEFORE
+//TRYING ON ANOTHER
+setchar(pcar + 0x00000043, 8);
+#off
+setchar(pcar + 0x00000043, 9);
+
+
+#cheat Power Driving
+//ID: 18764
+//Score: 157
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: An inspiration from Power Jump, this let's you fly while in a car!
+//Controls:
+//X: Accelerate, Square: Brake, O: Increase upward speed, Analog Down: Increase Forward Speed, Analog Up: Stay On Ground/Descend, Down: Keep Car Leveled
+//Works now!
+//Image: http://www.rottenbakon.com/ddm/PD.gif
+//Time: 18/11/2006 21:10:35
+//Working: Yes
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78, -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148, +Up);
+}
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+setfloat(pcar + 0x0000027C,   1000000000);
+setfloat(pcar + 0x0000010C,   0);
+static ZLoc;
+if(press & CTRL_DOWN)
+{
+ZLoc = getfloat(pcar + 0x38);
+}
+if(buttons & CTRL_DOWN)
+{
+Power = 0;
+setfloat(pcar + 0x38, ZLoc);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+
+#cheat Spawn a Phenoix at safehouse
+//ID: 18974
+//Score: 44
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn a Phenoix at Compound Safehouse!Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 19:31:10
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  256); 
+setfloat(pspawn + 4,  -1059.17,  353.88,  10.76,  0); 
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Spawn Driveable Domestobot
+//ID: 18973
+//Score: 55
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Spawn Driveable Domestobot at Compond Safehouse takes some time to load! Takes time to load teleport away then back again!
+//Image: none
+//Time: 06/12/2006 19:29:29
+//Working: Yes
+pspawn = 0x08E81290; 
+setint(pspawn,  208); 
+setfloat(pspawn + 4,  -1069.60,  296.50,  10.76,  0); 
+pspawn += 0x30;
+teleport(-1054.93,  319.51,  11.26);
+
+#cheat Glass Purple and Blue Cop Car
+//ID: 18972
+//Score: 50
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Blue and Purple!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:49:50
+//Image: none
+//Time: 06/12/2006 18:35:01
+//Working: Yes
+sethex(0x09ab98f4,  1A); 
+
+#cheat Cream Cop Car
+//ID: 18971
+//Score: 41
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Cream!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:50:07
+//Image: none
+//Time: 06/12/2006 18:33:30
+//Working: Yes
+sethex(0x09ab98f4,  16);
+
+#cheat Purple and Blue Cop Car
+//ID: 18970
+//Score: 44
+//Author: .:Wolvern:.
+//Category: Vehicle
+//Description: Makes the Wings of the Cop Car Blue and Purple!
+//Credit goes to Matt420bad07 for the cop car mods!
+//
+//EDITED BY: psphacker108 on 07/12/06 16:50:30
+//Image: none
+//Time: 06/12/2006 18:32:02
+//Working: Yes
+sethex(0x09ab98f4,  12); 
+

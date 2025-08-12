@@ -1,0 +1,2404 @@
+#cheat Thrown Objects turn into Rockets
+//ID: 18844
+//Score: 104
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any weapons thrown (or shot through the rocket launcher) will turn into a rocket. It actually shows the sound and explosion!
+//Image: none
+//Time: 23/11/2006 02:00:50
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb, 0x12);
+}
+
+#cheat Thrown Objects turn into Molotov Cocktails
+//ID: 18843
+//Score: 84
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Anything thrown (or shot through the rocket launcher) will turn into a Molotov Cocktail.
+//Image: none
+//Time: 23/11/2006 01:59:34
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb, 0x11);
+}
+
+
+#cheat DUD Explosives
+//ID: 18842
+//Score: 80
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: All grenades, molotovs, and landmines thrown become useless, and will never blow up. Really cool when using molotovs since they bounce all over the place!
+//Image: none
+//Time: 22/11/2006 23:45:12
+//Working: Yes
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+{
+setchar(pbomb + 0xC, 0x0);
+}
+
+
+#cheat Object repellant Vic! (Kinda) v0.1
+//ID: 18836
+//Score: 65
+//Author: Haddenjms
+//Category: Misc
+//Description: Back up into an object while in a patriot and your patiot will either do one of the following, 2 of the following, or all 3.
+//
+//(HUGE CREDIT TO DDM AND EC.)
+//
+//~Climb up (light pole)
+//~Get backward rocket boost
+//~Or go flying into the air
+//Image: none
+//Time: 22/11/2006 16:01:21
+//Working: Yes
+//Smack into something to be repelled
+
+PColl = getint(pplayer+0x150);
+
+CarColl = getint(pcar+0x150);
+
+boost = -5;
+
+thrust = boost * 0.00333;
+
+if(PColl)
+
+{
+
+setfloat(pplayer + 0x0140,   getfloat(pplayer + 0x0140) + getfloat(pplayer + 0x0010) * thrust);
+
+setfloat(pplayer + 0x0144,   getfloat(pplayer + 0x0144) + getfloat(pplayer + 0x0014) * thrust);
+
+setfloat(pplayer + 0x0148,   getfloat(pplayer + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+
+setchar(pplayer + 0x1c9,  getchar(pplayer + 0x1c9) | 0x10);
+
+}
+
+if(CarColl)
+
+{
+
+setfloat(pcar + 0x0140,   getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+
+setfloat(pcar + 0x0144,   getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+
+setfloat(pcar + 0x0148,   getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+
+{
+
+setchar(pcar + 0x1c9,  getchar(pcar + 0x1c9) | 0x10);
+
+}
+
+}
+
+#cheat First Person Mode
+//ID: 18834
+//Score: 215
+//Author: M_Roc
+//Category: Player
+//Description: Makes Vice City Stories a First Person Shooter
+//Vic is in First person,Takes VCS to a whole another level. 
+//Best To put the Camera Close to Vic
+//
+//EDITED BY: psphacker108 on 23/11/06 00:52:34
+//Image: http://vcs.dajoob.com/cheats/video1.gif
+//Time: 22/11/2006 15:04:43
+//Working: Yes
+//Put it on Camera Angle 3
+//By M_Roc aka Mz8691 aka Kran to others
+//More Cheats on the way Like my High Cheat
+setchar(pplayer+0x4C,  0x10,  0x20);
+#off
+setchar(pplayer+0x4C,  0x00,  0x00);
+setchar(0x9A63413,  0x123);
+setchar(0x9A63418,  0x01);
+setchar(pplayer+0x4C,  0x20,  0x00);
+setchar(0x9A63413,  0x70);
+setchar(0x9A63418,  0x01);
+setchar(pplayer+0x4C,  0x40,  0x00);
+setchar(0x9A63413,  0x00);
+setchar(0x9A63418,  0x02);
+setchar(pplayer+0x4C,  0x10,  0x10);
+setchar(0x9A63413,  0x10);
+setchar(0x9A63418,  0x10);
+setchar(pplayer+0x4C,  0x254,  0x56);
+setchar(0x9A63413,  0x285);
+setchar(0x9A63418,  0x2583);
+setchar(pplayer+0x4C,  0x34,  0x352);
+#off
+setchar(pplayer+0x4C,  0x00,  0x00);
+setchar(0x9A63413,  0x00);
+setchar(0x9A63418,  0x01);
+
+#cheat Full Telekinesis
+//ID: 18790
+//Score: 282
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Touch any object (doesn't work on buildings and some objects for technical reasons) and then aim at something. The object will follow what you aim at. Use R + Down for manual aim. Thanks to WB for the original idea, and EC for object checkers.
+//Image: http://img300.imageshack.us/img300/6846/video1aq6.gif
+//Time: 20/11/2006 00:01:51
+//Working: Yes
+static Loc;
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(getint(pplayer + 0x150))
+{
+Loc = getint(pplayer + 0x150);
+}
+modelid = getshort(Loc + 0x0056);
+if(buttons & CTRL_RTRIGGER)
+{
+if (modelid < 750 ||
+modelid == 1515 ||
+modelid == 2627 ||
+modelid == 7337 ||
+modelid == 1820 ||
+modelid == 1821 ||
+modelid == 1825 ||
+modelid == 1826 ||
+modelid == 1829 ||
+(modelid >= 2551 && modelid <= 2554) ||
+(modelid >= 1526 && modelid <= 1536) ||
+(modelid >= 1217 && modelid <= 1223) ||
+(modelid >= 1485 && modelid <= 1488))
+{
+if (modelid != 1533)
+{
+setfloat(Loc + 0x30,  aimx);
+setfloat(Loc + 0x34,  aimy);
+setfloat(Loc + 0x38,  aimz);
+}
+}
+}
+
+
+#cheat Explosion Maker
+//ID: 18789
+//Score: 177
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Touch an object and then aim at something. The object will turn into an explosive barrel and will teleport to whatever you aim at. Then shoot it for an impresive explosion! Works best aiming at peds. Thanks to EC for object checkers.
+//Image: http://img82.imageshack.us/img82/5336/video2xp5.gif
+//Time: 19/11/2006 23:47:56
+//Working: Yes
+static Loc;
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(getint(pplayer + 0x150))
+{
+Loc = getint(pplayer + 0x150);
+}
+modelid = getshort(Loc + 0x0056);
+if (modelid < 750 ||
+modelid == 1515 ||
+modelid == 2627 ||
+modelid == 7337 ||
+modelid == 1820 ||
+modelid == 1821 ||
+modelid == 1825 ||
+modelid == 1826 ||
+modelid == 1829 ||
+(modelid >= 2551 && modelid <= 2554) ||
+(modelid >= 1526 && modelid <= 1536) ||
+(modelid >= 1217 && modelid <= 1223) ||
+(modelid >= 1485 && modelid <= 1488))
+{
+if (modelid != 1533&&modelid > 270)
+{
+setshort(Loc + 0x56, 0x1c2);
+setfloat(Loc + 0x30, aimx);
+setfloat(Loc + 0x34, aimy);
+setfloat(Loc + 0x38, aimz);
+}
+}
+
+#cheat Remove Stuff In Your Way
+//ID: 18781
+//Score: 135
+//Author: edisoncarter
+//Category: Environment
+//Description: Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, benches, cars, people that get in your way without removing walls or buildings that would cause you to fall through the ground.  Thanks to Waterbottle for Remove Anything.
+//Image: http://www1.cheatdevice.com/gta/VCSRemoveStuffInYourWay.gif
+//Time: 19/11/2006 21:17:46
+//Working: Yes
+// By Edison Carter
+// Removes annoying trees, fences, lamp posts, telephone poles, mailboxes, 
+// benches, cars, people that get in your way without removing walls or
+// buildings that would cause you to fall through the ground.
+// Thanks to Waterbottle for Remove Anything.
+static xRightHandVector;
+static yRightHandVector;
+static zRightHandVector;
+static xForwardVector;
+static yForwardVector;
+static zForwardVector;
+static xUpVector;
+static yUpVector;
+static zUpVector;
+static xRotationalMomentum;
+static yRotationalMomentum;
+static zRotationalMomentum;
+static xVelocity;
+static yVelocity;
+static zVelocity;
+static dHealth;
+static steady;
+pitem = getint(pobj + 0x0150);
+if (pitem)
+{
+    modelid = getshort(pitem + 0x0056);
+    if (modelid < 750 ||
+        modelid == 1515 ||
+        modelid == 2627 ||
+        modelid == 7337 ||
+        modelid == 1820 ||
+        modelid == 1821 ||
+        modelid == 1825 ||
+        modelid == 1826 ||
+        modelid == 1829 ||
+        (modelid >= 2551 && modelid <= 2554) ||
+        (modelid >= 1526 && modelid <= 1536) ||
+        (modelid >= 1217 && modelid <= 1223) ||
+        (modelid >= 1485 && modelid <= 1488))
+    {
+        if (modelid != 1533)
+        {
+            setfloat(pitem + 0x0030, 0, 0, 0);
+            steady = 3;
+        }
+    }
+}
+if (steady > 0)
+{
+    steady--;
+    setfloat(pobj + 0x0000, xRightHandVector);
+    setfloat(pobj + 0x0004, yRightHandVector);
+    setfloat(pobj + 0x0008, zRightHandVector);
+    setfloat(pobj + 0x0010, xForwardVector);
+    setfloat(pobj + 0x0014, yForwardVector);
+    setfloat(pobj + 0x0018, zForwardVector);
+    setfloat(pobj + 0x0020, xUpVector);
+    setfloat(pobj + 0x0024, yUpVector);
+    setfloat(pobj + 0x0028, zUpVector);
+    setfloat(pobj + 0x0070, xRotationalMomentum);
+    setfloat(pobj + 0x0074, yRotationalMomentum);
+    setfloat(pobj + 0x0078, zRotationalMomentum);
+    setfloat(pobj + 0x0140, xVelocity);
+    setfloat(pobj + 0x0144, yVelocity);
+    setfloat(pobj + 0x0148, zVelocity);
+    setfloat(pcar + 0x027c, dHealth);
+}
+else
+{
+    xRightHandVector    = getfloat(pobj + 0x0000);
+    yRightHandVector    = getfloat(pobj + 0x0004);
+    zRightHandVector    = getfloat(pobj + 0x0008);
+    xForwardVector      = getfloat(pobj + 0x0010);
+    yForwardVector      = getfloat(pobj + 0x0014);
+    zForwardVector      = getfloat(pobj + 0x0018);
+    xUpVector           = getfloat(pobj + 0x0020);
+    yUpVector           = getfloat(pobj + 0x0024);
+    zUpVector           = getfloat(pobj + 0x0028);
+    xRotationalMomentum = getfloat(pobj + 0x0070);
+    yRotationalMomentum = getfloat(pobj + 0x0074);
+    zRotationalMomentum = getfloat(pobj + 0x0078);
+    xVelocity           = getfloat(pobj + 0x0140);
+    yVelocity           = getfloat(pobj + 0x0144);
+    zVelocity           = getfloat(pobj + 0x0148);
+    dHealth             = getfloat(pcar + 0x027c);
+}
+
+#cheat Central Locking
+//ID: 18780
+//Score: 169
+//Author: lordsturm
+//Category: Vehicle
+//Description: Only Vic can leave his car, no-one can force him out, and when he hijack's
+//cars, no-one can pull him back out, not even the police.
+//Hold Triangle for a little longer to leave cars.
+//Image: http://img98.imageshack.us/img98/83/centrallockingoi7.png
+//Time: 19/11/2006 21:08:42
+//Working: Yes
+if(buttons & CTRL_TRIANGLE)
+{setshort(pcar+0x232,  0);
+} else {
+setshort(pcar+0x232,  0x0101);
+}
+#off
+setshort(pcar+0x232,  0);
+
+#cheat Drive W/out car.
+//ID: 18779
+//Score: 109
+//Author: lilfrk12006
+//Category: Vehicle
+//Description: This is cool.
+//It makes you drive around like you where in the car but he car stays in place and if you crash the car the car that is sitting there will smash up.
+//
+//
+//EDITED BY: psphacker108 on 21/11/06 04:42:36
+//Image: http://img69.imageshack.us/img69/9735/video1zj7.gif
+//Time: 19/11/2006 19:03:11
+//Working: Yes
+//BY:LILFRK12006
+//WARNING:TUNN OFF THE FIRST CAR BEFORE
+//TRYING ON ANOTHER
+setchar(pcar + 0x00000043, 8);
+#off
+setchar(pcar + 0x00000043, 9);
+
+
+#cheat Power Driving
+//ID: 18764
+//Score: 210
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: An inspiration from Power Jump, this let's you fly while in a car!
+//Controls:
+//X: Accelerate, Square: Brake, O: Increase upward speed, Analog Down: Increase Forward Speed, Analog Up: Stay On Ground/Descend, Down: Keep Car Leveled
+//Works now!
+//Image: http://www.rottenbakon.com/ddm/PD.gif
+//Time: 18/11/2006 21:10:35
+//Working: Yes
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78, -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148, +Up);
+}
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+setfloat(pcar + 0x0000027C,   1000000000);
+setfloat(pcar + 0x0000010C,   0);
+static ZLoc;
+if(press & CTRL_DOWN)
+{
+ZLoc = getfloat(pcar + 0x38);
+}
+if(buttons & CTRL_DOWN)
+{
+Power = 0;
+setfloat(pcar + 0x38, ZLoc);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+
+#cheat Force Touch
+//ID: 18759
+//Score: 193
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: Touch a car or other object (doesn't always work on peds) and they will go flying!
+//Image: http://img396.imageshack.us/img396/192/video1ji3.gif
+//Time: 18/11/2006 19:05:35
+//Working: Yes
+Carplayer = getint(pplayer+0x150);
+Carcar = getint(pcar+0x150);
+boost = 5;
+thrust = boost * 0.00333;
+if(getint(pplayer+0x150))
+{
+setfloat(Carplayer + 0x0140,  getfloat(Carplayer + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(Carplayer + 0x0144,  getfloat(Carplayer + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(Carplayer + 0x0148,  getfloat(Carplayer + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setchar(Carplayer + 0x1c9, getchar(Carplayer + 0x1c9) | 0x10);
+}
+}
+if(getint(pcar+0x150))
+{
+setfloat(Carcar + 0x0140,  getfloat(Carcar + 0x0140) + getfloat(pcar + 0x0010) + thrust);
+setfloat(Carcar + 0x0144,  getfloat(Carcar + 0x0144) + getfloat(pcar + 0x0014) + thrust);
+setfloat(Carcar + 0x0148,  getfloat(Carcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setchar(Carcar + 0x1c9, getchar(Carcar + 0x1c9) | 0x10);
+}
+}
+
+#cheat Defense Orbs
+//ID: 18752
+//Score: 187
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Touch a car to make it spin around you. Protecting you from anyone coming close to you. If the car touch a car it will also protect you (max 2 cars can protect). cars spin alot faster then the video show.
+//
+//Took some code from edisons blendo cheat...
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/orbs.gif
+//Time: 18/11/2006 17:21:12
+//Working: Yes
+static Orb1;
+static Orb2;
+static rot;
+
+if(!Orb2)
+{
+    setshort(0x08e90bd8,  1,  'T',  'o',  'u' ,  'c',  'h',  ' ',  'a',  ' ',  'c',  'a',  'r',  ' ',  't',  'o',  ' ',  'm',  'a',  'k',  'e',  ' ', 'i',  't',  ' ',  'p',  'r',  'o',  't',  'e',  'c',  't',  ' ',  'y',  'o',  'u', '!',  0);
+}
+
+p = getint(pobj + 0x150);
+
+if (p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+        Orb1 = p;
+}
+
+
+if (Orb1)
+{
+    setfloat(Orb1 + 0x08, 0);
+    setfloat(Orb1 + 0x18, 0);
+    setfloat(Orb1 + 0x20, 0, 0, 1);
+    setfloat(Orb1 + 0x30,  getfloat(pplayer + 0x30) - cos(rot) * 12);
+    setfloat(Orb1 + 0x34,  getfloat(pplayer + 0x34) + sin(rot) * 12);
+    setfloat(Orb1 + 0x38,  getfloat(pplayer + 0x38));
+    setfloat(Orb1 + 0x78,  1);
+    setfloat(Orb1 + 0x027c,  10000.0);
+    rot += 10;
+    p = getint(Orb1 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb2 = p;
+}
+
+if (Orb2)
+{
+    setfloat(Orb2 + 0x08, 0);
+    setfloat(Orb2 + 0x18, 0);
+    setfloat(Orb2 + 0x20, 0, 0, 1);
+    setfloat(Orb2 + 0x30,  getfloat(pplayer + 0x30) - cos(rot+180) * 12);
+    setfloat(Orb2 + 0x34,  getfloat(pplayer + 0x34) + sin(rot+180) * 12);
+    setfloat(Orb2 + 0x38,  getfloat(pplayer + 0x38));
+    setfloat(Orb2 + 0x78,  1);
+    setfloat(Orb2 + 0x027c,  10000.0);
+    p = getint(Orb2 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb1 = p;
+}
+#off
+Orb1 = Orb2 = rot = 0;
+
+#cheat Rocket quick switch
+//ID: 18745
+//Score: 88
+//Author: lilfrk12006
+//Category: Weapons
+//Description: If you need to switch to the rocket launcher really quick have this code on. all you do is hit LEFT on the d-pad and it goes to rocket launcher...you can still go to the other weapons by hiting RIGHT on the d-pad.
+//Image: none
+//Time: 17/11/2006 22:58:25
+//Working: Yes
+//BY:LILFRK12006
+//
+//If you need to switch to the rocket launcher really quick have this code on. all you do is hit LEFT on the d-pad and it goes to rocket launcher...you can still go to the other weapons by hiting RIGHT on the d-pad.
+setshort(pplayer + 0x00000620, 1);
+
+#cheat Remote Control Vehicle
+//ID: 18742
+//Score: 230
+//Author: dwinch
+//Category: Vehicle
+//Description: Gif shows how it works first, then examples of things you can do!
+//Great for making video clips of stunts.
+//Two camera modes, stationary/follow car.
+//Hellis are sketchy all others work fine. Now one cheat!
+//any questions pm me at gtaforums.com: Winchy
+//
+//
+//Image: http://smg.photobucket.com/albums/v514/Winchy/RCV.gif
+//Time: 17/11/2006 19:12:23
+//Working: Yes
+static Text;
+if (!Text)
+{
+setshort(0x8E90BD8, 1, 'O', '+', 'U', 'p', '=', 'L', 'e', 'a', 'v', 'e', ' ', 'c', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'D', 'o', 'w', 'n', '=', 'R', 'e', 't', 'u', 'r', 'n', ' ', ' ', ' ', 'N', 'o', 't', 'e', '=', 'H', 'U', 'D', '/', 'R', 'a', 'd', 'a', 'r', ' ', ' ', ' ', 'O', '+', 'L', 'e', 'f', 't', '/', 'R', 'i', 'g', 'h', 't', '=', 'C', 'a', 'm', 0);
+}
+setchar(pplayer+0x4C, 0x10, 0x20);
+if (press & CTRL_CIRCLE&&press & CTRL_UP)
+{
+Text = true;
+setchar(pplayer+0x8B4, 0x36);
+setchar(pplayer+0x8B4, 0x38);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+if (press & CTRL_NOTE)
+{
+setchar(0x9A63413, getchar(0x9A63413) ^ 0x02);
+setchar(0x9A63418, getchar(0x9A63418) ^ 0x01);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_CIRCLE&&press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+#off
+{
+setchar(pplayer+0x4C, 0x00, 0x00);
+setchar(0x9A63413, 0x00);
+setchar(0x9A63418, 0x01);
+}
+
+//Made by dwinch
+//Thanks to Waterbottle and DDM
+
+#cheat Blendo
+//ID: 18741
+//Score: 172
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Use a car as a weed wacker.  You can be on foot or in a car.  Inspired by the battlebot by the MythBusters.
+//Image: http://www1.cheatdevice.com/gta/VCSBlendo.gif
+//Time: 17/11/2006 18:46:19
+//Working: Yes
+static psel;
+if (psel == 0)
+{
+    setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', ' ', 'c', 'a', 'r', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', 0);
+}
+p = getint(pobj + 0x150);
+if (p && getshort(p + 0x56) >= 170 && getshort(p + 0x56) <= 280)
+{
+    psel = p;
+    setfloat(psel + 0xd0, getfloat(psel + 0xd0) * 3.0);
+    setfloat(psel + 0xd4, getfloat(psel + 0xd4) * 3.0);
+}
+if (psel)
+{
+    setfloat(psel + 0x08, 0);
+    setfloat(psel + 0x18, 0);
+    setfloat(psel + 0x20, 0, 0, 1);
+    setfloat(psel + 0x30, getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 10.0);
+    setfloat(psel + 0x34, getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 10.0);
+    setfloat(psel + 0x38, getfloat(pplayer + 0x38) + 0.5);
+    setfloat(psel + 0x78, getfloat(psel + 0x78) - 0.015);
+    setfloat(psel + 0x027c, 100000.0);
+}
+#off
+psel = 0;
+
+#cheat Submarine Vehicles
+//ID: 18738
+//Score: 232
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat allows your car to drive underwater! Just drive into water, turn the cheat on, and use X to drive, analog left and right to steer, and analog up and down to dive and return. Thanks to EC & Rela82me for their codes used in this.
+//Image: http://img98.imageshack.us/img98/1115/yehtx8.gif
+//Time: 17/11/2006 11:32:23
+//Working: Yes
+static UnderWater;
+static Height;
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78, -xstick / 40);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 1.5;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+  }
+
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148, +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148, -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38, Height);
+}
+
+#cheat Drive on the Wild Side
+//ID: 18737
+//Score: 83
+//Author: psphacker108
+//Category: Vehicle
+//Description: active while in a car or else you will spin like crazy! Vic will be on the side of the car that you get into! you can see him actually driving ( will not work on bikes) Works on helicopters  when you want this off turn off  everything goes back to normal.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2.gif
+//Time: 17/11/2006 04:40:21
+//Working: Yes
+setchar(pplayer + 0x000001CA, 60);
+
+#cheat Vic bleeds w/out loosing health
+//ID: 18734
+//Score: 110
+//Author: lilfrk12006
+//Category: Player
+//Description: Makes vic bleed all over the place with out lossing health.
+//Edit: Combined two cheats so when you turn it off he stops bleeding.
+//
+//EDITED BY: Durka Durka Mahn on 18/11/06 16:45:33
+//Image: http://img153.imageshack.us/img153/4143/vicbleedingqi6.png
+//Time: 17/11/2006 03:00:22
+//Working: Yes
+//BY:LILFRK12006
+setchar(pplayer + 0x000001CB, 8);
+#off
+setchar(pplayer + 0x000001CB,   0);
+
+#cheat makes certain things go invisable
+//ID: 18730
+//Score: 71
+//Author: magical trevor
+//Category: Environment
+//Description: VERY random, this cheat can make buildings dissapear, cars dissapear, roads, and even leave torsos walking about!
+//Image: http://img329.imageshack.us/img329/8381/copyofscreen1mb5.jpg
+//Time: 16/11/2006 19:00:49
+//Working: Yes
+sethex(0x087259C7,  0x16);
+
+#cheat The Evil Box
+//ID: 18721
+//Score: 125
+//Author: Waterbottle
+//Category: Misc
+//Description: Try and stay away from the evil box as long as possible. Touch an object (light post for example) to make the box start chasing you.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/evilbox.gif
+//Time: 15/11/2006 20:59:35
+//Working: Yes
+static state;
+static address;
+static ext;
+static score;
+static topscore;
+if(!state)//get address of a weapon
+{
+  setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', 'n', ' ', 'o' , 'b', 'j', 'e', 'c', 't', ' ', 't' , 'o', ' ', 's', 't', 'a', 'r', 't' , '.', ' ', 'T', 'o', 'p', ' ', 's' , 'c', 'o', 'r', 'e', ':');
+  int = int(topscore);
+  size = 0;
+  if(int == 0) setshort(0x08e90c20, '0', 0); else {
+  for(i = 1; i <= int; i*=10) size+=2;
+  for(i = 0; int > 0; i+=2 )
+  {
+  setshort(0x08e90c20+size-i, '0' + (int % 10));
+  int = int(int/=10);
+  }
+  setshort(0x08e90c20+i, 0);
+  }
+  if(getint(pplayer+0x150)>0x09910000)
+  {
+  address = getint(pplayer+0x150);
+  ext = 1.0;
+  state = 1;
+  oldobj = getshort(address+0x56);
+  oldx = getfloat(address+0x30);
+  oldy = getfloat(address+0x34);
+  oldz = getfloat(address+0x38);
+  }
+}
+if(state == 1)//teleport and set up object
+{
+  rand = (getint(pplayer) + getint(0x08bb3b40)) % 4;
+  setfloat(address + 0x30, getfloat(pplayer+0x30) + 25 * -getfloat(pplayer+4));
+  setfloat(address + 0x34, getfloat(pplayer+0x34) + 25 * -getfloat(pplayer));
+  setfloat(address + 0x38, getfloat(pplayer+0x38));
+  setshort(address + +0x56, 0x0207+rand);
+  state = 2;
+}
+if(state==2)
+{
+dx = getfloat(pplayer+0x30) - getfloat(address+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(address+0x34);
+setfloat(address + 0x30, getfloat(address + 0x30) + dx * 0.05 * ext);
+setfloat(address + 0x34, getfloat(address + 0x34) + dy * 0.05 * ext);
+setfloat(address + 0x38, getfloat(pplayer + 0x38));
+ext+=0.001;
+
+setshort(0x08e90bd8, 1, 'S', 'C', 'O' , 'R', 'E', ':', ' ');
+int = int(score);
+size = 0;
+if(int == 0) setshort(0x08e90be8, '0', 0); else {
+for(i = 1; i <= int; i*=10) size+=2;
+for(i = 0; int > 0; i+=2 )
+{
+setshort(0x08e90be6+size-i, '0' + (int % 10));
+int = int(int/=10);
+}
+setshort(0x08e90be6+i, 0);
+}
+
+score++;
+if(sqrt(dx*dx)<0.75 && sqrt(dy*dy)<0.75)
+{
+setfloat(address + 0x30, 0, 0, 0);
+if(score > topscore) topscore = score;
+  setshort(address+0x56, oldobj);
+  setfloat(address+0x30, oldx);
+  setfloat(address+0x34, oldy);
+  setfloat(address+0x38, oldz);
+address = state = score = oldobj = oldx = oldy = oldz = 0;
+ext = 1.0;
+}
+}
+
+#cheat Car Stunts 2 (Hold O and use Analog)
+//ID: 18720
+//Score: 170
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Redo of my first version, this one has perfect speed on both left and right, no mess ups, and also now includes FLIPPING! To rotate hold O and use left + right on the analog, then use up and down on the analog to do flips. Make cool combinations as well!
+//Image: http://img517.imageshack.us/img517/4745/flipsyu1.gif
+//Time: 15/11/2006 20:41:17
+//Working: Yes
+if(buttons&CTRL_CIRCLE)
+{
+    setfloat(pcar+0x70, ystick * getfloat(pcar) / 8);
+    setfloat(pcar+0x74, ystick * getfloat(pcar+4) / 8);
+    setfloat(pcar+0x78, -xstick / 8);
+}
+
+
+
+
+#cheat Pet Car
+//ID: 18718
+//Score: 181
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat will make the last entered car follow you! To use this, turn it on, get into a car, then get out. Then use these controls:
+//R+Up- Turn On Follow
+//R+Down- Turn Off Follow
+//R+O- Blow up car
+//Down- Car hop (Best if follow is OFF)
+//R+ Analog- Spin
+//Image: http://img294.imageshack.us/img294/7374/video1km2.gif
+//Time: 15/11/2006 16:12:00
+//Working: Yes
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,  getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,  +0.2);
+}
+
+#cheat Invisible Vic like lcs
+//ID: 18713
+//Score: 104
+//Author: psphacker108
+//Category: Player
+//Description: Sure theres the invisible Cheat for vcs But nothing compairs to the first invisible cheat for lcs does it! well here it is for vcs not ported ( simply turn off to get Vic back to normal with no damage. discovered By: Psphacker108
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-1.gif
+//Time: 15/11/2006 05:52:46
+//Working: Yes
+setfloat(0x0988FC90, 100);
+
+#cheat Side ways Power Jump
+//ID: 18712
+//Score: 69
+//Author: psphacker108
+//Category: Player
+//Description: Heres my second version of Vic power Jumping a diffrent way except this time Sideways! Doesn't madder what direction your facing!( will make vic a little glitchy on ground but not in air!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1.gif
+//Time: 15/11/2006 05:50:07
+//Working: Yes
+setfloat(pplayer + 0x00000008, 5000);
+
+#cheat Car Stunts (Hold O and use analog)
+//ID: 18710
+//Score: 90
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: While on hold O and use the analog stick to do cool spinning stunts in a car. Can be used on land or in air. Tap the buttons to spin longer, hold them to spin faster!
+//Note: Video is kinda crappy, I know. Loads better in-game.
+//Image: http://img182.imageshack.us/img182/803/spinxk9.gif
+//Time: 15/11/2006 00:18:34
+//Working: Yes
+if(xstick < -0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78, +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78, getfloat(pcar + 0x78)-0.02);
+}
+
+#cheat Superman 2
+//ID: 18708
+//Score: 370
+//Author: Waterbottle
+//Category: Player
+//Description: A completly redone version of the superman cheat. In opposition to the old one you can now rotate on all axises.
+//Use analoge to rotate and X to accelerate.
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/super.gif
+//Time: 14/11/2006 15:59:00
+//Working: Yes
+pstartfly = getshort(pplayer+0x1C8);
+static speedmult;
+setfloat(pplayer + 0x4E4, 150.0);//health
+
+   setfloat(pplayer + 0x78, -0.03 * xstick);
+   setfloat(pplayer + 0x70, 0.03 * ystick * getfloat(pplayer));
+   setfloat(pplayer + 0x74, 0.03 * ystick * getfloat(pplayer+4));
+   if(buttons & CTRL_CROSS) {
+                  setshort(pplayer+0x1c8, 0x1020);
+            if(speedmult<1.4) speedmult+=0.01;
+   } else if(speedmult >= 0) speedmult*=0.95;
+
+   if(pstartfly==0x1020)
+   {
+   updown = (getfloat(pplayer+0x28)>0) ? 1 : -1;
+   setfloat(pplayer+0x140, -getfloat(pplayer+4)*speedmult);
+   setfloat(pplayer+0x144, getfloat(pplayer)*speedmult);
+   setfloat(pplayer+0x148, (getfloat(pplayer+0x18)+cos(90/180*3.1415))*speedmult * updown);    
+   }
+
+#cheat Stunt Man (updated)
+//ID: 18696
+//Score: 261
+//Author: Waterbottle
+//Category: Player
+//Description: This allows you to do flips while jumping, also added alittle message that pops up saying the score you got for the trick, and you get the score added to your money.
+//
+//Extra points awarded for 2 or more jumps after each other
+//
+//Analog does tricks in air
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/stuntman.gif
+//Time: 12/11/2006 22:19:43
+//Working: Yes
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+    jumping = true;
+    if(xstick)
+    {
+    setfloat(pplayer+0x78, -xstick / 2);
+    score += sqrt(xstick*xstick) * 40;
+    }
+    if(ystick)
+    {
+    setfloat(pplayer+0x70, ystick * getfloat(pplayer) / 2);
+    setfloat(pplayer+0x74, ystick * getfloat(pplayer+4) / 2);
+    score += sqrt(ystick*ystick) * 50;      
+    }
+} else if(jumping) {
+       
+jumping = 0;    
+setfloat(pplayer+0x70, 0, 0, 0);  
+time = 40;
+setint(0x08bde55c, getint(0x08bde55c)+score);
+rand = (getint(pplayer) + getint(0x08bb3b40)) % 3;
+
+}
+else if(time > 0 && score) {
+       time--;
+       int = int(score);
+       if(rand == 0) setshort(0x08e90bd8, 1, ' ', 'W', 'o', 'w' , ', ', ' ', 'y', 'o', 'u', ' ', 'g', 'o', 't', ' ');
+       else if(rand == 1) setshort(0x08e90bd8, 1, ' ', ' ', 'S', 'i', 'c' , 'k', ' ', 's', 't', 'u', 'n', 't', '!', ' '); 
+       else setshort(0x08e90bd8, 1, 'N', 'i', 'c' , 'e', ' ', 'f', 'l', 'i', 'p', ' ', 'm', 'a', 'n', ' ');
+       size = 0;
+       for(i = 1; i < int; i*=10) size+=2;
+       for(i = 0; int > 0; i+=2 ) {
+       setshort(0x08e90bf4+size-i, '0' + (int % 10));
+       int = int(int/=10);
+       }
+       if(rand == 0) setshort(0x08e90bf4+i, ' ', 'p', 'o', 'i', 'n', 't', 's', '!', ' ', ':', ')', 0);
+       else if(rand == 1) setshort(0x08e90bf4+i, ' ', '$', ' ', 'f', 'o', 'r', ' ', 'y', 'o', 'u', '!', 0);
+       else setshort(0x08e90bf4+i, ' ', 'p', 'o', 'i', 'n', 't', 's', '.', 0);
+       }
+else time = score = 0;
+
+#cheat upside down and right side up Vic
+//ID: 18695
+//Score: 73
+//Author: psphacker108
+//Category: Player
+//Description: must not be facing north face directly south and if you walk a little bit you'll see vic get glitchy and go upside down and right side up! activate the power jump and he will power jump Up side down!
+//Image: http://img163.imageshack.us/my.php?image=video1uk5.gif
+//Time: 12/11/2006 20:40:39
+//Working: Yes
+setfloat(pplayer + 0x00000000, 10);
+
+#cheat Hover Car!
+//ID: 18694
+//Score: 414
+//Author: Waterbottle
+//Category: Vehicle
+//Description: Any vehicle you are in will be able to fly.
+//UP/DOWN: accend/decend
+//ANALOG: rotate/tilt car
+//X: accelerate
+//[]: decelerate, reverse
+//Image: http://img.photobucket.com/albums/v157/waterbottle2/hovervcs.gif
+//Time: 12/11/2006 20:17:35
+//Working: Yes
+static height;
+if(!height)
+  height = getfloat(pcar+0x38);
+static Zdeg;
+  if(!Zdeg)
+  Zdeg = getfloat(pplayer+0x8d0);
+ 
+  static st;
+  static speed;
+  setfloat(pcar+0x1c8, 0x1020);
+  setfloat(pcar+0x38, height);
+  setfloat(pcar+0x148, 0);
+  Zdeg += xstick * 1.5;
+  if(ystick)
+  {
+  Xdeg = getfloat(pcar) * -10 * ystick;
+  Ydeg = getfloat(pcar+4) * -10 * ystick;
+  }
+  else Ydeg = Xdeg = 0;
+
+  if(buttons & CTRL_CROSS)
+  {
+  if(speed < 0)
+          speed += 0.02;
+  if(speed < 0.75)
+          speed += 0.01;
+  }
+  else
+  if(buttons & CTRL_SQUARE)
+  {
+  if(speed > 0)
+          speed -= 0.015;
+  if(speed > -0.4)
+          speed -= 0.008;
+  }
+  else speed *= 0.95;
+
+  if(buttons & CTRL_UP) height+=0.1;
+  if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+ 
+  setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+  setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+  setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+  setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+  setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+  setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+  setfloat(pcar+0x20, -sin(Ydeg));
+  setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+  setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+ 
+  setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+  setfloat(pcar+0x144, getfloat(pcar)*speed);
+  if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 0;
+
+#cheat Pyrokenesis
+//ID: 18693
+//Score: 234
+//Author: Waterbottle
+//Category: Pedestrians
+//Description: Aim at any ped to set it on fire
+//Thanks to DDM for finding a fire pointer, which really is the only hard thing in order to make it.
+//Image: none
+//Time: 12/11/2006 20:14:48
+//Working: Yes
+pped = getint(0x08BA1D70);
+if(pped)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);
+}
+
+#cheat Spinners
+//ID: 18692
+//Score: 249
+//Author: vettefan88
+//Category: Vehicle
+//Description: Whenever your in a vehicle the rims will spin non-stop giving the vehicle spinners.
+//
+//EDITED BY: edisoncarter on 12/11/06 20:10:18
+//Image: none
+//Time: 12/11/2006 19:35:26
+//Working: Yes
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644, spin, spin, spin, spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+
+#cheat Fireball Slingshot
+//ID: 18688
+//Score: 311
+//Author: edisoncarter
+//Category: Pedestrians
+//Description: Target a ped to pull them towards you, then release.  Thanks to Durka Durka Mahn for fire address.
+//Image: http://www1.cheatdevice.com/gta/VCSFireballSlingshot.gif
+//Time: 12/11/2006 18:17:46
+//Working: Yes
+// By Edison Carter
+// Target a ped to pull them towards you, then release
+static x;
+static y;
+static z;
+static pcurrentped;
+static pfireped;
+static nfirecount;
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+    if (pcurrentped == 0)
+    {
+        x = getfloat(pped + 0x0030);
+        y = getfloat(pped + 0x0034);
+        z = getfloat(pped + 0x0038);
+        pcurrentped = pped;
+    }
+    dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+    dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+    setshort(pped + 0x01c8, 0x1020);
+    setfloat(pped + 0x0140, -dx * 0.05);
+    setfloat(pped + 0x0144, -dy * 0.05);
+    setfloat(pped + 0x0148, -dz * 0.05);
+}
+else
+{
+    if (pcurrentped != 0)
+    {
+        pped = pcurrentped;
+        dx = x - getfloat(pped + 0x0030);
+        dy = y - getfloat(pped + 0x0034);
+        dz = z - getfloat(pped + 0x0038);
+        setshort(pped + 0x01c8, 0x1020);
+        setfloat(pped + 0x0140, dx * 0.1);
+        setfloat(pped + 0x0144, dy * 0.1);
+        setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.01 + 0.1);
+        pfireped = pcurrentped;
+        nfirecount = 0;
+        pcurrentped = 0;
+    }
+}
+if (nfirecount++ > 3 && nfirecount < 30 * 30 && pfireped)
+{
+    // thanks to Durka Durka Mahn for fire pointer
+    setchar(0x08be3a20, 1);
+    setfloat(0x08be3a30, getfloat(pfireped + 0x0030), getfloat(pfireped + 0x0034), getfloat(pfireped + 0x0038));
+}
+
+#cheat Teleport To Manual Aim Target (X)
+//ID: 18685
+//Score: 174
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Use manual aim with any weapon (best with M16) and hit X to teleport to what you are aiming at. Note it doesn't always work as objects get in the way, so it's best used if going from rooftop to rooftop.
+//Image: http://img20.imageshack.us/img20/8978/teleportlf0.gif
+//Time: 12/11/2006 15:52:45
+//Working: Yes
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58); 
+if(buttons & CTRL_RTRIGGER&&press & CTRL_CROSS)
+{
+setfloat(pplayer + 0x30, aimx);
+setfloat(pplayer + 0x34, aimy);
+setfloat(pplayer + 0x38, aimz);
+}
+
+#cheat Disco Sky
+//ID: 18684
+//Score: 161
+//Author: sokz
+//Category: Environment
+//Description: This cheat will make the sky turn into variety colors like Green and Red.
+//Image: none
+//Time: 12/11/2006 09:00:59
+//Working: Yes
+setchar(0x08bb3b40, 144, 30);
+
+
+#cheat Gradation of color
+//ID: 18855
+//Score: 127
+//Author: NRG500
+//Category: Vehicle
+//Description: Your car changes color by making a gradation
+//Image: http://www.libertycitystories.fr/~nrg500/images/autres/video2.gif
+//Time: 23/11/2006 17:36:23
+//Working: Yes
+//By NRG500
+
+static r;
+static rPlus;
+static v;
+static vPlus;
+static b;
+static bPlus;
+
+if(!r && !v && !b)
+{
+   r=255;
+   v=0;
+   b=0;
+}
+
+if(!rPlus  && !vPlus && !bPlus)
+{
+   rPlus = 0;
+   vPlus = 1;
+   bPlus = 1;
+}
+
+
+if(vPlus && !rPlus)
+{
+   v++;
+   r--;
+
+   if(v==255)
+   {
+      vPlus=0;
+      rPlus=1;
+   }
+}
+else if(bPlus && !vPlus)
+{
+   b++;
+   v--;
+
+   if(b==255)
+   {
+      bPlus=0;
+      vPlus=1;
+   }
+}
+else if(rPlus && !bPlus)
+{
+   r++;
+   b--;
+
+   if(r==255)
+   {
+      rPlus=0;
+      bPlus=1;
+   }
+}
+
+setchar(pcar+0x224, r);
+setchar(pcar+0x225, v);
+setchar(pcar+0x226, b);
+
+#cheat Car Diamond
+//ID: 19036
+//Score: 198
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Make a gang on the streets of Vice City! Turn the code on and touch any 4 cars, and they will follow you, protecting you in a solid diamond shaped formation.
+//Image: http://img243.imageshack.us/img243/2286/video2nd6.gif
+//Time: 14/12/2006 01:24:21
+//Working: Yes
+static UM;
+static L;
+static R;
+static BM;
+
+if(!R||!L||!UM||!BM)
+{
+    setshort(0x08e90bd8,   1,   'K', 'e', 'e', 'p', ' ', 't', 'o', 'u', 'c', 'h', 'i', 'n', 'g', ' ', 'c', 'a', 'r', 's', '!',  0);
+}
+
+gcar = getint(pobj + 0x150);
+
+if (gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+        UM = gcar;
+}
+
+if(UM)
+{
+setfloat(UM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  9.0);
+setfloat(UM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  9.0); 
+setfloat(UM + 0x38,   getfloat(pcar + 0x38));
+setfloat(UM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(UM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(UM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(UM+0x140, 0, 0, 0);
+setfloat(UM+0x70, 0, 0, 0);
+setfloat(UM+0x27C, 1000);
+gcar = getint(UM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+BM = gcar;
+}
+}
+
+if(BM)
+{
+setfloat(BM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  -7.5);
+setfloat(BM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  -7.5); 
+setfloat(BM + 0x38,   getfloat(pcar + 0x38));
+setfloat(BM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(BM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(BM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(BM+0x140, 0, 0, 0);
+setfloat(BM+0x70, 0, 0, 0);
+setfloat(BM+0x27C, 1000);
+gcar = getint(BM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+L = gcar;
+}
+}
+
+if(L)
+{
+setfloat(L + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *   6.0);
+setfloat(L + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *   6.0); 
+setfloat(L + 0x38,   getfloat(pcar + 0x38));
+setfloat(L + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(L+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(L+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(L+0x140, 0, 0, 0);
+setfloat(L+0x70, 0, 0, 0);
+setfloat(L+0x27C, 1000);
+gcar = getint(L + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+R = gcar;
+}
+}
+
+if(R)
+{
+setfloat(R + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *  -6.0);
+setfloat(R + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *  -6.0); 
+setfloat(R + 0x38,   getfloat(pcar + 0x38));
+setfloat(R + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(R+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(R+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(R+0x140, 0, 0, 0);
+setfloat(R+0x70, 0, 0, 0);
+setfloat(R+0x27C, 1000);
+gcar = getint(R + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+UL = gcar;
+}
+}
+
+#off
+UM = BM = L = R = 0;
+
+
+#cheat Hood Surfing
+//ID: 19029
+//Score: 106
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Turn on and touch any other car when you're in one yourself. Your car will pop up right above the car you touched and you will follow every single move it makes, making an illusion of surfing!
+//Image: http://img144.imageshack.us/img144/4248/video1kw8.gif
+//Time: 13/12/2006 01:20:25
+//Working: Yes
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30,  getfloat(surfee + 0x30) + getfloat(surfee + 0x10) * - 2.0);
+setfloat(pcar + 0x34,  getfloat(surfee + 0x34) + getfloat(surfee + 0x14) * -2.0);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+setfloat(pcar+0x140, 0, 0, 0);
+setfloat(pcar+0x70, 0, 0, 0);
+}
+#off
+surfee = 0;
+
+#cheat Grapple Gun
+//ID: 19027
+//Score: 181
+//Author: Durka Durka Mahn
+//Category: Misc
+//Description: This cheat turns any aimable weapon into a grapplegun! Hold R and X to move towards the target. Hold L along with the other two to increase your grappling speed!
+//Image: http://img171.imageshack.us/img171/1659/video1fq6.gif
+//Time: 13/12/2006 00:28:22
+//Working: Yes
+static grapplespeed;
+aimx = getfloat(pplayer + 0x30) - getfloat(0x08ba1d50);
+aimy = getfloat(pplayer + 0x34) - getfloat(0x08ba1d54);
+aimz = getfloat(pplayer + 0x38) - getfloat(0x08ba1d58); 
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CROSS)
+{
+    setshort(pplayer + 0x01c8,  0x1020);
+    setfloat(pplayer + 0x0140,  -aimx * grapplespeed);
+    setfloat(pplayer + 0x0144,  -aimy * grapplespeed);
+    setfloat(pplayer + 0x0148,  -aimz * grapplespeed);
+}
+if(buttons & CTRL_LTRIGGER)
+{
+grapplespeed = 0.01;
+}
+else
+{
+grapplespeed = 0.005;
+}
+
+#cheat Grasshopper
+//ID: 19024
+//Score: 87
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Another vehicle code, this one will allow you to clear over buildings with the touch of a button! To use simply get a good amount of speed and then hit down on the d-pad for a HUGE burst of air!
+//Image: none
+//Time: 12/12/2006 00:42:21
+//Working: Yes
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148,  +0.8);
+boost = 1.5;
+thrust = boost * 0.01;
+setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+}
+
+#cheat Bulldozer
+//ID: 19023
+//Score: 150
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: This cheat allows you to pick up other cars and smash them up!
+//Controls- While holding R, touch a car to pick it up - Hit O to smash the car into the ground - Hit down to toss the car - Hit R to retrieve the last picked up car.
+//Image: http://img146.imageshack.us/img146/5170/video1qi8.gif
+//Time: 12/12/2006 00:18:03
+//Working: Yes
+static onoff;
+
+if(getint(pcar + 0x150))
+{
+ppedc = getint(pcar + 0x150);
+}
+if(ppedc&&buttons & CTRL_RTRIGGER&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+onoff = 1;
+}
+if(onoff&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+setfloat(ppedc + 0x30,  getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 7.5);
+setfloat(ppedc + 0x34,  getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 7.5);
+setfloat(ppedc + 0x38,  getfloat(pplayer + 0x38) + 2.5);
+setfloat(ppedc + 0x70, 0, 0, 0);
+if(press & CTRL_CIRCLE)
+{
+setfloat(ppedc + 0x0148, -1.2);
+setfloat(ppedc + 0x027C, getfloat(ppedc + 0x027C) - 250);
+onoff = 0;
+}
+else
+{
+setfloat(ppedc + 0x0148, 0);
+}
+if(press & CTRL_DOWN)
+{
+boost = 5;
+thrust = boost * 0.00333; 
+setfloat(ppedc + 0x0140,   getfloat(ppedc + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(ppedc + 0x0144,   getfloat(ppedc + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(ppedc + 0x0148,   getfloat(ppedc + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+onoff = 0;
+}
+}
+
+#cheat Fire cars on
+//ID: 19005
+//Score: 75
+//Author: psphacker108
+//Category: Player
+//Description: Turn on this code and hit the car from the side by the first 2 punch's if your close enough it will automatically catch the car on fire! car needs no previous damage at all. if you hit a person on a bike they fly straight in  the air. Admins leave seprate
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video3.gif
+//Time: 09/12/2006 04:17:14
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,   0x00,   0x00,   0x0E); 
+sethex(0x98B4A40 + 0xD0,   0x00,   0x00,   0xEE,   0xEE);
+
+#cheat Fire cars off
+//ID: 19004
+//Score: 53
+//Author: psphacker108
+//Category: Player
+//Description: This is the off for the car's on fire code I made.
+//Image: none
+//Time: 09/12/2006 04:15:54
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,   0x00,   0x00,   0x0E); 
+sethex(0x98B4A40 + 0xD0,   0x00,   0x00,   0x8C,   0x42);
+
+#cheat Push over cars
+//ID: 19003
+//Score: 99
+//Author: psphacker108
+//Category: Player
+//Description: This cheat will allow you to run/walk into a car and make it move around like the driver has no controll, and with this you can walk on the tops of cars if you hit it just right! Admins leave seprate! look for the off code down below.
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-2.gif
+//Time: 09/12/2006 04:11:06
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x52);
+
+#cheat Power Jump island to island
+//ID: 19002
+//Score: 70
+//Author: psphacker108
+//Category: Player
+//Description: This code when activated will make you go straight ahead about 5 miles in game time I guess. it launches you with this on you can go island to island ( Simply get close enough to a island on the edge and activate and you will fly straight a head high.
+//Image: none
+//Time: 09/12/2006 04:08:53
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x3F);
+
+#cheat Power Jump faster
+//ID: 19001
+//Score: 69
+//Author: psphacker108
+//Category: Player
+//Description: This code will make you power jump faster when you hit square it will automatically make you go really high really fast in the air.
+//Image: none
+//Time: 09/12/2006 04:08:09
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x41);
+
+#cheat Power Jump fly sideways
+//ID: 19000
+//Score: 57
+//Author: psphacker108
+//Category: Player
+//Description: This code will allow you to power jump sideways left to right really fast. if you ever need to get away from a gang that's the way to do it, will bring you a Mile or so away I guess. Watch the little map in the left bottom corner move!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video14.gif
+//Time: 09/12/2006 04:07:03
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x28);
+
+#cheat Power jump mod's / car push off
+//ID: 18999
+//Score: 52
+//Author: psphacker108
+//Category: Player
+//Description: This turns all of Power Jump fly sideways,Power Jump faster and turn's off power jump island to island. Also turn's off Pushing car's code.
+//Image: none
+//Time: 09/12/2006 04:06:04
+//Working: Yes
+sethex(0x98B4A40 + 0xD0,    0x00,   0x00,   0x00,   0x42);
+
+#cheat A new mission
+//ID: 18941
+//Score: 108
+//Author: NRG500
+//Category: Environment
+//Description: This is a new mission for ViceCityStories.
+//Just enter in the car spawning next to the 101 Bayshore safehouse to start the mission.
+//Image: none
+//Time: 30/11/2006 20:00:48
+//Working: Yes
+//By NRG500
+static etat;
+static chrono;
+static argent;
+
+if(!etat)
+{
+   etat = -1;
+
+   pspawn = 0x08E81290;
+   setint(pspawn,  224);
+   setfloat(pspawn + 4,  -365.03, -527.97, 12.16,  0);
+   pspawn += 0x30; 
+
+   setint(pspawn,  256); 
+   setfloat(pspawn + 4,  -794.46, -1177.70, 10.48, 190); 
+   pspawn += 0x30;
+
+}
+if(getfloat(pcar+0x30) > -796 && getfloat(pcar+0x30) < -792 && getfloat(pcar+0x34) < -1175 && getfloat(pcar+0x34) > -1179 && getshort(pcar+0x56) == 256)
+{
+   etat = 1;
+   temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+}
+if(etat == 1)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+      setshort(0x08e90bd8,   1, ' ', 'G', 'o', ' ', '~',   'b',   '~', 't', 'o',  ' ', 'D', 'i', 'a', 'z',  's',  ' ', 'm', 'a', 'n', 's', 'i', 'o', 'n',  '~',   'w',   '~', ' ', 't', 'o', ' ', 't', 'a', 'k', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'r', 'u', 'g', 's', '.', 0); 
+   else
+   temps = 0;
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511)
+   {
+       etat = 2;
+       temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 2)
+{
+
+   setshort(0x08e90bd8,   1, ' ', 'E', 'n', 't', 'e', 'r', ' ', 'i', 'n', ' ', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '~',   'w',   '~', 0);
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511 && getshort(pcar+0x56) == 224)
+   {
+      etat = 3;
+      setint(pplayer+0x00000910,  3);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 3)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'T', 'h', 'e', ' ', 'c', 'o', 'p', 's', ' ',  'a', 'r', 'e', ' ', 'c', 'h', 'a', 's', 'i',  'n', 'g', ' ', 'y', 'o', 'u', ', ', ' ', 's', 'o', 'w', ' ', 't', 'h', 'e', 'm', 0);
+   else
+   temps = 0;
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   {
+      setshort(0x08e90bd8,   1, ' ',  'C', 'o', 'm', 'e', ' ', 'b', 'a', 'c', 'k', ' ', 'i', 'n', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '.', '~',   'w',   '~', 0);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+
+
+   if(!getint(pplayer+0x00000910))
+   {
+      etat = 4;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 4)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+  
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'O', 'k', ', ', ' ', 'b', 'r', 'i', 'n', 'g', ' ',  'b', 'a', 'c', 'k', ' ', 't', 'h', 'e', ' ', 'g',  'o', 'o', 'd', 's', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 's', 'a', 'f', 'e', 'h', 'o', 'u', 's', 'e', 0);
+   else if( tempsActuel - 10 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'Q', 'u', 'i', 'c', 'k', 'l', 'y', ', ', ' ', 'y',  'o', 'u', ' ', 'd', 'o', 'n', ' ', 't', ' ', 'h',  'a', 'v', 'e', ' ', 'a', ' ', 'l', 'o', 't', ' ', 'o', 'f', ' ', 't', 'i', 'm', 'e', '!', 0);
+   else
+   {   
+      temps = 0;
+      if(!chrono)
+      {
+         chrono = 40;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+      
+      if(tempsActuel - temps2 >=1)
+      {
+         chrono --;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      setshort(0x08e90bd8,   1, 'T', 'i', 'm', 'e', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+      
+      if(chrono ==0)
+      {
+         etat = 10;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      if(getfloat(pcar+0x30) < -794 && getfloat(pcar+0x30) > -815 && getfloat(pcar+0x34) < -1170 && getfloat(pcar+0x34) > -1187)
+      {
+         etat = 5;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+   }
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   setshort(0x08e90bd8,   1, ' ',  'C', 'o', 'm', 'e', ' ', 'b', 'a', 'c', 'k', ' ', 'i', 'n', '~',   'b',   '~', 't', 'h', 'e', ' ', 'v', 'a', 'n', '.', '~',   'w',   '~', ' ', 't', 'i', 'm', 'e', ':', ' ', 0x30+chrono/10 , 0x30+chrono%10, 0);
+
+}
+if(etat == 5)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'P', 'a', 'r', 'k', ' ', 't', 'h', 'e', ' ', 'v',  'a', 'n', ' ', 'i', 'n', ' ', 't', 'h', 'e', ' ',  'g', 'a', 'r', 'a', 'g', 'e', ' ', 'a', 'n', 'd', ' ', 'l', 'e', 'a', 'v', 'e', ' ', 'i', 't', '.', 0);
+
+   if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 224)
+   etat = 6;
+
+}
+if(etat == 6)
+{
+   if((pplayer+0x30) > -826 && !pcar)
+   {
+      etat = 7;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat ==7)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90DD8,   1, ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'p', 'a',  's', 's', 'e', 'd',  ', ', ' ', '5', '0', '0', '$', ' ', 'f', 'o', 'r', ' ', 'y', 'o', 'u', ' ', '!', 0);
+   else
+   off();
+
+   if(!argent)
+   {
+      setint(0x08bde55c, getint(0x08bde55c)+500);
+      argent = 1;
+   }
+}
+if(etat ==10)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90DD8,   1, ' ', '~',   'r',   '~', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'f', 'a',  'i', 'l', 'e', 'd', ', ', ' ', 'y', 'o', 'u', ' ',  'a', 'r', 'e', ' ', 't', 'o', 'o', ' ', 's', 'l', 'o', 'w', '~',   'w',   '~', 0);
+   else
+   off();
+}
+
+#cheat Motorcycles Go Flipping v1
+//ID: 18916
+//Score: 85
+//Author: Haddenjms
+//Category: Vehicle
+//Description: Press up to make your car go flipping into the air. I went from one island to another with this cheat!!! This is more stable than car go flipping. this is untested as a cheat, only in hex editor! I will test and confirm.
+//
+//EDITED BY: ADePSP on 28/11/06 15:
+//Image: none
+//Time: 26/11/2006 03:51:08
+//Working: No
+//Press up to make your car go flipping
+// into the air. I went from one island 
+//to another with this cheat!!! But 
+//through hex editor, this is untested! I 
+//will test and confirm.
+//This is only for motorcycles
+(if pressslow & CTRL_Up)
+{
+sethex(0x00000027, FD)
+}
+
+#cheat RAPID ROCKETS
+//ID: 18915
+//Score: 201
+//Author: lilfrk12006
+//Category: Weapons
+//Description: this will give you RAPID fire rocket launcher the faster you push O the faster it shoots
+//
+//EDIT: You can hold O and it fires like a machine gun!
+//Image: none
+//Time: 26/11/2006 00:28:35
+//Working: Yes
+//BY: LILFRK12006
+setchar(pplayer + 0x0000064D, 11);
+
+#cheat Mission Complète
+//ID: 18914
+//Score: 94
+//Author: NRG500
+//Category: Environment
+//Description: Une nouvelle mission pour ViceCityStories, montez dans la phoenix devant la planque de Vice Port pour que la mission se lance.
+//Image: none
+//Time: 25/11/2006 23:52:37
+//Working: Yes
+//By NRG500
+static etat;
+static chrono;
+static argent;
+
+if(!etat)
+{
+   etat = -1;
+
+   pspawn = 0x08E81290;
+   setint(pspawn,  224);
+   setfloat(pspawn + 4,  -365.03, -527.97, 12.16,  0);
+   pspawn += 0x30; 
+
+   setint(pspawn,  256); 
+   setfloat(pspawn + 4,  -794.46, -1177.70, 10.48, 190); 
+   pspawn += 0x30;
+
+}
+if(getfloat(pcar+0x30) > -796 && getfloat(pcar+0x30) < -792 && getfloat(pcar+0x34) < -1175 && getfloat(pcar+0x34) > -1179 && getshort(pcar+0x56) == 256)
+{
+   etat = 1;
+   temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+}
+if(etat == 1)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'V', 'a', ' ', '~',   'b',   '~', 'c', 'h', 'e', 'z', ' ', 'D', 'i', 'a', 'z', '~',   'w',   '~', ' ', 'c', 'h', 'e', 'r', 'c', 'h', 'e', 'r', ' ', 'l', 'a', ' ', 'd', 'r', 'o', 'g', 'u', 'e', '.', 0); 
+   else
+   temps = 0;
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511)
+   {
+       etat = 2;
+       temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 2)
+{
+
+   setshort(0x08e90bd8,   1, ' ', 'M', 'o', 'n', 't', 'e', 's', ' ', 'd', 'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', 0);
+
+   if(getfloat(pcar+0x30) < -340 && getfloat(pcar+0x30) > -383 && getfloat(pcar+0x34) > -522 && getfloat(pcar+0x34) < -511 && getshort(pcar+0x56) == 224)
+   {
+      etat = 3;
+      setint(pplayer+0x00000910,  3);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 3)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'L', 'e', 's', ' ', 'f', 'l', 'i', 'c', 's', ' ',  's', 'o', 'n', 't', ' ', 'a', ' ', 't', 'a', ' ',  'p', 'o', 'u', 'r', 's', 'u', 'i', 't', 'e', '.', ' ', 'S', 'e', 'm', 'e', '-', 'l', 'e', 's', 0);
+   else
+   temps = 0;
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   {
+      setshort(0x08e90bd8,   1, ' ', 'R', 'e', 'm', 'o', 'n', 't', 'e', 's', ' ', 'd',  'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', 0);
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+
+
+   if(!getint(pplayer+0x00000910))
+   {
+      etat = 4;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat == 4)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+  
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'C', ' ', 'e', 's', 't', ' ', 'b', 'o', 'n', ', ',  ' ', 'r', 'a', 'm', 'e', 'n', 'e', ' ', 'l', 'a',  ' ', 'm', 'a', 'r', 'c', 'h', 'a', 'n', 'd', 'i', 's', 'e', ' ', 'a', ' ', 'l', 'a', ' ', 'p', 'l', 'a', 'n', 'q', 'u', 'e', 0);
+   else if( tempsActuel - 10 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'V', 'i', 't', 'e', ', ', ' ', 't', ' ', 'a', ' ',  'p', 'l', 'u', 's', ' ', 'b', 'e', 'a', 'u', 'c',  'o', 'u', 'p', ' ', 'd', 'e', ' ', 't', 'e', 'm', 'p', 's', ' ', '!', 0);
+   else
+   {   
+      temps = 0;
+      if(!chrono)
+      {
+         chrono = 40;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+      
+      if(tempsActuel - temps2 >=1)
+      {
+         chrono --;
+         temps2 = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      setshort(0x08e90bd8,   1, 'T', 'e', 'm', 'p', 's', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+      
+      if(chrono ==0)
+      {
+         etat = 10;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+
+      if(getfloat(pcar+0x30) < -794 && getfloat(pcar+0x30) > -815 && getfloat(pcar+0x34) < -1170 && getfloat(pcar+0x34) > -1187)
+      {
+         etat = 5;
+         temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+      }
+   }
+   
+   if(!pcar || getshort(pcar+0x56) != 224)
+   setshort(0x08e90bd8,   1, ' ', 'R', 'e', 'm', 'o', 'n', 't', 'e', 's', ' ', 'd',  'a', 'n', 's', ' ', '~',   'b',   '~', 'l', 'a', ' ', 'c', 'a', 'm', 'i', 'o', 'n', 'e', 't', 't', 'e', '~',   'w',   '~', '.', 'T', 'e', 'm', 'p', 's', ':', 0x30+chrono/10 , 0x30+chrono%10, 0);
+
+}
+if(etat == 5)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', 'G', 'a', 'r', 'e', ' ', 'l', 'a', ' ', 'c', 'a',  'm', 'i', 'o', 'n', 'e', 't', 't', 'e', ' ', 'd',  'a', 'n', 's', ' ', 'l', 'e', ' ', 'g', 'a', 'r', 'a', 'g', 'e', ' ', 'e', 't', ' ', 's', 'o', 'r', 't', 0);
+
+   if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 224)
+   etat = 6;
+
+}
+if(etat == 6)
+{
+   if((pplayer+0x30) > -826 && !pcar)
+   {
+      etat = 7;
+      temps = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+   }
+}
+if(etat ==7)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', '~',   'g',   '~', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'r', 'e',  'u', 's', 's', 'i', 'e', ' ', ', ', 'v', 'o', 'i',  'l', 'a', ' ', '5', '0', '0', '$', ' ', 'p', 'o', 'u', 'r', ' ', 't', 'o', 'i', ' ', '!', '~',   'w',   '~', 0);
+   else
+   off();
+
+   if(!argent)
+   {
+      setint(0x08bde55c, getint(0x08bde55c)+500);
+      argent = 1;
+   }
+}
+if(etat ==10)
+{
+   tempsActuel = getchar(0x08bb3b40)*60 + getchar(0x08bb3b41);
+
+   if(tempsActuel - 5 < temps)
+   setshort(0x08e90bd8,   1, ' ', '~',   'r',   '~', 'E', 'c', 'h', 'e', 'q', 'u', 'e', ' ', 'd', 'e',  ' ', 'l', 'a', ' ', 'm', 'i', 's', 's', 'i', 'o',  'n', ' ', ', ', ' ', 't', ' ', 'e', 's', ' ', 't', 'r', 'o', 'p', ' ', 'l', 'e', 'n', 't', ' ', '!', '~',   'w',   '~', 0);
+   else
+   off();
+}
+
+#cheat Ghost Car
+//ID: 18892
+//Score: 151
+//Author: getdustin
+//Category: Vehicle
+//Description: Allows your car to drive through light posts, people, cars, buildings, fences,and trees(pretty much everything). Right trigger to activate left trigger to deactivate. Thanks to Durka Durka Mahn for acceleration, turning and braking.
+//
+//Image: http://i35.photobucket.com/albums/d157/getdustin/GhostCar.gif
+//Time: 25/11/2006 01:29:35
+//Working: Yes
+//by getdustin
+//right trigger activates and left trigger deactivates
+//Turning, acceleration, and breaking by Durka Durka Mahn
+static Drivable;
+if(buttons&CTRL_RTRIGGER)
+{
+setchar(pcar + 0x49,  81);
+Drivable = 1;
+}
+if(buttons&CTRL_LTRIGGER)
+{
+setchar(pcar + 0x49,  82);
+Drivable = 0;
+}
+if(Drivable)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+if (buttons & CTRL_CROSS) 
+{
+   boost = 0.5;
+   thrust = boost * 0.00333;
+   // velocity = velocity + forward vector * thrust
+   setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+   setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust); 
+   setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+}  
+if(buttons & CTRL_SQUARE)
+{
+  setfloat(pcar + 0x140,  getfloat(pcar + 0x140)*0.95,  getfloat(pcar + 0x144)*0.95 );
+}
+}
+
+
+#cheat The Mysterious Banshee
+//ID: 18867
+//Score: 109
+//Author: Waterbottle
+//Category: Environment
+//Description: Enter the banshee spawning in the Bayshore Ave safehouse garage to start a simple mission.
+//
+//The car is fitted with a bomb and you have to drive fast so it dosn't blow up before it's dismantled.
+//Image: none
+//Time: 23/11/2006 22:06:43
+//Working: Yes
+static state;
+DifficultLevel = 50;
+  if(state) 
+      setshort(pcar+0x232,  0x0101); 
+  else
+  {
+      setint(0x08C739B0,  175);
+      setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+      setfloat(0x08C739C0,  3.1415);
+      if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+      {
+      state = 1;
+      time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      }
+  }
+  if(state == 1)
+  {
+  setshort(0x08e90bd8,  1,  'O',  'h',  ', ',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+  if(newtime - 2 > time)
+         {
+         state = 2;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 2)
+  {
+  setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0);
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         if(newtime - 2 > time)
+         {
+         state = 3;
+         health = 150;
+         time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+         }
+  }
+  if(state == 3)
+  {
+  setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 3 > time)
+	{
+	state = 4;
+	time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+	}
+	if(speed < DifficultLevel)
+	    health -= 0.5;
+	else if(health < 150)
+	    health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+	{
+	setfloat(pcar+0x27c, 0);
+	state = 0;
+	}
+  }
+  if(state == 4)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 4 < time)
+             setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ', ',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ', ', ' ',  'N',  'O',  'W',  '!', 0);
+       else time = 0;
+  speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+  if(speed < DifficultLevel + 10)
+           health -= 0.5;
+       else if(health < 150)
+           health += 0.5;
+
+  setfloat(pplayer+0x4e8, health);
+
+       if(health <= 0)
+       {
+       setfloat(pcar+0x27c, 0);
+       state = 0;
+       }
+  if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)
+       {
+       state = 5;
+       time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       }
+  }
+  if(state == 5)
+  {
+  newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+       if(newtime - 2 > time)
+	     state = 6;
+  }
+  if(state == 6)
+  {
+  setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ', ', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+	if(buttons & CTRL_UP)
+	{
+	state = 0;
+	setshort(pcar+0x232,  0); 
+	}
+  }
+#off
+state = 0;
+setshort(pcar+0x232,  0); 
+
+#cheat Texture sound OFF
+//ID: 18864
+//Score: 51
+//Author: psphacker108
+//Category: Audio
+//Description: This will make the wall and texture sound Go off by it self !and when you walk like to punch a car you won't hear that annoying texture sound. Very helpful if you hate that noise. thanks to ADePSP for help!
+//Image: none
+//Time: 23/11/2006 20:54:01
+//Working: Yes
+//BY:PSPHACKER108
+sethex(pplayer + 0x60,   0xEE);
+
+#cheat Texture sound normal
+//ID: 18863
+//Score: 52
+//Author: psphacker108
+//Category: Audio
+//Description: This must be seperated don't put the 2 codes together admins! anyways this will turn the texture sound OFF code back to normal make sure these are seprate!
+//Image: none
+//Time: 23/11/2006 20:53:25
+//Working: Yes
+//BY:PSPHACKER108
+sethex(pplayer + 0x60,    0x0E);
+
+#cheat Shadow player
+//ID: 19110
+//Score: 47
+//Author: psphacker108
+//Category: Player
+//Description: This is like Burnt Car's. Except it make's the player (Vic) have a black shadow, Check picture.
+//Image: http://img100.imageshack.us/my.php?image=screen1nq4.png
+//Time: 27/12/2006 06:05:34
+//Working: Yes
+sethex(pplayer + 0x4A, B8);
+
+#cheat Time alway's Morning
+//ID: 19109
+//Score: 48
+//Author: psphacker108
+//Category: Player
+//Description: This makes the time always morning.The sky color will never change. Thank's to Sokz for the disco sky pointer.
+//Image: none
+//Time: 26/12/2006 05:32:40
+//Working: Yes
+setchar(0x08bb3b40,  9,  39);
+
+#cheat Time Always Afternoon
+//ID: 19108
+//Score: 46
+//Author: psphacker108
+//Category: Player
+//Description: This will Lock the time in the game to afternoon mode. The sky can't change color's or anything. Thank's to Sokz for the disco sky pointer.
+//Image: none
+//Time: 26/12/2006 05:30:06
+//Working: Yes
+setchar(0x08bb3b40,  14,  30);
+
+#cheat Blood Is Red Flash
+//ID: 19107
+//Score: 60
+//Author: uuuu
+//Category: Pedestrians
+//Description: This code makes the Blood from ped's almost like in a straight line as it spray's out. no more messy blood.
+//
+//EDITED BY: psphacker108 on 26/12/06 05:21:22
+//Image: none
+//Time: 26/12/2006 04:40:10
+//Working: Yes
+sethex(0x9567da7, 0x41); 
+sethex(0x9567def, 0x3c); 
+sethex(0x9567dbe, 0xff, 0x3f); 
+sethex(0x9567da8, 0x30); 
+sethex(0x9567d58, 0x30); 
+
+
+#cheat Bump Transference
+//ID: 19089
+//Score: 121
+//Author: edisoncarter
+//Category: Vehicle
+//Description: When you bump another car, Vic transfers into that car instantly. If it's a ped driven car, it continues driving like a ped and you're along for the ride. If you hit a car you've driven before, you will be fully driving the car you hit.
+//Image: none
+//Time: 21/12/2006 18:39:19
+//Working: Yes
+static pprev;
+static delay;
+if (delay > 0)
+   delay--;
+if (pcar)
+{
+   pbump = getint(pcar + 0x0150);
+   if (pbump && (pbump != pprev || delay == 0))
+   {
+       modelid = getshort(pbump + 0x0056);
+       if (modelid >= 170 && modelid <= 280)
+       {
+           setint(pplayer + 0x450, pbump);
+           setint(pplayer + 0x480, pbump);
+           setint(pplayer + 0x484, pbump);
+           setint(pbump + 0x384, pplayer);
+           setint(pcar + 0x384, 0);
+           setint(0x08bb4064, pbump);
+           setint(0x08bc7f10, pbump);
+           setint(0x08bc85f0, pbump);
+           setchar(pbump + 0x675, 0x90);
+           setchar(pcar + 0x675, 0x80);
+           delay = 180;
+           pprev = pcar; // no backsies
+       }
+   }
+}
+
+#cheat Car Semi-Burnt
+//ID: 19088
+//Score: 58
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make your car semi-burnt you can still see the first car color dimmed out when you get in.( Fully Drivable)
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-4.gif
+//Time: 21/12/2006 17:46:18
+//Working: Yes
+sethex(pcar + 0x4A,  79);
+#off
+sethex(pcar + 0x4A,   59);
+
+#cheat Shadow car
+//ID: 19085
+//Score: 53
+//Author: psphacker108
+//Category: Vehicle
+//Description: This will make any car your driving in have the shadow under the car. Can't see the car's shell basically. Work's on plane's (except helicopter)
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video2-1.gif
+//Time: 21/12/2006 17:29:18
+//Working: Yes
+sethex(pcar + 0x4D,  26);
+
+#cheat Biplane propeller stop's
+//ID: 19084
+//Score: 58
+//Author: psphacker108
+//Category: Vehicle
+//Description: This make's the Biplane's propeller's stop Helpful if you use for hover car's feature or you hate that annoying propeller sound and the movement. to turn off simply turn off get out and back in.Thank's to ADePSP
+//Image: http://img103.imageshack.us/my.php?image=video1zj1.gif
+//Time: 21/12/2006 17:25:15
+//Working: Yes
+sethex(pcar + 0x48, 74);
+#off
+
+#cheat skimmer propeller stop's
+//ID: 19083
+//Score: 42
+//Author: psphacker108
+//Category: Vehicle
+//Description: This is helpful if you use your skimmer plane for hover car's. it will stop the propeller slowly but once you turn it off and get on and back in it will be back to normal. Thank's to ADePSP
+//Image: http://img284.imageshack.us/my.php?image=video7mq7.gif
+//Time: 21/12/2006 17:21:27
+//Working: Yes
+sethex(pcar + 0x48,  34);
+#off
+
+#cheat Bike's/car's do stunt's V1
+//ID: 19079
+//Score: 82
+//Author: psphacker108
+//Category: Vehicle
+//Description: This code will allow you to be in mid-air and stay there ( IF you turn it off you will fall) and you can move the Vehicle in a rotation back and forth. turn off and you fall to land really fast. work's with bike's and car's!
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-3.gif
+//Time: 20/12/2006 16:36:09
+//Working: Yes
+sethex(pcar + 0x30, 0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x44);
+
+#cheat ALL Explosives are Remote Explosives
+//ID: 19053
+//Score: 109
+//Author: Durka Durka Mahn
+//Category: Weapons
+//Description: Any rocket or thrown explosive will stay unarmed until you hit X.
+//Image: none
+//Time: 16/12/2006 21:25:34
+//Working: Yes
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C))
+{
+setchar(pexp + 0x0C, 0x0);
+det = 1;
+}
+if(det && buttons & CTRL_CROSS)
+{
+setchar(pexp + 0x0C, 0x1);
+det = 0;
+}
+
+#cheat No Car Wheels
+//ID: 19048
+//Score: 64
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: Any car you get in will have no wheels, and you can still drive! (Doesn't work with motorcycles)
+//Image: none
+//Time: 16/12/2006 18:05:37
+//Working: Yes
+setfloat(pcar + 0x688, 5);
+setfloat(pcar + 0x68C, 5);
+setfloat(pcar + 0x690, 5);
+setfloat(pcar + 0x694, 5);
+
+#cheat Monster Quad. *first ever pmg car*
+//ID: 19040
+//Score: 203
+//Author: vettefan88
+//Category: Pimp My Garage
+//Description: This is the first ever pmg'd car to be released for VCS. and it may be the only one for quite some time. it takes the quad, and gives it a large suspension lift, and some larger tires. It also has many performance enhancing tweaks.
+//
+//enjoy...
+//
+//
+//Image: http://www.filelodge.com/files/hdd9/233662/monster%20Quad1.gif
+//Time: 14/12/2006 21:00:36
+//Working: Yes
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+
+#cheat Wall Climber
+//ID: 19038
+//Score: 192
+//Author: Durka Durka Mahn
+//Category: Player
+//Description: Approach any wall and Vic will magically begin "Climbing" up the wall. Thanks to psphacker for the idea.
+//Image: http://img177.imageshack.us/img177/3109/video1nn8.gif
+//Time: 14/12/2006 02:58:19
+//Working: Yes
+if(getint(pplayer+0x150))
+{
+     boost = 4.0;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) + getfloat(pplayer + 0x0010) * thrust);
+     setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) + getfloat(pplayer + 0x0014) * thrust);
+     setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) + getfloat(pplayer + 0x0018) + 0.01);
+
+     // rotational control
+     setfloat(pplayer + 0x0078, -0.03 * xstick);
+     // get the player off the ground
+     setshort(pplayer + 0x01c8,   0x1020);
+}
+

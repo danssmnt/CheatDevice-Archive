@@ -1,0 +1,296 @@
+#cheat Player Position Reset
+sethex(0x098B52F4,    00);
+
+#cheat Player Position Reset 2
+sethex(0x098B52F4,    01);
+
+#cheat Player Always fighting postion
+sethex(0x098B52F4,    11);
+
+ Player Enter Car
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Player Walk to Car
+setchar(pplayer+0x8B4, 0x19);
+
+ Player Phone to Head
+setchar(pplayer+0x8B4, 0x24);
+
+#cheat Player Warp Away
+setchar(pplayer+0x8B4, 0x2C);
+
+#cheat Player Fall down, get up
+setchar(pplayer+0x8B4, 0x2D);
+
+#cheat Player Fall down, get up 2
+setchar(pplayer+0x8B4, 0x2E);
+
+#cheat Player Lock on Mode, strange Camera
+setchar(pplayer+0x8B4, 0x32);
+
+#cheat Player Warp back on driverseat of your car
+setchar(pplayer+0x8B4, 0x37);
+
+ Player Wasted
+setchar(pplayer+0x8B4, 0x39);
+
+ Player Wasted 2
+setchar(pplayer+0x8B4, 0x3A);
+
+ Player Handsup
+setchar(pplayer+0x8B4, 0x40);
+
+ Player Busted
+setchar(pplayer+0x8B4, 0x41);
+
+#cheat Player Drown in water
+setchar(pplayer+0x8B4, 0x44);
+
+#cheat Player Enable AI 1 walking
+setchar(pplayer+0x894, 0x04);
+
+ Player attack mode
+setchar(pplayer+0x894, 0x08);
+
+#cheat Player follow mode
+setchar(pplayer+0x894, 0x0C);
+
+ Player Leave your Car
+setchar(pplayer+0x894, 0x10);
+
+#cheat Player enter your car as passenger
+setchar(pplayer+0x894, 0x11);
+
+ Player Enter your car as driver
+setchar(pplayer+0x894, 0x12);
+
+ Player leave any Car
+setchar(pplayer+0x894, 0x10);
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Player Enter nearest car as passenger
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);
+
+ Player Enter nearest car as driver
+setchar(pplayer+0x894, 0x12);
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Player Lock On to your car
+setchar(pplayer+0x894, 0x16);
+
+ Player Enable AI driving
+setchar(pplayer+0x894, 0x17);
+
+ Player Enable AI 2 walking
+setchar(pplayer+0x894, 0x18);
+
+ Player Enable AI 2 sprinting
+setchar(pplayer+0x894, 0x19);
+
+ Player Enable AI 3 walking
+setchar(pplayer+0x894, 0x1E);
+
+#cheat Player Call for Taxi
+if(buttons & CTRL_UP && !pcar){
+setchar(pplayer+0x894, 0x20);
+
+ Player Enable AI 4 running
+setchar(pplayer+0x894, 0x31);}
+
+ Ped Enable AI 1 walking
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x04);
+setint(pped+0x890, pplayer);}
+
+ Ped Make target attack you
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x8);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Make target follow you
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0xC);
+setint(pped+0x890, pplayer);}
+
+ Ped Leave your Car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x10);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Enter your car as passenger
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x11);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Enter your car as passenger 2
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x21);
+setint(pped+0x890, pplayer);}
+
+ Ped Enter your car as driver
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x12);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Lock On to your car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x16);
+setint(pped+0x890, pplayer);}
+
+ Ped Leave any car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x10);
+setchar(pped+0x8B4, 0x18);
+setint(pped+0x890, pplayer);}
+
+ Ped Enter nearest car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x18);
+setint(pped+0x890, pplayer);}
+
+ Ped Enter nearest car as passenger
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x11);
+setchar(pped+0x8B4, 0x18);
+setint(pped+0x890, pplayer);}
+
+ Ped Enter nearest car as driver
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x12);
+setchar(pped+0x8B4, 0x18);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Hijacks nearest car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(yourped+0x894, 0x17);
+setchar(yourped+0x894, 0x12);}
+
+ Ped Enable AI driving
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x17);
+setint(pped+0x890, pplayer);}
+
+ Ped Enable AI 2 walking
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x18);
+setint(pped+0x890, pplayer);}
+
+ Ped Enable AI 2 sprinting
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x19);
+setint(pped+0x890, pplayer);}
+
+ Ped Enable AI 3 walking
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x1E);
+setint(pped+0x890, pplayer);}
+
+ Ped Call for Taxi
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x20);
+setint(pped+0x890, pplayer);}
+
+ Ped Enable AI 4 running
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x31);
+setint(pped+0x890, pplayer);}
+
+ Ped Enter any car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x18);
+setint(pped+0x890, pplayer);}
+
+ Ped Walk to your Car
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x19);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Phone to Head
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x24);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Warp Away
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x2C);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Fall down, get up
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x2D);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Fall down, get up 2
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x2E);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Lock on Mode, strange Camera
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x32);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped disappears
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x37);
+setint(pped+0x890, pplayer);}
+
+ Ped Wasted
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x39);
+setint(pped+0x890, pplayer);}
+
+ Ped Wasted 2
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x3A);
+setint(pped+0x890, pplayer);}
+
+ Ped Handsup
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x40);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Busted
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x41);
+setint(pped+0x890, pplayer);}
+
+#cheat Ped Drown in water
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x8B4, 0x44);
+setint(pped+0x890, pplayer);}
+
+

@@ -1,0 +1,32 @@
+#cheat Pointer to Object
+obj = object(VALUE,X,Y,Z);
+if(object){
+selectobject(obj);
+setfloat(obj + ADRESS, VALUE);}
+
+#cheat Move Object
+top = 32.98;//Top z coordinate of the elevators route
+bottom = 12.82;//bottom z coordinate of the elevators route, and the z posision the elevator starts on
+xpos = -419.53;//x position of the elevator
+ypos = -603.07;//y position of the elevator
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1CA4,90,0,0);}
+else{
+selectobject(obj);
+if(state == 0 && getfloat(getint(pplayer+0xf0)+0x30) == getfloat(obj+0x30)){
+if(getfloat(obj+0x38) >= top && buttons & CTRL_DOWN) state = 2;
+else if(buttons & CTRL_UP) state = 1;}
+if(state == 1){
+setfloat(obj + 0x38, getfloat(obj+0x38) + 0.04);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(obj + 0x38, getfloat(obj+0x38) - 0.04);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;
+
+

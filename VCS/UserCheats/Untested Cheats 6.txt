@@ -1,0 +1,558 @@
+
+#cheat Car Stunting 2 (Hold O and use Analog)
+if(buttons&CTRL_CIRCLE)
+{
+   setfloat(pcar+0x70,  ystick * getfloat(pcar) / 8);
+   setfloat(pcar+0x74,  ystick * getfloat(pcar+4) / 8);
+   setfloat(pcar+0x78,  xstick / 8);
+}
+
+#cheat Sub
+static UnderWater;
+static Height;
+PlayerZ = getfloat(pcar + 0x38);
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78, -xstick / 40);
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+if(buttons & CTRL_CROSS)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140) * sin(pcar));
+setfloat(pcar + 0x144, getfloat(pcar + 0x144) * cos(pcar+0x4));
+}
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148, +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148, -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38, Height);
+}
+
+// By Edison Carter
+// inspired by the battlebot by the mythbusters
+// if you're driving a car, turn on heavy vehicle
+#cheat Blendo
+static psel;
+if (psel == 0)
+{
+   setshort(0x08e90bd8, 1, 'T', 'o', 'u' , 'c', 'h', ' ', 'a', ' ', 'c', 'a', 'r', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', 0);
+}
+p = getint(pobj + 0x150);
+if (p && getshort(p + 0x56) >= 170 && getshort(p + 0x56) <= 280)
+{
+   psel = p;
+   setfloat(psel + 0xd0, getfloat(psel + 0xd0) * 3.0);
+   setfloat(psel + 0xd4, getfloat(psel + 0xd4) * 3.0);
+}
+if (psel)
+{
+   setfloat(psel + 0x08, 0);
+   setfloat(psel + 0x18, 0);
+   setfloat(psel + 0x20, 0, 0, 1);
+   setfloat(psel + 0x30, getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 10.0);
+   setfloat(psel + 0x34, getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 10.0);
+   setfloat(psel + 0x38, getfloat(pplayer + 0x38) + 0.5);
+   setfloat(psel + 0x78, getfloat(psel + 0x78) - 0.015);
+   setfloat(psel + 0x027c, 100000.0);
+}
+#off
+psel = 0;
+
+#cheat Submarine Vehicles
+static UnderWater;
+static Height;
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+ if (buttons & CTRL_CROSS)
+ {
+    boost = 1.5;
+    thrust = boost * 0.00333;
+
+    // velocity = velocity + forward vector * thrust
+    setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+    setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+    setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+ }
+
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148,  +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148,  -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38,  Height);
+}
+
+
+#cheat Defense Orbs
+static Orb1;
+static Orb2;
+static rot;
+
+if(!Orb2)
+{
+   setshort(0x08e90bd8,  1,  'T',  'o',  'u' ,  'c',  'h',  ' ',  'a',  ' ',  'c',  'a',  'r',  ' ',  't',  'o',  ' ',  'm',  'a',  'k',  'e',  ' ', 'i',  't',  ' ',  'p',  'r',  'o',  't',  'e',  'c',  't',  ' ',  'y',  'o',  'u', '!',  0);
+}
+
+p = getint(pobj + 0x150);
+
+if (p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+       Orb1 = p;
+}
+
+
+if (Orb1)
+{
+   setfloat(Orb1 + 0x08, 0);
+   setfloat(Orb1 + 0x18, 0);
+   setfloat(Orb1 + 0x20, 0, 0, 1);
+   setfloat(Orb1 + 0x30,  getfloat(pplayer + 0x30) - cos(rot) * 12);
+   setfloat(Orb1 + 0x34,  getfloat(pplayer + 0x34) + sin(rot) * 12);
+   setfloat(Orb1 + 0x38,  getfloat(pplayer + 0x38));
+   setfloat(Orb1 + 0x78,  1);
+   setfloat(Orb1 + 0x027c,  10000.0);
+   rot += 10;
+   p = getint(Orb1 + 0x150);
+   if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+             Orb2 = p;
+}
+
+if (Orb2)
+{
+   setfloat(Orb2 + 0x08, 0);
+   setfloat(Orb2 + 0x18, 0);
+   setfloat(Orb2 + 0x20, 0, 0, 1);
+   setfloat(Orb2 + 0x30,  getfloat(pplayer + 0x30) - cos(rot+180) * 12);
+   setfloat(Orb2 + 0x34,  getfloat(pplayer + 0x34) + sin(rot+180) * 12);
+   setfloat(Orb2 + 0x38,  getfloat(pplayer + 0x38));
+   setfloat(Orb2 + 0x78,  1);
+   setfloat(Orb2 + 0x027c,  10000.0);
+   p = getint(Orb2 + 0x150);
+   if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+             Orb1 = p;
+}
+#off
+Orb1 = Orb2 = rot = 0;
+
+#cheat Force Touch
+Carplayer = getint(pplayer+0x150);
+Carcar = getint(pcar+0x150);
+boost = 5;
+thrust = boost * 0.00333;
+if(getint(pplayer+0x150))
+{
+setfloat(Carplayer + 0x0140,  getfloat(Carplayer + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(Carplayer + 0x0144,  getfloat(Carplayer + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(Carplayer + 0x0148,  getfloat(Carplayer + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setchar(Carplayer + 0x1c9, getchar(Carplayer + 0x1c9) | 0x10);
+}
+}
+if(getint(pcar+0x150))
+{
+setfloat(Carcar + 0x0140,  getfloat(Carcar + 0x0140) + getfloat(pcar + 0x0010) + thrust);
+setfloat(Carcar + 0x0144,  getfloat(Carcar + 0x0144) + getfloat(pcar + 0x0014) + thrust);
+setfloat(Carcar + 0x0148,  getfloat(Carcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setchar(Carcar + 0x1c9, getchar(Carcar + 0x1c9) | 0x10);
+}
+}
+
+#cheat Car Jumping Counter
+static old;
+static score;
+ new = getint(pplayer+0xf0);
+ if(new >= 0x098edcc0 && new <= 0x099019a0)
+ {
+   if(new != old)
+   {
+   old = new;
+   score++;
+   }
+ }
+ else  
+   score = old = 0;
+ 
+      setshort(0x08e90bd8, 1);
+      int = score;
+      size = 0;
+      for(i = 1; i <= int; i*=10) size+=2;
+      if(int == 0) setshort(0x08e90bda, '0');
+      for(i = 0; int > 0; i+=2 ) {
+      setshort(0x08e90bd8+size-i, '0' + (int % 10));
+      int = int(int/=10);
+      }
+      setshort(0x08e90bda+size, 0);
+
+#cheat Proximity Mine Spawn Test
+setchar(0x08bf9e50, 0xe);
+setchar(0x08bf9e5c, 0x1);
+setfloat(0x08bf9e60, getfloat(pplayer + 0x30) + 0x1);
+setfloat(0x08bf9e64, getfloat(pplayer + 0x34) + 0x1);
+setfloat(0x08bf9e68, getfloat(pplayer + 0x38) + 0x1);
+
+// slight modification of Waterbottle's cheat
+#cheat Defense Orbs
+radius = 6;
+if (pcar)
+   radius += 1;
+static Orb1;
+static Orb2;
+static rot;
+if (!Orb2)
+{
+   setshort(0x08e90bd8,  1,  'T',  'o',  'u' ,  'c',  'h',  ' ',  'a',  ' ',  'c',  'a',  'r',  ' ',  't',  'o',  ' ',  'm',  'a',  'k',  'e',  ' ', 'i',  't',  ' ',  'p',  'r',  'o',  't',  'e',  'c',  't',  ' ',  'y',  'o',  'u', '!',  0);
+}
+p = getint(pobj + 0x150);
+if (Orb1 == 0 && p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+   Orb1 = p;
+}
+if (Orb1)
+{
+   setfloat(Orb1 + 0x00, -cos(rot + 180));
+   setfloat(Orb1 + 0x04, sin(rot + 180));
+   setfloat(Orb1 + 0x08, 0);
+   setfloat(Orb1 + 0x10, -cos(rot + 90));
+   setfloat(Orb1 + 0x14, sin(rot + 90));
+   setfloat(Orb1 + 0x18, 0);
+   setfloat(Orb1 + 0x20, 0, 0, 1);
+   setfloat(Orb1 + 0x30, getfloat(pplayer + 0x30) - cos(rot) * radius);
+   setfloat(Orb1 + 0x34, getfloat(pplayer + 0x34) + sin(rot) * radius);
+   setfloat(Orb1 + 0x38, getfloat(pplayer + 0x38));
+   setfloat(Orb1 + 0x78, 0);
+   setfloat(Orb1 + 0x027c, 10000.0);
+   rot += 10;
+   p = getint(Orb1 + 0x150);
+   if (Orb2 == 0 && p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+       Orb2 = p;
+}
+if (Orb2)
+{
+   rot2 = rot + 180;
+   setfloat(Orb2 + 0x00, -cos(rot2 + 180));
+   setfloat(Orb2 + 0x04, sin(rot2 + 180));
+   setfloat(Orb2 + 0x08, 0);
+   setfloat(Orb2 + 0x10, -cos(rot2 + 90));
+   setfloat(Orb2 + 0x14, sin(rot2 + 90));
+   setfloat(Orb2 + 0x18, 0);
+   setfloat(Orb2 + 0x20, 0, 0, 1);
+   setfloat(Orb2 + 0x30, getfloat(pplayer + 0x30) - cos(rot2) * radius);
+   setfloat(Orb2 + 0x34, getfloat(pplayer + 0x34) + sin(rot2) * radius);
+   setfloat(Orb2 + 0x38, getfloat(pplayer + 0x38));
+   setfloat(Orb2 + 0x78, 0);
+   setfloat(Orb2 + 0x027c, 10000.0);
+}
+#off
+Orb1 = Orb2 = rot = 0;
+
+// by Durka Durka Mahn
+#cheat Force Touch 2
+push = 2.0;
+ptouch = getint(pobj+0x150);
+if (ptouch && getshort(ptouch + 0x0056) < 750)
+{
+   setfloat(ptouch + 0x0140, getfloat(pobj + 0x0140) + getfloat(pobj + 0x0010) * push);
+   setfloat(ptouch + 0x0144, getfloat(pobj + 0x0144) + getfloat(pobj + 0x0014) * push);
+   setfloat(ptouch + 0x0148, getfloat(pobj + 0x0148) + getfloat(pobj + 0x0018) * push);
+   if (getshort(ptouch + 0x0056) < 170)
+   {
+       setshort(ptouch + 0x01c8, 0x1020);
+       setfloat(ptouch + 0x0148, push * 0.1);
+   }
+}
+
+#cheat Power Drive!
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78, -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148, +Up);
+}
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+
+#cheat Hunter spawns on Clymenu's Suite roof
+pspawn = 0x08E81290;
+setint(pspawn, 275);
+setfloat(pspawn + 4, 253.18, -160.20, 28.95, 270);
+pspawn += 0x30;
+
+#cheat Power Driving
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78,  -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148,  +Up);
+}
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140,  getfloat(pcar + 0x140)*0.95,  getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+setfloat(pcar + 0x0000027C,    1000000000);
+setfloat(pcar + 0x0000010C,    0);
+static ZLoc;
+if(press & CTRL_DOWN)
+{
+ZLoc = getfloat(pcar + 0x38);
+}
+if(buttons & CTRL_DOWN)
+{
+Power = 0;
+setfloat(pcar + 0x38,  ZLoc);
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+
+#cheat Remove Stuff In Your Way
+// By Edison Carter
+// Removes annoying trees, fences, lamp posts, telephone poles, mailboxes,
+// benches, cars, people that get in your way without removing walls or
+// buildings that would cause you to fall through the ground.
+// Thanks to Waterbottle for Remove Anything.
+static xRightHandVector;
+static yRightHandVector;
+static zRightHandVector;
+static xForwardVector;
+static yForwardVector;
+static zForwardVector;
+static xUpVector;
+static yUpVector;
+static zUpVector;
+static xRotationalMomentum;
+static yRotationalMomentum;
+static zRotationalMomentum;
+static xVelocity;
+static yVelocity;
+static zVelocity;
+static dHealth;
+static steady;
+pitem = getint(pobj + 0x0150);
+if (pitem)
+{
+   modelid = getshort(pitem + 0x0056);
+   if (modelid < 750 ||
+       modelid == 1515 ||
+       modelid == 2627 ||
+       modelid == 7337 ||
+       modelid == 1820 ||
+       modelid == 1821 ||
+       modelid == 1825 ||
+       modelid == 1826 ||
+       modelid == 1829 ||
+       (modelid >= 1526 && modelid <= 1536 && modelid != 1533) ||
+       (modelid >= 2551 && modelid <= 2554) ||
+       (modelid >= 1217 && modelid <= 1223) ||
+       (modelid >= 1485 && modelid <= 1488))
+   {
+       setfloat(pitem + 0x0030, 0, 0, 0);
+       steady = 3;
+   }
+}
+if (steady > 0)
+{
+   steady--;
+   setfloat(pobj + 0x0000, xRightHandVector);
+   setfloat(pobj + 0x0004, yRightHandVector);
+   setfloat(pobj + 0x0008, zRightHandVector);
+   setfloat(pobj + 0x0010, xForwardVector);
+   setfloat(pobj + 0x0014, yForwardVector);
+   setfloat(pobj + 0x0018, zForwardVector);
+   setfloat(pobj + 0x0020, xUpVector);
+   setfloat(pobj + 0x0024, yUpVector);
+   setfloat(pobj + 0x0028, zUpVector);
+   setfloat(pobj + 0x0070, xRotationalMomentum);
+   setfloat(pobj + 0x0074, yRotationalMomentum);
+   setfloat(pobj + 0x0078, zRotationalMomentum);
+   setfloat(pobj + 0x0140, xVelocity);
+   setfloat(pobj + 0x0144, yVelocity);
+   setfloat(pobj + 0x0148, zVelocity);
+   setfloat(pcar + 0x027c, dHealth);
+}
+else
+{
+   xRightHandVector    = getfloat(pobj + 0x0000);
+   yRightHandVector    = getfloat(pobj + 0x0004);
+   zRightHandVector    = getfloat(pobj + 0x0008);
+   xForwardVector      = getfloat(pobj + 0x0010);
+   yForwardVector      = getfloat(pobj + 0x0014);
+   zForwardVector      = getfloat(pobj + 0x0018);
+   xUpVector           = getfloat(pobj + 0x0020);
+   yUpVector           = getfloat(pobj + 0x0024);
+   zUpVector           = getfloat(pobj + 0x0028);
+   xRotationalMomentum = getfloat(pobj + 0x0070);
+   yRotationalMomentum = getfloat(pobj + 0x0074);
+   zRotationalMomentum = getfloat(pobj + 0x0078);
+   xVelocity           = getfloat(pobj + 0x0140);
+   yVelocity           = getfloat(pobj + 0x0144);
+   zVelocity           = getfloat(pobj + 0x0148);
+   dHealth             = getfloat(pcar + 0x027c);
+}
+
+#cheat View ModelID of what you touch
+p = getint(pobj + 0x150);
+if (p)
+{
+   n = getshort(p + 0x58);
+   setint(0x08bde55c, n, n);
+}
+
+
+#cheat ghost car (no clip)
+//by getdustin
+//right trigger activates and left trigger deactivates
+if(buttons&CTRL_RTRIGGER)
+{
+  setchar(pcar + 0x49,  81);
+}
+if(buttons&CTRL_LTRIGGER)
+{
+  setchar(pcar + 0x49,  82);
+}
+
+#cheat ghost car (no clip)
+//by getdustin
+//right trigger activates and left trigger deactivates
+//Turning and acceleration by Durka Durka Mahn
+static Drivable;
+if(buttons&CTRL_RTRIGGER)
+{
+ setchar(pcar + 0x49,  81);
+ Drivable = 1;
+}
+if(buttons&CTRL_LTRIGGER)
+{
+ setchar(pcar + 0x49,  82);
+ Drivable = 0;
+}
+if(Drivable)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+ if (buttons & CTRL_CROSS)
+ {
+    boost = 1.5;
+    thrust = boost * 0.00333;
+
+    // velocity = velocity + forward vector * thrust
+    setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+    setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+    setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+ }
+}
+

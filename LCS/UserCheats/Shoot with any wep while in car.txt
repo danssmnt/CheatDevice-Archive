@@ -1,0 +1,377 @@
+#cheat Shoot with any wep while in car
+setchar(pplayer + 0x034C, 0x0C); 
+
+#cheat Stat: 999999999 mission attempts
+//ID: 9155
+//Score: 69
+//Author: vettefan88
+//Category: Player Stats
+//Description: This wikll say there were 999999999 mission attempts in your stats
+//Image: none
+//Time: 03/05/2006 22:20:56
+//Working: Yes
+setint(0x08B5E1A4, 999999999);
+
+#cheat Disable Side Missions
+//ID: 4035
+//Score: 38
+//Author: jacob26
+//Category: Misc
+//Description: Disable Side Missions
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// by jacob26
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09F6C4C0, 0);
+
+
+#cheat cheat unlimited vigilant mission timer
+//ID: 4116
+//Score: 35
+//Author: Unknown
+//Category: Vehicle
+//Description: cheat unlimited vigilant mission timer
+//Image: none
+//Time: 20/01/2006 14:52:29
+//Working: Yes
+setchar(0x09F6FA7A, 0xFF)
+
+
+#cheat Unlimited Go Go Faggio mission time
+//ID: 4123
+//Score: 72
+//Author: vettefan88
+//Category: Misc
+//Description: This cheat will give you unlimited time in the mission. Do not use with any other mission timer cheat.
+//Image: none
+//Time: 20/01/2006 18:39:49
+//Working: Yes
+setchar(0x09F6F91A, 0xFF)
+
+
+#cheat unlimited vigilante mission timer
+//ID: 4124
+//Score: 96
+//Author: vettefan88
+//Category: Misc
+//Description: Unlimited time in vigilante mission. Do not use with any other timer cheats
+//Image: none
+//Time: 20/01/2006 18:41:50
+//Working: Yes
+setchar(0x09F6FA7A, 0xFF)
+
+
+#cheat Bump and Grinds course 2
+//ID: 4145
+//Score: 28
+//Author: vettefan88
+//Category: Vehicle
+//Description: No timer, automatically on last lap, Do not use with other mission timer cheats
+//Image: none
+//Time: 21/01/2006 02:56:59
+//Working: Yes
+setchar(09F6F9C5, 00);
+setchar(09F6F9D0, 03);
+
+//edited by Waterbottle on 12.03.2006 14:19:44
+
+#cheat Unlimited Taxi timer + tip
+//ID: 4125
+//Score: 102
+//Author: vettefan88
+//Category: Misc
+//Description: This will give you unlimited time in the taxi mission, plus never decreasing tip bar. do not use with any other mission cheats.
+//Image: none
+//Time: 20/01/2006 18:44:02
+//Working: Yes
+setchar(0x09F6F922, 0xFF)
+setchar(0x09F6F930, 0xFF)
+
+
+#cheat Unlimited taxi mission timer
+//ID: 4127
+//Score: 46
+//Author: vettefan88
+//Category: Vehicle
+//Description: This will give you unlimited taxi mission timer, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:45:13
+//Working: Yes
+setchar(0x09F6F91A, 0xFF)
+
+
+#cheat Unlimited firetruck mission timer
+//ID: 4128
+//Score: 96
+//Author: vettefan88
+//Category: Misc
+//Description: Gives you unlimited time in the firetruck mission, do not use with any other mission timers.
+//Image: none
+//Time: 20/01/2006 18:47:58
+//Working: Yes
+setchar(0x09F6FB46, 0xFF)
+
+
+#cheat No "bump and grinds" mission timer
+//ID: 4129
+//Score: 40
+//Author: vettefan88
+//Category: Vehicle
+//Description: Your bum and grinds mission timer will never increase, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:48:51
+//Working: Yes
+setchar(0x09F6F995, 0x00)
+
+//edited by Waterbottle on 02.03.2006 22:33:17
+
+#cheat Unlimited car salesman mission timer
+//ID: 4130
+//Score: 83
+//Author: vettefan88
+//Category: Misc
+//Description: Give you unlimited car salesman mission timer, do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:49:37
+//Working: Yes
+setchar(0x09F6F99E, 0xFF)
+
+
+#cheat Unlimited mission timer in the scrapyard challenge
+//ID: 4131
+//Score: 72
+//Author: vettefan88
+//Category: Misc
+//Description: This will give you unlimited time in the scrapyard challenge, Do not use with any other mission timers
+//Image: none
+//Time: 20/01/2006 18:52:40
+//Working: Yes
+setchar(0x09F6F920, 0xFF)
+
+
+#cheat Unlimited time in bike shooter missions
+//ID: 4163
+//Score: 45
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time in unlimited AWOL angel/9mm mayhem/scooter chooter
+//Image: none
+//Time: 22/01/2006 02:25:58
+//Working: Yes
+setchar(09F6F91A, 0xFF);
+
+//edited by Durka Durka Mahn on 3/12/2006 11:39:50 AM
+
+#cheat unlimited Bike Salesman time
+//ID: 4165
+//Score: 48
+//Author: vettefan88
+//Category: Vehicle
+//Description: Unlimited time in bike salesman mission
+//Image: none
+//Time: 22/01/2006 02:27:42
+//Working: Yes
+setchar(09F6F9A6, 0xFF);
+
+
+#cheat Unlimited Avenging angels mission timer
+//ID: 4171
+//Score: 95
+//Author: vettefan88
+//Category: Vehicle
+//Description: Gives you unlimited time in the avenging angels missions
+//Image: none
+//Time: 22/01/2006 03:51:39
+//Working: Yes
+setchar(09F6EAFE, 0xFF);
+
+
+#cheat MISSION SPOILER:                                                       fort staunton destroyed
+//ID: 6264
+//Score: 59
+//Author: Waterbottle
+//Category: Interiors
+//Description: does what the name says. if it doesn't work teleport to a differetnt island and back. texture ONLY
+//Image: none
+//Time: 08/04/2006 05:16:10
+//Working: Yes
+setchar(08e6a668, 1)
+#off
+setchar(08e6a668, 0) 
+
+//edited by Waterbottle on 07.04.2006 22:20:26
+
+#cheat Choose a mission you want to do!
+//ID: 6325
+//Score: 171
+//Author: marcus-aspin
+//Category: Misc
+//Description: Activate the mission you want to do then reload the cheatdevice and it will be on that mission!
+//Image: none
+//Time: 12/04/2006 19:50:46
+//Working: Yes
+//cheat Portland Vincenzo 1 Prologue
+setint(0x09F6BFC0, 0, 1);
+//cheat Portland Vincenzo 2 Slacker
+setint(0x09F6BFC0, 0, 2);
+//cheat Portland Vincenzo 3 Dealing Revenge
+setint(0x09F6BFC0, 0, 3);
+//cheat Portland Vincenzo 4 Snuff
+setint(0x09F6BFC0, 0, 4);
+//cheat Portland Vincenzo 5 Smash and Grab
+setint(0x09F6BFC0, 0, 5);
+//cheat Portland Vincenzo 6 Hot Wheels
+setint(0x09F6BFC0, 0, 6);
+//cheat Portland Vincenzo 7 The Portland Chainsaw Masquerade
+setint(0x09F6BFC0, 0, 7);
+//cheat Portland JD 1 Bone Voyeur
+setint(0x09F6BFD8, 0, 1);
+//cheat Portland JD 2 Don in 60 Seconds
+setint(0x09F6BFD8, 0, 2);
+//cheat Portland JD 3 A Volatile Situation
+setint(0x09F6BFD8, 0, 3);
+//cheat Portland JD 4 Blow Up 'Dolls'
+setint(0x09F6BFD8, 0, 4);
+//cheat Portland JD 5 Salvatores Salvation
+setint(0x09F6BFD8, 0, 5);
+//cheat Portland JD 6 The Guns of Leone
+setint(0x09F6BFD8, 0, 6);
+//cheat Portland JD 7 Calm Before the Storm
+setint(0x09F6BFD8, 0, 7);
+//cheat Portland JD 8 The Made Man
+setint(0x09F6BFD8, 0, 8);
+//cheat Portland Salvatore 1 The Offer
+setint(0x09F6BFCC, 0, 1);
+//cheat Portland Salvatore 2 Ho Selecta
+setint(0x09F6BFCC, 0, 2);
+//cheat Portland Salvatore 3 Frighteners
+setint(0x09F6BFCC, 0, 3);
+//cheat Portland Salvatore 4 Rollercoaster Ride
+setint(0x09F6BFCC, 0, 4);
+//cheat Portland Salvatore 5 Contra-Banned
+setint(0x09F6BFCC, 0, 5);
+//cheat Portland Salvatore 6 Sindacco Sabotage
+setint(0x09F6BFCC, 0, 6);
+//cheat Portland Salvatore 7 The Trouble With Triads
+setint(0x09F6BFCC, 0, 7);
+//cheat Portland Salvatore 8 Driving Mr. Leone
+setint(0x09F6BFCC, 0, 8);
+//cheat Portland Ma 1 Snappy Dresser
+setint(0x09F6BFE4, 0, 1); 
+//cheat Portland Ma 2 Big Rumble in Little China
+setint(0x09F6BFE4, 0, 2);
+//cheat Portland Ma 3 Grease Sucho
+setint(0x09F6BFE4, 0, 3);
+//cheat Portland Ma 4 Dead Meat
+setint(0x09F6BFE4, 0, 4);
+//cheat Portland Ma 5 No Son of Mine
+setint(0x09F6BFE4, 0, 5);
+//cheat Portland Maria 1 Shop Till You Strop
+setint(0x09F6BFF0, 0, 1);
+//cheat Portland Maria 2 Taken For a Ride
+setint(0x09F6BFF0, 0, 2);
+//cheat Portland Maria 3 Booby Prize
+setint(0x09F6BFF0, 0, 3);
+//cheat Portland Maria 4 Biker Heat
+setint(0x09F6BFF0, 0, 4);
+//cheat Portland Maria 5 Overdose of Trouble
+setint(0x09F6BFF0, 0, 5);
+//cheat Staunton Salvatore 1 A Walk In The Park
+setint(0x09F6C09C, 0, 1); 
+//cheat Staunton Salvatore 2 Making Toni
+setint(0x09F6C09C, 0, 2);
+//cheat Staunton Salvatore 3 Caught in the Act
+setint(0x09F6C09C, 0, 3);
+//cheat Staunton Salvatore 4 Search and Rescue
+setint(0x09F6C09C, 0, 4);
+//cheat Staunton Salvatore 5 Taking The Peace
+setint(0x09F6C09C, 0, 5);
+//cheat Staunton Salvatore 6 Shoot The Messenger
+setint(0x09F6C09C, 0, 6);
+//cheat Staunton McAffrey 1 Sayonara Sindaccos
+setint(0x09F6C0A8, 0, 1);
+//cheat Staunton McAffrey 2 The Whole 9 Yardies
+setint(0x09F6C0A8, 0, 2);
+//cheat Staunton McAffrey 3 Crazy '69'
+setint(0x09F6C0A8, 0, 3);
+//cheat Staunton McAffrey 4 Night of the Living Dreads
+setint(0x09F6C0A8, 0, 4);
+//cheat Staunton McAffrey 5 Munitions Dump
+setint(0x09F6C0A8, 0, 5);
+//cheat Staunton Donald Love 1 The Morgue Party Candidate
+setint(0x09F6C0B4, 0, 1);
+//cheat Staunton Donald Love 2 Steering The Vote
+setint(0x09F6C0B4, 0, 2);
+//cheat Staunton Donald Love 3 Cam-Pain
+setint(0x09F6C0B4, 0, 3);
+//cheat Staunton Donald Love 4 Friggin' the Riggin'
+setint(0x09F6C0B4, 0, 4);
+//cheat Staunton Donald Love 5 Love and Bullets
+setint(0x09F6C0B4, 0, 5);
+//cheat Staunton Donald Love 6 Counterfeit Count
+setint(0x09F6C0B4, 0, 6);
+//cheat Staunton Donald Love 7 Love On The Rocks
+setint(0x09F6C0B4, 0, 7);
+//cheat Staunton Church 1 L.C. Confidential
+setint(0x09F6C0C0, 0, 1);
+//cheat Staunton Church 2 The Passion Of The Heist
+setint(0x09F6C0C0, 0, 1);
+//cheat Staunton Church 3 Karmageddon
+setint(0x09F6C0C0, 0, 1);
+//cheat Staunton Church 4 False Idols
+setint(0x09F6C0C0, 0, 1);
+//cheat SSV Salvatore 1 Lionel
+setint(0x09F6C2F4, 0, 1);
+//cheat SSV Salvatore 2 Rough Justice
+setint(0x09F6C2F4, 0, 2);
+//cheat SSV Salvatore 3 Dead Reckoning
+setint(0x09F6C2F4, 0, 3);
+//cheat SSV Salvatore 4 Shogun Showdown
+setint(0x09F6C2F4, 0, 4);
+//cheat SSV Salvatore 5 The Shoreside Redemption
+setint(0x09F6C2F4, 0, 5);
+//cheat SSV Salvatore 6 The Sicilian Gambit
+setint(0x09F6C2F4, 0, 6);
+//cheat SSV Donald Love 1 Panlantic Land Grab
+setint(0x09F6C300, 0, 1);
+//cheat SSV Donald Love 2 Stop The Press
+setint(0x09F6C300, 0, 2);
+//cheat SSV Donald Love 3 Morgue Party Ressurection
+setint(0x09F6C300, 0, 3);
+//cheat SSV Donald Love 4 No Money Mo' Problems
+setint(0x09F6C300, 0, 4);
+//cheat SSV Donald Love 5 Bringing the House Down
+setint(0x09F6C300, 0, 5);
+//cheat SSV Donald Love 6 Love On The Run
+setint(0x09F6C300, 0, 6);
+//cheat SSV Toshiko 1 More Deadly Then The Male
+setint(0x09F6C30C, 0, 1);
+//cheat SSV Toshiko 2 Cash Clash
+setint(0x09F6C30C, 0, 2);
+//cheat SSV Toshiko 3 A Date With Death
+setint(0x09F6C30C, 0, 3);
+//cheat SSV Toshiko 4 Cash in Kazukis Chips
+setint(0x09F6C30C, 0, 4);
+//You will need to replace the double slashs with a hash (#) wherever it says cheat 
+//and press enter after every semi-colon(;)
+// 
+//I'm not to used to dealing with codes and stuff and im not sure if some of these work
+//so will someone please sort it out
+// 
+//By Marcus-Aspin
+
+#cheat Turn all Missions off! Even In Car Missions!
+//ID: 9424
+//Score: 76
+//Author: K3B4B5T4R
+//Category: Misc
+//Description: Errr! What do ya think?
+//Image: none
+//Time: 06/05/2006 19:36:15
+//Working: Yes
+setchar(0x09F6C4C0, 1);
+#off
+
+

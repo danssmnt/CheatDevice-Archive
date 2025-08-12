@@ -1,0 +1,159 @@
+#cheat Rotate the Car Camera NA
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat Rotate the Car Camera
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat Rotate the Car Camera & Passenger Mode 
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+
+#cheat Rotate the Car Camera & Passenger Mode
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+if(pcar)
+{
+setchar(pplayer + 0x08B4, 0x32);
+}
+#off
+setchar(pplayer + 0x08B4, 0x33);
+
+#cheat CTW Camera View
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+setfloat(0x08BC86C0, 19); //Zoom on foot
+setfloat(0x08BC8684, 23); //Zoom in car
+//created by 03stevensmi
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); //Rotation
+//setfloat(0x08BC8070, 0, 0, 180); //Zoom 
+setfloat(0x08BC7E8C, 180);
+setfloat(0x08BC7E90, 180);
+setfloat(0x08BC7FDC, 180);
+setfloat(0x08BC7FB8, 180);
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 0, 1080, 0); //Rotation
+//setfloat(0x08BC8070, 0, 180, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); //No idea what this is...
+setfloat(0x08BC80B0, 1080, 0, 0); //Rotation
+setfloat(0x08C7F18, -0.9);
+//setfloat(0x08BC8070, 180, 0, 0); //Zoom 
+setfloat(0x08BC7E8C, 90);
+
+#cheat Adjust Camera Distance to 0
+setfloat(0x8bc86c0, 0);
+setfloat(0x8bc8684, 0);
+
+#cheat Adjust Camera Distance to 2
+setfloat(0x8bc86c0, 2);
+setfloat(0x8bc8684, 2);
+
+#cheat Adjust Camera Distance to 4
+setfloat(0x8bc86c0, 4);
+setfloat(0x8bc8684, 4);
+
+#cheat Adjust Camera Distance to 6
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+
+#cheat Adjust Camera Distance to 8
+setfloat(0x8bc86c0, 8);
+setfloat(0x8bc8684, 8);
+
+#cheat Adjust Camera Distance to 10
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+
+#cheat Adjust Camera Distance to -2
+setfloat(0x8bc8684, -2);
+
+#cheat Adjust Camera Distance to -1
+setfloat(0x8bc8684, -1);
+
+#cheat Adjust Camera Distance to -0
+setfloat(0x8bc86c0, -0);
+setfloat(0x8bc8684, -0);
+
+#cheat 1st person view 
+setfloat(0x8bc86c0, -4);
+setfloat(0x8bc8684, -4);
+
+#cheat Top Down View
+setfloat(0x08BC7FC4, -2); // Enable Top Down View 
+setfloat(0x08BC86C0, 10); // On Foot Camera Zoom
+setfloat(0x08BC8684, 15); // In Vehicle Camera Zoom
+
+// By Winchy
+// You can get some nice angles if used during a cutscene.
+// CANNOT be used in cars.
+#cheat Lock Camera
+setchar(pplayer + 0x550,   1);
+#off
+setchar(pplayer + 0x550,   0);
+
+#cheat First Person View in Car v2
+//ID: 19850
+//Score: 33
+//Author: Xsjado
+//Category: Vehicle
+//Description: it works well for the moment but still needs a bit of work on it. none of the car cheats like rocket boost and other stuff dont work for the moment. i noticed there was a fair few people that wanted this, enjoy 
+//notes: doesnt work with motobikes, also turn on when you have entered the car or you will freeze 
+//
+//thanks to M_Roc for an address i needed
+//
+//EDITED BY: psphacker108 on 03/07/07 02:19:28
+//Image: none
+//Time: 29/06/2007 15:51:08
+//Working: Yes
+setchar(pplayer + 0x000008B4, 61);
+setchar(pplayer+0x4C,   0x10,   0x20);
+#off 
+setchar(pplayer+0x4C,   0x00,   0x00); 
+setchar(pplayer + 0x000008B4, 55);
+
+#cheat First Person View in Car
+//ID: 19834
+//Score: 41
+//Author: Xsjado
+//Category: Vehicle
+//Description: Puts the view point IN Vics head! parts of the face like eyes and nose can block camera and view is better in different cars. if the camera moves out of the car press L to reset it. doesnt work with motobikes
+//
+//EDITED BY: psphacker108 on 28/06/07 02:33:58
+//Image: none
+//Time: 24/06/2007 12:04:06
+//Working: Yes
+setchar(pplayer + 0x000008B4, 61);
+#off
+setchar(pplayer + 0x000008B4, 55);
+
+

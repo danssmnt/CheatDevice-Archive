@@ -1,0 +1,489 @@
+
+#cheat ghost car (no clip)
+//by getdustin
+//right trigger activates and left trigger deactivates
+//Turning, acceleration, and breaking by Durka Durka Mahn
+static Drivable;
+if(buttons&CTRL_RTRIGGER)
+{
+setchar(pcar + 0x49,  81);
+Drivable = 1;
+}
+if(buttons&CTRL_LTRIGGER)
+{
+setchar(pcar + 0x49,  82);
+Drivable = 0;
+}
+if(Drivable)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+if (buttons & CTRL_CROSS)
+{
+   boost = 0.5;
+   thrust = boost * 0.00333;
+
+   // velocity = velocity + forward vector * thrust
+   setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+   setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+   setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+}  
+if(buttons & CTRL_SQUARE)
+{
+  setfloat(pcar + 0x140,  getfloat(pcar + 0x140)*0.95,  getfloat(pcar + 0x144)*0.95);
+}
+}
+
+#cheat Landmine Spawner (NOT WORKING)
+static pbomb;
+
+if(!pbomb)
+{
+pbomb = 0x08bf9e50;
+}
+
+if(pcar && pbomb && pbomb < 0x08bfa420 && press & CTRL_CIRCLE)
+{
+setchar(pbomb, 0x0e);
+setint(pbomb + 0x4, 0x098B4A40);
+setchar(pbomb + 0xC, 0x01);
+setfloat(pbomb + 0x10, getfloat(pcar + 0x30));
+setfloat(pbomb + 0x14, getfloat(pcar + 0x34));
+setfloat(pbomb + 0x18, getfloat(pcar + 0x38));
+setfloat(pbomb + 0x1C, 1);
+setint(pbomb + 0x24, 0xFFFFFF);
+pbomb += 0x30;
+}
+
+if(pbomb == 0x08bfa420 && press & CTRL_CIRCLE)
+{
+pbomb = 0x08bf9e50;
+}
+
+#cheat The Mysterious Banshee
+static state;
+DifficultLevel = 50;
+ if(state)
+     setshort(pcar+0x232,  0x0101);
+ else
+ {
+     setint(0x08C739B0,  175);
+     setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+     setfloat(0x08C739C0,  3.1415);
+     if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+     {
+     state = 1;
+     time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+     }
+ }
+ if(state == 1)
+ {
+ setshort(0x08e90bd8,  1,  'O',  'h',  ',',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+ if(newtime - 2 > time)
+        {
+        state = 2;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        }
+ }
+ if(state == 2)
+ {
+ setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        if(newtime - 2 > time)
+        {
+        state = 3;
+        health = 150;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        }
+ }
+ if(state == 3)
+ {
+ setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 3 > time)
+{
+state = 4;
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+}
+if(speed < DifficultLevel)
+    health -= 0.5;
+else if(health < 150)
+    health += 0.5;
+
+ setfloat(pplayer+0x4e8, health);
+
+      if(health <= 0)
+{
+setfloat(pcar+0x27c, 0);
+state = 0;
+}
+ }
+ if(state == 4)
+ {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 4 < time)
+            setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ',',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ',', ' ',  'N',  'O',  'W',  '!', 0);
+      else time = 0;
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ if(speed < DifficultLevel + 10)
+          health -= 0.5;
+      else if(health < 150)
+          health += 0.5;
+
+ setfloat(pplayer+0x4e8, health);
+
+      if(health <= 0)
+      {
+      setfloat(pcar+0x27c, 0);
+      state = 0;
+      }
+ if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)
+      {
+      state = 5;
+      time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      }
+ }
+ if(state == 5)
+ {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 2 > time)
+     state = 6;
+ }
+ if(state == 6)
+ {
+ setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ',', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+if(buttons & CTRL_UP)
+{
+state = 0;
+setshort(pcar+0x232,  0);
+}
+ }
+#off
+state = 0;
+setshort(pcar+0x232,  0);
+
+#cheat Remote Explosives
+static state;
+static used;
+if(!state)
+{
+   for(pbomb = 0x08BF9E50, cur = 1; pbomb < 0x08BFA420; pbomb += 0x30, cur<<=1)
+   {
+   if(getchar(pbomb + 0xC))
+          used |= cur;
+   setchar(pbomb + 0xC, 0);
+   }
+   if(press & CTRL_DOWN) state = 1;
+} else
+if(state == 1)
+{
+   for(pbomb = 0x08BF9E50, cur = 1; pbomb < 0x08BFA420; pbomb += 0x30, cur<<=1)
+   {
+   if(used & cur)
+   setchar(pbomb + 0xC, 1);
+   }
+   state = 2;
+}
+else if(press & CTRL_DOWN) state = used = 0;
+
+
+#cheat massive bombs
+static bomb;
+if ((getint(*first active bomb location*) == 1) && (getint(*bomb location 20 addresses down*) == 0))
+{
+*code to copy first bomb into the next bomb location*
+bomb = bomb +0x30; // moves on to the next bomb address
+}
+if (getint(*bomb address 20 addresses down*) == 1)
+bomb = 0
+
+#cheat Firecaster
+//By Warp3
+//(Thanks to DDM for fire info, Waterbottle for weapon info, and edisoncarter for the Pyrokinesis
+//cheat, on which this cheat is based, and for CheatDevice itself.)
+//Firecaster is very similar to edisoncarter's "Pyrokinesis" cheat except that you must be on weapon
+//slot 0 (fists or brass knuckles), you must hit CIRCLE to set the ped on fire, and the ped dies
+//instantly to allow for quickly neutralizing groups of enemies.
+static pped;
+pped = getint(0x08BA1D70);
+if (pped && !getchar(pplayer+0xCB8) && buttons & CTRL_CIRCLE)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, 0);
+}
+
+#cheat sideways tires
+//by vettefan
+setfloat(pcar+0x6a8, 3);
+
+
+#cheat custom tracks always on
+//by vettefan
+//activate it before you leave your safehouse, or you'll have to enter a vehicle first
+setchar(pcar+0x2b7, 10);
+setchar(0x8bb11dc, 10);
+setchar(0x9a6341b, 10);
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat Bulldozer
+//R pickup and retrieve, O smash, Down toss!
+static onoff;
+if(getint(pcar + 0x150))
+{
+ppedc = getint(pcar + 0x150);
+}
+if(ppedc&&buttons & CTRL_RTRIGGER)
+{
+onoff = 1;
+}
+if(onoff&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+setfloat(ppedc + 0x30,  getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 7.5);
+setfloat(ppedc + 0x34,  getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 7.5);
+setfloat(ppedc + 0x38,  getfloat(pplayer + 0x38) + 2.5);
+setfloat(ppedc + 0x70, 0, 0, 0);
+if(press & CTRL_CIRCLE)
+{
+setfloat(ppedc + 0x0148, -1.2);
+setfloat(ppedc + 0x027C, getfloat(ppedc + 0x027C) - 250);
+onoff = 0;
+}
+else
+{
+setfloat(ppedc + 0x0148, 0);
+}
+if(press & CTRL_DOWN)
+{
+boost = 5;
+thrust = boost * 0.00333;
+setfloat(ppedc + 0x0140,   getfloat(ppedc + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(ppedc + 0x0144,   getfloat(ppedc + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(ppedc + 0x0148,   getfloat(ppedc + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+onoff = 0;
+}
+}
+
+#cheat Hood Surfer
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30, getfloat(surfee + 0x30);
+setfloat(pcar + 0x34, getfloat(surfee + 0x34);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+}
+
+#cheat Hood Surfer
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30, getfloat(surfee + 0x30);
+setfloat(pcar + 0x34, getfloat(surfee + 0x34);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+}
+
+#cheat Hood Surfer
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30, getfloat(surfee + 0x30));
+setfloat(pcar + 0x34, getfloat(surfee + 0x34));
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+}
+}
+
+#cheat Grapple Gun
+static grapplespeed;
+aimx = getfloat(pplayer + 0x30) - getfloat(0x08ba1d50);
+aimy = getfloat(pplayer + 0x34) - getfloat(0x08ba1d54);
+aimz = getfloat(pplayer + 0x38) - getfloat(0x08ba1d58);
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CROSS)
+{
+   setshort(pplayer + 0x01c8,   0x1020);
+   setfloat(pplayer + 0x0140,   -aimx * grapplespeed);
+   setfloat(pplayer + 0x0144,   -aimy * grapplespeed);
+   setfloat(pplayer + 0x0148,   -aimz * grapplespeed);
+}
+if(buttons & CTRL_LTRIGGER)
+{
+grapplespeed = 0.01;
+}
+else
+{
+grapplespeed = 0.005;
+}
+
+
+#cheat Hood Surfer
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30,  getfloat(surfee + 0x30) + getfloat(surfee + 0x10) * - 2.0);
+setfloat(pcar + 0x34,  getfloat(surfee + 0x34) + getfloat(surfee + 0x14) * -2.0);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+setfloat(pcar+0x140, 0, 0, 0);
+setfloat(pcar+0x70, 0, 0, 0);
+}
+#off
+surfee = 0;
+
+#cheat Change Any Object Vic gets Near into a Ramp!
+add = getint(0x0994f460);
+setshort(add + 0x56, 0x28e);
+
+#cheat Car Diamond
+static UM;
+static L;
+static R;
+static BM;
+
+if(!R||!L||!UM||!BM)
+{
+   setshort(0x08e90bd8,   1,   'K', 'e', 'e', 'p', ' ', 't', 'o', 'u', 'c', 'h', 'i', 'n', 'g', ' ', 'c', 'a', 'r', 's', '!',  0);
+}
+
+gcar = getint(pobj + 0x150);
+
+if (gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+       UM = gcar;
+}
+
+if(UM)
+{
+setfloat(UM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  9.0);
+setfloat(UM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  9.0);
+setfloat(UM + 0x38,   getfloat(pcar + 0x38));
+setfloat(UM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(UM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(UM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(UM+0x140, 0, 0, 0);
+setfloat(UM+0x70, 0, 0, 0);
+setfloat(UM+0x27C, 1000);
+gcar = getint(UM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+BM = gcar;
+}
+}
+
+if(BM)
+{
+setfloat(BM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  -7.5);
+setfloat(BM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  -7.5);
+setfloat(BM + 0x38,   getfloat(pcar + 0x38));
+setfloat(BM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(BM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(BM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(BM+0x140, 0, 0, 0);
+setfloat(BM+0x70, 0, 0, 0);
+setfloat(BM+0x27C, 1000);
+gcar = getint(BM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+L = gcar;
+}
+}
+
+if(L)
+{
+setfloat(L + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *   6.0);
+setfloat(L + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *   6.0);
+setfloat(L + 0x38,   getfloat(pcar + 0x38));
+setfloat(L + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(L+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(L+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(L+0x140, 0, 0, 0);
+setfloat(L+0x70, 0, 0, 0);
+setfloat(L+0x27C, 1000);
+gcar = getint(L + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+R = gcar;
+}
+}
+
+if(R)
+{
+setfloat(R + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *  -6.0);
+setfloat(R + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *  -6.0);
+setfloat(R + 0x38,   getfloat(pcar + 0x38));
+setfloat(R + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(R+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(R+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(R+0x140, 0, 0, 0);
+setfloat(R+0x70, 0, 0, 0);
+setfloat(R+0x27C, 1000);
+gcar = getint(R + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+UL = gcar;
+}
+}
+
+#off
+UM = BM = L = R = 0;
+
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat Remote Controlled Bike
+//Stand next to the bike you want to remote control then activate the cheat and quickly disable it, as you leave the bike you can remote control it.
+setchar(pplayer+0x894,  0x12);
+#off
+setchar(pplayer+0x894,  0x10);
+
+#cheat monster quad
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+

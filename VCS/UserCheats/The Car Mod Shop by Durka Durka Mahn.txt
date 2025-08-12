@@ -1,0 +1,306 @@
+#cheat * UPDATE * The Car Mod Shop V 4
+//ID: 19463
+//Score: 19
+//Author: Durka Durka Mahn
+//Category: Vehicle
+//Description: That's right! This cheat makes a fully working Car Modding shop, much like Trans Fender in San Andreas! To use, drive into the Clymenus Suite Garage with the car you want to modify, and you will be teleported to the car modding Garage. Use Up and Down to navigate through the options, Left and Right to change the Car Color Options, and X to toggle Nos on and off. Once you're done, hold O to teleport back, and hold O to use your Nos. Enjoy!
+//Special thanks to Waterbottle for his Nos code and helping me fix some bugs.
+//
+//UPDATE! Version 2 now has Car Color 2! Use R2, G2, and B2 values to change whilst on the menu. Enjoy!
+//
+//UPDATE! Version 3 now has Lamborghini Doors and Unpoppable Car Tires. Credit to Waterbottle for these codes!
+//
+//UPDATE! Version 4 includes an awesome blue Nos effects and a spinners option at the ModShop. Some bugfixes also included.
+//Image: http://www.themaxone.net/bigvid.gif
+//Time: 20/03/2007 14:30:41
+//Working: Yes
+static Exit;
+static counter;
+static rotation;
+static Spinners;
+static car;
+static Tires;
+static Doors;
+static Nos;
+static menu;
+static stateIn;
+static Start;
+static R;
+static G;
+static B;
+static R2;
+static G2;
+static B2;
+if(getfloat(pcar + 0x30) >=258.71 && getfloat(pcar + 0x30) <= 268.65 && getfloat(pcar + 0x34) >= -146.48 && getfloat(pcar + 0x34) <= -138.07)
+{
+   stateIn = 1;
+   car = pcar;
+   R = getchar(pcar + 0x224);
+   G = getchar(pcar + 0x225);
+   B = getchar(pcar + 0x226);
+   R2 = getchar(pcar + 0x228);
+   G2 = getchar(pcar + 0x229);
+   B2 = getchar(pcar + 0x22A);
+}
+if(stateIn && getfloat(pcar + 0x140) == 0 && getfloat(pcar + 0x144) == 0)
+{
+   Start = 1;
+   setfloat(pcar + 0x30, -140.79, -1420.82, 4.90);
+xRightHandVector    = getfloat(pobj + 0x0000);
+yRightHandVector    = getfloat(pobj + 0x0004);
+zRightHandVector    = getfloat(pobj + 0x0008);
+xForwardVector      = getfloat(pobj + 0x0010);
+yForwardVector      = getfloat(pobj + 0x0014);
+zForwardVector      = getfloat(pobj + 0x0018);
+xUpVector           = getfloat(pobj + 0x0020);
+yUpVector           = getfloat(pobj + 0x0024);
+zUpVector           = getfloat(pobj + 0x0028);
+xRotationalMomentum = getfloat(pobj + 0x0070);
+yRotationalMomentum = getfloat(pobj + 0x0074);
+zRotationalMomentum = getfloat(pobj + 0x0078);
+xVelocity           = getfloat(pobj + 0x0140);
+yVelocity           = getfloat(pobj + 0x0144);
+}
+
+if(Start)
+{
+   stateIn = 0;
+    setfloat(pobj + 0x0000,  xRightHandVector);
+    setfloat(pobj + 0x0004,  yRightHandVector);
+    setfloat(pobj + 0x0008,  zRightHandVector);
+    setfloat(pobj + 0x0010,  xForwardVector);
+    setfloat(pobj + 0x0014,  yForwardVector);
+    setfloat(pobj + 0x0018,  zForwardVector);
+    setfloat(pobj + 0x0020,  xUpVector);
+    setfloat(pobj + 0x0024,  yUpVector);
+    setfloat(pobj + 0x0028,  zUpVector);
+    setfloat(pobj + 0x0070,  xRotationalMomentum);
+    setfloat(pobj + 0x0074,  yRotationalMomentum);
+    setfloat(pobj + 0x0078,  zRotationalMomentum);
+    setfloat(pobj + 0x0140,  0, 0);
+   if( menu == 0 )
+   {
+      int = R;
+      setshort( 0x08e90bd8, 1, 'R', ':', ' ', 0 );
+   }
+   if( menu == 1 )
+   {
+      int = G;
+      setshort( 0x08e90bd8, 1, 'G', ':', ' ', 0 );
+   }
+   if( menu == 2 )
+   {
+      int = B;
+      setshort( 0x08e90bd8, 1, 'B', ':', ' ', 0 );
+   }
+   if( menu == 3 )
+   {
+      int = R2;
+      setshort( 0x08e90bd8, 1, 'R', '2', ':', ' ', 0 );
+   }
+   if( menu == 4 )
+   {
+      int = G2;
+      setshort( 0x08e90bd8, 1, 'G', '2', ':', ' ', 0 );
+   }
+   if( menu == 5 )
+   {
+      int = B2;
+      setshort( 0x08e90bd8, 1, 'B', '2', ':', ' ', 0 );
+   }
+   size = 0;
+   for(i = 1; i < int; i*=10) size+=2;
+   for(i = 0; int > 0; i+=2 ) 
+   {
+      if( menu < 3)
+      {
+      setshort(0x08e90bdc+size-i,  '0' + (int % 10));
+      int = int(int/=10);
+      } 
+      else if( menu > 2)
+      {
+      setshort(0x08e90bde+size-i,  '0' + (int % 10));
+      int = int(int/=10);
+      } 
+   }
+   if( menu == 6 && !Nos)
+   {
+      if(press & CTRL_CROSS)
+         Nos = 1;
+      setshort( 0x08e90bd8, 1, 'N', 'o', 's', ' ', 'o', 'f', 'f', 0);
+   }
+   else if( menu == 6 && Nos)
+   {
+      if(press & CTRL_CROSS)
+         Nos = 0;
+      setshort( 0x08e90bd8, 'N', 'o', 's', ' ', 'o', 'n',  0);
+   }
+   if( menu == 7 && !Doors)
+   {
+      if(press & CTRL_CROSS)
+         Doors = 1;
+      setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 7 && Doors)
+   {
+      if(press & CTRL_CROSS)
+         Doors = 0;
+      setshort( 0x08e90bd8, 1, 'L', 'a', 'm', 'b', 'o', ' ', 'D', 'o', 'o', 'r', 's', ' ', 'O', 'n', 0);
+   }
+   if( menu == 8 && !Tires)
+   {
+      if(press & CTRL_CROSS)
+         Tires = 1;
+      setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 8 && Tires)
+   {
+      if(press & CTRL_CROSS)
+         Tires = 0;
+      setshort( 0x08e90bd8, 1, 'U', 'n', 'p', 'o', 'p', 'p', 'a', 'b', 'l', 'e', ' ', 'T', 'i', 'r', 'e', 's', ' ', 'O', 'n', 0);
+   }
+   if( menu == 9 && !Spinners)
+   {
+      if(press & CTRL_CROSS)
+         Spinners = 1;
+      setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'f', 'f', 0);
+   }
+   else if( menu == 9 && Spinners)
+   {
+      if(press & CTRL_CROSS)
+         Spinners = 0;
+      setshort( 0x08e90bd8, 1, 'S', 'p', 'i', 'n', 'n', 'e', 'r', 's', ' ', 'O', 'n', 0);
+   }
+   if(buttons & CTRL_LEFT)
+   {
+      if(menu == 0)
+         R--;
+      if(menu == 1)
+         G--;
+      if(menu == 2)
+         B--;
+      if(menu == 3)
+         R2--;
+      if(menu == 4)
+         G2--;
+      if(menu == 5)
+         B2--;
+   }
+   if(buttons & CTRL_RIGHT)
+   {
+      if(menu == 0)
+         R++;
+      if(menu == 1)
+         G++;
+      if(menu == 2)
+         B++;
+      if(menu == 3)
+         R2++;
+      if(menu == 4)
+         G2++;
+      if(menu == 5)
+         B2++;
+   }
+   if(buttons & CTRL_CIRCLE)
+   {
+      Start = 0;
+    setfloat(pcar + 0x30, -191.57, -1392.88, 145.00);
+    setfloat(pcar + 0x30, 277.13, -146.65, 15);
+      menu = 0;
+    Exit = 1;
+   }
+   if(press & CTRL_DOWN && menu < 9)
+      menu++;
+   if(press & CTRL_UP  && menu > 0)
+      menu--;
+      setchar(pcar + 0x224, R, G, B);
+      setchar(pcar + 0x228, R2, G2, B2);
+   }
+if(Exit)
+{
+    setfloat(pobj + 0x0000,  xRightHandVector);
+    setfloat(pobj + 0x0004,  yRightHandVector);
+    setfloat(pobj + 0x0008,  zRightHandVector);
+    setfloat(pobj + 0x0010,  xForwardVector);
+    setfloat(pobj + 0x0014,  yForwardVector);
+    setfloat(pobj + 0x0018,  zForwardVector);
+    setfloat(pobj + 0x0020,  xUpVector);
+    setfloat(pobj + 0x0024,  yUpVector);
+    setfloat(pobj + 0x0028,  zUpVector);
+    setfloat(pobj + 0x0070,  xRotationalMomentum);
+    setfloat(pobj + 0x0074,  yRotationalMomentum);
+    setfloat(pobj + 0x0078,  zRotationalMomentum);
+    setfloat(pobj + 0x0140,  0, 0, 0);
+Exit = 0;
+}
+if(Nos && !stateIn && !Start && pcar == car)
+{
+if(buttons & CTRL_CIRCLE && buttons & CTRL_CROSS) {
+
+   speed = 0.0;
+   setchar(0x09569B90, 0x10);
+   setchar(0x09569B94, 0, 127, 255);
+   if(getfloat(pcar+0x140)>0)
+   {
+      speed+=getfloat(pcar+0x140);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x140);
+   }
+
+   if(getfloat(pcar+0x144)>0)
+   {
+      speed+=getfloat(pcar+0x144);
+   }
+   else
+   {
+      speed-=getfloat(pcar+0x144);
+   }
+
+   if(speed<175/75)
+   {
+      setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+      setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+   }
+
+}
+else
+{
+   setchar(0x09569B90, 0x4);
+   setchar(0x09569B94, 63, 63, 63);
+}
+}
+
+if(Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  0,  -1.2566371,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  0,  -1.2566371,  0);
+}
+else if(!Doors && pcar == car && getshort(pcar + 0x56) != 178 && getshort(pcar + 0x56) != 179 && getshort(pcar + 0x56) != 205 && getshort(pcar + 0x56) != 212 && getshort(pcar + 0x56) != 229 && getshort(pcar + 0x56) != 230 && getshort(pcar + 0x56) != 231 && getshort(pcar + 0x56) != 232 && getshort(pcar + 0x56) != 252)
+{
+setfloat(pcar+0x450,  0,  -1.2566371,  0);
+setfloat(pcar+0x480,  1.2566371,  0,  0);
+setfloat(pcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(pcar+0x4e0,  1.2566371,  0,  0);
+}
+if(Tires && pcar == car)
+{
+setshort(pcar+0x3b6,  0,  0);//cars
+setshort(pcar+0x434,  0);//bikes
+}
+if(Spinners && pcar == car)
+{
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+}
+

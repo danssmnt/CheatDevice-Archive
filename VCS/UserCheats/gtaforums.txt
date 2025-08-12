@@ -1,0 +1,272 @@
+#cheat ZOMBIES
+setchar(0x08bb32c8, 1);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setchar(0x08bb10d4, 1);
+setchar(0x08BB329C, 0xFF);
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) {
+setchar(0x098b4a40 + i + 0x4A, 32);
+setchar(0x098b4a40 + i +0x1cb, 0x3f);
+setchar(0x098b4a40 + i +0x578, 0x01);
+setchar(0x098b4a40 + i +0x87c, 0x1e);
+//setchar(0x098b4a40 + i +0x8B4, 0x0);
+//setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x00);
+setchar(0x098b4a40 + i + 0x894, 0x8);
+setint(0x098b4a40 + i + 0x890, pplayer);
+}
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat Enable Traffic at Leaf Links Golfclub
+setchar(0x08BB329C, 0x00);
+
+#cheat Equip any Ped with the SMG
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x19);
+setchar(pped+0x87c, 0x1e);
+//setchar(pped+0x8B4, 0x0);
+//setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+
+#cheat Gangmembers do drivebys
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x18);
+setchar(pped+0x87c, 0x1e);
+//setchar(pped+0x8B4, 0x0);
+//setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+#cheat Hitmen
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x620, 0x1d);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x06);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+#cheat Example Mission
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -1007.98,1015.59,9.96,90);
+moveto(-1007.98,1015.59,9.20); object(0x01BF,0,0,212);
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+{
+yourped=pped;
+}
+if(yourped)
+{
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x7);
+}
+if(buttons & CTRL_RTRIGGER && press & CTRL_LTRIGGER)
+{
+setfloat(pplayer+0x30, -1018.23);
+setfloat(pplayer+0x34, 1013.77);
+setfloat(pplayer+0x38, 8.87);
+setfloat(yourped+0x30, -1011.22);
+setfloat(yourped+0x34, 1016.20);
+setfloat(yourped+0x38, 8.87);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+
+
+#cheat Infinite Ammo for Ped
+//By Sousanator
+
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+}
+
+#cheat Bodyguard
+pped = getint(0x08BA1D70); //Pointer to aimed at ped
+static yourped;
+if(pped&&!yourped && press & CTRL_UP)
+yourped=pped; //If aimed at a ped, save its address in the memory
+if(yourped){
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+if(pped && pped != yourped && buttons & CTRL_TRIANGLE){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);
+} else {
+setchar(yourped+0x894, 0xC); //If not in a car, make that ped follow you
+setint(yourped+0x890, pplayer); //Lets the ped know who to follow
+}
+}
+}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11); //If in a car, make that ped get in the car
+setint(yourped+0x484, pcar); //Makes the ped know what car to get into
+setint(yourped+0x450, pcar);
+}
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+}
+}
+
+
+#cheat Hitmen with .357 Colt Python
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x5CC, 0x14);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x03);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+#cheat Hitmen with M249
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+#cheat Hitmen with Minigun
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x63C, 0x23);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+#cheat Always have Infinite Health
+setchar(pplayer+0x4e4, 0xFFFFF);
+
+#cheat Press LTRIGGER+SQUARE to get Full Health
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE)
+{
+setfloat(pplayer+0x4e4, 10000);
+}

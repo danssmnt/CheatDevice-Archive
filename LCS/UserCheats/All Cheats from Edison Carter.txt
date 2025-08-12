@@ -1,0 +1,1612 @@
+#cheat Weapon Set 1 Cheat
+//ID: 5104
+//Score: 219
+//Author: EdisonCarter
+//Category: Button Cheats
+//Description: weapon cheat1
+//Image: none
+//Time: 13/02/2006 03:57:29
+//Working: Yes
+setshort(0x08a93ab4, 0x0005);
+setshort(0x08a93ab8, 0x0001);
+//edited by SWAT_KILLER on 2006/2/23 ¤U¤È 07:48:22
+
+#cheat High gravity to try to kill all peds
+//ID: 5102
+//Score: 26
+//Author: EdisonCarter
+//Category: Player
+//Description: High gravity to try to kill all peds
+//Image: none
+//Time: 13/02/2006 03:53:50
+//Working: Yes
+setshort(0x08a0e994, 0x3E76);
+#off
+setshort(0x08a0e994, 0x3C03);
+
+
+#cheat Teleport: Top of Tall Building
+//ID: 3879
+//Score: 29
+//Author: edisoncarter
+//Category: Teleport
+//Description: Teleport: Top of Tall Building
+//Image: http://www.maxbot.com/gta/CheatDevice02.jpg
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+teleport(95, -1509, 216.98);
+
+//edited by edisoncarter on 3/31/2006 6:13:31 PM
+
+#cheat Time is 9:30am
+//ID: 3883
+//Score: 24
+//Author: edisoncarter
+//Category: Misc
+//Description: Time is 9:30am
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(0x08b5e090, 9, 30);
+
+
+#cheat Hud On/Off
+//ID: 3882
+//Score: 73
+//Author: edisoncarter
+//Category: Misc
+//Description: Hud On/Off
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(0x08b59b0a, 1);
+#off
+setchar(0x08b59b0a, 0);
+
+
+#cheat Max Money
+//ID: 3880
+//Score: 64
+//Author: edisoncarter
+//Category: Player
+//Description: Max Money
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setint(0x8b89acc, 99999999);
+setint(0x8b89ad0, 99999999);
+
+
+#cheat No Money
+//ID: 3881
+//Score: 32
+//Author: edisoncarter
+//Category: Player
+//Description: No Money
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setint(0x08b89acc, 0, 0);
+
+
+#cheat Gravity 30.0g
+//ID: 4103
+//Score: 154
+//Author: edisoncarter
+//Category: Misc
+//Description: Gravity 30.0g
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// High gravity to try to kill all peds
+setshort(0x08a0e994, 0x3E76);
+#off
+setshort(0x08a0e994, 0x3C03); 
+
+
+#cheat No Warning For Saving With Cheats
+//ID: 3885
+//Score: 96
+//Author: edisoncarter
+//Category: Misc
+//Description: No Warning For Saving With Cheats
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(0x08b562f2, 0); 
+
+
+#cheat Your Car is Black
+//ID: 3886
+//Score: 62
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Your Car is Black
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(pcar + 0x01f0, 0, 0);
+
+//edited by ADePSP on 25/02/2006 21:19:27
+
+#cheat Weapon Set 1 Cheat includes Smoke Bomb
+//ID: 3884
+//Score: 91
+//Author: edisoncarter
+//Category: Weapons
+//Description: Weapon Set 1 Cheat includes Smoke Bomb
+//Image: http://www.filelodge.com/files/hdd6/130361/gas.gif
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// Do this button combo cheat after after turning this chear on,
+//UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+setshort(0x08a93ad0, 0x000e);
+setshort(0x08a93ad4, 200);
+
+
+#cheat Huge Wheels on V8 Ghost
+//ID: 5775
+//Score: 60
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Changes wheel size for V8 Ghost
+//Image: http://www.maxbot.com/gta/HugeWheels.jpg
+//Time: 19/03/2006 18:40:37
+//Working: Yes
+setfloat(0x09444FA0 + 0x4c, 2.0);
+
+//edited by ADePSP on 19/03/2006 19:29:17
+
+#cheat Tiny Wheels on V8 Ghost
+//ID: 5774
+//Score: 47
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Changes wheel size for V8 Ghost
+//Image: http://www.maxbot.com/gta/TinyWheels2.jpg
+//Time: 19/03/2006 18:39:05
+//Working: Yes
+setfloat(0x09444FA0 + 0x4c, 0.4);
+
+//edited by ADePSP on 19/03/2006 19:28:27
+
+#cheat Cartel Playground
+//ID: 5739
+//Score: 32
+//Author: tonycipriani213
+//Category: Location Mods
+//Description: Make sure you have a cartel cruiser and you have edisoncarter's monster truck cheat on before you turn this cheat on
+//Image: http://img95.imageshack.us/img95/4508/screen16yz.png
+//Time: 19/03/2006 01:38:35
+//Working: Yes
+//Special thanks to vettefan88 for finding the monster truck cheat and edisoncarter for expanding the cheat
+moveto(1348.37,41.64,9.32);  object(0x01BF,60,0,90);
+move(6.13,0.02,1.60);  object(0x01BF,90,0,90);
+move(4.97,0.03,0.00);  object(0x01BF,90,0,270);
+move(5.00,0.04,0.00);  object(0x01BF,90,0,270);
+move(5.28,0.04,0.00);  object(0x01BF,90,0,270);
+move(4.65,0.03,0.00);  object(0x01BF,90,0,270);
+move(5.94,0.03,-1.60);  object(0x01BF,60,0,270);
+move(-23.08,0.40,0.50);  object(0x01BF,90,20,0);
+move(-0.01,-1.20,0.00);  object(0x01BF,90,20,0);
+move(4.80,-0.03,0.00);  object(0x01BF,90,20,0);
+move(-0.06,1.42,0.00);  object(0x01BF,90,20,0);
+move(4.40,0.00,0.00);  object(0x01BF,90,20,0);
+move(0.00,-1.21,0.00);  object(0x01BF,90,20,0);
+move(5.80,0.00,0.00);  object(0x01BF,90,20,0);
+move(-0.00,1.19,0.00);  object(0x01BF,90,20,0);
+move(6.40,0.00,0.00);  object(0x01BF,90,20,0);
+move(0.00,0.00,0.00);  object(0x01BF,90,20,0);
+move(0.00,-1.19,0.00);  object(0x01BF,90,20,0);
+move(5.74,0.13,-1.70);  object(0x01BF,90,15,0);
+move(0.01,1.21,0.00);  object(0x01BF,90,15,0);
+move(-4.33,-16.32,-0.10);  object(0x01BF,285,0,90);
+move(-4.26,0.01,1.60);  object(0x01BF,295,0,90);
+move(-3.16,-0.01,2.20);  object(0x01BF,310,0,90);
+move(-2.46,0.01,-1.20);  object(0x01BF,0,0,90);
+move(-11.81,-1.96,1.50);  object(0x0FBE,0,0,0);
+move(0.00,0.00,3.00);  object(0x0FBE,0,0,0);
+move(-7.93,-0.72,0.00);  object(0x0FBE,0,0,0);
+move(0.14,-0.04,-2.90);  object(0x0FBE,0,0,0);
+move(-34.71,20.52,-2.60);  object(0x01BF,300,0,90);
+move(-4.54,0.58,0.00);  object(0x0DB7,0,0,180);
+move(-3.36,-0.03,0.00);  object(0x0DB7,0,0,180);
+move(-3.32,-0.03,0.00);  object(0x0DB7,0,0,180);
+move(-3.23,-0.03,0.00);  object(0x0DB7,0,0,180);
+move(-3.07,-0.03,0.00);  object(0x0DB7,0,0,180);
+move(-4.65,-0.05,0.00);  object(0x01BF,60,0,90);
+move(17.97,-22.76,-0.80);  object(0x0DB6,0,0,45);
+move(-1.20,1.21,0.00);  object(0x0DB6,0,0,45);
+move(-1.27,1.28,0.00);  object(0x0DB6,0,0,45);
+move(-1.34,1.35,0.00);  object(0x0DB6,0,0,45);
+move(-1.48,1.49,0.00);  object(0x0DB6,0,0,45);
+move(-1.41,1.42,0.00);  object(0x0DB6,0,0,45);
+move(-3.62,-3.58,0.00);  object(0x0DB6,0,0,45);
+move(1.41,-1.42,0.00);  object(0x0DB6,0,0,45);
+move(1.48,-1.49,0.00);  object(0x0DB6,0,0,45);
+move(1.41,-1.42,0.00);  object(0x0DB6,0,0,45);
+move(1.27,-1.28,0.00);  object(0x0DB6,0,0,45);
+move(1.34,-1.35,0.00);  object(0x0DB6,0,0,45);
+moveto(1511.71,21.77,8.52);  object(0x01BF,105,0,270);
+move(4.69,0.00,1.60);  object(0x01BF,115,0,270);
+move(4.08,0.00,2.10);  object(0x01BF,120,0,270);
+move(5.98,0.06,2.50);  object(0x01BF,105,0,271);
+move(6.38,-0.06,0.80);  object(0x01BF,90,0,271);
+move(4.61,-0.04,0.00);  object(0x01BF,90,0,271);
+move(5.31,-0.05,0.00);  object(0x01BF,90,0,271);
+move(4.83,-0.05,0.00);  object(0x01BF,90,0,270);
+move(5.30,0.05,0.00);  object(0x01BF,90,0,270);
+teleport(1335.40, 38.32, 9.50);
+
+//edited by tonycipriani213 on 20/03/2006 6:43:28 PM
+
+#cheat Mega stunt park
+//ID: 5311
+//Score: 655
+//Author: pspboy
+//Category: Location Mods
+//Description: This cheat makes a mega stunt park at the airport. Includes the stunt park by matt420bad, loop by edisoncarter, and the twister by vettefan. Thanks guys for those awesome stunt things. Game lags, so let everything load, then turn off the cheat.
+//Image: none
+//Time: 26/02/2006 17:21:10
+//Working: Yes
+//stunt park by matt420bad.
+//twister by vettefan.
+//loop by edisoncarter.
+//all combine by pspboy.
+setfloat(0x9595A50, 0,-1,0)
+setfloat(0x9595A60, -0.173648,0,0.984808)
+setfloat(0x9595A70, -0.984808,0,-0.173648)
+setfloat(0x9595A80, -1105.09,-920.21,9.53)
+setshort(0x9595AA8, 0x1bf)
+setfloat(0x9595AB0, 0,-1,0)
+setfloat(0x9595AC0, -0.173648,0,0.984808)
+setfloat(0x9595AD0, -0.984808,0,-0.173648)
+setfloat(0x9595AE0, -1113.09,-920.21,9.53)
+setshort(0x9595B08, 0x1bf)
+setfloat(0x9595B10, 0,-1,0)
+setfloat(0x9595B20, -0.173648,0,0.984808)
+setfloat(0x9595B30, -0.984808,0,-0.173648)
+setfloat(0x9595B40, -1121.09,-920.21,9.53)
+setshort(0x9595B68, 0x1bf)
+setfloat(0x9595B70, 0,-1,0)
+setfloat(0x9595B80, -0.173648,0,0.984808)
+setfloat(0x9595B90, -0.984808,0,-0.173648)
+setfloat(0x9595BA0, -1129.09,-920.21,9.53)
+setshort(0x9595BC8, 0x1bf)
+setfloat(0x9595BD0, 0,-1,0)
+setfloat(0x9595BE0, -0.173648,0,0.984808)
+setfloat(0x9595BF0, -0.984808,0,-0.173648)
+setfloat(0x9595C00, -1137.09,-920.21,9.53)
+setshort(0x9595C28, 0x1bf)
+setfloat(0x9595C30, 0,-1,0)
+setfloat(0x9595C40, -0.173648,0,0.984808)
+setfloat(0x9595C50, -0.984808,0,-0.173648)
+setfloat(0x9595C60, -1145.09,-920.21,9.5)
+setshort(0x9595C88, 0x1bf)
+setfloat(0x9594CD0, 0,-1,0)
+setfloat(0x9594CE0, -0.173648,0,0.984808)
+setfloat(0x9594CF0, -0.984808,0,-0.173648)
+setfloat(0x9594D00, -1097.09,-920.21,9.5)
+setshort(0x9594D28, 0x1bf)
+setfloat(0x9594D30, 0,-1,0)
+setfloat(0x9594D40, -0.173648,0,0.984808)
+setfloat(0x9594D50, -0.984808,0,-0.173648)
+setfloat(0x9594D60, -1089.09,-920.21,9.5)
+setshort(0x9594D88, 0x1bf)
+setfloat(0x9594D90, 0,-1,0)
+setfloat(0x9594DA0, -0.173648,0,0.984808)
+setfloat(0x9594DB0, -0.984808,0,-0.173648)
+setfloat(0x9594DC0, -1081.09,-920.21,9.5)
+setshort(0x9594DE8, 0x1bf)
+setshort(0x9595088, 0x1bf)
+setfloat(0x9595090, 0,-1,0)
+setfloat(0x95950A0, -0.34202,0,0.939693)
+setfloat(0x95950B0, -0.939693,0,-0.34202)
+setfloat(0x95950C0, -1066.1,-920.21,9.20)
+setshort(0x95950E8, 0x1bf)
+setfloat(0x95950F0, 0,-1,0)
+setfloat(0x9595100, -0.34202,0,0.939693)
+setfloat(0x9595110, -0.939693,0,-0.34202)
+setfloat(0x9595120, -1062.85,-920.21,10.30)
+setshort(0x9595148, 0x1bf)
+setfloat(0x9595150, 0,-1,0)
+setfloat(0x9595160, -0.34202,0,0.939693)
+setfloat(0x9595170, -0.939693,0,-0.34202)
+setfloat(0x9595180, -1059.6,-920.21,11.40)
+setshort(0x95951A8, 0x1bf)
+setfloat(0x95951B0, 0,-1,0)
+setfloat(0x95951C0, -0.34202,0,0.939693)
+setfloat(0x95951D0, -0.939693,0,-0.34202)
+setfloat(0x95951E0, -1056.35,-920.21,12.50)
+setshort(0x9595208, 0x1bf)
+setfloat(0x9595210, 0,-1,0)
+setfloat(0x9595220, -0.34202,0,0.939693)
+setfloat(0x9595230, -0.939693,0,-0.34202)
+setfloat(0x9595240, -1053.1,-920.21,13.60)
+setshort(0x9595268, 0x1bf)
+setfloat(0x9595270, 0,-1,0)
+setfloat(0x9595280, -0.34202,0,0.939693)
+setfloat(0x9595290, -0.939693,0,-0.34202)
+setfloat(0x95952A0, -1049.85,-920.21,14.70)
+setshort(0x95952C8, 0x1bf)
+setfloat(0x95952D0, 0,-1,0)
+setfloat(0x95952E0, -0.34202,0,0.939693)
+setfloat(0x95952F0, -0.939693,0,-0.34202)
+setfloat(0x9595300, -1046.6,-920.21,15.80)
+setshort(0x9595328, 0x1bf)
+setfloat(0x9595330, 0,-1,0)
+setfloat(0x9595340, -0.34202,0,0.939693)
+setfloat(0x9595350, -0.939693,0,-0.34202)
+setfloat(0x9595360, -1043.35,-920.21,16.90)
+setshort(0x9595388, 0x1bf)
+setfloat(0x9595390, 0,-1,0)
+setfloat(0x95953A0, 0,0,1)
+setfloat(0x95953B0, -1,0,0)
+setfloat(0x95953C0, -1037.34,-920.21,17.93)
+setshort(0x95953E8, 0x1bf)
+setfloat(0x95953F0, 0,-1,0)
+setfloat(0x9595400, 0,0,1)
+setfloat(0x9595410, -1,0,0)
+setfloat(0x9595420, -1032.34,-920.21,17.93)
+setshort(0x9595448, 0x1bf)
+setfloat(0x9595450, 0,-1,0)
+setfloat(0x9595460, 0,0,1)
+setfloat(0x9595470, -1,0,0)
+setfloat(0x9595480, -1027.34,-920.21,17.93)
+setshort(0x95954A8, 0x1bf)
+setfloat(0x95954B0, 0,-1,0)
+setfloat(0x95954C0, 0,0,1)
+setfloat(0x95954D0, -1,0,0)
+setfloat(0x95954E0, -1022.34,-920.21,17.93)
+setshort(0x9595508, 0x1bf)
+setfloat(0x9595510, 0,-1,0)
+setfloat(0x9595520, 0,0,1)
+setfloat(0x9595530, -1,0,0)
+setfloat(0x9595540, -1017.34,-920.21,17.93)
+setshort(0x9595568, 0x1bf)
+setfloat(0x9595570, 0,-1,0)
+setfloat(0x9595580, 0,0,1)
+setfloat(0x9595590, -1,0,0)
+setfloat(0x95955A0, -1012.34,-920.21,17.93)
+setshort(0x95955C8, 0x1bf)
+setfloat(0x95955D0, 0,-1,0)
+setfloat(0x95955E0, 0,0,1)
+setfloat(0x95955F0, -1,0,0)
+setfloat(0x9595600, -1007.34,-920.21,17.93)
+setshort(0x9595628, 0x1bf)
+setfloat(0x9595630, 0,-1,0)
+setfloat(0x9595640, 0,0,1)
+setfloat(0x9595650, -1,0,0)
+setfloat(0x9595660, -1002.34,-920.21,17.93)
+setshort(0x9595688, 0x1bf)
+setfloat(0x9595690, 0,-1,0)
+setfloat(0x95956A0, 0,0,1)
+setfloat(0x95956B0, -1,0,0)
+setfloat(0x95956C0, -997.34,-920.21,17.93)
+setshort(0x95956E8, 0x1bf)
+setfloat(0x95956F0, 0,-1,0)
+setfloat(0x9595700, -0.173648,0,-0.984808)
+setfloat(0x9595710, 0.984808,0,-0.173648)
+setfloat(0x9595720, -992.34,-920.21,17.4)
+setshort(0x9595748, 0x1bf)
+setfloat(0x9595750, 0,-1,0)
+setfloat(0x9595760, -0.173648,0,-0.984808)
+setfloat(0x9595770, 0.984808,0,-0.173648)
+setfloat(0x9595780, -987.34,-920.21,16.4)
+setshort(0x95957A8, 0x1bf)
+setfloat(0x95957B0, 0,-1,0)
+setfloat(0x95957C0, -0.173648,0,-0.984808)
+setfloat(0x95957D0, 0.984808,0,-0.173648)
+setfloat(0x95957E0, -982.34,-920.21,15.4)
+setshort(0x9595808, 0x1bf)
+setfloat(0x9595810, 0,-1,0)
+setfloat(0x9595820, -0.173648,0,-0.984808)
+setfloat(0x9595830, 0.984808,0,-0.173648)
+setfloat(0x9595840, -977.34,-920.21,14.4)
+setshort(0x9595868, 0x1bf)
+setfloat(0x9595870, 0,-1,0)
+setfloat(0x9595880, -0.173648,0,-0.984808)
+setfloat(0x9595890, 0.984808,0,-0.173648)
+setfloat(0x95958A0, -972.34,-920.21,13.4)
+setshort(0x95958C8, 0x1bf)
+setfloat(0x95958D0, 0,-1,0)
+setfloat(0x95958E0, -0.173648,0,-0.984808)
+setfloat(0x95958F0, 0.984808,0,-0.173648)
+setfloat(0x9595900, -967.34,-920.21,12.4)
+setshort(0x9595928, 0x1bf)
+setfloat(0x9595930, 0,-1,0)
+setfloat(0x9595940, -0.173648,0,-0.984808)
+setfloat(0x9595950, 0.984808,0,-0.173648)
+setfloat(0x9595960, -962.34,-920.21,11.4)
+setshort(0x9595988, 0x1bf)
+setfloat(0x95959F0, 0,-1,0)
+setfloat(0x9595A00, -0.173648,0,-0.984808)
+setfloat(0x9595A10, 0.984808,0,-0.173648)
+setfloat(0x9595A20, -957.34,-920.21,10.4)
+setshort(0x9595A48, 0x1bf)
+setfloat(0x9595C90, 0,-1,0)
+setfloat(0x9595CA0, -0.5,0,0.866025)
+setfloat(0x9595CB0, -0.866025,0,-0.5)
+setfloat(0x9595CC0, -947.34,-920.21,10.5)
+setshort(0x9595CE8, 0x1bf)
+setfloat(0x9595E10, 0,-1,0)
+setfloat(0x9595E20, -0.707107,0,0.707107)
+setfloat(0x9595E30, -0.707107,0,-0.707107)
+setfloat(0x9595E40, -944.34,-920.21,13)
+setshort(0x9595E68, 0x1bf)
+setfloat(0x9591B50, 1,0,0)
+setfloat(0x9591B60, 0,-0.173648,-0.984808)
+setfloat(0x9591B70, 0,0.984808,-0.173648)
+setfloat(0x9591B80, -1017.29,-923.21,17.93)
+setshort(0x9591BA8, 0x1bf)
+setfloat(0x9591BB0, 1,0,0)
+setfloat(0x9591BC0, 0,-0.173648,-0.984808)
+setfloat(0x9591BD0, 0,0.984808,-0.173648)
+setfloat(0x9591BE0, -1017.29,-928.21,18.93)
+setshort(0x9591C08, 0x1bf)
+setfloat(0x9591C10, 1,0,0)
+setfloat(0x9591C20, 0,-0.173648,-0.984808)
+setfloat(0x9591C30, 0,0.984808,-0.173648)
+setfloat(0x9591C40, -1017.29,-933.21,19.93)
+setshort(0x9591C68, 0x1bf)
+setfloat(0x9591C70, 1,0,0)
+setfloat(0x9591C80, 0,-0.173648,-0.984808)
+setfloat(0x9591C90, 0,0.984808,-0.173648)
+setfloat(0x9591CA0, -1017.29,-938.21,20.93)
+setshort(0x9591CC8, 0x1bf)
+setfloat(0x9591CD0, 1,0,0)
+setfloat(0x9591CE0, 0,0,-1)
+setfloat(0x9591CF0, 0,1,0)
+setfloat(0x9591D00, -1017.29,-943.16,21.30)
+setshort(0x9591D28, 0x1bf)
+setfloat(0x9591D30, 1,0,0)
+setfloat(0x9591D40, 0,0,-1)
+setfloat(0x9591D50, 0,1,0)
+setfloat(0x9591D60, -1017.29,-948.16,21.30)
+setshort(0x9591D88, 0x1bf)
+setfloat(0x9591D90, 1,0,0)
+setfloat(0x9591DA0, 0,0,-1)
+setfloat(0x9591DB0, 0,1,0)
+setfloat(0x9591DC0, -1012.29,-948.16,21.30)
+setshort(0x9591DE8, 0x1bf)
+setfloat(0x9591DF0, 1,0,0)
+setfloat(0x9591E00, 0,0,-1)
+setfloat(0x9591E10, 0,1,0)
+setfloat(0x9591E20, -1007.29,-948.16,21.30)
+setshort(0x9591E48, 0x1bf)
+setfloat(0x9591E50, 1,0,0)
+setfloat(0x9591E60, 0,0,-1)
+setfloat(0x9591E70, 0,1,0)
+setfloat(0x9591E80, -1007.29,-943.16,21.30)
+setshort(0x9591EA8, 0x1bf)
+setfloat(0x9591EB0, 1,0,0)
+setfloat(0x9591EC0, 0,-0.173648,0.984808)
+setfloat(0x9591ED0, 0,-0.984808,-0.173648)
+setfloat(0x9591EE0, -1007.29,-938.16,21.81)
+setshort(0x9591F08, 0x1bf)
+setfloat(0x9591F10, 1,0,0)
+setfloat(0x9591F20, 0,-0.173648,0.984808)
+setfloat(0x9591F30, 0,-0.984808,-0.173648)
+setfloat(0x9591F40, -1007.29,-933.16,22.81)
+setshort(0x9591F68, 0x1bf)
+setfloat(0x9591F70, 1,0,0)
+setfloat(0x9591F80, 0,-0.173648,0.984808)
+setfloat(0x9591F90, 0,-0.984808,-0.173648)
+setfloat(0x9591FA0, -1007.29,-928.16,23.81)
+setshort(0x9591FC8, 0x1bf)
+setfloat(0x9591FD0, 1,0,0)
+setfloat(0x9591FE0, 0,-0.173648,0.984808)
+setfloat(0x9591FF0, 0,-0.984808,-0.173648)
+setfloat(0x9592000, -1007.29,-923.16,24.81)
+setshort(0x9592028, 0x1bf)
+setfloat(0x9592030, 1,0,0)
+setfloat(0x9592040, 0,0,-1)
+setfloat(0x9592050, 0,1,0)
+setfloat(0x9592060, -1007.29,-918,25.34)
+setshort(0x9592088, 0x1bf)
+setfloat(0x9592090, 1,0,0)
+setfloat(0x95920A0, 0,0,-1)
+setfloat(0x95920B0, 0,1,0)
+setfloat(0x95920C0, -1007.29,-913.21,25.34)
+setshort(0x95920E8, 0x1bf)
+setfloat(0x95920F0, 1,0,0)
+setfloat(0x9592100, 0,0,-1)
+setfloat(0x9592110, 0,1,0)
+setfloat(0x9592120, -1007.29,-908.21,25.34)
+setshort(0x9592148, 0x1bf)
+setfloat(0x9592150, 1,0,0)
+setfloat(0x9592160, 0,0,-1)
+setfloat(0x9592170, 0,1,0)
+setfloat(0x9592180, -1007.29,-903.21,25.34)
+setshort(0x95921A8, 0x1bf)
+setfloat(0x95921B0, 1,0,0)
+setfloat(0x95921C0, 0,0,-1)
+setfloat(0x95921D0, 0,1,0)
+setfloat(0x95921E0, -1007.29,-898.21,25.34)
+setshort(0x9592208, 0x1bf)
+setfloat(0x9592210, 1,0,0)
+setfloat(0x9592220, 0,0,-1)
+setfloat(0x9592230, 0,1,0)
+setfloat(0x9592240, -1007.29,-893.21,25.34)
+setshort(0x9592268, 0x1bf)
+setfloat(0x9592270, 1,0,0)
+setfloat(0x9592280, 0,0,-1)
+setfloat(0x9592290, 0,1,0)
+setfloat(0x95922A0, -1007.29,-888.21,25.34)
+setshort(0x95922C8, 0x1bf)
+setfloat(0x95922D0, 1,0,0)
+setfloat(0x95922E0, 0,0,-1)
+setfloat(0x95922F0, 0,1,0)
+setfloat(0x9592300, -1007.29,-883.21,25.34)
+setshort(0x9592328, 0x1bf)
+setfloat(0x9592330, 1,0,0)
+setfloat(0x9592340, 0,0,-1)
+setfloat(0x9592350, 0,1,0)
+setfloat(0x9592360, -1007.29,-878.21,25.34)
+setshort(0x9592388, 0x1bf)
+setfloat(0x9592390, 1,0,0)
+setfloat(0x95923A0, 0,0,-1)
+setfloat(0x95923B0, 0,1,0)
+setfloat(0x95923C0, -1007.29,-873.21,25.34)
+setshort(0x95923E8, 0x1bf)
+setfloat(0x95923F0, 1,0,0)
+setfloat(0x9592400, 0,0,-1)
+setfloat(0x9592410, 0,1,0)
+setfloat(0x9592420, -1007.29,-868.21,25.34)
+setshort(0x9592448, 0x1bf)
+setfloat(0x9592450, 1,0,0)
+setfloat(0x9592460, 0,0,-1)
+setfloat(0x9592470, 0,1,0)
+setfloat(0x9592480, -1007.29,-863.21,25.34)
+setshort(0x95924A8, 0x1bf)
+setfloat(0x95924B0, 1,0,0)
+setfloat(0x95924C0, 0,0,-1)
+setfloat(0x95924D0, 0,1,0)
+setfloat(0x95924E0, -1007.29,-858.21,25.34)
+setshort(0x9592508, 0x1bf)
+setfloat(0x9592510, 1,0,0)
+setfloat(0x9592520, 0,0,-1)
+setfloat(0x9592530, 0,1,0)
+setfloat(0x9592540, -1007.29,-853.21,25.34)
+setshort(0x9592568, 0x1bf)
+setfloat(0x9592570, 1,0,0)
+setfloat(0x9592580, 0,0,-1)
+setfloat(0x9592590, 0,1,0)
+setfloat(0x95925A0, -1007.29,-848.21,25.34)
+setshort(0x95925C8, 0x1bf)
+setfloat(0x95925D0, 1,0,0)
+setfloat(0x95925E0, 0,0,-1)
+setfloat(0x95925F0, 0,1,0)
+setfloat(0x9592600, -1007.29,-843.21,25.34)
+setshort(0x9592628, 0x1bf)
+setfloat(0x95926F0, 1,0,0)
+setfloat(0x9592700, 0,-0.173648,0.984808)
+setfloat(0x9592710, 0,-0.984808,-0.173648)
+setfloat(0x9592720, -1007.29,-843.21,25.95)
+setshort(0x9592748, 0x1bf)
+setfloat(0x95933B0, 1,0,0)
+setfloat(0x95933C0, 0,-0.5,0.866025)
+setfloat(0x95933D0, 0,-0.866025,-0.5)
+setfloat(0x95933E0, -1007.29,-840.21,26.74)
+setshort(0x9593408, 0x1bf)
+setfloat(0x9592990, 0,-1,0)
+setfloat(0x95929A0, -0.173648,0,0.984808)
+setfloat(0x95929B0, -0.984808,0,-0.173648)
+setfloat(0x95929C0, -1058.2,-936.34,9.5)
+setshort(0x95929E8, 0x1bf)
+setfloat(0x95929F0, 0,-1,0)
+setfloat(0x9592A00, -0.5,0,0.866025)
+setfloat(0x9592A10, -0.866025,0,-0.5)
+setfloat(0x9592A20, -1054.7,-936.34,10.3)
+setshort(0x9592A48, 0x1bf)
+setfloat(0x9592A50, 1,0,0)
+setfloat(0x9592A60, 0,0,-1)
+setfloat(0x9592A70, 0,1,0)
+setfloat(0x9592A80, -1030.7,-936.34,12.3)
+setshort(0x9592AA8, 0x1bf)
+setfloat(0x9592AB0, 1,0,0)
+setfloat(0x9592AC0, 0,0,-1)
+setfloat(0x9592AD0, 0,1,0)
+setfloat(0x9592AE0, -1025.7,-936.34,12.3)
+setshort(0x9592B08, 0x1bf)
+setfloat(0x9592B10, 1,0,0)
+setfloat(0x9592B20, 0,0,-1)
+setfloat(0x9592B30, 0,1,0)
+setfloat(0x9592B40, -1020.7,-936.34,12.3)
+setshort(0x9592B68, 0x1bf)
+setfloat(0x9592B70, 1,0,0)
+setfloat(0x9592B80, 0,0,-1)
+setfloat(0x9592B90, 0,1,0)
+setfloat(0x9592BA0, -1015.7,-936.34,12.3)
+setshort(0x9592BC8, 0x1bf)
+setfloat(0x9592BD0, 1,0,0)
+setfloat(0x9592BE0, 0,0,-1)
+setfloat(0x9592BF0, 0,1,0)
+setfloat(0x9592C00, -1010.7,-936.34,12.3)
+setshort(0x9592C28, 0x1bf)
+setfloat(0x9592C30, 1,0,0)
+setfloat(0x9592C40, 0,0,-1)
+setfloat(0x9592C50, 0,1,0)
+setfloat(0x9592C60, -1005.7,-936.34,12.3)
+setshort(0x9592C88, 0x1bf)
+setfloat(0x9592C90, 1,0,0)
+setfloat(0x9592CA0, 0,0,-1)
+setfloat(0x9592CB0, 0,1,0)
+setfloat(0x9592CC0, -1000.7,-936.34,12.3)
+setshort(0x9592CE8, 0x1bf)
+setfloat(0x9592CF0, 1,0,0)
+setfloat(0x9592D00, 0,0,-1)
+setfloat(0x9592D10, 0,1,0)
+setfloat(0x9592D20, -985.7,-936.34,10.5)
+setshort(0x9592D48, 0x1bf)
+setfloat(0x9592D50, 1,0,0)
+setfloat(0x9592D60, 0,0,-1)
+setfloat(0x9592D70, 0,1,0)
+setfloat(0x9592D80, -980.7,-936.34,10.5)
+setshort(0x9592DA8, 0x1bf)
+setfloat(0x9592DB0, 1,0,0)
+setfloat(0x9592DC0, 0,0,-1)
+setfloat(0x9592DD0, 0,1,0)
+setfloat(0x9592DE0, -975.7,-936.34,10.5)
+setshort(0x9592E08, 0x1bf)
+setfloat(0x9592E10, 1,0,0)
+setfloat(0x9592E20, 0,0,-1)
+setfloat(0x9592E30, 0,1,0)
+setfloat(0x9592E40, -970.7,-936.34,10.5)
+setshort(0x9592E68, 0x1bf)
+setfloat(0x9592E70, 0,-1,0)
+setfloat(0x9592E80, -0.173648,0,0.984808)
+setfloat(0x9592E90, -0.984808,0,-0.173648)
+setfloat(0x9592EA0, -967.7,-936.34,10.5)
+setshort(0x9592EC8, 0x1bf)
+setfloat(0x9592ED0, 0,-1,0)
+setfloat(0x9592EE0, -0.5,0,0.866025)
+setfloat(0x9592EF0, -0.866025,0,-0.5)
+setfloat(0x9592F00, -964.7,-936.34,11.2)
+setshort(0x9592F28, 0x1bf)
+setfloat(0x9593410, 1,0,0)
+setfloat(0x9593420, 0,-0.422618,-0.906308)
+setfloat(0x9593430, 0,0.906308,-0.422618)
+setfloat(0x9593440, -1013.35,-926.5,10.6)
+setshort(0x9593468, 0x1bf)
+setfloat(0x9593470, 0,-1,0)
+setfloat(0x9593480, -0.422618,0,0.906308)
+setfloat(0x9593490, -0.906308,0,-0.422618)
+setfloat(0x95934A0, -1054.77,-879.2,10.5)
+setshort(0x95934C8, 0x1bf)
+setfloat(0x95934D0, 0,-1,0)
+setfloat(0x95934E0, 1,0,0)
+setfloat(0x95934F0, 0,0,1)
+setfloat(0x9593500, -1029.15,-879.2,10.7)
+setshort(0x9593528, 0xdb7)
+setfloat(0x95935F0, 0,-1,0)
+setfloat(0x9593600, -0.173648,0,0.984808)
+setfloat(0x9593610, -0.984808,0,-0.173648)
+setfloat(0x9593620, -1042.3,-907.21,10.5)
+setshort(0x9593648, 0x1bf)
+setfloat(0x9593650, 0,-1,0)
+setfloat(0x9593660, -0.5,0,0.866025)
+setfloat(0x9593670, -0.866025,0,-0.5)
+setfloat(0x9593680, -1039.3,-907.21,12)
+setshort(0x95936A8, 0x1bf)
+setfloat(0x95939B0, 1,0,0)
+setfloat(0x95939C0, 0,-0.173648,-0.984808)
+setfloat(0x95939D0, 0,0.984808,-0.173648)
+setfloat(0x95939E0, -927.02,-872.2,10.6)
+setshort(0x9593A08, 0x1bf)
+setfloat(0x9593A10, 1,0,0)
+setfloat(0x9593A20, 0,-0.173648,0.984808)
+setfloat(0x9593A30, 0,-0.984808,-0.173648)
+setfloat(0x9593A40, -927.02,-886.2,10.6)
+setshort(0x9593A68, 0x1bf)
+setfloat(0x9593A70, 0,-1,0)
+setfloat(0x9593A80, -0.173648,0,0.984808)
+setfloat(0x9593A90, -0.984808,0,-0.173648)
+setfloat(0x9593AA0, -934.02,-879.2,10.6)
+setshort(0x9593AC8, 0x1bf)
+setfloat(0x9593AD0, 0,-1,0)
+setfloat(0x9593AE0, -0.173648,0,-0.984808)
+setfloat(0x9593AF0, 0.984808,0,-0.173648)
+setfloat(0x9593B00, -920.02,-879.2,10.6)
+setshort(0x9593B28, 0x1bf)
+setfloat(0x9593B90, 1,0,0)
+setfloat(0x9593BA0, 0,1,0)
+setfloat(0x9593BB0, 0,0,1)
+setfloat(0x9593BC0, -1044.81,-930.35,10.66)
+setshort(0x9593BE8, 0x26d)
+setfloat(0x9593BF0, 1,0,0)
+setfloat(0x9593C00, 0,1,0)
+setfloat(0x9593C10, 0,0,1)
+setfloat(0x9593C20, -1039.81,-930.35,10.66)
+setshort(0x9593C48, 0x26d)
+setfloat(0x9593C50, 1,0,0)
+setfloat(0x9593C60, 0,1,0)
+setfloat(0x9593C70, 0,0,1)
+setfloat(0x9593C80, -1034.81,-930.35,10.66)
+setshort(0x9593CA8, 0x26d)
+setfloat(0x9593CB0, 1,0,0)
+setfloat(0x9593CC0, 0,1,0)
+setfloat(0x9593CD0, 0,0,1)
+setfloat(0x9593CE0, -1029.81,-930.35,10.66)
+setshort(0x9593D08, 0x26d)
+setfloat(0x9593D10, 1,0,0)
+setfloat(0x9593D20, 0,1,0)
+setfloat(0x9593D30, 0,0,1)
+setfloat(0x9593D40, -1024.81,-930.35,10.66)
+setshort(0x9593D68, 0x26d)
+setfloat(0x9593D70, 1,0,0)
+setfloat(0x9593D80, 0,1,0)
+setfloat(0x9593D90, 0,0,1)
+setfloat(0x9593DA0, -1019.81,-930.35,10.66)
+setshort(0x9593DC8, 0x26d)
+setfloat(0x9593DD0, 1,0,0)
+setfloat(0x9593DE0, 0,1,0)
+setfloat(0x9593DF0, 0,0,1)
+setfloat(0x9593E00, -1007.81,-930.35,10.66)
+setshort(0x9593E28, 0x26d)
+setfloat(0x9593E30, 1,0,0)
+setfloat(0x9593E40, 0,1,0)
+setfloat(0x9593E50, 0,0,1)
+setfloat(0x9593E60, -1002.81,-930.35,10.66)
+setshort(0x9593E88, 0x26d)
+setfloat(0x9593E90, 1,0,0)
+setfloat(0x9593EA0, 0,1,0)
+setfloat(0x9593EB0, 0,0,1)
+setfloat(0x9593EC0, -997.81,-930.35,10.66)
+setshort(0x9593EE8, 0x26d)
+setfloat(0x9593EF0, 1,0,0)
+setfloat(0x9593F00, 0,1,0)
+setfloat(0x9593F10, 0,0,1)
+setfloat(0x9593F20, -992.81,-930.35,10.66)
+setshort(0x9593F48, 0x26d)
+setfloat(0x9593F50, 1,0,0)
+setfloat(0x9593F60, 0,1,0)
+setfloat(0x9593F70, 0,0,1)
+setfloat(0x9593F80, -992.81,-942.35,10.66)
+setshort(0x9593FA8, 0x26d)
+setfloat(0x9593FB0, 1,0,0)
+setfloat(0x9593FC0, 0,1,0)
+setfloat(0x9593FD0, 0,0,1)
+setfloat(0x9593FE0, -997.81,-942.35,10.66)
+setshort(0x9594008, 0x26d)
+setfloat(0x9594010, 1,0,0)
+setfloat(0x9594020, 0,1,0)
+setfloat(0x9594030, 0,0,1)
+setfloat(0x9594040, -1002.81,-942.35,10.66)
+setshort(0x9594068, 0x26d)
+setfloat(0x9594070, 1,0,0)
+setfloat(0x9594080, 0,1,0)
+setfloat(0x9594090, 0,0,1)
+setfloat(0x95940A0, -1007.81,-942.35,10.66)
+setshort(0x95940C8, 0x26d)
+setfloat(0x95940D0, 1,0,0)
+setfloat(0x95940E0, 0,1,0)
+setfloat(0x95940F0, 0,0,1)
+setfloat(0x9594100, -1019.81,-942.35,10.66)
+setshort(0x9594128, 0x26d)
+setfloat(0x9594130, 1,0,0)
+setfloat(0x9594140, 0,1,0)
+setfloat(0x9594150, 0,0,1)
+setfloat(0x9594160, -1024.81,-942.35,10.66)
+setshort(0x9594188, 0x26d)
+setfloat(0x9594190, 1,0,0)
+setfloat(0x95941A0, 0,1,0)
+setfloat(0x95941B0, 0,0,1)
+setfloat(0x95941C0, -1029.81,-942.35,10.66)
+setshort(0x95941E8, 0x26d)
+setfloat(0x95941F0, 1,0,0)
+setfloat(0x9594200, 0,1,0)
+setfloat(0x9594210, 0,0,1)
+setfloat(0x9594220, -1034.81,-942.35,10.66)
+setshort(0x9594248, 0x26d)
+setfloat(0x9594250, 1,0,0)
+setfloat(0x9594260, 0,1,0)
+setfloat(0x9594270, 0,0,1)
+setfloat(0x9594280, -1039.81,-942.35,10.66)
+setshort(0x95942A8, 0x26d)
+setfloat(0x95942B0, 1,0,0)
+setfloat(0x95942C0, 0,1,0)
+setfloat(0x95942D0, 0,0,1)
+setfloat(0x95942E0, -1044.81,-942.35,10.66)
+setshort(0x9594308, 0x26d)
+setfloat(0x9594490, 1,0,0)
+setfloat(0x95944A0, 0,-0.173648,-0.984808)
+setfloat(0x95944B0, 0,0.984808,-0.173648)
+setfloat(0x95944C0, -970.02,-872.2,10.6)
+setshort(0x95944E8, 0x1bf)
+setfloat(0x95944F0, 1,0,0)
+setfloat(0x9594500, 0,-0.173648,0.984808)
+setfloat(0x9594510, 0,-0.984808,-0.173648)
+setfloat(0x9594520, -970.02,-886.2,10.6)
+setshort(0x9594548, 0x1bf)
+setfloat(0x9594550, 0,-1,0)
+setfloat(0x9594560, -0.173648,0,0.984808)
+setfloat(0x9594570, -0.984808,0,-0.173648)
+setfloat(0x9594580, -977.02,-879.2,10.6)
+setshort(0x95945A8, 0x1bf)
+setfloat(0x95945B0, 0,-1,0)
+setfloat(0x95945C0, -0.173648,0,-0.984808)
+setfloat(0x95945D0, 0.984808,0,-0.173648)
+setfloat(0x95945E0, -963.02,-879.2,10.6)
+setshort(0x9594608, 0x1bf)
+setfloat(0x9596590, 0,-1,0)
+setfloat(0x95965A0, -0.939693,0,0.34202)
+setfloat(0x95965B0, -0.34202,0,-0.939693)
+setfloat(0x95965C0, -1016.50,-879.12,15.50)
+setshort(0x95965E8, 0xfaa)
+setfloat(0x9596290, 1,0,0)
+setfloat(0x95962A0, 0,-0.173648,-0.984808)
+setfloat(0x95962B0, 0,0.984808,-0.173648)
+setfloat(0x95962C0, -858.5,-887.57,10.6)
+setshort(0x95962E8, 0x1bf)
+setfloat(0x95962F0, 1,0,0)
+setfloat(0x9596300, 0,-0.5,-0.866025)
+setfloat(0x9596310, 0,0.866025,-0.5)
+setfloat(0x9596320, -858.5,-893.07,12.55)
+setshort(0x9596348, 0x1bf)
+setfloat(0x9596350, 1,0,0)
+setfloat(0x9596360, 0,-0.766044,-0.642788)
+setfloat(0x9596370, 0,0.642788,-0.766044)
+setfloat(0x9596380, -858.5,-897.57,16.45)
+setshort(0x95963A8, 0x1bf)
+setfloat(0x95963B0, 1,0,0)
+setfloat(0x95963C0, 0,-0.939693,-0.34202)
+setfloat(0x95963D0, 0,0.34202,-0.939693)
+setfloat(0x95963E0, -858.5,-899.82,20.25)
+setshort(0x9596408, 0x1bf)
+setfloat(0x9596410, 1,0,0)
+setfloat(0x9596420, 0,-1,0)
+setfloat(0x9596430, 0,0,-1)
+setfloat(0x9596440, -858.5,-900.67,24.05)
+setshort(0x9596468, 0x1bf)
+setfloat(0x9596770, 1,0,0)
+setfloat(0x9596780, 0,-0.173648,-0.984808)
+setfloat(0x9596790, 0,0.984808,-0.173648)
+setfloat(0x95967A0, -866.5,-887.57,10.6)
+setshort(0x95967C8, 0x1bf)
+setfloat(0x95967D0, 1,0,0)
+setfloat(0x95967E0, 0,-0.173648,-0.984808)
+setfloat(0x95967F0, 0,0.984808,-0.173648)
+setfloat(0x9596800, -874.5,-887.57,10.6)
+setshort(0x9596828, 0x1bf)
+setfloat(0x9596830, 1,0,0)
+setfloat(0x9596840, 0,-0.173648,-0.984808)
+setfloat(0x9596850, 0,0.984808,-0.173648)
+setfloat(0x9596860, -882.5,-887.57,10.6)
+setshort(0x9596888, 0x1bf)
+setfloat(0x9596890, 1,0,0)
+setfloat(0x95968A0, 0,-0.173648,-0.984808)
+setfloat(0x95968B0, 0,0.984808,-0.173648)
+setfloat(0x95968C0, -890.5,-887.57,10.6)
+setshort(0x95968E8, 0x1bf)
+setfloat(0x95968F0, 1,0,0)
+setfloat(0x9596900, 0,-0.173648,-0.984808)
+setfloat(0x9596910, 0,0.984808,-0.173648)
+setfloat(0x9596920, -898.5,-887.57,10.6)
+setshort(0x9596948, 0x1bf)
+setfloat(0x9596950, 1,0,0)
+setfloat(0x9596960, 0,-0.5,-0.866025)
+setfloat(0x9596970, 0,0.866025,-0.5)
+setfloat(0x9596980, -866.5,-893.07,12.55)
+setshort(0x95969A8, 0x1bf)
+setfloat(0x95969B0, 1,0,0)
+setfloat(0x95969C0, 0,-0.5,-0.866025)
+setfloat(0x95969D0, 0,0.866025,-0.5)
+setfloat(0x95969E0, -874.5,-893.07,12.55)
+setshort(0x9596A08, 0x1bf)
+setfloat(0x9596A10, 1,0,0)
+setfloat(0x9596A20, 0,-0.5,-0.866025)
+setfloat(0x9596A30, 0,0.866025,-0.5)
+setfloat(0x9596A40, -882.5,-893.07,12.55)
+setshort(0x9596A68, 0x1bf)
+setfloat(0x9596A70, 1,0,0)
+setfloat(0x9596A80, 0,-0.5,-0.866025)
+setfloat(0x9596A90, 0,0.866025,-0.5)
+setfloat(0x9596AA0, -890.5,-893.07,12.55)
+setshort(0x9596AC8, 0x1bf)
+setfloat(0x9596AD0, 1,0,0)
+setfloat(0x9596AE0, 0,-0.5,-0.866025)
+setfloat(0x9596AF0, 0,0.866025,-0.5)
+setfloat(0x9596B00, -898.5,-893.07,12.55)
+setshort(0x9596B28, 0x1bf)
+setfloat(0x9596B30, 1,0,0)
+setfloat(0x9596B40, 0,-0.766044,-0.642788)
+setfloat(0x9596B50, 0,0.642788,-0.766044)
+setfloat(0x9596B60, -866.5,-897.57,16.45)
+setshort(0x9596B88, 0x1bf)
+setfloat(0x9596B90, 1,0,0)
+setfloat(0x9596BA0, 0,-0.766044,-0.642788)
+setfloat(0x9596BB0, 0,0.642788,-0.766044)
+setfloat(0x9596BC0, -874.5,-897.57,16.45)
+setshort(0x9596BE8, 0x1bf)
+setfloat(0x9596BF0, 1,0,0)
+setfloat(0x9596C00, 0,-0.766044,-0.642788)
+setfloat(0x9596C10, 0,0.642788,-0.766044)
+setfloat(0x9596C20, -882.5,-897.57,16.45)
+setshort(0x9596C48, 0x1bf)
+setfloat(0x9596C50, 1,0,0)
+setfloat(0x9596C60, 0,-0.766044,-0.642788)
+setfloat(0x9596C70, 0,0.642788,-0.766044)
+setfloat(0x9596C80, -890.5,-897.57,16.45)
+setshort(0x9596CA8, 0x1bf)
+setfloat(0x9596CB0, 1,0,0)
+setfloat(0x9596CC0, 0,-0.766044,-0.642788)
+setfloat(0x9596CD0, 0,0.642788,-0.766044)
+setfloat(0x9596CE0, -898.5,-897.57,16.45)
+setshort(0x9596D08, 0x1bf)
+setfloat(0x9596D10, 1,0,0)
+setfloat(0x9596D20, 0,-0.939693,-0.34202)
+setfloat(0x9596D30, 0,0.34202,-0.939693)
+setfloat(0x9596D40, -866.5,-899.82,20.25)
+setshort(0x9596D68, 0x1bf)
+setfloat(0x9596D70, 1,0,0)
+setfloat(0x9596D80, 0,-0.939693,-0.34202)
+setfloat(0x9596D90, 0,0.34202,-0.939693)
+setfloat(0x9596DA0, -874.5,-899.82,20.25)
+setshort(0x9596DC8, 0x1bf)
+setfloat(0x9596DD0, 1,0,0)
+setfloat(0x9596DE0, 0,-0.939693,-0.34202)
+setfloat(0x9596DF0, 0,0.34202,-0.939693)
+setfloat(0x9596E00, -882.5,-899.82,20.25)
+setshort(0x9596E28, 0x1bf)
+setfloat(0x9596E30, 1,0,0)
+setfloat(0x9596E40, 0,-0.939693,-0.34202)
+setfloat(0x9596E50, 0,0.34202,-0.939693)
+setfloat(0x9596E60, -890.5,-899.82,20.25)
+setshort(0x9596E88, 0x1bf)
+setfloat(0x9596E90, 1,0,0)
+setfloat(0x9596EA0, 0,-0.939693,-0.34202)
+setfloat(0x9596EB0, 0,0.34202,-0.939693)
+setfloat(0x9596EC0, -898.5,-899.82,20.25)
+setshort(0x9596EE8, 0x1bf)
+setfloat(0x9596EF0, 1,0,0)
+setfloat(0x9596F00, 0,-1,0)
+setfloat(0x9596F10, 0,0,-1)
+setfloat(0x9596F20, -866.5,-900.67,24.05)
+setshort(0x9596F48, 0x1bf)
+setfloat(0x9596F50, 1,0,0)
+setfloat(0x9596F60, 0,-1,0)
+setfloat(0x9596F70, 0,0,-1)
+setfloat(0x9596F80, -874.5,-900.67,24.05)
+setshort(0x9596FA8, 0x1bf)
+setfloat(0x9596FB0, 1,0,0)
+setfloat(0x9596FC0, 0,-1,0)
+setfloat(0x9596FD0, 0,0,-1)
+setfloat(0x9596FE0, -882.5,-900.67,24.05)
+setshort(0x9597008, 0x1bf)
+setfloat(0x9597010, 1,0,0)
+setfloat(0x9597020, 0,-1,0)
+setfloat(0x9597030, 0,0,-1)
+setfloat(0x9597040, -890.5,-900.67,24.05)
+setshort(0x9597068, 0x1bf)
+setfloat(0x9597070, 1,0,0)
+setfloat(0x9597080, 0,-1,0)
+setfloat(0x9597090, 0,0,-1)
+setfloat(0x95970A0, -898.5,-900.67,24.05)
+setshort(0x95970C8, 0x1bf)
+setfloat(0x95970D0, 1,0,0)
+setfloat(0x95970E0, 0,-0.173648,0.984808)
+setfloat(0x95970F0, 0,-0.984808,-0.173648)
+setfloat(0x9597100, -858.5,-873.57,10.6)
+setshort(0x9597128, 0x1bf)
+setfloat(0x9597130, 1,0,0)
+setfloat(0x9597140, 0,-0.5,0.866025)
+setfloat(0x9597150, 0,-0.866025,-0.5)
+setfloat(0x9597160, -858.5,-868.07,12.55)
+setshort(0x9597188, 0x1bf)
+setfloat(0x9597190, 1,0,0)
+setfloat(0x95971A0, 0,-0.766044,0.642788)
+setfloat(0x95971B0, 0,-0.642788,-0.766044)
+setfloat(0x95971C0, -858.5,-863.57,16.45)
+setshort(0x95971E8, 0x1bf)
+setfloat(0x95971F0, 1,0,0)
+setfloat(0x9597200, 0,-0.939693,0.34202)
+setfloat(0x9597210, 0,-0.34202,-0.939693)
+setfloat(0x9597220, -858.5,-861.32,20.25)
+setshort(0x9597248, 0x1bf)
+setfloat(0x9597250, 1,0,0)
+setfloat(0x9597260, 0,-1,0)
+setfloat(0x9597270, 0,0,-1)
+setfloat(0x9597280, -858.5,-860.47,24.05)
+setshort(0x95972A8, 0x1bf)
+setfloat(0x95972B0, 1,0,0)
+setfloat(0x95972C0, 0,-0.173648,0.984808)
+setfloat(0x95972D0, 0,-0.984808,-0.173648)
+setfloat(0x95972E0, -866.5,-873.57,10.6)
+setshort(0x9597308, 0x1bf)
+setfloat(0x9597310, 1,0,0)
+setfloat(0x9597320, 0,-0.173648,0.984808)
+setfloat(0x9597330, 0,-0.984808,-0.173648)
+setfloat(0x9597340, -874.5,-873.57,10.6)
+setshort(0x9597368, 0x1bf)
+setfloat(0x9597370, 1,0,0)
+setfloat(0x9597380, 0,-0.173648,0.984808)
+setfloat(0x9597390, 0,-0.984808,-0.173648)
+setfloat(0x95973A0, -882.5,-873.57,10.6)
+setshort(0x95973C8, 0x1bf)
+setfloat(0x95973D0, 1,0,0)
+setfloat(0x95973E0, 0,-0.173648,0.984808)
+setfloat(0x95973F0, 0,-0.984808,-0.173648)
+setfloat(0x9597400, -890.5,-873.57,10.6)
+setshort(0x9597428, 0x1bf)
+setfloat(0x9597430, 1,0,0)
+setfloat(0x9597440, 0,-0.173648,0.984808)
+setfloat(0x9597450, 0,-0.984808,-0.173648)
+setfloat(0x9597460, -898.5,-873.57,10.6)
+setshort(0x9597488, 0x1bf)
+setfloat(0x9597490, 1,0,0)
+setfloat(0x95974A0, 0,-0.5,0.866025)
+setfloat(0x95974B0, 0,-0.866025,-0.5)
+setfloat(0x95974C0, -866.5,-868.07,12.55)
+setshort(0x95974E8, 0x1bf)
+setfloat(0x95974F0, 1,0,0)
+setfloat(0x9597500, 0,-0.5,0.866025)
+setfloat(0x9597510, 0,-0.866025,-0.5)
+setfloat(0x9597520, -874.5,-868.07,12.55)
+setshort(0x9597548, 0x1bf)
+setfloat(0x9597550, 1,0,0)
+setfloat(0x9597560, 0,-0.5,0.866025)
+setfloat(0x9597570, 0,-0.866025,-0.5)
+setfloat(0x9597580, -882.5,-868.07,12.55)
+setshort(0x95975A8, 0x1bf)
+setfloat(0x95975B0, 1,0,0)
+setfloat(0x95975C0, 0,-0.5,0.866025)
+setfloat(0x95975D0, 0,-0.866025,-0.5)
+setfloat(0x95975E0, -890.5,-868.07,12.55)
+setshort(0x9597608, 0x1bf)
+setfloat(0x9597610, 1,0,0)
+setfloat(0x9597620, 0,-0.5,0.866025)
+setfloat(0x9597630, 0,-0.866025,-0.5)
+setfloat(0x9597640, -898.5,-868.07,12.55)
+setshort(0x9597668, 0x1bf)
+setfloat(0x9597850, 1,0,0)
+setfloat(0x9597860, 0,-0.766044,0.642788)
+setfloat(0x9597870, 0,-0.642788,-0.766044)
+setfloat(0x9597880, -866.5,-863.57,16.45)
+setshort(0x95978A8, 0x1bf)
+setfloat(0x95978B0, 1,0,0)
+setfloat(0x95978C0, 0,-0.766044,0.642788)
+setfloat(0x95978D0, 0,-0.642788,-0.766044)
+setfloat(0x95978E0, -874.5,-863.57,16.45)
+setshort(0x9597908, 0x1bf)
+setfloat(0x9597910, 1,0,0)
+setfloat(0x9597920, 0,-0.766044,0.642788)
+setfloat(0x9597930, 0,-0.642788,-0.766044)
+setfloat(0x9597940, -882.5,-863.57,16.45)
+setshort(0x9597968, 0x1bf)
+setfloat(0x9597970, 1,0,0)
+setfloat(0x9597980, 0,-0.766044,0.642788)
+setfloat(0x9597990, 0,-0.642788,-0.766044)
+setfloat(0x95979A0, -890.5,-863.57,16.45)
+setshort(0x95979C8, 0x1bf)
+setfloat(0x95979D0, 1,0,0)
+setfloat(0x95979E0, 0,-0.766044,0.642788)
+setfloat(0x95979F0, 0,-0.642788,-0.766044)
+setfloat(0x9597A00, -898.5,-863.57,16.45)
+setshort(0x9597A28, 0x1bf)
+setfloat(0x9597A30, 1,0,0)
+setfloat(0x9597A40, 0,-0.939693,0.34202)
+setfloat(0x9597A50, 0,-0.34202,-0.939693)
+setfloat(0x9597A60, -866.5,-861.32,20.25)
+setshort(0x9597A88, 0x1bf)
+setfloat(0x9597A90, 1,0,0)
+setfloat(0x9597AA0, 0,-0.939693,0.34202)
+setfloat(0x9597AB0, 0,-0.34202,-0.939693)
+setfloat(0x9597AC0, -874.5,-861.32,20.25)
+setshort(0x9597AE8, 0x1bf)
+setfloat(0x9597AF0, 1,0,0)
+setfloat(0x9597B00, 0,-0.939693,0.34202)
+setfloat(0x9597B10, 0,-0.34202,-0.939693)
+setfloat(0x9597B20, -882.5,-861.32,20.25)
+setshort(0x9597B48, 0x1bf)
+setfloat(0x9597B50, 1,0,0)
+setfloat(0x9597B60, 0,-0.939693,0.34202)
+setfloat(0x9597B70, 0,-0.34202,-0.939693)
+setfloat(0x9597B80, -890.5,-861.32,20.25)
+setshort(0x9597BA8, 0x1bf)
+setfloat(0x9597BB0, 1,0,0)
+setfloat(0x9597BC0, 0,-0.939693,0.34202)
+setfloat(0x9597BD0, 0,-0.34202,-0.939693)
+setfloat(0x9597BE0, -898.5,-861.32,20.25)
+setshort(0x9597C08, 0x1bf)
+setfloat(0x9597C10, 1,0,0)
+setfloat(0x9597C20, 0,-1,0)
+setfloat(0x9597C30, 0,0,-1)
+setfloat(0x9597C40, -866.5,-860.47,24.05)
+setshort(0x9597C68, 0x1bf)
+setfloat(0x9597C70, 1,0,0)
+setfloat(0x9597C80, 0,-1,0)
+setfloat(0x9597C90, 0,0,-1)
+setfloat(0x9597CA0, -874.5,-860.47,24.05)
+setshort(0x9597CC8, 0x1bf)
+setfloat(0x9597CD0, 1,0,0)
+setfloat(0x9597CE0, 0,-1,0)
+setfloat(0x9597CF0, 0,0,-1)
+setfloat(0x9597D00, -882.5,-860.47,24.05)
+setshort(0x9597D28, 0x1bf)
+setfloat(0x9597D30, 1,0,0)
+setfloat(0x9597D40, 0,-1,0)
+setfloat(0x9597D50, 0,0,-1)
+setfloat(0x9597D60, -890.5,-860.47,24.05)
+setshort(0x9597D88, 0x1bf)
+setfloat(0x9597D90, 1,0,0)
+setfloat(0x9597DA0, 0,-1,0)
+setfloat(0x9597DB0, 0,0,-1)
+setfloat(0x9597DC0, -898.5,-860.47,24.05)
+setshort(0x9597DE8, 0x1bf)
+setfloat(08B89E40,-969.50,-879.45,10.55);
+setfloat(08B89E80,-968.90,-878.85,10,55);
+setfloat(08B89FA0,-969.50,-878.85,10,55);
+setfloat(08B8A030,-968.90,-879.45,10,55);
+setfloat(08B89EC0,-927.82,-879.46,10.55);
+setfloat(08B89F20,-927.22,-878.86,10,55);
+setfloat(08B89F60,-927.82,-878.86,10,55);
+setfloat(08B89FE0,-927.22,-879.46,10,55);
+// vettefan's extreme stunt tube!
+moveto(-1186.25,-926.72,11.22);  object(0x01BF,70,0,259);
+move(-4.56,-1.27,1.80);  object(0x01BF,70,355,613);
+move(-4.52,-2.02,1.80);  object(0x01BF,70,350,608);
+move(-4.39,-2.54,1.80);  object(0x01BF,70,345,603);
+move(-4.51,-3.36,1.60);  object(0x01BF,70,340,598);
+move(-3.89,-3.66,1.80);  object(0x01BF,70,335,594);
+move(-3.71,-4.46,1.90);  object(0x01BF,70,330,587);
+move(-2.91,-4.77,1.70);  object(0x01BF,70,325,582);
+move(-2.51,-4.71,1.50);  object(0x01BF,70,320,577);
+move(-1.66,-4.89,1.20);  object(0x01BF,70,315,572);
+move(-1.22,-5.33,1.20);  object(0x01BF,70,310,567);
+move(-0.65,-4.34,0.90);  object(0x01BF,70,305,562);
+move(-0.17,-5.47,1.00);  object(0x01BF,70,300,557);
+move(0.39,-4.39,0.70);  object(0x01BF,70,295,552);
+move(0.73,-4.54,0.60);  object(0x01BF,70,290,547);
+move(1.34,-4.96,0.50);  object(0x01BF,70,285,542);
+move(1.52,-4.13,0.30);  object(0x01BF,70,280,537);
+move(2.13,-4.34,0.20);  object(0x01BF,70,275,532);
+move(3.29,-4.60,0.00);  object(0x01BF,70,270,519);
+move(4.75,-3.22,0.30);  object(0x01BF,70,270,489);
+move(5.55,-0.61,0.40);  object(0x01BF,70,270,467);
+move(5.67,1.81,0.50);  object(0x01BF,70,270,438);
+move(3.73,3.81,0.60);  object(0x01BF,70,270,412);
+move(0.00,0.00,0.00);  object(0x01BF,70,270,412);
+move(1.22,5.60,0.60);  object(0x01BF,70,270,376);
+move(-1.43,4.68,0.60);  object(0x01BF,70,270,352);
+move(-3.40,3.67,0.60);  object(0x01BF,70,270,328);
+move(-4.11,2.19,1.00);  object(0x01BF,70,270,303);
+move(-4.93,-0.06,0.60);  object(0x01BF,70,270,276);
+move(-4.89,-2.65,0.80);  object(0x01BF,70,270,608);
+move(-3.20,-4.75,0.80);  object(0x01BF,70,270,579);
+move(-0.60,-5.01,0.80);  object(0x01BF,70,270,554);
+move(1.91,-4.79,0.80);  object(0x01BF,70,270,522);
+move(2.91,-3.24,-0.10);  object(0x01BF,70,270,492);
+move(1.48,-0.87,0.00);  object(0x01BF,70,270,483);
+move(5.68,-0.35,0.30);  object(0x01BF,70,270,471);
+move(5.55,1.71,0.40);  object(0x01BF,70,270,440);
+move(3.72,3.52,0.70);  object(0x01BF,70,270,412);
+move(1.40,5.25,0.30);  object(0x01BF,70,270,376);
+move(-1.20,5.14,0.60);  object(0x01BF,70,270,355);
+move(-3.42,3.91,0.60);  object(0x01BF,70,270,328);
+move(-4.06,2.25,0.70);  object(0x01BF,70,270,304);
+move(-5.58,-0.32,0.80);  object(0x01BF,70,270,279);
+move(-4.48,-1.99,0.00);  object(0x01BF,70,270,610);
+move(-3.14,-4.44,0.80);  object(0x01BF,70,270,579);
+move(-0.67,-4.81,1.00);  object(0x01BF,70,270,560);
+move(-314.01,-346.51,-33.57);  object(0x01BF,235,0,270);
+move(-4.56,-0.01,3.80);  object(0x01BF,225,0,270);
+move(-3.54,-0.01,4.30);  object(0x01BF,215,0,270);
+move(-2.66,-0.01,4.70);  object(0x01BF,205,0,270);
+move(-1.90,-0.00,5.10);  object(0x01BF,195,0,270);
+move(-1.00,-0.00,5.70);  object(0x01BF,185,0,270);
+move(0.00,0.00,5.60);  object(0x01BF,175,0,270);
+move(0.94,0.00,5.40);  object(0x01BF,165,0,270);
+move(1.93,0.00,5.20);  object(0x01BF,155,0,270);
+move(2.74,0.01,4.60);  object(0x01BF,145,0,270);
+move(3.20,0.01,4.00);  object(0x01BF,135,0,270);
+move(3.43,0.02,3.00);  object(0x01BF,125,0,270);
+move(4.10,0.02,2.40);  object(0x01BF,115,0,270);
+move(4.91,0.02,1.70);  object(0x01BF,105,0,270);
+move(5.13,-0.00,0.80);  object(0x01BF,85,0,450);
+move(5.63,0.06,0.20);  object(0x01BF,90,0,449);
+moveto(-1294.75, -925.23 ,11.05);   object(0x0F01,240,0,180);
+move(0.00,-6.04,3.40);   object(0x0F01,240,0,180);
+move(0.00,-6.05,3.40);   object(0x0F01,240,0,180);
+move(0.00,-6.36,3.40);   object(0x0F01,240,0,180);
+move(-0.40,-5.98,3.40);  object(0x0F01,240,0,180);
+move(-0.40,-6.34,3.50);  object(0x0F01,240,0,180);
+move(-0.40,-5.40,3.90);  object(0x0F01,230,0,180);
+move(-0.40,-4.28,4.60);  object(0x0F01,220,0,180);
+move(-0.40,-2.71,4.20);  object(0x0F01,200,0,180);
+move(-0.40,-0.55,5.10);  object(0x0F01,180,0,180);
+move(-0.40,1.16,5.60);   object(0x0F01,160,0,180);
+move(-0.40,2.99,4.60);   object(0x0F01,140,0,180);
+move(-0.40,4.85,3.70);   object(0x0F01,120,0,180);
+move(-0.40,5.93,1.70);   object(0x0F01,100,0,180);
+move(-0.40,5.22,0.00);   object(0x0F01,80,0,180);
+move(-0.40,5.14,-2.40);  object(0x0F01,60,0,180);
+move(-0.40,3.64,-3.90);  object(0x0F01,40,0,180);
+move(-0.40,2.70,-5.50);  object(0x0F01,20,0,180);
+move(-0.40,0.58,-5.90);  object(0x0F01,0,0,180);
+move(-0.40,-1.36,-6.00); object(0x0F01,340,0,180);
+move(-0.40,-3.39,-5.00); object(0x0F01,320,0,180);
+move(0.00,-4.83,-3.40);  object(0x0F01,300,0,180);
+move(0.00,-6.09,-1.70);  object(0x0F01,280,0,180);
+move(0.00,-5.27,0.30);   object(0x0F01,260,0,180);
+
+//edited by ADePSP on 27/02/2006 14:56:56
+
+#cheat Car Stays Level Never Flips Over
+//ID: 5175
+//Score: 243
+//Author: edisoncarter
+//Category: Vehicle
+//Description: car never flip
+//Image: none
+//Time: 16/02/2006 20:16:18
+//Working: Yes
+// by Edison Carter
+setfloat(pcar + 0x08, 0);
+setfloat(pcar + 0x18, 0);
+// rela82me: great cheat works USAv
+//edited by rela82me on 2/23/2006 10:33:40 PM
+
+#cheat Glass Pyramid at Sound End of Staunton
+//ID: 5359
+//Score: 209
+//Author: edisoncarter
+//Category: Location Mods
+//Description: Glass Pyramid at Sound End of Staunton
+//Image: http://www.maxbot.com/gta/Pyramid.jpg
+//Time: 01/03/2006 00:48:59
+//Working: Yes
+moveto(72,-1641,36.2);  object(0x0CDB,45,35,0);
+move(-3.04,1.78,0);  object(0x0CDB,45,35,120);
+move(2.99,1.68,0);  object(0x0CDB,45,35,240);
+move(4.07,0.04,-2.90);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-3.09,-1.72,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(3.06,-1.80,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(4.05,3.59,-2.90);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-3.09,-1.72,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(3.06,-1.80,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(4.05,3.59,-2.90);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-3.09,-1.72,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(3.06,-1.80,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(4.05,3.59,-2.90);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-6.02,3.45,0);  object(0x0CDB,45,35,240);
+move(-3.09,-1.72,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(0.00,-6.94,0);  object(0x0CDB,45,35,120);
+move(3.06,-1.80,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+move(6.08,3.45,0);  object(0x0CDB,45,35,0);
+teleport(75, -1628, 26.16);
+//ADePSP: I submitted this edisoncarter cheat because he didn't...
+
+//edited by ADePSP on 01/03/2006 00:52:26
+
+#cheat Belleville Park Loop
+//ID: 5358
+//Score: 346
+//Author: edisoncarter
+//Category: Location Mods
+//Description: Belleville Park Loop
+//Image: http://www.maxbot.com/gta/ParkLoop1.jpg
+//Time: 01/03/2006 00:46:31
+//Working: Yes
+moveto(114,-755,28);     object(0x0F01,240,0,180);
+move(0.00,-6.04,3.40);   object(0x0F01,240,0,180);
+move(0.00,-6.05,3.40);   object(0x0F01,240,0,180);
+move(0.00,-6.36,3.40);   object(0x0F01,240,0,180);
+move(-0.40,-5.98,3.40);  object(0x0F01,240,0,180);
+move(-0.40,-6.34,3.50);  object(0x0F01,240,0,180);
+move(-0.40,-5.40,3.90);  object(0x0F01,230,0,180);
+move(-0.40,-4.28,4.60);  object(0x0F01,220,0,180);
+move(-0.40,-2.71,4.20);  object(0x0F01,200,0,180);
+move(-0.40,-0.55,5.10);  object(0x0F01,180,0,180);
+move(-0.40,1.16,5.60);   object(0x0F01,160,0,180);
+move(-0.40,2.99,4.60);   object(0x0F01,140,0,180);
+move(-0.40,4.85,3.70);   object(0x0F01,120,0,180);
+move(-0.40,5.93,1.70);   object(0x0F01,100,0,180);
+move(-0.40,5.22,0.00);   object(0x0F01,80,0,180);
+move(-0.40,5.14,-2.40);  object(0x0F01,60,0,180);
+move(-0.40,3.64,-3.90);  object(0x0F01,40,0,180);
+move(-0.40,2.70,-5.50);  object(0x0F01,20,0,180);
+move(-0.40,0.58,-5.90);  object(0x0F01,0,0,180);
+move(-0.40,-1.36,-6.00); object(0x0F01,340,0,180);
+move(-0.40,-3.39,-5.00); object(0x0F01,320,0,180);
+move(0.00,-4.83,-3.40);  object(0x0F01,300,0,180);
+move(0.00,-6.09,-1.70);  object(0x0F01,280,0,180);
+move(0.00,-5.27,0.30);   object(0x0F01,260,0,180);
+teleport(122, -733, 26.02);
+//ADePSP: I submitted this edisoncarter cheat because he didn't...
+//edited by ADePSP on 01/03/2006 00:50:23
+
+#cheat Spinning Traffic
+//ID: 5778
+//Score: 406
+//Author: edisoncarter
+//Category: Vehicle
+//Description: All vehicles spin out of control
+//Image: http://www.maxbot.com/gta/SpinningTraffic1.gif
+//Time: 19/03/2006 18:50:24
+//Working: Yes
+// By Edison Carter and vettefan
+setfloat(0x0997B040 + 0x0088, 1.0);
+setfloat(0x0997B720 + 0x0088, 1.0);
+setfloat(0x0997BE00 + 0x0088, 1.0);
+setfloat(0x0997C4E0 + 0x0088, 1.0);
+setfloat(0x0997CBC0 + 0x0088, 1.0);
+setfloat(0x0997D2A0 + 0x0088, 1.0);
+setfloat(0x0997D980 + 0x0088, 1.0);
+setfloat(0x0997E060 + 0x0088, 1.0);
+setfloat(0x0997E740 + 0x0088, 1.0);
+setfloat(0x0997EE20 + 0x0088, 1.0);
+setfloat(0x0997F500 + 0x0088, 1.0);
+setfloat(0x0997FBE0 + 0x0088, 1.0);
+setfloat(0x099802C0 + 0x0088, 1.0);
+setfloat(0x099809A0 + 0x0088, 1.0);
+setfloat(0x09981080 + 0x0088, 1.0);
+setfloat(0x09981760 + 0x0088, 1.0);
+setfloat(0x09981E40 + 0x0088, 1.0);
+setfloat(0x09982520 + 0x0088, 1.0);
+setfloat(0x09982C00 + 0x0088, 1.0);
+setfloat(0x099832E0 + 0x0088, 1.0);
+setfloat(0x099839C0 + 0x0088, 1.0);
+setfloat(0x099840A0 + 0x0088, 1.0);
+setfloat(0x09984780 + 0x0088, 1.0);
+setfloat(0x09984E60 + 0x0088, 1.0);
+setfloat(0x09985540 + 0x0088, 1.0);
+setfloat(0x09985C20 + 0x0088, 1.0);
+setfloat(0x09986300 + 0x0088, 1.0);
+setfloat(0x099869E0 + 0x0088, 1.0);
+setfloat(0x099870C0 + 0x0088, 1.0);
+setfloat(0x099877A0 + 0x0088, 1.0);
+setfloat(0x09987E80 + 0x0088, 1.0);
+setfloat(0x09988560 + 0x0088, 1.0);
+setfloat(0x09988C40 + 0x0088, 1.0);
+setfloat(0x09989320 + 0x0088, 1.0);
+setfloat(0x09989A00 + 0x0088, 1.0);
+setfloat(0x0998A0E0 + 0x0088, 1.0);
+setfloat(0x0998A6C0 + 0x0088, 1.0);
+setfloat(0x0998A7C0 + 0x0088, 1.0);
+setfloat(0x0998AEA0 + 0x0088, 1.0);
+setfloat(0x0998B580 + 0x0088, 1.0);
+setfloat(0x0998BC60 + 0x0088, 1.0);
+setfloat(0x0998C340 + 0x0088, 1.0);
+setfloat(0x0998CA20 + 0x0088, 1.0);
+setfloat(0x0998D100 + 0x0088, 1.0);
+setfloat(0x0998D7E0 + 0x0088, 1.0);
+setfloat(0x0998DEC0 + 0x0088, 1.0);
+setfloat(0x0998E5A0 + 0x0088, 1.0);
+setfloat(0x0998EC80 + 0x0088, 1.0);
+setfloat(0x0998F360 + 0x0088, 1.0);
+setfloat(0x0998FA40 + 0x0088, 1.0);
+setfloat(0x09990120 + 0x0088, 1.0);
+setfloat(0x09990800 + 0x0088, 1.0);
+setfloat(0x09990EE0 + 0x0088, 1.0);
+setfloat(0x099915C0 + 0x0088, 1.0);
+setfloat(0x09991CA0 + 0x0088, 1.0);
+setfloat(0x09992380 + 0x0088, 1.0);
+setfloat(0x09992A60 + 0x0088, 1.0);
+setfloat(0x09993140 + 0x0088, 1.0);
+setfloat(0x09993820 + 0x0088, 1.0);
+setfloat(0x09993F00 + 0x0088, 1.0);
+setfloat(0x099945E0 + 0x0088, 1.0);
+setchar(0x08B4BC10, 1);
+#off
+setchar(0x08B4BC10, 0);
+
+//edited by edisoncarter on 3/20/2006 7:23:17 PM
+
+#cheat Monster Patriot
+//ID: 5814
+//Score: 226
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Puts a Patriot with monster truck tires in your Staunton garage
+//Image: http://www.maxbot.com/gta/MonsterPatriot.jpg
+//Time: 21/03/2006 04:03:36
+//Working: Yes
+// Edison Carter - large tires
+// Vettefan - raised suspension
+// Skiller - garage vehicle mod 
+setfloat(0x09440180 + 0x4c, 1.5);
+setfloat(0x0945C7A4 - 0x945C6E0 + 0x9459CB0, -.75);
+setfloat(0x0945C6E8 - 0x945C6E0 + 0x9459CB0, .5);
+setfloat(0x0945C798 - 0x945C6E0 + 0x9459CB0, .5);
+setfloat(0x0945C7A0 - 0x945C6E0 + 0x9459CB0, 0);
+setfloat(0x0945C7A8 - 0x945C6E0 + 0x9459CB0, .6);
+setint(0x08E38A38, 137);
+
+//edited by ADePSP on 23/03/2006 16:15:09
+
+#cheat All traffic is indestructible
+//ID: 6019
+//Score: 383
+//Author: edisoncarter
+//Category: Vehicle
+//Description: Useful with Gather Spell so the cars don't explode.
+//Image: http://www.maxbot.com/gta/Katamari2.jpg
+//Time: 30/03/2006 20:05:47
+//Working: Yes
+// by Edison Carter and vettefan
+setfloat(0x0997B040 + 0x0268, 1000000.0);
+setfloat(0x0997B720 + 0x0268, 1000000.0);
+setfloat(0x0997BE00 + 0x0268, 1000000.0);
+setfloat(0x0997C4E0 + 0x0268, 1000000.0);
+setfloat(0x0997CBC0 + 0x0268, 1000000.0);
+setfloat(0x0997D2A0 + 0x0268, 1000000.0);
+setfloat(0x0997D980 + 0x0268, 1000000.0);
+setfloat(0x0997E060 + 0x0268, 1000000.0);
+setfloat(0x0997E740 + 0x0268, 1000000.0);
+setfloat(0x0997EE20 + 0x0268, 1000000.0);
+setfloat(0x0997F500 + 0x0268, 1000000.0);
+setfloat(0x0997FBE0 + 0x0268, 1000000.0);
+setfloat(0x099802C0 + 0x0268, 1000000.0);
+setfloat(0x099809A0 + 0x0268, 1000000.0);
+setfloat(0x09981080 + 0x0268, 1000000.0);
+setfloat(0x09981760 + 0x0268, 1000000.0);
+setfloat(0x09981E40 + 0x0268, 1000000.0);
+setfloat(0x09982520 + 0x0268, 1000000.0);
+setfloat(0x09982C00 + 0x0268, 1000000.0);
+setfloat(0x099832E0 + 0x0268, 1000000.0);
+setfloat(0x099839C0 + 0x0268, 1000000.0);
+setfloat(0x099840A0 + 0x0268, 1000000.0);
+setfloat(0x09984780 + 0x0268, 1000000.0);
+setfloat(0x09984E60 + 0x0268, 1000000.0);
+setfloat(0x09985540 + 0x0268, 1000000.0);
+setfloat(0x09985C20 + 0x0268, 1000000.0);
+setfloat(0x09986300 + 0x0268, 1000000.0);
+setfloat(0x099869E0 + 0x0268, 1000000.0);
+setfloat(0x099870C0 + 0x0268, 1000000.0);
+setfloat(0x099877A0 + 0x0268, 1000000.0);
+setfloat(0x09987E80 + 0x0268, 1000000.0);
+setfloat(0x09988560 + 0x0268, 1000000.0);
+setfloat(0x09988C40 + 0x0268, 1000000.0);
+setfloat(0x09989320 + 0x0268, 1000000.0);
+setfloat(0x09989A00 + 0x0268, 1000000.0);
+setfloat(0x0998A0E0 + 0x0268, 1000000.0);
+setfloat(0x0998A6C0 + 0x0268, 1000000.0);
+setfloat(0x0998A7C0 + 0x0268, 1000000.0);
+setfloat(0x0998AEA0 + 0x0268, 1000000.0);
+setfloat(0x0998B580 + 0x0268, 1000000.0);
+setfloat(0x0998BC60 + 0x0268, 1000000.0);
+setfloat(0x0998C340 + 0x0268, 1000000.0);
+setfloat(0x0998CA20 + 0x0268, 1000000.0);
+setfloat(0x0998D100 + 0x0268, 1000000.0);
+setfloat(0x0998D7E0 + 0x0268, 1000000.0);
+setfloat(0x0998DEC0 + 0x0268, 1000000.0);
+setfloat(0x0998E5A0 + 0x0268, 1000000.0);
+setfloat(0x0998EC80 + 0x0268, 1000000.0);
+setfloat(0x0998F360 + 0x0268, 1000000.0);
+setfloat(0x0998FA40 + 0x0268, 1000000.0);
+setfloat(0x09990120 + 0x0268, 1000000.0);
+setfloat(0x09990800 + 0x0268, 1000000.0);
+setfloat(0x09990EE0 + 0x0268, 1000000.0);
+setfloat(0x099915C0 + 0x0268, 1000000.0);
+setfloat(0x09991CA0 + 0x0268, 1000000.0);
+setfloat(0x09992380 + 0x0268, 1000000.0);
+setfloat(0x09992A60 + 0x0268, 1000000.0);
+setfloat(0x09993140 + 0x0268, 1000000.0);
+setfloat(0x09993820 + 0x0268, 1000000.0);
+setfloat(0x09993F00 + 0x0268, 1000000.0);
+setfloat(0x099945E0 + 0x0268, 1000000.0);
+
+//edited by InvertedShadow on 3/30/2006 4:24:16 PM
+
+#cheat BOBC
+//ID: 12467
+//Score: 19
+//Author: ice cold killer
+//Category: Pimp My Garage
+//Description: instant traction, jump into the car and better breaking(works well with edisoncarter's cheatdevice)
+//Image: none
+//Time: 09/06/2006 02:06:28
+//Working: Yes
+setchar(0x945ab42, 0x5);
+setchar(0x945ab41, 0x44);
+setchar(0x945ab40, 0x34);
+setshort(0x9441ad0, 250);
+setfloat(0x9441acc, 1.00);
+setfloat(0x945aac0, 1450);
+setfloat(0x945aac8, 0.65);
+setfloat(0x945ab80, 0.475);
+setfloat(0x945ab84, -0.17999);
+setfloat(0x945ab88, 0.4);
+setfloat(0x945ab4c, 0.776);
+setfloat(0x945ab50, 0.776);
+setfloat(0x945ab44, 0.004);
+setfloat(0x945ab60, 0.5);
+setfloat(0x945ab64, 0.5);
+setfloat(0x945ab68, 35);
+setfloat(0x945ab78, 1.5);
+setfloat(0x945ab7c, 0.1);
+setfloat(0x945ab94, 1.185);
+setfloat(0x945ab8c, 0);
+setfloat(0x945aae0, 0);
+setfloat(0x945aae4, 0.05);
+setfloat(0x945aae8, -0.19999);
+setchar(0x945aaf0, 80);
+setfloat(0x945ab6c, 0.99375);
+setfloat(0x945ab70, 0.57);
+setfloat(0x945aacc, 0.125);
+sethex(0x945ab90, 0x80, 0x8b, 0x00, 0x01);
+setchar(0x967E6FC, 0x00, 0xFF, 0x00);
+sethex(0x944fafc, 0xFF, 0x5D, 0x00);
+sethex(0x944fb28, 0xFF, 0x0D, 0x08);
+setint(0x8E38A38, 153);
+setchar(0x8E38A5C, 103, 114);
+sethex(0x8E38A5E, 0x01, 0x00);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+
+#cheat Mega Punch 10x
+//ID: 9835
+//Score: 853
+//Author: edisoncarter
+//Category: Player
+//Description: 10x more powerful than super punch.  This version does not reset gameplay speed.
+//Image: none
+//Time: 08/05/2006 22:16:14
+//Working: Yes
+// by Edison Carter
+setint(0x088de24c, 0);
+setshort(0x088de258, 200);
+#off
+setint(0x088de24c, 0x1080000d);
+setshort(0x088de258, 20);
+
+#cheat Mega Punch 5x
+//ID: 9752
+//Score: 1614
+//Author: edisoncarter
+//Category: Player
+//Description: 5x more powerful than super punch!  Works without resetting gameplay speed.
+//Image: http://www.maxbot.com/gta/MegaPunch5x.gif
+//Time: 08/05/2006 01:03:45
+//Working: Yes
+// by Edison Carter
+setint(0x088de24c, 0);
+setshort(0x088de258, 100);
+#off
+setint(0x088de24c, 0x1080000d);
+setshort(0x088de258, 20);
+
+#cheat Mega Punch 2x
+//ID: 9751
+//Score: 316
+//Author: edisoncarter
+//Category: Player
+//Description: 2x more powerful than super punch.  This version does not reset gameplay speed.
+//Image: http://www.maxbot.com/gta/MegaPunch2x.gif
+//Time: 08/05/2006 01:01:41
+//Working: Yes
+// by Edison Carter
+setint(0x088de24c, 0);
+setshort(0x088de258, 40);
+#off
+setint(0x088de24c, 0x1080000d);
+setshort(0x088de258, 20);
+

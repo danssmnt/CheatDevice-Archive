@@ -1,0 +1,594 @@
+#cheat Bulldozer
+//R pickup and retrieve,  O smash,  Down toss!
+static onoff;
+if(getint(pcar + 0x150))
+{
+ppedc = getint(pcar + 0x150);
+}
+if(ppedc&&buttons & CTRL_RTRIGGER)
+{
+onoff = 1;
+}
+if(onoff&&getshort(ppedc + 0x56) > 150&&getshort(ppedc + 0x56) < 279)
+{
+setfloat(ppedc + 0x30,   getfloat(pplayer + 0x30) + getfloat(pplayer + 0x10) * 7.5);
+setfloat(ppedc + 0x34,   getfloat(pplayer + 0x34) + getfloat(pplayer + 0x14) * 7.5);
+setfloat(ppedc + 0x38,   getfloat(pplayer + 0x38) + 2.5);
+setfloat(ppedc + 0x70,  0,  0,  0);
+if(press & CTRL_CIRCLE)
+{
+setfloat(ppedc + 0x0148,  -1.2);
+setfloat(ppedc + 0x027C,  getfloat(ppedc + 0x027C) - 250);
+onoff = 0;
+}
+else
+{
+setfloat(ppedc + 0x0148,  0);
+}
+if(press & CTRL_DOWN)
+{
+boost = 5;
+thrust = boost * 0.00333;
+setfloat(ppedc + 0x0140,    getfloat(ppedc + 0x0140) + getfloat(pplayer + 0x0010) + thrust);
+setfloat(ppedc + 0x0144,    getfloat(ppedc + 0x0144) + getfloat(pplayer + 0x0014) + thrust);
+setfloat(ppedc + 0x0148,    getfloat(ppedc + 0x0148) + getfloat(pplayer + 0x0018) * thrust);
+onoff = 0;
+}
+}
+
+#cheat Grasshopper!
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148,  +0.8);
+boost = 1.5;
+thrust = boost * 0.01;
+setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+}
+
+#cheat Replace Reni Radar Blip with 'V'
+//by vettefan
+//it should replace the 'R' representing Reni on the radar with a 'V' representing vettefan
+setchar(0x96cda40, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x96cda50, 0x10, 0x11, 0x00, 0x00, 0x00, 0x00, 0x11, 0x11);
+setchar(0x96cda60, 0x10, 0x11, 0x01, 0x00, 0x00, 0x00, 0x11, 0x11);
+setchar(0x96cda70, 0x10, 0x11, 0x01, 0x00, 0x00, 0x10, 0x11, 0x01);
+setchar(0x96cda80, 0x00, 0x11, 0x11, 0x00, 0x00, 0x11, 0x11, 0x00);
+setchar(0x96cda90, 0x00, 0x11, 0x11, 0x00, 0x00, 0x11, 0x11, 0x00);
+setchar(0x96cdaa0, 0x00, 0x11, 0x11, 0x00, 0x10, 0x11, 0x01, 0x00);
+setchar(0x96cdab0, 0x00, 0x10, 0x11, 0x01, 0x10, 0x11, 0x01, 0x00);
+setchar(0x96cdac0, 0x00, 0x10, 0x11, 0x01, 0x11, 0x11, 0x00, 0x00);
+setchar(0x96cdad0, 0x00, 0x00, 0x11, 0x01, 0x11, 0x11, 0x00, 0x00);
+setchar(0x96cdae0, 0x00, 0x00, 0x11, 0x01, 0x11, 0x01, 0x00, 0x00);
+setchar(0x96cdaf0, 0x00, 0x00, 0x11, 0x11, 0x11, 0x01, 0x00, 0x00);
+setchar(0x96cdb00, 0x00, 0x00, 0x10, 0x11, 0x11, 0x00, 0x00, 0x00);
+setchar(0x96cdb10, 0x00, 0x00, 0x10, 0x11, 0x01, 0x00, 0x00, 0x00);
+setchar(0x96cdb20, 0x00, 0x00, 0x00, 0x11, 0x01, 0x00, 0x00, 0x00);
+setchar(0x96cdb30, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x96cdb40, 0x00, 0x00, 0x00, 0x00, 0xd0, 0x00, 0x00, 0xff);
+off()
+
+#cheat Custom Police Car
+setchar(0x09ab98f4, 4);
+setchar(0x09ab8ce4, 22);
+setchar(0x09ab8d06, 192);
+setchar(0x09ab8d07, 65);
+setchar(0x09ab8d0a, 48);
+setchar(0x09ab8d0b, 64);
+setchar(0x09ab8d16, 4);
+setchar(0x09ab8d17, 190);
+setchar(0x09ab8d1a, 195);
+setchar(0x09ab8d1b, 62);
+setchar(0x09ab8d33, 69);
+setchar(0x09ab85d6, 192);
+setchar(0x09ab85d7, 64);
+setchar(0x09abd57e, 1);
+setchar(0x09abe82e, 2);
+setchar(0x09abe85e, 1);
+setchar(0x09abe776, 208);
+setchar(0x09abf746, 208);
+setchar(0x09abf7fe, 2);
+setchar(0x09abf82e, 2);
+setchar(0x09abf837, 62);
+setchar(0x09abf83b, 62);
+setchar(0x09abe867, 62);
+setchar(0x09abe86b, 62);
+setchar(0x09ac2b9e, 1);
+setchar(0x09ac4126, 180);
+setchar(0x09ac4127, 62);
+setchar(0x09ac412a, 147);
+setchar(0x09ac412b, 60);
+setchar(0x09ac4c3a, 32);
+setchar(0x09ac4c3b, 64);
+setchar(0x09ac4c4a, 96);
+setchar(0x09ac4c4b, 190);
+setchar(0x09ab8d07, 66);
+setchar(0x09ab8d1a, 149);
+setchar(0x09ab9322, 32);
+setchar(0x09ab9357, 0);
+setchar(0x09ab935b, 0);
+setchar(0x09ab9717, 0);
+setchar(0x09ab971b, 0);
+setchar(0x09ab96f6, 237);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 236);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab96e2, 198);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 28);
+setchar(0x09ab96e7, 65);
+setchar(0x09ab96ea, 0);
+setchar(0x09ab96eb, 63);
+setchar(0x09ac1a37, 0);
+setchar(0x09ac1a3b, 0);
+setchar(0x09ac1a07, 0);
+setchar(0x09ac1a0b, 0);
+setchar(0x09ac19d2, 0);
+setchar(0x09ac19d3, 64);
+setchar(0x09ac19d6, 128);
+setchar(0x09ac19d7, 65);
+setchar(0x09ac19da, 16);
+setchar(0x09ac19db, 64);
+setchar(0x09ac19e6, 152);
+setchar(0x09ac19e7, 192);
+setchar(0x09ac19ea, 195);
+setchar(0x09ac19eb, 62);
+
+#cheat Freeze Cars
+static counter;
+if(pcar) car = pcar; else car = 0x098edcc0;
+for(p=car+0x820; p <= 0x099019a0; p+=0x820) {
+setfloat(p + 0x140, 0, 0, 0);
+}
+for(p=car-0x820; p >= 0x098edcc0; p-=0x820) {
+setfloat(p + 0x140, 0, 0, 0);
+}
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0);
+
+
+#cheat Ferris Wheel On Crack
+setfloat(0x094c4ff0, getfloat(0x094c4ff0) + 0.01);
+setfloat(0x094c4ff4, getfloat(0x094c4ff4) + 0.01);
+setfloat(0x094c4ff8, getfloat(0x094c4ff8) + 0.01);
+
+#cheat Replace Ferris Wheel Seats with Stunt Ramps!
+seat1 = 0x09919800;
+seat2 = 0x0991a080;
+seat3 = 0x09919e60;
+seat4 = 0x0991ab20;
+seat5 = 0x0991a2a0;
+setshort(seat1 + 0x56, 0x02A5);
+setshort(seat2 + 0x56, 0x02A5);
+setshort(seat3 + 0x56, 0x02A5);
+setshort(seat4 + 0x56, 0x02A5);
+setshort(seat5 + 0x56, 0x02A5);
+
+#cheat Touch of Death
+object = getint(pplayer+0x150);
+carobject = getint(pcar+0x150);
+if(getint(pplayer+0x150)>0x098b4a40&&getint(pplayer+0x150)<0x098ecf90)
+{
+setfloat(object + 0x4e4,   0);
+}
+if(getint(pplayer+0x150)>0x098edcc0&&getint(pplayer+0x150)<0x099019a0)
+{
+setfloat(object + 0x27c,   0);
+}
+
+if(getint(pcar+0x150)>0x098b4a40&&getint(pcar+0x150)<0x098ecf90)
+{
+setfloat(carobject + 0x4e4,   0);
+}
+if(getint(pcar+0x150)>0x098edcc0&&getint(pcar+0x150)<0x099019a0)
+{
+setfloat(carobject + 0x27c,   0);
+}
+
+#cheat certain things invisable
+sethex(0x087259C7, 0x16);
+
+#cheat Pet Car (R+Up ON, R+Down OFF, R+O Blowup Car)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+if(buttons & CTRL_RTRIGGER&&press & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+static thingy;
+
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3);
+setfloat(yourcar + 0x34, playery +3);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+
+
+#cheat Pet Car (R+Up ON, R+Down OFF, R+O Blowup Car)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+static yourcar;
+if(pcar)  yourcar = pcar;
+
+if(Blowupcar == 0)
+{
+setfloat(yourcar + 0x0000027C,  1000000000);
+}
+
+if(buttons & CTRL_RTRIGGER&&press & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C, 0);
+}
+
+static thingy;
+
+
+if(thingy && pcar != yourcar)
+{
+setfloat(yourcar + 0x30, playerx + 4 * -getfloat(pplayer+0x10));
+setfloat(yourcar + 0x34, playery + 4 * -getfloat(pplayer+0x00));
+setfloat(yourcar + 0x38, playerz);
+setfloat(yourcar + 0x0000027C,  1000000000);
+setfloat(yourcar + 0x0000010C,  0);
+}
+
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+
+#cheat Pet Car
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0&&pcar)
+{
+setfloat(yourcar + 0x0000027C,   1000000000);
+setfloat(yourcar + 0x0000010C,   0);
+}
+if(buttons & CTRL_RTRIGGER&&buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x0000027C,  0);
+}
+static thingy;
+if(thingy)
+{
+setfloat(yourcar + 0x30,  playerx +3);
+setfloat(yourcar + 0x34,  playery +3);
+setfloat(yourcar + 0x38,  playerz);
+}
+if(press & CTRL_UP&&buttons & CTRL_RTRIGGER&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&buttons & CTRL_RTRIGGER&&thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,   +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78,   getfloat(yourcar + 0x78)-0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x00000148,   +0.2);
+}
+static Flip;
+if(press & CTRL_RIGHT&&buttons & CTRL_RTRIGGER&&Flip == 0)
+{
+Flip = 1;
+}
+if(Flip)
+{
+setfloat(yourcar + 0x08,   0);
+setfloat(yourcar + 0x18,   0);
+}
+if(press & CTRL_RIGHT&&buttons & CTRL_RTRIGGER&&Flip)
+{
+Flip = 0;
+}
+
+
+#cheat Rainbow-ish Cop Cars
+sethex(0x09AB98F4, 1A)
+
+#cheat Cooler Looking Cop Cars
+// They kinda look like they should be in Starsky and Hutch
+// or something tongue.gif
+sethex(0x09AB98F4, 16)
+
+#cheat Translucent Rainbow Cop Cars
+sethex(0x09AB98F4, 38)
+
+#cheat Less Features Cop Cars
+// The headlights and a few other features are missing (i.e. Smoothed out)
+sethex(0x09AB98F4, 40)
+
+#cheat Rainbow-ish Cop Cars
+sethex(0x09AB98F4, 1A)
+
+#cheat Cooler Looking Cop Cars
+// They kinda look like they should be in Starsky and Hutch
+// or something :P
+sethex(0x09AB98F4, 16)
+
+#cheat Translucent Rainbow Cop Cars
+sethex(0x09AB98F4, 38)
+
+#cheat Less Features Cop Cars
+// The headlights and a few other features are missing (i.e. Smoothed out)
+sethex(0x09AB98F4, 40)
+
+#cheat weird chorme ish green
+sethex(0x09AB98F4, 30);
+
+#cheat Normal cop car
+sethex(0x09AB98F4, 21);
+
+
+#cheat Toggle Weapons (R+UP heavy weapons, R+DOWN melee weapons)
+// by parm, thanks to DDM and Waterbottle
+abc=getchar(pplayer+0x63c);
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x21)
+{
+setchar(pplayer+0x63C, 0x22);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M','i','n','i','g','u','n',' ','2');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x22)
+{
+setchar(pplayer+0x63C, 0x23);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C','h','a','i','n','g','u','n');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x23)
+{
+setchar(pplayer+0x63C, 0x20);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'R','o','c','k','e','t',' ','L','a','u','n','c','h','e','r');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_UP && abc==0x20)
+{
+setchar(pplayer+0x63C, 0x21);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'F','l','a','m','e','t','h','r','o','w','e','r');
+}
+ab=getchar(pplayer+0x594);
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x03)
+{
+setchar(pplayer+0x594, 0x04);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'N','i','g','h','t',' ','S','t','i','c','k');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x04)
+{
+setchar(pplayer+0x594, 0x05);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'M','i','n','i',' ','P','i','r','a','t','e',' ','S','w','o','r','d');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x05)
+{
+setchar(pplayer+0x594, 0x06);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'B','a','t');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x06)
+{
+setchar(pplayer+0x594, 0x07);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'H','a','n','d',' ','A','x','e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x07)
+{
+setchar(pplayer+0x594, 0x08);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'C','a','n','e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x08)
+{
+setchar(pplayer+0x594, 0x09);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'K,','n','i','f','e');
+}
+if(press & CTRL_RTRIGGER && press & CTRL_DOWN && ab==0x09)
+{
+setchar(pplayer+0x594, 0x03);
+//setshort(0x08e90bd8, 0);
+//setshort(0x08e90bd8, 1, 'G','o','l','f',' ','C','l','u','b');
+}
+
+#cheat Ped Teleporter
+pped = getint(0x08BA1D70);
+if((pressmed & CTRL_TRIANGLE&&press & CTRL_UP))
+{
+playerx = getfloat(pplayer + 0x030);
+playery = getfloat(pplayer + 0x034);
+playerz = getfloat(pplayer + 0x038);
+}
+
+if((press & CTRL_UP))
+{
+setfloat(pped + 0x30,  playerx);
+setfloat(pped + 0x34,  playery);
+setfloat(pped + 0x38,  playerz);
+}
+
+
+#cheat Hold L or R to change taxi fare amount
+ if ((buttons & CTRL_RTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)+1);
+}
+ if ((buttons & CTRL_LTRIGGER))
+{
+setint(0x09F6D7B0, getint(0x09F6D7B0)-1);
+}
+
+#cheat Up and Down change wanted Level
+ if ((pressmed & CTRL_UP&&getint(pplayer+0x00000910)<6))
+{
+setint(pplayer+0x00000910, getint(pplayer+0x00000910)+1);
+}
+ if ((pressmed & CTRL_DOWN&&getint(pplayer+0x00000910)>0))
+{
+setint(pplayer+0x00000910, getint(pplayer+0x00000910)-1);
+}
+
+
+#cheat All Red Baloons Burst. w/ Rewards
+address = 0x09f6a200;
+for(i=0;i<99;i++) {
+setint(address+4*i, 1);
+}
+setshort(0x08bb3d3c, 99);
+off();
+
+#cheat NOS
+//Hold O while driving to use NOS
+if(buttons & CTRL_CIRCLE) {
+speed = 0.0;
+if(getfloat(pcar+0x140)>0) { speed+=getfloat(pcar+0x140); }
+else { speed-=getfloat(pcar+0x140); }
+if(getfloat(pcar+0x144)>0) { speed+=getfloat(pcar+0x144); }
+else { speed-=getfloat(pcar+0x144); }
+if(speed<175/75) {
+setfloat(pcar+0x140, getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144, getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+#cheat Teleport to the Tallest Buliding
+teleport(-518.71, 1172.19, 273.72 );
+
+#cheat Kamakazee!!!!
+ if ((buttons & CTRL_CIRCLE))
+{
+setfloat(pcar + 0x0000027C, 0x0);
+}
+
+
+#cheat Bouncy!
+BounceAmount = 0.8;
+rot = getfloat(0x09fc73f0);
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(getshort(pplayer+0x1C8)!=0x1020) { setfloat(pplayer+0x148,BounceAmount); setshort(pplayer+0x1c8, 0x1020);
+if(ystick < -0.5) {
+setfloat(pplayer+0x140,getfloat(pplayer+0x10));
+setfloat(pplayer+0x144,getfloat(pplayer+0x14));
+}
+}
+if(xstick < -0.5) rot += 2;
+if(xstick > 0.5) rot -= 2;
+setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));
+setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));
+setfloat(0x09fc73f0, rot);
+
+#cheat Superman
+//By Waterbottle
+rot = getfloat(0x09fc73f0);
+pstartfly = getshort(pplayer+0x1C8);
+setfloat(pplayer + 0x4E4, 150.0);//health
+if(buttons & CTRL_RTRIGGER) speedmult = 1.5; else speedmult = 0.3;
+if(buttons & CTRL_CROSS) {
+setshort(pplayer+0x1C8, 0x1020);
+setfloat(pplayer+0x148, speedmult/2);
+}
+else if(buttons & CTRL_SQUARE && pstartfly==0x1020) setfloat(pplayer+0x148, -speedmult/2);
+else if(pstartfly==0x1020) setfloat(pplayer+0x148, 0);
+if(xstick < -0.5 && pstartfly==0x1020) rot += 2;
+if(xstick > 0.5 && pstartfly==0x1020) rot -= 2;
+if(pstartfly==0x1020) {
+setfloat(pplayer, cos(rot)); setfloat(pplayer+0x4, sin(rot));
+setfloat(pplayer+0x10, -sin(rot)); setfloat(pplayer+0x14, cos(rot));
+}
+if(ystick < -0.5 && pstartfly==0x1020) {
+setfloat(pplayer+0x140, -sin(rot)*speedmult);
+setfloat(pplayer+0x144, cos(rot)*speedmult);
+} else if(pstartfly==0x1020) setfloat(pplayer+0x140, 0, 0);
+setfloat(0x09fc73f0, rot);
+
+
+#cheat Hit Down to Car Hop!
+if(press & CTRL_DOWN)
+{
+setfloat(pcar + 0x00000148, +0.2);
+}
+
+#cheat ha ha test
+setshort(0x08e90bd8, 1, 'H','a',',','h','a',',','t','h','i','s',' ','c','o','d','e',' ','i','s',' ','d','o','p','e');
+
+#cheat Extreme Boost (Hit O)
+if((press & CTRL_CIRCLE))
+{
+   setfloat(pcar+0x140,  getfloat(pcar+0x140)+getfloat(pcar+0x10)+0.1);
+   setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar+0x14)+0.1);
+}
+
+#cheat Wanted Level Modifier (DDM, edit by theY4Kman)
+// Wanted Level Modifier (Originally coded by Durka Durka Mahn, but edited by theY4Kman)
+if(getint(0x8C5ED90) == 00) wantedlevel = getint(pplayer+0x910);
+else wantedlevel = wantedlevel;
+if ((press & CTRL_UP) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel < 6)) wantedlevel++;
+if ((press & CTRL_DOWN) && (buttons & CTRL_CROSS) && (buttons & CTRL_RTRIGGER) && (wantedlevel > 0)) wantedlevel--;
+setint(pplayer+0x910, wantedlevel);
+setint(0x8C5ED90, 01);
+#off
+setint(0x8C5ED90, 00);
+

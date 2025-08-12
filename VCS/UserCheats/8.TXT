@@ -1,0 +1,444 @@
+#cheat Force Touch 2
+push = 2.0;
+ptouch = getint(pobj+0x150);
+if (ptouch && getshort(ptouch + 0x0056) < 750)
+{
+   setfloat(ptouch + 0x0140, getfloat(pobj + 0x0140) + getfloat(pobj + 0x0010) * push);
+   setfloat(ptouch + 0x0144, getfloat(pobj + 0x0144) + getfloat(pobj + 0x0014) * push);
+   setfloat(ptouch + 0x0148, getfloat(pobj + 0x0148) + getfloat(pobj + 0x0018) * push);
+   if (getshort(ptouch + 0x0056) < 170)
+   {
+       setshort(ptouch + 0x01c8, 0x1020);
+       setfloat(ptouch + 0x0148, push * 0.1);
+   }
+}
+
+#cheat Power Drive!
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78, -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148, +Up);
+}
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,   0);
+setfloat(pcar + 0x18,   0);
+}
+
+#cheat Car Stunts (Hold O and use analog)
+if(xstick < -0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78,  +0.1);
+}
+
+if(xstick > 0.9&&buttons & CTRL_CIRCLE)
+{
+setfloat(pcar + 0x78,  getfloat(pcar + 0x78)-0.02);
+}
+
+#cheat stunt man
+static score;
+static jumping;
+static time;
+if(getchar(pplayer+0x1c9) & 0x10)
+{
+    jumping = true;
+    if(xstick)
+    {
+    setfloat(pplayer+0x78, -xstick / 2);
+    score += sqrt(xstick*xstick) * 40;
+    }
+    if(ystick)
+    {
+    setfloat(pplayer+0x70, ystick * getfloat(pplayer) / 2);
+    setfloat(pplayer+0x74, ystick * getfloat(pplayer+4) / 2);
+    score += sqrt(ystick*ystick) * 50;      
+    }
+} else if(jumping) {
+jumping = 0;    
+setfloat(pplayer+0x70, 0, 0, 0);  
+time = getshort(0x08bb3b40);
+setint(0x08bde55c, getint(0x08bde55c)+score);
+}
+else if(time != 0 && time > getshort(0x08bb3b40) - 5 && score) {
+       int = int(score);
+       setshort(0x08e90bd8, 1, 'W', 'o', 'w' , ',', ' ', 'y', 'o', 'u', ' ', 'g', 'o', 't', ' ');
+       size = 0;
+       for(i = 1; i < int; i*=10) size+=2;
+       for(i = 0; int > 0; i+=2 ) {
+       setshort(0x08e90bf2+size-i, '0' + (int % 10));
+       int = int(int/=10);
+       }
+       setshort(0x08e90bf2+i, ' ', 'p', 'o', 'i', 'n', 't', 's', '!', ' ', ':', ')', 0);
+       }
+else time = score = sturn = 0;
+
+#cheat Hunter At ArmyBase
+//By: Gunner54
+vspawn = 0x08E81290;
+setint(vspawn, 275);
+setfloat(vspawn + 4, -1684.62, -124.43, 14.62); // x, y, z, angle
+vspawn += 0x30;
+
+#cheat Submarine + HoverCar
+//Credits: Waterbottle
+static height;
+if(!height)
+ height = getfloat(pcar+0x38);
+static Zdeg;
+ if(!Zdeg)
+ Zdeg = getfloat(pplayer+0x8d0);
+ 
+ static st;
+ static speed;
+ setfloat(pcar+0x1c8, 0x1020);
+ setfloat(pcar+0x38, height);
+ setfloat(pcar+0x148, 0);
+ Zdeg += xstick * 1.5;
+ if(ystick)
+ {
+ Xdeg = getfloat(pcar) * -10 * ystick;
+ Ydeg = getfloat(pcar+4) * -10 * ystick;
+ }
+ else Ydeg = Xdeg = 0;
+
+ if(buttons & CTRL_CROSS)
+ {
+ if(speed < 0)
+         speed += 0.02;
+ if(speed < 0.75)
+         speed += 0.01;
+ }
+ else
+ if(buttons & CTRL_SQUARE)
+ {
+ if(speed > 0)
+         speed -= 0.015;
+ if(speed > -0.4)
+         speed -= 0.008;
+ }
+ else speed *= 0.95;
+
+ if(buttons & CTRL_UP) height+=0.1;
+ if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+ 
+ setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+ setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+ setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+ setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+ setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+ setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+ setfloat(pcar+0x20, -sin(Ydeg));
+ setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+ setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+ 
+ setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144, getfloat(pcar)*speed);
+ if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 0;
+{
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+ static speed;
+ //set the car ontop of the water
+ setfloat(pcar+0x38,  getfloat(0x96C96B0)+0.8);
+ setfloat(pcar+0x8,  0);
+ setfloat(pcar+0x18,  0);
+ setfloat(pcar+0x20,  0,  0,  0);
+ setfloat(pcar+0x148,  0);
+ //hand brake
+ if(buttons & CTRL_RTRIGGER)
+ {
+ speed*=0.9;
+ handb = 2.5;
+ } else handb = 1;
+ //rotate the vehicle
+ if(speed>0.1)
+         setfloat(pcar+0x78,  -0.015 * xstick * handb);
+ //accelerte
+ if(buttons & CTRL_CROSS && speed<0.7)
+         speed += 0.02;
+ else if(speed>0)
+         speed -= 0.01;
+ //add speed to car
+ setfloat(pcar+0x140,  -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144,  getfloat(pcar)*speed);
+}
+
+#cheat Never Been Busted
+//By: Gunner54
+setchar(0x08BB40AC, 0);
+
+#cheat Never Been Wasted
+//By: Gunner54
+setchar(0x08BB40A8, 0);
+
+#cheat Teleport to Target (X)
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(buttons & CTRL_RTRIGGER&&press & CTRL_CROSS)
+{
+setfloat(pplayer + 0x30, aimx);
+setfloat(pplayer + 0x34, aimy);
+setfloat(pplayer + 0x38, aimz);
+}
+
+#cheat Modded Admiral
+static fOnce;
+if (!fOnce)
+{
+   fOnce = true;
+   memcpy(0x935E3E0, 0x935E680, 0x2a0);
+}
+
+#cheat Modded Sentinel XS
+static fOnce;
+if (!fOnce)
+{
+   fOnce = true;
+   memcpy(0x936F240, 0x935E680, 0x2a0);
+}
+
+#cheat Remote Control Vehicle
+static Text;
+if (!Text)
+{
+setshort(0x8E90BD8, 1, 'O', '+', 'U', 'P','=', 'L', 'e', 'a', 'v', 'e', ' ', 'c', 'a', 'r', ' ', '-', ' ', 'O', '+', 'D', 'o', 'w', 'n', '=', 'R', 'e', 't', 'u', 'r', 'n', ' ', '-', ' ', 'O', '+', 'R', '=', 'H', 'U', 'D', '/', 'R', 'a', 'd', 'a', 'r', ' ', '-', ' ', 'O', '+', 'L', 'e', 'f', 't', '/', 'R', 'i', 'g', 'h', 't', '=', 'C', 'a', 'm', 0);
+}
+setchar(pplayer+0x4C, 0x10, 0x20);
+if (press & CTRL_CIRCLE&&press & CTRL_UP)
+{
+Text = true;
+setchar(pplayer+0x8B4, 0x36);
+setchar(pplayer+0x8B4, 0x38);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+if (press & CTRL_CIRCLE&&press & CTRL_RTRIGGER)
+{
+setchar(0x9A63413, 0x02);
+setchar(0x9A63418, 0x00);
+}
+if (press & CTRL_CIRCLE&&press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_CIRCLE&&press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+#off
+{
+setchar(pplayer+0x4C, 0x00, 0x00);
+setchar(0x9A63413, 0x00);
+setchar(0x9A63418, 0x01);
+}
+
+#cheat RCB use FIRST
+//enters last used vehicle as passenger (your bike)
+//must be a few feet away from bike(turn on/off QUICKLY)
+//if you get stuck just jump
+setchar(pplayer+0x8B4, 0x18);
+
+#cheat Remote control bike
+//R+UP control bike, R+DOWN get back on bike
+//When on bike pressing triangle will give you control of yourself and the bike
+//Getting on/off AGAIN will control just vic
+if (press & CTRL_RTRIGGER&&press & CTRL_UP)
+setchar(pplayer+0x8B4, 0x36);
+if (press & CTRL_RTRIGGER&&press & CTRL_DOWN)
+setchar(pplayer+0x8B4, 0x37);
+
+#cheat RCB Camera
+//PLEASE NOTE-
+//vic will stand up straight once LEFT is pressed
+//LEFT camera follows bike
+//RIGHT camera is stationary
+static fInit;
+if (!fInit)
+{
+fInit = true;
+setchar(pplayer+0x8B4, 0x02);
+}
+if (press & CTRL_LEFT)
+setchar(pplayer+0x8B4, 0x07);
+if (press & CTRL_RIGHT)
+setchar(pplayer+0x8B4, 0x12);
+
+#cheat Fast Clock
+setchar(0x08bb2db4, 1);
+#off
+setchar(0x08bb2db4, 0);
+
+#cheat Peds Have Weapons
+setchar(0x08baef2c, 1);
+#off
+setchar(0x08baef2c, 0);
+
+#cheat Invisible Traffic
+setchar(0x08bb2450, 1);
+#off
+setchar(0x08bb2450, 0);
+
+#cheat Perfect Traction, Down=Car Hop
+setchar(0x08bb2452, 1);
+#off
+setchar(0x08bb2452, 0);
+
+#cheat Black Traffic
+setchar(0x08bb10d4, 1);
+#off
+setchar(0x08bb10d4, 0);
+
+#cheat White Traffic
+setchar(0x08bb10d5, 1);
+#off
+setchar(0x08bb10d5, 0);
+
+#cheat Aggressive Drivers
+setchar(0x08bb32c8, 1);
+#off
+setchar(0x08bb32c8, 0);
+
+#cheat All Green Lights
+setchar(0x08bafd80, 1);
+#off
+setchar(0x08bafd80, 0);
+
+#cheat Bobble Head World
+setchar(0x08bacdf7, 1);
+#off
+setchar(0x08bacdf7, 0);
+
+#cheat Guys Follow You
+setchar(0x08bacdf5, 1);
+#off
+setchar(0x08bacdf5, 0);
+
+#cheat Dark Vic
+//must be turned off
+setchar(pplayer + 0x4A, 32);
+
+#cheat Normal Vic
+//must be turned off
+setchar(pplayer + 0x4A, 0);
+
+#cheat Heavy Vic
+//by vettefan
+//makes vic really heavy, and capable of smashing through traffic.
+setfloat(pplayer + 0xD0, 7000000, 10000000);
+setfloat(pplayer + 0x128, 0, 0);
+#off
+setfloat(pplayer + 0xD0, 70, 100);
+
+#cheat indestructable cars
+//by vettefan
+//cars will not attain any physical damage, or engine damage
+setfloat(pcar + 0x0000027C, 1000000000);
+setfloat(pcar + 0x0000010C, 0);
+
+#cheat turquoise exhaust
+//by vettefan
+//not as bright and vibrant of a change as in LCS but it's still noticable
+setchar(0x9569b94, 0x00, 0xff, 0xff);
+
+#cheat Lamborghini Doors
+//By Waterbottle
+//Ported from vettefan88's version for LCS
+setfloat(pcar+0x450, 0, -1.2566371, 0);
+setfloat(pcar+0x480, 0, -1.2566371, 0);
+setfloat(pcar+0x4b0, 0, -1.2566371, 0);
+setfloat(pcar+0x4e0, 0, -1.2566371, 0);
+
+#cheat 0$
+setint(0x08bde55c, 0, 0);
+
+#cheat Bobcat in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 180);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Polaris V8 in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 186);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Jetski in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 233);
+#off
+setint(0x08C739B0, 0);
+
+#cheat Police Wagon
+setchar(0x09ab96e2, 208);
+setchar(0x09ab96e3, 63);
+setchar(0x09ab96e6, 255);
+setchar(0x09ab96e7, 64);
+setchar(0x09ab96ea, 128);
+setchar(0x09ab96eb, 63);
+setchar(0x09ab96f6, 4);
+setchar(0x09ab96f7, 63);
+setchar(0x09ab96fa, 254);
+setchar(0x09ab96fb, 62);
+setchar(0x09ab99fe, 5);
+setchar(0x09ab9a2e, 4);
+setchar(0x09abe776, 64);
+setchar(0x09abe777, 65);
+setchar(0x09abe88e, 3);
+setchar(0x09abe8be, 3);
+setchar(0x09abf746, 64);
+setchar(0x09abf747, 65);
+setchar(0x09abf85e, 3);
+setchar(0x09ac2bce, 4);
+setchar(0x09ac2bfe, 4);
+setchar(0x09abd5ae, 4); 
+

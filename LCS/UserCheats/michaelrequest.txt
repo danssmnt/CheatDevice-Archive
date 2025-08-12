@@ -1,0 +1,32 @@
+#cheat Adjust Camera Distance to 0
+setfloat(0x8bc86c0, 0);
+setfloat(0x8bc8684, 0);
+
+#cheat Adjust Camera Distance to 2
+setfloat(0x8bc86c0, 2);
+setfloat(0x8bc8684, 2);
+
+#cheat Adjust Camera Distance to 4
+setfloat(0x8bc86c0, 4);
+setfloat(0x8bc8684, 4);
+
+#cheat Adjust Camera Distance to 6
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+
+#cheat Adjust Camera Distance to 8
+setfloat(0x8bc86c0, 8);
+setfloat(0x8bc8684, 8);
+
+#cheat Adjust Camera Distance to 10
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+
+#cheat Top Down View
+// Addresses found by Vettfan88
+setchar(pplayer + 0x3C, 0x15, 0x32, 0x18, 0x10); // Set Camera Direction to Player Direction
+setfloat(0x08BC7FC4, -2); // Enable Top Down View
+setfloat(0x08BC86C0, 10); // On Foot Camera Zoom
+setfloat(0x08BC8684, 15); // In Vehicle Camera Zoom
+
+

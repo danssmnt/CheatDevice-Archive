@@ -1,0 +1,1576 @@
+Here`s an updated version of my Little Haiti Shootout:
+
+#cheat Little Haiti Shootout V2
+setint(pplayer+0x5d8, 0xffffff);
+setchar(pplayer+0xCB8, 0x3);
+setchar(pplayer+0x5CC, 0x13);
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3e00, 3);
+setchar(0x09f69054,1);
+moveto(-975.14,271.33,10.27); object(0x1D4B,0,0,274);
+moveto(-932.47,290.76,13.07); object(0x1CB2,0,0,86);
+moveto(-983.78,287.34,12.07); object(0x1CB2,0,0,357);
+moveto(-976.44,288.45,11.97); object(0x1CB2,0,0,268);
+moveto(-976.71,274.92,10.70); object(0x1c2,0,0,212);
+moveto(-979.54,270.21,10.67); object(0x1BA,0,0,203);
+move(-0.26,0.99,-0.10); object(0x1BB,0,90,212);
+move(-0.46,5.29,0.00); object(0x1BD,0,90,262);
+move(-0.02,1.17,0.10); object(0x1BE,85,90,276);
+move(-0.05,-0.82,0.60); object(0x1BD,160,85,266);
+move(-0.00,0.61,0.30); object(0x1BD,245,185,11);
+move(3.42,7.53,-0.80); object(0x1B4,180,180,142);
+move(-2.85,-19.66,-2.80); object(0x1B3,180,180,2);
+move(-0.46,0.36,0.00); object(0x1B3,180,180,4);
+move(-0.31,-0.39,-0.20); object(0x1B3,280,180,4);
+move(-0.07,16.72,2.90); object(0x1B8,180,180,153);
+move(4.84,3.89,0.00); object(0x1B8,180,180,228);
+pspawn = 0x08E81290;
+setint(pspawn, 268);
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270);
+pspawn += 0x30;
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x4e4, 0xFF);
+setchar(yourped+0x789, 0x7);}
+static yourpedb;
+if(pped && pped != yourped)
+yourpedb=pped;
+if(yourped && yourpedb){
+setchar(yourpedb+0x63C, 0x22);
+setchar(yourpedb+0x87c, 0x1e);
+setint(yourpedb+0x648, 1000);
+setchar(yourpedb+0x4e4, 0xFF);
+setchar(yourpedb+0x789, 0x7);
+setfloat(yourped+0x30, -976.46);
+setfloat(yourped+0x34, 266.51);
+setfloat(yourped+0x38, 10.95);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+setfloat(yourpedb+0x30, -976.46);
+setfloat(yourpedb+0x34, 266.51);
+setfloat(yourpedb+0x38, 11.27);
+setchar(yourpedb+0x894, 0x8);
+setint(yourpedb+0x890, pplayer);
+teleport(-937.37, 285.71, 11.27);}
+
+It`s a lot better than the old one.
+You don`t need the teleport cheat anymore.
+AND IT INCLUDES TWO ENEMIES !!!
+It`s a proof to show you, that I can create multiple enemies.
+Activate the cheat and target two peds to start the mission !
+You can start it from anywhere now, there`s no need to teleport anymore.
+
+Other than that it works just like the old version, the only thing I could not include in this version was the burning barrel...
+But I don`t think of it as a big problem, I just replaced it with an explosive barrel in this version.
+I think I`ll use this cheat as a base for custom missions from now on, because it contains pretty much everything we need to create them !
+
+And now here`s my other achievement, even more cool features we can use in our missions !
+Here`s my introduction of CUSTOM MISSION MARKERS and MISSION PASSED SCREENS:
+
+#cheat Custom Mission Marker + Mission Passed Screen
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'U', 'p',
+'a', 'l', 'u', 'p', 'p', 'a');
+setshort(0x08E931FC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'U', 'p',
+'a', 'l', 'u', 'p', 'p', 'a');
+setshort(0x08E933FC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'U', 'p',
+'a', 'l', 'u', 'p', 'p', 'a');
+static Marker;
+X1 = -1077.40;
+Y1 = 312.63;
+Z1 = 11.26;
+setshort(0x08e90bd8, 1, 'G', 'o', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'm',
+'a', 'r', 'k', 'e', 'r', ' ', '!',0);
+if(!Marker){ for(rot = 0;rot<270;rot += 6.0){
+moveto(X1+cos(rot)*2,Y1+sin(rot)*2,Z1);object(0x1ce5,0,0,-rot+90);}
+Marker = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<2){
+setshort(0x08e90DD8, 1, ' ', 'M', 'I', 'S', 'S', 'I', 'O', 'N', ' ', 'P', 'A',
+'S', 'S', 'E', 'D', '!', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B', 'l', 'i', 's', 't', 'a', ' ', 'G', 'T',' ', 'i', 'n', ' ', 'y', 'o', 'u', 'r', ' ', 'g', 'a', 'r', 'a', 'g', 'e', '!',
+0);
+setint(0x8C73A70, 177);
+setchar(0x8C73A70+0x24, 255,255,0, 255);
+setchar(0x8C73A70+0x28, 0,255,255, 255);
+setshort(0x98a3116, 1, 'B','l','i','s','t','a',' ','G','T', 0); 
+setfloat(0x935F3F8, 1.2, 1.2);
+setfloat(0x962edc0+0x6c, 0.75);
+setfloat(0x962edc0+0xc4, 0.85);
+setfloat(0x962edc0+0x70, 0.5);
+setchar(0x962edc0+0x5c, '4', 'D', 6);
+setfloat(0x962edc0+0x7c, 0.35);
+setfloat(0x962edc0+0x80, -0.15);
+setfloat(0x962edc0+0x78, 0.08);
+setfloat(0x962edc0+0x74, 1);
+setfloat(0x962edc0+0x84, 0.5);
+setfloat(0x962edc0+0x88, 0);
+setfloat(0x962edc0+0x68, 30);
+setfloat(0x962edc0+0xbc, 2500);
+setfloat(0x962edc0+0xc0, 1000);
+setfloat(0x962edc0+0xa0, 0);
+setfloat(0x962edc0+0xa4, 0);
+setfloat(0x962edc0+0xa8, 0);
+teleport( -1087.31, 356.47, 11.27);}
+
+You`ll find it at the Compound (Your 2nd Savehouse).
+Many thanks go to Durka Durka Mahn, he told me how to create custom markers !  
+
+NOTE: You can`t use both of those cheats in one game !
+You have to restart your game first, otherwise some objects or the marker will glitch up...
+
+Here`s a new custom mission:
+
+#cheat Teleport to Little Haiti Shootout
+teleport(-937.37, 285.71, 11.27);
+
+#cheat Little Haiti Shootout
+setint(pplayer+0x5d8, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x03);
+setchar(pplayer+0x5CC, 0x13);
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3e00, 3);
+setchar(0x09f69054,1);
+moveto(-975.14,271.33,10.27); object(0x1D4B,0,0,274);
+moveto(-932.47,290.76,13.07); object(0x1CB2,0,0,86);
+moveto(-983.78,287.34,12.07); object(0x1CB2,0,0,357);
+moveto(-976.44,288.45,11.97); object(0x1CB2,0,0,268);
+moveto(-979.54,270.21,10.67); object(0x01BA,0,0,203);
+move(-0.26,0.99,-0.10); object(0x01BB,0,90,212);
+move(-0.46,5.29,0.00); object(0x01BD,0,90,262);
+move(-0.02,1.17,0.10); object(0x01BE,85,90,276);
+move(-0.05,-0.82,0.60); object(0x01BD,160,85,266);
+move(-0.00,0.61,0.30); object(0x01BD,245,185,11);
+move(3.42,7.53,-0.80); object(0x01B4,180,180,142);
+move(-2.85,-19.66,-2.80); object(0x01B3,180,180,2);
+move(-0.46,0.36,0.00); object(0x01B3,180,180,4);
+move(-0.31,-0.39,-0.20); object(0x01B3,280,180,4);
+move(-0.07,16.72,2.90); object(0x01B8,180,180,153);
+move(4.84,3.89,0.00); object(0x01B8,180,180,228);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -976.71,274.92,11.57);
+moveto(-976.71,274.92,10.70); object(0x01BF,0,0,212);
+pspawn = 0x08E81290;
+setint(pspawn, 268);
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270);
+pspawn += 0x30;
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x4e4, 0xFF);
+setchar(yourped+0x789, 0x7);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_LTRIGGER&&press&CTRL_LEFT){
+setfloat(pplayer+0x30, -937.37);
+setfloat(pplayer+0x34, 285.71);
+setfloat(pplayer+0x38, 11.27);
+setfloat(yourped+0x30, -976.46);
+setfloat(yourped+0x34, 266.51);
+setfloat(yourped+0x38, 10.95);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+
+It`s really simple to use:
+1. Activate the Teleport to Little Haiti Shootout cheat to get to the place, where the mission takes place !
+2. Activate the Little Haiti Shootout cheat !
+3. Target a ped of your choice !
+4. Hold the L+R TRIGGERS and press LEFT to start the mission !
+
+Here are new versions of the cheat in which you can easily change what object you`ll throw:
+
+#cheat Throw Objects (Non explosive)
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb + 0xC, 0x0);
+
+#cheat Throw Objects (Keeps bouncing/Non explosive)
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x11);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb + 0xC, 0x0);
+
+#cheat Shoot Objects (Non explosive)
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast &
+CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)
+setchar(pbomb + 0xC, 0x0);
+
+#cheat Throw Objects (Explosive)
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+#cheat Throw Objects (Keeps bouncing/Explosive)
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x11);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+#cheat Shoot Objects (Explosive)
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+The controls are the same as in the Turn the nearest Object into another one cheat.
+
+Now here`s one of my most epic cheats ever !
+
+I`ve basically created a new weapon !!!
+
+EXPLOSIVE BARRELS AS USEABLE WEAPONS
+
+You can now throw or shoot explosive barrels.
+Just activate one of the two cheats to get either throwable barrels or the barrel launcher.
+After you`ve thrown/shoot a barrel simply press CIRCLE to detonate it !
+
+Throwable barrels:
+
+#cheat Throw Explosive Barrels
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 450);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+Shootable barrels:
+
+#cheat Explosive Barrel Launcher
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 450);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+It works absolutely perfect, there`s just one little problem.
+If there are other objects like lampposts or pickups near you they might transform into explosive barrels aswell !
+And sometimes when other objects are near you which transform your grenades/rockets won`t transform into barrels !  
+But if you use those cheats at an "objectless" place like the airport, Leaf Links, the junkyard or the roof of some house it will always work.
+
+You can throw/shoot about 10 barrels at the same time, but only the last one thrown/shoot will be remote controlled.
+(explodes when you press CROSS)
+The others explode, if you shoot them or if another barrel explodes next to them.
+
+This is a very cool cheat, it`s fun to watch the barrels you`ve thrown bounce around, and even funnier to watch the flying barrels which come out of your barrel launcher glide through the air.
+Try to fire them inside some interiors !
+They will keep bouncing around between the walls !  
+
+By the way, it is possible to change those cheats, to make you throw/shoot any other object found in the game !
+If you have any special requests, let me know and I`ll create more versions of this cheat !  
+
+Here`s a funny one, to prove you, that it works with any other object aswell:
+
+#cheat Throw Explosive Umberto Pinatas
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 7313);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+#cheat Shoot Explosive Umberto Pinatas
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 7313);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+Another one:
+
+#cheat Throw Explosive Red Ballons
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 7370);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+#cheat Shoot Explosive Red Ballons
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 7370);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+Something funny I made out of boredom:
+
+Use this to get the Rocketlauncher
+
+#cheat Get Rocket Launcher
+setint(pplayer+0x648, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x07);
+setchar(pplayer+0x63C, 0x20);
+
+Now activate one of these cheats to fire "Special" rockets:
+
+#cheat Teargas Rockets
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x10);}
+
+#cheat Molotov Rockets
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x11);}
+
+#cheat Normal Rockets
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+
+Press CROSS after you`ve fired this one to make it explode:
+
+#cheat Remote Explosive Rockets
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+DDM created a thrown objects are remote explosives cheat long time ago.
+That`s what this cheat is based on !
+
+Here are more unused pickups:
+
+#cheat Mobile Phone Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x14a);
+off();
+
+#cheat Teargas Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x157);
+off();
+
+#cheat Camera Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x16c);
+off();
+
+#cheat Landmines Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x170);
+off();
+
+#cheat Beta Minigun Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x16e);
+off();
+
+#cheat Suitcase Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x1b3);
+off();
+
+#cheat Keycard Spawn
+setfloat(0x991C280 + 0x30, -1077.40, 312.63, 11.26);
+setshort(0x991C280 + 0x56, 0x260);
+off();
+
+By the way, I just noticed that the pickup spawn cheat only seems to work once...
+So if you want to spawn another pickup you have to reload your savegame.
+
+Hey, I`ve found some unused pickups:
+
+The good old adrenaline pill, which slows down the game for some Matrix like action:
+
+#cheat Adrenaline Pill Spawn
+setfloat(0x991C280+0x30,-1077.40,312.63,11.26);
+setshort(0x991C280+0x56,0x1D3);
+off()
+
+And a strange glowing rocket, which appears to be a glitched weapon, because you can select it like any other weapon.
+The game puts it into the grenade slot. 
+If you "equip" it, you will hold the rocket in your hand and you can make some weird punches with it, which do not hurt anybody:
+
+#cheat Rocket Spawn
+setfloat(0x991C280+0x30,-1077.40,312.63,11.26);
+setshort(0x991C280+0x56,0x159);
+off()
+
+Activate one of these cheats, while you are next to one of your savehouses, to turn one of the 99 red ballons reward weapon pickups into the Adrenaline Pill/Rocket !
+
+Here`s the unused phone to head animation:
+
+#cheat Phone to Head
+setchar(pplayer+0x789, 0x09);
+setchar(pplayer+0x674, 0x24);
+setchar(pplayer+0x8B4, 0x24);
+#off
+setchar(pplayer+0x8B4, 0x0);
+
+I`ve found an unused Vehicle in the game, which has not been found before !
+(Atleast nobody has taken any notice of it yet !)
+It`s a superfast version of the Speeder boat !
+
+When I found this, it just recently made me remenber that good old mission from GTA VC called "The fastest Boat".
+So I made this little cheat, which spawns the fastest boat of VCS at the Boatyard down at the Docks:
+
+#cheat The fastest Boat
+pspawn = 0x08E81290;
+setint(pspawn, 185);
+setfloat(pspawn + 0x4, -595.83, -1508.85, 6.50, 270);
+
+It looks exactly like the normal Speeder, but it has no name displayed, if you enter it and it`s about 10 times as fast, as the normal one !  
+
+It seems to have a problem with the high speeds though.  
+Because it`s too light, it will go straight up in the air when you go from 0 to 100 (probably even higher) to say so !
+To avoid this problem, you should set the Cheatdevices Rocketboost to -2.
+The boat will still be a lot faster than the normal Speeder, but not so much that it raises into the air !  
+
+And here`s another similiar cheat:
+
+#cheat Turn the Vice Point Mall BMX into another Vehicle
+pspawn = 0x08E82CA0;
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 178;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+pobject = pobject+1;}
+setint(pspawn, pobject);
+
+It works just like the object changer.
+Press LEFT and RIGHT while holding the LTRIGGER to choose a vehicle ID.
+
+You can find out the vehicle ID`s if you look at the Cheatdevices builtin Carspawn Cheat.
+The number which is displayed there, right before the vehicle name is the ID.
+
+It`s not a very usefull cheat, but I created/posted it anyways. 
+I`ve done this while playing around with carspawning and just decided to release it.
+It`s actually quite funny to speed around on a PCJ-600 inside the Mall !
+You have to enter through one of the doors which are NOT next to the BMX to make it work !
+Otherwise the game will still spawn the BMX.
+There might be a little problem with very big vehicles like the tank, for example !
+They might get stuck inside the "Win this Bike" thingy (Can`t find the right word, lol) where the BMX normally spawns.
+Use Step Through Walls to get them out !
+The only really bad thing is, that you can`t start the "Mashing up the Mall" sidemission with other vehicles, that might have been funny, but whatever !
+
+Just have fun with it and remember:
+
+DON`T SELECT NUMBERS BELOW 170 OR HIGHER THAN 279. THEY CRASH THE GAME, BECAUSE YOU CAN ONLY SPAWN CARS USING THIS CHEAT !
+
+I just recently browsed through the old Cheat Development Topic again and saw a very cool pointer, found by Durka Durka Mahn while looking for some interesting things in that good old topic.
+It`s the pointer to the object which is the nearest to Vics position !
+
+So I just came up with this funny little cheat:
+
+#cheat Turn the nearest Object into another one
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+
+Activate the cheat, then press LEFT and RIGHT while holding the one of the following buttons to choose an object:
+
+Holding the LTRIGGER will set the object ID +1 / -1.
+Holding the RTRIGGER will set the object ID +100 / -100.
+Holding LTRIGGER and RTRIGGER will set the object ID +1000 / -1000
+
+The currently choosen object`s ID will be displayed as the number on your money meter !
+Now every object you get near to will turn into the one your money meter is displaying !
+
+It`s very funny, try it with the Pinata Man (ID 7313) or the Explosive Barrel (ID 450) for example !
+
+It should work with all objects you can place in the Construction Mode !
+And it will affect all of them aswell, which means every lamppost, barrel, crate, wooden bench etc. you get near to will transform into whatever you want !
+
+If you need help to find out the object ID of the object you want to appear activate the the following cheat.
+You just need to touch an object while this cheat is active and it`s object ID will be displayed in your money meter !
+
+#cheat View ModelID of what you touch
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+p = getint(pobj + 0x150);
+if (p){
+n = getshort(p + 0x58);
+setint(0x08bde55c, n, n);}
+
+I`ve made the cheat start with ID 450 (the explosive barrel) when you first turn it on.
+Just make sure you DO NOT select any number lower than 330, because that`s where the cars and peds start !
+The cheat works without any crashing, you just need to make sure, that you select an OBJECT ID ! 
+Not a CAR, PED or BUILDING one !
+If you try to use the ID of a Car, Ped or Building it will either make nothing appear, which means the objects next to you will simply dissappear, or even worse, it might crash the game !
+
+It might also help to choose an object ID while there are no objects near you which might turn into whatever the moneymeter displays. It has not happend yet, but I have the feeling that this eventually could crash the game because there are some numbers in between which always crash the game if you try to spawn them.
+As I said I haven`t encountered any crashes yet, but some numbers crash in the Construction Mode, so I`m almost sure that they will crash in this cheat aswell !
+
+Here`s an improved version of the Hitmen cheat. It`s basically the same as the old one but you no longer have to target a ped first, it works immediately after you turned it on:
+
+#cheat Hitmen V2
+static yourped;
+setchar(0x08BA1D70, 0x090);
+setchar(0x08BA1D71, 0x05C);
+setchar(0x08BA1D72, 0x08C);
+setchar(0x08BA1D73, 0x09);
+yourped = getint(0x08BA1D70);
+if(yourped){
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x5CC, 0x00);
+setchar(yourped+0x789, 0x00);
+setchar(yourped+0x5CC, 0x14);
+setchar(yourped+0x789, 0x03);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x63C, 0x23);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+
+Hitmen coming after you:
+
+#cheat Hitmen
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped){
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x620, 0x1d);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x06);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+
+Activate the cheat, then target any ped you see and he`ll turn into the hitman and start to attack you with his gun !
+I know you expect some more from me, so of course that`s not all this cheat does.  
+Just ignore the hitman, kill him, run away from him, whatever he`s not important.
+After you created this first hitman the real fun starts.
+Because every now and then a random ped who gets in your sight will automatically become the next hitman ! 
+This means, that random people start attacking you without any warning. 
+There can always be only one hitman, so this means if you drive far enough away from the last killer the Cheatdevice randomly chooses another nearby ped to be the next hitman !
+And you`ll always be chased by some psycho maniac with an AK whose only goal is making your live a dissaster. Lol
+
+Whatch out, he`ll always appear in the moments, when you`re not expecting it !  
+
+It`s really funny and if you want me to, I`ll make more versions of it where he has different weapons.
+Just tell me what weapon you would like him to have !
+
+I did not make this cheat on purpose, it was nothing more than a quick cheatcode I created to test the equip peds with weapon cheat, which sometimes crashes. 
+Anyways, while using this to test the ped weapon cheat I`m going to use in the custom missions I noticed, that it was actually fun to have random peds starting to attack you, it remembered me of Ma`s hitmen in LCS. 
+So I thought you folks might enjoy it aswell and decided to post it.
+
+Here`s my updated version of the Bodyguard Mod !
+
+All the equip bodyguard with weapon cheats remain the same.
+You just need to replace the old "#cheat Bodyguard" in the txt file with this one:
+
+#cheat Bodyguard
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped && press & CTRL_UP)
+yourped=pped;
+if(yourped){
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+if(pped && pped != yourped && buttons & CTRL_TRIANGLE){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);} else {
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11);
+setint(yourped+0x484, pcar);
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;}}
+
+It works exactly like before, I`ve not changed anything on the way the bodyguard behaves.
+I`ve just changed the button combinations, which are now as follows:
+
+While you aim at a ped press UP to recruit him
+If you want him to attack others hold TRIANGLE while aiming at another ped
+If you want to kill your bodyguard hold LTRIGGER and press SQUARE at the same time
+
+It no longer crashes when you activate manual aim mode, but I was not able to prevent that anoying bug, where your bodyguard stops following you after he killed someone. You still need to aim at him with any weapon after he killed someone to make him normal again !
+
+Here`s the create your personal bodyguard cheat:
+
+http://rapidshare.com/files/196427171/Bodyguard_Mod.txt
+
+I included every weapon found in the game, but some of them are glitched !
+Now target any random ped and he`ll be your bodyguard.
+Now deactivate the get weapon cheat again, so other peds you target at don`t get weapons aswell !
+But leave the Bodyguard cheat on !
+If you now target any enemy your bodyguard starts shooting him...
+Note that there`s a little glitch, sometimes if your bodyguard killed a ped he stops following you and starts to make some weird looking "walking in two directions at the same time" stuff.
+To make him normal again, just taget him with a weapon, like your pistol for example.
+He`ll also follow you into your car if you enter one, but unfortunately he can`t make drivebys !
+I`ve made him invincible by the way, so if you want to get rid of him simply press LTRIGGER+SQUARE and he`ll suicide !  Lol about that.
+
+I`ve found an alternate way of "spawning" peds:
+The thing is, I can`t spawn new peds into the game, but what keeps me from using the already existing ones in my custom missions ? So I was thinking of a way to modify the peds to do what I want them to. And I was succesful !
+The pointer to the ped you target at has been found by Durka Durka Mahn ages ago.
+With a little AI modifying, teleporting, car and objectspawning, and a few button combinations, it is possible to do pretty much anything with any random ped from the streets.
+
+Here`s a little example cheat, to show you what exactly I mean:
+
+#cheat Teleport to Dark Alley
+teleport(-1011.22, 1016.20, 10.90);
+
+#cheat Dark Alley
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -1007.98,1015.59,9.96,90);
+moveto(-1007.98,1015.59,9.20); object(0x01BF,0,0,212);
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x4e4, 0xFF);
+setchar(yourped+0x789, 0x7);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_LTRIGGER&&press&CTRL_LEFT){
+setfloat(pplayer+0x30, -1018.23);
+setfloat(pplayer+0x34, 1013.77);
+setfloat(pplayer+0x38, 8.87);
+setfloat(yourped+0x30, -1011.22);
+setfloat(yourped+0x34, 1016.20);
+setfloat(yourped+0x38, 9.00);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+
+It`s not really what you could call a mission, but I think it`s enough to demonstrate, how my custom missions are going to work. It`s really simple, first you have to use the teleport to Dark Alley cheat. Now you just activate the Dark Alley cheat, then you target any random ped, doesn`t matter which one, it works with all peds, as long as they are on foot. After you have targetted him, all you have to do is hold LEFT TRIGGER and RIGHT TRIGGER and press LEFT at the same time. Now the example mission will start, you will be teleported to some backyard near the stadium. The ped you previously targetted is now a dangerous killer with a big gun waiting for you to come...
+Go and show him, who`s the biggest badboy of you two !
+
+If you should have problems to find him, here`s a little help:
+Just follow the sound of the fire, if you know what I mean !
+
+Also note that there`s a little bug, if you can call it one:
+Sometimes the enemy gets "toasted" by the fire before you can reach him.
+I could have fixed it, but then I had to remove the fire, which I thought would take away most of the atmosphere ! 
+
+
+
+
+
+#cheat Stretch at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 215,0,0, 255); //Color2
+ setshort(0x98a334e, 1, 'S','t','r','e','t','c','h', 0); 
+ //Wheels
+ setfloat(0x93679D8, 1.62, 1.62); //wheel size
+ setfloat(0x96319e0+0x6c, 1.63); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, 'F', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.41); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.13); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.23); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 1.66); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0.7); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 30); //Steering Lock
+ setfloat(0x96319e0+0xbc, 2200); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 10000); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, -0.15); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat Stretch at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 215,0,0, 255); //Color2
+ setshort(0x98a334e, 1, 'S','t','r','e','t','c','h', 0); 
+ //Wheels
+ setfloat(0x93679D8, 1.62, 1.62); //wheel size
+ setfloat(0x96319e0+0x6c, 1.63); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, 'F', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.41); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.13); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.23); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 1.66); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0.7); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 30); //Steering Lock
+ setfloat(0x96319e0+0xbc, 2200); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 10000); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, -0.15); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat Pimped Splitz-6 ATV at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 170); //Car Id
+ setchar(0x8C73B30+0x24, 255,255,255, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a2eaa, 1,  0); 
+ //Wheels
+ setfloat(0x935E198, 0.7, 0.7); //wheel size
+ setfloat(0x962e7a0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962e7a0+0xc4, 0.85); //Traction Loss
+ setfloat(0x962e7a0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962e7a0+0x5c, 'R', 'P', 1); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962e7a0+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x962e7a0+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x962e7a0+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x962e7a0+0x74, 1); //Suspension Force Level
+ setfloat(0x962e7a0+0x84, 0.5); //Suspension Bias
+ setfloat(0x962e7a0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962e7a0+0x68, 30); //Steering Lock
+ setfloat(0x962e7a0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962e7a0+0xc0, 1500); //Turn Mass
+ setfloat(0x962e7a0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962e7a0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962e7a0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat 1123 at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 255); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,160,0, 255); //Color2
+ setshort(0x98a33f6, 1, '1','1','2','3', 0); 
+ //Wheels
+ setfloat(0x936C0B8, 1.65, 1.65); //wheel size
+ setfloat(0x96333c0+0x6c, 3.01); //Traction Multiplier
+ setfloat(0x96333c0+0xc4, 1.12); //Traction Loss
+ setfloat(0x96333c0+0x70, 0.41); //Traction Bias
+ //Engine
+ setchar(0x96333c0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96333c0+0x7c, 0.39); //Suspension Upper Limit
+ setfloat(0x96333c0+0x80, -0.11); //Suspension Lower Limit
+ setfloat(0x96333c0+0x78, 0.18); //Suspension Damping Level
+ setfloat(0x96333c0+0x74, 1.24); //Suspension Force Level
+ setfloat(0x96333c0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96333c0+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96333c0+0x68, 30); //Steering Lock
+ setfloat(0x96333c0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96333c0+0xc0, 1500); //Turn Mass
+ setfloat(0x96333c0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96333c0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96333c0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat 124556 at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 246); //Car Id
+ setchar(0x8C73B30+0x24, 255,160,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a3444, 1, '1','2','4','5','5','6', 0); 
+ //Wheels
+ setfloat(0x936A91A, 2.07, 2.07); //wheel size
+ setfloat(0x9632ac0+0x6c, 4.01); //Traction Multiplier
+ setfloat(0x9632ac0+0xc4, 1.13); //Traction Loss
+ setfloat(0x9632ac0+0x70, 0.39); //Traction Bias
+ //Engine
+ setchar(0x9632ac0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9632ac0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9632ac0+0x80, -0.26); //Suspension Lower Limit
+ setfloat(0x9632ac0+0x78, 0.21); //Suspension Damping Level
+ setfloat(0x9632ac0+0x74, 1.81); //Suspension Force Level
+ setfloat(0x9632ac0+0x84, 0.6); //Suspension Bias
+ setfloat(0x9632ac0+0x88, 0.9); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9632ac0+0x68, 30); //Steering Lock
+ setfloat(0x9632ac0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9632ac0+0xc0, 1500); //Turn Mass
+ setfloat(0x9632ac0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9632ac0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9632ac0+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat 1[[[ at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 221); //Car Id
+ setchar(0x8C73B30+0x24, 255,255,255, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a32d8, 1, '1','[','[','[', 0); 
+ //Wheels
+ setfloat(0x9366778, 2.23, 2.23); //wheel size
+ setfloat(0x9630fe0+0x6c, 2.45); //Traction Multiplier
+ setfloat(0x9630fe0+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630fe0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630fe0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630fe0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630fe0+0x80, -0.26); //Suspension Lower Limit
+ setfloat(0x9630fe0+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x9630fe0+0x74, 1.78); //Suspension Force Level
+ setfloat(0x9630fe0+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630fe0+0x88, 1); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630fe0+0x68, 30); //Steering Lock
+ setfloat(0x9630fe0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630fe0+0xc0, 1500); //Turn Mass
+ setfloat(0x9630fe0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630fe0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630fe0+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat New Construction
+moveto(-1280.20,-517.32,7.73);  object(0x1D09,0,0,284);
+
+#cheat New Construction
+moveto(-1277.55,-515.87,6.81);  object(0x1D2D,0,0,323);
+
+#cheat New Construction
+moveto(277.95,-216.13,13.33);  object(0x1CC6,0,0,113);
+move(-57.92,30.02,14.00);  object(0x1CC5,5,0,280);
+move(-29.45,-44.37,0.00);  object(0x1CC5,5,0,239);
+move(0.71,13.97,6.20);  object(0x1CC4,5,0,252);
+move(-1.66,-0.96,0.00);  object(0x1CC3,0,0,243);
+move(0.00,0.00,0.00);  object(0x1CC3,0,0,243);
+move(-0.75,1.68,0.00);  object(0x1CC3,0,0,255);
+move(-0.12,1.98,0.00);  object(0x1CC1,0,0,278);
+move(0.13,0.62,0.00);  object(0x1CC0,0,0,285);
+move(-0.46,0.12,0.00);  object(0x1CBF,0,0,285);
+move(0.00,0.00,0.00);  object(0x1CBF,0,0,285);
+move(-29.43,18.76,0.00);  object(0x1CBE,0,0,306);
+move(-1.73,1.24,0.00);  object(0x1CBD,0,0,304);
+move(-10.95,-18.97,2.70);  object(0x1CAF,0,0,267);
+move(-22.87,7.60,0.00);  object(0x1CAE,0,0,326);
+move(-18.25,-3.83,0.00);  object(0x1CAC,0,0,149);
+move(27.04,-37.63,0.00);  object(0x1CA8,0,0,170);
+move(-68.72,-18.10,0.00);  object(0x1CA6,0,0,234);
+move(-22.28,-5.77,0.00);  object(0x1C93,0,0,173);
+move(-28.56,-21.80,0.00);  object(0x1C8C,0,0,260);
+move(-40.22,19.21,0.00);  object(0x1CA9,0,0,286);
+move(-39.37,7.74,0.00);  object(0x1CC7,0,0,336);
+move(-25.78,-4.52,0.00);  object(0x1CCF,0,0,6);
+move(5.71,-1.24,0.00);  object(0x1CD5,0,0,15);
+move(-13.36,12.38,0.00);  object(0x1CF3,0,0,306);
+move(-15.87,5.87,0.00);  object(0x1D08,0,0,251);
+move(-10.71,-69.42,0.00);  object(0x1D17,0,0,186);
+move(38.29,0.31,0.00);  object(0x1D36,0,0,95);
+move(-22.04,-8.45,0.00);  object(0x1D3C,0,0,323);
+move(-2.65,14.24,0.00);  object(0x1D3D,0,0,354);
+move(-8.88,11.55,0.00);  object(0x1D4D,0,0,8);
+move(-19.67,-16.04,0.00);  object(0x1CC6,0,0,269);
+move(-27.03,37.63,0.00);  object(0x1CC5,0,0,305);
+move(-12.87,13.06,0.00);  object(0x1CC4,0,0,358);
+move(-23.39,-1.34,0.00);  object(0x1CC3,0,0,244);
+move(0.28,4.91,0.00);  object(0x1CC2,0,355,303);
+move(-0.94,-0.86,0.00);  object(0x1CC1,0,350,288);
+move(-14.14,14.50,0.00);  object(0x1CBF,0,350,319);
+move(-58.73,-88.69,0.00);  object(0x1CB7,0,350,211);
+move(-22.74,-37.32,0.00);  object(0x1CB1,0,350,147);
+move(65.60,-109.11,0.00);  object(0x1CAF,0,350,197);
+move(3.30,-30.50,0.00);  object(0x1CA7,0,350,170);
+move(17.96,-24.14,0.00);  object(0x1C99,0,350,93);
+move(10.13,-18.72,0.00);  object(0x1C93,0,350,166);
+move(23.65,-23.01,0.00);  object(0x1CB4,0,350,156);
+move(8.61,-23.52,0.00);  object(0x1CB7,0,350,204);
+move(-18.32,-19.93,0.00);  object(0x1CB8,0,350,186);
+move(16.21,-32.32,0.00);  object(0x1CD5,0,350,148);
+move(-19.42,12.04,0.00);  object(0x1CB7,0,350,189);
+move(-9.01,-26.26,0.00);  object(0x1CAA,0,350,149);
+move(9.04,-16.97,0.00);  object(0x1CA9,0,350,140);
+move(22.08,-9.43,0.00);  object(0x1CA8,0,350,149);
+move(-33.48,-1.67,0.00);  object(0x1C9C,0,350,273);
+move(-43.28,-8.34,0.00);  object(0x1C92,0,350,343);
+move(-21.58,4.27,0.00);  object(0x1C93,0,350,297);
+move(-36.53,-5.24,0.00);  object(0x1C98,0,350,293);
+move(-61.46,-2.76,0.00);  object(0x1CB0,0,350,252);
+move(-17.02,-2.93,0.00);  object(0x1CB2,0,350,149);
+move(16.48,-27.48,0.00);  object(0x1CB7,0,350,149);
+move(-62.46,23.11,0.00);  object(0x1CB8,0,350,286);
+move(-105.64,69.43,0.00);  object(0x1CC8,0,350,0);
+move(-73.02,57.27,0.00);  object(0x1CCE,0,350,325);
+move(-4.76,-48.40,0.00);  object(0x1CD2,0,350,271);
+move(-23.13,21.49,0.00);  object(0x1CD4,0,350,57);
+move(10.39,23.87,0.00);  object(0x1CE6,0,350,41);
+move(7.89,34.88,0.00);  object(0x1CE7,0,350,3);
+move(-43.75,184.32,0.00);  object(0x1CFB,0,350,41);
+move(23.02,18.58,0.00);  object(0x1D02,0,350,106);
+move(36.15,24.39,0.00);  object(0x1D03,0,350,16);
+move(18.37,64.60,0.00);  object(0x1D08,0,350,22);
+move(51.86,57.20,0.00);  object(0x1D0E,0,350,32);
+move(31.98,-10.99,0.00);  object(0x1D10,0,350,119);
+move(35.00,-1.33,0.00);  object(0x1D11,0,350,147);
+move(36.53,-2.31,0.00);  object(0x1D16,0,350,115);
+move(52.72,3.36,0.00);  object(0x1D1A,0,350,92);
+move(30.31,6.36,0.00);  object(0x1D1B,0,350,69);
+move(39.53,-11.93,0.00);  object(0x1D33,0,350,98);
+move(40.61,6.58,0.00);  object(0x1D37,0,350,349);
+move(11.41,27.74,0.00);  object(0x1D38,0,350,35);
+move(-19.54,28.00,0.00);  object(0x1D3B,0,350,300);
+move(-80.98,28.02,0.00);  object(0x1D4C,0,350,257);
+move(-14.70,-19.87,0.00);  object(0x1D4E,0,350,196);
+move(-130.54,72.94,0.00);  object(0x1CC2,0,350,89);
+move(41.47,164.87,0.00);  object(0x1C93,0,350,72);
+move(36.44,22.66,0.00);  object(0x1C94,0,350,25);
+move(2.20,13.58,0.00);  object(0x1C95,0,350,334);
+move(24.33,28.00,0.00);  object(0x1C98,0,350,99);
+move(59.49,12.31,0.00);  object(0x1C99,0,350,64);
+
+#cheat New Construction
+moveto(219.25,-238.08,12.89);  object(0x1CB2,0,0,302);
+move(3.03,-11.01,0.00);  object(0x1CB2,0,0,23);
+move(-7.35,-16.98,-0.30);  object(0x1CB2,0,0,25);
+move(-6.94,-4.74,0.00);  object(0x1CB2,0,0,114);
+move(-2.60,8.25,0.00);  object(0x1CB2,0,0,217);
+
+#cheat New Construction
+moveto(222.07,-251.63,13.63);  object(0x1CB2,0,0,210);
+move(4.27,7.53,0.00);  object(0x1CB2,0,0,210);
+move(-12.82,-22.60,0.00);  object(0x1CB2,0,0,210);
+move(9.90,32.26,0.00);  object(0x1CB2,0,0,119);
+move(-9.75,-2.63,0.00);  object(0x1CB2,0,0,29);
+move(-4.25,-5.67,0.00);  object(0x1CB2,0,0,122);
+move(4.87,-3.00,0.00);  object(0x1CB2,0,0,122);
+move(-14.26,0.38,0.00);  object(0x1CB2,0,0,210);
+move(-7.09,-12.45,0.00);  object(0x1CB2,0,0,30);
+move(3.58,-8.56,0.00);  object(0x1CB2,0,0,112);
+move(7.54,-3.02,0.00);  object(0x1CB2,0,0,112);
+move(1.59,2.70,3.20);  object(0x1CB2,0,270,292);
+move(-8.32,3.45,0.00);  object(0x1CB2,0,270,292);
+move(2.95,5.18,0.00);  object(0x1CB2,0,270,115);
+move(8.07,-3.65,0.00);  object(0x1CB2,0,270,113);
+move(2.78,5.04,0.00);  object(0x1CB2,0,270,120);
+move(-7.61,4.45,0.00);  object(0x1CB2,0,270,120);
+move(-1.53,-3.51,0.00);  object(0x1CB2,0,270,120);
+move(5.02,8.56,0.00);  object(0x1CB2,0,270,120);
+move(7.33,-4.24,0.00);  object(0x1CB2,0,270,120);
+move(2.92,6.02,0.00);  object(0x1CB2,0,270,120);
+move(3.15,5.57,0.00);  object(0x1CB2,0,270,120);
+move(1.53,2.70,0.00);  object(0x1CB2,0,270,120);
+move(-14.10,-8.58,-0.04);  object(0x1CB2,0,270,122);
+move(0.57,-5.59,-3.10);  object(0x1CB2,0,0,27);
+move(-3.64,-7.21,0.00);  object(0x1CB2,0,0,27);
+move(1.51,-0.81,-2.94);  object(0x1D00,0,0,299);
+move(-0.86,-1.46,0.00);  object(0x1D03,0,0,298);
+move(4.20,-7.14,0.20);  object(0x1D04,0,0,195);
+move(-3.45,0.95,-0.10);  object(0x1D04,0,0,206);
+move(7.83,3.29,-0.10);  object(0x1D10,0,0,117);
+move(-0.97,-1.77,0.00);  object(0x1D10,0,0,118);
+move(-2.82,2.78,0.10);  object(0x1D04,0,0,215);
+move(-2.55,1.76,0.00);  object(0x1D04,0,0,215);
+move(0.05,-3.39,0.10);  object(0x1D04,0,0,207);
+move(2.85,-1.46,0.00);  object(0x1D04,0,0,207);
+move(-5.58,1.46,0.00);  object(0x1D04,0,0,199);
+move(8.62,4.00,-0.20);  object(0x1D11,0,0,205);
+move(-1.73,0.79,0.00);  object(0x1D11,0,0,205);
+move(-4.91,2.25,0.00);  object(0x1D11,0,0,205);
+move(1.82,-0.83,0.00);  object(0x1D11,0,0,205);
+move(5.87,8.55,1.50);  object(0x1D1A,0,0,26);
+move(-2.02,-4.10,0.00);  object(0x1D1A,0,0,26);
+
+#cheat New Construction
+moveto(216.25,-252.60,12.43);  object(0x1CCA,0,0,12);
+move(1.91,-0.77,0.00);  object(0x1CCA,0,0,36);
+move(-1.15,-0.59,0.00);  object(0x1CCA,0,0,10);
+move(-0.22,-1.34,0.80);  object(0x1CCA,0,0,17);
+move(-1.65,0.92,0.00);  object(0x1CCA,0,0,358);
+move(0.85,-1.92,0.00);  object(0x1CCA,0,0,8);
+move(-0.83,0.05,0.00);  object(0x1CCA,0,0,358);
+move(-1.64,-0.44,0.00);  object(0x1CCA,0,0,46);
+move(0.38,-1.33,0.00);  object(0x1CCA,0,0,62);
+move(2.10,-1.21,0.50);  object(0x1CCA,0,0,190);
+
+#cheat New Construction
+moveto(213.72,-264.01,11.36);  object(0x1CEE,0,0,96);
+move(-11.05,18.87,-0.90);  object(0x1CF6,0,0,33);
+
+#cheat New Construction
+moveto(155.62,-360.30,11.29);  object(0x1CA4,0,0,222);
+move(-3.02,2.77,0.00);  object(0x1CA4,0,0,222);
+move(-3.17,2.91,0.00);  object(0x1CA4,0,0,222);
+move(-0.08,3.37,0.00);  object(0x1CA4,0,0,312);
+move(2.76,3.03,0.00);  object(0x1CA4,0,0,312);
+move(2.49,2.73,0.00);  object(0x1CA4,0,0,312);
+move(3.47,0.19,0.00);  object(0x1CA4,0,0,44);
+move(3.02,-2.92,0.00);  object(0x1CA4,0,0,44);
+move(2.95,-2.85,0.00);  object(0x1CA4,0,0,44);
+move(-0.03,-3.24,0.00);  object(0x1CA4,0,0,131);
+move(-2.78,-3.15,0.00);  object(0x1CA4,0,0,131);
+move(-2.32,-2.62,0.00);  object(0x1CA4,0,0,131);
+move(-8.22,6.98,1.95);  object(0x1CA4,270,0,42);
+move(1.69,1.53,0.10);  object(0x1CA4,270,0,43);
+move(1.51,1.88,0.00);  object(0x1CA4,270,0,43);
+move(2.05,1.83,0.00);  object(0x1CA4,270,0,43);
+move(1.16,1.57,0.00);  object(0x1CA4,270,0,43);
+move(3.09,-2.74,0.00);  object(0x1CA4,270,0,43);
+move(-2.11,-2.42,0.00);  object(0x1CA4,270,0,43);
+move(-1.81,-2.15,0.00);  object(0x1CA4,270,0,43);
+move(-1.95,-1.81,0.00);  object(0x1CA4,270,0,42);
+move(-0.94,-0.75,0.00);  object(0x1CA4,270,0,42);
+move(9.84,4.43,0.00);  object(0x1CA4,270,0,41);
+move(-1.98,-1.60,0.00);  object(0x1CA4,270,0,41);
+move(-1.52,-2.17,0.00);  object(0x1CA4,270,0,42);
+move(-1.98,-2.08,0.00);  object(0x1CA4,270,0,44);
+move(-1.15,-1.51,0.00);  object(0x1CA4,270,0,42);
+move(3.60,9.26,0.00);  object(0x1CA4,270,0,42);
+move(-16.16,-19.02,-3.11);  object(0x1C93,180,0,21);
+
+
+#cheat Pimped Blista Compact at The Clymenus Suite
+ //Created By Vice Mod Shop
+ //Vice Mod Shop Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 177);
+ setchar(0x8C73B30+0x24, 255,255,255, 255);
+ setchar(0x8C73B30+0x28, 0,0,255, 255);
+ //Wheels
+ setfloat(0x935F3F8, 1, 1);
+ setfloat(0x962edc0+0x6c, 1);
+ setfloat(0x962edc0+0xc4, 0.75);
+ setfloat(0x962edc0+0x70, 0.45);
+ //Engine
+ setchar(0x962edc0+0x5c, 'R', 'P', 1);
+ //Suspension
+ setfloat(0x962edc0+0x7c, 0.5);
+ setfloat(0x962edc0+0x80, -0.5);
+ setfloat(0x962edc0+0x78, 0.25);
+ setfloat(0x962edc0+0x74, 1.25);
+ setfloat(0x962edc0+0x84, 0.5);
+ setfloat(0x962edc0+0x88, 0.5);
+ //Handling
+ setfloat(0x962edc0+0x68, 25);
+ setfloat(0x962edc0+0xbc, 5000);
+ setfloat(0x962edc0+0xa0, 0);
+ setfloat(0x962edc0+0xa4, 0);
+ setfloat(0x962edc0+0xa8, 0);
+ //Effects
+ //Exhaust
+ setchar(0x09569B94,  255, 255, 255);
+ setchar(0x09569B90,  0x4);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 255, 255);}
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Pimped Idaho at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 199); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a31d0, 1,  0); 
+ //Wheels
+ setfloat(0x9362DB8, 2, 2); //wheel size
+ setfloat(0x9630020+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630020+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630020+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630020+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630020+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9630020+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x9630020+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x9630020+0x74, 1); //Suspension Force Level
+ setfloat(0x9630020+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630020+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630020+0x68, 30); //Steering Lock
+ setfloat(0x9630020+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630020+0xc0, 1500); //Turn Mass
+ setfloat(0x9630020+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630020+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630020+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat Pimped Sabre Turbo at The Clymenus Suite
+ //Created By Vice Mod Shop
+ //Vice Mod Shop Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 273);
+ setchar(0x8C73B30+0x24, 0,0,0, 255);
+ setchar(0x8C73B30+0x28, 0,0,255, 255);
+ //Wheels
+ setfloat(0x936EFF8, 2.4, 2.4);
+ setfloat(0x9634420+0x6c, 1);
+ setfloat(0x9634420+0xc4, 0.75);
+ setfloat(0x9634420+0x70, 0.45);
+ //Engine
+ setchar(0x9634420+0x5c, '4', 'P', 6);
+ //Suspension
+ setfloat(0x9634420+0x7c, 0.5);
+ setfloat(0x9634420+0x80, -0.5);
+ setfloat(0x9634420+0x78, 0.25);
+ setfloat(0x9634420+0x74, 1.25);
+ setfloat(0x9634420+0x84, 0.5);
+ setfloat(0x9634420+0x88, 0.5);
+ //Handling
+ setfloat(0x9634420+0x68, 25);
+ setfloat(0x9634420+0xbc, 5000);
+ setfloat(0x9634420+0xa0, 0);
+ setfloat(0x9634420+0xa4, 0);
+ setfloat(0x9634420+0xa8, 0);
+ //Effects
+ //Exhaust
+ setchar(0x09569B94,  0, 255, 0);
+ setchar(0x09569B90,  0x4);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Pimped Bovver '64 at The Clymenus Suite
+ //Created By Vice Mod Shop
+ //Vice Mod Shop Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 198);
+ setchar(0x8C73B30+0x24, 255,255,0, 255);
+ setchar(0x8C73B30+0x28, 0,255,0, 255);
+ //Wheels
+ setfloat(0x9630100+0x6c, 2);
+ setfloat(0x9630100+0xc4, 1);
+ setfloat(0x9630100+0x70, 0.6);
+ //Engine
+ setchar(0x9630100+0x5c, '4', 'P', 6);
+ //Suspension
+ setfloat(0x9630100+0x7c, 1);
+ setfloat(0x9630100+0x80, -1);
+ setfloat(0x9630100+0x78, 0.15);
+ setfloat(0x9630100+0x74, 1.525);
+ setfloat(0x9630100+0x84, 0.61);
+ setfloat(0x9630100+0x88, 0.5);
+ //Handling
+ setfloat(0x9630100+0x68, 25);
+ setfloat(0x9630100+0xbc, 5000);
+ setfloat(0x9630100+0xa0, 0);
+ setfloat(0x9630100+0xa4, 0);
+ setfloat(0x9630100+0xa8, 0);
+ //Effects
+ //Exhaust
+ setchar(0x09569B94,  0, 0, 255);
+ setchar(0x09569B90,  0x4);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Pimped Pheonix at The Clymenus Suite
+ //Created By Vice Mod Shop
+ //Vice Mod Shop Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 175);
+ setchar(0x8C73B30+0x24, 255,255,0, 255);
+ setchar(0x8C73B30+0x28, 0,0,255, 255);
+ //Wheels
+ setfloat(0x936C358, 0.4, 0.4);
+ setfloat(0x96334A0+0x6c, 0.7);
+ setfloat(0x96334A0+0xc4, 0.72);
+ setfloat(0x96334A0+0x70, 0.429);
+ //Engine
+ setchar(0x96334A0+0x5c, '4', 'P', 6);
+ //Suspension
+ setfloat(0x96334A0+0x7c, 1);
+ setfloat(0x96334A0+0x80, -1);
+ setfloat(0x96334A0+0x78, 0.25);
+ setfloat(0x96334A0+0x74, 1.25);
+ setfloat(0x96334A0+0x84, 0.5);
+ setfloat(0x96334A0+0x88, 0.5);
+ //Handling
+ setfloat(0x96334A0+0x68, 25);
+ setfloat(0x96334A0+0xbc, 5000);
+ setfloat(0x96334A0+0xa0, 0);
+ setfloat(0x96334A0+0xa4, 0);
+ setfloat(0x96334A0+0xa8, 0);
+ //Effects
+ //Exhaust
+ setchar(0x09569B94,  255, 0, 0);
+ setchar(0x09569B90,  0x4);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat New Construction
+moveto(293.63,-135.66,14.12);  object(0x01A4,0,0,350);
+move(12.32,42.39,0.00);  object(0x0214,0,0,27);
+move(13.63,57.00,0.00);  object(0x026D,0,0,351);
+move(-18.51,40.77,0.00);  object(0x03C5,0,0,241);
+move(-23.40,21.63,0.00);  object(0x1C8E,0,0,318);
+move(-44.96,9.08,0.00);  object(0x1C93,0,0,301);
+move(12.67,15.42,0.00);  object(0x1C99,0,0,48);
+move(31.72,19.35,0.00);  object(0x1CB1,0,0,115);
+move(40.55,-9.59,0.00);  object(0x1CB3,0,0,90);
+move(32.70,-19.07,0.00);  object(0x1CCF,0,0,35);
+
+#cheat New Construction
+moveto(287.42,-137.40,12.93);  object(0x0000,0,0,346);
+
+#cheat New Construction
+moveto(221.75,-234.91,18.93);  object(0x0053,0,0,257);
+
+#cheat New Construction
+moveto(289.74,-163.42,12.08);  object(0x1CFE,0,0,131);
+move(4.57,-2.65,1.40);  object(0x01A8,0,0,287);
+
+#cheat New Construction
+moveto(-901.35,260.10,8.89);  object(0x1CA4,90,355,272);
+move(-396.30,-234.27,7.71);  object(0x1CA4,90,355,275);

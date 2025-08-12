@@ -1,0 +1,538 @@
+
+#cheat Water Level Good
+//Hold down cross and go left and right to change water level
+//Thanks to vettefan88
+static Number;
+if (Number == 0)
+Number = 0;
+
+if (buttons & CTRL_LEFT && (buttons & CTRL_CROSS))
+{
+setfloat(0x96C96B0, getfloat(0x96C96B0)-0.1);
+Number=Number-0.1;
+
+
+}
+
+
+if (buttons & CTRL_RIGHT && (buttons & CTRL_CROSS))
+
+{
+
+setfloat(0x96C96B0, getfloat(0x96C96B0)+0.1);
+Number= Number+0.1;
+
+}
+
+if (getchar(0x954A000) != 0)
+{
+  for (p = 0x9549D80; p < 0x954E580; p += 4)
+      setint(p, 0);
+}
+
+
+
+if (buttons & CTRL_CROSS)
+
+{
+n = Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 'm', 0 );
+else
+   setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 'm', 0 );
+}
+
+#off
+setfloat(0x96C96B0, getfloat(0x96C96B0));
+setshort( 0x08e90bd8, 1,' ', 0 );
+
+
+
+
+#cheat Wave Size/Speed Modifier
+
+//Hold down cross and go up and down to change wave size/speed
+//Thanks to vettefan88
+
+static Number;
+if (Number == 0)
+Number = 0;
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Wave=getfloat(0x8bb3bb0);
+}
+if (buttons & CTRL_DOWN && (buttons & CTRL_CROSS))
+{
+Number=Number-0.1;
+Wave=Wave-.1;
+}
+
+if (buttons & CTRL_UP && (buttons & CTRL_CROSS))
+{
+Number= Number+0.1;
+Wave=Wave+.1;
+}
+
+setfloat(0x8bb3bb0,  Wave);
+
+if (buttons & CTRL_CROSS)
+
+{
+n = Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+ hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+     setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 0 );
+else
+     setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+#off
+
+setfloat(0x8bb3bb0, Wave);
+
+
+
+
+
+#cheat Step up/down
+
+static Number;
+if (Number == 0)
+Number = 0;
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+
+}
+if (buttons & CTRL_DOWN && (buttons & CTRL_CROSS))
+{
+Number=Number-0.1;
+
+}
+
+if (buttons & CTRL_UP && (buttons & CTRL_CROSS))
+{
+Number= Number+0.1;
+
+}
+
+if (buttons & CTRL_CROSS)
+
+{
+n = Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+ hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+     setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 0 );
+else
+     setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 0 );
+}
+
+
+if (buttons & CTRL_CIRCLE)
+teleport (getfloat(pplayer + 0x0030),getfloat(pplayer + 0x0034),(getfloat(pplayer + 0x0038)+Number));
+
+#off
+
+
+
+#cheat air and water colour changer
+//although colour appears on bottom of screen
+//it depends on the time of day, these are based
+// at around 21:30
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Weather = 0;
+}
+
+static name;
+if (name == 0)
+name = 1;
+
+if (press & CTRL_LEFT && (getchar(0x8bb3df8) != 0))
+{   name = name - 1;}
+
+if (press & CTRL_RIGHT && (getchar(0x8bb3df8) != 0))
+{    name=name + 1;}
+
+if (name == 1)
+{setshort( 0x08e90bd8, 1,'P','a','l','e',' ','G','r','e','e','n',  0 );
+ (Weather=1);}
+if (name == 2)
+{setshort( 0x08e90bd8, 1,'L','i','g','h','t',' ','B','l','u','e',  0 );
+ (Weather=3);}
+if (name == 3)
+{setshort( 0x08e90bd8, 1,'M','i','s','t','y',' ','G','r','e','e','n',  0 );
+ (Weather=6);}
+if (name == 4)
+{setshort( 0x08e90bd8, 1,'G','r','e','y',  0 );
+ (Weather=7);}
+if (name == 5)
+{setshort( 0x08e90bd8, 1,'D','a','r','k',' ','B','l','u','e',  0 );
+ (Weather=18);}
+if (name == 6)
+{setshort( 0x08e90bd8, 1,'P','u','r','p','l','e', 0 );
+ (Weather=22);}
+if (name == 7)
+{setshort( 0x08e90bd8, 1,'B','l','u','e',  0 );
+ (Weather=35);}
+
+if (press & CTRL_CROSS)
+
+{
+setchar(0x8bb3e00,  -(Weather));
+setchar(0x8bb3df8,  -(Weather));
+setchar(0x8bb458c,  -(Weather));
+}
+
+
+
+
+
+#cheat weather changer
+
+static fInit;
+if (!fInit)
+{
+fInit = true;
+Weather = 0;
+}
+
+static name;
+if (name == 0)
+name = 1;
+
+if (press & CTRL_LEFT && (getchar(0x8bb3df8) != 0))
+{   name = name - 1;}
+
+if (press & CTRL_RIGHT && (getchar(0x8bb3df8) != 0))
+{    name=name + 1;}
+
+if (name == 1)
+{setshort( 0x08e90bd8, 1,'S','u','n','n','y',  0 );
+ (Weather=1);}
+if (name == 2)
+{setshort( 0x08e90bd8, 1,'R','a','i','n',  0 );
+ (Weather=2);}
+if (name == 3)
+{setshort( 0x08e90bd8, 1,'C','l','o','u','d','y',  0 );
+ (Weather=5);}
+if (name == 4)
+{setshort( 0x08e90bd8, 1,'D','a','r','k',' ','C','l','o','u','d','s',  0 );
+ (Weather=6);}
+
+
+if (press & CTRL_CROSS)
+
+{
+setchar(0x8bb3e00,  (Weather));
+setchar(0x8bb3df8,  (Weather));
+setchar(0x8bb458c,  (Weather));
+}
+
+
+
+#cheat coordinate teleport
+//Press triangle for the first number,
+//x for the second and circle for the final teleport
+
+static Number;
+if (Number == 0)
+Number = 0;
+
+
+static XYZ;
+if (XYZ == 0)
+XYZ = 1;
+
+static X;
+if (X == 0)
+X = 0;
+
+static Y;
+if (Y == 0)
+Y = 0;
+
+static Z;
+if (Z == 0)
+Z = 0;
+
+
+
+if (buttons & CTRL_UP && (XYZ==1))
+
+{
+Number=Number+1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, 'X', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1, 'X', '=', ' ', hund, dec, unit, '.', fract, 0 );
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==1))
+{
+Number=Number-1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, 'X', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1, 'X', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+if (buttons & CTRL_TRIANGLE && (XYZ==1))
+{ X=Number;
+XYZ=2;
+
+}
+
+
+if (buttons & CTRL_UP && (XYZ==2))
+
+{
+Number=Number+1;
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, 'Y', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1, 'Y', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==2))
+{
+Number=Number-1;
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, 'Y', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1, 'Y', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+}
+
+if (buttons & CTRL_CROSS && (XYZ==2))
+{ Y=Number;
+XYZ=3;
+}
+
+
+
+
+if (buttons & CTRL_UP && (XYZ==3))
+
+{
+Number=Number+1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1, 'Z', '=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1, 'Z', '=', ' ', hund, dec, unit, '.', fract, 0 );
+
+
+}
+
+
+if (buttons & CTRL_DOWN && (XYZ==3))
+{
+Number=Number-1;
+
+
+n=Number;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+
+
+
+if( Number < 0 )
+   setshort( 0x08e90bd8, 1,'Z','=', '-', hund, dec, unit, '.', fract, 0 );
+else
+   setshort( 0x08e90bd8, 1,'Z','=', ' ', hund, dec, unit, '.', fract, 0 );
+}
+
+
+if (buttons & CTRL_CIRCLE && (XYZ==3))
+{ Z=Number;
+XYZ=1;
+teleport(Z,X,Y);
+}
+
+#cheat Explosive Sphere
+for( rot = 0; rot < 360; rot += 7.2 )
+{
+   moveto(getfloat(pplayer+0x30) + cos(rot) * 5,  getfloat(pplayer+0x34)   + sin(rot) * 5,   getfloat(pplayer+0x38));  object(0x01c2,   0,   0,   -rot + 90);
+}
+for( rot2 = 0; rot2 < 360; rot2 += 7.2 )
+{
+   moveto(getfloat(pplayer+0x30),  getfloat(pplayer+0x34)   + sin(rot2) * 5,   getfloat(pplayer+0x38) + cos(rot2) * 5);  object(0x01c2,   rot2 + 90,   0,   0);
+}
+for( rot3 = 0; rot3 < 360; rot3 += 7.2 )
+{
+   moveto(getfloat(pplayer+0x30) + cos(rot3) * 5,  getfloat(pplayer+0x34)  ,   getfloat(pplayer+0x38) + sin(rot3) * 5);  object(0x01c2,   90,   -rot3 + 90,   0);
+}
+off();
+
+#cheat Firecrackers!
+for( x = 0; x < 120; x += 0.8 )
+{
+   moveto(getfloat(pplayer+0x30) + x,  getfloat(pplayer+0x34),   getfloat(pplayer+0x38));  object(0x01c2,   0,   0,   0);
+}
+off();
+
+#cheat The Perfect Circle Maker
+for( rot = 0; rot < 360; rot += 3.6 )
+{
+   moveto(getfloat(pplayer+0x30) + cos(rot) * 10,  getfloat(pplayer+0x34)   + sin(rot) * 10,  
+
+getfloat(pplayer+0x38));  object(0x1CA4,   0,   0,   -rot + 90);
+}
+off();
+

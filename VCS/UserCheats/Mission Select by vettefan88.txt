@@ -1,0 +1,38 @@
+#cheat Mission Select
+//ID: 19456
+//Score: 11
+//Author: vettefan88
+//Category: Misc
+//Description: Enter a taxi and start the taxi driver mission and you'll start the selected mission instead!
+//
+//Hold R and press Left and Right to cycle through the mission #'s.
+//the current mission # will be displayed where your money is.
+//
+//the default # is 20 for taxi driver.
+//
+//the story missions start at #42 and go up form there.
+//
+//ENJOY!
+//
+//EDITED BY: Durka Durka Mahn on 19/03/07 13:41:21
+//Image: none
+//Time: 19/03/2007 03:36:15
+//Working: Yes
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+money = getint(0x08bde55c);
+}
+setint(0x08bde55c, money, money);
+if (buttons & CTRL_RTRIGGER)
+{
+setint(0x08bde55c, mission, mission);
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+}
+setchar(0x9F932D8, mission);
+

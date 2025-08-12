@@ -1,0 +1,1040 @@
+#cheat bouncy bounce
+//ID: 4008
+//Score: 36
+//Author: Waterbottle
+//Category: Misc
+//Description: bouncy bounce
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setchar(pcar + 4fb, 80)
+
+
+#cheat Three triangles outside safehouse!
+//ID: 5610
+//Score: 55
+//Author: Waterbottle
+//Category: Pointless
+//Description: this will spawn a purple aiming thinghy with the triangles rotated 90 degrees outside staunton safehouse! Thanks to TheY4Kman, this would not be possible without him!
+//Image: http://www.waterbottle.y4kstudios.com/screen1.bmp
+//Time: 13/03/2006 20:48:04
+//Working: Yes
+sethex(08b31510, 1)
+sethex(08b3153b, FF, FF, 00, 6F, FF)
+setfloat(08b31520, 293.54, -450.14, 25.5)
+//edited by Waterbottle on 13.03.2006 21:48:58
+
+#cheat Blue screen!
+//ID: 5542
+//Score: 41
+//Author: Waterbottle
+//Category: Pointless
+//Description: Makes the screen completly blue (exept some objects that is visible)... almost fun... but it isn't
+//Image: none
+//Time: 10/03/2006 19:04:44
+//Working: Yes
+setchar(08b5e36c, 0x70)
+
+#cheat Teleport: water between portland and staunton
+//ID: 4179
+//Score: 17
+//Author: chrislawrance
+//Category: Teleport
+//Description: Teleport: water between portland and staunton
+//Image: none
+//Time: 23/01/2006 11:17:11
+//Working: Yes
+teleport(687.27, -30.82, 10.90);
+
+
+#cheat write Glitch Hunter Noru at bottom of screen
+//ID: 4133
+//Score: 19
+//Author: Author: Orginal by: Waterbottle, edited by: Noru
+//Category: Misc
+//Description: write Glitch Hunter Noru at bottom of screen
+//Image: none
+//Time: 20/01/2006 19:59:43
+//Working: Yes
+setchar(08e4dac2, 0x47)
+setchar(08e4dac4, 0x4C)
+setchar(08e4dac6, 0x49)
+setchar(08e4dac8, 0x54)
+setchar(08e4daca, 0x43)
+setchar(08e4dacc, 0x48)
+setchar(08e4dace, 0x20)
+setchar(08e4dad0, 0x48)
+setchar(08e4dad2, 0x55)
+setchar(08e4dad4, 0x4E)
+setchar(08e4dad6, 0x54)
+setchar(08e4dad8, 0x45)
+setchar(08e4dada, 0x52)
+setchar(08e4dadc, 0x20)
+setchar(08e4dade, 0x4E)
+setchar(08e4dae0, 0x4F)
+setchar(08e4dae2, 0x52)
+setchar(08e4dae4, 0x55)
+setchar(08e4dae6, 0x20)
+
+
+#cheat 26 unique stunts performed
+//ID: 3994
+//Score: 76
+//Author: Waterbottle
+//Category: Misc
+//Description: 26 unique stunts performed
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setshort(0x08B5E19C, 0x1A)
+
+
+#cheat All collectables
+//ID: 3995
+//Score: 72
+//Author: Waterbottle
+//Category: Misc
+//Description: All collectables
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Rampages by Waterbottle
+//Unique stunts by Waterbottle
+//Hidden packages by vettefan88
+setshort(0x08B5E1E4, 0x14)
+setshort(0x08B5E19C, 0x1A)
+setint(0x08B89AD4, 100);
+
+
+#cheat Inside out world
+//ID: 3997
+//Score: 56
+//Author: Waterbottle
+//Category: Misc
+//Description: Makes the textures go inside out. maing the world look transparent and stuff!
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setchar(0x08B33593, 00)
+#off
+setchar(0x08B33593, 81)
+
+//edited by Waterbottle on 07.03.2006 15:58:30
+
+#cheat cool stuff2
+//ID: 3998
+//Score: 36
+//Author: Waterbottle
+//Category: Misc
+//Description: cool stuff2
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setchar(0x08B33593, 63)
+#off
+setchar(0x08B33593, 81)
+
+
+#cheat cool stuff3
+//ID: 3999
+//Score: 36
+//Author: Waterbottle
+//Category: Misc
+//Description: cool stuff3
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setchar(0x08B33593, 255)
+#off
+setchar(0x08B33593, 81)
+
+
+#cheat press up button
+//ID: 4000
+//Score: 29
+//Author: Waterbottle
+//Category: Misc
+//Description: press up button
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: No
+setchar(0x08B89CB2, -1);
+setchar(0x08B89CE4, -1);
+setchar(0x09AD541E, -128);
+setchar(0x09AD541F, 63);
+setchar(0x09AD545C, 16);
+
+
+#cheat fix damaged car
+//ID: 4002
+//Score: 50
+//Author: Waterbottle
+//Category: Teleport
+//Description: fix damaged car
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+teleport(378.19, -494.00, 26.15);
+
+
+#cheat all hiddenpackages + weapons spawn
+//ID: 4003
+//Score: 94
+//Author: Waterbottle
+//Category: Misc
+//Description: all hiddenpackages + weapons spawn
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//To use first activate the cheat and then load the savegame you want all the hidden packages on...
+//weapons will NOT spawn if you don't load the savegame after you have acticated the cheat... enjoy 
+//Made by the one and only Waterbottle
+setchar(0x09f6bc30, 01)
+setchar(0x09f6bc40, 01)
+setchar(0x09f6bc50, 01)
+setchar(0x09f6bc60, 01)
+setchar(0x09f6bc70, 01)
+setchar(0x09f6bc80, 01)
+setchar(0x09f6bc90, 01)
+setchar(0x09f6bca0, 01)
+setchar(0x09f6bcb0, 01)
+setchar(0x09f6bcc0, 01)
+setchar(0x09f6bcd0, 01)
+setchar(0x09f6bce0, 01)
+setchar(0x09f6bcf0, 01)
+setchar(0x09f6bd00, 01)
+setchar(0x09f6bd10, 01)
+setchar(0x09f6bd20, 01)
+setchar(0x09f6bd30, 01)
+setchar(0x09f6bd40, 01)
+setchar(0x09f6bd50, 01)
+setchar(0x09f6bd60, 01)
+setchar(0x09f6bd70, 01)
+setchar(0x09f6bd80, 01)
+setchar(0x09f6bd90, 01)
+setchar(0x09f6bda0, 01)
+setchar(0x09f6bdb0, 01)
+setchar(0x09f6bdc0, 01)
+setchar(0x09f6bdd0, 01)
+setchar(0x09f6bde0, 01)
+setchar(0x09f6bc34, 01)
+setchar(0x09f6bc44, 01)
+setchar(0x09f6bc54, 01)
+setchar(0x09f6bc64, 01)
+setchar(0x09f6bc74, 01)
+setchar(0x09f6bc84, 01)
+setchar(0x09f6bc94, 01)
+setchar(0x09f6bca4, 01)
+setchar(0x09f6bcb4, 01)
+setchar(0x09f6bcc4, 01)
+setchar(0x09f6bcd4, 01)
+setchar(0x09f6bce4, 01)
+setchar(0x09f6bcf4, 01)
+setchar(0x09f6bd04, 01)
+setchar(0x09f6bd14, 01)
+setchar(0x09f6bd24, 01)
+setchar(0x09f6bd34, 01)
+setchar(0x09f6bd44, 01)
+setchar(0x09f6bd54, 01)
+setchar(0x09f6bd64, 01)
+setchar(0x09f6bd74, 01)
+setchar(0x09f6bd84, 01)
+setchar(0x09f6bd94, 01)
+setchar(0x09f6bda4, 01)
+setchar(0x09f6bdb4, 01)
+setchar(0x09f6bdc4, 01)
+setchar(0x09f6bdd4, 01)
+setchar(0x09f6bdf4, 01)
+setchar(0x09f6bc38, 01)
+setchar(0x09f6bc48, 01)
+setchar(0x09f6bc58, 01)
+setchar(0x09f6bc68, 01)
+setchar(0x09f6bc78, 01)
+setchar(0x09f6bc88, 01)
+setchar(0x09f6bc98, 01)
+setchar(0x09f6bca8, 01)
+setchar(0x09f6bcb8, 01)
+setchar(0x09f6bcc8, 01)
+setchar(0x09f6bcd8, 01)
+setchar(0x09f6bce8, 01)
+setchar(0x09f6bcf8, 01)
+setchar(0x09f6bd08, 01)
+setchar(0x09f6bd18, 01)
+setchar(0x09f6bd28, 01)
+setchar(0x09f6bd38, 01)
+setchar(0x09f6bd48, 01)
+setchar(0x09f6bd58, 01)
+setchar(0x09f6bd68, 01)
+setchar(0x09f6bd78, 01)
+setchar(0x09f6bd88, 01)
+setchar(0x09f6bd98, 01)
+setchar(0x09f6bda8, 01)
+setchar(0x09f6bdb8, 01)
+setchar(0x09f6bdc8, 01)
+setchar(0x09f6bdd8, 01)
+setchar(0x09f6be08, 01)
+setchar(0x09f6bc2c, 01)
+setchar(0x09f6bc3c, 01)
+setchar(0x09f6bc4c, 01)
+setchar(0x09f6bc5c, 01)
+setchar(0x09f6bc6c, 01)
+setchar(0x09f6bc7c, 01)
+setchar(0x09f6bc8c, 01)
+setchar(0x09f6bc9c, 01)
+setchar(0x09f6bcac, 01)
+setchar(0x09f6bcbc, 01)
+setchar(0x09f6bccc, 01)
+setchar(0x09f6bcdc, 01)
+setchar(0x09f6bcec, 01)
+setchar(0x09f6bcfc, 01)
+setchar(0x09f6bd0c, 01)
+setchar(0x09f6bd1c, 01)
+setchar(0x09f6bd2c, 01)
+setchar(0x09f6bd3c, 01)
+setchar(0x09f6bd4c, 01)
+setchar(0x09f6bd5c, 01)
+setchar(0x09f6bd6c, 01)
+setchar(0x09f6bd7c, 01)
+setchar(0x09f6bd8c, 01)
+setchar(0x09f6bd9c, 01)
+setchar(0x09f6bdac, 01)
+setchar(0x09f6bdbc, 01)
+setchar(0x09f6bdcc, 01)
+setchar(0x09f6bddc, 01)
+setint(0x08B89AD4, 100);
+
+
+#cheat All rampages + M-60 spawn
+//ID: 4004
+//Score: 94
+//Author: Waterbottle
+//Category: Misc
+//Description: All rampages + M-60 spawn
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+// activate cheat and then load the savegame you want the M-60 to spawn in...
+//Made by Waterbottle
+setchar(0x09f6be90, 01)
+setchar(0x09f6bea0, 01)
+setchar(0x09f6beb0, 01)
+setchar(0x09f6bec0, 01)
+setchar(0x09f6bed0, 01)
+setchar(0x09f6bee0, 01)
+setchar(0x09f6bef0, 01)
+setchar(0x09f6bf00, 01)
+setchar(0x09f6bf10, 01)
+setchar(0x09f6bf20, 01)
+setchar(0x09f6bf30, 01)
+setchar(0x09f6bf40, 01)
+setchar(0x09f6bf50, 01)
+setchar(0x09f6bf60, 01)
+setchar(0x09f6bf70, 01)
+setchar(0x09f6bf80, 01)
+setchar(0x09f6bf90, 02)
+setchar(0x09f6bfa0, 02)
+setchar(0x09f6bfb0, 02)
+setchar(0x09f6be94, 01)
+setchar(0x09f6bea4, 01)
+setchar(0x09f6beb4, 01)
+setchar(0x09f6bec4, 01)
+setchar(0x09f6bed4, 01)
+setchar(0x09f6bee4, 01)
+setchar(0x09f6bef4, 01)
+setchar(0x09f6bf04, 01)
+setchar(0x09f6bf14, 01)
+setchar(0x09f6bf24, 01)
+setchar(0x09f6bf34, 0xFA)
+setchar(0x09f6bf44, 01)
+setchar(0x09f6bf54, 01)
+setchar(0x09f6bf64, 01)
+setchar(0x09f6bf74, 02)
+setchar(0x09f6bf84, 02)
+setchar(0x09f6bf94, 02)
+setchar(0x09f6bfa4, 02)
+setchar(0x09f6bfb4, 08)
+setchar(0x09f6bfc4, 01)
+setchar(0x09f6bfd4, 01)
+setchar(0x09f6be98, 01)
+setchar(0x09f6bea8, 01)
+setchar(0x09f6beb8, 01)
+setchar(0x09f6bec8, 01)
+setchar(0x09f6bed8, 01)
+setchar(0x09f6bee8, 01)
+setchar(0x09f6bef8, 01)
+setchar(0x09f6bf08, 01)
+setchar(0x09f6bf18, 01)
+setchar(0x09f6bf28, 01)
+setchar(0x09f6bf38, 01)
+setchar(0x09f6bf48, 01)
+setchar(0x09f6bf58, 01)
+setchar(0x09f6bf68, 64)
+setchar(0x09f6bf78, 01)
+setchar(0x09f6bf88, 02)
+setchar(0x09f6bf98, 02)
+setchar(0x09f6bfa8, 02)
+setchar(0x09f6bfb8, 02)
+setchar(0x09f6bfc8, 01)
+setchar(0x09f6bfd8, 01)
+setchar(0x09f6be8c, 01)
+setchar(0x09f6be9c, 01)
+setchar(0x09f6beac, 01)
+setchar(0x09f6bebc, 01)
+setchar(0x09f6becc, 01)
+setchar(0x09f6bedc, 01)
+setchar(0x09f6beec, 01)
+setchar(0x09f6befc, 01)
+setchar(0x09f6bf0c, 01)
+setchar(0x09f6bf1c, 01)
+setchar(0x09f6bf2c, 01)
+setchar(0x09f6bf3c, 01)
+setchar(0x09f6bf4c, 02)
+setchar(0x09f6bf5c, 01)
+setchar(0x09f6bf6c, 01)
+setchar(0x09f6bf7c, 01)
+setchar(0x09f6bf8c, 02)
+
+
+#cheat unlock car and bike races and some multiplayer con
+//ID: 4007
+//Score: 66
+//Author: Waterbottle
+//Category: Misc
+//Description: unlock car and bike races and some multiplayer content
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+//Made by Waterbottle
+setchar(0x09f6bfe1, 01)
+
+#cheat Entrance to the underworld
+//ID: 18340
+//Score: 73
+//Author: BOY 999
+//Category: Teleport
+//Description: WOW!!! The entrance to the underworld. Its on the 3rd island...
+//
+//First lower the water to about -50 metres then activate the cheat. Finally, enjoy!!!!
+//
+//This cheat will teleport you there!!!
+//Image: none
+//Time: 28/10/2006 15:17:06
+//Working: Yes
+//Created Using Teleport Creator
+//By RASAL
+teleport(-1294.76, 415.33, 65.85);
+
+#cheat Underground Race Track Unmodified No.2
+//ID: 18335
+//Score: 50
+//Author: BOY 999
+//Category: Teleport
+//Description: This is the second underground racetrack. Its unmodified and is wicked. Get in a fast car first then activate this cheat. Before activating the cheat, lower the water level to about -10 or -15 metres. The cheat teleports you to the racetrack. Enjoy!!!
+//Image: none
+//Time: 28/10/2006 13:33:34
+//Working: Yes
+//Created Using Teleport Creator
+//By RASAL
+teleport(-558.29, -495.33, 4.51);
+
+#cheat Underground Race Track Unmodified
+//ID: 18334
+//Score: 44
+//Author: BOY 999
+//Category: Teleport
+//Description: This cheat will spawn you to an unmodified racetrack on the 3rd island. It hasn't got any cars but its fun. Lower the water level to about -10 or -15 first. For better results, before activating the cheat, get in a vehicle. Eg. a fast 1.
+//Image: none
+//Time: 28/10/2006 13:28:58
+//Working: Yes
+//Created Using Teleport Creator
+//By RASAL
+teleport(-356, 97.54, -15.55);
+//Cheat by BOY 999, Enjoy
+
+#cheat Nightmare
+//ID: 16067
+//Score: 92
+//Author: zero1234
+//Category: Misc
+//Description: -Pimped Car-
+//-Super Punch-
+//-Ped Follow You-
+//-Bloody Footprints-
+//-Insane Camera-
+//-Bloody Water-
+//-More Stuff-
+//
+//A must have
+//Image: none
+//Time: 05/08/2006 13:57:43
+//Working: Yes
+setshort(0x99417F4, 0x4e, 0x69, 0x67, 0x68, 0x74, 0x6d, 0x61, 0x72, 0x65);
+setshort(0x943f6e0, 255);
+setfloat(0x943f6dc, 1.30);
+setfloat(0x945cc80, 2125);
+setfloat(0x945cc88, 0.925);
+setfloat(0x945cd40, 0.3625);
+setfloat(0x945cd48, 0.575);
+setfloat(0x945cd0c, 1.45);
+setfloat(0x945cd10, 1.45);
+setfloat(0x945cd04, 0.00538);
+setfloat(0x945cd20, 0.625);
+setfloat(0x945cd24, 0.0375);
+setfloat(0x945cd28, 33.125);
+setfloat(0x945cd38, 1.21875);
+setfloat(0x945cd3c, 0.2375);
+setfloat(0x945cd54, 0.51);
+setfloat(0x945cd4c, 0.3875);
+setfloat(0x945cca0, 0.0875);
+setfloat(0x945cca4, -0.1);
+setfloat(0x945cca8, -0.0625);
+setchar(0x945ccb0, 79);
+setfloat(0x945cd2c, 0.89375);
+setfloat(0x945cd30, 0.49875);
+setfloat(0x945cc8c, 1.625);
+sethex(0x945cd50, 0xaf, 0xa3, 0x00, 0x07);
+setchar(0x967E6FC, 0xFF, 0x00, 0x00);
+sethex(0x944fb40, 0x00, 0x00, 0x00);
+sethex(0x944fb38, 0x00, 0x00, 0x00);
+setint(0x8E38A38, 130);
+setchar(0x8E38A5C, 120, 118);
+sethex(0x8E38A5E, 0x01, 0xFF);
+teleport(292.22, -440.37, 26.02);
+setchar(pplayer + 0xB84, 0x00);
+//Gives Toni Super Strength
+setchar(pplayer + 0x0bb3, 0x01);
+setchar(0x08B48E29, 1)
+setchar(0x08B564D8, 1)
+#off
+setchar(0x08B564D8, 0)
+setchar(0x08B48E29, 0)
+setchar(pplayer + 0x198, 0x40);
+#off
+setchar(pplayer + 0x198, 0x00);
+setfloat(0x8b834f4, 150);
+sethex(0x967DC94, 0xCC, 0x33, 0x33);
+sethex(0x967D070, 0xCC, 0x33, 0x33);
+sethex(0x967D510, 0xCC, 0x33, 0x33);
+sethex(0x967D5A4, 0xCC, 0x33, 0x33);
+sethex(0x967D638, 0xCC, 0x33, 0x33);
+sethex(0x967D6CC, 0xCC, 0x33, 0x33);
+sethex(0x967D760, 0xCC, 0x33, 0x33);
+sethex(0x967D7F4, 0xCC, 0x33, 0x33);
+sethex(0x967DAD8, 0xCC, 0x33, 0x33);
+sethex(0x967DB6C, 0xCC, 0x33, 0x33);
+sethex(0x967EE80, 0xCC, 0x33, 0x33);
+setchar(0x8B562F2, 1)
+setchar(0x8B562F2, 0)
+setchar(08b5e36c, 0x00, 0x00, 0x00)
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Water Hydrant
+sethex(0x967DC94, 0x00, 0x00, 0x00);
+// Water Spark
+sethex(0x967C290, 0x00, 0x00, 0x00);
+// Wheel Water
+sethex(0x967C44C, 0x00, 0x00, 0x00);
+// Splash
+sethex(0x967D070, 0x00, 0x00, 0x00);
+// Steam
+sethex(0x967D198, 0x00, 0x00, 0x00);
+// Steam 2
+sethex(0x967D22C, 0x00, 0x00, 0x00);
+// Steam NY Slow-Motion
+sethex(0x967D354, 0x00, 0x00, 0x00);
+// Ground Steam
+sethex(0x967D3E8, 0x00, 0x00, 0x00);
+// Engine Steam
+sethex(0x967D47C, 0x00, 0x00, 0x00);
+// Raindrop
+sethex(0x967D510, 0x00, 0x00, 0x00);
+// Small Raindrop
+sethex(0x967D5A4, 0x00, 0x00, 0x00);
+
+#cheat JAWS the live thrill!!!
+//ID: 14843
+//Score: 105
+//Author: DoteStudios
+//Category: Misc
+//Description:  Finally I have finished the live replica of JAWS' head in the waters of LCS. It stands 16 meters tall with razor sharp teeth and evil eyes. Beware of this beast. Destroy him using the JAWS bomb cheat. Because of all of the cheats this one is pushed back
+//Image: http://www.photohosting.info/uploads/f4d02b9fe7.gif
+//Time: 16/07/2006 14:59:44
+//Working: Yes
+moveto(649.76, -1127.43, 1.12);  object(0x0CD1, 280, 310, 162);
+move(1.48, 0.05, 0.00);  object(0x0CD1, 280, 310, 164);
+move(1.89, 0.06, 0.00);  object(0x0CD1, 280, 310, 152);
+move(1.75, -0.29, 0.00);  object(0x0CD1, 280, 310, 141);
+move(-2.15, -0.85, 2.30);  object(0x0CD1, 280, 310, 164);
+move(-1.33, 0.23, 0.00);  object(0x0CD1, 280, 310, 173);
+move(-2.22, 0.04, 0.00);  object(0x0CD1, 280, 310, 169);
+move(-0.86, -0.81, 2.00);  object(0x0CD1, 280, 310, 178);
+move(2.10, -0.30, 0.00);  object(0x0CD1, 280, 310, 181);
+move(1.54, -0.43, -0.10);  object(0x0CD1, 280, 310, 178);
+move(2.61, 0.78, -2.10);  object(0x0CD1, 280, 310, 163);
+move(2.10, 1.04, -2.30);  object(0x0CD1, 280, 310, 165);
+move(0.44, -1.70, 0.40);  object(0x0CD1, 190, 110, 170);
+move(-2.25, -0.62, 2.30);  object(0x0CD1, 190, 110, 170);
+move(-2.76, -0.76, 1.50);  object(0x0CD1, 190, 110, 170);
+move(2.69, -0.95, -1.20);  object(0x0CD1, 190, 110, 178);
+move(3.26, 0.67, -2.90);  object(0x0CD1, 190, 110, 178);
+move(-1.77, -0.35, 1.40);  object(0x0CD1, 190, 110, 183);
+move(-0.16, -1.37, 0.00);  object(0x0CD1, 190, 105, 198);
+move(-0.59, -1.56, 0.00);  object(0x0CD1, 190, 105, 212);
+move(-1.43, -1.39, 0.00);  object(0x0CD1, 190, 105, 234);
+move(-1.49, -0.57, 0.00);  object(0x0CD1, 190, 105, 254);
+move(-1.20, -0.65, 0.00);  object(0x0CD1, 190, 105, 269);
+move(-0.88, -0.46, -0.10);  object(0x0CD1, 200, 100, 267);
+move(4.67, 3.64, 1.90);  object(0x0CD1, 200, 120, 211);
+move(-1.06, -1.60, 0.00);  object(0x0CD1, 200, 120, 233);
+move(-1.22, -1.08, 0.00);  object(0x0CD1, 200, 120, 251);
+move(-1.42, -0.59, 0.00);  object(0x0CD1, 200, 120, 267);
+move(-0.76, 0.09, 0.00);  object(0x0CD1, 200, 120, 275);
+move(2.24, 4.40, 1.10);  object(0x0CD1, 200, 105, 191);
+move(0.16, -2.06, 0.00);  object(0x0CD1, 200, 105, 220);
+move(-1.47, -1.61, 0.00);  object(0x0CD1, 200, 105, 264);
+move(-0.38, 4.99, 2.00);  object(0x0CD1, 200, 120, 170);
+move(0.75, -1.46, 0.00);  object(0x0CD1, 200, 120, 189);
+move(0.20, -1.45, 0.00);  object(0x0CD1, 200, 120, 206);
+move(-0.85, -1.37, 0.00);  object(0x0CD1, 200, 120, 226);
+move(-1.16, 5.61, 0.00);  object(0x0CD1, 200, 120, 159);
+move(-1.24, 0.90, 0.00);  object(0x0CD1, 200, 120, 141);
+move(-1.70, 0.50, 0.00);  object(0x0CD1, 200, 120, 121);
+move(0.64, 0.21, -2.30);  object(0x0CD1, 200, 120, 126);
+move(0.15, 0.69, -1.60);  object(0x0CD1, 200, 120, 126);
+move(0.50, 0.42, -2.80);  object(0x0CD1, 200, 120, 130);
+move(2.02, -4.15, 8.50);  object(0x0CD1, 200, 115, 183);
+move(0.64, -1.57, 0.00);  object(0x0CD1, 200, 115, 195);
+move(-0.11, -1.56, 0.00);  object(0x0CD1, 200, 115, 213);
+move(-1.63, 4.41, 0.00);  object(0x0CD1, 200, 115, 155);
+move(-1.42, 0.85, 0.00);  object(0x0CD1, 200, 115, 135);
+move(-0.80, -0.10, -0.20);  object(0x0CD1, 200, 115, 126);
+move(0.00, 0.00, 1.90);  object(0x0CD1, 200, 130, 126);
+move(1.33, -0.62, 0.00);  object(0x0CD1, 200, 130, 143);
+move(1.54, -1.60, 0.00);  object(0x0CD1, 200, 130, 169);
+move(0.69, -2.10, 0.00);  object(0x0CD1, 200, 130, 194);
+move(-0.92, 1.21, 1.40);  object(0x0CD1, 200, 135, 177);
+move(-1.29, 1.81, 0.00);  object(0x0CD1, 200, 135, 152);
+move(-0.90, 0.64, 0.00);  object(0x0CD1, 200, 135, 139);
+move(1.18, -0.90, 0.70);  object(0x0CD1, 200, 135, 156);
+move(2.82, 1.50, -6.80);  object(0x0CD1, 200, 240, 325);
+move(1.58, 1.33, -1.80);  object(0x0CD1, 200, 240, 325);
+move(1.65, 1.38, -2.60);  object(0x0CD1, 200, 240, 325);
+move(-0.16, -1.22, 1.70);  object(0x0CD1, 200, 240, 317);
+move(2.05, 0.27, -1.90);  object(0x0CD1, 200, 240, 335);
+move(0.19, -5.44, 0.00);  object(0x0CD1, 200, 240, 15);
+move(-0.79, -1.46, 0.00);  object(0x0CD1, 200, 240, 41);
+move(-1.36, -0.54, 0.00);  object(0x0CD1, 200, 240, 49);
+move(-2.10, -1.38, 0.00);  object(0x0CD1, 200, 240, 30);
+move(-0.51, -0.68, 0.00);  object(0x0CD1, 200, 240, 101);
+move(-1.65, -0.05, 0.00);  object(0x0CD1, 200, 240, 84);
+moveto(653.33, -1130.40, 5.32);  object(0x0CD1, 60, 280, 92);
+move(0.29, -1.71, 0.00);  object(0x0CD1, 60, 280, 158);
+move(-0.86, 1.03, 1.80);  object(0x0CD1, 60, 280, 122);
+move(-2.13, -4.58, 0.00);  object(0x0CD1, 60, 280, 202);
+move(-0.53, 1.61, 2.30);  object(0x0CD1, 60, 280, 202);
+move(-0.22, 0.68, 1.80);  object(0x0CD1, 60, 280, 202);
+move(0.78, -3.20, -5.00);  object(0x0CD1, 60, 280, 206);
+move(85.23, -86.31, -11.83);  object(0x0219, 300, 0, 357);
+moveto(651.79, -1126.88, 2.63);  object(0x024E, 205, 35, 174);
+move(3.05, -10.15, -0.30);  object(0x024E, 175, 140, 318);
+moveto(595.98, -1063.32, -2.95);  object(0x0FF7, 0, 0, 327);
+move(-44.98, 8.99, 8.18);  object(0x0FE9, 0, 0, 312);
+move(96.83, -78.71, 7.50);  object(0x0FE9, 35, 0, 77);
+move(-0.59, 0.87, 0.50);  object(0x0FE9, 35, 0, 59);
+move(1.41, -1.44, -1.60);  object(0x0FE9, 35, 0, 85);
+move(0.48, -0.73, -1.60);  object(0x0FE9, 35, 0, 66);
+move(0.28, -1.15, -2.50);  object(0x0FE9, 35, 0, 78);
+move(0.06, -0.73, -1.60);  object(0x0FE9, 35, 0, 87);
+move(0.03, -0.51, -1.90);  object(0x0FE9, 35, 0, 93);
+move(-0.18, -0.31, -1.90);  object(0x0FE9, 35, 0, 102);
+move(-1.56, 8.13, 0.00);  object(0x0FE9, 35, 0, 24);
+move(-0.31, -0.50, 2.40);  object(0x0FE9, 35, 0, 23);
+move(-0.59, -0.42, 1.60);  object(0x0FE9, 35, 0, 18);
+move(-0.27, -0.26, 1.60);  object(0x0FE9, 35, 0, 16);
+move(0.36, -0.47, 2.20);  object(0x0FE9, 35, 0, 24);
+move(0.04, -1.09, 2.30);  object(0x0FE9, 35, 0, 29);
+move(2.53, -3.56, -3.20);  object(0x0FE9, 35, 0, 103);
+move(-2.44, 4.92, 0.30);  object(0x0FE9, 35, 0, 56);
+move(0.15, -0.65, 1.60);  object(0x0FE9, 35, 0, 59);
+move(-0.20, 1.78, -6.70);  object(0x0FE9, 35, 0, 44);
+move(0.49, 0.61, -3.10);  object(0x0FE9, 35, 0, 44);
+teleport(641.73, -1133.94, 0.19);
+
+#cheat Changed to White
+//ID: 14060
+//Score: 18
+//Author: rashon125
+//Category: Misc
+//Description: When you throw a molotov or teargas, the color is white instead of red-orange. Flames from cars are now white. Fire hydrant water is now white. Ferry smoke is now white. And more... Check out this cheat.
+//Image: none
+//Time: 03/07/2006 00:00:12
+//Working: Yes
+// Cheats Found by Vettefan88 and theY4Kman
+// Script Written by theY4Kman
+// Rocket Smoke
+sethex(0x967EB9C, 0xFF, 0xFF, 0xFF);
+// Car Collison Dust
+sethex(0x967E4AC, 0xFF, 0xFF, 0xFF);
+// Ferry Chimney Smoke
+sethex(0x967EF14, 0xFF, 0xFF, 0xFF);
+// Water Hydrant
+sethex(0x967DC94, 0xFF, 0xFF, 0xFF);
+// Flamethrower Flame
+sethex(0x967C980, 0xFF, 0xFF, 0xFF);
+// Flames
+sethex(0x0967C8EC, 0xFF, 0xFF, 0xFF);
+// Teargas
+sethex(0x967CEB4, 0xFF, 0xFF, 0xFF);
+
+#cheat teleport to SCL: ATG (Invisible Glass/ Water)
+//ID: 12259
+//Score: 39
+//Author: Haddenjms
+//Category: Teleport
+//Description: a part of SCL: ATG where you can see the pool of your safe house but cannot go through.
+//Image: none
+//Time: 05/06/2006 21:53:23
+//Working: Yes
+teleport(626.96, -717.57, 16.85)
+
+#cheat teleport underwater
+//ID: 11568
+//Score: 42
+//Author: chrisandbart1234
+//Category: Teleport
+//Description: teleport to under water the lake on ssv
+//
+//Image: none
+//Time: 27/05/2006 16:06:58
+//Working: Yes
+teleport(-552.77, -162.95, -11.20);
+
+#cheat Teleport : the LCS dam wallride ramp
+//ID: 10219
+//Score: 32
+//Author: wm123
+//Category: Teleport
+//Description: here is the teleport for the LCS dam wallride ramp make sure u get that aswell
+//wm123
+//
+//EDITED BY: Waterbottle on 13/05/06 18:17:58
+//Image: none
+//Time: 13/05/2006 14:09:11
+//Working: Yes
+teleport(-1079.61, 475.01, 68.17);
+
+#cheat  yellow safehouse thinghs are blue
+//ID: 8556
+//Score: 36
+//Author: Waterbottle
+//Category: Misc
+//Description: changes the yellow triggers that you go to activate missions or go into safehouses blue
+//Image: none
+//Time: 22/04/2006 20:03:16
+//Working: Yes
+setchar(08b8d530, 0, 0, 255)
+setchar(08b8d5c0, 0, 0, 255)
+setchar(08b8d650, 0, 0, 255)
+setchar(08b8d6e0, 0, 0, 255)
+setchar(08b8d770, 0, 0, 255)
+setchar(08b8d800, 0, 0, 255)
+setchar(08b8d890, 0, 0, 255)
+setchar(08b8d920, 0, 0, 255)
+setchar(08b8d9b0, 0, 0, 255)
+
+
+#cheat Speed Test Road Teleport
+//ID: 6935
+//Score: 34
+//Author: Rowe14
+//Category: Teleport
+//Description: Credit goes to Waterbottle,teleports you to the Speed Test Road!
+//Image: none
+//Time: 16/04/2006 06:12:25
+//Working: Yes
+teleport(1572.14,-650.92,208.00)
+
+//edited by Rowe14 on 4/15/2006 6:37:03 PM
+
+#cheat The Omen Effect!!!
+//ID: 13821
+//Score: 184
+//Author: scarfield
+//Category: Environment
+//Description: The sky is a dark red, vehicles are all bright, buildings are blue and purple, and the oceans are filled with blood and the road is purple black. A must have for horror and blood lover's!!! Set to Dark on Weather!!!
+//
+//Don't Delete!!! This is not a messag
+//Image: http://img159.imageshack.us/my.php?image=video17wk.gif
+//Time: 28/06/2006 03:07:50
+//Working: Yes
+setchar(0x08b5e090, 66, 6);
+
+#cheat The Nightclub!
+//ID: 6068
+//Score: 305
+//Author: Swikity
+//Category: Environment
+//Description: A sweet nightclub in LCS with a DJ, disco lights, disco balls, a bev. bar and lots more! Be sure to use with these settings: Weather: Dark, Time: 21:00-24:00. Screens coming
+//Image: none
+//Time: 02/04/2006 17:22:05
+//Working: Yes
+moveto(191.97,40.67,41.91);  object(0x01BF,270,0,272);
+move(-7.36,-1.23,-0.10);  object(0x01BF,270,0,268);
+move(-7.67,-0.23,0.00);  object(0x01BF,270,0,268);
+move(-4.14,3.14,-0.20);  object(0x01BF,270,0,272);
+move(74.93,-24.27,-12.90);  object(0x01E0,270,0,90);
+move(0.03,-8.70,0.00);  object(0x01E0,270,0,90);
+move(0.03,-8.90,0.00);  object(0x01E0,270,0,90);
+move(0.03,-8.70,0.00);  object(0x01E0,270,0,90);
+move(-6.16,-2.71,0.00);  object(0x01E0,270,0,91);
+move(-7.03,0.18,0.00);  object(0x01E0,270,0,91);
+move(-25.90,2.27,-1.40);  object(0x0FF6,0,0,180);
+move(-3.28,2.88,2.70);  object(0x01B6,0,0,269);
+move(0.07,-2.96,0.00);  object(0x01B6,0,0,269);
+move(6.20,0.15,0.00);  object(0x01B6,0,0,269);
+move(-0.05,3.16,0.00);  object(0x01B6,0,0,269);
+move(-3.07,1.53,0.00);  object(0x01B6,0,0,180);
+move(2.24,-9.21,-2.80);  object(0x0239,0,0,0);
+move(4.21,4.03,3.10);  object(0x01BF,0,0,271);
+move(0.08,3.47,0.00);  object(0x01BF,0,0,271);
+move(-5.87,-0.31,3.20);  object(0x01BF,270,0,180);
+move(0.08,-6.52,0.00);  object(0x01BF,270,0,180);
+move(1.79,-0.14,0.00);  object(0x01BF,270,0,180);
+move(0.13,8.49,0.10);  object(0x01BF,270,0,181);
+move(43.49,-27.78,-16.00);  object(0x0210,90,0,268);
+moveto(1107.43,-964.61,14.46);  object(0x0F2B,345,0,100);
+move(0.75,-11.69,-0.50);  object(0x0F36,0,0,270);
+move(-1.13,-7.27,-0.20);  object(0x020B,0,0,270);
+move(7.54,-3.20,0.00);  object(0x020B,0,0,270);
+move(3.59,2.55,0.00);  object(0x020B,0,0,270);
+move(-6.33,11.51,0.00);  object(0x020B,0,0,270);
+move(4.97,3.53,0.00);  object(0x020B,0,0,270);
+move(5.40,-7.63,0.00);  object(0x020B,0,0,270);
+move(0.92,8.90,0.00);  object(0x020B,0,0,270);
+move(-11.16,-12.95,0.00);  object(0x020B,0,0,270);
+move(8.04,-8.75,0.00);  object(0x020B,0,0,270);
+move(-7.22,-2.26,0.00);  object(0x020B,0,0,270);
+move(-3.27,5.49,0.00);  object(0x020B,0,0,270);
+move(8.91,7.00,-0.10);  object(0x020B,0,0,270);
+move(4.51,-6.36,0.00);  object(0x020B,0,0,270);
+move(-0.14,-3.47,0.00);  object(0x020B,0,0,270);
+move(-12.19,22.18,0.10);  object(0x020B,0,0,270);
+move(-3.08,-1.86,0.00);  object(0x020B,0,0,270);
+move(6.43,-0.77,0.00);  object(0x020B,0,0,270);
+move(3.24,-4.57,0.00);  object(0x020B,0,0,270);
+move(2.53,1.79,0.00);  object(0x020B,0,0,270);
+move(2.90,-0.63,0.00);  object(0x020B,0,0,270);
+move(0.47,0.52,0.00);  object(0x020B,0,0,270);
+move(-3.56,3.74,-0.10);  object(0x020B,0,0,270);
+move(1.42,-8.23,0.00);  object(0x020B,0,0,270);
+move(-11.80,-4.47,0.00);  object(0x020B,0,0,276);
+move(3.75,-6.88,0.00);  object(0x020B,0,0,276);
+move(3.66,2.06,0.00);  object(0x020B,0,0,276);
+move(-8.60,-3.99,0.10);  object(0x020B,0,0,276);
+move(1.73,15.02,-0.50);  object(0x0CD7,0,0,91);
+move(-0.01,-2.00,0.00);  object(0x0CD7,0,0,91);
+move(-1.42,-0.72,0.00);  object(0x0CD7,0,0,187);
+move(-0.12,4.08,0.00);  object(0x0CD7,0,0,1);
+move(-0.54,-2.04,2.30);  object(0x0CD7,270,0,2);
+move(-2.07,0.25,0.00);  object(0x0CD7,270,0,2);
+move(7.04,3.47,-11.00);  object(0x0FAB,270,65,56);
+move(-4.34,-2.56,11.80);  object(0x0F1A,270,5,3);
+move(-1.38,0.12,-0.20);  object(0x0F1A,270,265,3);
+move(-2.25,-2.27,-0.60);  object(0x0251,355,0,107);
+move(3.61,-0.97,-4.50);  object(0x09F9,275,30,278);
+move(11.45,2.36,8.50);  object(0x0FB7,65,0,215);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,200);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,180);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,145);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,120);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,100);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,85);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,70);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,55);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,45);
+move(0.00,0.00,0.00);  object(0x0FB7,65,0,35);
+move(0.08,-0.06,0.50);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,-1.20);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.00,0.00,0.00);  object(0x020B,0,0,35);
+move(0.38,1.28,-0.10);  object(0x020B,0,0,210);
+move(0.00,0.00,0.00);  object(0x020B,0,0,210);
+move(0.00,0.00,0.00);  object(0x020B,0,0,210);
+move(0.00,0.00,0.00);  object(0x020B,0,0,210);
+move(0.00,0.00,0.00);  object(0x020B,0,0,210);
+move(0.00,0.00,0.00);  object(0x020B,0,0,210);
+move(-0.31,-1.61,0.30);  object(0x020B,0,0,223);
+move(0.00,0.00,0.00);  object(0x020B,0,0,223);
+move(0.00,0.00,0.00);  object(0x020B,0,0,223);
+move(0.00,0.00,0.00);  object(0x020B,0,0,223);
+move(-4.12,0.22,5.30);  object(0x0FBE,0,0,177);
+move(4.49,0.69,-5.20);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(0.00,0.00,0.00);  object(0x020F,0,0,205);
+move(3.32,-17.05,-5.60);  object(0x020B,0,0,321);
+move(0.12,10.61,0.00);  object(0x020B,0,0,321);
+move(2.44,-2.07,0.00);  object(0x020B,0,0,321);
+move(-11.55,4.83,0.00);  object(0x020B,0,0,321);
+move(-6.09,10.68,0.00);  object(0x020B,0,0,321);
+teleport(-6.09,10.68,0.00) 
+
+#cheat Vertical Reflection
+//ID: 6061
+//Score: 50
+//Author: joek2100
+//Category: Pointless
+//Description: Makes the screen messed up, it depends on the time and weather, try chaning the 30 in the second line to 03 if it doesnt work. Changing other values near this (8e5cac5-8e5caf5 columns 0-5) can cause other distortions.
+//Image: http://img93.imageshack.us/img93/1724/screen14hf.png
+//Time: 01/04/2006 22:44:02
+//Working: Yes
+setchar(0x8e5cad5,3); 
+setchar(0x08b5e090, 11, 30);
+
+#cheat Black light effect
+//ID: 5819
+//Score: 101
+//Author: Joe.G
+//Category: Misc
+//Description: Makes it seem like a black light is on, "all white colors looks like a glowy purple color" its kinda fun. Note must have Sunny or clear weather on!
+//Image: http://i36.photobucket.com/albums/e14/6391347/12b38d96.jpg
+//Time: 21/03/2006 21:18:43
+//Working: Yes
+setchar(0x08b5e090, -10, -10); 
+
+//edited by Joe.G on 3/22/2006 4:44:34 PM
+
+#cheat The END OF THE WORLD
+//ID: 6160
+//Score: 117
+//Author: hellomoto
+//Category: Environment
+//Description: The time is 99:99, your wallet contains $0 , You cut yourself and your weapons are all giant Sci-fi Guns. AND your left arm is massive and the right is missing! HELP!!! (NOT Tested, use at your own risk! Thank you!)
+//Image: none
+//Time: 03/04/2006 23:50:43
+//Working: Yes
+//Time is 99:99
+setchar(0x08b5e090, 99, 99);
+//$0
+setint(0x08b89acc, 00000000, 00000000);
+//Bloody Footprints
+setchar(pplayer + 0x198, 0x40); 
+//Changes around particle colors to give the effect of laser or plasma guns.
+// By theY4Kman and Vettefan88 
+// Gun Flash 
+sethex(0x967CA14, 0x00, 0xFF, 0x00); 
+// Gun Flash (No Animation) 
+sethex(0x967CAA8, 0x00, 0xFF, 0x00); 
+// Gun Smoke 
+sethex(0x967CB3C, 0xFF, 0xFF, 0x00); 
+// Gun Smoke 2 
+sethex(0x967CBD0, 0xFF, 0xFF, 0x00); 
+// Sparks 
+sethex(0x967C168, 0x00, 0xFF, 0x00); 
+// Small Sparks 
+sethex(0x967C1FC, 0x00, 0xFF, 0x00); 
+// Bullet Hit Smoke 
+sethex(0x967E8B8, 0x00, 0xFF, 0x00); 
+//Left arm massive from the elbow
+sethex(0x99D4542, 0xFF);
+//Right arm missing at the elbow
+sethex(0x99D45EB, 0xFF); 
+//Massive left hand
+sethex(0x99D455A, 0xFF); 
+//Long left hand
+sethex(0x99D456A, 0xFF); 
+
+//edited by hellomoto on 05/04/2006 21:49:41
+
+#cheat Il est 25:68 - The time is 25:68
+//ID: 4158
+//Score: 17
+//Author: Snort84
+//Category: Misc
+//Description: Il est 25:68 - The time is 25:68
+//Image: none
+//Time: 21/01/2006 14:24:42
+//Working: Yes
+setchar(0x08b5e090, 25, 68);
+
+
+#cheat Time is 9:30am
+//ID: 3883
+//Score: 25
+//Author: edisoncarter
+//Category: Misc
+//Description: Time is 9:30am
+//Image: none
+//Time: 18/01/2006 18:04:00
+//Working: Yes
+setchar(0x08b5e090, 9, 30);
+
+
+#cheat TIme is 11:11
+//ID: 11637
+//Score: 27
+//Author: wm123
+//Category: Text Mods
+//Description: the time is 11:11
+//Image: none
+//Time: 28/05/2006 13:51:28
+//Working: Yes
+setchar(0x08b5e090, 11, 11);
+
+#cheat time is 22h30
+//ID: 11629
+//Score: 26
+//Author: jonix
+//Category: Misc
+//Description: time is 22h30
+//Image: none
+//Time: 28/05/2006 12:48:42
+//Working: Yes
+setchar(0x08b5e090, 22, 30);
+
+#cheat Time is 999:999
+//ID: 10389
+//Score: 83
+//Author: Spwngebob
+//Category: Misc
+//Description: I wonder what the sky would look like if the time was 999:999
+//
+//Toni didnt sleep for Nine hundred and Ninety-Nine hours, Nine hundred and Ninety-Nine Minutes!
+//
+//Image: none
+//Time: 14/05/2006 11:03:19
+//Working: Yes
+setchar(0x08b5e090, 999, 999);
+
+#cheat The time is 255:34
+//ID: 9221
+//Score: 42
+//Author: LOST_HIM
+//Category: Misc
+//Description: The time is 255:34
+//
+//Image: none
+//Time: 05/05/2006 17:17:38
+//Working: Yes
+setchar(0x08B5E090, 2147483647);
+

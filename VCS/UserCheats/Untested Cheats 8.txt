@@ -1,0 +1,239 @@
+#cheat Object Spawn Test
+obj = 0x0991B180;
+setfloat(obj + 0x30, 273.15, -178.45, 11.22);
+setshort(obj + 0x56, 0x2a5);
+
+#cheat Object Spawn Test
+obj = 0x0991C280;
+setfloat(obj + 0x30, 273.15, -178.45, 11.22);
+setshort(obj + 0x56, 0x2a5);
+
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat Bump Transference
+static pprev;
+static delay;
+if (delay > 0)
+   delay--;
+if (pcar)
+{
+   pbump = getint(pcar + 0x0150);
+   if (pbump && (pbump != pprev || delay == 0))
+   {
+       modelid = getshort(pbump + 0x0056);
+       if (modelid >= 170 && modelid <= 280)
+       {
+           setint(pplayer + 0x450, pbump);
+           setint(pplayer + 0x480, pbump);
+           setint(pplayer + 0x484, pbump);
+           setint(pbump + 0x384, pplayer);
+           setint(pcar + 0x384, 0);
+           setint(0x08bb4064, pbump);
+           setint(0x08bc7f10, pbump);
+           setint(0x08bc85f0, pbump);
+           setchar(pbump + 0x675, 0x90);
+           setchar(pcar + 0x675, 0x80);
+           delay = 180;
+           pprev = pcar; // no backsies
+       }
+   }
+}
+
+#cheat neon
+static obj;
+static old1;
+static old2;
+static old3;
+static old4;
+if(obj)
+{
+  setfloat(obj + 0x30, old1, old2, old3);
+  setshort(obj + 0x56, old4);
+}
+if(obj = getint(0x0994f460))
+{
+  old1 = getfloat(obj + 0x30);
+  old2 = getfloat(obj + 0x34);
+  old3 = getfloat(obj + 0x38);
+  old4 = getshort(obj + 0x56);
+  setfloat(obj + 0x30, getfloat(pcar+0x30), getfloat(pcar+0x34), getfloat(pcar+0x38));
+  setshort(obj + 0x56, 0x1d47);
+}
+
+
+
+#cheat setshort(0x08B8EB08, 255);
+setshort(0x08B8EB08, 255);
+
+#cheat setchar(0x08B8EB04, 255);
+setchar(0x08B8EB04, 255);
+
+#cheat setchar(0x08B8EB0C, 255);
+setchar(0x08B8EB0C, 255);
+
+#cheat setchar(0x08B8EB00, 255);
+setchar(0x08B8EB00, 255);
+
+#cheat setchar(0x08B8EB10, 255);
+setchar(0x08B8EB10, 255);
+
+#cheat setchar(0x08B8EB14, 255);
+setchar(0x08B8EB14, 255);
+
+#cheat setchar(0x08B8EB18, 255);
+setchar(0x08B8EB18, 255);
+
+#cheat setchar(0x08B8EB1C, 255);
+setchar(0x08B8EB1C, 255);
+
+#cheat setchar(0x08B8EAFC, 255);
+setchar(0x08B8EAFC, 255);
+
+
+#cheat setfloat(0x08C62FC8, 30);
+setfloat(0x08C62FC8, 30);
+
+#cheat setfloat(0x08C62FC0, 30);
+setfloat(0x08C62FC0, 30);
+
+#cheat setfloat(0x08C62FC4, 30);
+setfloat(0x08C62FC4, 30);
+
+#cheat setfloat(0x08C62FCC, 30);
+setfloat(0x08C62FCC, 30);
+
+#cheat setfloat(0x08C62FC8, 10);
+setfloat(0x08C62FC8, 10);
+
+#cheat setfloat(0x08C62F90, 30);
+setfloat(0x08C62F90, 30);
+
+#cheat setfloat(0x08C62F94, 30);
+setfloat(0x08C62F94, 30);
+
+#cheat setfloat(0x08C62FA0, 30);
+setfloat(0x08C62FA0, 30);
+
+#cheat setfloat(0x08C62FA4, 30);
+setfloat(0x08C62FA4, 30);
+
+#cheat setfloat(0x08C62F78, 30);
+setfloat(0x08C62F78, 30);
+
+#cheat setfloat(0x08C62F6C, 30);
+setfloat(0x08C62F6C, 30);
+
+#cheat setfloat(0x08C62FFC, 30);
+setfloat(0x08C62FFC, 30);
+
+#cheat setfloat(0x08C63008, 30);
+setfloat(0x08C63008, 30);
+
+#cheat setfloat(0x08C62EA8, 30);
+setfloat(0x08C62EA8, 30);
+
+#cheat setfloat(0x08C62EF0, 30);
+setfloat(0x08C62EF0, 30);
+
+
+#cheat remote controlled bike
+setchar(pplayer+0x894, 0x10);
+off()
+
+#cheat Minigun has 999 shots per clip
+setint(0x096001C4, 0x3e7);
+
+
+#cheat Hikiwara Tuning Supercharged Sabre
+pspawn = 0x08E81290;  
+setint(pspawn,    273);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x66,  0xFF,  0x00);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+// Spinners by (dont know)
+static rotation;
+if (rotation == 0)
+{
+rotation = 1040;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 1040;}
+// Nos By Edison Carter and Waterbottle
+// Not much of a moddification to this Brilliant code, but its a longterm affect,
+// Hold circle  To drive at normal speed
+// Slow down's square with gradual, good for a thrash or a race
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+#cheat Raise The World +1m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 1.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1.0);
+off();
+
+#cheat Lower The World -0.5m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 0.5);
+off();
+
+
+#cheat "Megaman"
+setshort(0x09600210, 0x1DB);
+setchar(0x096001F0, 0x15);
+
+#cheat Patriot
+setfloat(0x098A3258, 0x48, 0x55, 0x4D, 0x4D, 0x45, 0x52, 0x32); 
+
+#cheat ummer
+setshort(0x098A3258, 'h','u','m','m','e','r');
+
+#cheat idiot
+setshort(0x098A31D0, 'i', 'd', 'i', 'o', 't');
+
+#cheat chollo sabre is 2x as heavy
+setfloat(pcar+0xd0, 3200);
+#off
+setfloat(pcar+0xd0, 1600);
+
+#cheat chollo sabre is 3x as heavy
+setfloat(pcar+0xd0, 4800);
+#off
+setfloat(pcar+0xd0, 1600);
+
+#cheat Chollo Sabre suspension drop
+//by vettefan
+//enter the cheat before you spawn a chollo sabre.
+setfloat(0x96338fc, 0.20, -0.01);
+
+#cheat Vic of Fire
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+
