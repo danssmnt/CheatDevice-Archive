@@ -88,7 +88,7 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 
 ## UserCheats
 We're trying to archive all UserCheats made for Cheat Device too!
-Most of them were pulled from this post: _[CheatSync Backups](https://www.reddit.com/r/vitahacks/comments/6xxsif/comment/dmjvnx5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)_
+Most of them come from CheatSync backups made by the community!
 
 > [!WARNING]
 > All usercheats are **UNTESTED** and can crash your game.
@@ -103,12 +103,12 @@ Refer to _[How can I contribute?](./.github/CONTRIBUTING.md)_.
  - [ ] Make a website for this project.
  - [ ] Archive old screenshots, images, photos, videos of Cheat Device.
  - [ ] Decompile / Reverse Engineer Cheat Device (latest releases).
- - [ ] Archive websites (www[dot]maxbot[dot]com/gta and www[dot]cheatdevice[dot]com, ...).
  
 ## Interesing / Useful Cheat Device Content
-Refer to _[Interesing / Useful Content](./Interesting_Useful_Content.md)_.
+Refer to _[Interesing / Useful Content](./Interesting_Useful_Content.md#interesting--useful-cheat-device-content)_.
 
 ## Credits
+ - **Edison Carter and [other people](./Interesting_Useful_Content.md#cheatdevice-original-contributors)** - For making this awesome homebrew! :D
  - **[Wayback Machine](https://web.archive.org/)** - Almost all CD versions were found preserved here.
  - _**[Kabuto_Kun](https://www.reddit.com/user/Kabuto_Kun/)**_ - _[CheatSync Backups](https://www.reddit.com/r/vitahacks/comments/6xxsif/comment/dmjvnx5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)_
  - **PSP GTA Cheat Device Community** (_03stevensmi_) - _[PSP CHEAT DEVICE ARCHIVE & OTHERS ( VCS, LCS, CWCHEAT, OTHERS & LCS+VCS CHEATS FOR NEW FIRMWIRE)](https://archive.org/details/psp-cheat-device-archive)_
