@@ -1,0 +1,40 @@
+#cheat Submarine Vehicles
+static UnderWater;
+static Height;
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 1.5;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+  }
+
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148,  +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148,  -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38,  Height);
+}

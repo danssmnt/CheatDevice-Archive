@@ -1,0 +1,34 @@
+
+
+#cheat Ferrari at 101 Bayshore Avenue
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x08C739B0, 270); //Car Id
+ setchar(0x08C739B0+0x24, 255,0,0, 255); //Color 1
+ setchar(0x08C739B0+0x28, 255,0,0, 255); //Color2
+ setshort(0x98a339c, 1, 'F','e','r','r','a','r','i', 0); 
+ //Wheels
+ setfloat(0x936E818, 0.8, 0.8); //wheel size
+ setfloat(0x9634180+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634180+0xc4, 0.59); //Traction Loss
+ setfloat(0x9634180+0x70, 0.37); //Traction Bias
+ //Engine
+ setchar(0x9634180+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634180+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9634180+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x9634180+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x9634180+0x74, 1); //Suspension Force Level
+ setfloat(0x9634180+0x84, 0.5); //Suspension Bias
+ setfloat(0x9634180+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634180+0x68, 30); //Steering Lock
+ setfloat(0x9634180+0xbc, 1250); //Vehilce Mass
+ setfloat(0x9634180+0xc0, 1550); //Turn Mass
+ setfloat(0x9634180+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634180+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634180+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust

@@ -1,0 +1,74 @@
+#cheat Reset Unique Jump Stats
+setchar(0x08bb3d0c, 0x0);
+
+#cheat Ped in Water
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped + 0x1DB, 0x80);}
+
+#cheat Equip any Ped with the SMG
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x19);
+setchar(pped+0x87c, 0x1e);
+setchar(pped+0x8B4, 0x0);
+setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+#cheat Gangmembers do drivebys
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x18);
+setchar(pped+0x87c, 0x1e);
+setchar(pped+0x8B4, 0x0);
+setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+#cheat Enable Traffic at Leaf Links Golfclub
+setchar(0x08BB329C, 0x00);
+
+#cheat Map Maker
+//I believe this is just the cheat I used to allow me to make the top down map of Vice City. I'll be uploading the fullsize map.
+//TOP DOWN
+setfloat(0x8BC7FC4, -2);
+//direction
+setchar(pplayer+0x10, 0x18, 0x32, 0x15, 0x3c);
+//camera distance
+setfloat(0x8bc86c0, 150);
+//invisible car
+setchar(pcar+0x4A, 0x15);
+//no traffic
+static counter;
+if(counter++ % 30 == 0) {
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+if(p != pcar) setchar(p + 0x4c, 1);
+}
+}
+
+#cheat classic top down camera
+//by: vettefan88
+setfloat(0x8BC7FC4, -2);
+setfloat(0x8bc86c0, 30);
+setfloat(0x8bc8684, 30);

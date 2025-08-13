@@ -1,0 +1,122 @@
+#cheat Phonejob
+state = getchar(0x09f69054);
+mission = 0;
+evidence = 0;
+mark = 0x08c62EA0;
+moveto(275.24,-694.31,9.42); object(0x01C1,0,0,198);
+move(-1.43,0.46,0.00); object(0x01C1,0,0,278);
+move(0.61,-0.26,1.20); object(0x01C1,180,0,341);
+move(-2.06,0.40,-1.40); object(0x01BE,180,0,341);
+move(-1.18,0.22,0.00); object(0x01BD,180,0,341);
+pspawn = 0x08E81290; 
+setint(pspawn, 213); 
+setfloat(pspawn + 4, 279.31, -704.24, 10.32, 270);
+pped = getint(0x08BA1D70);
+static yourped;
+if(mission == 0&&pped&&!yourped&&press & CTRL_UP){
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', '~', 'w', '~', 0);
+yourped=pped;}
+if(yourped){
+health = getfloat(yourped+0x4e4);}
+if(mission == 0){
+setshort(0x08e90bd8, 1, 'G', 'e', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'P', 'a',
+'y', 'p', 'h', 'o', 'n', 'e', ' ', 'n', 'e', 'x', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'V', 'C', 'P', 'D', ' ', 'H', 'Q', ' ', 'i', 'n', ' ', 'W', 'a', 's', 'h', 'i', 'n', 'g', 't', 'o', 'n', ' ', 'B', 'e', 'a', 'c', 'h', ' ', '!');
+setchar(mark+0x2c, 0, 0, 255);
+setfloat(mark, 252.76, -651.29, 10.04);}
+static Marker1;
+X1 = 252.76;
+Y1 = -651.29;
+Z1 = 10.04;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(yourped&&sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setint(pplayer+0x664, 0xffffff);
+setchar(pplayer+0x658, 0x1E);
+setchar(pplayer+0x789, 0x08);
+setfloat(yourped+0x30, 272.76);
+setfloat(yourped+0x34, -695.01);
+setfloat(yourped+0x38, 10.04);
+setint(yourped+0x648, 0x00ffffff);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x789, 0x07);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x674, 0x26);}
+if(mission == 1){
+setchar(0x09f69054, 1);
+setchar(mark+0x2c, 255, 0, 0);
+setfloat(mark, getfloat(yourped+0x30), getfloat(yourped+0x34), getfloat(yourped+0x38) +
+1);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+if(yourped&&getchar(yourped+0x894) == 0x8){
+setshort(0x08e90bd8, 1, 'H', 'e', 'y', ' ', 'L', 'e', 'o', ' ', '!', ' ', 'I', ' ', 'w',
+'a', 'n', 't', ' ', 'y', 'o', 'u', ' ', 't', 'o', ' ', 'g', 'i', 'v', 'e', ' ', 't', 'h', 'i', 's', ' ', 'b', 'u', 'g', 'g', 'e', 'r', ' ', 'w', 'h', 'a', 't', ' ', 'h', 'e', ' ', 'd', 'e', 's', 'e', 'r', 'v', 'e', 's', ' ', '!');}
+if(yourped&&!getchar(yourped+0x894) == 0x8&&health == 0){
+setchar(mark+0x2c, 0, 0, 255);
+setfloat(mark, 252.76, -651.29, 10.04);
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+if(mission == 1&&yourped&&getchar(yourped+0x894) == 0x8&&health == 0){
+setfloat(mark, 0, 0, 0);
+setshort(0x08e90DD8, 1, 'G', 'o', 'o', 'd', ' ', '!', ' ', 'T', 'a', 'k', 'e', ' ', 'a', ' ', 'p', 'i', 'c', 't', 'u','r', 'e', ' ', 'o', 'f', ' ', 'h', 'i', 's', ' ', 'd', 'e', 'a', 'd', ' ', 'b','o', 'd', 'y', ' ', '!', 0);
+yourped=0;}
+camera=getchar(pplayer+0x789);
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+if(yourped&&health == 0&&buttons&CTRL_RTRIGGER&&camera == 0x9&&presslow & CTRL_CIRCLE&&sqrt(aimx*aimx+aimy*aimy)<3){
+evidence = 1;}
+if(evidence == 1){
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');
+setshort(0x08E931FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');
+setshort(0x08E933FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');}
+static Printworks;
+X2 = -1055.54;
+Y2 = -272.94;
+Z2 = 11.40;
+if(!Printworks){ for(rot = 0;rot<360;rot += 6.0){
+moveto(X2+cos(rot)*2,Y2+sin(rot)*2,Z2);object(0x1d31,0,0,-rot+90);}
+Printworks = 1;}
+checkx2 = X2-getfloat(pobj+0x30);
+checky2 = Y2-getfloat(pobj+0x34);
+if(evidence == 1&&sqrt(checkx2*checkx2+checky2*checky2)<2){
+setshort(0x08e90DD8, 1, ' ', 'M', 'I', 'S', 'S', 'I', 'O', 'N', ' ', 'P', 'A',
+'S', 'S', 'E', 'D', '!', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '$', '1', '0', '0', '0', '0 ', '0', '!',0);
+setint(0x08bde55c, getint(0x08bde55c)+100000);
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+if(state == 1&&buttons & CTRL_RTRIGGER&&press & CTRL_UP){
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+#off
+evidence = 0;
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+setchar(0x08E93604, 0x0);
+setfloat(mark, 0, 0, 0);
+setchar(mark+0x2c, 30, 255, 255);
+setchar(0x09f69054, 0);
+mission = 0;}

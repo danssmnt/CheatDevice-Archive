@@ -1,0 +1,370 @@
+#cheat Create AI Helicopter at Leaf Links Condo
+helispawn = 0x08E81D40;
+setint(helispawn, 260);
+setfloat(helispawn + 0x04, 295.37, 269.99, 17.70, 0);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setfloat(0x098B4A40 + i + 0x30, 296.38, 278.32, 17.71);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+heli = getint(0x098B4A40 + i + 0x0484);
+pilots = 1;
+}
+}
+}
+}
+#off
+helispawn = x = y = checkx = checky = pedspawn = pilots = id = heli = 0;
+setint(0x08E81D40, 184);
+setfloat(0x08E81D44, 88.300003, 289.299988, 19.100000, 318.000000);
+
+#cheat Set AI Helicopter's Movement
+helispawn = 0x08E81D40;
+setint(helispawn, 213);
+setfloat(helispawn + 0x04, 295.37, 269.99, 17.70, 180);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setfloat(0x098B4A40 + i + 0x30, 296.38, 278.32, 17.71);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+heli = getint(0x098B4A40 + i + 0x0484); // You can use this pointer to the helicopter for the movement, but you don't have to ! (I didn't use it in this example)
+pilots = 1;
+}
+}
+}
+}
+static speed;
+static currentx;
+static currenty;
+static currentz;
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+checkpoint1x = 295.37;
+checkpoint1y = 269.99;
+checkpoint1z = 17.70;
+checkpoint2x = 312.03;
+checkpoint2y = 230.03;
+checkpoint2z = 30.00;
+checkpoint3x = 375.41;
+checkpoint3y = 144.54;
+checkpoint3z = 30.00;
+checkpoint4x = 454.03;
+checkpoint4y = 161.65;
+checkpoint4z = 30.00;
+checkpoint5x = 441.77;
+checkpoint5y = 235.06;
+checkpoint5z = 30.00;
+checkpoint6x = 350.44;
+checkpoint6y = 260.06;
+checkpoint6z = 30.00;
+checkpoint7x = 295.37;
+checkpoint7y = 269.99;
+checkpoint7z = 17.70;
+if(!currentx && getshort(pcar + 0x56) == 213)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+setfloat(opp + 0x30, 295.37, 269.99, 17.70);
+speed = 0.001;
+}
+if(getshort(pcar + 0x56) == 213)
+{
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + d3 * speed);
+checkx = currentx - getfloat(opp + 0x30);
+checky = currenty - getfloat(opp + 0x34);
+checkz = currentz - getfloat(opp + 0x38);
+if(sqrt(checkx * checkx + checky * checky + checkz * checkz) < 5)
+{
+if(currentx == checkpoint1x)
+{
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.001;
+}
+else if(currentx == checkpoint2x)
+{
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;
+}
+else if(currentx == checkpoint3x)
+{
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;
+}
+else if(currentx == checkpoint4x)
+{
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;
+}
+else if(currentx == checkpoint5x)
+{
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;
+}
+else if(currentx == checkpoint6x)
+{
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;
+}
+else if(currentx == checkpoint7x)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;
+}
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+}
+}
+#off
+helispawn = x = y = checkx = checky = pedspawn = pilots = id = heli = 0;
+setint(0x08E81D40, 184);
+setfloat(0x08E81D44, 88.300003, 289.299988, 19.100000, 318.000000);
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Options Menu
+helispawn = 0x08E81D40;
+setint(helispawn, 261);
+setfloat(helispawn + 0x04, 295.37, 269.99, 17.70, 180);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setfloat(0x098B4A40 + i + 0x30, 296.38, 278.32, 17.71);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+pilots = 1;
+}
+}
+}
+}
+static speed;
+static currentx;
+static currenty;
+static currentz;
+if(buttons & CTRL_TRIANGLE && !pcar)
+{
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);
+}
+checkpoint1x = 295.37;
+checkpoint1y = 269.99;
+checkpoint1z = 17.70;
+checkpoint2x = 312.03;
+checkpoint2y = 230.03;
+checkpoint2z = 30.00;
+checkpoint3x = 375.41;
+checkpoint3y = 144.54;
+checkpoint3z = 30.00;
+checkpoint4x = 454.03;
+checkpoint4y = 161.65;
+checkpoint4z = 30.00;
+checkpoint5x = 441.77;
+checkpoint5y = 235.06;
+checkpoint5z = 30.00;
+checkpoint6x = 350.44;
+checkpoint6y = 260.06;
+checkpoint6z = 30.00;
+checkpoint7x = 295.37;
+checkpoint7y = 269.99;
+checkpoint7z = 17.70;
+if(!currentx && getshort(pcar + 0x56) == 261)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+setfloat(opp + 0x30, 295.37, 269.99, 17.70);
+speed = 0.001;
+}
+if(getshort(pcar + 0x56) == 261)
+{
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + d3 * speed);
+checkx = currentx - getfloat(opp + 0x30);
+checky = currenty - getfloat(opp + 0x34);
+checkz = currentz - getfloat(opp + 0x38);
+if(sqrt(checkx * checkx + checky * checky + checkz * checkz) < 5)
+{
+if(currentx == checkpoint1x)
+{
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.001;
+}
+else if(currentx == checkpoint2x)
+{
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;
+}
+else if(currentx == checkpoint3x)
+{
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;
+}
+else if(currentx == checkpoint4x)
+{
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;
+}
+else if(currentx == checkpoint5x)
+{
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;
+}
+else if(currentx == checkpoint6x)
+{
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;
+}
+else if(currentx == checkpoint7x)
+{
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;
+}
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+}
+}
+#off
+helispawn = x = y = checkx = checky = pedspawn = pilots = id = heli = 0;
+setint(0x08E81D40, 184);
+setfloat(0x08E81D44, 88.300003, 289.299988, 19.100000, 318.000000);
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Rhino Spawn Modifier
+setchar(0x08BAEDB8, '%', 'd', 0);
+setchar(0x08BAEDC0, '%', 'd', 0);
+static start;
+if (!start)
+{
+value = 246;
+start = 1;
+money = getint(0x08E81290);
+}
+setint(0x08BDE55C, money, money);
+setint(0x08BDE55C, value, value);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT)
+{
+value = value - 1;
+}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT)
+{
+value = value + 1;
+}
+setshort(0x08989AE4, value);
+if (press == CTRL_RTRIGGER)
+{
+setchar(0x08BDE6B9, 'R', '1', 'L', '2', 'D', '1', 'U', 0);
+}

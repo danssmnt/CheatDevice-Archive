@@ -1,0 +1,20 @@
+#cheat Driveby Mode
+x = getfloat(pcar+0x30);
+y = getfloat(pcar+0x34);
+z = getfloat(pcar+0x38);
+paim = getint(pplayer+0x81C);
+if(buttons&CTRL_TRIANGLE){
+setchar(pplayer+0x894, 0x11);}
+if(pcar&&!paim){
+setfloat(pcar+0x27C, 1000000000);
+setfloat(pcar+0x10C, 0);
+setshort(pcar+0x232, 0x101);
+setchar(pplayer+0x8B4, 0x0);
+setint(pplayer+0x610, 0xffffff);
+setchar(pplayer+0xCB8, 0x5);
+setchar(pplayer+0x604, 0x18);
+setfloat(pplayer+0x30, x);
+setfloat(pplayer+0x34, y);
+setfloat(pplayer+0x38, z+1);}
+if(pcar&&paim){
+setchar(pplayer+0x8B4, 0x37);}

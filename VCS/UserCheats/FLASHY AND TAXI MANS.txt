@@ -1,0 +1,1712 @@
+#cheat Welcome to gta VCS 2022
+setshort(0x08e90bd8,  1,  'W',  'e',  'l' ,  'c',  'o',  'm' ,  'e',  ' ',  't' ,  'o',  ' ',  'G',  'T',  'A',  ' ',  'V',  'C',  'S',  ' ',  '2',  '0',  '2',  '2', 0);
+//Flashly = 14 = pplayerflashly
+
+#cheat Test pplayerflashly
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 1 == 0){
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setint(pplayerflashly + 0x890, pplayer);}}}
+
+#cheat You're Flashly
+setchar(pplayer + 0x56, 14);
+setchar(pplayer + 0x58, 14);
+
+#cheat Flashly life
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player)
+setchar(p + 0x56, 14);
+setchar(p + 0x58, 14);}
+
+#cheat Flashly life 2
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x56, 14);
+setchar(0x098b4a40+x+0x58, 14);}}
+
+#cheat Flashgrass!
+static counter;
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+if(getchar(pplayerflashly + 0x137) == 0x02)
+setfloat(pplayerflashly + 0x4E4, 100);}}
+
+#cheat 0xB163A870
+
+#cheat Flashly Are Superman
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+pstartfly = getshort(pplayerflashly+0x1C8);
+static speedmult;
+setfloat(pplayerflashly + 0x4E4,  150.0);//health
+setfloat(pplayerflashly + 0x78,  -0.03 * xstick);
+setfloat(pplayerflashly + 0x70,  0.03 * ystick * getfloat(pplayerflashly));
+setfloat(pplayerflashly + 0x74,  0.03 * ystick * getfloat(pplayerflashly+4));
+if (buttons & CTRL_CROSS) {
+  setshort(pplayerflashly+0x1c8,  0x1020);
+  if(speedmult<1.4) speedmult+=0.01;
+} else if(speedmult >= 0) speedmult*=0.95;
+if(pstartfly==0x1020)
+{
+  updown = (getfloat(pplayerflashly+0x28)>0) ? 1 : -1;
+  setfloat(pplayerflashly+0x140,  -getfloat(pplayerflashly+4)*speedmult);
+  setfloat(pplayerflashly+0x144,  getfloat(pplayerflashly)*speedmult);
+  setfloat(pplayerflashly+0x148,  (getfloat(pplayerflashly+0x18)+cos(90/180*3.1415))*speedmult * updown);
+}}}
+
+#cheat Flashly No Reloading
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setint(pplayerflashly+0x5d4,  2);
+setint(pplayerflashly+0x5f0,  2);
+setint(pplayerflashly+0x60c,  2);
+setint(pplayerflashly+0x5b8,  2);
+setint(pplayerflashly+0x628,  2);
+setint(pplayerflashly+0x644,  2);
+setint(pplayerflashly+0x660,  2);}}
+
+#cheat Admiral Have Killer
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+object = getint(admiralpcar+0x150);
+if(object){
+if(getint(admiralpcar+0x150)>0x098b4a40&&getint(admiralpcar+0x150)<0x098ecf90){
+setfloat(object+0x4e4,   0);}
+if(getint(admiralpcar+0x150)>0x098b4a40&&getint(admiralpcar+0x150)<0x098ecf90){
+setfloat(object+0x4e8,   0);}
+if(getint(admiralpcar+0x150)>0x098edcc0&&getint(admiralpcar+0x150)<0x099019a0)
+setfloat(object+0x27c,   0);}}}
+
+#cheat Admirals Have Nitrous Oxide v.2
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+speed = sqrt(getfloat(admiralpcar + 0x140) * getfloat(admiralpcar + 0x140) + getfloat(admiralpcar + 0x144) * getfloat(admiralpcar + 0x144));
+if(speed<1.8) {
+setfloat(admiralpcar+0x140,  getfloat(admiralpcar+0x140)-getfloat(admiralpcar+0x4)*0.005);
+setfloat(admiralpcar+0x144,  getfloat(admiralpcar+0x144)+getfloat(admiralpcar)*0.005);}}}
+
+#cheat Stop Admirals
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setfloat(admiralpcar+0x140,  0,  0);}}
+
+#cheat Admirals Have Lamborghini Doors
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setfloat(admiralpcar+0x450,  0,  -1.2566371,  0);
+setfloat(admiralpcar+0x480,  0,  -1.2566371,  0);
+setfloat(admiralpcar+0x4b0,  0,  -1.2566371,  0);
+setfloat(admiralpcar+0x4e0,  0,  -1.2566371,  0);}}
+
+#cheat Flashly Have Invisible Jetpack
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+    dx = 0; dy = 0; dz = 0;
+
+    // forward thrust
+    thrust = -ystick * 0.005;
+    if (ystick < -0.1 && (buttons & CTRL_CROSS))
+        thrust = -ystick * 0.024;
+    dx += getfloat(pplayerflashly + 0x0010) * thrust;
+    dy += getfloat(pplayerflashly + 0x0014) * thrust;
+    dz += getfloat(pplayerflashly + 0x0018) * thrust;
+
+    // strafe left
+    if (buttons & CTRL_LTRIGGER)
+    {
+        dx += getfloat(pplayerflashly + 0x0000) * -0.00333;
+        dy += getfloat(pplayerflashly + 0x0004) * -0.00333;
+        dz += getfloat(pplayerflashly + 0x0008) * -0.00333;
+    }
+
+    // strafe right
+    if (buttons & CTRL_RTRIGGER)
+    {
+        dx += getfloat(pplayerflashly + 0x0000) * 0.00333;
+        dy += getfloat(pplayerflashly + 0x0004) * 0.00333;
+        dz += getfloat(pplayerflashly + 0x0008) * 0.00333;
+    }
+
+    // lift
+    lift = 0.0068;
+    if (buttons & CTRL_SQUARE)
+        lift -= 0.007;
+    if (buttons & CTRL_CROSS)
+    {
+        setshort(pplayerflashly+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * 0.006;
+        else
+            lift += 0.006;
+    }
+    dx += getfloat(pplayerflashly + 0x0020) * lift;
+    dy += getfloat(pplayerflashly + 0x0024) * lift;
+    dz += getfloat(pplayerflashly + 0x0028) * lift;
+
+    // add vector to velocity
+    gameplayspeed = getfloat(0x08bb3b58);
+    setfloat(pplayerflashly + 0x0140, getfloat(pplayerflashly + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+    setfloat(pplayerflashly + 0x0144, getfloat(pplayerflashly + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+    setfloat(pplayerflashly + 0x0148, getfloat(pplayerflashly + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+    // rotational control
+    setfloat(pplayerflashly + 0x0078, -0.03 * xstick);
+
+    // never roll when falling, thanks to theY4Kman
+    setfloat(pplayerflashly + 0x1C4, 0.0);}}
+
+#cheat Admirals Have Drive On Water
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+if (getfloat(admiralpcar+0x38)<getfloat(0x96C96B0)+0.8)
+{
+   static speed;
+   //set the car ontop of the water
+   setfloat(admiralpcar+0x38,  getfloat(0x96C96B0)+0.8);
+   setfloat(admiralpcar+0x8,  0);
+   setfloat(admiralpcar+0x18,  0);
+   setfloat(admiralpcar+0x20,  0,  0,  0);
+   setfloat(admiralpcar+0x148,  0);
+   //accelerte
+   if(buttons & CTRL_CROSS) 
+   {
+   if(speed < 0)
+           speed += 0.02; 
+   if(speed < 0.7)
+           speed += 0.02; 
+   }
+   else
+   if(buttons & CTRL_SQUARE)
+   {
+   if(speed > 0)
+           speed -= 0.02; 
+   if(speed > -0.5)
+           speed -= 0.02; 
+   }
+   else speed *= 0.95;
+   //add speed to car
+   setfloat(admiralpcar+0x140,  -getfloat(admiralpcar+4)*speed);
+   setfloat(admiralpcar+0x144,  getfloat(admiralpcar)*speed);
+}}}
+
+#cheat Admirals Have Indeflatable Tires
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setshort(admiralpcar+0x3b6,  0,  0);//cars
+setshort(admiralpcar+0x434,  0);}}//bikes
+
+#cheat Flashly Have Parachute
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static Active;
+if(getchar(pplayerflashly+0x1c9)==0x10) {//In air?
+if(!Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  'O',  ' ',  't',  'o',  ' ',  'u',  's',  'e',  ' ',  'p',  'a',  'r',  'a',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(Active) setshort(0x08e90bd8,   1,  'P',  'r',  'e',  's',  's',  ' ',  '/',  '\\',  ' ',  't',  'o',  ' ',  'r',  'e',  'l',  'e ',  'a',  's',  'e',  ' ',  'c',  'h',  'u',  't',  'e',  '!',  0);
+if(buttons & CTRL_CIRCLE) Active = true;
+if(buttons & CTRL_TRIANGLE) Active = false;
+if(Active) setfloat(pplayerflashly+0x148,  getfloat(pplayerflashly+0x148)*0.9); 
+//Give Some Control
+if(Active) {
+if(ystick < -0.5) {
+      setfloat(pplayerflashly+0x140,  getfloat(pplayerflashly+0x10)*0.2);
+      setfloat(pplayerflashly+0x144,  getfloat(pplayerflashly+0x14)*0.2);
+      } else setfloat(pplayer+0x140,  getfloat(pplayerflashly+0x140)*0.99,  getfloat(pplayerflashly+0x144)*0.99);
+setfloat(pplayerflashly + 0x0078,  -0.01 * xstick);
+}
+} else Active = false;}}
+
+
+
+#cheat Admirals Have Extreme Boost (Hit O)
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+if((press & CTRL_CIRCLE))
+{
+    setfloat(admiralpcar+0x140,  getfloat(admiralpcar+0x140)+getfloat(admiralpcar+0x10)+0.1);
+    setfloat(admiralpcar+0x144,  getfloat(admiralpcar+0x144)+getfloat(admiralpcar+0x14)+0.1);
+}}}
+
+#cheat Flashly Have Tractor Beam
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+pguard = getchar(pplayerflashly + 0x894);
+if(pplayerflashly&&pguard == 0x8){
+    dx = getfloat(pplayer + 0x0030) - getfloat(pplayerflashly + 0x0030);
+    dy = getfloat(pplayer + 0x0034) - getfloat(pplayerflashly + 0x0034);
+    dz = getfloat(pplayer + 0x0038) - getfloat(pplayerflashly + 0x0038);
+    setshort(pplayer + 0x01c8,  0x1020);
+    setfloat(pplayer + 0x0140,  -dx * 0.05);
+    setfloat(pplayer + 0x0144,  -dy * 0.05);
+    setfloat(pplayer + 0x0148,  -dz * 0.05);
+}}}
+
+
+#cheat Touch of Death (Ped)
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+object = getint(pplayerflashly+0x150);
+if(getint(pplayerflashly+0x150)>0x098b4a40&&getint(pplayerflashly+0x150)<0x098ecf90)
+{
+ setfloat(object + 0x4e4,   0);
+}
+if(getint(pplayerflashly+0x150)>0x098edcc0&&getint(pplayerflashly+0x150)<0x099019a0)
+{
+ setfloat(object + 0x27c,   0);
+}}}
+
+#cheat Touch of Death (Car)
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+carobject = getint(admiralpcar+0x150);
+if(getint(admiralpcar+0x150)>0x098b4a40&&getint(admiralpcar+0x150)<0x098ecf90)
+{
+ setfloat(carobject + 0x4e4,   0);
+}
+if(getint(admiralpcar+0x150)>0x098edcc0&&getint(admiralpcar+0x150)<0x099019a0)
+{
+ setfloat(carobject + 0x27c,   0);
+}}}
+
+#cheat Flashly Have Aim of Death
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static enemy; 
+pguard = getchar(pplayerflashly + 0x894);
+pooo = getchar(pplayerflashly + 0x890);
+if(pplayerflashly&&pguard == 0x8){
+if(pplayerflashly&&pooo == enemy){
+setfloat(enemy + 0x4e4,  0);}}
+health = getfloat(enemy+0x4e4);
+if(health == 0){
+setchar(p+0x894, 0x4);}}}
+
+#cheat Force Touch (Ped)
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+push = 2.0;
+ptouch = getint(pplayerflashly+0x150);
+if (ptouch && getshort(ptouch + 0x0056) < 10000)
+{
+    setfloat(ptouch + 0x0140, getfloat(pplayerflashly + 0x0140) + getfloat(pplayerflashly + 0x0010) * push);
+    setfloat(ptouch + 0x0144, getfloat(pplayerflashly + 0x0144) + getfloat(pplayerflashly + 0x0014) * push);
+    setfloat(ptouch + 0x0148, getfloat(pplayerflashly + 0x0148) + getfloat(pplayerflashly + 0x0018) * push);
+    if (getshort(ptouch + 0x0056) < 170)
+    {
+        setshort(ptouch + 0x01c8, 0x1020);
+        setfloat(ptouch + 0x0148, push * 0.1);
+    }
+}
+setchar(pplayerflashly+0x894, 0x0);
+setchar(pplayerflashly+0x8b4, 0x0);}}
+
+#cheat Force Touch (Car)
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+push = 2.0;
+ptouch = getint(admiralpcar+0x150);
+if (ptouch && getshort(ptouch + 0x0056) < 10000)
+{
+    setfloat(ptouch + 0x0140, getfloat(admiralpcar + 0x0140) + getfloat(admiralpcar + 0x0010) * push);
+    setfloat(ptouch + 0x0144, getfloat(admiralpcar + 0x0144) + getfloat(admiralpcar + 0x0014) * push);
+    setfloat(ptouch + 0x0148, getfloat(admiralpcar + 0x0148) + getfloat(admiralpcar + 0x0018) * push);
+    if (getshort(ptouch + 0x0056) < 170)
+    {
+        setshort(ptouch + 0x01c8, 0x1020);
+        setfloat(ptouch + 0x0148, push * 0.1);
+    }
+}
+setfloat(admiralpcar+0x140, getfloat(admiralpcar+0x140)-5,getfloat(admiralpcar+0x140)-5);}}
+
+#cheat Flashly Have Blendo
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static psel;
+if (psel == 0)
+{
+    setshort(0x08e90bd8,  1,  'T',  'o',  'u' ,  'c',  'h',  ' ',  'a',  ' ',  'c',  'a',  'r',  ' ',  't',  'o',  ' ',  's',  't',  'a',  'r',  't',  0);
+}
+p = getint(pplayerflashly + 0x150);
+if (p && getshort(p + 0x56) >= 170 && getshort(p + 0x56) <= 280)
+{
+    psel = p;
+    setfloat(psel + 0xd0,  getfloat(psel + 0xd0) * 3.0);
+    setfloat(psel + 0xd4,  getfloat(psel + 0xd4) * 3.0);
+}
+if (psel)
+{
+    setfloat(psel + 0x08,  0);
+    setfloat(psel + 0x18,  0);
+    setfloat(psel + 0x20,  0,  0,  1);
+    setfloat(psel + 0x30,  getfloat(pplayerflashly + 0x30) + getfloat(pplayerflashly + 0x10) * 10.0);
+    setfloat(psel + 0x34,  getfloat(pplayerflashly + 0x34) + getfloat(pplayerflashly + 0x14) * 10.0);
+    setfloat(psel + 0x38,  getfloat(pplayerflashly + 0x38) + 0.5);
+    setfloat(psel + 0x78,  getfloat(psel + 0x78) - 0.015);
+    setfloat(psel + 0x027c,  100000.0);
+}}}
+#off
+psel = 0;
+
+#cheat Flashly Have Defense Orbs
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static Orb1;
+static Orb2;
+static rot;
+if(!Orb2)
+{
+    setshort(0x08e90bd8,   1,   'T',   'o',   'u' ,   'c',   'h',   ' ',   'a',   ' ',   'c',   'a',   'r',   ' ',   't',   'o',   ' ',   'm',   'a',   'k',   'e',   ' ',  'i',   't',   ' ',   'p',   'r',   'o',   't',   'e',   'c',   't',   ' ',   'y',   'o',   'u',  '!',   0);
+}
+p = getint(pplayerflashly + 0x150);
+if (p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+    Orb1 = p;
+}
+if (Orb1)
+{
+    setfloat(Orb1 + 0x08,  0);
+    setfloat(Orb1 + 0x18,  0);
+    setfloat(Orb1 + 0x20,  0,  0,  1);
+    setfloat(Orb1 + 0x30,   getfloat(pplayerflashly + 0x30) - cos(rot) * 12);
+    setfloat(Orb1 + 0x34,   getfloat(pplayerflashly + 0x34) + sin(rot) * 12);
+    setfloat(Orb1 + 0x38,   getfloat(pplayerflashly + 0x38));
+    setfloat(Orb1 + 0x78,   1);
+    setfloat(Orb1 + 0x027c,   10000.0);
+    rot += 10;
+    p = getint(Orb1 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb2 = p;
+}
+if (Orb2)
+{
+    setfloat(Orb2 + 0x08,  0);
+    setfloat(Orb2 + 0x18,  0);
+    setfloat(Orb2 + 0x20,  0,  0,  1);
+    setfloat(Orb2 + 0x30,   getfloat(pplayerflashly + 0x30) - cos(rot+180) * 12);
+    setfloat(Orb2 + 0x34,   getfloat(pplayerflashly + 0x34) + sin(rot+180) * 12);
+    setfloat(Orb2 + 0x38,   getfloat(pplayerflashly + 0x38));
+    setfloat(Orb2 + 0x78,   1);
+    setfloat(Orb2 + 0x027c,   10000.0);
+    p = getint(Orb2 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb1 = p;
+}}}
+#off
+Orb1 = Orb2 = rot = 0;
+
+#cheat Flashly Have Pyrokenesis
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static enemy; 
+pguard = getchar(pplayerflashly + 0x894);
+pooo = getchar(pplayerflashly + 0x890);
+if(pplayerflashly&&pguard == 0x8){
+if(pplayerflashly&&pooo == enemy){
+setchar(0x08be3a20,  1);
+setfloat(0x08be3a30,  getfloat(enemy+0x30),  getfloat(enemy+0x34),  getfloat(enemy+0x38));}}
+setfloat(enemy+0x4e4,  getfloat(enemy+0x4e4)-1.5);}}}
+
+#cheat Flashly Have Never Roll When Falling
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setfloat(pplayerflashly + 0x1C4,  0.0);}}
+
+#cheat Admirals Have Spinners
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+static rotation; 
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(admiralpcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}}
+
+#cheat Flashly Have Stunt Man
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static score;
+static jumping;
+static time;
+if(getchar(pplayerflashly+0x1c9) & 0x10)
+{
+    jumping = true;
+    if(xstick)
+    {
+    setfloat(pplayerflashly+0x78,  -xstick / 2);
+    score += sqrt(xstick*xstick) * 40;
+    }
+    if(ystick)
+    {
+    setfloat(pplayerflashly+0x70,  ystick * getfloat(pplayerflashly) / 2);
+    setfloat(pplayerflashly+0x74,  ystick * getfloat(pplayerflashly+4) / 2);
+    score += sqrt(ystick*ystick) * 50;      
+    }
+} else if(jumping) {
+    jumping = 0;
+    setfloat(pplayerflashly+0x70,  0,  0,  0);
+    time = 40;
+    setint(0x08bde55c,  getint(0x08bde55c)+score);
+    rand = (getint(pplayerflashly) + getint(0x08bb3b40)) % 3;
+}
+else if(time > 0 && score) {
+    time--;
+    int = int(score);
+    if(rand == 0) setshort(0x08e90bd8,  1,  ' ',  'W',  'o',  'w' ,  ',  ',  ' ',  'y',  'o',  'u',  ' ',  'g',  'o',  't',  ' ');
+    else if(rand == 1) setshort(0x08e90bd8,  1,  ' ',  ' ',  'S',  'i',  'c' ,  'k',  ' ',  's',  't',  'u',  'n',  't',  '!',  ' ');
+    else setshort(0x08e90bd8,  1,  'N',  'i',  'c' ,  'e',  ' ',  'f',  'l',  'i',  'p',  ' ',  'm',  'a',  'n',  ' ');
+    size = 0;
+    for(i = 1; i < int; i*=10) size+=2;
+    for(i = 0; int > 0; i+=2 ) {
+    setshort(0x08e90bf4+size-i,  '0' + (int % 10));
+    int = int(int/=10);
+    }
+    if(rand == 0) setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '!',  ' ',  ':',  ')',  0);
+    else if(rand == 1) setshort(0x08e90bf4+i,  ' ',  '$',  ' ',  'f',  'o',  'r',  ' ',  'y',  'o',  'u',  '!',  0);
+    else setshort(0x08e90bf4+i,  ' ',  'p',  'o',  'i',  'n',  't',  's',  '.',  0);
+    }}}
+else time = score = 0;
+
+#cheat Admirals Have Invisible Car
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setchar(admiralpcar+0x4A,  0x15);}}
+#off
+setchar(admiralpcar+0x4A,  0x18);
+
+#cheat Invisible Flashly
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setchar(pplayerflashly+0x4C,  0x10);
+setchar(pplayerflashly+0x4D,  0x20);}}
+#off
+setchar(pplayerflashly+0x4C,  0x00);
+setchar(pplayerflashly+0x4D,  0x00);
+
+#cheat Flashly Have Free Spirit
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setchar(pplayerflashly + 0x042,  0xA3);}}
+#off
+setchar(pplayerflashly + 0x042,  0xA2);
+
+#cheat Flashly Have Wild Side
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setchar(pplayer + 0x000001CA,  60);}}
+
+#cheat Admirals Have Lock Car Doors
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setshort(pcar+0x232,  getshort(pcar+0x232) ^ 0x0101);}}
+#off
+setshort(pcar+0x232,  0);
+
+#cheat Admirals Have Central Locking
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+{setshort(pcar+0x232,   0);
+} else {
+setshort(pcar+0x232,   0x0101);
+}}}
+#off
+setshort(pcar+0x232,   0);
+
+#cheat Admirals Have Ghost Car
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+static Drivable;
+if(buttons&CTRL_RTRIGGER)
+{
+setchar(admiralpcar + 0x49,   81);
+Drivable = 1;
+}
+if(buttons&CTRL_LTRIGGER)
+{
+setchar(admiralpcar + 0x49,   82);
+Drivable = 0;
+}
+if(Drivable)
+{
+setfloat(admiralpcar+0x78,   -xstick / 40);
+if (buttons & CTRL_CROSS) 
+{
+   boost = 0.5;
+   thrust = boost * 0.00333;
+   // velocity = velocity + forward vector * thrust
+   setfloat(admiralpcar + 0x0140,   getfloat(admiralpcar + 0x0140) + getfloat(admiralpcar + 0x0010) * thrust);
+   setfloat(admiralpcar + 0x0144,   getfloat(admiralpcar + 0x0144) + getfloat(admiralpcar + 0x0014) * thrust); 
+   setfloat(admiralpcar + 0x0148,   getfloat(admiralpcar + 0x0148) + getfloat(admiralpcar + 0x0018) * thrust);
+}  
+if(buttons & CTRL_SQUARE)
+{
+  setfloat(admiralpcar + 0x140,   getfloat(admiralpcar + 0x140)*0.95,   getfloat(admiralpcar + 0x144)*0.95 );}} 
+else{
+}}}
+
+#cheat Admirals Have Disco Vehicle
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setfloat(admiralpcar+0x224,  getfloat(admiralpcar+0x20),  getfloat(admiralpcar+0x24));}}
+
+
+#cheat Admirals Have Car Color Shows Car Health
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+health = getfloat(admiralpcar+0x027c);
+if (health >= 990)
+    setchar(admiralpcar+0x224,  0,  180,  0);
+else if (health >= 650)
+    setchar(admiralpcar+0x224,  255 * (1000 - health) / 350,  255,  0);
+else if (health >= 300)
+    setchar(admiralpcar+0x224,  255,  255 * (health - 300) / 350,  0);
+else if (health >= 280)
+    setchar(admiralpcar+0x224,  128,  0,  0);
+else
+    setchar(admiralpcar+0x224,  0,  0,  0);}}
+
+
+#cheat Admirals Have Your Car Is Black
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setchar(admiralpcar+0x224, 0, 0, 0);
+setchar(admiralpcar+0x228, 0, 0, 0);}}
+
+
+#cheat Admirals Have Your Car Is White
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setchar(admiralpcar+0x224, 0xff, 0xff, 0xff);
+setchar(admiralpcar+0x228, 0xff, 0xff, 0xff);}}
+
+#cheat Admirals is Tank
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setchar(admiralpcar + 0x56, 246);}}
+
+#cheat Flashly have Bangbang fiy
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+pstartfly = getshort(pplayerflashly+0x1C8);
+static speedmult;
+setfloat(pplayerflashly + 0x4E4,  150.0);//health
+setfloat(pplayerflashly + 0x78,  -0.03 * xstick);
+setfloat(pplayerflashly + 0x70,  0.03 * ystick * getfloat(pplayerflashly));
+setfloat(pplayerflashly + 0x74,  0.03 * ystick * getfloat(pplayerflashly+4));
+if (buttons & CTRL_CROSS) {
+  setshort(pplayerflashly+0x1c8,  0x1020);
+  if(speedmult<1.4) speedmult+=0.01;
+} else if(speedmult >= 0) speedmult*=0.95;
+if(pstartfly==0x1020)
+{
+  updown = (getfloat(pplayerflashly+0x28)>0) ? 1 : -1;
+  setfloat(pplayerflashly+0x140,  -getfloat(pplayerflashly+4)*speedmult);
+  setfloat(pplayerflashly+0x144,  getfloat(pplayerflashly)*speedmult);
+  setfloat(pplayerflashly+0x148,  (getfloat(pplayerflashly+0x18)+cos(90/180*3.1415))*speedmult * updown);
+}
+if (getfloat(pplayerflashly+0xd0)<50000)
+setfloat(pplayerflashly+0xd0, getfloat(pplayerflashly+0xd0)*50000, getfloat(pplayerflashly+0xd4)*50000);
+setchar(pplayerflashly+0x224, 0x00, 0x28, 0x08, 0xFF, 0x00, 0x28, 0x08, 0xff);
+hit = getint(pplayerflashly + 0x150);
+if (hit && getshort(hit + 0x56) >= 0 && getshort(hit + 0x56) <= 10000){
+explosion=0x08BBBD50;
+setchar(explosion, 0xA);
+setfloat(explosion+0x10, getfloat(hit+0x30), getfloat(hit+0x34), getfloat(hit+0x38));
+setint(explosion+0x28, pobj);
+setfloat(explosion+0x20, 5);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);}
+if( pplayer && press & CTRL_CIRCLE ){
+explosion=0x08BBBD50;  
+setchar(explosion, 0xa);  
+setfloat(explosion+0x10, getfloat(pplayerflashly + 0x30) + getfloat(pplayerflashly + 0x10) *  40.0, getfloat(pplayerflashly + 0x34) + getfloat(pplayerflashly + 0x14) *  40.0, getfloat(pplayerflashly + 0x38));  
+setint(explosion+0x28, pobj);  
+setfloat(explosion+0x20, 50);  
+setfloat(explosion+0x1c, 1);  
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);  
+setchar(explosion+0x35, 0x1);  
+setchar(explosion+0x3D, 0x1);  
+setshort(explosion+0x42, 0x4316);}}}
+
+#cheat Admirals Have Ghost Car
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 171){
+if(admiralpcar != pcar)
+setchar(admiralpcar + 0x49,   81);}
+#off
+setchar(admiralpcar + 0x49,   82);
+
+#cheat subflashly
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+static UnderWater;
+static Height;
+if(getfloat(pplayerflashly + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pplayerflashly+0x78,  -xstick / 40);
+setfloat(pplayerflashly + 0x08,    0);
+setfloat(pplayerflashly + 0x18,    0);
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 1.5;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pplayerflashly + 0x0140,  getfloat(pplayerflashly + 0x0140) + getfloat(pplayerflashly + 0x0010) * thrust);
+     setfloat(pplayerflashly + 0x0144,  getfloat(pplayerflashly + 0x0144) + getfloat(pplayerflashly + 0x0014) * thrust);
+     setfloat(pplayerflashly + 0x0148,  getfloat(pplayerflashly + 0x0148) + getfloat(pplayerflashly + 0x0018) * thrust);
+  }
+
+if(ystick < -0.9)
+{
+setfloat(pplayerflashly + 0x00000148,  +0.1);
+Height = getfloat(pplayer + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pplayerflashly + 0x00000148,  -0.1);
+Height = getfloat(pplayer + 0x38);
+}
+setfloat(pplayerflashly + 0x38,  Height);
+}}}
+
+#cheat Danger car
+static counter;
+if(counter++ % 1 == 0) {
+  for(p=0x098edcc0; p <= 0x099019a0; p+=0x820) {
+if(getshort(p+0x56) == 171 || getshort(p+0x56) == 226){
+       if(p != pcar)
+object = getint(p+0x150);
+if(object){
+if(getint(p+0x150)>0x098b4a40&&getint(p+0x150)<0x098ecf90){
+setfloat(object+0x4e4,   0);}
+if(getint(p+0x150)>0x098b4a40&&getint(p+0x150)<0x098ecf90){
+setfloat(object+0x4e8,   0);}
+if(getint(p+0x150)>0x098edcc0&&getint(p+0x150)<0x099019a0){
+setfloat(object+0x27c,   0);}}
+push = 2.0;
+ptouch = getint(p+0x150);
+if (ptouch && getshort(ptouch + 0x0056) < 10000)
+{
+    setfloat(ptouch + 0x0140, getfloat(pobj + 0x0140) + getfloat(pobj + 0x0010) * push);
+    setfloat(ptouch + 0x0144, getfloat(pobj + 0x0144) + getfloat(pobj + 0x0014) * push);
+    setfloat(ptouch + 0x0148, getfloat(pobj + 0x0148) + getfloat(pobj + 0x0018) * push);
+    if (getshort(ptouch + 0x0056) < 170)
+    {
+        setshort(ptouch + 0x01c8, 0x1020);
+        setfloat(ptouch + 0x0148, push * 0.2);
+    }
+}
+setfloat(p+0x27c,   1000000);}}}
+
+#cheat Remove whatever Flashly touches
+static counter;
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+ptouch = getint(pplayerflashly + 0x150);
+if(ptouch){
+setfloat(ptouch + 0x38, -10000.0);}}}
+
+#cheat Kill Flashlys!
+static counter;
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setfloat(pplayerflashly + 0x4E4, 0.0);}}
+
+#cheat 1000HP Flashlys!
+static counter;
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setfloat(pplayerflashly + 0x4E4, 1000);}}
+
+#cheat Full Armor Flashlys
+static counter;
+player = getint(0x08bc8170);
+for(pplayerflashly=0x098b4a40;
+pplayerflashly <= 0x098ecf90;
+pplayerflashly+=0xd10){
+flashly = getshort(pplayerflashly + 0x56);
+if(flashly == 14){
+if(pplayerflashly != player)
+setfloat(pplayerflashly + 0x4E8, 100.0);}}
+
+#cheat No Flashy Man
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p + 0x4c, 1);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Telport Flashly
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+for(i=0;
+ 0x98b4a40+i<=0x98ecf90;
+ i+=0xd10){
+id = getshort(0x98b4a40+i+0x56);
+if(id == 14){
+if(0x98b4a40+i != pplayer&&!getint(0x98b4a40+i+0x480)){
+setfloat(0x98b4a40+i+0x30, playerx+0, playery+0, playerz+0);
+setchar(0x98b4a40+i+0x894, 0x0);
+setchar(0x98b4a40+i+0x8b4, 0x0);}}}
+
+#cheat Gangs attacks v3
+pped = getint(0x08BA1D70);
+if(pped){
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480))
+pguard = getchar(p + 0x894);
+if(p&&pguard == 0xC){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pped);}}}
+
+#cheat Flashy Get Out a Car
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x10);}}
+
+#cheat You are Flashy man Cholo can't attack you
+pguard = getchar(pplayer + 0x56);
+if(pplayer&&pguard == 14){
+static timer;
+if(timer % 1 == 0)
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 93 || id == 94){
+if(p != player)
+setchar(p+0x894, 0x4);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat You are Flashy man Flashly can't attack you
+pguard = getchar(pplayer + 0x56);
+if(pplayer&&pguard == 14 || 34 || 35){
+static timer;
+if(timer % 1 == 0)
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x4);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man follow you
+pguard = getchar(pplayer + 0x56);
+if(pplayer&&pguard == 14){
+static timer;
+if(timer % 1 == 0)
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xC);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man follow you (Walked)
+pguard = getchar(pplayer + 0x56);
+if(pplayer&&pguard == 14){
+static timer;
+if(timer % 1 == 0)
+player = getint(0x08bc8170);
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xD);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man hate you
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x8);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Attackercar
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x16);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Runner
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x31);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Normal
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x4);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Stand?
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x1);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man TAXITAXI???
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x20);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Throwout
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x26);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Driving
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x17);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Scare you
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0x31);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Walkout
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xE);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Runout
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xF);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man runaway
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xA);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man runaway 2
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x894, 0xB);
+setint(p+0x890, pplayer);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Throws hands up.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x5);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Using weapon.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x10);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man In melee combat.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x11);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Aiming at another ped.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x16);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Running to vehicle.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x18);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Walking to vehicle.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x19);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Phone to head animation
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x24);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Jumping
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x2B);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Warp away and show up in the middle of Leaf Links
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x2C);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Fall down and get up animation
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x2D);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Fall down and get up animation 2
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x2E);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Lock on mode
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x32);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man In passenger seat of vehicle.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x33);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Warp back on the driverseat of the last entered vehicle
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x37);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Get wasted
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x39);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Get wasted 2
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x3A);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Entering Car
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x3D);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Exiting car.
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x3F);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Hands up/Back up animation
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x40);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Get busted
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x41);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy man Get drown in water
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 14){
+if(p != player)
+setchar(p+0x8B4, 0x44);}}}
+timer++;
+if(timer == 1)
+timer = 0;
+
+#cheat Flashy Pistol
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x5CC, 0x13);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x03);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Flashy SMG
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x604, 0x1B);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Flashy M249 (Freeze PSP)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x63C, 0x22);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Flashy Minigun
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x63C, 0x23);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Flashy Shotgun
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x5E8, 0x15);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x04);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Flashy handgun
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 14 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5CC, 0x14);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x03);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Flashy Bomb
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 14){
+if(p != player)
+setchar(p + 0x5B0, 0x0C);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);}}}
+
+#cheat Lock Scripted Ped (Actor) Spawns
+setchar(0x08BF26F8, 0x00);
+#off
+setchar(0x8BF26F8, 0x01);
+
+#cheat Flashy
+setchar(0x08BF37A0, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x32, 0xDD,
+0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37B0, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,
+0x00, 0x00, 0x00, 0x01, 0x00, 0x67);
+setchar(0x08BF37C0, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x31, 0x00, 0x00, 0xF8, 0x3B,
+0xBF, 0x08, 0xB0, 0x35, 0xBF, 0x08);
+setchar(0x08BF37D0, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37DC, 0xBE, 0xE2, 0x81, 0x05);
+setchar(0x08BF37E0, 0xE5, 0xDC, 0x81, 0x06, 0xD8, 0xD9, 0x81, 0x09, 0x48, 0x89,
+0x80, 0x08, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37F0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3800, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3810, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3820, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3830, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,
+0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00);
+setfloat(0x08BF3868, 470.858612);
+setfloat(0x08BF386C, 1171.563599);
+setfloat(0x08BF3870, -200.865997);
+setint(0x08BF3874, 14);
+setchar(0x08BF3878, 0xB3, 0x4A, 0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,
+0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,
+0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,
+0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,
+0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,
+0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);
+
+#cheat Flashy 1.1v
+setchar(0x08BF37A0, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x32, 0xDD,
+0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37B0, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,
+0x00, 0x00, 0x00, 0x01, 0x00, 0x67);
+setchar(0x08BF37C0, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x31, 0x00, 0x00, 0xF8, 0x3B,
+0xBF, 0x08, 0xB0, 0x35, 0xBF, 0x08);
+setchar(0x08BF37D0, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37DC, 0xBE, 0xE2, 0x81, 0x05);
+setchar(0x08BF37E0, 0xE5, 0xDC, 0x81, 0x06, 0xD8, 0xD9, 0x81, 0x09, 0x48, 0x89,
+0x80, 0x08, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37F0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3800, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3810, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3820, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3830, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,
+0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00);
+setint(0x08BF3874, 14);
+setchar(0x08BF3878, 0xB3, 0x4A, 0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,
+0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,
+0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,
+0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,
+0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,
+0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);

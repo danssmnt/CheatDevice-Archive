@@ -1,0 +1,277 @@
+#cheat Suspension Modifier
+static start;
+if (!start)
+size = 0.0;
+start = 1;
+if (buttons & CTRL_LTRIGGER && press & CTRL_LEFT){
+size = size-1;}
+if (buttons & CTRL_LTRIGGER && press & CTRL_RIGHT){
+size = size+1;}
+n = size;
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+if( size < 0 )
+setshort( 0x08e90bd8, 1, '-', hund, dec, unit, '.', fract, 0 );
+else
+setshort( 0x08e90bd8, 1, ' ', hund, dec, unit, '.', fract, 0 );
+setfloat(0x962e7a0+0x80, size);
+setfloat(0x962eb20+0x80, size);
+setfloat(0x962ea40+0x80, size);
+setfloat(0x962ec00+0x80, size);
+setfloat(0x96334A0+0x80, size);
+setfloat(0x962ece0+0x80, size);
+setfloat(0x962edc0+0x80, size);
+setfloat(0x962f060+0x80, size);
+setfloat(0x962f300+0x80, size);
+setfloat(0x962f140+0x80, size);
+setfloat(0x962ef80+0x80, size);
+setfloat(0x962f220+0x80, size);
+setfloat(0x962eea0+0x80, size);
+setfloat(0x962f3e0+0x80, size);
+setfloat(0x962f4c0+0x80, size);
+setfloat(0x962f680+0x80, size);
+setfloat(0x962f920+0x80, size);
+setfloat(0x962fa00+0x80, size);
+setfloat(0x962fbc0+0x80, size);
+setfloat(0x962fca0+0x80, size);
+setfloat(0x962fae0+0x80, size);
+setfloat(0x962fd80+0x80, size);
+setfloat(0x962fe60+0x80, size);
+setfloat(0x962ff40+0x80, size);
+setfloat(0x9630100+0x80, size);
+setfloat(0x9630020+0x80, size);
+setfloat(0x96301e0+0x80, size);
+setfloat(0x9634340+0x80, size);
+setfloat(0x9634180+0x80, size);
+setfloat(0x9630720+0x80, size);
+setfloat(0x96309c0+0x80, size);
+setfloat(0x96302c0+0x80, size);
+setfloat(0x96303a0+0x80, size);
+setfloat(0x9630560+0x80, size);
+setfloat(0x9630480+0x80, size);
+setfloat(0x9630640+0x80, size);
+setfloat(0x9630800+0x80, size);
+setfloat(0x96308e0+0x80, size);
+setfloat(0x9630aa0+0x80, size);
+setfloat(0x9630b80+0x80, size);
+setfloat(0x9630c60+0x80, size);
+setfloat(0x9631280+0x80, size);
+setfloat(0x96310c0+0x80, size);
+setfloat(0x9630fe0+0x80, size);
+setfloat(0x96311a0+0x80, size);
+setfloat(0x9631440+0x80, size);
+setfloat(0x9631740+0x80, size);
+setfloat(0x9631820+0x80, size);
+setfloat(0x9631ba0+0x80, size);
+setfloat(0x9631660+0x80, size);
+setfloat(0x96319e0+0x80, size);
+setfloat(0x9631c80+0x80, size);
+setfloat(0x9631d60+0x80, size);
+setfloat(0x9631f60+0x80, size);
+setfloat(0x9631e40+0x80, size);
+setfloat(0x9631ac0+0x80, size);
+setfloat(0x96323c0+0x80, size);
+setfloat(0x96322e0+0x80, size);
+setfloat(0x9632120+0x80, size);
+setfloat(0x9632200+0x80, size);
+setfloat(0x96324a0+0x80, size);
+setfloat(0x9632580+0x80, size);
+setfloat(0x9632660+0x80, size);
+setfloat(0x9632820+0x80, size);
+setfloat(0x9632900+0x80, size);
+setfloat(0x96329e0+0x80, size);
+setfloat(0x9632ac0+0x80, size);
+setfloat(0x9632f20+0x80, size);
+setfloat(0x9633000+0x80, size);
+setfloat(0x96332e0+0x80, size);
+setfloat(0x9633120+0x80, size);
+setfloat(0x96333c0+0x80, size);
+setfloat(0x96334a0+0x80, size);
+setfloat(0x9633200+0x80, size);
+setfloat(0x9633880+0x80, size);
+setfloat(0x96340a0+0x80, size);
+setfloat(0x9633d20+0x80, size);
+setfloat(0x9633ee0+0x80, size);
+setfloat(0x9633fc0+0x80, size);
+setfloat(0x9634260+0x80, size);
+setfloat(0x9634420+0x80, size);
+setfloat(0x9634500+0x80, size);
+setfloat(0x9634800+0x80, size);
+
+
+#cheat Wheelsize Changer
+static start;
+if (!start)
+size = 0;
+start = 1;
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+size = size-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+size = size+1;}
+setfloat(0x935E198, size);
+setfloat(0x936E2D8, size);
+setfloat(0x936E578, size);
+setfloat(0x936CB38, size);
+setfloat(0x936C0B8, size);
+setfloat(0x936A678, size);
+setfloat(0x936A3D8, size);
+setfloat(0x936A138, size);
+setfloat(0x9369BF8, size);
+setfloat(0x9369958, size);
+setfloat(0x93696B8, size);
+setfloat(0x9369418, size);
+setfloat(0x9369178, size);
+setfloat(0x9368ED8, size);
+setfloat(0x9368C38, size);
+setfloat(0x9368998, size);
+setfloat(0x93679D8, size);
+setfloat(0x9367738, size);
+setfloat(0x9366778, size);
+setfloat(0x93664D8, size);
+setfloat(0x9365F98, size);
+setfloat(0x9365CF8, size);
+setfloat(0x9365A58, size);
+setfloat(0x9364A98, size);
+setfloat(0x93647F8, size);
+setfloat(0x9364558, size);
+setfloat(0x9363058, size);
+setfloat(0x9362098, size);
+setfloat(0x9360B98, size);
+setfloat(0x9360658, size);
+setfloat(0x9360118, size);
+setfloat(0x935FE78, size);
+setfloat(0x935FBD8, size);
+setfloat(0x935F158, size);
+setfloat(0x935EC18, size);
+setfloat(0x935E438, size);
+
+
+#cheat The fastest Boat
+pspawn = 0x08E81290;
+setint(pspawn, 185);
+setfloat(pspawn + 0x4, -595.83, -1508.85, 6.50, 270);
+
+
+#cheat Turn the Vice Point Mall BMX into another Vehicle
+pspawn = 0x08E82CA0;
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 178;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+pobject = pobject+1;}
+setint(pspawn, pobject);
+
+
+#cheat ZOMBIES
+setchar(0x08bb32c8, 1);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setchar(0x08bb10d4, 1);
+setchar(0x08BB329C, 0xFF);
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) {
+setchar(0x098b4a40 + i + 0x4A, 32);
+setchar(0x098b4a40 + i +0x1cb, 0x3f);
+setchar(0x098b4a40 + i +0x578, 0x01);
+setchar(0x098b4a40 + i +0x87c, 0x1e);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x00);
+setchar(0x098b4a40 + i + 0x894, 0x8);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+x++;
+if(x==500)
+x=0;
+
+
+#cheat Increased Traffic
+setchar(0x08BB329C, 0x00);
+
+
+#cheat No Traffic
+setchar(0x08BB329C, 0xFF);
+
+
+#cheat Equip any Ped with the SMG
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x610, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x19);
+setchar(pped+0x87c, 0x1e);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);}
+
+
+#cheat Adjust Camera Distance to 0
+setfloat(0x8bc86c0, 0);
+setfloat(0x8bc8684, 0);
+
+#cheat Adjust Camera Distance to 2
+setfloat(0x8bc86c0, 2);
+setfloat(0x8bc8684, 2);
+
+#cheat Adjust Camera Distance to 4
+setfloat(0x8bc86c0, 4);
+setfloat(0x8bc8684, 4);
+
+#cheat Adjust Camera Distance to 6
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+
+#cheat Adjust Camera Distance to 8
+setfloat(0x8bc86c0, 8);
+setfloat(0x8bc8684, 8);
+
+#cheat Adjust Camera Distance to 10
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+
+#cheat Get in the Passenger seat of a car
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);}
+
+#cheat Get the Scorpion with unlimited ammo
+setint(pplayer+0x610, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x05);
+setchar(pplayer+0x604, 0x18);
+
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);
+setfloat(sub+0x8, 500);
+setint(sub+0x14, 1000);
+setfloat(sub+0x18, 5000);
+setfloat(sub+0x44, 0.4, 0.4, 0.4);}
+off();
+
+#cheat Position Reset
+sethex(0x098B52F4, 00);
+
+#cheat Enter Driveby Mode
+setchar(pplayer+0x894, 0x00);
+setchar(pplayer+0x8B4, 0x00); 
+

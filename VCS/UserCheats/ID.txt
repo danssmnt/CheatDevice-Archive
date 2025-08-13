@@ -1,0 +1,1310 @@
+#cheat Create AI Helicopter with girls
+helispawn = 0x08E81D40;
+setint(helispawn, 260);
+setfloat(helispawn + 0x04, 295.37, 269.99, 17.70, 0);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 138)
+{
+setfloat(0x098B4A40 + i + 0x30, 296.38, 278.32, 17.71);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+id = getshort(0x098B4A40 + i + 0x56);
+if(id == 138)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+heli = getint(0x098B4A40 + i + 0x0484);
+pilots = 1;
+}
+}
+}
+}
+#off
+helispawn = x = y = checkx = checky = pedspawn = pilots = id = heli = 0;
+setint(0x08E81D40, 184);
+setfloat(0x08E81D44, 88.300003, 289.299988, 19.100000, 318.000000);
+
+#cheat solar smash mod
+#cheat Mission Trigger
+setint(0x08E82D90, 205);
+setfloat(0x08E82D94, 488.494904, -1725.014282, 7.801000);
+setchar(0x08BEE45C, 2);
+setint(0x08BEE460, 205);
+setchar(0x08BEE464, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE468, 488.494904, -1725.014282, 7.801000);
+setchar(0x08BEE474, 1);
+
+#cheat Deactivate Land, Sea and Air Ace Mission
+setchar(0x08BEE3F8, 0);
+#off
+setchar(0x08BEE3F8, 1);
+
+#cheat Viceport Mission Trigger
+setint(0x08E82E20, 198);
+setchar(0x08BEE674, 2);
+setint(0x08BEE678, 198);
+setchar(0x08BEE67C, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE680, -259.351990, -1658.676025, 5.410000);
+setchar(0x08BEE68C, 1);
+
+#cheat Little Haiti Mission Trigger
+setint(0x08E82E50, 198);
+setchar(0x08BEE674, 2);
+setint(0x08BEE678, 198);
+setchar(0x08BEE67C, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE680, -1179.552002, -40.727001, 5.534000);
+setchar(0x08BEE68C, 1);
+
+#cheat Deactivate Hover Race Missions
+setchar(0x08BEE828, 0);
+#off
+setchar(0x08BEE828, 1);
+
+#cheat Mission Trigger
+setint(0x08E82D60, 222);
+setchar(0x08BEEAA4, 2);
+setint(0x08BEEAA8, 222);
+setchar(0x08BEEAAC, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEEAB0, -1276.823486, -1085.378784, 13.723500);
+setchar(0x08BEEABC, 1);
+
+#cheat Deactivate Crims on Wings Mission
+setchar(0x08BEE828, 0);
+#off
+setchar(0x08BEE828, 1);
+
+#cheat Mission Trigger
+setint(0x08E82D30, 275);
+setchar(0x08BEECBC, 2);
+setint(0x08BEECC0, 275);
+setchar(0x08BEECC4, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEECC8, -1175.068970, -1103.093506, 14.410400);
+setchar(0x08BEECD4, 1);
+
+#cheat Deactivate Skywolf Mission
+setchar(0x08BEEC58, 0);
+#off
+setchar(0x08BEEC58, 1);
+
+#cheat Mission Trigger
+setint(0x08E82CD0, 213);
+setchar(0x08BEF51B, 2);
+setint(0x08BEF520, 213);
+setchar(0x08BEF524, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEF528, -1236.356201, -901.205688, 13.929900);
+setchar(0x08BEF534, 1);
+
+#cheat Deactivate Vice Sights Mission
+setchar(0x08BEF4B8, 0);
+#off
+setchar(0x08BEF4B8, 1);
+
+#cheat Deactivate Security Guards Spawn
+setchar(0x08BF24E0, 0);
+#off
+setchar(0x08BF24E0, 1);
+
+#cheat Select Weapon 1 in the Buy Menu
+setchar(0x08BF255C, 1);
+
+#cheat Gunshop Location Modifier
+setchar(0x08BF2544, ID);
+
+#cheat Reset Game Status
+setchar(0x08BF2D3C, 2);
+
+#cheat Savehouse Location Modifier
+setchar(0x08BF2DB0, ID);
+
+#cheat Store Location Modifier
+setchar(0x08BF3848, ID);
+
+#cheat Force the Player to leave Store Interiors
+setchar(0x08BF3884, 0);
+off()
+
+#cheat Reload Empire Site Script
+setchar(0x08BF3C74, 0);
+off()
+
+#cheat Empire Site Vehicle Spawn
+setint(0x08BF3CB8, ID);
+setfloat(0x08BF3CC0, X, Y, Z);
+
+#cheat Force the Player to leave Empire Site Interiors
+setchar(0x08BF3CCC, 0);
+off()
+
+#cheat Empire Site Location Modifier
+setchar(0x08BF3DFC, ID);
+
+#cheat Trigger Empire Attacks
+setchar(0x08BF42B8, 7);
+
+#cheat Unlockable Vehicle Spawn
+setfloat(0x08BF40C4, X, Y, Z);
+setint(0x08BF40D8, 2, 4);
+setint(0x08BF40DC, ID);
+
+#cheat hakdog!!!
+
+#cheat revan real
+#cheat survivalcraft mod
+#cheat just a test
+setchar(0x08E93604, 1, 't', 'e', 's', 't');
+#cheat Teleport to the Car
+car = 0x8E81290;
+setint(car, 183);
+setfloat(car + 4, -1077.40, 312.63, 11.26, 270);
+moveto(-1077.40, 312.63, 11.26); object(0x1d31,0,0,0);
+moveto(-1063.19, 312.05, 11.27); object(0x1d31,0,0,0);
+moveto(-1063.08, 334.78, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.03, 335.52, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.91, 320.80, 11.27); object(0x1d31,0,0,0);
+moveto(-1085.16, 320.45, 11.27); object(0x1d31,0,0,0);
+teleport(-1054.93, 319.51, 11.26);
+#cheat Make Car follow Path
+// Enter the car to make it follow the path !
+static speed;
+static currentx;
+static currenty;
+static currentz;
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer + 0x894, 0x11);
+setchar(pplayer + 0x8B4, 0x18);}
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 11.26;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 11.27;
+checkpoint3x = -1063.08;
+checkpoint3y = 334.78;
+checkpoint3z = 11.27;
+checkpoint4x = -1104.03;
+checkpoint4y = 335.52;
+checkpoint4z = 11.27;
+checkpoint5x = -1104.91;
+checkpoint5y = 320.80;
+checkpoint5z = 11.27;
+checkpoint6x = -1085.16;
+checkpoint6y = 320.45;
+checkpoint6z = 11.27;
+checkpoint7x = -1077.40;
+checkpoint7y = 312.63;
+checkpoint7z = 11.26;
+if(!currentx && pcar){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);
+setfloat(opp + 0x30, -1077.40, 312.63, 11.26);
+speed = 0.01;}
+if(pcar){
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + d3 * speed);
+checkx = currentx - getfloat(opp + 0x30);
+checky = currenty - getfloat(opp + 0x34);
+checkz = currentz - getfloat(opp + 0x38);
+if(sqrt(checkx * checkx + checky * checky + checkz * checkz) < 5 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint7x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.01;}
+d1 = currentx - getfloat(opp + 0x30);
+d2 = currenty - getfloat(opp + 0x34);
+d3 = currentz - getfloat(opp + 0x38);}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Interiors won't disappear
+// Activate inside an interior and use a teleport to leave it !
+setchar(0x08B8EBA4, 0x00);
+setchar(0x08E937A8, 0x00);
+setchar(0x08BB194C, 0x00);
+setchar(0x08BF26F8, 0x00);
+#off
+setchar(0x8BF26F8, 0x01);
+
+#cheat Lock Ped Spawns
+setchar(0x08BF26F8, 0x00);
+#off
+setchar(0x8BF26F8, 0x01);
+#cheat Teleport to Entrance of the Mall
+teleport(485.53, 1123.25, 16.39);
+
+#cheat Freefall
+setfloat(pplayer + 0x78,  -0.03 * xstick);
+setfloat(pplayer + 0x70,  0.03 * ystick * getfloat(pplayer));
+setfloat(pplayer + 0x74,  0.03 * ystick * getfloat(pplayer+4));
+
+#cheat unknown cheat 1
+pobject = getint(0x0994F460);
+check = getshort(pobject + 0x56);
+if (check && check == 343) {
+
+#cheat unknown cheat 2
+setfloat(obj+0x38, getfloat(pobj+0x038)+3);
+[here?]propagateobject();}}
+//and add another }?
+
+#cheat unknown cheat 3
+X = Left/Right Movement
+Y = Forward/Backward Movement
+Z = Up/Down Movement
+0  = Helicopter stops
++1 = Helicopter moves forwards
+-1 = Helicopter moves backwards
+
+#cheat unknown cheat 4
+pobject = getint(0x0994F460);
+check = getshort(pobject + 0x56);
+if (check && check != 7350) {
+
+#cheat Spawn 2 Fires at the Compound
+fire = 0x08BE3A20;
+setchar(fire, 1);
+setfloat(fire + 0x10, -1077.40, 312.60, 11.26);
+fire += 0x40;
+setchar(fire, 1);
+setfloat(fire + 0x10, -1077.40, 314.60, 11.26);
+fire += 0x40;
+
+#cheat Dual Wielded test
+//origanal cheat by upaluppa just editing so credit to upasetint
+(pplayer+0x610, 0xffffff);
+setchar(pplayer+0x604, 0x18);
+pweapon = getchar(pplayer+0x789);
+plock = getchar(pplayer+0x1c8);
+if(pweapon == 3 || pweapon == 8){
+if(plock == 3){
+setchar(pplayer+0x550, 1);}
+if(plock == 8){
+setchar(pplayer+0x550, 0);}}
+#off
+setchar(pplayer+0x550, 0);
+
+#cheat Screw the World map
+setchar(0x08E752AB, 0x42);
+setchar(0x08E75AEB, 0x42);
+
+#cheat Dual Wielded test2(dont works)
+if(press&CTRL_CIRCLE)
+setint(pplayer+0x610, 0xffffff);
+setchar(pplayer+0x604, 0x18);
+pweapon = getchar(pplayer+0x789);
+plock = getchar(pplayer+0x1c8);
+if(pweapon == 3 || pweapon == 5){
+if(plock == 8)+
+if(plock == 3);};;
+#cheat Dual Wielded test1(dont works)
+if(press&CTRL_CIRCLE)
+setint(pplayer+0x610, 0xFF);
+setchar(pplayer+0x604, 0x18);
+pweapon = getchar(pplayer+0x789);
+plock = getchar(pplayer+0x1c8);
+if(pweapon == 3 || pweapon == 5){
+if(plock == 8)+
+if(plock == 3);};;
+
+#cheat Dual Wielded
+// Use it with the Pistol
+pweapon = getchar(pplayer + 0x0789);
+plock = getchar(pplayer + 0x01C9);
+if(pweapon == 3 || pweapon == 5){
+if(plock == 5){
+setchar(pplayer + 0x0550, 1);}
+if(plock == 4){
+setchar(pplayer + 0x0550, 0);}}
+#off
+setchar(pplayer + 0x0550, 0);
+
+#cheat World Edits
+setchar(0x08BC7383, 0x47);
+#cheat World Draw Distance Control?
+setchar(0x08BC7382, 0xC8);
+HINT: Draw Distance is locked at max 0xFF Minus down to 0xE0 and watch buildings in the distance and closer dissapear piece by piece. 
+#cheat World Building Light Control?
+setchar(0x08BC7381, 0xE7);
+0xFF is MAX ^
+#cheat Algodoo Mod!!
+
+#cheat dutchguy's hideout V3 final version(explaned version)
+moveto(262.59,276.99,8.91); object(0x1C93,0,0,203);
+move(32.65,36.95,5.60); object(0x1C99,0,0,265);
+move(0.58,-6.84,0.00); object(0x1C99,0,0,265);
+move(-2.89,2.51,-0.10); object(0x1C99,0,0,181);
+move(0.01,1.60,0.00); object(0x1C99,0,0,181);
+move(1.76,0.85,1.80); object(0x1C99,0,265,177);
+move(0.17,-3.20,0.00); object(0x1C99,0,265,177);
+move(3.33,0.18,-0.30); object(0x1C99,0,265,177);
+move(-0.14,2.60,0.00); object(0x1C99,0,265,177);
+move(6.90,-34.92,-0.30); object(0x1C9D,0,0,8);
+move(0.11,-0.75,0.00); object(0x1C9D,0,0,3);
+pspawn = 0x08E81290;
+setint(pspawn, 262);
+setfloat(pspawn + 4, 294.69,270.58,17.70);
+pickup = 0x08C6A330;
+pspawn += 0x30;
+setint(pspawn, 208);
+setfloat(pspawn + 4, 305.85,273.67,16.22);
+pspawn += 0x30;
+setint(pspawn, 212);
+setfloat(pspawn + 4, 311.01,277.85,15.23);
+pspawn += 0x30;
+setint(pspawn, 268);
+setfloat(pspawn + 4, 321.95,281.59,13.52);
+setfloat(pickup, 294.09,307.74,13.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0161);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 294.05,312.78,13.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 0xFF);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x01d3);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 293.85,310.4213,52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0169);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup,278.97,267.64,12.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x015A);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 281.49,267.70,13.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x015E);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 294.25,298.77,17.78);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0160);
+ // Object ID
+setchar(pickup + 0x38, 0x03);
+ // Pickup type
+ (01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 316.83,285.53,13.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0167);
+ // Object ID
+setchar(pickup + 0x38, 0x01);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 301.15,301.08,17.63);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0155);
+ // Object ID
+setchar(pickup + 0x38, 0x01);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 316.83,285.53,13.52);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0167);
+ // Object ID
+setchar(pickup + 0x38, 0x01);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+pickup += 0x40;
+setfloat(pickup, 301.15,301.08,17.63);
+ // Spawning location of the pickup
+setint(pickup + 0x2C, 99999);
+ // Amount of ammo for the pickup (Set to FF for non weapon pickups)
+setshort(pickup + 0x34, 0x0155);
+ // Object ID
+setchar(pickup + 0x38, 0x01);
+ // Pickup type 
+(01 = Buyable; 02 = One Time; 03 = Respawning)
+teleport(308.06,288.65,16.21);
+
+#cheat Police RC car
+sethex(0x09ab9916, FF);
+ //size car body
+sethex(0x09ab9917, 3F);
+ //size car body
+sethex(0x09ab991a, 00);
+ //size car body
+sethex(0x09ab9926, AF);
+ //move car body
+sethex(0x09ab9927, BF);
+ //move car body
+sethex(0x09ab992a, 40);
+ //move car body
+sethex(0x09ab992b, 3E);
+ //move car body
+sethex(0x09abe776, 00);
+ //back left door
+sethex(0x09abe77a, 00);
+ //back left door
+sethex(0x09abe786, 9F);
+ //move left door
+sethex(0x09abe787, BF);
+ //move left door
+sethex(0x09abe78b, 3E);
+ //move left door
+sethex(0x09abf746, 00);
+ //back right door
+sethex(0x09abf74a, 00);
+ //back right door
+sethex(0x09abf756, 9F);
+ //move right door
+sethex(0x09abf757, BF);
+ //move right door
+sethex(0x09abf75b, 3E);
+ //move right door
+sethex(0x09abd496, 00);
+ //front left door
+sethex(0x09abd49a, 00);
+ //front left door
+sethex(0x09abd4a6, E4);
+ //move front left door
+sethex(0x09abd4a7, BF);
+ //move front left door
+sethex(0x09abd4ab, 3E);
+ //move front left door
+sethex(0x09ac2ab6, 00);
+ //front right door
+sethex(0x09ac2aba, 00);
+ //front right door
+sethex(0x09ac2ac6, E0);
+ //move front right door
+sethex(0x09ac2ac7, BF);
+ //move front right door
+sethex(0x09ac2acb, 3E);
+ //move front right door
+sethex(0x09ab9326, 00);
+ //hood
+sethex(0x09ab932a, 00);
+ //hood
+sethex(0x09ab9336, E8);
+ //move hood
+sethex(0x09ab9337, BF);
+ //move hood
+sethex(0x09ab933a, 5D);
+ //move hood
+sethex(0x09ab85d6, 00);
+ //back seat
+sethex(0x09ab85da, 00);
+ //back seat
+sethex(0x09ab85e6, B8);
+ //move back seat
+sethex(0x09ab85e7, BF);
+ //move back seat
+sethex(0x09ab85ea, 30);
+ //move back seat
+sethex(0x09ab85eb, 3E);
+ //move back seat
+sethex(0x09ab8d06, 00);
+ //back bumper
+sethex(0x09ab8d0a, 00);
+ //back bumper
+sethex(0x09ab8d17, BB);
+ //move back bumper
+sethex(0x09ab8d1b, 3E);
+ //move back bumper
+sethex(0x09ac19d6, 00);
+ //front bumper
+sethex(0x09ac19da, 00);
+ //front bumper
+sethex(0x09ac19e6, 29);
+ //move front bumper
+sethex(0x09ac19e7, C0);
+ //move front bumper
+sethex(0x09ac19eb, 3E);
+ //move front bumper
+sethex(0x09ac4116, 00);
+ //siren
+sethex(0x09ac411a, 00);
+ //siren
+sethex(0x09ac4126, B3);
+ //move siren
+sethex(0x09ac4127, BF);
+ //move sirens
+ethex(0x09ac412a, 30);
+ //move siren
+sethex(0x09ac412b, 3E);
+ //move siren
+sethex(0x09ac4c36, 00);
+ //engine
+sethex(0x09ac4c3a, 00);
+ //engine
+sethex(0x09ac4c46, C0);
+ //move engine
+sethex(0x09ac4c47, BF);
+ //move engine
+sethex(0x09ac4c4a, 30);
+ //move engine
+sethex(0x09ac4c4b, 3E);
+ //move engine
+sethex(0x09ab96e6, 00);
+ //trunk
+sethex(0x09ab96ea, 00);
+ //trunk
+sethex(0x09ab96f6, DF);
+ //move trunk
+sethex(0x09ab96fa, 5D);
+ //move trunk
+
+#cheat All Peds are Shopkeepers
+for(x = 0;
+ 0x098b4a40 + x <= 0x098ecf90; x += 0xd10){
+setshort(0x098b4a40 + x + 0x56, 152);}
+
+#cheat No police font on cars
+setchar(0x09abf85e, 3);
+ //back right door font
+setchar(0x09ac2bce, 4);
+ //front right door font
+setchar(0x09ac2bfe, 4);
+ //front right door font
+setchar(0x09abe88e, 3);
+ //back left door font
+setchar(0x09abe8be, 3);
+ //back left door font
+
+#cheat Infinate Adrenaline
+setchar(0x08BB3B5B,  0x8f);
+#off
+setchar(0x08BB3B5B,  0x3f);
+
+#cheat AI Driving
+for(i = 0;
+ 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10){
+if(0x098B4A40 + i != pplayer){
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);}}
+off();
+
+#cheat Revive Dead Peds
+for(i = 0;
+ 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10){
+health = getfloat(0x098B4A40 + i + 0x04E4);
+if(health == 0){
+setchar(0x098B4A40 + i + 0x08B4, 0x32);
+setfloat(0x098B4A40 + i + 0x04E4, 100.0);}}
+
+#cheat Remove Compound Wall Texture
+setchar(0x0871D280, 0x00);
+#off
+setchar(0x0871D280, 0x01);
+#cheat Funky Compound Walls
+setchar(0x0871D288, 0x01);
+#off
+setchar(0x0871D288, 0x04);
+#cheat Low Res Textures
+setchar(0x0871D28F, 0xC6);
+#off
+setchar(0x0871D28F, 0xC7);
+
+#cheat Enter any vehicle as a passenger
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer + 0x0894, 0x11);
+setchar(pplayer + 0x08B4, 0x18);}
+setchar(0x08E93604, 1, 'W', 'A', 'R', 'N', 'I', 'N', 'G', ':', ' ', 'A', 'v', 'o', 'i', 'd', ' ', 'T', 'h', 'e', ' ', 'P','E','D','S','!','!','!','!',' ','B','e',' ','F','a''i','l','e','d',);
+
+#cheat Spawn Part of a Security Guard to the Mall
+setfloat(0x0997FC70, 451.36, 1141.35, -199.83);
+#cheat Spawn Security Guard at the Compound
+ // From the ped pointers after pplayerped = 0x098B5780;
+setfloat(ped, -1077.40, 312.63, 11.26);
+setshort(ped + 0x26, 99);
+ // Model ID
+
+#cheat Model ID Test 1
+setshort(0x08BF3C8C, 123);
+#cheat Model ID Test 2
+setshort(0x08BF3C90, 123);
+
+#cheat Work in Progress
+setchar(0x08BF233C, 1);
+setfloat(0x08BF2348, -1077.40);
+setfloat(0x08BF2350, 312.63);
+setfloat(0x08BF2358, 11.26);
+
+#cheat Mark Nalgas Grandes on your Map
+icon = 0x08E8F560;
+setfloat(icon, -1074.18, -84.62, 11.40);
+setchar(icon + 0x19, 0x0B);
+#cheat Teleport to Nalgas Grandes
+teleport(-1074.18, -84.62, 11.40);
+#cheat Force the Player to leave Nalgas Grandes
+setchar(0x08BF3884, 0);
+off();
+#cheat Turn Nalgas Grandes into Curve
+setchar(0x08BF3848, 0x05);
+#off
+setchar(0x08BF3848, 0x06);
+
+#cheat Adjust Camera Distance to 0
+setfloat(0x8bc86c0, 0);
+setfloat(0x8bc8684, 0);
+#cheat Adjust Camera Distance to 2
+setfloat(0x8bc86c0, 2);
+setfloat(0x8bc8684, 2);
+#cheat Adjust Camera Distance to 4
+setfloat(0x8bc86c0, 4);
+setfloat(0x8bc8684, 4);
+#cheat Adjust Camera Distance to 6
+setfloat(0x8bc86c0, 6);
+setfloat(0x8bc8684, 6);
+#cheat Adjust Camera Distance to 8
+setfloat(0x8bc86c0, 8);
+setfloat(0x8bc8684, 8);
+#cheat Adjust Camera Distance to 10
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+#cheat Adjust Camera Distance to 50
+setfloat(0x8bc86c0, 50);
+setfloat(0x8bc8684, 50);
+#cheat Adjust Camera Distance to 100
+setfloat(0x8bc86c0, 100);
+setfloat(0x8bc8684, 100);
+#cheat Adjust Camera Distance to 500
+setfloat(0x8bc86c0, 500);
+setfloat(0x8bc8684, 500);
+#cheat Adjust Camera Distance to 1000
+setfloat(0x8bc86c0, 1000);
+setfloat(0x8bc8684, 1000);
+#cheat Adjust Camera Distance to 5000
+setfloat(0x8bc86c0, 5000);
+setfloat(0x8bc8684, 5000);
+#cheat Adjust Camera Distance to 10000
+setfloat(0x8bc86c0, 10000);
+setfloat(0x8bc8684, 10000);
+#cheat Top Down View
+// Addresses found by Vettfan88
+setchar(pplayer + 0x10, 0x18, 0x32, 0x15, 0x3C);
+ // Set Camera Direction to Player Direction
+setfloat(0x08BC7FC4, -2);
+ // Enable Top Down Viewsetfloat(0x08BC86C0, 10);
+ // On Foot Camera Zoomsetfloat(0x08BC8684, 15);
+ // In Vehicle Camera Zoom
+
+#cheat Trigger Empire Attacks
+setchar(0x08BF42B8, 7);
+
+#cheat Object Size Test
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x01BB, 0, 0, 179);
+selectobject(barrel);
+setfloat(barrel + 0x00, 60);
+setfloat(barrel + 0x10, 60);
+propagateobject();
+
+#cheat Object Size Test
+moveto(-1077.40, 312.63, 11.26);
+ //understandbarrel = object(0x01BB, 0, 0, 179);
+ //understandsetfloat(barrel + 0x00, 60);
+ //understand that 60 is the size and lower number makes the object smaller, don't understand 0x00setfloat(barrel + 0x10, 60);
+ //same here, and why does the 60 need to be done twice?
+
+#cheat Object Size Test
+moveto(-1077.40, 312.63, 11.26); // the coordinates, where the object appears
+barrel = object(0x01BB, 0, 0, 179); // the object id and rotation
+setfloat(barrel + 0x00, 60); //+ 0x00 can be left out, since 0 is nothing ! blush.gif
+setfloat(barrel + 0x10, 60); // I don't know what that address does...
+
+#cheat Stretch Object ALL
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x01BB, 0, 0, 179);
+setfloat(barrel, 10);
+setfloat(barrel + 0x04, 10);
+setfloat(barrel + 0x08, 10);
+
+#cheat Stretch Object in X Direction
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x01BB, 0, 0, 179);
+setchar(barrel, 10);
+
+#cheat Stretch Object in X Direction
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x01BB, 0, 0, 179);
+sethex(barrel, 0x0A);
+
+#cheat Some Cheat 1
+setchar(0x08B8EBA4, 0x01);
+setchar(0x08B8EBC4, 0x02);
+
+#cheat Some Cheat 2
+myaddress = 0x08B8EBA4;
+setchar(myaddress, 0x01);
+setchar(myaddress + 0x20, 0x02);
+
+#cheat Some Cheat 3
+somename = 0x08B8EBC4;
+setchar(somename - 0x20, 0x01);
+setchar(somename, 0x02);
+
+#cheat Some Cheat 4
+somename = 0x08B8EBC4;
+setchar(somename, 0x02);
+setchar(somename - 0x20, 0x01);
+
+#cheat Some Cheat 5
+myaddress = 0x08B8EBA4;
+myaddress2 = 0x08B8EBC4;
+setchar(myaddress, 0x01);
+setchar(myaddress2, 0x02);
+
+#cheat Spawn barrel?
+object = 0x0943708B;
+setfloat(object, -1077.40, 312.63, 11.26);
+object += 0x60;
+
+#cheat Turn the nearest object into a yellow barrel
+nearestobject = getint(0x0994F460);
+setshort(nearestobject + 0x56, 0x01BB);
+
+#cheat Stretch Object
+moveto(-1077.40, 312.63, 30.26);
+barrel = object(0x01BB, 0, 0, 179);
+setfloat(barrel + 0x10, 10);
+ // X Sizesetfloat(barrel + 0x04, 10);
+ // Y Sizesetfloat(barrel + 0x08, 10);
+ // Z Size
+
+#cheat Stretch Object
+moveto(-1077.40, 312.63, 30.26);
+barrel = object(0x01BB, 0, 0, 179);
+setfloat(barrel, 10);
+ // X Sizesetfloat(barrel + 0x04, 10);
+ // Y Sizesetfloat(barrel + 0x08, 10);
+ // Z Size
+
+#cheat Stretch Object <cheat name Obviously
+moveto(-1077.40, 312.63, 30.26);
+ <Move object to Locationbarrel = object(0x01BB, 0, 0, 179);
+ <Barrel object addresssetfloat(barrel + 0x10, 10);
+ // X Size <X cords Screw object Xsetfloat(barrel + 0x04, 10);
+ // Y Size <Y cords Screw object Ysetfloat(barrel + 0x08, 10);
+ // Z Size <Z cords Screw object Z
+
+#cheat Reload Empire Site Vehicle Spawn
+setchar(0x08BF3C74, 0);
+#cheat Set Vehicle ID to VCPD Cheetah
+setint(0x08BF3CB8, 204);
+#cheat Coordinates
+setfloat(0x08BF3CC0, X, Y, Z);
+
+#cheat Spawn Black Male Vendor in FASHION -MODE-
+setchar(0x08BF385C, 0x13);
+setchar(0x08BF3860, 0xE0, 0x7D, 0xC7, 0x40, 0x06, 0x00, 0x00, 0x00);
+setfloat(0x08BF3868, 470.858612);
+setfloat(0x08BF386C, 1171.563599);
+setfloat(0x08BF3870, -200.865997);
+setint(0x08BF3874, 49, 0, 0, 0);
+setchar(0x08BF3878, 0xB3, 0x4A, 0xB4, 0x42);
+setint(0x08BF387C, 34, 0, 0, 0);
+setchar(0x08BF3880, 0x13);
+
+#cheat Spawn Fast Food Vendor
+setchar(0x08BF3580, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00);
+setchar(0x08BF3590, 0x32, 0xDD, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF35A0, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x67, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x32, 0x00, 0x00);
+setchar(0x08BF35B0, 0xC8, 0x37, 0xBF, 0x08, 0x98, 0x33, 0xBF, 0x08, 0x16, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF35C0, 0x03, 0xF0, 0x01, 0x00, 0xD8, 0xF1, 0x81, 0x37, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3600, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xB4, 0x00, 0x00);
+setchar(0x08BF3610, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xB4, 0x00, 0x00);
+setchar(0x08BF3620, 0x66, 0x66, 0xD6, 0xC4, 0x33, 0x73, 0x93, 0xC3, 0xC3, 0xF5, 0x84, 0x41, 0xAE, 0x37, 0xD5, 0xC4);
+setchar(0x08BF3630, 0x33, 0x73, 0x93, 0xC3, 0xC3, 0xF5, 0x84, 0x41, 0xCD, 0xCC, 0x4C, 0x3E, 0xCD, 0xCC, 0xCC, 0x3D);
+setchar(0x08BF3640, 0xCD, 0xCC, 0xCC, 0x3D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37A0, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37B0, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x67);
+setchar(0x08BF37C0, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x31, 0x00, 0x00, 0xF8, 0x3B, 0xBF, 0x08, 0xB0, 0x35, 0xBF, 0x08);
+setchar(0x08BF37D0, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x9C, 0xDC, 0x01, 0x00, 0xBE, 0xE2, 0x81, 0x05);
+setchar(0x08BF37E0, 0xE5, 0xDC, 0x81, 0x06, 0xD8, 0xD9, 0x81, 0x09, 0x48, 0x89, 0x80, 0x08, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37F0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3800, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3810, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3820, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3830, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00, 0xC5, 0xFF, 0xE0, 0x43, 0xDD, 0x52, 0x89, 0x44);
+setchar(0x08BF3870, 0xB3, 0xDD, 0x48, 0xC3, 0x7B, 0x00, 0x00, 0x00, 0xB3, 0x4A, 0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD, 0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08, 0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00, 0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);
+off();
+
+#cheat Spawn Fast Food Vendor 2
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00, 0xC5, 0xFF,0xE0, 0x43, 0xDD, 0x52, 0x89, 0x44);
+setchar(0x08BF3870, 0xB3, 0xDD, 0x48, 0xC3, 0x7B, 0x00, 0x00, 0x00, 0xB3, 0x4A,0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);
+
+#cheat Peds follow you
+sethex(0x08BACDF5, 01);
+
+#cheat Spawn Ped at the Mall
+setchar(0x08BF37A0, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x32, 0xDD,0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37B0, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,0x00, 0x00, 0x00, 0x01, 0x00, 0x67);
+setchar(0x08BF37C0, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x31, 0x00, 0x00, 0xF8, 0x3B,0xBF, 0x08, 0xB0, 0x35, 0xBF, 0x08);
+setchar(0x08BF37D0, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37DC, 0xBE, 0xE2, 0x81, 0x05);
+setchar(0x08BF37E0, 0xE5, 0xDC, 0x81, 0x06, 0xD8, 0xD9, 0x81, 0x09, 0x48, 0x89,0x80, 0x08, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37F0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3800, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3810, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3820, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3830, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00, 0xC5, 0xFF,0xE0, 0x43, 0xDD, 0x52, 0x89, 0x44);
+setchar(0x08BF3870, 0xB3, 0xDD, 0x48, 0xC3, 0x7B, 0x00, 0x00, 0x00, 0xB3, 0x4A,0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);
+
+#cheat Spawn Black Male Vendor at the Mall
+setchar(0x08BF37A0, 0x00, 0x00, 0x00, 0x00, 0x32, 0xDD, 0x04, 0x00, 0x32, 0xDD,0x04, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37B0, 0xD7, 0xB7, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00,0x00, 0x00, 0x00, 0x01, 0x00, 0x67);
+setchar(0x08BF37C0, 0x61, 0x5F, 0x61, 0x72, 0x6D, 0x31, 0x00, 0x00, 0xF8, 0x3B,0xBF, 0x08, 0xB0, 0x35, 0xBF, 0x08);
+setchar(0x08BF37D0, 0x15, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);setchar(0x08BF37DC, 0xBE, 0xE2, 0x81, 0x05);
+setchar(0x08BF37E0, 0xE5, 0xDC, 0x81, 0x06, 0xD8, 0xD9, 0x81, 0x09, 0x48, 0x89,0x80, 0x08, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF37F0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3800, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3810, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3820, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3830, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF,0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF);
+setchar(0x08BF3840, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x00,0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08BF3850, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,0x00, 0x00, 0x11, 0x00, 0x00, 0x00);
+setchar(0x08BF3860, 0x00, 0x2C, 0xC7, 0x40, 0x07, 0x00, 0x00, 0x00);
+setfloat(0x08BF3868, 470.858612);
+setfloat(0x08BF386C, 1171.563599);
+setfloat(0x08BF3870, -200.865997);
+setint(0x08BF3874, 49);
+setchar(0x08BF3878, 0xB3, 0x4A, 0xB4, 0x42, 0x22, 0x00, 0x00, 0x00);
+setchar(0x08BF3880, 0x12, 0x00, 0x00, 0x00, 0x04, 0x96, 0x7B, 0x44, 0xB3, 0xDD,0x48, 0xC3, 0xE8, 0x03, 0x00, 0x00);
+setchar(0x08BF3890, 0xD7, 0x83, 0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3, 0x9A, 0x39,0xC1, 0x43, 0xD7, 0x83, 0x99, 0x44);
+setchar(0x08BF38A0, 0x33, 0x73, 0x3C, 0xC3, 0xCC, 0x91, 0x48, 0xC3, 0x05, 0x08,0x00, 0x00, 0xB2, 0x00, 0x00, 0x00);
+setchar(0x08BF38B0, 0xD7, 0x53, 0x99, 0x44, 0x33, 0x73, 0x46, 0xC3, 0x00, 0x00,0xC0, 0x3F, 0x00, 0x00, 0xC0, 0x3F);
+setchar(0x08BF38C0, 0x00, 0x00, 0x20, 0x41, 0x9A, 0x39, 0xC1, 0x43, 0xD7, 0x83,0x99, 0x44, 0x33, 0x73, 0x3C, 0xC3);
+
+#cheat Reload Empire Site Vehicle Spawn
+setchar(0x08BF3C74, 0);
+#cheat Set Vehicle ID to Sentinel
+setint(0x08BF3CB8, 211);
+#cheat Set Vehicle Coordinates
+setfloat(0x08BF3CC0, X, Y, Z);
+
+#cheat Ammu-Nation sells nothing but Body Armor
+setchar(0x08BF255C, 5);
+#cheat Sharks start to attack your empire
+setchar(0x08BF42B8, 7);
+
+#cheat Spawn Viceport Hovercraft
+setchar(0x08BEE674, 2);
+setint(0x08BEE678, 198);
+setchar(0x08BEE67C, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE680, -259.351990, -1658.676025, 5.410000);
+setchar(0x08BEE68C, 1);
+#cheat Spawn Little Haiti Hovercraft
+setchar(0x08BEE674, 2);
+setint(0x08BEE678, 198);
+setchar(0x08BEE67C, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE680, -1179.552002, -40.727001, 5.534000);
+setchar(0x08BEE68C, 1);
+#cheat Deactivate the Hover Race Missions
+setchar(0x08BEE828, 0);
+#off
+setchar(0x08BEE828, 1);
+
+#cheat Spawn 3 Markers at the Compound
+marker = 0x08BF7B40;
+setfloat(marker, -1077.40, 312.60, 11.26);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, -1077.40, 314.60, 11.26);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+marker += 0x20;
+setfloat(marker, -1077.40, 310.60, 11.26);
+setchar(marker+0x16, 0x80, 0x3F);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x07);
+
+#cheat Quad, Sea and Air Acesetint
+(0x08E82D90, 230);
+setchar(0x08BEE45C, 2);
+setint(0x08BEE460, 230);
+setchar(0x08BEE464, 0xFF, 0xFF, 0xFF, 0xFF);
+setfloat(0x08BEE468, 488.494904, -1725.014282, 7.801000);
+setchar(0x08BEE474, 1);
+
+#cheat Shopkeeper stands still
+setchar(0x08BF3898, 7);
+setchar(0x08BF38A4, 7);
+setchar(0x08BF38A8, 7);
+#cheat Shopkeeper idle
+setchar(0x08BF3898, 1);
+setchar(0x08BF38A4, 1);
+setchar(0x08BF38A8, 1);
+#cheat Shopkeeper ?
+setchar(0x08BF3898, 0);
+setchar(0x08BF38A4, 0);
+setchar(0x08BF38A8, 0);
+#cheat Shopkeeper raises his arms
+setchar(0x08BF3898, 0x47);
+setchar(0x08BF38A4, 0x47);
+setchar(0x08BF38A8, 0x47);
+#cheat Leave Interior Zone
+setfloat(0x08BF3864, X, Y, Z);
+
+#cheat Car Thrower
+//part of DDM's cheat for launching is used
+if(pplayer){
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+push = 1.0;
+static find;
+if(find == 0){
+if(getint(pplayer + 0x150)){
+pick = getint(pplayer + 0x150);
+find = 1;}}
+if(find == 1 && press & CTRL_NOTE){
+setfloat(pick + 0x27C, 0.0);}
+if(getshort(pick + 0x56) > 150&&getshort(pick + 0x56) < 279){
+setfloat(pick + 0x30, playerx);
+setfloat(pick + 0x34, playery);
+setfloat(pick + 0x38, playerz +2);
+setfloat(pick + 0x140, 0, 0, 0);
+setfloat(pick + 0x70, 0, 0, 0);
+setchar(pplayer + 0x8B4, 0x40);}
+if(press & CTRL_CIRCLE){
+setfloat(pick + 0x0140, getfloat(pobj + 0x0140) + getfloat(pobj + 0x0010) * push);
+setfloat(pick + 0x0144, getfloat(pobj + 0x0144) + getfloat(pobj + 0x0014) * push);
+setfloat(pick + 0x0148, getfloat(pobj + 0x0148) + getfloat(pobj + 0x0018) * push);
+pick = 0;find = 0;
+setchar(pplayer + 0x8B4, 0x01);}}
+#off
+pick = 0;
+setchar(pplayer + 0x8B4, 0x01);
+
+#cheat Car Object Launcher//
+part of DDM's cheat for launching is used
+if(pcar){
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+push = 2.0;
+static find;
+if(find == 0){
+if(getint(pcar + 0x150)){
+pick = getint(pcar + 0x150);
+find = 1;}}
+if(getshort(pick + 0x56) > 150&&getshort(pick + 0x56) < 279){
+if(find == 1 && press & CTRL_NOTE){
+setfloat(pick + 0x27C, 0.0);}}
+if(getshort(pick + 0x56) < 279){
+setfloat(pick + 0x30, playerx);
+setfloat(pick + 0x34, playery);
+setfloat(pick + 0x38, playerz +2);
+setfloat(pick + 0x140, 0, 0, 0);
+setfloat(pick + 0x70, 0, 0, 0);}
+if(press & CTRL_UP){
+setfloat(pick + 0x0140, getfloat(pobj + 0x0140) + getfloat(pobj + 0x0010) * push);
+setfloat(pick + 0x0144, getfloat(pobj + 0x0144) + getfloat(pobj + 0x0014) * push);
+setfloat(pick + 0x0148, getfloat(pobj + 0x0148) + getfloat(pobj + 0x0018) * push);
+pick = 0;find = 0;}}
+#off
+pick = 0
+
+#cheat Spawn Cop at the Compound
+setfloat(0x09A35B30, -1077.40, 312.63, 11.26);
+setint(0x09A6B390, 8);
+
+#cheat Acid Mode
+setchar(0x08BC8984, 0x0C);
+#off
+setchar(0x08BC8984, 0x00);
+
+#cheat Spawn Cops at the Compound
+static counter;
+setint(0x08C73A70, 207);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+spawn = 0x08E82CA0;
+setint(spawn, 208);
+setfloat(spawn + 0x04, -1077.40, 312.63, 11.26);
+if(counter++ % 30 == 0){
+for(p = 0x098EDCC0;
+ p <= 0x099019A0;
+ p += 0x0820){
+id = getshort(p + 0x56);
+if(id == 208)setchar(p + 0x49, 0x82);
+setchar(p + 0x4A, 0x15);
+setchar(p + 0x0267, 0x75);}}
+#off
+setchar(p + 0x0267, 0x44);
+#cheat Spawn Bike Cops at the Compound
+static counter;
+setint(0x08C73A70, 191);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+spawn = 0x08E82CA0;
+setint(spawn, 191);
+setfloat(spawn + 0x04, -1077.40, 312.63, 11.26);
+if(counter++ % 30 == 0){
+for(p = 0x098EDCC0; p <= 0x099019A0; p += 0x0820){
+id = getshort(p + 0x56);
+if(id == 191)
+setchar(p + 0x49, 0x82);
+setchar(p + 0x4A, 0x15);
+setchar(p + 0x0267, 0x75);}}
+#off
+setchar(p + 0x0267, 0x44);
+#cheat Spawn SWAT at the Compound
+static counter;
+setint(pplayer + 0x0910, 4);
+setint(0x08C73A70, 234);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+spawn = 0x08E82CA0;
+setint(spawn, 234);
+setfloat(spawn + 0x04, -1077.40, 312.63, 11.26);
+if(counter++ % 30 == 0){
+for(p = 0x098EDCC0; p <= 0x099019A0; p += 0x0820){
+id = getshort(p + 0x56);
+if(id == 234)setchar(p + 0x49, 0x82);
+setchar(p + 0x4A, 0x15);
+setchar(p + 0x0267, 0x75);}}
+#off
+setchar(p + 0x0267, 0x44);
+setint(pplayer + 0x0910, 0);
+#cheat Spawn FBI at the Compound
+static counter;
+setint(pplayer + 0x0910, 5);
+setint(0x08C73A70, 193);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+spawn = 0x08E82CA0;
+setint(spawn, 193);
+setfloat(spawn + 0x04, -1077.40, 312.63, 11.26);
+if(counter++ % 30 == 0){
+for(p = 0x098EDCC0;
+ p <= 0x099019A0;
+ p += 0x0820){
+id = getshort(p + 0x56);
+if(id == 193)setchar(p + 0x49, 0x82);
+setchar(p + 0x4A, 0x15);
+setchar(p + 0x0267, 0x75);}}
+#offsetchar(p + 0x0267, 0x44);
+setint(pplayer + 0x0910, 0);
+#cheat Spawn Army at the Compound
+static counter;
+setint(pplayer + 0x0910, 6);
+setint(0x08C73A70, 218);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+spawn = 0x08E82CA0;
+setint(spawn, 218);
+setfloat(spawn + 0x04, -1077.40, 312.63, 11.26);
+if(counter++ % 30 == 0){for(p = 0x098EDCC0;
+ p <= 0x099019A0;
+ p += 0x0820){id = getshort(p + 0x56);
+if(id == 218)setchar(p + 0x49, 0x82);
+setchar(p + 0x4A, 0x15);
+setchar(p + 0x0267, 0x75);}}
+#off
+setchar(p + 0x0267, 0x44);
+setint(pplayer + 0x0910, 0);
+
+#cheat Remove Cops
+static timer;
+if(timer % 50 == 0)for(x = 0;
+ 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10){
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 8 || id == 9 || id == 10 || id == 11 || id == 119){
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);}}
+timer++;
+if(timer == 50)timer = 0;
+
+#cheat Pop Up Police
+setint(0x08C73A70, 207);
+setchar(0x08C73A94, 0, 0, 0);
+setchar(0x08C73A98, 0, 0, 0);
+setchar(pcar + 0x0267, 0x75);
+#off
+setchar(pcar + 0x0267, 0x44);
+
+#cheat Suitcase Mayhem
+setchar(0x09F69054, 1);
+static mission;
+if(!mission){
+mission = 0;}
+icon = 0x08E8EFC0;
+setfloat(icon, 118.71, -826.73, 10.46);
+setchar(icon + 0x19, 0x25);
+marker = 0x08BF7B40;
+setfloat(marker, 118.71, -826.73, 10.46)
+;setchar(marker + 0x16, 0x80, 0x40);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+X1 = 118.71;Y1 = -826.73;checkx1 = X1 - getfloat(pplayer + 0x30);
+checky1 = Y1 - getfloat(pplayer + 0x34);
+if(sqrt(checkx1 * checkx1 + checky1 * checky1) < 2){
+mission = 1;}
+if(mission == 1){
+setshort(0x08E90DD8, 1, 'M', 'I', 'S', 'S', 'I', 'O', 'N', 0);
+setchar(marker + 0x16, 0x00, 0x00);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 327.95, 205.68, 11.41);
+setchar(icon + 0x19, 0x0B);
+static pickup;
+pickup = 0x08C67B30;setfloat(pickup, -1077.40, 312.60, 11.26);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01F9);
+setchar(pickup + 0x38, 0x02);
+if(getchar(pickup + 0x39) == 1){mission = 2;}}
+if(mission == 2){
+marker = 0x08BF7B40;
+setfloat(marker, 94.98, 267.65, 21.78);
+setchar(marker + 0x16, 0x80, 0x3F);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+setfloat(icon, 94.98, 267.65, 21.78);
+setchar(icon + 0x19, 0x00);
+X2 = 94.98;
+Y2 = 267.65;
+checkx2 = X2 - getfloat(pplayer + 0x30);
+checky2 = Y2 - getfloat(pplayer + 0x34);
+if(sqrt(checkx2 * checkx2 + checky2 * checky2) < 2){
+mission = 3;}}
+if(mission == 3){
+setchar(marker + 0x16, 0x00, 0x00);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 64.40, 273.24, 19.43);
+setchar(icon + 0x19, 0x04);
+setfloat(pickup, 64.40, 273.24, 19.43);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x0165);
+setchar(pickup + 0x38, 0x02);
+if(getchar(pickup + 0x39) == 1){
+mission = 4;}}
+if(mission == 4){
+setfloat(icon, 77.35, 580.07, 18.57);
+setchar(icon + 0x19, 0x33);
+pickup = 0x08C693F0;
+setfloat(pickup, 77.35, 580.07, 18.57);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01B3);
+setchar(pickup + 0x38, 0x02);}
+
+#cheat car screw
+sethex(the address, what you change it to);
+
+#cheat ¤
+setchar(0x08E93604, 1, '1', '¤','2');

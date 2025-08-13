@@ -1,0 +1,23 @@
+#cheat Spawn Air Ambulance
+pspawn = 0x08E81290;
+setint(pspawn, 189);
+setfloat(pspawn + 0x04, -1077.40, 312.63, 11.26, 270);
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Helicopter Magnet
+setchar(0x08BB42A0, 0);
+ptow = getint(0x0994F460);
+objectid = getshort(ptow + 0x56);
+carid = getshort(pcar + 0x56);
+if(pcar && carid == 0 && !ptow || objectid != 7392)
+{
+setshort(0x08E92FFC, 'P', 'r', 'e', 's', 's', ' ', 'u', 'p', ' ', 't', 'o', ' ', 'u', 's', 'e', ' ', 't', 'h', 'e', ' ', 'm', 'a', 'g', 'n', 'e', 't', ' ', '!');
+setshort(0x08E931FC, 'P', 'r', 'e', 's', 's', ' ', 'u', 'p', ' ', 't', 'o', ' ', 'u', 's', 'e', ' ', 't', 'h', 'e', ' ', 'm', 'a', 'g', 'n', 'e', 't', ' ', '!');
+setshort(0x08E933FC, 'P', 'r', 'e', 's', 's', ' ', 'u', 'p', ' ', 't', 'o', ' ', 'u', 's', 'e', ' ', 't', 'h', 'e', ' ', 'm', 'a', 'g', 'n', 'e', 't', ' ', '!');
+}
+if(pcar && carid == 0 && ptow && objectid == 7350 || objectid == 7353)
+{
+setshort(ptow + 0x56, 7392);
+}
+#off
+setshort(ptow + 0x56, 7350);

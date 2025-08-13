@@ -1,0 +1,56 @@
+#cheat Spawn Helicopter
+pspawn = 0x08E81290;
+setint(pspawn, 262);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26)
+
+#cheat Air Taxi
+static speed;
+static currentx;
+static currenty;
+static currentz;
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 11.26;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 20.00;
+checkpoint3x = getfloat(0x9a63428);
+checkpoint3y = getfloat(0x9a6342c);
+checkpoint3z = 15.00;
+if(!currentx&&pcar){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = pcar;
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);
+setfloat(opp+0x30, -1077.40, 312.63, 11.26);
+speed = 0.01;}
+if(pcar){
+setfloat(opp+0x30, getfloat(opp+0x30)+d1 * speed);
+setfloat(opp+0x34, getfloat(opp+0x34)+d2 * speed);
+setfloat(opp+0x38, getfloat(opp+0x38)+d3 * speed);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 5 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else if(currentx == checkpoint2x){
+currentx = setfloat(opp+0x30,getfloat(0x9a63428),getfloat(0x9a6342c),-500);
+currentz = checkpoint3z;
+speed = 0.01;}
+else if(currentz == checkpoint3z){
+setfloat(opp+0x38, 11.26);
+speed = 0.01;}
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;

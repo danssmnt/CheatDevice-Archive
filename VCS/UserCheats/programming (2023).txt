@@ -1,0 +1,300 @@
+Programming for CheatDevice
+---------------------------
+
+Cheats can be added to CheatDevice by creating text files in the
+/cheats/vcs directory on the memory card.  The language is a simplified
+interpreted subset of C.
+
+Commands: (case sensitive)
+
+  #cheat Cheat Title
+  #off
+  // comments
+  setchar(startaddress, intvalue, ...);
+  sethex(startaddress, hexintvalue, ...;
+  setshort(startaddress, intvalue, ...);
+  setint(startaddress, intvalue, ...);
+  setfloat(startaddress, floatvalue, ...);
+  teleport(x, y, z);
+  off();
+
+Formats for numeric constants:
+
+  decimal:    123
+  hex:        0xABCF0 or 0xabcf0
+  binary:     0b00100101101
+  float:      1.23
+  character:  'a', 'b', 'c', '\n'
+
+Special pointer constants:
+
+  pplayer:   Pointer to player object.
+  pcar:      Pointer to player's car object.  Any command that uses this
+               only executes when the player is in a car.
+  pobj:      Pointer to player object if on foot, or player's car object
+               if in a vehicle.
+
+Some examples:
+
+  // any comments, such as author credits
+  #cheat Teleport: Top of Tall Building
+  teleport(95, -1509, 216.98);
+
+  #cheat Hud On
+  setchar(0x09a63418, 1);
+
+  #cheat Hud Off
+  setchar(0x09a63418, 0);
+
+  #cheat Max Money
+  setint(0x08bde55c, 99999999);
+  setint(0x08bde55c, 99999999);
+
+Functions with "..." can write any number of values starting at the given
+address, so Max Money could also be written as:
+
+  #cheat Max Money
+  setint(0x08bde55c, 99999999, 99999999);
+
+  #cheat No Money
+  setint(0x08bde55c, 0, 0);
+
+  #cheat Time is 9:30am
+  setchar(0x08bb3b40, 9, 30);
+
+The #off section is used to set a value back to its normal setting and is
+executed a single time when a cheat is turned off.  For example:
+
+  // by winchy
+  #cheat Invisible Vic
+  setchar(pplayer + 0x4C, 0x10, 0x20);
+  #off
+  setchar(pplayer + 0x4C, 0, 0);
+
+  // by chrislawrance
+  #cheat Lock Camera
+  setchar(pplayer + 0x550, 1);
+  #off
+  setchar(pplayer + 0x550, 0);
+
+Integer values can be treated as signed or unsigned.  All of the following
+commands set the same value:
+
+  setchar(0x08bde55c, 255);
+  setchar(0x08bde55c, -1);
+  setchar(0x08bde55c, 0xff);
+  setchar(0x08bde55c, 0xFF);
+  setchar(0x08bde55c, 0b11111111);
+  sethex(0x08bde55c, ff);
+
+sethex is just a version of setchar that assumes all values are hex so you
+can leave off the 0x.
+
+Cheat Maker automatically performs region conversion behind the scenes
+so users of the EU version see the same addresses as the US version and
+addresses entered are automatically converted to the correct region.
+There is no need to give different versions of cheats for EU and US
+versions of the game.
+
+
+CheatDevice 2.0 Advanced Features
+---------------------------------
+
+The language has been extended to include much of the C syntax.  Most
+operators and some of the main keywords are supported.  Although loops are
+supported, be careful with them, as they make it very easy to slow down
+the game too much.
+
+Keywords:
+
+  if else for while break continue true false pi { }
+
+Operators:
+
+  , = += -= *= /= %= /= %= &= ^= |= <<= >>= ?: || &&
+  | ^ & == != < > <= >= << >> + - * / % & ! ~ ++ -- ( )
+
+Stdlib functions:
+
+  abs, fabs, sqrt, sin, cos, tan, rand,
+  memcpy, memmove, memset, memcmp,
+  strcpy, strncpy, strcat, strncat,
+  strcmp, strncmp, strchr, strrchr, strlen
+
+New functions:
+
+  getchar(address);
+  getshort(address);
+  getint(address);
+  getfloat(address);
+  min(value, ...);
+  max(value, ...);
+  sgn(value);
+  int(value);
+
+Button variables:
+
+  buttons      - the current button state
+  press        - the button state once when first pressed, otherwise 0
+  pressslow    - button press with slow auto-repeat
+  pressmed     - button press with medium auto-repeat
+  pressfast    - button press with fast auto-repeat
+  xstick       - the position of the analog stick from -1.0 to 1.0
+  ystick       - the position of the analog stick from -1.0 to 1.0
+
+Button mask constants:
+
+  CTRL_SELECT     CTRL_LTRIGGER     CTRL_HOME
+  CTRL_START      CTRL_RTRIGGER     CTRL_VOLUP
+  CTRL_UP         CTRL_TRIANGLE     CTRL_VOLDOWN
+  CTRL_RIGHT      CTRL_CIRCLE       CTRL_SCREEN
+  CTRL_DOWN       CTRL_CROSS        CTRL_NOTE
+  CTRL_LEFT       CTRL_SQUARE
+
+To keep it simple, there are no user defined functions, no *dereference
+or &reference, and variables are not strongly typed.  All variables have
+global scope within their cheat section.
+
+New variables are automatically declared and created by the "=" operator.
+If you need to declare a variable without assigning to it, declare it as
+static i.e. "static varname;" and its initial value will be zero.
+
+Examples:
+
+  setint(pcar + 0x1234, getint(pcar + 0x1234) + 1);
+
+  p1 = 0x08901234;
+  setchar(p1, getchar(p1) + 1); // increment
+  setchar(p1, getchar(p1) & 0xFE); // clear a bit
+  setchar(p1, getchar(p1) ^ 0x02); // flip a bit
+  setchar(p1, getchar(p1) | 0x08); // set a bit
+  setchar(p1, getchar(p1) | 0b00001000); // set a bit could also be done this way
+
+  static fInit;
+  if (!fInit)
+  {
+     fInit = true;
+     // anything here runs just once
+  }
+
+  #cheat Rocket Boost 4
+  if (buttons & CTRL_CROSS)
+  {
+     boost = 4.0;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+     // rotational control
+     setfloat(pcar + 0x0078, -0.03 * xstick);
+  }
+
+#cheat Dom_Mc_Cfc1 Stinger
+setchar(0x08C73A94, 255, 0, 0,);
+setchar(0x08C73A98, 0, 0, 0);
+setint(0x08C73A70, 254);
+setfloat(0x9633120+0x74, 0.6);
+setfloat(0x9633120+0x78, 5);
+setfloat(0x9633120+0x7c, 0);
+setfloat(0x9633120+0x80, -0.75);
+setfloat(0x9633120+0x84, 0.5);
+setfloat(0x9633120+0x88, 1);
+setfloat(0x936BE18, 1.35, 1.35);
+setfloat(0x9633120+0xc4, 0.75);
+setfloat(0x9633120+0x70, 0.50);
+setfloat(0x9633120+0x6c, 0.95);
+setfloat(0x9633120+0xbc, 6000);
+setfloat(0x9633120+0xc0, 6000);
+setfloat(0x9633120+0xa0, 0);
+setfloat(0x9633120+0xa4, 0);
+setfloat(0x9633120+0xa8, -1.2);
+setfloat(0x9633120+0x68, 35);
+setfloat(0x9633120+0x5c, '4', 'P', 78);
+setchar(0x09569B94, 255, 0, 0);
+setchar(0x09569B90, 0x10);
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 255, 0, 0);}
+off();
+
+#cheat DMC Cheetah
+setchar(0x08C739d4, 0, 255, 0);
+setchar(0x08C739d8, 0, 0, 0);
+setint(0x08C739B0, 172);
+setfloat(0x962ea40+0x74, 1.0);
+setfloat(0x962ea40+0x78, 5);
+setfloat(0x962ea40+0x7c, 0);
+setfloat(0x962ea40+0x80, -0.75);
+setfloat(0x962ea40+0x84, 0.5);
+setfloat(0x962ea40+0x88, 1);
+setfloat(0x935E6D8, 1.0, 1.0);
+setfloat(0x962ea40+0xc4, 0.75);
+setfloat(0x962ea40+0x70, 0.50);
+setfloat(0x962ea40+0x6c, 0.95);
+setfloat(0x962ea40+0xbc, 6000);
+setfloat(0x962ea40+0xc0, 6000);
+setfloat(0x962ea40+0xa0, 0);
+setfloat(0x962ea40+0xa4, 0);
+setfloat(0x962ea40+0xa8, -1.2);
+setfloat(0x962ea40+0x68, 35);
+setfloat(0x962ea40+0x5c, '4', 'D', 98);
+setchar(0x09569B94, 0, 255, 0);
+setchar(0x09569B90, 0x10);
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon, 0, 0, 0);}
+off();
+
+#cheat Hikiwara Tuning Supercharged Sabre
+pspawn = 0x08E81290;  
+setint(pspawn,    273);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x9569b94,  0x00,  0xFF,  0x255);
+setchar(pcar+0x224, 0x0, 0x0, 0x0);
+setchar(pcar+0x228, 0x66, 0xFF, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+setfloat(pcar+0x450,  4,  2,  4);
+setfloat(pcar+0x480,  4,  2,  4);
+setfloat(pcar+0x4b0,  4,  2,  4);
+setfloat(pcar+0x4e0,  4,  2,  4);
+// Spinners by (dont know)
+static rotation;
+if (rotation == 0)
+{
+rotation = 360;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 360;}
+// Nos By Edison Carter and Waterbottle
+// Not much of a moddification to this Brilliant code, but its a longterm affect,
+// Hold circle  To drive at normal speed
+// Slow down's square with gradual, good for a thrash or a race
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+
+//if speed is lower than max speed for NOS accelerate
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5) setfloat(pcar+0x140,  0,  0);
+
+
+if(buttons & CTRL_CROSS)
+{
+// Calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+//if speed is lower than max speed for NOS accelerate
+if(speed<4.0) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}

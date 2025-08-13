@@ -1,0 +1,261 @@
+#cheat Enterable VCPD HQ
+X1 = 396.61;
+Y1 = -472.80;
+Z1 = 12.33;
+X2 = 373.06;
+Y2 = -481.25;
+Z2 = 21.57;
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 1 ){
+setfloat(pobj+0x30, X2+1, Y2+1, Z2+1);}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 1 ){
+setfloat(pobj+0x30, X1+1, Y1+1, Z1+1);}
+static mark;
+mark = 0x8c62EA0;
+if(getfloat(pobj+0x38) <= 16.00){
+setfloat(mark, 396.61, -472.80, 12.33);}
+if(getfloat(pobj+0x38) >= 16.00){
+setfloat(mark, 373.06, -481.25, 21.57);}
+
+#cheat Enterable Mendez Mansion
+static A;
+XA1 = 17.55;
+YA1 = 1151.16;
+ZA1 = 23.53;
+XA2 = 17.22;
+YA2 = 1153.69;
+ZA2 = -193.79;
+if(!A){
+A = 1;}
+checkxA1 = XA1 - getfloat(pobj+0x30);
+checkyA1 = YA1 - getfloat(pobj+0x34);
+checkzA1 = ZA1 - getfloat(pobj+0x38);
+if(sqrt(checkxA1*checkxA1+checkyA1*checkyA1+checkzA1*checkzA1) < 1){
+setfloat(pobj+0x30,XA2,YA2,ZA2);}
+static B;
+XB1 = 17.22;
+YB1 = 1149.71;
+ZB1 = -193.79;
+XB2 = 17.34;
+YB2 = 1147.48;
+ZB2 = 23.53;
+if(!B){
+B = 1;}
+checkxB1 = XB1 - getfloat(pobj+0x30);
+checkyB1 = YB1 - getfloat(pobj+0x34);
+checkzB1 = ZB1 - getfloat(pobj+0x38);
+if(sqrt(checkxB1*checkxB1+checkyB1*checkyB1+checkzB1*checkzB1) < 1){
+setfloat(pobj+0x30,XB2,YB2,ZB2);}
+static C;
+XC1 = 22.81;
+YC1 = 1185.83;
+ZC1 = 19.55;
+XC2 = 35.78;
+YC2 = 1166.48;
+ZC2 = -200.19;
+if(!C){
+C = 1;}
+checkxC1 = XC1 - getfloat(pobj+0x30);
+checkyC1 = YC1 - getfloat(pobj+0x34);
+checkzC1 = ZC1 - getfloat(pobj+0x38);
+if(sqrt(checkxC1*checkxC1+checkyC1*checkyC1+checkzC1*checkzC1) < 1){
+setfloat(pobj+0x30,XC2,YC2,ZC2);}
+static D;
+XD1 = 38.68;
+YD1 = 1165.86;
+ZD1 = -200.19;
+XD2 = 22.89;
+YD2 = 1189.25;
+ZD2 = 19.64;
+if(!D){
+D = 1;}
+checkxD1 = XD1 - getfloat(pobj+0x30);
+checkyD1 = YD1 - getfloat(pobj+0x34);
+checkzD1 = ZD1 - getfloat(pobj+0x38);
+if(sqrt(checkxD1*checkxD1+checkyD1*checkyD1+checkzD1*checkzD1) < 1){
+setfloat(pobj+0x30,XD2,YD2,ZD2);}
+static E;
+XE1 = 28.69;
+YE1 = 1176.42;
+ZE1 = -200.19;
+XE2 = 28.76;
+YE2 = 1171.24;
+ZE2 = -200.19;
+if(!E){
+E = 1;}
+checkxE1 = XE1 - getfloat(pobj+0x30);
+checkyE1 = YE1 - getfloat(pobj+0x34);
+checkzE1 = ZE1 - getfloat(pobj+0x38);
+if(sqrt(checkxE1*checkxE1+checkyE1*checkyE1+checkzE1*checkzE1) < 1){
+setfloat(pobj+0x30,XE2,YE2,ZE2);}
+static F;
+XF1 = 28.71;
+YF1 = 1174.68;
+ZF1 = -200.19;
+XF2 = 28.72;
+YF2 = 1180.05;
+ZF2 = -197.51;
+if(!F){
+F = 1;}
+checkxF1 = XF1 - getfloat(pobj+0x30);
+checkyF1 = YF1 - getfloat(pobj+0x34);
+checkzF1 = ZF1 - getfloat(pobj+0x38);
+if(sqrt(checkxF1*checkxF1+checkyF1*checkyF1+checkzF1*checkzF1) < 1){
+setfloat(pobj+0x30,XF2,YF2,ZF2);}
+static G;
+XG1 = 17.55;
+YG1 = 1177.53;
+ZG1 = 23.53;
+XG2 = 31.78;
+YG2 = 1172.53;
+ZG2 = -200.19;
+if(!G){
+G = 1;}
+checkxG1 = XG1 - getfloat(pobj+0x30);
+checkyG1 = YG1 - getfloat(pobj+0x34);
+checkzG1 = ZG1 - getfloat(pobj+0x38);
+if(sqrt(checkxG1*checkxG1+checkyG1*checkyG1+checkzG1*checkzG1) < 1){
+setfloat(pobj+0x30,XG2,YG2,ZG2);}
+static H;
+XH1 = 35.18;
+YH1 = 1172.36;
+ZH1 = -200.19;
+XH2 = 17.71;
+YH2 = 1180.93;
+ZH2 = 23.53;
+if(!H){
+H = 1;}
+checkxH1 = XH1 - getfloat(pobj+0x30);
+checkyH1 = YH1 - getfloat(pobj+0x34);
+checkzH1 = ZH1 - getfloat(pobj+0x38);
+if(sqrt(checkxH1*checkxH1+checkyH1*checkyH1+checkzH1*checkzH1) < 1){
+setfloat(pobj+0x30,XH2,YH2,ZH2);}
+if(getfloat(pplayer+0x38) <= -100.00){
+setchar(0x08B8EBA4, 0x01);
+setchar(0x08BB194C, 0x02);
+setchar(0x08E937A8, 0x01);}
+if(getfloat(pplayer+0x38) > -100.00){
+setchar(0x08B8EBA4, 0x00);
+setchar(0x08BB194C, 0x00);
+setchar(0x08E937A8, 0x00);}
+
+#cheat Interior 2: The Lighthouse
+static Down;
+XDown1 = 478.35;
+YDown1 = -1718.39;
+ZDown1 = 15.66;
+XDown2 = 476.31;
+YDown2 = -1718.10;
+ZDown2 = 15.86;
+if(!Down){
+Down = 1;}
+checkxDown1 = XDown1 - getfloat(pobj+0x30);
+checkyDown1 = YDown1 - getfloat(pobj+0x34);
+checkzDown1 = ZDown1 - getfloat(pobj+0x38);
+if(sqrt(checkxDown1*checkxDown1+checkyDown1*checkyDown1+checkzDown1*checkzDown1) < 1){
+setfloat(pobj+0x30,XDown2,YDown2,ZDown2);}
+static Up;
+XUp1 = 477.53;
+YUp1 = -1718.22;
+ZUp1 = 15.83;
+XUp2 = 479.99;
+YUp2 = -1718.54;
+ZUp2 = 15.66;
+if(!Up){
+Up = 1;}
+checkxUp1 = XUp1 - getfloat(pobj+0x30);
+checkyUp1 = YUp1 - getfloat(pobj+0x34);
+checkzUp1 = ZUp1 - getfloat(pobj+0x38);
+if(sqrt(checkxUp1*checkxUp1+checkyUp1*checkyUp1+checkzUp1*checkzUp1) < 1){
+setfloat(pobj+0x30,XUp2,YUp2,ZUp2);}
+moveto(478.20,-1717.53,14.76); object(0x1C92,0,90,99);
+move(-2.34,-1.62,-0.40); object(0x1CA4,90,0,0);
+top = 57.25;
+bottom = 14.36;
+xpos = 475.86;
+ypos = -1719.15;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1D4E,90,180,8);}
+else{
+selectobject(obj);
+if(state == 0&&getfloat(getint(pplayer+0xf0)+0x30) == getfloat(obj+0x30)){
+if(getfloat(obj+0x38) >= top&&buttons&CTRL_DOWN) state = 2;
+else if(buttons&CTRL_UP) state = 1;}
+if(state == 1){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) + 0.04);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) - 0.04);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;
+
+#cheat Interior 2: The Lighthouse
+static Down;
+XDown1 = 478.35;
+YDown1 = -1718.39;
+ZDown1 = 15.66;
+XDown2 = 476.31;
+YDown2 = -1718.10;
+ZDown2 = 15.86;
+if(!Down){
+Down = 1;}
+checkxDown1 = XDown1 - getfloat(pobj+0x30);
+checkyDown1 = YDown1 - getfloat(pobj+0x34);
+checkzDown1 = ZDown1 - getfloat(pobj+0x38);
+if(sqrt(checkxDown1*checkxDown1+checkyDown1*checkyDown1+checkzDown1*checkzDown1) < 1){
+setfloat(pobj+0x30,XDown2,YDown2,ZDown2);}
+static Up;
+XUp1 = 477.53;
+YUp1 = -1718.22;
+ZUp1 = 15.83;
+XUp2 = 479.99;
+YUp2 = -1718.54;
+ZUp2 = 15.66;
+if(!Up){
+Up = 1;}
+checkxUp1 = XUp1 - getfloat(pobj+0x30);
+checkyUp1 = YUp1 - getfloat(pobj+0x34);
+checkzUp1 = ZUp1 - getfloat(pobj+0x38);
+if(sqrt(checkxUp1*checkxUp1+checkyUp1*checkyUp1+checkzUp1*checkzUp1) < 1){
+setfloat(pobj+0x30,XUp2,YUp2,ZUp2);}
+moveto(478.20,-1717.53,14.76); object(0x1C92,0,90,99);
+move(-2.34,-1.62,-0.40); object(0x1CA4,90,0,0);
+top = 57.25;
+bottom = 14.36;
+xpos = 475.86;
+ypos = -1719.15;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1D4E,90,180,8);}
+else{
+selectobject(obj);
+if(state == 0&&getfloat(getint(pplayer+0xf0)+0x30) == getfloat(obj+0x30)){
+if(getfloat(obj+0x38) >= top&&buttons&CTRL_DOWN) state = 2;
+else if(buttons&CTRL_UP) state = 1;}
+if(state == 1){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) + 0.04);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) - 0.04);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;

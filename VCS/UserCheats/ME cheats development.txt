@@ -1,0 +1,311 @@
+#cheat Dodo Cars+
+if (buttons & CTRL_CROSS){ 
+boost = 1.5; 
+thrust = boost * 0.00333; 
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust); 
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust); 
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust); 
+if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210) 
+setfloat(pcar + 0x0078, -0.03 * xstick);}
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar +
+0x144) * getfloat(pcar + 0x144));
+if(speed>0.60){
+if(!(buttons & CTRL_SQUARE) && buttons & CTRL_CROSS){
+thrust = 0.00333;
+setfloat(pcar+0x70, ystick * getfloat(pcar) / 32);
+setfloat(pcar+0x74, ystick * getfloat(pcar+4) / 32);
+setfloat(pcar+0x78, -xstick / 8);
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * (0.2*thrust)); 
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * (0.2*thrust)); 
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * (5*thrust));
+if(ystick){
+Xdeg = getfloat(pcar) * -10 * ystick;
+Ydeg = getfloat(pcar+4) * -10 * ystick;}
+else Ydeg = Xdeg = 0;}}
+
+#cheat New Vehicle Spawns 3G
+pspawn = 0x08E81290;
+setint(pspawn, 279); //Green VCPD Maverick
+setfloat(pspawn + 0x4, -891.41, -678.49, 25.43, 0); //Little Havanna Policestation
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -471.83, 1260.18, 79.75, 0); //Downtown Building
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, 294.74, 270.19, 17.70, 0); //Mercedez House
+pspawn += 0x30;
+setint(pspawn, 260); //VCN Maverick
+setfloat(pspawn + 0x4, -468.84, 1123.74, 64.75, 90); //VCN Building
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -877.69, 1510.09, 33.04, 180); //Near Stadium
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, -1127.23, 1513.63, 11.98, 0); //Stadium Helipad
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -853.55, 1355.21, 69.55, 180); //Hyman Condo
+pspawn += 0x30;
+setint(pspawn, 262); //Sparrow
+setfloat(pspawn + 0x4, -906.43, 1021.04, 78.18, 0); //V-Rock Building
+pspawn += 0x30;
+setint(pspawn, 275); //Hunter
+setfloat(pspawn + 0x4, -1684.62, -124.43, 14.62, 90); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 221); //Ammo Truck
+setfloat(pspawn + 0x4, -1761.37, -283.23, 14.84, 270); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 173); //Autogyro
+setfloat(pspawn + 0x4, -358.14, -575.16, 38.93, 90); //Diaz Mansion
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -70.43, -1608.43, 12.21, 0); //Lances House
+pspawn += 0x30;
+setint(pspawn, 208); //Domestobot
+setfloat(pspawn + 0x4, 300.87, -255.07, 11.44, 180); //Autoscooter
+pspawn += 0x30;
+setint(pspawn, 268); //FBI Rancher
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270); //Behind Little Haiti Fidl
+pspawn += 0x30;
+setint(pspawn, 198); //Hover Craft
+setfloat(pspawn + 0x4, -300.94, -602.55, 12.83, 180); //Diaz Pool
+pspawn += 0x30;
+setint(pspawn, 185); //Speeder (Fast Version)
+setfloat(pspawn + 0x4, -595.83, -1508.85, 6.50, 270); //Boatyard
+pspawn += 0x30;
+setint(pspawn, 178); //Boy BMX
+setfloat(pspawn + 0x4, 345.79, -724.25, 10.29, 270); //DPB Security
+pspawn += 0x30;
+setint(pspawn, 179); //Girly BMX
+setfloat(pspawn + 0x4, 347.37, -729.52, 10.40, 270); //DPB Security
+pspawn += 0x30;
+setint(pspawn, 279); //Green VCPD Maverick
+setfloat(pspawn + 0x4, -891.41, -678.49, 25.43, 0); //Little Havanna Policestation
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -471.83, 1260.18, 79.75, 0); //Downtown Building
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, 294.74, 270.19, 17.70, 0); //Mercedez House
+pspawn += 0x30;
+setint(pspawn, 260); //VCN Maverick
+setfloat(pspawn + 0x4, -468.84, 1123.74, 64.75, 90); //VCN Building
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -877.69, 1510.09, 33.04, 180); //Near Stadium
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, -1127.23, 1513.63, 11.98, 0); //Stadium Helipad
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -853.55, 1355.21, 69.55, 180); //Hyman Condo
+pspawn += 0x30;
+setint(pspawn, 262); //Sparrow
+setfloat(pspawn + 0x4, -906.43, 1021.04, 78.18, 0); //V-Rock Building
+pspawn += 0x30;
+setint(pspawn, 275); //Hunter
+setfloat(pspawn + 0x4, -1684.62, -124.43, 14.62, 90); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 221); //Ammo Truck
+setfloat(pspawn + 0x4, -1761.37, -283.23, 14.84, 270); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 173); //Autogyro
+setfloat(pspawn + 0x4, -358.14, -575.16, 38.93, 90); //Diaz Mansion
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -70.43, -1608.43, 12.21, 0); //Lances House
+pspawn += 0x30;
+setint(pspawn, 208); //Domestobot
+setfloat(pspawn + 0x4, 300.87, -255.07, 11.44, 180); //Autoscooter
+pspawn += 0x30;
+setint(pspawn, 268); //FBI Rancher
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270); //Behind Little Haiti Fidl
+pspawn += 0x30;
+setint(pspawn, 198); //Hover Craft
+setfloat(pspawn + 0x4, -300.94, -602.55, 12.83, 180); //Diaz Pool
+pspawn += 0x30;
+setint(pspawn, 185); //Speeder (Fast Version)
+setfloat(pspawn + 0x4, -595.83, -1508.85, 6.50, 270); //Boatyard
+pspawn += 0x30;
+setint(pspawn, 178); //Boy BMX
+setfloat(pspawn + 0x4, 345.79, -724.25, 10.29, 270); //DPB Security
+pspawn += 0x30;
+setint(pspawn, 179); //Girly BMX
+setfloat(pspawn + 0x4, 347.37, -729.52, 10.40, 270); //DPB Security
+pspawn += 0x30;
+setint(pspawn, 279); //Green VCPD Maverick
+setfloat(pspawn + 0x4, -891.41, -678.49, 25.43, 0); //Little Havanna Policestation
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -471.83, 1260.18, 79.75, 0); //Downtown Building
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, 294.74, 270.19, 17.70, 0); //Mercedez House
+pspawn += 0x30;
+setint(pspawn, 260); //VCN Maverick
+setfloat(pspawn + 0x4, -468.84, 1123.74, 64.75, 90); //VCN Building
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -877.69, 1510.09, 33.04, 180); //Near Stadium
+pspawn += 0x30;
+setint(pspawn, 263); //Sea Sparrow
+setfloat(pspawn + 0x4, -1127.23, 1513.63, 11.98, 0); //Stadium Helipad
+pspawn += 0x30;
+setint(pspawn, 213); //Maverick
+setfloat(pspawn + 0x4, -853.55, 1355.21, 69.55, 180); //Hyman Condo
+pspawn += 0x30;
+setint(pspawn, 262); //Sparrow
+setfloat(pspawn + 0x4, -906.43, 1021.04, 78.18, 0); //V-Rock Building
+pspawn += 0x30;
+setint(pspawn, 275); //Hunter
+setfloat(pspawn + 0x4, -1684.62, -124.43, 14.62, 90); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 221); //Ammo Truck
+setfloat(pspawn + 0x4, -1761.37, -283.23, 14.84, 270); //Fort Baxter
+pspawn += 0x30;
+setint(pspawn, 173); //Autogyro
+setfloat(pspawn + 0x4, -358.14, -575.16, 38.93, 90); //Diaz Mansion
+pspawn += 0x30;
+setint(pspawn, 188); //Armadillo
+setfloat(pspawn + 0x4, -70.43, -1608.43, 12.21, 0); //Lances House
+pspawn += 0x30;
+setint(pspawn, 208); //Domestobot
+setfloat(pspawn + 0x4, 300.87, -255.07, 11.44, 180); //Autoscooter
+pspawn += 0x30;
+setint(pspawn, 268); //FBI Rancher
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270); //Behind Little Haiti Fidl
+pspawn += 0x30;
+setint(pspawn, 198); //Hover Craft
+setfloat(pspawn + 0x4, -300.94, -602.55, 12.83, 180); //Diaz Pool
+pspawn += 0x30;
+setint(pspawn, 185); //Speeder (Fast Version)
+setfloat(pspawn + 0x4, -595.83, -1508.85, 6.50, 270); //Boatyard
+pspawn += 0x30;
+setint(pspawn, 178); //Boy BMX
+setfloat(pspawn + 0x4, 345.79, -724.25, 10.29, 270); //DPB Security
+pspawn += 0x30;
+setint(pspawn, 179); //Girly BMX
+setfloat(pspawn + 0x4, 347.37, -729.52, 10.40, 270); //DPB Security
+pspawn += 0x30;
+off()
+
+#cheat Smailest pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 0.025);
+setfloat(barrel + 0x04, 0.025);
+setfloat(barrel + 0x08, 0.025);}
+
+#cheat Tiny pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 0.1);
+setfloat(barrel + 0x04, 0.1);
+setfloat(barrel + 0x08, 0.1);}
+
+#cheat Smail pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 0.5);
+setfloat(barrel + 0x04, 0.5);
+setfloat(barrel + 0x08, 0.5);}
+
+#cheat Littie pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 0.75);
+setfloat(barrel + 0x04, 0.75);
+setfloat(barrel + 0x08, 0.75);}
+
+#cheat Normal pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 1);
+setfloat(barrel + 0x04, 1);
+setfloat(barrel + 0x08, 1);}
+
+#cheat Minbig pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 2);
+setfloat(barrel + 0x04, 2);
+setfloat(barrel + 0x08, 2);}
+
+#cheat Adulthood pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 5);
+setfloat(barrel + 0x04, 5);
+setfloat(barrel + 0x08, 5);}
+
+#cheat Giant pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 10);
+setfloat(barrel + 0x04, 10);
+setfloat(barrel + 0x08, 10);}
+
+#cheat Huge pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 20);
+setfloat(barrel + 0x04, 20);
+setfloat(barrel + 0x08, 20);}
+
+#cheat Bigger pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 50);
+setfloat(barrel + 0x04, 50);
+setfloat(barrel + 0x08, 50);}
+
+#cheat Titan pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 100);
+setfloat(barrel + 0x04, 100);
+setfloat(barrel + 0x08, 100);}
+
+#cheat Biggest pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 200);
+setfloat(barrel + 0x04, 200);
+setfloat(barrel + 0x08, 200);}
+
+#cheat Megabig pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 500);
+setfloat(barrel + 0x04, 500);
+setfloat(barrel + 0x08, 500);}
+
+#cheat Seteheybig pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 1000);
+setfloat(barrel + 0x04, 1000);
+setfloat(barrel + 0x08, 1000);}
+
+#cheat Monster pinata man
+moveto(-1077.40, 312.63, 11.26);
+barrel = object(0x1C91, 0, 0, 0);
+if(barrel){
+setfloat(barrel, 100000);
+setfloat(barrel + 0x04, 100000);
+setfloat(barrel + 0x08, 100000);}
+

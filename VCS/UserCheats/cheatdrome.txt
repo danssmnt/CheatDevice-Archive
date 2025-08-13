@@ -1,0 +1,613 @@
+#cheat Spawn VCN Maverick on the VCN Building
+pspawn = 0x08E81290;
+setint(pspawn, 260);
+setfloat(pspawn + 0x4, -468.84, 1123.74, 64.75, 180);
+
+#cheat 50+
+Initialspeed = getfloat (pcar + 0x140);
+speed = Initialspeed + 50;
+
+#cheat testVariables
+money = 1000;
+
+#cheat testvariables
+static money;
+
+#cheat testvariables
+static money;
+
+#cheat testvariables
+speed = getfloat (pcar + 0x140);
+
+#cheat testVariable
+speed = 50/10;
+
+#cheat testVariable
+static speed coefficient ;
+initialSpeed ​​= getfloat (pcar + 0x140);
+speed = initialspeed * coeficientSpeed;
+
+#cheat testVariable
+speed ++;
+
+#cheat testVariable
+speed = speed + 1;
+
+#cheat test Address
+setchar (0x098B7840, 0x4E);
+
+#cheat testVariable
+argentInitial = getint (0x08bde55c);
+money = moneyInitial + 1;
+setint (0x08bde55c, money);
+
+#cheat testVariable
+setint (0x08bde55c, getint (0x08bde55c) + 1);
+
+#cheat testVariable
+static money;
+
+if (money <= 10000)
+{
+   moneyInitial = getint (0x08bde55c);
+   money = moneyInitial + 1;
+   setint (0x08bde55c, money);
+}
+
+#cheat testVariable
+static money;
+if (money <10000)
+{
+   moneyInitial = getint (0x08bde55c);
+   money = moneyInitial + 1;
+   setint (0x08bde55c, money);
+}
+else
+{
+   #off;
+}
+
+#cheat testConditions
+static money;
+if (! money)
+money = 2000;
+if (money <15000 && money> 1000)
+{
+   moneyInitial = getint (0x08bde55c);
+   money = moneyInitial + 5;
+   setint (0x08bde55c, money);
+}
+
+#cheat testConditions
+argentInitial = getint (0x08bde55c);
+if (moneyInitial <10000)
+{
+   moneyMax = 0;
+}
+else
+{
+   moneyMax = 1;
+}
+
+if (! maxMoney)
+{
+   money = initialMoney + 10;
+   setint (0x08bde55c, money);
+}
+
+#cheat testConditions
+argentInitial = getint (0x08bde55c);
+if (buttons)
+{
+   money = moneyInitial + 10;
+   setint (0x08bde55c, money);
+}
+
+#cheat testConditions
+argentInitial = getint (0x08bde55c);
+if (buttons & CTRL_UP)
+{
+   money = moneyInitial + 1;
+   setint (0x08bde55c, money);
+}
+
+#cheat Infinite Ammo
+setint (pplayer + 0x5bc, 0x00ffffff);
+setint (pplayer + 0x5d8, 0x00ffffff);
+setint (pplayer + 0x5f4, 0x00ffffff);
+setint (pplayer + 0x610, 0x00ffffff);
+setint (pplayer + 0x62c, 0x00ffffff);
+setint (pplayer + 0x648, 0x00ffffff);
+setint (pplayer + 0x664, 0x00ffffff);
+
+#cheat testLoop
+i = 0;
+while (i <7)
+{
+   setint (pplayer + 0x5BC + i * 28, 0x00ffffff);
+   i ++;
+}
+
+#cheat testStatic loops
+i;
+for (i = 0; i <7; i ++)
+{
+   setint (pplayer + 0x5BC + i * 28, 0x00ffffff);
+}
+
+#cheat Search level
+static wanted
+/ * If we press up and circle is pressed and wanted is less than 6
+(there are only 6 stars), then we increase wanted by 1. * /
+if ((press & CTRL_UP && buttons & CTRL_CIRCLE && Wanted <12))
+{
+Wanted = Wanted + 1;
+}
+/ * If we press down and circle is pressed and wanted is greater than 0,
+then we decrease wanted by 1. * /
+If ((press & CTRL_DOWN && buttons & CTRL_CIRCLE && Wanted> 0))
+{
+Wanted = Wanted-1;
+}
+setint (pplayer + 0x00000910, Wanted); / * we modify the address of the search level with
+a "wanted" number of stars. * /
+
+#cheat testcheat
+// By NRG500
+
+static id; // we create an id variable which will contain the id of the location.
+
+if (id <1 || id> 4) // If the id is not in the standard, we initialize it to 1
+id = 1;
+
+if (id == 1) // If the id is 1, it is to teleport to mendez, we display this sentence.
+{
+   setshort (0x08e90bd8, 1, '', 'T', 'e', ​​'l', 'e', ​​'p', 'o', 'r', 't', 'e', ​​'r', '', 'c', 'h', 'e', ​​'z', '', 'm', 'e', ​​'n', 'd', 'e', ​​'z', '', ' > ',' ', 0);
+}
+else if (id == 2) // If the id is 2, c ' is to teleport in the stadium, we display this sentence.
+{
+   setshort (0x08e90bd8, 1, '', '<', '', 'T', 'e', ​​'l', 'e', ​​'p', 'o', 'r', 't', 'e ',' r ',' ',' d ',' a ',' n ',' s', '', 'l', 'e', ​​'', 's',' t ',' a ' , 'd', 'e', ​​'', '>', '', 0);
+}
+else if (id == 3) // If the id is 3, it is to teleport to the building near the stadium, we display this sentence.
+{
+   setshort (0x08e90bd8, 1, '', '<', '', 'T', 'e', ​​'l', 'e', ​​'p', 'o', 'r', 't', ' e ',' r ',' ',' d ', 'a', 'n', 's', '', 'l', '', 'i', 'm', 'm', 'e', ​​'u', 'b', 'l', 'e', '', 'p', 'r', 'e', ​​'s',' ',' d ',' u ',' ',' s', 't', 'a', ' d ',' e ',' ','> ',' ', 0);
+}
+else if (id == 4) // If the id is 4, we display the sentence quit, it will be to quit the cheat.
+{ 's', 't', 'a', 'd', 'e', ​​'', '>', '', 0); } else if (id == 4) // If the id is 4, we display the sentence quit, it will be to quit the cheat. { 's', 't', 'a', 'd', 'e', ​​'', '>', '', 0); } else if (id == 4) // If the id is 4, we display the sentence quit, it will be to quit the cheat. {
+   setshort (0x08e90bd8, 1, '', '<', '', 'Q', 'u', 'i', 't', 't', 'e', ​​'r', '', 0);
+}
+
+
+if ((press & CTRL_LEFT) && id> 1) // if we press left and the id is greater than 1, then we decrement it by 1.
+id--;
+else if ((press & CTRL_RIGHT) && id <4) // otherwise, if we press right and the id is less than 4, then we increment the id by 1
+id ++;
+else if ((press & CTRL_CROSS) && (press & CTRL_LTRIGGER)) // otherwise, if we press the cross and L, then ...
+{
+   if (id == 1) // if the id is 1, we teleport to the interior of Mendez's house (the interior is underground) (I don't
+
+      setfloat (pplayer + 0x30, 17.18);
+      setfloat (pplayer + 0x34, 1153.21);
+      setfloat (pplayer + 0x38, -193.79);
+   }
+   else if (id == 2) // if the id is 2, we move to the stage
+   {
+      setfloat (pplayer + 0x30, -1556.21);
+      setfloat (pplayer + 0x34, 1260.59);
+      setfloat (pplayer + 0x38, -234.75);
+   }
+   else if (id == 3) // if the id is 3, we go to the building.
+   {
+      setfloat (pplayer + 0x30, -930.23);
+      setfloat (pplayer + 0x34, 1330.36);
+      setfloat (pplayer + 0x38, 75.18);
+   }
+   else if (id == 4) // if the id is 4, we quit the cheat using the off () instruction;
+   {
+      off ();
+   }
+}
+
+#cheat Degrade color
+// By NRG500
+
+// we declare the variables
+static r; // the amount of red
+static rPlus; // a boolean which is equal to 1 if we need to increase the value r
+static v; // the amount of green
+static vPlus; // a boolean which equals 1 if we must increase the value v
+static b; // the amount of blue
+static bPlus; // a boolean which equals 1 if we must increase the value b
+
+/ * to initialize each variable by color we check if they are all at 0,
+if so it is the first time that we enter the cheat so we initialize
+red to 255 and the other 2 to 0. * /
+if (! r && ! v &&! b)
+{
+   r = 255;
+   v = 0;
+   b = 0;
+}
+
+/ * in the same way, if the booleans are all at 0, we initialize them: rPlus is a 0 (because at the beginning r is equal to 255) and the 2 others have 1 (because their color is at 0) * /
+if (! rPlus &&! vPlus &&! bPlus)
+{
+   rPlus = 0;
+   vPlus = 1;
+   bPlus = 1;
+}
+
+
+if (vPlus &&! rPlus) // if vplus is 1 and rPlus is 0 (starting case)
+{// then we increase the value of green and decrease that of red.
+   v ++;
+   r--;
+
+   if (v == 255) // if green is 255 (the maximum)
+   {// we set vPlus to 0 (because it must now decrease) and rPlus to 1 (indeed the value of red is now 0)
+  
+      vPlus = 0;
+      rPlus = 1;
+   }
+}
+else if (bPlus &&! vPlus) // otherwise if we have bPlus at 1 and vPlus at 0 (so after having finished with the previous condition)
+{// as for above, this time we increase the blue and decrease the green
+   b ++;
+   v--;
+
+   if (b == 255) // if the blue reached 255
+   {// we set bPlus to 0 and vPlus to 1
+
+      bPlus = 0;
+      vPlus = 1;
+   }
+}
+else if (rPlus &&! bPlus) // otherwise, if rPlus is 1, and bPlus is 0
+{// we increase the amount of red and decrease the amount of blue
+   r ++;
+   b--;
+
+   if (r == 255) // when red reaches 255
+   {// we set rPlus to 0 and bPlus to 1. (during the next pass, we will return to the first condition again, and so on.
+
+      rPlus = 0;
+      bPlus = 1;
+   }
+}
+
+
+setchar (pcar + 0x224, r); // we modify the value of the address of red with the variable r
+setchar (pcar + 0x225, v); // we modify the value of the address of red with the varialble v
+setchar (pcar + 0x226, b); // we modify the value of the address from red with the varialble b
+
+#cheat Infernus
+setint (0x08C739B0, 270);
+setchar (0x08C739d4, 0, 0, 0, 255);
+setchar (0x08C739d8, 255, 255, 255, 255);
+setfloat (0x9634180 + 0x74, 0.6)
+setfloat (0x9634180 + 0x78, 5);
+setfloat (0x9634180 + 0x84, 0);
+setfloat (0x9634180 + 0x7C, -0.75);
+setfloat (0x9634180 + 0x80, 0.5);
+setfloat (0x9634180 + 0x74, 1);
+setfloat (0x9367F18, 1.35, 1.35);
+setfloat (0x9634180 + 0XC4, 0.75);
+setfloat (0x9634180 + 0x70, 0.50);
+setfloat (0x9634180 + 0x6C, 0.95);
+setfloat (0x9634180 + 0xBC, 6000);
+setfloat (0x9634180 + 0xCO, 6000);
+setfloat (0x9634180 + 0xA0, 0);
+setfloat (0x9634180 + 0xA4, 0);
+setfloat (0x9634180 + 0xA8, -1.2);
+setfloat (0x9634180 + 0x68, 35);
+setchar (0x9634180 + 0x5C, '4', 'D', 4);
+off();
+
+#cheat SW
+setfloat (0x08e2d8c0, 20.00,313.00,3.90);
+// The coordinates of the weapon
+setint (0x08e2d8d4, 0);
+setchar (0x08e2d8dC, 0xff, 0xff);
+// Ammunition
+setshort (0x08e2d8e6, 0x114);
+// the weapon ID
+setchar (0x08e2d8f2, 0x0f);
+setchar (0x08e2d8f3, 0x00);
+setchar (0x08e2d910, 0xff);
+
+#cheat Pyrokenesis
+// Downloaded from ViceCityStories.fr
+pped = getint (0x08BA1D70);
+if (pped)
+{
+setchar (0x08be3a20, 1);
+setfloat (0x08be3a30, getfloat (pped + 0x30), getfloat (pped + 0x34), getfloat (pped + 0x38));
+setfloat (pped + 0x4e4, getfloat (pped + 0x4e4) -1.5);
+}
+
+#cheat Superman 2
+// Downloaded from ViceCityStories.fr
+pstartfly = getshort (pplayer + 0x1C8);
+static speedmult;
+setfloat (pplayer + 0x4E4, 150.0); // health
+
+   setfloat (pplayer + 0x78, -0.03 * xstick);
+   setfloat (pplayer + 0x70, 0.03 * ystick * getfloat (pplayer));
+   setfloat (pplayer + 0x74, 0.03 * ystick * getfloat (pplayer + 4));
+   if (buttons & CTRL_CROSS) {
+                  setshort (pplayer + 0x1c8, 0x1020);
+            if (speedmult <1.4) speedmult + = 0.01;
+   } else if (speedmult> = 0) speedmult * = 0.95;
+
+   if (pstartfly == 0x1020)
+   {
+   updown = (getfloat (pplayer + 0x28)> 0)? 1: -1;
+   setfloat (pplayer + 0x140, -getfloat (pplayer + 4) * speedmult);
+   setfloat (pplayer + 0x144, getfloat (pplayer) * speedmult);
+   setfloat (pplayer + 0x148, (getfloat (pplayer + 0x18) + cos (90/180 * 3.1415)) * speedmult * updown);    
+   }
+
+#cheat Hunter
+pspawn = 0x08E81290;
+setint (pspawn, 275);
+setfloat (pspawn + 4, -800.82, -1251.66, 11.04, 180);
+
+#cheat helicopter car
+// by NRG500
+sethex (0x945a230, 0x00, 0x00, 0x22);
+setint (0x8E38A38, 142);
+setchar (0x8E38A5C, 116, 119);
+sethex (0x8E38A5E, 0x01, 0x00);
+teleport (292.22, -440.37, 26.02);
+setchar (pplayer + 0xB84, 0x00);
+
+#cheat Baldi adders
+//by ME
+moveto(-1087.21, 359.41, 11.27);  object(0x0264,  0,  0,  90);
+moveto(429.41, 645.47, 11.26);  object(0x0264,  0,  0,  90);
+moveto(338.83, 1123.42, 18.28);  object(0x0264,  0,  0,  90);
+moveto(-662.33, -1292.31, 29.97);  object(0x0264,  0,  0,  90);
+moveto(334.72, 569.74, 8.36);  object(0x0264,  0,  0,  90);
+moveto(77.22, 588.42, 14.57);  object(0x0264,  0,  0,  90);
+moveto(-967.23, -1257.54, 12.00);  object(0x0264,  0,  0,  90);
+moveto(321, -244.97, 11.31);  object(0x0264,  0,  0,  90);
+moveto(-547.24, 554.53, 8.11);  object(0x0264,  0,  0,  90);
+moveto(412.40, 1128.95, -193.60);  object(0x0264,  0,  0,  90);
+moveto(-1266.66, 1469.41, -236.95);  object(0x0264,  0,  0,  90);
+moveto(16.47, 1166.87, -187.86);  object(0x0264,  0,  0,  90);
+moveto(-934.46, 1322.75, 75.18);  object(0x0264,  0,  0,  90);
+moveto(261.97, -172.47, 11.56);  object(0x0264,  0,  0,  90);
+moveto(-824.84, -1197.66, 11.19);  object(0x0264,  0,  0,  90);
+moveto(98.56, -760.12, 10.46);  object(0x0264,  0,  0,  90);
+moveto(-1561.86, 1483.28, -234.00);  object(0x0264,  0,  0,  90);
+moveto(481.24, 193.34, 11.07);  object(0x0264,  0,  0,  90);
+moveto(221.1, -1274.52, 34.61);  object(0x0264,  0,  0,  90);
+moveto(-1148.10, -235.04, 11.45);  object(0x0264,  0,  0,  90);
+moveto(-65.90, -1225.41, 23.94);  object(0x0264,  0,  0,  90);
+moveto(-1190.08,  -699.00,  11.30);  object(0x0264,  0,  0,  90);
+obj = object(0x0264,90,0,0);
+if(object){
+selectobject(obj);
+setfloat(obj + 0264, 0);}
+
+#cheat Baldi Mod
+// by ME
+setint(obj+0x150);
+static obj;
+static baldi;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x0264,90,0,0);}
+else{
+selectobject(obj);
+dx = getfloat(pplayer+0x30) - getfloat(obj+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(obj+0x34);
+setfloat(obj + 0x30,   getfloat(obj + 0x30) + dx * 0.03 * baldi);
+setfloat(obj + 0x34,   getfloat(obj + 0x34) + dy * 0.03 * baldi);
+baldi *= 0.995;
+dx = getfloat(obj+0x30) - getfloat(pplayer+0x30);
+dy = getfloat(obj+0x34) - getfloat(pplayer+0x34);
+if(getint(obj+0x150)>0x098b4a40
+setfloat(pplayer + 0x4e4,   0);}
+if(getint(obj+0x150)>0x098edcc0
+setfloat(pcar + 0x4c,   1);}}}
+#off
+obj = baldi = 0;
+
+#cheat spawn new pickups
+pickup = 0x08C6A330;
+//Rocket Launcher
+setfloat(pickup, -1102.57, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01b8);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1105, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01bb);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1108, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01be);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 12.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01c2);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1094.14, 343.38, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01c9);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1101.52, 356.71, 14.90);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01db);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1103.38, 356.71, 14.90);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01e1);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1182.78, 312.96, 9.51);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01e2);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 341.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01f7);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 336.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01f9);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 341.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x01fb);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 346.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1c9f);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 351.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1c91);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 341.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cb0);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 351.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cb3);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 346.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cb7);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 341.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cca);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 351.45, 11.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1ccf);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 351.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cd3);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 341.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cd8);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 336.45, 15.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cd9);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1105.09, 341.45, 15.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cda);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1099.09, 351.45, 15.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cdb);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 345.45, 15.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cdc);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 355.45, 15.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1ce8);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1105.09, 341.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cec);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1099.09, 351.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cf2);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1100.09, 351.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cfb);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1094.09, 341.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0204);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1110.09, 341.45, 13.27);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0259);
+setchar(pickup+0x38, 0x03);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 14.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x0266);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 16.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x016d);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 18.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x02ba);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 20.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1d43);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 22.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1d14);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 24.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1cff);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 26.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1d01);
+setchar(pickup+0x38, 0x0B);
+pickup += 0x40;
+setfloat(pickup, -1111, 312.34, 28.62);
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, 0x1d02);
+setchar(pickup+0x38, 0x0B);
+for(add = 0x08C69FB0; add <= 0x8C6A1F0; add+=0x40)
+setint(add+0x2C, 1000000);
+off();
+#cheat tmx
+fuck you get off!! (461)

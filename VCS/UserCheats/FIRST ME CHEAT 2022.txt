@@ -1,0 +1,11 @@
+#cheat Welcome to gta VCS 2022
+setshort(0x08e90bd8,  1,  'W',  'e',  'l' ,  'c',  'o',  'm' ,  'e',  ' ',  't' ,  'o',  ' ',  'G',  'T',  'A',  ' ',  'V',  'C',  'S',  ' ',  '2',  '0',  '2',  '2', 0);
+
+#cheat Vic eating food
+static timer;
+if(timer%200==0)
+if(buttons & CTRL_CIRCLE)
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)+10);
+timer++;
+if(timer==200)
+timer=0;

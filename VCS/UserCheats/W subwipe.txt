@@ -1,0 +1,384 @@
+// by vettefan
+#cheat Super Punch
+setchar(pplayer + 0x0bb3, 0x01);
+ 
+// by vettefan
+#cheat Invisible Tony
+setchar(pplayer + 0x19A, 0xE2);
+#off
+setchar(pplayer + 0x19A, 0x02);
+ 
+// by vettefan
+#cheat Bloody Footprints
+setchar(pplayer + 0x198, 0x40);
+#off
+setchar(pplayer + 0x198, 0x00);
+ 
+// by vettefan
+#cheat Always Bleeding
+setchar(pplayer + 0x197, 0x0F);
+#off
+setchar(pplayer + 0x197, 0x00);
+ 
+// by chrislawrance
+#cheat Lock Camera
+setchar(pplayer + 0x560, 1);
+#off
+setchar(pplayer + 0x560, 0);
+ 
+// by Ne0n
+#cheat Car Invisible
+setchar(pcar + 0x0046, 19);
+#off
+setchar(pcar + 0x0046, 9);
+ 
+// by Ne0n
+#cheat Burned Out Car
+setchar(pcar + 0x0046, 0x38);
+#off
+setchar(pcar + 0x0046, 09);
+ 
+// by butterballer360
+#cheat Floating Car
+setchar(pcar + 0x0142, 0x01)
+#off
+setchar(pcar + 0x0142, 0x02)
+ 
+// by pez2k aka Peril
+// Still get popping sound, but tyres are intact
+// If you enter a car with punctured tyres, they magically reinflate too
+// WARNING: FREEZES WHEN USED ON BIKES
+#cheat Undamageable Tyres
+setchar(pcar + 0x0356, 0x00)
+setchar(pcar + 0x0357, 0x00)
+setchar(pcar + 0x0358, 0x00)
+setchar(pcar + 0x0359, 0x00)
+ 
+// by pez2k aka Peril
+// All moving car body parts swing about
+// Toni will repeatedly try to close the driver's door
+// WARNING: FREEZES WHEN USED ON BIKES
+#cheat Flapping Car Parts
+setchar(pcar + 0x035a, 0x02)
+setchar(pcar + 0x035b, 0x02)
+setchar(pcar + 0x035c, 0x02)
+setchar(pcar + 0x035d, 0x02)
+setchar(pcar + 0x035e, 0x02)
+setchar(pcar + 0x035f, 0x02)
+ 
+// by Waterbottle
+// makes the world look crazy (with abit of transparent ground and stuff)
+#cheat Inside Out World
+setchar(0x08B33593, 00)
+#off
+setchar(0x08B33593, 81)
+ 
+// by Jacob26
+#cheat Disable Side Missions
+setchar(0x09F6C4C0, 1);
+#off
+setchar(0x09F6C4C0, 0);
+ 
+// by Mo - thx to Edison Carter
+// funny Car Spin to maker great StuntS!
+#cheat CircleCar
+setchar(pcar + 0x08b, 0x0C0);
+ 
+// by begabamboo
+#cheat Moon Size 20
+setchar(0x08b4c0b4, 20);
+ 
+// thanks to vettefan
+// UP SQUARE SQUARE DOWN LEFT SQUARE SQUARE RIGHT
+#cheat Weapon Set 1 Includes Smoke Grenades
+setshort(0x08a93ad0, 0x000e);
+setshort(0x08a93ad4, 200);
+ 
+// by vettefan
+#cheat Have Unlimited Smoke Grenades
+setchar(pplayer + 0x5D4, 0x01);
+setchar(pplayer + 0x5D9, 0xFF);
+setchar(pplayer + 0x5CC, 0x0E);
+ 
+// by Edison Carter
+#cheat Teleport: Top of Tall Building
+teleport(95, -1509, 216.98);
+ 
+// by Me?
+#cheat fall?
+teleport(95, -1409, 200000000.00);
+ 
+// by Edison Carter
+#cheat You Car Is Black
+setchar(pcar + 0x01f0, 0, 0);
+ 
+// by Edison Carter
+#cheat No Warning For Saving With Cheats
+setchar(0x08b562f2, 0);
+ 
+// by Edison Carter
+#cheat Infinite Ammo
+setint(pplayer + 0x05f0, 100); // (int) handgun ammo loaded
+setint(pplayer + 0x05f4, 200); // (int) handgun ammo total
+setint(pplayer + 0x060c, 100); // (int) shotgun ammo loaded
+setint(pplayer + 0x0610, 200); // (int) shotgun ammo total
+setint(pplayer + 0x0628, 100); // (int) smg ammo loaded
+setint(pplayer + 0x062c, 200); // (int) smg ammo total
+setint(pplayer + 0x0644, 100); // (int) assault rifle ammo loaded
+setint(pplayer + 0x0648, 200); // (int) assault rifle ammo total
+setint(pplayer + 0x0660, 100); // (int) minigun ammo loaded
+setint(pplayer + 0x0664, 200); // (int) minigun ammo total
+setint(pplayer + 0x0664, 200); // (int) rocket launcher ammo total
+setint(pplayer + 0x067c, 100); // (int) sniper rifle ammo loaded
+setint(pplayer + 0x0680, 200); // (int) sniper rifle ammo total
+ 
+#cheat Auto Tune to Radio Off
+setchar(pcar + 0x02a0, 10);
+ 
+// by Ollie199090
+#cheat Bikes have 2 back wheels and no front
+setchar(pcar + 0x50F, 0x40);
+#off
+setchar(pcar + 0x50F, 0x3f);
+ 
+// by Ollie199090
+#cheat No front wheel on bikes
+setchar(pcar + 0x50F, 0x50);
+#off
+setchar(pcar + 0x50F, 0x3f);
+ 
+// by supacasey & ollie199090
+// works best if used on a PCJ-600
+#cheat Uni-cycle
+setchar(pcar + 0x50b, 0x00);
+setchar(pcar + 0x50f, 0x50);
+#off
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+ 
+// by Ollie199090
+#cheat Super Chopper
+setchar(pcar + 0x50F, 0x82);
+#off
+setchar(pcar + 0x50F, 0x3f);
+ 
+// by begabamboo, supacasey & Ollie199090
+#cheat Hoverbike (old)
+setchar(pcar + 0x50a, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x50f, 0xff);
+#off
+setchar(pcar + 0x50a, 0xa5);
+setchar(pcar + 0x50b, 0x3e);
+setchar(pcar + 0x50f, 0x3f);
+ 
+// by Sousanator
+#cheat Hoverbike (no tires)
+setfloat(0x08B562E0, 0);
+#off
+setfloat(0x08B562E0, 1);
+ 
+// by Sousanator and Ollie199090
+#cheat Hoverbike (also removes front wheel cover)
+setfloat(0x08B562E0, 0);
+setchar(pcar + 0x50F, 0x50);
+#off
+setfloat(0x08B562E0, 1);
+setchar(pcar + 0x50F, 0x3f);
+ 
+// by Sousanator
+#cheat (4)Bigger tires
+setfloat(0x08B562E0, 8);
+#off
+setfloat(0x08B562E0, 1);
+ 
+// by Sousanator
+#cheat (3)BIG tires
+setfloat(0x08B562E0, 4);
+#off
+setfloat(0x08B562E0, 1);
+ 
+// by Sousanator
+#cheat (0)Tiny tires
+setfloat(0x08B562E0, 0.5);
+#off
+setfloat(0x08B562E0, 1);
+ 
+// by Waterbottle
+#cheat Bouncy Bounce
+setchar(pcar + 0x4fb, 80)
+ 
+// by Azekriel
+#cheat Bouncing Motorcycles
+setchar (pcar + 0x4F7, 0x42);
+#off
+setchar (pcar + 0x4F7, 0x3F);
+ 
+// by vettefan
+// bikes leave a constant skid mark, and the back left tire of cars do aswell.
+#cheat Constant Skid Marks On Motorcycle
+setchar(pcar + 0x5b0, 0x03)
+ 
+// by Jacob26
+// useful in helicopters
+#cheat Center Camera Behind You
+setchar(0x08B8344A, 1);
+ 
+// by Jacob26
+#cheat Camera Doesn't Lock in Cut Scenes
+setchar(0x08B83442, 0);
+ 
+// by Jeremie Blanc
+#cheat Spawn 2 Cops, be in a vehicle and flip on and off to activate
+#off
+setchar(pcar + 0x00000257, 100);
+ 
+// by Edison Carter
+// This makes it fun to drive a tank through traffic (literally "through" traffic) with rocket boost 4 without getting flipped over by the explosions.
+#cheat Car Stays Level Never Flips Over
+setfloat(pcar + 0x08, 0);
+setfloat(pcar + 0x18, 0);
+ 
+// by matt420bad
+#cheat Giant Toni
+setchar(099d441e, 0xff);
+// camera distance by Vettefan
+setfloat(0x08B833DC, 8.5);
+ 
+// by matt420bad
+#cheat Huge Toni
+setchar(099d4422, 0xff);
+setchar(099d441e, 0xff);
+// camera distance by Vettefan
+setfloat(0x08B833DC, 17);
+ 
+// by matt420bad
+#cheat Small Toni
+setchar(099d441e, 0x00);
+ 
+// by matt420bad
+#cheat Tiny Toni
+setchar(099d4422, 0x00);
+setchar(099d441e, 0x00);
+ 
+// by Edison Carter and vettefan
+#cheat Spinning Traffic!
+setfloat(0x0997B040 + 0x0088, 1.0);
+setfloat(0x0997B720 + 0x0088, 1.0);
+setfloat(0x0997BE00 + 0x0088, 1.0);
+setfloat(0x0997C4E0 + 0x0088, 1.0);
+setfloat(0x0997CBC0 + 0x0088, 1.0);
+setfloat(0x0997D2A0 + 0x0088, 1.0);
+setfloat(0x0997D980 + 0x0088, 1.0);
+setfloat(0x0997E060 + 0x0088, 1.0);
+setfloat(0x0997E740 + 0x0088, 1.0);
+setfloat(0x0997EE20 + 0x0088, 1.0);
+setfloat(0x0997F500 + 0x0088, 1.0);
+setfloat(0x0997FBE0 + 0x0088, 1.0);
+setfloat(0x099802C0 + 0x0088, 1.0);
+setfloat(0x099809A0 + 0x0088, 1.0);
+setfloat(0x09981080 + 0x0088, 1.0);
+setfloat(0x09981760 + 0x0088, 1.0);
+setfloat(0x09981E40 + 0x0088, 1.0);
+setfloat(0x09982520 + 0x0088, 1.0);
+setfloat(0x09982C00 + 0x0088, 1.0);
+setfloat(0x099832E0 + 0x0088, 1.0);
+setfloat(0x099839C0 + 0x0088, 1.0);
+setfloat(0x099840A0 + 0x0088, 1.0);
+setfloat(0x09984780 + 0x0088, 1.0);
+setfloat(0x09984E60 + 0x0088, 1.0);
+setfloat(0x09985540 + 0x0088, 1.0);
+setfloat(0x09985C20 + 0x0088, 1.0);
+setfloat(0x09986300 + 0x0088, 1.0);
+setfloat(0x099869E0 + 0x0088, 1.0);
+setfloat(0x099870C0 + 0x0088, 1.0);
+setfloat(0x099877A0 + 0x0088, 1.0);
+setfloat(0x09987E80 + 0x0088, 1.0);
+setfloat(0x09988560 + 0x0088, 1.0);
+setfloat(0x09988C40 + 0x0088, 1.0);
+setfloat(0x09989320 + 0x0088, 1.0);
+setfloat(0x09989A00 + 0x0088, 1.0);
+setfloat(0x0998A0E0 + 0x0088, 1.0);
+setfloat(0x0998A6C0 + 0x0088, 1.0);
+setfloat(0x0998A7C0 + 0x0088, 1.0);
+setfloat(0x0998AEA0 + 0x0088, 1.0);
+setfloat(0x0998B580 + 0x0088, 1.0);
+setfloat(0x0998BC60 + 0x0088, 1.0);
+setfloat(0x0998C340 + 0x0088, 1.0);
+setfloat(0x0998CA20 + 0x0088, 1.0);
+setfloat(0x0998D100 + 0x0088, 1.0);
+setfloat(0x0998D7E0 + 0x0088, 1.0);
+setfloat(0x0998DEC0 + 0x0088, 1.0);
+setfloat(0x0998E5A0 + 0x0088, 1.0);
+setfloat(0x0998EC80 + 0x0088, 1.0);
+setfloat(0x0998F360 + 0x0088, 1.0);
+setfloat(0x0998FA40 + 0x0088, 1.0);
+setfloat(0x09990120 + 0x0088, 1.0);
+setfloat(0x09990800 + 0x0088, 1.0);
+setfloat(0x09990EE0 + 0x0088, 1.0);
+setfloat(0x099915C0 + 0x0088, 1.0);
+setfloat(0x09991CA0 + 0x0088, 1.0);
+setfloat(0x09992380 + 0x0088, 1.0);
+setfloat(0x09992A60 + 0x0088, 1.0);
+setfloat(0x09993140 + 0x0088, 1.0);
+setfloat(0x09993820 + 0x0088, 1.0);
+setfloat(0x09993F00 + 0x0088, 1.0);
+setfloat(0x099945E0 + 0x0088, 1.0);
+setchar(0x08B4BC10, 1);
+#off
+setchar(0x08B4BC10, 0);
+ 
+// by Edison Carter
+#cheat Tiny Wheels on V8 Ghost
+setfloat(0x09444FA0 + 0x4c, 0.4);
+ 
+// by Edison Carter
+#cheat Huge Wheels on V8 Ghost
+setfloat(0x09444FA0 + 0x4c, 2.0);
+ 
+// by Edison Carter
+#cheat Big Tires on 176 COLOMCR
+setfloat(0x09443E70 + 0x4c, 1.5);
+ 
+// by Edison Carter and Vettefan
+#cheat Monster Truck 176 COLOMCR
+setfloat(0x09443E70 + 0x4c, 1.5);
+setfloat(0x0945C7A4, -.75);
+setfloat(0x0945C6E8, .5);
+setfloat(0x0945C798, .5);
+ 
+// by vettefan
+// As long as your in the car it won't get any physical damage, it won't repair any damage the car already has
+#cheat No physical car damage
+setchar(pcar + 0x140, 00);
+ 
+// this is now the default on v1.0 so no longer needed
+// by vettefan
+// Makes all of the rc cars drivable and puts a bandit, goblin, and raider in your staunton garage.
+#cheat Drivable RC Cars
+setchar(0x08E38A38, 212);
+setchar(0x08E38A90, 169);
+setchar(0x08E38A64, 211);
+setchar(0x0945BC70, 16);
+setchar(0x0945E2E0, 16);
+setchar(0x0945E1F0, 16);
+setchar(0x0945B6D0, 16);
+ 
+#cheat Flyable tiny invisi. heli
+setchar(0x0945B6D0, 16);
+ 
+// by vettefan
+#cheat Super flamethrower
+sethex(0x967C960, 70, 17, 00, 00, 0A, D7, 23, 3C, 84, C2, F5, 36, 0A, D7, A3, 3C, 03);
+ 
+// by vettefan
+#cheat All gangs hate you
+setchar(0x0979B4B0, 0, 100, 0);
+setchar(0x0979B4E4, 0, 100, 0);
+setchar(0x0979B518, 0, 100, 0);
+setchar(0x0979B54C, 0, 100, 0);
+setchar(0x0979B580, 0, 100, 0);
+setchar(0x0979B5B4, 0, 100, 0);
+setchar(0x0979B5E8, 0, 100, 0);
+setchar(0x0979B61C, 0, 100, 0);
+setchar(0x0979B650, 0, 100, 0);

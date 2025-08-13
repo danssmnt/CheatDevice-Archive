@@ -1,0 +1,62 @@
+
+
+#cheat Super BMX at None
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ setshort(0x98a2e10, 1, 'S','u','p','e','r',' ','B','M','X', 0); 
+ //Wheels
+ setfloat(0x962f060+0x6c, 0.9); //Traction Multiplier
+ setfloat(0x962f060+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f060+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f060+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f060+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x962f060+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x962f060+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x962f060+0x74, 1); //Suspension Force Level
+ setfloat(0x962f060+0x84, 0.5); //Suspension Bias
+ setfloat(0x962f060+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f060+0x68, 30); //Steering Lock
+ setfloat(0x962f060+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f060+0xc0, 1500); //Turn Mass
+ setfloat(0x962f060+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f060+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f060+0xa8, 0); //Centre of Mass - Z
+off()
+
+
+#cheat Monster666 at 101 Bayshore Avenue
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x08C739B0, 255); //Car Id
+ setchar(0x08C739B0+0x24, 0,0,0, 255); //Color 1
+ setchar(0x08C739B0+0x28, 255,0,0, 255); //Color2
+ setshort(0x98a33f6, 1, 'M','o','n','s','t','e','r','6','6','6', 0); 
+ //Wheels
+ setfloat(0x936C0B8, 2, 2); //wheel size
+ setfloat(0x96333c0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96333c0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96333c0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96333c0+0x5c, '4', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96333c0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x96333c0+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x96333c0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x96333c0+0x74, 1.19); //Suspension Force Level
+ setfloat(0x96333c0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96333c0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96333c0+0x68, 25); //Steering Lock
+ setfloat(0x96333c0+0xbc, 3000); //Vehilce Mass
+ setfloat(0x96333c0+0xc0, 3200); //Turn Mass
+ setfloat(0x96333c0+0xa0, 0.01); //Centre of Mass - X
+ setfloat(0x96333c0+0xa4, 0.01); //Centre of Mass - Y
+ setfloat(0x96333c0+0xa8, 0.01); //Centre of Mass - Z
+ //Effects
+ //Exhaust

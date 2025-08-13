@@ -1,0 +1,28 @@
+#cheat get a car are mad
+if(getshort(pcar + 0x56) == 171 || getshort(pcar + 0x56) == 226){
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+ID = getshort(p+0x56);
+if(ID == 14 || ID == 35){
+if(p != player)
+setchar(p+0x894, 0x8);}
+setint(p+0x890, pplayer);}}}
+
+#cheat fastest forklift
+if(getshort(pcar + 0x56) == 251 ){
+setshort(0x98a2f84, 1, 'F','I','G', 0);
+if (buttons & CTRL_CROSS)
+  {
+     boost = 2000.0;
+     thrust = boost * 0.00333;
+
+     // velocity = velocity + forward vector * thrust
+     setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+     setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+     setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+
+     // rotational control
+     setfloat(pcar + 0x0078, -0.03 * xstick);
+  }}

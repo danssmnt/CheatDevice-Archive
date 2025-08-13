@@ -1,0 +1,83 @@
+#cheat Touch Cars to make them Float Away!
+//ID: 19977
+//Score: 286
+//Author: Durka Durka Mahn
+//Category: Pointless
+//Description: Inspired by the original Vice City button cheat, simply touch cars while on foot or in a car and they will float away!
+//Image: http://i23.tinypic.com/2s1kt8p.gif
+//Time: 17/10/2007 02:35:51
+//Working: Yes
+static touch;
+if(getint(pobj+0x150))
+    touch=getint(pobj+0x150);
+if(touch)
+    if(getshort(touch+0x56)<280)
+        sethex(touch+0xEC, 0x20);
+if(getchar(pcar+0xEC)==0x20)
+    sethex(pcar+0xEC, 0x22);
+
+#cheat riot
+//ID: 19911
+//Score: 228
+//Author: psphacker108
+//Category: Misc
+//Description: riot! like from sanandreas the riot code. This makes peds attack you, peds ride with you, peds follow you, peds have weapons, Pull peds twords you and a time hack thanks to Edison for thouse ^
+//
+// I've also added,
+//
+//newspaper color flash all over the ground for more chaos.
+//Modded transmission sounds for each car
+//every car you get into will be jet black
+//fire Burn out smoke added
+//all car flame Blue
+//all car spark for walls Green
+//Rapid fire for weapons
+//infinate ammo for Rocket launcher!
+//
+//
+//Image: http://i66.photobucket.com/albums/h257/pspman108/video1-43.gif
+//Time: 25/07/2007 17:40:38
+//Working: Yes
+//by psphacker108
+setchar(0x08bb32c8,  1);
+setchar(0x08baef2c,  1);
+setchar(0x08bacdf5,  1);
+setchar(0x08bb2db4,  1);
+setchar(0x8bb3e00, 0x07);
+setchar(pcar+0x224, 0, 0, 0);
+setchar(pcar+0x228, 0, 0, 0);
+sethex(0x956a733,  0x00);
+setchar(0x95687fc,  0x00,  0x00,  0xff);
+setchar(pcar + 0x277,  0xEF);
+setchar(0x9567DA8,   0xff);
+setchar(0x9567a94,  0x00,  0xff,  0x00);
+setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+setchar(pplayer + 0x6D6,   0x33);
+setchar(0x98B5088,  0x0c,  0x00,  0x01);
+setchar(0x98B5084,  0x50);
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+   setshort(pped + 0x01c8,  0x1020);
+   setfloat(pped + 0x0140,  -dx * 0.05);
+   setfloat(pped + 0x0144,  -dy * 0.05);
+   setfloat(pped + 0x0148,  -dz * 0.05);
+}
+r = (abs((getint(pplayer+0x68)+getint(pplayer))*getint(0x08bb3b40)) % (255-1)) + 1;  
+g = (abs((getint(pplayer+0x64)+getint(pplayer+0x4))*getint(0x08bb3b40)) % (255-1)) + 1;  
+b = (abs((getint(pplayer+0x60)+getint(pplayer+0x8))*getint(0x08bb3b40)) % (255-1)) + 1;  
+for(i = 0x9735B68; i < 0x9735B68; i+= 0x4) {  
+setchar(i,   r,   g,   b);  
+}
+r = (abs((getint(pplayer+0x68)+getint(pplayer))*getint(0x08bb3b40)) % (255-1)) + 1;  
+g = (abs((getint(pplayer+0x64)+getint(pplayer+0x4))*getint(0x08bb3b40)) % (255-1)) + 1;  
+b = (abs((getint(pplayer+0x60)+getint(pplayer+0x8))*getint(0x08bb3b40)) % (255-1)) + 1;  
+for(i = 0x9735B70; i < 0x9735B80; i+= 0x4) {  
+setchar(i,   r,   g,   b);  
+}
+
+
+

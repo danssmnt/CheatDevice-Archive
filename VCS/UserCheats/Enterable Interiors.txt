@@ -1,0 +1,15 @@
+#cheat Enterable Hidden Interiors
+X1 = 269.45;
+Y1 = -166.28;
+Z1 = 11.84;
+X2 = -796.30;
+Y2 = -1181.56;
+Z2 = 11.10;
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 2 ){
+setfloat(pobj+0x30, X2 + 5, Y2 + 5, Z2);}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 2 ){
+setfloat(pobj+0x30, X1 + 5, Y1 + 5, Z1);}

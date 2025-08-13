@@ -1,0 +1,24 @@
+#cheat Dodo Cars
+if (buttons & CTRL_CROSS){ 
+boost = 1.0; 
+thrust = boost * 0.00333; 
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust); 
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust); 
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust); 
+if (getshort(pcar + 0x0058) >= 202 && getshort(pcar + 0x0058) <= 210) 
+setfloat(pcar + 0x0078, -0.03 * xstick);}
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar +
+0x144) * getfloat(pcar + 0x144));
+if(speed>0.50){
+if(!(buttons & CTRL_SQUARE) && buttons & CTRL_CROSS){
+thrust = 0.00333;
+setfloat(pcar+0x70, ystick * getfloat(pcar) / 32);
+setfloat(pcar+0x74, ystick * getfloat(pcar+4) / 32);
+setfloat(pcar+0x78, -xstick / 8);
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * (0.1*thrust)); 
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * (0.1*thrust)); 
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * (4*thrust));
+if(ystick){
+Xdeg = getfloat(pcar) * -10 * ystick;
+Ydeg = getfloat(pcar+4) * -10 * ystick;}
+else Ydeg = Xdeg = 0;}}

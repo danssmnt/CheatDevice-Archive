@@ -1,0 +1,140 @@
+#cheat Godmode
+//HP,sup,des,bla,nuke,orb,fre
+setfloat(pplayer + 0x4E4, 2000000000);
+upf = 1.5;
+static add;
+if(getshort(pplayer+0x1C8)!=0x1020){
+if(!add || !(ped = getint(add))){
+add = 0x08E78C90;
+ped = getint(add);}
+if(ped != 0x098b4a40){
+pedc = getint(ped + 0x480);
+if(pedc > 0x08800000 && pedc < 0x09FFFFFF && pedc != getint(pplayer + 0x480)){
+health = 0x27C;
+edit = pedc;}
+else
+if(!(pedc > 0x08800000 && pedc < 0x09FFFFFF)){
+edit = ped;
+health = 0x4E4;
+setshort(ped + 0x1C8, 0x1020);}
+xdist = (getfloat(pobj + 0x30) + getfloat(pobj + 0x10) * 10) - getfloat(edit + 0x30);
+ydist = (getfloat(pobj + 0x34) + getfloat(pobj + 0x14) * 10) - getfloat(edit + 0x34);
+zdist = getfloat(pobj + 0x38) - getfloat(edit + 0x38) + 5;
+tdist = sqrt(xdist*xdist + ydist*ydist + zdist*zdist);
+xmov = xdist/(tdist*tdist);
+ymov = ydist/(tdist*tdist);
+zmov = zdist/(tdist*tdist);
+setfloat(edit + 0x140, xmov*upf, ymov*upf, zmov*upf);
+setfloat(edit + health, 10000000);}
+add+=0x4;
+setfloat(pplayer+0xD0, 7000000, 10000000);
+setfloat(pplayer+0x128, 0, 0);}
+if(buttons & CTRL_CIRCLE){
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+    if (p == pplayer)
+        continue;
+    dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+    dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+    setshort(p + 0x01c8,  0x1020);
+    setfloat(p + 0x0140,  dx * 0.2);
+    setfloat(p + 0x0144,  dy * 0.2);
+    setfloat(p + 0x0148,  (fabs(dx) + fabs(dy)) * 0.05);
+}
+if(buttons & CTRL_UP){
+explosion=0x08BBBD50;
+static count;
+if(count%150==0){
+   setchar(explosion, 0x0a);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+   explosion+=0x50;
+   setchar(explosion, 0x04);
+   setfloat(explosion+0x10, 0,0,0);
+   setint(explosion+0x28, pobj);
+   setfloat(explosion+0x20, 10000.0);
+   setfloat(explosion+0x1c, 1);
+   setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xFE);
+   setchar(explosion+0x35, 0x1);
+   setchar(explosion+0x3D, 0x1);
+   setshort(explosion+0x42, 0x4316);
+}
+count++;}
+if(buttons & CTRL_TRIANGLE){
+delete = getint(0x098b4a40+x+0x150);
+if(delete){
+setchar(delete + 0x4c, 1);}
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+if(p != player)
+dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+dz = getfloat(p + 0x0038) - getfloat(pplayer + 0x0038);
+setshort(p + 0x01c8,  0x1020);
+setfloat(p + 0x0140,  -dx * 0.05);
+setfloat(p + 0x0144,  -dy * 0.05);
+setfloat(p + 0x0148,  -dz * 0.05);}}}
+if(buttons & CTRL_DOWN){
+static Orb1;
+static Orb2;
+static rot;
+if(!Orb2)
+{
+    setshort(0x08e90bd8,   1,   'T',   'o',   'u' ,   'c',   'h',   ' ',   'a',   ' ',   'c',   'a',   'r',   ' ',   't',   'o',   ' ',   'm',   'a',   'k',   'e',   ' ',  'i',   't',   ' ',   'p',   'r',   'o',   't',   'e',   'c',   't',   ' ',   'y',   'o',   'u',  '!',   0);
+}
+p = getint(pobj + 0x150);
+if (p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+{
+    Orb1 = p;
+}
+if (Orb1)
+{
+    setfloat(Orb1 + 0x08,  0);
+    setfloat(Orb1 + 0x18,  0);
+    setfloat(Orb1 + 0x20,  0,  0,  1);
+    setfloat(Orb1 + 0x30,   getfloat(pplayer + 0x30) - cos(rot) * 12);
+    setfloat(Orb1 + 0x34,   getfloat(pplayer + 0x34) + sin(rot) * 12);
+    setfloat(Orb1 + 0x38,   getfloat(pplayer + 0x38));
+    setfloat(Orb1 + 0x78,   1);
+    setfloat(Orb1 + 0x027c,   10000.0);
+    rot += 10;
+    p = getint(Orb1 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb2 = p;
+}
+if (Orb2)
+{
+    setfloat(Orb2 + 0x08,  0);
+    setfloat(Orb2 + 0x18,  0);
+    setfloat(Orb2 + 0x20,  0,  0,  1);
+    setfloat(Orb2 + 0x30,   getfloat(pplayer + 0x30) - cos(rot+180) * 12);
+    setfloat(Orb2 + 0x34,   getfloat(pplayer + 0x34) + sin(rot+180) * 12);
+    setfloat(Orb2 + 0x38,   getfloat(pplayer + 0x38));
+    setfloat(Orb2 + 0x78,   1);
+    setfloat(Orb2 + 0x027c,   10000.0);
+    p = getint(Orb2 + 0x150);
+    if(p >= 0x098edcc0 && p <= 0x099019a0 && p != pcar)
+              Orb1 = p;
+}}
+if(buttons & CTRL_LTRIGGER){
+static t;
+
+if( t % 60 == 0 )
+{
+  for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10)
+      if(0x098b4a40 + i != pplayer) setchar(0x098b4a40 + i + 0xef,  0x80);
+}
+if( t % 60 == 30 )
+{
+  for(p=0x098edcc0; p <= 0x099019a0; p+=0x820)
+      if(p != pcar) setchar(p + 0xef,  0x80);
+}
+t++;}

@@ -1,0 +1,145 @@
+#cheat Teleport to the Taxi
+pspawn = 0x8E81290;
+setint(pspawn, 183);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+moveto(-1077.40, 312.63, 11.26); object(0x1d31,0,0,0);
+moveto(-1063.19, 312.05, 11.27); object(0x1d31,0,0,0);
+moveto(-1063.08, 334.78, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.03, 335.52, 11.27); object(0x1d31,0,0,0);
+moveto(-1104.91, 320.80, 11.27); object(0x1d31,0,0,0);
+moveto(-1085.16, 320.45, 11.27); object(0x1d31,0,0,0);
+teleport(-1054.93, 319.51, 11.26);
+
+#cheat Taxi Mod
+static speed;
+static lap;
+static currentx;
+static currenty;
+checkpoint1x = -64.11;
+checkpoint1y = -1573.05;
+checkpoint1z = 14.00;
+checkpoint2x = 107.85;
+checkpoint2y = -1597.52;
+checkpoint2z = 14.00;
+checkpoint3x = 161.38;
+checkpoint3y = -1559.10;
+checkpoint3z = 14.00;
+checkpoint4x = 227.96;
+checkpoint4y = -1406.98;
+checkpoint4z = 14.00;
+checkpoint5x = 310.77;
+checkpoint5y = -939.09;
+checkpoint5z = 14.00;
+checkpoint6x = 503.97;
+checkpoint6y = -520.97;
+checkpoint6z = 14.00;
+checkpoint7x = 503.67;
+checkpoint7y = -380.51;
+checkpoint7z = 14.00;
+checkpoint8x = 503.97;
+checkpoint8y = -520.97;
+checkpoint8z = 14.00;
+checkpoint9x = 310.77;
+checkpoint9y = -939.09;
+checkpoint9z = 14.00;
+checkpoint10x = 227.96;
+checkpoint10y = -1406.98;
+checkpoint10z = 14.00;
+checkpoint11x = 161.38;
+checkpoint11y = -1559.10;
+checkpoint11z = 14.00;
+checkpoint12x = 107.85;
+checkpoint12y = -1597.52;
+checkpoint12z = 14.00;
+checkpoint13x = -64.11;
+checkpoint13y = -1573.05;
+checkpoint13z = 14.00;
+if(!currentx&&getint(pobj+0x150)){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);
+setfloat(opp + 0x30, -70.43, -1608.43, 12.22);
+speed = 0.0005;}
+setfloat(opp + 0x30, getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + dy * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + dz * speed);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 13 ){
+if(currentx == checkpoint1x && !lap){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+lap = 1;
+speed = 0.0004;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint8x;
+currenty = checkpoint8y;
+currentz = checkpoint8z;
+speed = 0.001;}
+else if(currentx == checkpoint8x){
+currentx = checkpoint9x;
+currenty = checkpoint9y;
+currentz = checkpoint9z;
+speed = 0.001;}
+else if(currentx == checkpoint9x){
+currentx = checkpoint10x;
+currenty = checkpoint10y;
+currentz = checkpoint10z;
+speed = 0.001;}
+else if(currentx == checkpoint10x){
+currentx = checkpoint11x;
+currenty = checkpoint11y;
+currentz = checkpoint11z;
+speed = 0.001;}
+else if(currentx == checkpoint11x){
+currentx = checkpoint12x;
+currenty = checkpoint12y;
+currentz = checkpoint12z;
+speed = 0.001;}
+else if(currentx == checkpoint12x){
+currentx = checkpoint13x;
+currenty = checkpoint13y;
+currentz = checkpoint13z;
+speed = 0.001;}
+else if(currentx == checkpoint13x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;}
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);}
+#off
+currentx = currenty = currentz = gotten = opp = 0;

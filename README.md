@@ -10,7 +10,7 @@ This is a **Work in Progress**.
 **Cheat Device** is, in a nutshell, a cheat menu for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_, created by the popular modder _**Edison Carter**_. 
 It was very famous back in the day, allowing you to create your own cheats! It was certainly one of the most influential _PlayStation: Portable_ homebrews ever.
 
-This archival was started by me (_@danssmnt_) as a way to preserve an almost 20 year old homebrew. 
+This archival was started by me (@danssmnt) as a way to preserve an almost 20 year old homebrew. 
 Even with the popularity back then, _**Cheat Device**_ has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of _**Cheat Device**_ history before it was lost for good.
 
 This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and gta forums from back in the day.
@@ -112,3 +112,7 @@ Refer to _[Interesing / Useful Content](./Interesting_Useful_Content.md)_.
  - **[Wayback Machine](https://web.archive.org/)** - Almost all CD versions were found preserved here.
  - _**[Kabuto_Kun](https://www.reddit.com/user/Kabuto_Kun/)**_ - _[CheatSync Backups](https://www.reddit.com/r/vitahacks/comments/6xxsif/comment/dmjvnx5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)_
  - **PSP GTA Cheat Device Community** (_03stevensmi_) - _[PSP CHEAT DEVICE ARCHIVE & OTHERS ( VCS, LCS, CWCHEAT, OTHERS & LCS+VCS CHEATS FOR NEW FIRMWIRE)](https://archive.org/details/psp-cheat-device-archive)_
+ - **Freakler**:
+   - More VCS UserCheats
+   - Noobz LCS Goofy Exploit
+   - Hexed LCS v1.0g PRXs

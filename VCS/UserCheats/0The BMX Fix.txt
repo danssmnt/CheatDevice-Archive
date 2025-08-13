@@ -1,0 +1,12 @@
+#cheat The BMX Fix
+if(pcar){
+static prev;
+buttonsup = (~buttons&prev);
+prev = buttons;
+yourcar = pcar;}
+if(getshort(pcar+0x56)==178){
+if((buttonsup&CTRL_DOWN)&&(buttonsup&CTRL_DOWN)){
+setfloat(yourcar+0x00000148,+0.1);}}
+if(getshort(pcar+0x56)==179){
+if((buttonsup&CTRL_DOWN)&&(buttonsup&CTRL_DOWN)){
+setfloat(yourcar+0x00000148,+0.1);}}

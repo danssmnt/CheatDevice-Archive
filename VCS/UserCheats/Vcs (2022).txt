@@ -1,0 +1,1047 @@
+#cheat Spin Car
+setchar(pcar + 0x5C3, 0xFF);
+
+#cheat always bleeding
+setchar(pplayer+0x1cb, 0x3f);
+#off
+setchar(pplayer+0x1cb, 0x0);
+
+#cheat Heavy Cars
+if (getfloat(pcar+0xD0) <= 50000);
+{
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)*1000);
+setfloat(pcar+0xD4, getfloat(pcar+0xD4)*1000);
+}
+#off
+setfloat(pcar+0xD0, getfloat(pcar+0xD0)/1000);
+setfloat(pcar+0xD4, getfloat(pcar+0xD4)/1000);
+
+
+#cheat Submarine + HoverCar
+//Credits: Waterbottle
+static height;
+if(!height)
+ height = getfloat(pcar+0x38);
+static Zdeg;
+ if(!Zdeg)
+ Zdeg = getfloat(pplayer+0x8d0);
+ 
+ static st;
+ static speed;
+ setfloat(pcar+0x1c8, 0x1020);
+ setfloat(pcar+0x38, height);
+ setfloat(pcar+0x148, 0);
+ Zdeg += xstick * 1.5;
+ if(ystick)
+ {
+ Xdeg = getfloat(pcar) * -10 * ystick;
+ Ydeg = getfloat(pcar+4) * -10 * ystick;
+ }
+ else Ydeg = Xdeg = 0;
+
+ if(buttons & CTRL_CROSS)
+ {
+ if(speed < 0)
+         speed += 0.02;
+ if(speed < 0.75)
+         speed += 0.01;
+ }
+ else
+ if(buttons & CTRL_SQUARE)
+ {
+ if(speed > 0)
+         speed -= 0.015;
+ if(speed > -0.4)
+         speed -= 0.008;
+ }
+ else speed *= 0.95;
+
+ if(buttons & CTRL_UP) height+=0.1;
+ if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+ 
+ setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+ setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+ setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+
+ setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+ setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+ setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+
+ setfloat(pcar+0x20, -sin(Ydeg));
+ setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+ setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+ 
+ setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144, getfloat(pcar)*speed);
+ if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+Xdeg = Ydeg = Zdeg = height = 0;
+{
+if(getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.8) {
+ static speed;
+ //set the car ontop of the water
+ setfloat(pcar+0x38,  getfloat(0x96C96B0)+0.8);
+ setfloat(pcar+0x8,  0);
+ setfloat(pcar+0x18,  0);
+ setfloat(pcar+0x20,  0,  0,  0);
+ setfloat(pcar+0x148,  0);
+ //hand brake
+ if(buttons & CTRL_RTRIGGER)
+ {
+ speed*=0.9;
+ handb = 2.5;
+ } else handb = 1;
+ //rotate the vehicle
+ if(speed>0.1)
+         setfloat(pcar+0x78,  -0.015 * xstick * handb);
+ //accelerte
+ if(buttons & CTRL_CROSS && speed<0.7)
+         speed += 0.02;
+ else if(speed>0)
+         speed -= 0.01;
+ //add speed to car
+ setfloat(pcar+0x140,  -getfloat(pcar+4)*speed);
+ setfloat(pcar+0x144,  getfloat(pcar)*speed);
+}
+
+
+#cheat Multiplayer Passenger
+setchar(pcar+0x8B4, 0x18)
+off()
+
+
+
+
+#cheat Pet Car (Up ON, Down OFF)
+//Enter a Car then get out and it will follow you as youre pet
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static thingy;
+if(pcar)
+{
+yourcar = getint(pcar);
+}
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +1);
+setfloat(yourcar + 0x34, playery +1);
+setfloat(yourcar + 0x38, playerz);
+}
+if(press & CTRL_UP&&thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN&&thingy)
+{
+thingy = 0;
+}
+
+#cheat Stunt Car Mode
+if (getchar(pcar+0x75c)==0)
+{
+setchar(0x8bc7f14, 3);
+setfloat(0x8bc7f24, 0);
+setchar(0x8bc7f41, 0);
+setfloat(pcar+0x70, -ystick/10);
+setfloat(pcar+0x74, -xstick/10);
+if (buttons & CTRL_LTRIGGER)
+setfloat(pcar+0x78, 0.1);
+if (buttons & CTRL_RTRIGGER)
+setfloat(pcar+0x78, -0.1);
+}
+
+
+#cheat Submarine Vehicles
+static UnderWater;
+static Height;
+if(getfloat(pcar + 0x38) < getfloat(0x96C96B0))
+{
+UnderWater = 1;
+}
+else
+{
+UnderWater = 0;
+}
+
+if(UnderWater)
+{
+setfloat(pcar+0x78,  -xstick / 40);
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+ if (buttons & CTRL_CROSS)
+ {
+    boost = 1.5;
+    thrust = boost * 0.00333;
+
+    // velocity = velocity + forward vector * thrust
+    setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+    setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+    setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+ }
+
+if(ystick < -0.9)
+{
+setfloat(pcar + 0x00000148,  +0.1);
+Height = getfloat(pcar + 0x38);
+}
+if(ystick > 0.9)
+{
+setfloat(pcar + 0x00000148,  -0.1);
+Height = getfloat(pcar + 0x38);
+}
+setfloat(pcar + 0x38,  Height);
+}
+
+
+#cheat Power Driving
+static boost;
+thrust = boost * 0.00333;
+static Up;
+Power = 1;
+setfloat(pcar+0x78,  -xstick / 40);
+if(ystick < -0.9)
+{
+Power = 0;
+}
+else
+{
+Power = 1;
+}
+if(ystick > 0.9)
+{
+boost = 2.0;
+}
+else
+{
+boost = 1.0;
+}
+if (buttons & CTRL_CROSS)
+{
+if(buttons & CTRL_CIRCLE)
+{
+Up = 0.3;
+}
+else
+{
+Up = 0.1;
+}
+setfloat(pcar + 0x0140,  getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144,  getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148,  getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);
+if(Power)
+{
+setfloat(pcar + 0x00000148,  +Up);
+}
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+if(buttons & CTRL_SQUARE)
+{
+setfloat(pcar + 0x140,  getfloat(pcar + 0x140)*0.95,  getfloat(pcar + 0x144)*0.95);
+}
+if(getfloat(pcar + 0x148) < 0)
+{
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+setfloat(pcar + 0x0000027C,    1000000000);
+setfloat(pcar + 0x0000010C,    0);
+static ZLoc;
+if(press & CTRL_DOWN)
+{
+ZLoc = getfloat(pcar + 0x38);
+}
+if(buttons & CTRL_DOWN)
+{
+Power = 0;
+setfloat(pcar + 0x38,  ZLoc);
+setfloat(pcar + 0x08,    0);
+setfloat(pcar + 0x18,    0);
+}
+
+
+#cheat Hood Surfer
+if(getint(pcar + 0x150))
+{
+surfee = getint(pcar + 0x150);
+}
+if(getshort(surfee + 0x56) > 150&&getshort(surfee + 0x56) < 279)
+{
+setfloat(pcar + 0x30,  getfloat(surfee + 0x30) + getfloat(surfee + 0x10) * - 2.0);
+setfloat(pcar + 0x34,  getfloat(surfee + 0x34) + getfloat(surfee + 0x14) * -2.0);
+setfloat(pcar + 0x38, getfloat(surfee + 0x38) + 2.5);
+setfloat(pcar + 0x00, getfloat(surfee), getfloat(surfee+4), getfloat(surfee+8));
+setfloat(pcar+0x10, getfloat(surfee+0x10), getfloat(surfee+0x14), getfloat( surfee+0x18));
+setfloat(pcar+0x20, getfloat(surfee+0x20), getfloat(surfee+0x24), getfloat( surfee+0x28));
+setfloat(pcar+0x140, 0, 0, 0);
+setfloat(pcar+0x70, 0, 0, 0);
+}
+#off
+surfee = 0;
+
+
+#cheat Car Diamond
+static UM;
+static L;
+static R;
+static BM;
+
+if(!R||!L||!UM||!BM)
+{
+   setshort(0x08e90bd8,   1,   'K', 'e', 'e', 'p', ' ', 't', 'o', 'u', 'c', 'h', 'i', 'n', 'g', ' ', 'c', 'a', 'r', 's', '!',  0);
+}
+
+gcar = getint(pobj + 0x150);
+
+if (gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+       UM = gcar;
+}
+
+if(UM)
+{
+setfloat(UM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  9.0);
+setfloat(UM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  9.0);
+setfloat(UM + 0x38,   getfloat(pcar + 0x38));
+setfloat(UM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(UM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(UM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(UM+0x140, 0, 0, 0);
+setfloat(UM+0x70, 0, 0, 0);
+setfloat(UM+0x27C, 1000);
+gcar = getint(UM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+BM = gcar;
+}
+}
+
+if(BM)
+{
+setfloat(BM + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x10) *  -7.5);
+setfloat(BM + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x14) *  -7.5);
+setfloat(BM + 0x38,   getfloat(pcar + 0x38));
+setfloat(BM + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(BM+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(BM+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(BM+0x140, 0, 0, 0);
+setfloat(BM+0x70, 0, 0, 0);
+setfloat(BM+0x27C, 1000);
+gcar = getint(BM + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+L = gcar;
+}
+}
+
+if(L)
+{
+setfloat(L + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *   6.0);
+setfloat(L + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *   6.0);
+setfloat(L + 0x38,   getfloat(pcar + 0x38));
+setfloat(L + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(L+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(L+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(L+0x140, 0, 0, 0);
+setfloat(L+0x70, 0, 0, 0);
+setfloat(L+0x27C, 1000);
+gcar = getint(L + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+R = gcar;
+}
+}
+
+if(R)
+{
+setfloat(R + 0x30,   getfloat(pcar + 0x30) + getfloat(pcar + 0x0) *  -6.0);
+setfloat(R + 0x34,   getfloat(pcar + 0x34) + getfloat(pcar + 0x4) *  -6.0);
+setfloat(R + 0x38,   getfloat(pcar + 0x38));
+setfloat(R + 0x00, getfloat(pcar), getfloat(pcar+4), getfloat(pcar+8));
+setfloat(R+0x10, getfloat(pcar+0x10), getfloat(pcar+0x14), getfloat( pcar+0x18));
+setfloat(R+0x20, getfloat(pcar+0x20), getfloat(pcar+0x24), getfloat( pcar+0x28));
+setfloat(R+0x140, 0, 0, 0);
+setfloat(R+0x70, 0, 0, 0);
+setfloat(R+0x27C, 1000);
+gcar = getint(R + 0x150);
+if(gcar >= 0x098edcc0 && gcar <= 0x099019a0 && gcar != pcar)
+{
+UL = gcar;
+}
+}
+
+#off
+UM = BM = L = R = 0;
+
+
+#cheat monster quad
+setchar(0x08C739d8,  255, 255, 255, 255);
+setfloat(0x9631d60+0xc4, 0.75);
+setfloat(0x9631d60+0x78, 5);
+setfloat(0x9631d60+0xc0, 6000);
+setfloat(0x9631d60+0xa8, -1.2);
+setfloat(0x9631d60+0x7c, 0);
+setint(0x08C739B0,  230);
+setfloat(0x9631d60+0x74, 0.6);
+setfloat(0x9631d60+0x80, -0.75);
+setfloat(0x9631d60+0x88, 1);
+setfloat(0x9631d60+0x84, 0.5);
+setchar(0x08C739d4, 0, 0, 0, 255);
+setfloat(0x9631d60+0xa4, 0);
+setfloat(0x9631d60+0x70, 0.50);
+setfloat(0x9631d60+0x6c, 0.95);
+setfloat(0x9631d60+0xbc, 6000);
+setfloat(0x9367f18, 1.35, 1.35);
+setfloat(0x9631d60+0xa0, 0);
+setfloat(0x9631d60+0x68, 35);
+
+
+#cheat Bump Transference
+static pprev;
+static delay;
+if (delay > 0)
+   delay--;
+if (pcar)
+{
+   pbump = getint(pcar + 0x0150);
+   if (pbump && (pbump != pprev || delay == 0))
+   {
+       modelid = getshort(pbump + 0x0056);
+       if (modelid >= 170 && modelid <= 280)
+       {
+           setint(pplayer + 0x450, pbump);
+           setint(pplayer + 0x480, pbump);
+           setint(pplayer + 0x484, pbump);
+           setint(pbump + 0x384, pplayer);
+           setint(pcar + 0x384, 0);
+           setint(0x08bb4064, pbump);
+           setint(0x08bc7f10, pbump);
+           setint(0x08bc85f0, pbump);
+           setchar(pbump + 0x675, 0x90);
+           setchar(pcar + 0x675, 0x80);
+           delay = 180;
+           pprev = pcar; // no backsies
+       }
+   }
+}
+
+
+#cheat neon
+static obj;
+static old1;
+static old2;
+static old3;
+static old4;
+if(obj)
+{
+  setfloat(obj + 0x30, old1, old2, old3);
+  setshort(obj + 0x56, old4);
+}
+if(obj = getint(0x0994f460))
+{
+  old1 = getfloat(obj + 0x30);
+  old2 = getfloat(obj + 0x34);
+  old3 = getfloat(obj + 0x38);
+  old4 = getshort(obj + 0x56);
+  setfloat(obj + 0x30, getfloat(pcar+0x30), getfloat(pcar+0x34), getfloat(pcar+0x38));
+  setshort(obj + 0x56, 0x1d47);
+}
+
+#cheat Minigun has 999 shots per clip
+setint(0x096001C4, 0x3e7);
+
+#cheat New Construction
+moveto(499.04,-295.23,177.35);  object(0x1C86,15,0,234);
+move(1.42,11.72,0.00);  object(0x1C84,15,0,237);
+move(-14.03,-5.32,6.00);  object(0x1CAA,0,0,269);
+move(0.33,-9.84,0.11);  object(0x1CAA,0,0,268);
+move(-1.12,11.08,-0.10);  object(0x1CAA,0,0,262);
+move(-704.59,-928.60,-165.29);  object(0x1CAA,0,0,45);
+move(-6.07,7.53,7.20);  object(0x1CAA,0,0,352);
+move(-1.04,8.49,4.30);  object(0x1CAA,350,0,352);
+
+
+//By Waterbottle
+//aim at a ped and press /\ to take controll of it
+//when you are in controll of a ped you can rotate it with the analog stick (if a ped wants to go somewhere elsethan you want then it will look a bit weird, but you can still controll it)
+//use analog upwards to move it forward
+//Trianlge were supposed to make the ped leave or enter a vehivle, but it only works for leaving vehicles
+//press and hold L+R alittle while to kill the ped you are in controll of
+#cheat remote controll ped
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+   setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+   setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+   }
+
+//kill ped
+if(press & CTRL_LTRIGGER && press & CTRL_RTRIGGER) rot = 0;
+if(buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER) {
+rot+=25;
+if(rot>2000) { setfloat(address+0x4e4, 0); setint(0x09fc73f8, 0); }
+}
+
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894,0x10);
+else setchar(address+0x894,0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+#cheat "Megaman"
+setshort(0x09600210, 0x1DB);
+setchar(0x096001F0, 0x15);
+
+#cheat Vic of Fire
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+
+#cheat radio always on
+//by vettefan
+//activate it before you leave your safehouse, or you'll have to enter a vehicle first
+setchar(pcar+0x2b7, 0);
+setchar(0x8bb11dc, 0);
+setchar(0x9a6341b, 0);
+
+0 - Flash fm
+1 - Vrock
+2 - Paradise
+3 - VCPR
+4 - VCFL radio
+5 - The wave 103
+6 - Flash 105 fm
+7 - Espatoso
+8 - Emotion 98.3
+9 - Radio off 
+
+#cheat set clock
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);
+}
+
+
+#cheat The Convenient Portals
+//made with Portal Maker by DDM
+static Made;
+X1 = 269.45;
+Y1 = -166.28;
+Z1 = 11.84;
+X2 = -796.30;
+Y2 = -1181.56;
+Z2 = 11.10;
+if(!Made)
+{
+for( rot = 0; rot < 270; rot += 10.8 )
+{
+moveto(X1 + cos(rot) * 3,  Y1 + sin(rot) * 3,  Z1); object(0x1B3,  0,  0,  -rot + 90);
+}
+for( rot2 = 0; rot2 < 270; rot2 += 10.8 )
+{
+moveto(X2 + cos(rot2) * 3,  Y2 + sin(rot2) * 3,  Z2); object(0x1B3,  0,  0,  -rot2 + 90);
+}
+Made = 1;
+}
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 2 )
+{
+setfloat(pobj+0x30,  X2 + 5,  Y2 + 5,  Z2);
+}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 2 )
+{
+setfloat(pobj+0x30,  X1 + 5,  Y1 + 5,  Z1);
+}
+
+#cheat Great Blood
+if(getchar(0x9567DC8) != getchar(0x9569BB0))
+{
+setchar(0x9567DAF, getchar(0x9567DC8), getchar(0x9567DC9), getchar(0x9567DCA), getchar(0x9567DCB), getchar(0x9567DD0));
+}
+setchar(0x9567DC8, getchar(0x9569BB0), getchar(0x9569BB1), getchar(0x9569BB2), getchar(0x9569BB3));
+setchar(0x9567DD0, getchar(0x9569BB8));
+setchar(0x9567D6B, 0x3E);
+setchar(0x9567DA8, 0x04);
+setchar(0x9567DAC, 0xFF, 0x00, 0x00);
+setchar(0x9567E4C, getchar(0x9569BB0), getchar(0x9569BB1), getchar(0x9569BB2), getchar(0x9569BB3));
+setchar(0x9567E54, getchar(0x9569BB8));
+setchar(0x9567DEF, 0x3F);
+setchar(0x9567E2B, 0x04);
+setchar(0x9567E1B, 0x3D);
+setchar(0x9567E30, 0xFF, 0x00, 0x00);
+#off
+setchar(0x9567D6B, 0x3B);
+setchar(0x9567DA8, 0x35);
+setchar(0x9567DEF, 0x3C);
+setchar(0x9567E2B, 0x40);
+setchar(0x9567E1B, 0x3C);
+setchar(0x9567DAC, 0xFF, 0x20, 0x20);
+setchar(0x9567E30, 0xFF, 0x20, 0x20);
+setchar(0x9567DC8, getchar(0x9567DAF), getchar(0x9567DB0), getchar(09567DB1), getchar(0x9567DB2));
+setchar(0x9567DD0, getchar(0x9567DB3));
+setchar(0x9567E4C, getchar(0x9567DAF), getchar(0x9567DB0), getchar(09567DB1), getchar(0x9567DB2));
+setchar(0x9567E54, getchar(0x9567DB3));
+setchar(0x9567DAF, 0x00, 0x00, 0x00, 0x00, 0x00);
+
+#cheat ManHunt X
+static menu;
+choices = 9;
+setchar(0x08E93604,  0x1);
+if(press & CTRL_DOWN && menu < choices - 1) {
+  menu++;
+setchar(0x08E93604,  0x0);
+}
+if(press & CTRL_UP && menu > 0) {
+  menu--;
+setchar(0x08E93604,  0x0);
+}
+setshort(0x08E92FFC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+setshort(0x08E931FC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+setshort(0x08E933FC,  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'X');
+if(menu == 0) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x98B5051,  0xff);
+setchar(0x98B504C,  0xff);
+setchar(0x98B504f,  0xff);
+setchar(0x98B5087,  0xff,  0xff);
+setchar(0x98B5038,  0xff,  0xff);
+}
+setshort(0x08E92FFC + 18,  '~',  'n',  '~',  '>',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 18,  '~',  'n',  '~',  '>',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 18,  '~',  'n',  '~',  '>',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 1) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x01);
+}
+setshort(0x08E92FFC + 42,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 42,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 42,  '~',  'n',  '~',  '>',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 2) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8978,  0x00);
+setchar(0x8BC8984,  0x07);
+}
+setshort(0x08E92FFC + 74,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 74,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 74,  '~',  'n',  '~',  '>',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 3) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8,  1,  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'A',  'O',  0);
+}
+setshort(0x08E92FFC + 4,  '~',  'n',  '~',  '>',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC + 4,  '~',  'n',  '~',  '>',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC + 4,  '~',  'n',  '~',  '>',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu == 4) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x098B5350,   0x04);
+setchar(0x08baef2c,   1);
+setchar(0x08bacdf5,   1);
+}
+setshort(0x08E92FFC + 128,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E931FC + 128,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E933FC + 128,  '~',  'n',  '~',  '>',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+}
+if(menu == 5) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x0c);
+setfloat(pplayer + 0x4E4,   50.0);
+}
+setshort(0x08E92FFC + 158,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 158,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 158,  '~',  'n',  '~',  '>',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 6) {
+if(buttons & CTRL_CROSS)
+{
+setfloat(pplayer + 0x4E4,   150.0);
+setchar(0x098B5350,   0x00);
+setshort(0x08e90bd8,  1,  '~',   'r',   '~',  'T',  'e',  's',  't',  ' ',  'C',  'a',  's',  'e',  ':',  ' ',  '4',  '1',  '2',  '9',  '6',  '7',  '~',   'w',   '~',  0);
+}
+setshort(0x08E92FFC + 182,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E931FC + 182,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E933FC + 182,  '~',  'n',  '~',  '>',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+}
+if(menu == 7) {
+if(buttons & CTRL_CROSS)
+{
+setshort(0x08e90bd8,  1,  '~',   'r',   '~',  'T',  'e',  's',  't',  ' ',  'C',  'a',  's',  'e',  ':',  ' ',  '4',  '1',  '2',  '9',  '6',  '6',  '~',   'w',   '~',  0);
+}
+setshort(0x08E92FFC + 218,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E931FC + 218,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E933FC + 218,  '~',  'n',  '~',  '>',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+}
+if(menu == 8) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x06);
+}
+setshort(0x08E92FFC + 256,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 256,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 256,  '~',  'n',  '~',  '>',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu == 9) {
+if(buttons & CTRL_CROSS)
+{
+setchar(0x8BC8984,  0x08);
+}
+setshort(0x08E92FFC + 2,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 2,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 2,  '~',  'n',  '~',  '>',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 0) {
+setshort(0x08E92FFC + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 1) {
+setshort(0x08E92FFC + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 2) {
+setshort(0x08E92FFC + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 3) {
+setshort(0x08E92FFC + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu > 4) {
+setshort(0x08E92FFC + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E931FC + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E933FC + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+}
+if(menu > 5) {
+setshort(0x08E92FFC + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 6) {
+setshort(0x08E92FFC + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E931FC + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E933FC + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+}
+if(menu > 7) {
+setshort(0x08E92FFC + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E931FC + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E933FC + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+}
+if(menu > 8) {
+setshort(0x08E92FFC + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu > 9) {
+setshort(0x08E92FFC + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 0) {
+setshort(0x08E92FFC +0x2 + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 18,  '~',  'n',  '~',  'K',  'I',  'L',  'L',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 1) {
+setshort(0x08E92FFC +0x2 + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 42,  '~',  'n',  '~',  'S',  'h',  'o',  'o',  't',  'e',  'r',  's',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 2) {
+setshort(0x08E92FFC +0x2 + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 74,  '~',  'n',  '~',  'E',  's',  'c',  'a',  'p',  'e',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 3) {
+setshort(0x08E92FFC +0x2 + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E931FC +0x2 + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+setshort(0x08E933FC +0x2 + 4,  '~',  'n',  '~',  'G',  'a',  'm',  'e',  ' ',  'R',  'a',  't',  'i',  'n',  'g',  ' ',  'H',  'a',  'c',  'k');
+}
+if(menu < 4) {
+setshort(0x08E92FFC +0x2 + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E931FC +0x2 + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+setshort(0x08E933FC +0x2 + 128,  '~',  'n',  '~',  'I',  'n',  's',  'a',  'n',  'e',  ' ',  'M',  'o',  'd',  'e',  '!');
+}
+if(menu < 5) {
+setshort(0x08E92FFC +0x2 + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 158,  '~',  'n',  '~',  'D',  'r',  'u',  'g',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 6) {
+setshort(0x08E92FFC +0x2 + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E931FC +0x2 + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+setshort(0x08E933FC +0x2 + 182,  '~',  'n',  '~',  'L',  'e',  'o',  ' ',  'K',  'a',  's',  'p',  'e',  'r',  ' ',  '4',  ',  ',  '2',  '6');
+}
+if(menu < 7) {
+setshort(0x08E92FFC +0x2 + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E931FC +0x2 + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+setshort(0x08E933FC +0x2 + 218,  '~',  'n',  '~',  'D',  'a',  'n',  'i',  'e',  'l',  ' ',  'L',  'a',  'm',  'b',  ' ',  '5',  '-',  '2',  '6');
+}
+if(menu < 8) {
+setshort(0x08E92FFC +0x2 + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 256,  '~',  'n',  '~',  'N',  'i',  'g',  'h',  't',  ' ',  'V',  'i',  's',  'i',  'o',  'n',  ' ',  'M',  'o',  'd',  'e');
+}
+if(menu < 9) {
+setshort(0x08E92FFC +0x2 + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E931FC +0x2 + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+setshort(0x08E933FC +0x2 + 2,  '~',  'n',  '~',  'M',  'a',  'n',  'H',  'u',  'n',  't',  ' ',  'M',  'o',  'd',  'e');
+}
+
+#cheat Redone Superman
+pstartfly = getshort(pplayer+0x1C8);
+static speedmult;
+if(!speedmult) speedmult=0.3;
+setfloat(pplayer + 0x4E4, 150.0);//health
+
+   setfloat(pplayer + 0x78, -0.03 * xstick);
+   setfloat(pplayer + 0x70, 0.03 * ystick * getfloat(pplayer));
+   setfloat(pplayer + 0x74, 0.03 * ystick * getfloat(pplayer+4));
+   if(buttons & CTRL_CROSS) {
+            updown = (getfloat(pplayer+0x28)>0) ? 1 : -1;
+                  setshort(pplayer+0x1c8, 0x1020);
+                  setfloat(pplayer+0x140, -getfloat(pplayer+0x10)*getfloat(pplayer+0x18)*speedmult * updown);
+                  setfloat(pplayer+0x144, -getfloat(pplayer+0x14)*getfloat(pplayer+0x18)*speedmult * updown);
+            setfloat(pplayer+0x148, (getfloat(pplayer+0x18)+cos(90/180*3.1415))*speedmult * updown);
+            if(speedmult<1) speedmult+=0.02;
+   } else
+       if(pstartfly==0x1020)
+       {
+       setfloat(pplayer+0x140, 0, 0, 0);
+       speedmult=0.3;
+       }
+	
+PM
+
+#cheat The Force
+//Thanks to waterbottle for ped pointer.
+//Thanks to Edison Carter for these Cheats.
+pped = getint(0x08BA1D70);
+if (pped != 0)
+{
+//Force Pull
+if(buttons & CTRL_DOWN)
+{
+ dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+ dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+ dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+ setshort(pped + 0x01c8, 0x1020);
+ setfloat(pped + 0x0140, -dx * 0.05);
+ setfloat(pped + 0x0144, -dy * 0.05);
+ setfloat(pped + 0x0148, -dz * 0.05);
+}
+
+// Force Push
+if (buttons & CTRL_UP)
+{
+ dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+ dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+ setshort(pped + 0x01c8, 0x1020);
+ setfloat(pped + 0x0140, dx * 0.2);
+ setfloat(pped + 0x0144, dy * 0.2);
+ setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+
+//Force Choke
+if(buttons & CTRL_SQUARE)
+ setfloat(pped + 0x4e4, 0);
+
+}
+
+
+#cheat telekinines2
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_TRIANGLE) {
+//Force Punch, by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   setshort(pped + 0x01c8,  0x1020);
+   setfloat(pped + 0x0140,  dx * 0.2);
+   setfloat(pped + 0x0144,  dy * 0.2);
+   setfloat(pped + 0x0148,  (fabs(dx) + fabs(dy)) * 0.05);
+   pdone = pped;
+}
+if (pped == 0)
+{
+   pdone = 0;
+}
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam, by edison
+if (pped != 0)
+{
+   dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+   dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+   dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+   setshort(pped + 0x01c8,  0x1020);
+   setfloat(pped + 0x0140,  -dx * 0.05);
+   setfloat(pped + 0x0144,  -dy * 0.05);
+   setfloat(pped + 0x0148,  -dz * 0.05);
+}
+}
+if(buttons & CTRL_CIRCLE) {
+if (pped != 0)
+  setfloat(pped + 0x4e4,  0);
+}
+
+
+#cheat Telekinines3
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_SQUARE) {
+//Force Punch, by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+  dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+  dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+  setshort(pped + 0x01c8,  0x1020);
+  setfloat(pped + 0x0140,  dx * 0.2);
+  setfloat(pped + 0x0144,  dy * 0.2);
+  setfloat(pped + 0x0148,  (fabs(dx) + fabs(dy)) * 0.05);
+  pdone = pped;
+}
+if (pped == 0)
+{
+  pdone = 0;
+}
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam, by edison
+if (pped != 0)
+{
+  dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+  dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+  dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+  setshort(pped + 0x01c8,  0x1020);
+  setfloat(pped + 0x0140,  -dx * 0.05);
+  setfloat(pped + 0x0144,  -dy * 0.05);
+  setfloat(pped + 0x0148,  -dz * 0.05);
+}
+}
+if(buttons & CTRL_CIRCLE) {
+if (pped != 0)
+ setfloat(pped + 0x4e4,  0);
+}
+//from here down is waterbottle
+address = getint(0x09fc73f8);//read the address of the ped you controll
+if(address!=0) {//if you have controll of a ped
+//variables for ped
+rot = getfloat(0x09fc73c8);
+pedx = getfloat(0x09fc73e0);
+pedy = getfloat(0x09fc73e4);
+
+//set peds position and rotation
+setfloat(address+0x30, pedx);
+setfloat(address+0x34, pedy);
+setfloat(address, cos(rot)); setfloat(address+0x4, sin(rot));
+setfloat(address+0x10, -sin(rot)); setfloat(address+0x14, cos(rot));
+
+//movement
+if(xstick < -0.5) rot += 4;
+if(xstick > 0.5) rot -= 4;
+if(ystick < -0.5) {
+  setfloat(0x09fc73e0, getfloat(address+0x30)-sin(rot)*0.1);
+  setfloat(0x09fc73e4, getfloat(address+0x34)+cos(rot)*0.1);
+  }
+//leave or eneter vehicle, only works for leave vehicele
+if(buttons & CTRL_TRIANGLE) {
+if(getchar(address+0x8c4)==2) setchar(address+0x894,0x10);
+else setchar(address+0x894,0x12);
+}
+
+setfloat(0x09fc73c8, rot);
+
+//if you don't have controll of a ped then check if you want to take controll of one.
+} else if(getint(0x08BA1D70) && buttons & CTRL_TRIANGLE) {
+setint(0x09fc73f8, getint(0x08BA1D70));
+address = getint(0x08BA1D70);
+setfloat(0x09fc73e0, getfloat(address+0x30));
+setfloat(0x09fc73e4, getfloat(address+0x34));
+setfloat(0x09fc73c8, 0);
+}
+
+
+#cheat Telekinines4
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+
+if(pped && pped<0x9900000) address=pped;
+
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+
+setshort(address+0x1c8, 0x1020);
+
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+
+if(buttons & CTRL_CROSS)
+       rotsp+=0.005;
+  else
+       rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+
+
+#cheat Dark Vic
+//must be turned off
+setchar(pplayer + 0x4A, 32);
+
+#cheat Normal Vic
+//must be turned off
+setchar(pplayer + 0x4A, 0);

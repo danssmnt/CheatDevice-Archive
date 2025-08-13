@@ -1,0 +1,70 @@
+#cheat Vehicle Roof Attachment
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped&&press&CTRL_UP)
+yourped=pped;
+if(yourped){
+setfloat(yourped+0x4E4, 100.0);
+setfloat(yourped+0x4E8, 100.0);
+setint(yourped+0x5d8, 0xffffff);
+setint(yourped+0x5f4, 0xffffff);
+setint(yourped+0x610, 0xffffff);
+setint(yourped+0x5bc, 0xffffff);
+setint(yourped+0x62c, 0xffffff);
+setint(yourped+0x648, 0xffffff);
+setint(yourped+0x664, 0xffffff);
+setint(yourped+0x680, 0xffffff);
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+pped = getint(0x08BA1D70);
+if(pped&&pped != yourped){
+static enemy;
+enemy=pped;
+if(enemy){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, enemy);
+health = getfloat(enemy+0x4e4);
+if(health == 0){
+enemy=0;
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+if(yourped&&!getint(yourped+0x480)){
+x1 = getfloat(pobj+0x30);
+y1 = getfloat(pobj+0x34);
+z1 = getfloat(pobj+0x38);
+static obj;
+if(!obj){
+moveto(x1,y1,z1);
+obj = object(0x1CA4,90,0,0);}
+else{
+selectobject(obj);
+setfloat(obj+0x30, getfloat(pobj+0x30));
+setfloat(obj+0x34, getfloat(pobj+0x34));
+setfloat(obj+0x38, getfloat(pobj+0x038)+1);
+propagateobject();}
+x2 = getfloat(pobj+0x30);
+y2 = getfloat(pobj+0x34);
+z2 = getfloat(pobj+0x38);
+setfloat(yourped+0x30,x2);
+setfloat(yourped+0x34,y2);
+setfloat(yourped+0x38,z2+1.5);}}}
+if(yourped){
+pfollow = getchar(yourped+0x894);
+if(pfollow == 0xC&&buttons&CTRL_CROSS&&press&CTRL_UP){
+setchar(yourped+0x894, 0x31);
+yourped=0;}
+if(yourped){
+health2 = getfloat(yourped+0x4e4);
+if(health2 == 0){
+yourped=0;}}}
+#off
+obj = state = 0;
+setchar(yourped+0x894, 0x31);
+yourped=0;

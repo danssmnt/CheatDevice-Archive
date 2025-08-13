@@ -1,0 +1,36 @@
+#cheat hero car
+//Created By Sunshine Customs
+//Sunshine Customs Created By emcp
+//Addresses Found By Vette
+//Basics
+setint(0x8C73B30, 171); //Car Id
+setchar(0x8C73B30+0x24, 255,0, 0); //Color 1
+setchar(0x8C73B30+0x28, 0,0,0, 255); //Color2
+setshort(0x98a30e2, 1, 'H','e','r','o', 0);
+//Wheels
+setfloat(0x935E438, 1, 1.3); //wheel size
+setfloat(0x962eb20+0x6c, 1.1); //Traction Multiplier
+setfloat(0x962eb20+0xc4, 1); //Traction Loss
+setfloat(0x962eb20+0x70, 0.8); //Traction Bias
+//Engine
+setchar(0x962eb20+0x5c, '60', '240', 11); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x962eb20+0x7c, 0.18); //Suspension Upper Limit
+setfloat(0x962eb20+0x80, -0.18); //Suspension Lower Limit
+setfloat(0x962eb20+0x78, 0.1); //Suspension Damping Level
+setfloat(0x962eb20+0x74, 1.4); //Suspension Force Level
+setfloat(0x962eb20+0x84, 0.6); //Suspension Bias
+setfloat(0x962eb20+0x88, 0.5); //Anti-Dive Multiplier
+//Handling
+setfloat(0x962eb20+0x68, 5); //Steering Lock
+setfloat(0x962eb20+0xbc, 16500); //Vehilce Mass
+setfloat(0x962eb20+0xc0, 20000); //Turn Mass
+setfloat(0x962eb20+0xa0, 0); //Centre of Mass - X
+setfloat(0x962eb20+0xa4, 0); //Centre of Mass - Y
+setfloat(0x962eb20+0xa8, 0); //Centre of Mass - Z
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off();

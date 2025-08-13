@@ -1,0 +1,10 @@
+#cheat Revive Dead Peds
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+health = getfloat(0x098B4A40 + i + 0x04E4);
+if(health == 0)
+{
+setchar(0x098B4A40 + i + 0x08B4, 0x32);
+setfloat(0x098B4A40 + i + 0x04E4, 100.0);
+}
+}

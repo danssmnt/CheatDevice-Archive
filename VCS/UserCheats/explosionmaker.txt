@@ -1,0 +1,32 @@
+#cheat Explosion Maker
+static Loc;
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+aimz = getfloat(0x08ba1d58);
+if(getint(pplayer + 0x150))
+{
+Loc = getint(pplayer + 0x150);
+}
+modelid = getshort(Loc + 0x0056);
+if (modelid < 750 ||
+modelid == 1515 ||
+modelid == 2627 ||
+modelid == 7337 ||
+modelid == 1820 ||
+modelid == 1821 ||
+modelid == 1825 ||
+modelid == 1826 ||
+modelid == 1829 ||
+(modelid >= 2551 && modelid <= 2554) ||
+(modelid >= 1526 && modelid <= 1536) ||
+(modelid >= 1217 && modelid <= 1223) ||
+(modelid >= 1485 && modelid <= 1488))
+{
+if (modelid != 1533&&modelid > 270)
+{
+setshort(Loc + 0x56,  0x1c2);
+setfloat(Loc + 0x30,  aimx);
+setfloat(Loc + 0x34,  aimy);
+setfloat(Loc + 0x38,  aimz);
+}
+}

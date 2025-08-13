@@ -1,0 +1,14 @@
+#cheat Teleport helicopter pilots
+// Use this to teleport the security guards to the helicopter
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+ID = getshort(0x098B4A40 + i + 0x56);
+if(ID == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+heli = getint(0x098B4A40 + i + 0x0484);
+setfloat(0x098B4A40 + i + 0x30, getfloat(heli + 0x30) + 2, getfloat(heli + 0x34), getfloat(heli + 0x38));
+}
+}
+off();

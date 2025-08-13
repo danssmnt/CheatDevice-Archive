@@ -1,0 +1,305 @@
+#cheat Spawn Fire at the Compound
+fire = 0x08BE3A20;
+setchar(fire, 1);
+setfloat(fire + 0x10, -1077.40, 312.60, 11.26);
+fire += 0x40;
+setchar(fire, 1);
+setfloat(fire + 0x10, -1077.40, 314.60, 11.26);
+
+#cheat Spawn Explosions at the Compound
+explosion=0x08BBBD50;
+setchar(explosion, 0xa);
+setfloat(explosion+0x10, -1077.40, 312.60, 11.26);
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+explosion+=0x50;setchar(explosion, 0x4);
+setfloat(explosion+0x10, -1077.40, 314.60, 11.26);
+setfloat(explosion+0x20, 5.0);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);
+
+#cheat Spawn Bullets at the Compound
+setfloat(0x08B90220, -1077.40, 312.63, 11.26);
+#cheat Spawn Bullets at the Compound (Different Address)
+setfloat(0x08C60FF0, -1077.40, 312.63, 11.26);
+
+#cheat Spawn vehicle at the Compound
+vehicle = 0x08E80A20;
+setint(vehicle, 279);
+setfloat(vehicle + 0x4, -1077.40, 312.63, 11.26, 180);
+vehicle += 0x30;
+off()
+
+#cheat Marker Height
+setchar(0x08C6304A, 0x80);
+setchar(0x08C6304B, 0x3F);
+#cheat Marker Width
+setchar(0x08C63036, 0x80);
+setchar(0x08C63037, 0x3F);
+#cheat Rotating Markers
+setchar(0x08C630A0, 0x01);
+#cheat Fast Rotating Markers
+setchar(0x08C630A0, 0x01, 0x01);
+#cheat Stop Rotating Markers
+setchar(0x08C630A0, 0x00, 0x00);
+
+#cheat Place Icon somewhere on the Map
+icon = 0x08E8EFC0;setfloat(icon, -1077.40, 312.63, 11.26); // Spawning location of the icon
+setchar(icon+0x19, 0x1D); // Object ID
+icon += 0x30;
+
+#cheat Checkpoint Race Example
+vehiclespawn = 0x08E81290; // Spawns a vehicle at the starting point of the race.
+setint(vehiclespawn, 205);
+setfloat(vehiclespawn + 0x4, 291.65, -1414.97, 11.07, 270);
+icon = 0x08E8EFC0; // Spawns a little race flag icon on the map...
+setfloat(icon, 291.65, -1414.97, 11.07); // ...to show, where the race is located.
+setchar(icon + 0x19, 0x0E);
+moveto(289.53,-1421.75,10.27); // Creates a little wall to simulate the starting line of the race.
+object(0x1CB8,90,180,272);move(-2.66,0.10,0.00);
+object(0x1CB8,90,180,272);move(6.87,13.49,0.10);
+object(0x1CB8,90,180,90);move(-2.69,-0.06,0.00);
+object(0x1CB8,90,180,90);move(3.20,-1.16,0.00);
+object(0x1CB8,90,180,196);move(-0.97,-2.56,0.10);
+object(0x1CB8,90,180,196);move(-2.08,-8.76,-0.10);
+object(0x1CB8,90,180,196);move(0.73,2.51,0.00);
+object(0x1CB8,90,180,196);
+X1 = 291.65;
+Y1 = -1414.97;
+checkx1 = X1-getfloat(pobj + 0x30);
+checky1 = Y1-getfloat(pobj + 0x34);
+if(getshort(pcar + 0x56) == 205 && sqrt(checkx1*checkx1 + checky1*checky1)<2) // If the id of your car is 205 and you are in the area of 2 meters around X1 and Y1, then...{
+setshort(0x08E90DD8, 1, '~', 'h', '~', 'C', 'h', 'e', 'c', 'k', 'p', 'o', 'i', 'n', 't', ' ', 'R', 'a', 'c', 'e', '~', 'w', '~', 0); // Display a race started text.}
+if(getshort(pcar + 0x56) == 205) // If you're still in the car with id 205 then...{
+setshort(0x08e90bd8, 1, 'G', 'e', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'n', 'e', 'x', 't', ' ', '~', 'h', '~', 'C', 'h', 'e', 'c', 'k', 'p', 'o', 'i', 'n', 't', '~', 'w', '~', ' ', '!');
+static time; // Create a timer and show it on the screen.
+setshort(0x08BF81FE, 'T', 'i', 'm', 'e', ':', ' ', time, time, time, ' ', 0);
+time++;
+if(time >= 1400){
+setchar(0x08E937B5, 0x01);}
+if(time == 1500) // If the timer has reached 1500 it's...{
+setshort(0x08e90DD8, 1, 'T', 'i', 'm', 'e', ' ', 'o', 'u', 't', ' ', '!', 0); // ...time out ! And everything resets back to what it was, before the race started.
+setchar(0x08E937B5, 0x01);
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);
+time = 0;
+setfloat(marker, 0, 0, 0);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 0, 0, 0);
+setchar(icon + 0x19, 0x07);
+teleport(playerx, playery, playerz);}
+marker = 0x08BF7B40; // An example checkpoint for the race.
+setfloat(marker, 321.90, -1420.41, 11.07);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+setfloat(icon, 321.90, -1420.41, 11.07);
+setchar(icon + 0x19, 0x00);}
+X2 = 321.90;
+Y2 = -1420.41;
+checkx2 = X2-getfloat(pobj + 0x30);
+checky2 = Y2-getfloat(pobj + 0x34);
+if(getshort(pcar + 0x56) == 205 && sqrt(checkx2*checkx2 + checky2*checky2)<2)
+setshort(0x08E90DD8, 1, '~', 'h', '~', 'Y', 'O', 'U', ''', 'R', 'E', ' ', 'W', 'I', 'N', 'N', 'E', 'R', ' ', '!', '~', 'w', '~', 0); // Mission passed text after te player has reached the checkpoint.
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);
+setfloat(marker, 0, 0, 0);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 0, 0, 0);
+setchar(icon + 0x19, 0x07);
+teleport(playerx, playery, playerz);
+
+#cheat Water Everywhere
+if(getchar(0x0954A000) != 0){
+for(p = 0x09549D80; p < 0x0954E580; p++)
+setchar(p, 0x00);}
+
+#cheat Interactive Door at the Compound
+// By Upaluppa
+moveto(-1095.99, 288.11, 13.26); object(0x1C99, 0, 0, 180); // Creates a wall left of the door
+moveto(-1096.00, 299.31, 13.26); object(0x1C99, 0, 0, 180); // Creates a wall right of the door
+static Marker1; // Invisible marker to check, if the player is standing near...
+X1 = -1096.00; // ...this X coordinate...
+Y1 = 293.71; // ...and this Y coordinate.
+if (!Marker1) // When the marker is not ready yet... { 
+Marker1 = 1; // ...activate it now. }
+checkx1 = X1 - getfloat(pobj + 0x30); // This compares the players X coordinate with the one from our marker.
+checky1 = Y1 - getfloat(pobj + 0x34); // This compares the players Y coordinate with the one from our marker.
+if (sqrt(checkx1 * checkx1 + checky1 * checky1) < 5) // And if they are equal, or atleast just about 5 meters in difference... { 
+setchar(0x08E93604, 0x1); // ...show a message to the player, how to use the door. 
+setshort(0x08E92FFC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!'); // Message part 1 
+setshort(0x08E931FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!'); // Message part 2 
+setshort(0x08E933FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!'); // Message part 3 }
+top = 15.66; // How much the door will raise it's Z position, when it opens.
+bottom = 13.26; // The doors Z position, when it's closed
+xpos = -1096.00; // The doors X position
+ypos = 293.71; // The doors Y position
+static obj; // Prevents the door from disappearing, by making it's variable static.
+static state; // This variable saves the doors state (open/closed).
+if (!obj) // When the door is not created yet... { 
+moveto(xpos, ypos, bottom); 
+obj = object(0x1C99, 0, 0, 180); // ...create it now. }
+else // If it is already created... { 
+selectobject(obj); // ...select it. 
+if (state == 0) // 0 = idle door state (i. e. not moving up/down).   {   
+if (getfloat(obj + 0x38) >= top && buttons & CTRL_DOWN && sqrt(checkx1 * checkx1 + checky1 * checky1) < 5) // When door is opened set it's state to 2 when pressing down.{
+state = 2;}
+if (getfloat(obj + 0x38) <= bottom && buttons & CTRL_UP && sqrt(checkx1 * checkx1 + checky1 * checky1) < 5) // When door is closed set it's state to 1 when pressing up.{
+state = 1;}} 
+if (state == 1) // If the player pressed up (i. e. set the door state to 1)...{
+setfloat(obj + 0x38, getfloat(obj + 0x38) + 0.01); // ...make the door move up until...   
+if (getfloat(obj + 0x38) >= top) // ...the top Z coordinate is reached...     
+state = 0; // ...then stop movement by settting state back to 0 (idle).} 
+else 
+if (state == 2) // same as with 1 above, but the reverse (down instead of up).{   
+setfloat(obj + 0x38, getfloat(obj + 0x38) - 0.01);   
+if (getfloat(obj + 0x38) <= bottom)
+state = 0;}
+propagateobject(); // This is a special Cheatdevice command, which makes it possible to move objects around. (Write this after your movement code, or it won't work !) }
+#off
+obj = state = 0;
+
+#cheat Force the Player to leave any Store Interior
+setchar(0x08BF3884, 0);
+#cheat Turn any Store into Curve
+setchar(0x08BF3848, 5);
+
+#cheat Turn any Savehouse into Fort Baxter Barracks
+setchar(0x08BF2DB0, 0);
+
+#cheat Force the Player to leave Empire Site Interiors
+setchar(0x08BF3CCC, 0);
+off();
+#cheat Trigger Empire Attacks
+setchar(0x08BF42B8, 7);
+#cheat Reload Empire Site
+setchar(0x08BF3C74, 0);
+#cheat Turn any Empire Site into the Little Havana Empire Site
+setchar(0x08BF3DFC, 4);
+
+#cheat Turn any Mission Interior into the Ship
+setchar(0x08BF5534, 2);
+
+#cheat Hated
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10){
+if(0x098b4a40 + i != pplayer){
+setchar(0x098b4a40 + i + 0x894, 0x8);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+#cheat Passengers!
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10){
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar){
+setchar(0x098b4a40 + i + 0x894, 0x21);
+setint(0x098b4a40 + i +0x484, pcar);
+setint(0x098b4a40 + i +0x450, pcar);}}
+off();
+#cheat Loved
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10){
+if(0x098b4a40 + i != pplayer){
+setchar(0x098b4a40 + i + 0x894, 0xc);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+#cheat Enable AI Driving/Walking/Running
+if(pcar)
+setchar(pplayer+0x894, 0x17);
+else{
+if(buttons & CTRL_CROSS)
+setchar(pplayer+0x894, 0x19);
+else
+setchar(pplayer+0x894, 0x18);}
+#off
+setchar(pplayer+0x894, 0x01);
+#cheat Make Target Attack You!
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x8);
+setint(pped+0x890, pplayer);}
+#cheat Make Target Follow You!
+pped = getint(0x08BA1D70);
+//Pointer to aimed at ped
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+//If aimed at a ped, save its address in the memory
+if(yourped){
+setfloat(yourped+0x4e4, 10000);
+setchar(yourped+0x63C, 0x22);   
+setchar(yourped+0x87c, 0x1e);   
+setchar(yourped+0x8B4, 0x0);   
+setchar(yourped+0x8C4, 0x0);   
+setint(yourped+0x648, 1000);   
+setchar(yourped+0x789, 0x7);   
+if(!pcar){       
+if(getint(yourped+0x480))           
+setchar(yourped+0x894, 0x10);       
+else{           
+if(pped && pped != yourped){               
+setchar(yourped+0x894, 0x8);               
+setint(yourped+0x890, pped);}
+else{
+setchar(yourped+0x894, 0xC);
+//If not in a car, make that ped follow you
+setint(yourped+0x890, pplayer);
+//Lets the ped know who to follow}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11);
+//If in a car, make that ped get in the car
+setint(yourped+0x484, pcar);
+//Makes the ped know what car to get into
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_LTRIGGER && press & CTRL_TRIANGLE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;}}
+#off
+yourped=0
+
+#cheat unknown cheat
+setchar(0x08BB3B5B,  0x8f);
+#off
+setchar(0x08BB3B5B,  0x3f);
+
+#cheat Hello
+teleport(0,0,0);
+
+#cheat step up/down
+setchar(pplayer 8a,2000);
+
+#cheat ???
+teleport(pplayer+0x24,pplayer+0x26,pplayer+0x30);
+off();
+#off
+
+#cheat better step
+step=getchar(pplayer 0x8a);
+setchar(pplayer 0x8a,2000);
+#off
+setchar(pplayer 0x8a,step);
+
+#cheat infinate adrenaline
+setchar(0x08BB3B5B,  0x8f);
+#off
+setchar(0x08BB3B5B,  0x3f);
+
+#cheat Unknown
+off();
+#off
+teshshdhsdhdshdratlasrghgarsbeglg;
+ESLGHA;
+IS RYGH;
+JARSGHIO;
+AHRIGH;
+OAIHGD;
+
+#cheat progaben cheat 1
+Sorry! you add codes error 0x00000185

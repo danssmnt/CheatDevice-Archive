@@ -1,0 +1,11 @@
+#cheat Bouncy!
+//Téléchargé sur ViceCityStories.fr
+BounceAmount = 0.8;
+setfloat(pplayer + 0x4E4,  150.0);//health
+if(getshort(pplayer+0x1C8)!=0x1020) { setfloat(pplayer+0x148,  BounceAmount); setshort(pplayer+0x1c8,  0x1020); 
+if(ystick < -0.5) {
+    setfloat(pplayer+0x140,  getfloat(pplayer+0x10));
+    setfloat(pplayer+0x144,  getfloat(pplayer+0x14));
+    }
+}
+setfloat(pplayer+0x78,  -0.03 * xstick);

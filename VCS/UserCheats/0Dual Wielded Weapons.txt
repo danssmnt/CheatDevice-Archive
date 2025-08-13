@@ -1,0 +1,23 @@
+#cheat Dual Wielded V2
+setint(pplayer+0x610, 0xffffff);
+setchar(pplayer+0x604, 0x18);
+pweapon = getchar(pplayer+0x789);
+plock = getchar(pplayer+0x1c8);
+if(pweapon == 3 || pweapon == 5){
+if(plock == 8){
+setchar(pplayer+0x550, 1);}
+if(plock == 3){
+setchar(pplayer+0x550, 0);}}
+#off
+setchar(pplayer+0x550, 0);
+
+#cheat Dual Wielded
+pweapon = getchar(pplayer+0x789);
+plock = getchar(pplayer+0x1c9);
+if(pweapon == 3 || pweapon == 5){
+if(plock == 5){
+setchar(pplayer+0x550, 1);}
+if(plock == 4){
+setchar(pplayer+0x550, 0);}}
+#off
+setchar(pplayer+0x550, 0);

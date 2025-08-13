@@ -1,0 +1,363 @@
+#cheat The Mysterious Banshee
+static state;
+DifficultLevel = 50;
+ if(state)      
+setshort(pcar+0x232,  0x0101);  
+else 
+{ 
+    setint(0x08C739B0,  175);
+     setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+     setfloat(0x08C739C0,  3.1415);
+     if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+     {
+     state = 1;
+     time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);     
+}
+ }
+ if(state == 1) {
+ setshort(0x08e90bd8,  1,  'O',  'h',  ',',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+ if(newtime - 2 > time)        {
+        state = 2;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41); 
+       } 
+} 
+if(state == 2) {
+ setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0); 
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        if(newtime - 2 > time)       
+ {        state = 3;
+        health = 150;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        } 
+} if(state == 3) { 
+setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100; newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 3 > time){
+state = 4;
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);}
+if(speed < DifficultLevel)    
+health -= 0.5;
+else
+if(health < 150)    
+health += 0.5;
+ setfloat(pplayer+0x4e8, health); 
+     if(health <= 0){setfloat(pcar+0x27c, 0);
+state = 0;
+} 
+} 
+if(state == 4) {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 4 < time)    
+        setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ',',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ',', ' ',  'N',  'O',  'W',  '!', 0);  
+else
+time = 0;
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ if(speed < DifficultLevel + 10)     
+     health -= 0.5;
+      else if(health < 150) 
+         health += 0.5;
+ setfloat(pplayer+0x4e8, health);
+      if(health <= 0)   
+   {
+      setfloat(pcar+0x27c, 0);
+      state = 0; 
+     }
+ if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)  
+    {   
+   state = 5;  
+    time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);      
+}
+ } 
+if(state == 5) 
+{ 
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);  
+    if(newtime - 2 > time)  
+   state = 6; 
+} 
+if(state == 6) 
+{ 
+setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ',', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+if(buttons & CTRL_UP){
+state = 0;
+setshort(pcar+0x232,  0); } }
+#off
+state = 0;
+setshort(pcar+0x232,  0);
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat Change Any Object Vic gets Near into a Ramp!
+add = getint(0x0994f460);
+setshort(add + 0x56, 0x28e);
+
+#cheat ???
+obj = 0x0991B180;
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat radio always on
+//by vettefan
+//activate it before you leave your safehouse, or you'll have to enter a vehicle first
+setchar(pcar+0x2b7, 0);
+setchar(0x8bb11dc, 0);
+setchar(0x9a6341b, 0);
+ 
+0 - flash fm
+1 - Vrock
+2 - paradise
+3 - VCPR
+4 - VCFL radio
+5 - the wave 103
+6 - flash 105 fm
+7 - espatoso
+8 - emotion 98.3
+9 - radio off
+
+#cheat Red Radar Disc
+R = 255;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+#cheat Green Radar Disc
+R = 0;
+G = 255;
+B = 0;for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+#cheat Blue Radar Disc
+R = 0;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat real time clock
+setint(0x8bb3b3c, 200000);
+#off
+setint(0x8bb3b3c, 1000)
+;#cheat set clock
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);}
+
+#cheat Vcn cop
+//made with VCS Car Spawner by DDM
+pspawn = 0x08E81290;
+setint(pspawn, 260);
+setfloat(pspawn + 4, -469.57, 1123.63, 64.75);
+ pspawn + 4,  227.56,  -129.41,  5.9,  160);
+
+#cheat button test
+if (getint(0x08bde6b8) == 843854162)
+{
+setint(0x08bde55c,  9999999,  9999999);
+ }
+
+#cheat ??? unknown
+setshort(0x08e90bd8, 1, 'F', 'U', 'C', 'K', ' ', 'Y', 'O', 'U', ' ', 'G', 'T', 'A', ' ', 'V', 'C', 'S',0); 
+
+#cheat PED ANIHALATER
+//Gathered by Steman
+//credits for ALL cheats too Waterbottle, Edison Carter, ADePSP, Vettefan88 and DDM
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_CIRCLE) {
+//Force Blast, by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, dx * 0.2);
+setfloat(pped + 0x0144, dy * 0.2);
+setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+pdone = pped;
+}
+if (pped == 0)
+{
+pdone = 0;
+}
+}
+//Telekinisis
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+if(pped && pped<0x9900000) address=pped;
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+setshort(address+0x1c8, 0x1020);
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+if(buttons & CTRL_CROSS)
+rotsp+=0.005;
+else
+rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+//PyroKinisis {
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_SQUARE)
+if(pped)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam, by edison
+if (pped != 0)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, -dx * 0.05);
+setfloat(pped + 0x0144, -dy * 0.05);
+setfloat(pped + 0x0148, -dz * 0.05);
+}
+}
+//Aim of Death
+if(buttons & CTRL_TRIANGLE) {
+pped = getint(0x08BA1D70);
+if (pped != 0)
+setfloat(pped + 0x4e4, 0);
+}
+//Force Wave
+if ((buttons & CTRL_LTRIGGER) && (buttons & CTRL_CIRCLE))
+{
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+if (p == pplayer)
+continue;
+dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(p + 0x01c8, 0x1020);
+setfloat(p + 0x0140, dx * 0.2);
+setfloat(p + 0x0144, dy * 0.2);
+setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+}
+//Obliterate All Peds
+ 
+if((buttons & CTRL_LTRIGGER) && (press & CTRL_TRIANGLE)) {
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+}
+
+#cheat Light Control
+if(buttons & CTRL_RIGHT)
+setchar(0x9460815, 0x00);{
+setchar(0x946081a, 0x35);}
+if(buttons & CTRL_LEFT)
+setchar(0x9460815, 0xb0);
+{setchar(0x946081a, 0x55);}
+if(buttons & CTRL_DOWN){
+setchar(0x9460817, 0xD4);}
+if(buttons & CTRL_UP){
+setchar(0x9460817, 0xC4);
+}
+
+#cheat Raise the world
+if (buttons & CTRL_UP) 
+setfloat(0x9442038, getfloat(0x9442038)-.1);
+if (buttons & CTRL_DOWN) 
+setfloat(0x9442038, getfloat(0x9442038)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Shift the World of the Boat 
+if (buttons & CTRL_LEFT)
+setfloat(0x9442030, getfloat(0x9442030)-.1);
+if (buttons & CTRL_RIGHT) 
+setfloat(0x9442030, getfloat(0x9442030)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Teleport to Move boat World
+teleport(-785.42, -824.36, 11.07);
+
+#cheat vice statue
+moveto(-235.88,-1475.55,5.72);  object(0x1CB2,90,90,194);
+move(1.27,5.10,0.00);  object(0x1CB2,90,90,194);
+move(0.77,-2.55,2.10);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.10,0.00);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(0.87,4.04,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.09,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.30,-1.80,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.00,0.00,4.40);  object(0x1C93,90,0,14);
+move(-2.13,0.54,0.00);  object(0x1C93,90,0,14);
+move(0.52,2.05,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.23,1.66,0.00);  object(0x1C93,90,0,193);
+move(-1.53,0.41,0.00);  object(0x1C93,90,0,188);
+move(-0.44,0.33,0.10);  object(0x1C93,90,0,193);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,193);
+move(1.80,-0.66,-0.10);  object(0x1C93,90,0,193);
+move(-0.52,-2.22,0.00);  object(0x1C93,90,0,193);
+move(-1.85,0.43,0.00);  object(0x1C93,90,0,193);
+move(-0.32,-1.08,0.00);  object(0x1C93,90,0,16);
+move(2.11,-0.62,0.00);  object(0x1C93,90,0,16);
+move(0.00,0.00,4.10);  object(0x1C93,90,0,16);
+move(-1.92,0.56,0.00);  object(0x1C93,90,0,16);
+move(0.14,1.19,0.00);  object(0x1C93,90,0,16);
+move(2.02,-0.59,0.00);  object(0x1C93,90,0,16);
+move(0.64,2.24,0.00);  object(0x1C93,90,0,192);
+move(-1.96,0.40,0.00);  object(0x1C93,90,0,192);
+move(-2.16,0.02,-18.90);  object(0x1C93,0,0,195);
+move(-0.04,-0.06,2.04);  object(0x1C93,0,0,197);
+move(4.01,2.09,-2.15);  object(0x1C93,0,0,102);
+move(0.00,0.00,2.10);  object(0x1C93,0,0,102);
+move(-1.83,0.37,0.09);  object(0x1C93,0,0,102);
+move(0.00,0.00,-1.70);  object(0x1C93,0,0,102);
+move(3.73,-3.82,0.14);  object(0x1C93,0,0,15);
+move(0.00,0.00,1.50);  object(0x1C93,0,0,15);
+move(0.48,1.86,-0.00);  object(0x1C93,0,0,15);
+move(0.01,-0.28,-1.51);  object(0x1C93,0,0,196);
+move(-4.72,-6.28,0.20);  object(0x1C93,0,0,279);
+move(0.00,0.00,1.70);  object(0x1C93,0,0,279);
+move(3.19,0.13,0.00);  object(0x1C93,0,0,12);
+move(-5.88,1.19,0.00);  object(0x1C93,0,0,12);
+move(0.00,0.00,-1.80);  object(0x1C93,0,0,12);
+move(6.00,-1.51,0.12);  object(0x1C93,0,0,14);
+move(-2.32,4.07,22.20);  object(0x1C91,0,0,108);
+
+#cheat
+crush
+
+#cheat max out bullets that hit stat
+setint(0x08BB41D0, 2147483647);
+
+#cheat nothing
+setchar(0x08C40849, 17);
+

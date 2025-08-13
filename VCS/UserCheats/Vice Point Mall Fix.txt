@@ -1,0 +1,117 @@
+#cheat Lagg-less Mall
+if(getfloat(pobj + 0x38) <= -100.00){
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+if(getfloat(pobj + 0x38) >= -100.00){
+setchar(0x08BB329C, 0x0);
+setchar(0x8bb3e00, 0);
+setchar(0x8bb3df8, 0);
+setchar(0x8bb458c, 0);}
+static counter;
+static Marker1;
+X1 = 379.94;
+Y1 = 1246.22;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker2;
+X2 = 448.46;
+Y2 = 1246.22;
+if(!Marker2){
+Marker2 = 1;}
+checkx2 = X2-getfloat(pplayer+0x30);
+checky2 = Y2-getfloat(pplayer+0x34);
+if(sqrt(checkx2*checkx2+checky2*checky2)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker3;
+X3 = 370.00;
+Y3 = 1210.10;
+Z3 = -193.59;
+if(!Marker3){
+Marker3 = 1;}
+checkx3 = X3-getfloat(pplayer+0x30);
+checky3 = Y3-getfloat(pplayer+0x34);
+checkz3 = Z3-getfloat(pplayer+0x38);
+if(sqrt(checkx3*checkx3+checky3*checky3+checkz3*checkz3)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker4;
+X4 = 360.67;
+Y4 = 1124.78;
+if(!Marker4){
+Marker4 = 1;}
+checkx4 = X4-getfloat(pplayer+0x30);
+checky4 = Y4-getfloat(pplayer+0x34);
+if(sqrt(checkx4*checkx4+checky4*checky4)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker5;
+X5 = 467.52;
+Y5 = 1123.56;
+if(!Marker5){
+Marker5 = 1;}
+checkx5 = X5-getfloat(pplayer+0x30);
+checky5 = Y5-getfloat(pplayer+0x34);
+if(sqrt(checkx5*checkx5+checky5*checky5)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker6;
+X6 = 379.58;
+Y6 = 1006.34;
+if(!Marker6){
+Marker6 = 1;}
+checkx6 = X6-getfloat(pplayer+0x30);
+checky6 = Y6-getfloat(pplayer+0x34);
+if(sqrt(checkx6*checkx6+checky6*checky6)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}
+static Marker7;
+X7 = 448.55;
+Y7 = 1007.08;
+if(!Marker7){
+Marker7 = 1;}
+checkx7 = X7-getfloat(pplayer+0x30);
+checky7 = Y7-getfloat(pplayer+0x34);
+if(sqrt(checkx7*checkx7+checky7*checky7)<2){
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}}
+for(p=0x098edcc0; p <= 0x099019a0; p+=0x820){
+if(p != pcar) setchar(p + 0x4c, 1);}}}
+
+#cheat Mall Camera Fix
+if(getfloat(pobj + 0x38) <= -100.00){
+setfloat(0x8bc86c0, 0x2);
+setfloat(0x8bc8684, 0x2);}

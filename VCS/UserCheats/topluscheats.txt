@@ -1,0 +1,374 @@
+#cheat Reset Insane Jump Stats
+setchar(0x08bb3d00, 0x0);
+setchar(0x08bb3d01, 0x0);
+setchar(0x08bb3d02, 0x0);
+setchar(0x08bb3d03, 0x0);
+setchar(0x08bb3d04, 0x0);
+setchar(0x08bb3d05, 0x0);
+setchar(0x08bb3d06, 0x0);
+setchar(0x08bb3d07, 0x0);
+setchar(0x08bb3d08, 0x0);
+off();
+
+#cheat database prx 1
+
+
+#cheat Jump x2
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +0.5);}
+
+#cheat Jump x4
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +1);}
+
+#cheat Jump x6
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +1.5);}
+
+#cheat Jump x8
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +2);}
+
+#cheat Jump x10
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +2.5);}
+
+#cheat Jump x12
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +3);}
+
+#cheat Jump x20
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +5);}
+
+#cheat Jump x30
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +7.5);}
+
+#cheat Jump x40
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +10);}
+
+#cheat Jump x60
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +15);}
+
+#cheat Jump x80
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +20);}
+
+#cheat Jump x100
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +25);}
+
+#cheat Jump x120
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +30);}
+
+#cheat Jump x200
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +50);}
+
+#cheat Jump x400
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +100);}
+
+#cheat Jump x800
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +200);}
+
+#cheat Jump x2000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +500);}
+
+#cheat Jump x4000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +1000);}
+
+#cheat Jump x8000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +2000);}
+
+#cheat Jump x40000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +10000);}
+
+#cheat Jump x400000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +100000);}
+
+#cheat Jump x4000000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +1000000);}
+
+#cheat Jump x40000000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +10000000);}
+
+#cheat Jump x400000000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +100000000);}
+
+#cheat Jump x2000000000
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +500000000);} // ???
+
+#cheat Pcj black2red
+//made by ME
+setint(0x8C73B30, 212);
+setchar(0x8C73B30+0x24, 0,0,0);
+setchar(0x8C73B30+0x28, 132,4,16);
+teleport( 268.31,-174.98, 11.50);
+off();
+
+#cheat Pcj white2blue
+//made by ME
+setint(0x8C73B30, 212);
+setchar(0x8C73B30+0x24, 255,255,255);
+setchar(0x8C73B30+0x28, 7,5,133.62);
+teleport( 268.31,-174.98, 11.50);
+off();
+
+#cheat Super Pcj
+//made by ME
+//Basics
+setint(0x8C73B30, 212); //Car Id
+setchar(0x8C73B30+0x24, 255,0,255); //C1
+setchar(0x8C73B30+0x28, 255,255,255); //C2
+setshort(0x98a30e2, 1, 't','m','x', 0);
+//Wheels
+setfloat(0x935E438, 1, 1.1); //wheel size
+setfloat(0x962eb20+0x6c, 1.1); //Traction Multiplier
+setfloat(0x962eb20+0xc4, 1); //Traction Loss
+setfloat(0x962eb20+0x70, 0.8); //Traction Bias
+//Engine
+setchar(0x962eb20+0x5c, '15.75', '35', 22); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x962eb20+0x7c, 0.2); //Suspension Upper Limit
+setfloat(0x962eb20+0x80, -0.1); //Suspension Lower Limit
+setfloat(0x962eb20+0x78, 0.1); //Suspension Damping Level
+setfloat(0x962eb20+0x74, 1.4); //Suspension Force Level
+setfloat(0x962eb20+0x84, 0.6); //Suspension Bias
+setfloat(0x962eb20+0x88, 0.5); //Anti-Dive Multiplier
+//Handling
+setfloat(0x962eb20+0x68, 99); //Steering Lock
+setfloat(0x962eb20+0xbc, 666666); //Vehilce Mass
+setfloat(0x962eb20+0xc0, 3000000); //Turn Mass
+setfloat(0x962eb20+0xa0, 20); //Centre of Mass - X
+setfloat(0x962eb20+0xa4, 20); //Centre of Mass - Y
+setfloat(0x962eb20+0xa8, 20); //Centre of Mass - Z
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  255, 0, 255);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off();
+
+#cheat Nitrous Oxide v.1 demo
+// By Waterbottle
+if (buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+//if speed is lower than max speed for NOS accelerate
+if(speed<0.9) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.0025);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.0025);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==5) setfloat(pcar+0x140,  5,  5);
+
+#cheat Nitrous Oxide v.4 pro
+// By Waterbottle
+if (buttons & CTRL_CIRCLE && !(buttons & CTRL_LTRIGGER)) {
+//calculate speed
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144));
+//if speed is lower than max speed for NOS accelerate
+if(speed<3.7) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.02);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.02);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0) setfloat(pcar+0x140,  0,  0);
+
+#cheat Invisible Jetpack *FIXED*
+// By Edison Carter
+// same controls as in San Andreas
+{
+    dx = 0; dy = 0; dz = 0;
+
+    // forward thrust
+    thrust = -ystick * 0.005;
+    if (ystick < -0.1 && (buttons & CTRL_CROSS))
+        thrust = -ystick * 0.024;
+    dx += getfloat(pplayer + 0x0010) * thrust;
+    dy += getfloat(pplayer + 0x0014) * thrust;
+    dz += getfloat(pplayer + 0x0018) * thrust;
+
+    // strafe left
+    if (buttons & CTRL_LTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * -0.00333;
+        dy += getfloat(pplayer + 0x0004) * -0.00333;
+        dz += getfloat(pplayer + 0x0008) * -0.00333;
+    }
+
+    // strafe right
+    if (buttons & CTRL_RTRIGGER)
+    {
+        dx += getfloat(pplayer + 0x0000) * 0.00333;
+        dy += getfloat(pplayer + 0x0004) * 0.00333;
+        dz += getfloat(pplayer + 0x0008) * 0.00333;
+    }
+
+    // lift
+    lift = 0.0068;
+    if (buttons & CTRL_SQUARE)
+        lift -= 0.007;
+    if (buttons & CTRL_CROSS)
+    {
+        setshort(pplayer+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * 0.006;
+        else
+            lift += 0.006;
+    }
+    dx += getfloat(pplayer + 0x0020) * lift;
+    dy += getfloat(pplayer + 0x0024) * lift;
+    dz += getfloat(pplayer + 0x0028) * lift;
+
+    if (buttons & CTRL_DOWN)
+    {
+        setshort(pplayer+0x1c8, 0x1020); // so you don't have to jump, thanks to Waterbottle
+        if (ystick < 0)
+            lift += (1.0 + ystick) * -0.006;
+        else
+            lift += -0.006;
+    }
+    dx += getfloat(pplayer + 0x0020) * lift;
+    dy += getfloat(pplayer + 0x0024) * lift;
+    dz += getfloat(pplayer + 0x0028) * lift;
+
+    // add vector to velocity
+    gameplayspeed = getfloat(0x08bb3b58);
+    setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) * (1.0 - 0.02 * gameplayspeed) + dx * gameplayspeed);
+    setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) * (1.0 - 0.02 * gameplayspeed) + dy * gameplayspeed);
+    setfloat(pplayer + 0x0148, getfloat(pplayer + 0x0148) * (1.0 - 0.05 * gameplayspeed) + dz * gameplayspeed);
+
+    // rotational control
+    setfloat(pplayer + 0x0078, -0.03 * xstick);
+
+    // never roll when falling, thanks to theY4Kman
+    setfloat(pplayer + 0x1C4, 0.0);
+}
+
+#cheat Drive On Water Speedup
+// By Waterbottle
+if (getfloat(pcar+0x38)<getfloat(0x96C96B0)+0.5)
+{
+   static speed;
+   //set the car ontop of the water
+   setfloat(pcar+0x38,  getfloat(0x96C96B0)+0.5);
+   setfloat(pcar+0x8,  0);
+   setfloat(pcar+0x18,  0);
+   setfloat(pcar+0x20,  0,  0,  0);
+   setfloat(pcar+0x148,  0);
+   //hand brake
+   if(buttons & CTRL_RTRIGGER) 
+   {
+   speed*=0.9;
+   handb = 5.0;
+   } else handb = 1;
+   //rotate the vehicle
+   if(speed > 0.1)
+           setfloat(pcar+0x78,  -0.03 * xstick * handb);
+   else if(speed < -0.1)
+           setfloat(pcar+0x78,  0.03 * xstick * handb);
+   //accelerte
+   if(buttons & CTRL_CROSS) 
+   {
+   if(speed < 0)
+           speed += 0.02; 
+   if(speed < 2.8)
+           speed += 0.02; 
+   }
+   else
+   if(buttons & CTRL_SQUARE)
+   {
+   if(speed > 0)
+           speed -= 0.02; 
+   if(speed > -2)
+           speed -= 0.02; 
+   }
+   else speed *= 1;
+   //add speed to car
+   setfloat(pcar+0x140,  -getfloat(pcar+8)*speed);
+   setfloat(pcar+0x144,  getfloat(pcar)*speed);
+}
+
+#cheat Extreme Boost (Hit O)+
+// By Durka Durka Mahn
+// A redo of waterbottle's NOS cheat, this will give you an INSTANT shot of boost of speed instead of an overtime boost when you hit O. Very useful for insane jumps and can also be used in big vehicles to ram stuff.
+if((press & CTRL_CIRCLE))
+{
+    setfloat(pcar+0x140,  getfloat(pcar+0x140)+getfloat(pcar+0x10)+0.4);
+    setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar+0x14)+0.4);
+}
+
+#cheat Money Meter is Speedometer KPH
+// By Waterbottle & Edison Carter
+static money;
+static wasin;
+if(!money) money = getint(0x08bde560);
+if (pcar)
+{
+  wasin = true;
+  speed = (sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*200;
+  setint(0x08bde55c,  speed,  speed);
+  setchar(0x8BAEDB8,  '%',  'd',  0);
+  setchar(0x8BAEDC0,  '%',  'd',  0);
+}
+else
+{  if(wasin)
+  {
+  setchar(0x8BAEDB8,  '%',  '0',  '8',  'd',  '$',  0);
+  setchar(0x8BAEDC0,  '$',  '%',  '0',  '8',  'd',  0);
+  setint(0x08bde55c,  money,  money);
+  wasin = false;
+  }
+  money = getint(0x08bde560);
+}
+#off
+setint(0x08bde55c,  money,  money);
+setchar(0x8BAEDB8,  '%',  '0',  '8',  'd',  '$',  0);
+setchar(0x8BAEDC0,  '$',  '%',  '0',  '8',  'd',  0);
+
+#cheat Disco Vehicle (Rapid)
+static timer;
+if(timer% 200==0)
+setfloat(pcar+0x224,  getfloat(pcar+0x20),  getfloat(pcar+0x24));
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Ladies'man Girls follow you
+//FANNYMANGET
+static timer;
+if(timer% 10==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 16 || ID == 20 || ID == 21 || ID == 24 || ID == 28 || ID == 29 || ID == 30 || ID == 38 || ID == 42 || ID == 43 || ID == 45 || ID == 56 || ID == 60 || ID == 61 || ID == 64 || ID == 71 || ID == 73 || ID == 81 || ID == 83 || ID == 85 || ID == 86 || ID == 87 || ID == 138 || ID == 141){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0xC);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==10)
+timer=0;
+
+#cheat noob
+setshort(0x08E90DD8, 1, 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A','!', 0);
+off();
+
+#cheat Exit CheatDevice!!!!!
+setchar(0x08BAFB50, 0);

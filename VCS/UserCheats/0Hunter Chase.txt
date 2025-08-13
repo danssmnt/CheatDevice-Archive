@@ -1,0 +1,101 @@
+#cheat Create AI Hunter at the Leaf Links Condo
+icon = 0x08E8EFC0;
+setfloat(icon, 295.37, 269.99, 17.70);
+setchar(icon + 0x19, 0x36);
+moveto(300.50, 272.65, 17.00);
+object(0x01F5, 0, 0, 22);
+hunterspawn = 0x08E81D40;
+setint(hunterspawn, 275);
+setfloat(hunterspawn + 0x04, 295.37, 269.99, 17.70, 0);
+x = 295.37;
+y = 269.99;
+checkx = x - getfloat(pobj + 0x30);
+checky = y - getfloat(pobj + 0x34);
+if(sqrt(checkx * checkx + checky * checky) < 20)
+{
+static pedspawn;
+if(!pedspawn)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+ID = getshort(0x098B4A40 + i + 0x56);
+if(ID == 99)
+{
+setfloat(0x098B4A40 + i + 0x30, 299.84, 272.84, 17.70);
+pedspawn = 1;
+}
+}
+}
+static pilots;
+if(!pilots && pedspawn == 1)
+{
+for(i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+ID = getshort(0x098B4A40 + i + 0x56);
+if(ID == 99)
+{
+setchar(0x098B4A40 + i + 0x0894, 0x17);
+setint(0x098B4A40 + i + 0x0890, pplayer);
+hunter = getint(0x098B4A40 + i + 0x0484);
+setfloat(hunter + 0x027C, 1000.0);
+setfloat(hunter + 0x0668, 1.0);
+pilots = 1;
+}
+}
+}
+}
+
+#cheat Pet Car
+// By Durka Durka Mahn
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+static Blowupcar;
+if(pcar)
+{
+yourcar = pcar;
+}
+if(Blowupcar == 0 && pcar)
+{
+setfloat(yourcar + 0x027C, 1000000000);
+setfloat(yourcar + 0x010C, 0);
+}
+if(buttons & CTRL_RTRIGGER && buttons & CTRL_CIRCLE)
+{
+Blowupcar = 1;
+}
+else
+{
+Blowupcar = 0;
+}
+if(Blowupcar)
+{
+setfloat(yourcar + 0x027C, 0);
+}
+static thingy;
+if(thingy)
+{
+setfloat(yourcar + 0x30, playerx +3); //can change
+setfloat(yourcar + 0x34, playery +3); //can change
+setfloat(yourcar + 0x38, playerz); //can change
+}
+if(press & CTRL_UP && buttons & CTRL_RTRIGGER && thingy == 0)
+{
+thingy = 1;
+}
+if(press & CTRL_DOWN && buttons & CTRL_RTRIGGER && thingy)
+{
+thingy = 0;
+}
+if(xstick < -0.9 && buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78, + 0.1);
+}
+if(xstick > 0.9 && buttons & CTRL_RTRIGGER)
+{
+setfloat(yourcar + 0x78, getfloat(yourcar + 0x78) - 0.01);
+}
+if(press & CTRL_DOWN)
+{
+setfloat(yourcar + 0x0148, + 0.2);
+}

@@ -1,0 +1,8 @@
+#cheat Central Locking
+if(buttons & CTRL_TRIANGLE)
+{setshort(pcar+0x232,   0);
+} else {
+setshort(pcar+0x232,   0x0101);
+}
+#off
+setshort(pcar+0x232,   0);

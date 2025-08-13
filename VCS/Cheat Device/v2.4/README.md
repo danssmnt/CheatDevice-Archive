@@ -13,3 +13,6 @@
 
 ## Archival Notes
 Final VCS Cheat Device release.
+
+> [!NOTE]
+> Use `vcscheatdevice371.prx` for 3.71 FW version, `vcscheatdevice.prx` for every other FW version.

@@ -1,0 +1,4657 @@
+#cheat qwertyuiop
+#cheat asdfghjkl
+#cheat zxcvbnm
+
+#cheat password
+setshort(0x08E90DD8, 1, ' ', '8', '4', '2', '3', 0);
+off();
+#cheat Wasted
+if(buttons&CTRL_UP){
+setchar(pplayer+0x8B4, 0x39);}
+#cheat Wasted 2
+if(buttons&CTRL_UP){
+setchar(pplayer+0x8B4, 0x3A);}
+#cheat Busted
+if(buttons&CTRL_UP){
+setchar(pplayer+0x8B4, 0x41);}
+
+#cheat Infinite Ammo for all Peds USE THIS FIRST
+//By Sousanator
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setint(0x098b4a40 + i + 0x5d8,   0x00ffffff);
+setint(0x098b4a40 + i + 0x5f4,   0x00ffffff);
+setint(0x098b4a40 + i + 0x610,   0x00ffffff);
+setint(0x098b4a40 + i + 0x5bc,   0x00ffffff);
+setint(0x098b4a40 + i + 0x62c,   0x00ffffff);
+setint(0x098b4a40 + i + 0x648,   0x00ffffff);
+setint(0x098b4a40 + i + 0x664,   0x00ffffff);
+setint(0x098b4a40 + i + 0x680,   0x00ffffff);
+
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat Entrance Marker
+static mark;
+mark = 0x08c62EA0; 
+// Pointer to Marker
+setfloat(mark,x,y,z); 
+// Marker Location
+setfloat(0x8c62ecc, 30); 
+// Markercolor Red
+setfloat(0x8c62ecd, 255); 
+// Markercolor Green
+setfloat(0x8c62ece, 255); 
+// Markercolor Blue
+
+#cheat Yellow Marker
+static mark;
+mark = 0x8c62EA0;
+setfloat(0x8c62ecc, 255);
+setfloat(0x8c62ecd, 216);
+setfloat(0x8c62ece, 0);
+setfloat(mark, X, Y, Z);
+
+#cheat Black Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+#cheat White Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Splitz 6 Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935E198, 1.5);
+#cheat FBI Rancher Monser Truck
+//Made with Wheel Size Canger by psphacker108
+setfloat(0x936E2D8, 1.5);
+#cheat Gang Rancher Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936E578, 1.5);
+#cheat Mesa Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936CB38, 1.5);
+#cheat BF Injection Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936C0B8, 1.5);
+#cheat Rhino Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A91A, 1.5);
+#cheat Sand King Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A678, 1.5);
+#cheat Mr. Whoopee Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A3D8, 1.5);
+#cheat Yankee Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936A138, 1.5);
+#cheat Trashmaster Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9369BF8, 1.5);
+#cheat Securicar Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9369958, 1.5);
+#cheat Voodoo Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x93696B8, 1.5);
+#cheat Mule Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9369418, 1.5);
+#cheat Coach Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9369178, 1.5);
+#cheat Benson Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9368ED8, 1.5);
+#cheat Boxville Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9368C38, 1.5);
+#cheat Enforcer Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9368998, 1.5);
+#cheat Stretch Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x93679D8, 1.5);
+#cheat Ambulance Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9367738, 1.5);
+#cheat Ammo Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9366778, 1.5);
+#cheat Flat Bed Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x93664D8, 1.5);
+#cheat Barracks OL Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9365F98, 1.5);
+#cheat Walton Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9365CF8, 1.5);
+#cheat Linerunner Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9365A58, 1.5);
+#cheat Pony Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9364A98, 1.5);
+#cheat Patriot Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x93647F8, 1.5);
+#cheat Domestobot Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9364558, 1.5)
+#cheat Landstalker monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9363058, 1.5);
+#cheat Fire Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9362098, 1.5);
+#cheat Polaris V8 Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9360B98, 1.5);
+#cheat Caddy Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9360658, 1.5);
+#cheat Burrito Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x9360118, 1.5);
+#cheat Bull Dozer Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935FE78, 1.5);
+#cheat Bobcat Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935FBD8, 1.5);
+#cheat Perennial Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935F158, 1.5);
+#cheat Baggage Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935EC18, 1.5);
+#cheat Admiral Monster Truck
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x935E438, 1.5);
+#cheat Mesa Monster Truck+
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936CB38, 3.0);
+#cheat Mesa Monster Truck++
+//Made with Wheel Size Changer by psphacker108
+setfloat(0x936CB38, 7.0);
+
+#cheat spawn domestobot
+pspawn = 0x08E81290;
+setint(pspawn, 208); 
+//Domestobot
+setfloat(pspawn + 0x4, 300.87, -255.07, 11.44, 180); 
+//Autoscooter
+pspawn += 0x30;
+
+#cheat Set Vehicle ID to Domestobot
+setchar(0x08BF3C74, 0);
+setint(0x08BF3CB8, 211);
+
+#cheat GTA Vice City PC Version Vehicle Camera
+if (getint(pplayer + 0x0480) && pcar){
+setchar(0x8BC8630, 0x03);}
+
+#cheat Center Camera Behind You
+setchar(0x8BC8630, 0x03);
+#off
+setchar(0x8BC8630, 0x00);
+
+#cheat Phone to Head
+setchar(pplayer+0x789, 0x09);
+setchar(pplayer+0x674, 0x24);
+setchar(pplayer+0x8B4, 0x24);
+#off
+setchar(pplayer+0x8B4, 0x0);
+
+#cheat Slowly turn Vic's car on the Z axis
+setfloat(pcar + 0x78, 0.1);
+
+#cheat Remove what Vic's car is on
+setfloat(getint(pcar + 0xF0) + 0x38, -10000.0);
+off();
+
+#cheat Make Vic's Car fly straight up
+setfloat(pcar + 0x148, -50.0);
+off();
+
+#cheat Remove whatever Vic's Car touches
+ptouch = getint(pcar + 0x150);
+if(ptouch){
+    setfloat(ptouch + 0x38, -10000.0);
+    off();
+}
+
+#cheat Make car catch fire!
+setfloat(pcar+0x27C, 0.0);
+off();
+
+#cheat PCJ-600 and Jet Ski spawn at 101 Bayshore
+pspawn = 0x08E81290;
+setint(pspawn, 212); // modelid pcj-600
+setfloat(pspawn + 4, -801.37, -1178.76, 10.96, 290); // x, y, z, angle
+pspawn += 0x30;
+setint(pspawn, 233); // modelid jet ski
+setfloat(pspawn + 4, -729.4, -1148.9, 6.0, 20); // x, y, z, angle
+pspawn += 0x30;
+
+#cheat Spawn some Fires
+pfire = 0x08BE3A20;
+setchar(pfire, 1);
+setfloat(pfire + 0x10, 314.57, -168.91, 26.13);
+pfire += 0x40;
+setchar(pfire, 1);
+setfloat(pfire + 0x10, 356.07, -169.03, 26.13);
+
+#cheat Avoid Peds!!!
+// By Durka Durka Mahn
+object = getint(pped+0x150);
+if(getint(pped+0x150)>0x098b4a40&&getint(pped+0x150)<0x098ecf90)
+{
+ setfloat(object + 0x4e4,   0);
+}
+if(getint(pped+0x150)>0x098edcc0&&getint(pped+0x150)<0x099019a0)
+{
+ setfloat(object + 0x27c,   0);
+} 
+
+
+#cheat Slowly turn Vic in the cardinal directions
+setfloat(pplayer + 0x78, 0.1);
+
+#cheat Keep off the Grass!
+//Kills you if you step on grass!
+if(getchar(pplayer + 0x137) == 0x02) //If on grass
+     setfloat(pplayer + 0x4E4, 0); //Die!
+
+#cheat Make Vic fly straight up
+setshort(pplayer + 0x1C8, 0x1020);//Get player off ground (see below)
+setfloat(pplayer + 0x148, -50.0);
+off();
+
+#cheat NO SWIM!!
+setchar(pplayer + 0x1D8, 0x08);
+setchar(pplayer + 0x1DB, 0x00);
+
+#cheat Water Height Modifier Very Slow
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.0025);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.0025);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier Slow
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.01);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.01);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier Mislow
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.05);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.05);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier Mifast
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-.25);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+.25);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier Fast
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-1);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+1);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Water Height Modifier Very Fast
+if (buttons & CTRL_LEFT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)-3);
+if (buttons & CTRL_RIGHT)
+setfloat(0x96C96B0, getfloat(0x96C96B0)+3);
+#off
+setfloat(0x96C96B0, 6);
+
+#cheat Kill Vic!
+setfloat(pplayer + 0x4E4, 0.0);
+
+#cheat Remove Vic!
+setchar(pplayer + 0x4c, 1);
+
+#cheat Never Wanted
+setchar(pplayer + 0x00000910, 0);
+
+#cheat 6
+setchar(pplayer + 0x00000910, 6);
+
+#cheat 12
+setchar(pplayer + 0x00000910, 12);
+
+#cheat 20
+setchar(pplayer + 0x00000910, 20);
+
+#cheat 50
+setchar(pplayer + 0x00000910, 50);
+
+#cheat 100
+setchar(pplayer + 0x00000910, 100);
+
+#cheat 500
+setchar(pplayer + 0x00000910, 500);
+
+#cheat 1000
+setchar(pplayer + 0x00000910, 1000);
+
+#cheat 2000
+setchar(pplayer + 0x00000910, 2000);
+
+#cheat 4000
+setchar(pplayer + 0x00000910, 4000);
+
+#cheat 0.25HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 0.25);}}
+#cheat 1HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 1);}}
+#cheat 5HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 5);}}
+#cheat 10HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 10);}}
+#cheat 20HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 20);}}
+#cheat 50HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 50);}}
+#cheat 150HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 150);}}
+#cheat 400HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 400);}}
+#cheat 1000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 1000);}}
+#cheat 2000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 2000);}}
+#cheat 10000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 10000);}}
+#cheat 20000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 20000);}}
+#cheat 100000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 100000);}} // ???
+#cheat 1000000HP
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setfloat(0x098b4a40 + i+0x4E4, 1000000);}} // ???
+
+#cheat message
+setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ','n','o','m',0); 
+#off
+setshort(0x08e90bd8, 1, 'C', 'a', 'n', 'c','e','l','l','e','d',0);
+
+#cheat You survive!!
+setfloat(pplayer + 0x4E4, 2);
+
+#cheat teleport to the printworks
+teleport(-1037.79, -283.01, 10.77);
+
+#cheat Raise The World +0.1m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 0.1);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 0.1);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 0.1);
+off();
+
+#cheat Raise The World +1m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 1.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1.0);
+off();
+
+#cheat Raise The World +2m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 2.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 2.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 2.0);
+off();
+
+#cheat Raise The World +5m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 5.0);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 5.0);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 5.0);
+off();
+
+#cheat Raise The World +10m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 10);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 10);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 10);
+off();
+
+#cheat Raise The World +20m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 20);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 20);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 20);
+off();
+
+#cheat Raise The World +50m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 50);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 50);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 50);
+off();
+
+#cheat Raise The World +100m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 100);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 100);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 100);
+off();
+
+#cheat Raise The World +200m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 200);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 200);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 200);
+off();
+
+#cheat Raise The World +500m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 500);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 500);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 500);
+off();
+
+#cheat Raise The World +1km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 1000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1000);
+off();
+
+#cheat Raise The World +2km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 2000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 2000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 2000);
+off();
+
+#cheat Raise The World +5km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 5000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 5000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 5000);
+off();
+
+#cheat Raise The World +10km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 10000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 10000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 10000);
+off();
+
+#cheat Raise The World +50km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 50000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 50000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 50000);
+off();
+
+#cheat Raise The World +100km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 100000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 100000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 100000);
+off();
+
+#cheat Raise The World +500km
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 500000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 500000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 500000);
+off();
+
+#cheat Raise The World +1mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 1000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1000000);
+off();
+
+#cheat Raise The World +5mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 5000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 5000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 5000000);
+off();
+
+#cheat Raise The World +10mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 10000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 10000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 10000000);
+off();
+
+#cheat Raise The World +50mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 50000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 50000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 50000000);
+off();
+
+#cheat Raise The World +100mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 100000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 100000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 100000000);
+off();
+
+#cheat Raise The World +500mega
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 500000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 500000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 500000000);
+off();
+
+#cheat Raise The World +1GM
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) + 1000000000);
+setfloat(pplayer + 0x38, getfloat(pplayer + 0x38) + 1000000000);
+setfloat(pcar + 0x38, getfloat(pcar + 0x38) + 1000000000);
+off();
+
+#cheat Lower The World -0.5m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 0.5);
+off();
+
+#cheat Lower The World -2m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 2);
+off();
+
+#cheat Lower The World -5m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 5);
+off();
+
+#cheat Lower The World -10m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 10);
+off();
+
+#cheat Lower The World -20m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 20);
+off();
+
+#cheat Lower The World -50m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 50);
+off();
+
+#cheat Lower The World -100m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 100);
+off();
+
+#cheat Lower The World -200m
+// By Edison Carter
+for (p = 0x09436E40; p < 0x09526720; p += 0x60)
+   setfloat(p + 0x38, getfloat(p + 0x38) - 200);
+off();
+
+#cheat UP=KILL DOWN=REMOVE LEFT=BEACH RIGHT=GOLF
+pped = getint(0x08BA1D70);
+if(pped&&buttons&CTRL_RTRIGGER&&press&CTRL_UP){
+setchar(pped+0x8B4, 0x44);
+setint(pped+0x890, pplayer);}
+if(pped&&buttons&CTRL_RTRIGGER&&press&CTRL_DOWN){
+setchar(pped+0x8B4, 0x37);
+setint(pped+0x890, pplayer);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_LEFT){
+setfloat(pplayer + 0x30, 488.76);
+setfloat(pplayer + 0x34, -1002.93);
+setfloat(pplayer + 0x38, 11.07);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_RIGHT){
+setfloat(pplayer + 0x30, 99.73);
+setfloat(pplayer + 0x34, 256.17);
+setfloat(pplayer + 0x38, 21.78);}
+
+#cheat KATANA
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x594,    0x0A);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x01);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SAW
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x594,    0x0B);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x01);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat GRENADE
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5B0,    0x0C);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x02);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat REMOTE MINES
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5B0,    0x0E);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x02);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat TEAR GAS
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5B0,    0x10);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x02);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat MOLTOV
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5B0,    0x11);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x02);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat PISTOL
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5CC,    0x13);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x03);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat HANDGUN
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5CC,    0x14);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x03);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SHOTGUN
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5E8,    0x15);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x04);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SHOTGUN2
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5E8,    0x16);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x04);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SHOTGUN3
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x5E8,    0x17);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x04);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat UZI
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x604,    0x18);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x05);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat UZI2
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x604,    0x19);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x05);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SILENT UZI
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x604,    0x1A);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x05);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat 2HAND UZI
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x604,    0x1B);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x05);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat 2HAND UZI2
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x620,    0x1C);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x06);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat AK47
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x620,    0x1D);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x06);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat ROCKET LAUNCHER
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x63C,    0x20);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x07);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat FLAMETHROWER
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x63C,    0x21);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x07);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat MINIGUN2
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x63C,    0x22);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x07);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat CHAINGUN
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x63C,    0x23);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x07);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SNIPER
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x658,    0x1E);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x08);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat SNIPER2
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) { 
+setchar(0x098b4a40 + i +0x658,    0x1F);
+   setchar(0x098b4a40 + i +0x87c, 0x1e);
+   //setchar(0x098b4a40 + i +0x8B4, 0x0);
+   //setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x08);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat LEVEL UP!
+setshort(0x08e90bd8,  1,  'L',  'E',  'V' ,  'E',  'L',  ' ',  'U',  'P',  0);
+
+#cheat Hold L or R to change taxi fare amount +2
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+2);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-2);}
+
+#cheat Hold L or R to change taxi fare amount +9
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+9);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-9);}
+
+#cheat Hold L or R to change taxi fare amount +21
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+21);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-21);}
+
+#cheat Hold L or R to change taxi fare amount +67
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+67);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-67);}
+
+#cheat Hold L or R to change taxi fare amount +142
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+142);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-142);}
+
+#cheat Hold L or R to change taxi fare amount +783
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+783);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-783);}
+
+#cheat Hold L or R to change taxi fare amount +3030
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+3030);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-3030);}
+
+#cheat Hold L or R to change taxi fare amount +6K
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+6130);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-6130);}
+
+#cheat Hold L or R to change taxi fare amount +22K
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+22016);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-22016);}
+
+#cheat Hold L or R to change taxi fare amount +194K
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+194923);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-194923);}
+
+#cheat Hold L or R to change taxi fare amount +1M
+ if ((buttons & CTRL_RTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)+1571829);}
+ if ((buttons & CTRL_LTRIGGER)){
+setint(0x09F6D7B0, getint(0x09F6D7B0)-1571829);}
+
+#cheat PJ-600 XT
+//By: Gunner54
+if(getshort(pcar + 0x56) == 212)
+{
+setchar(pcar+0x224, 0, 255, 5);
+
+if (buttons & CTRL_CROSS && buttons & CTRL_CIRCLE){
+setchar(0x09569B90,   0x10);
+setchar(0x09569B94,   255,   80,   0);
+speed = 1.8;                                                                                  
+thrust = speed * 0.00333;                                    
+setfloat(pcar + 0x0140,   getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);          
+setfloat(pcar + 0x0144,   getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+}else if (buttons & CTRL_CROSS){
+speed = 0.8;  
+thrust = speed * 0.00333;
+setchar(0x09569B90,   0x2);
+setchar(0x09569B94,   255, 80, 0);                                  
+setfloat(pcar + 0x0140,   getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);          
+setfloat(pcar + 0x0144,   getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+}else{
+setchar(0x09569B90,   0x4);
+setchar(0x09569B94,   255, 80, 0);
+}
+}
+
+#cheat Goblin 69
+setshort(0x98A2fd6, 'G', 'o', 'b', 'l', 'i', 'n', ' ', '6', '9', ' ', ' ');
+setint(0x08C739B0,  273);
+setchar(0x08C739d4, 0x00, 0xC0, 0x00);
+setchar(0x08C739d8,  0x00, 0x30, 0x00);
+setfloat(0x9634420+0x74, 0.34375);
+setfloat(0x9634420+0x78, 0.375);
+setfloat(0x9634420+0x7c, 0.15);
+setfloat(0x9634420+0x80, -0.3625);
+setfloat(0x9634420+0x84, 0.66);
+setfloat(0x9634420+0x88, 2);
+setfloat(0x936eff8, 0.74, 0.74);
+setfloat(0x9634420+0x6c, 1);
+setfloat(0x9634420+0xc4, 0.89);
+setfloat(0x9634420+0x70, 0.50);
+setfloat(0x9634420+0xbc, 1300);
+setfloat(0x9634420+0xa0, 0);
+setfloat(0x9634420+0xa4, 0.425);
+setfloat(0x9634420+0xa8, -1.99);
+setfloat(0x9634420+0x68, 50);
+setchar(0x9634420+0x5c, 'F', 'D', 5);
+off()
+
+
+#cheat RockCrawler
+setshort(0x98a30ca, 'R', 'o', 'c', 'k', 'C', 'r', 'a', 'w', 'l', 'e', 'r');
+setint(0x08C739B0,  259);
+setchar(0x08C739d4, 30, 30, 30);
+setchar(0x08C739d8,  30, 30, 30);
+setfloat(0x9633200+0x74, 0.6);
+setfloat(0x9633200+0x78, 5);
+setfloat(0x9633200+0x7c, 0);
+setfloat(0x9633200+0x80, -0.9);
+setfloat(0x9633200+0x84, 0.5);
+setfloat(0x9633200+0x88, 0);
+setfloat(0x936cb38, 1.6, 1.6);
+setfloat(0x9633200+0xc4, 0.75);
+setfloat(0x9633200+0x70, 0.50);
+setfloat(0x9633200+0x6c, 0.95);
+setfloat(0x9633200+0xbc, 1250);
+setfloat(0x9633200+0xc0, 3000);
+setfloat(0x9633200+0xa0, 0);
+setfloat(0x9633200+0xa4, 0);
+setfloat(0x9633200+0xa8, -1.5);
+setfloat(0x9633200+0x68, 35);
+setchar(0x9633200+0x5c, '4', 'D', 4);
+off()
+
+#cheat lambo at The Clymenus Suite
+//Created By Sunshine Customs
+//Sunshine Customs Created By emcp
+//Addresses Found By Vette
+//Basics
+setint(0x8C73B30, 172); //Car Id
+setchar(0x8C73B30+0x24, 255,255,0, 255); //Color 1
+setchar(0x8C73B30+0x28, 255,255,0, 255); //Color2
+setshort(0x98a33b8, 1, 'l','a','m','b','o', 0);
+//Wheels
+setfloat(0x935E6D8, 1.0, 1.0); //wheel size
+setfloat(0x962ea40+0x6c, 1.05); //Traction Multiplier
+setfloat(0x962ea40+0xc4, 0.85); //Traction Loss
+setfloat(0x962ea40+0x70, 0.5); //Traction Bias
+//Engine
+setchar(0x962ea40+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x962ea40+0x7c, 0.35); //Suspension Upper Limit
+setfloat(0x962ea40+0x80, -0.15); //Suspension Lower Limit
+setfloat(0x962ea40+0x78, 0.08); //Suspension Damping Level
+setfloat(0x962ea40+0x74, 1); //Suspension Force Level
+setfloat(0x962ea40+0x84, 0.5); //Suspension Bias
+setfloat(0x962ea40+0x88, 0.3); //Anti-Dive Multiplier
+//Handling
+setfloat(0x962ea40+0x68, 30); //Steering Lock
+setfloat(0x962ea40+0xbc, 2900); //Vehilce Mass
+setfloat(0x962ea40+0xc0, 3200); //Turn Mass
+setfloat(0x962ea40+0xa0, 0); //Centre of Mass - X
+setfloat(0x962ea40+0xa4, 0); //Centre of Mass - Y
+setfloat(0x962ea40+0xa8, 0); //Centre of Mass - Z
+//Effects
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat eclipse at The Clymenus Suite
+//Created By Sunshine Customs
+//Sunshine Customs Created By emcp
+//Addresses Found By Vette
+//Basics
+setint(0x8C73B30, 274); //Car Id
+setchar(0x8C73B30+0x24, 179,106,0, 255); //Color 1
+setchar(0x8C73B30+0x28, 0,0,0, 255); //Color2
+setshort(0x98a3212, 1, 'e','c','l','i','p','s','e', 0);
+//Wheels
+setfloat(0x936F298, 1, 1); //wheel size
+setfloat(0x9634500+0x6c, 0.75); //Traction Multiplier
+setfloat(0x9634500+0xc4, 0.85); //Traction Loss
+setfloat(0x9634500+0x70, 0.5); //Traction Bias
+//Engine
+setchar(0x9634500+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x9634500+0x7c, 0.35); //Suspension Upper Limit
+setfloat(0x9634500+0x80, -0.15); //Suspension Lower Limit
+setfloat(0x9634500+0x78, 0.08); //Suspension Damping Level
+setfloat(0x9634500+0x74, 1); //Suspension Force Level
+setfloat(0x9634500+0x84, 0.5); //Suspension Bias
+setfloat(0x9634500+0x88, 0); //Anti-Dive Multiplier
+//Handling
+setfloat(0x9634500+0x68, 30); //Steering Lock
+setfloat(0x9634500+0xbc, 1500); //Vehilce Mass
+setfloat(0x9634500+0xc0, 1500); //Turn Mass
+setfloat(0x9634500+0xa0, 0); //Centre of Mass - X
+setfloat(0x9634500+0xa4, 0); //Centre of Mass - Y
+setfloat(0x9634500+0xa8, 0); //Centre of Mass - Z
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat hummer at The Clymenus Suite
+//Created By Sunshine Customs
+//Sunshine Customs Created By emcp
+//Addresses Found By Vette
+//Basics
+setint(0x8C73B30, 209); //Car Id
+setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+setchar(0x8C73B30+0x28, 255,0,0, 255); //Color2
+setshort(0x98a325a, 1, 'h','u','m','m','e','r', 0);
+//Wheels
+setfloat(0x93647F8, 1.15, 1.15); //wheel size
+setfloat(0x96309c0+0x6c, 0.75); //Traction Multiplier
+setfloat(0x96309c0+0xc4, 0.85); //Traction Loss
+setfloat(0x96309c0+0x70, 0.5); //Traction Bias
+//Engine
+setchar(0x96309c0+0x5c, '4', 'D', 6); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x96309c0+0x7c, 0.35); //Suspension Upper Limit
+setfloat(0x96309c0+0x80, -0.15); //Suspension Lower Limit
+setfloat(0x96309c0+0x78, 0.08); //Suspension Damping Level
+setfloat(0x96309c0+0x74, 1); //Suspension Force Level
+setfloat(0x96309c0+0x84, 0.5); //Suspension Bias
+setfloat(0x96309c0+0x88, 0.2); //Anti-Dive Multiplier
+//Handling
+setfloat(0x96309c0+0x68, 30); //Steering Lock
+setfloat(0x96309c0+0xbc, 2500); //Vehilce Mass
+setfloat(0x96309c0+0xc0, 2900); //Turn Mass
+setfloat(0x96309c0+0xa0, 0); //Centre of Mass - X
+setfloat(0x96309c0+0xa4, 0); //Centre of Mass - Y
+setfloat(0x96309c0+0xa8, 0); //Centre of Mass - Z
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat nissan at The Clymenus Suite
+//Created By Sunshine Customs
+//Sunshine Customs Created By emcp
+//Addresses Found By Vette
+//Basics
+setint(0x8C73B30, 171); //Car Id
+setchar(0x8C73B30+0x24, 248,151,5, 255); //Color 1
+setchar(0x8C73B30+0x28, 255,0,0, 255); //Color2
+setshort(0x98a30e2, 1, 'n','i','s','s','a','n', 0);
+//Wheels
+setfloat(0x935E438, 1, 1); //wheel size
+setfloat(0x962eb20+0x6c, 1); //Traction Multiplier
+setfloat(0x962eb20+0xc4, 0.85); //Traction Loss
+setfloat(0x962eb20+0x70, 0.5); //Traction Bias
+//Engine
+setchar(0x962eb20+0x5c, 'R', 'P', 3); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x962eb20+0x7c, 0.35); //Suspension Upper Limit
+setfloat(0x962eb20+0x80, -0.15); //Suspension Lower Limit
+setfloat(0x962eb20+0x78, 0.08); //Suspension Damping Level
+setfloat(0x962eb20+0x74, 1); //Suspension Force Level
+setfloat(0x962eb20+0x84, 0.5); //Suspension Bias
+setfloat(0x962eb20+0x88, 0); //Anti-Dive Multiplier
+//Handling
+setfloat(0x962eb20+0x68, 30); //Steering Lock
+setfloat(0x962eb20+0xbc, 1650); //Vehilce Mass
+setfloat(0x962eb20+0xc0, 1900); //Turn Mass
+setfloat(0x962eb20+0xa0, 0); //Centre of Mass - X
+setfloat(0x962eb20+0xa4, 0); //Centre of Mass - Y
+setfloat(0x962eb20+0xa8, 0); //Centre of Mass - Z
+//Neon
+for(neon=0;neon<16;neon++)
+{setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Pimped Washington at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 276); //Car Id
+ setchar(0x8C73B30+0x24, 170,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,154,0, 255); //Color2
+ setshort(0x98a33c8, 1,  0); 
+ //Wheels
+ setfloat(0x936F7D8, 1.0, 1.0); //wheel size
+ setfloat(0x9634800+0x6c, 1); //Traction Multiplier
+ setfloat(0x9634800+0xc4, 0.8); //Traction Loss
+ setfloat(0x9634800+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634800+0x5c, 'R', 'D', 5); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634800+0x7c, 0.4); //Suspension Upper Limit
+ setfloat(0x9634800+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x9634800+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9634800+0x74, 1); //Suspension Force Level
+ setfloat(0x9634800+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634800+0x88, 0.5); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634800+0x68, 20); //Steering Lock
+ setfloat(0x9634800+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634800+0xc0, 1500); //Turn Mass
+ setfloat(0x9634800+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634800+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634800+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat lowrider at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 239); //Car Id
+ setchar(0x8C73B30+0x24, 55,0,55, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a3008, 1, 'l','o','w','r','i','d','e','r', 0); 
+ //Wheels
+ setfloat(0x93696B8, .9, .9); //wheel size
+ setfloat(0x96324a0+0x6c, 0.5); //Traction Multiplier
+ setfloat(0x96324a0+0xc4, 0.5); //Traction Loss
+ setfloat(0x96324a0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96324a0+0x5c, 'R', 'E', 4); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96324a0+0x7c, 0.3); //Suspension Upper Limit
+ setfloat(0x96324a0+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x96324a0+0x78, 0.3); //Suspension Damping Level
+ setfloat(0x96324a0+0x74, 1); //Suspension Force Level
+ setfloat(0x96324a0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96324a0+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96324a0+0x68, 25); //Steering Lock
+ setfloat(0x96324a0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96324a0+0xc0, 1500); //Turn Mass
+ setfloat(0x96324a0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96324a0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96324a0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 0, 175, 255);
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  55, 0, 55);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Highrider at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 239); //Car Id
+ setchar(0x8C73B30+0x24, 55,0,55, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a3008, 1, 'H','i','g','h','r','i','d','e','r', 0); 
+ //Wheels
+ setfloat(0x93696B8, 1.7, 1.7); //wheel size
+ setfloat(0x96324a0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96324a0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96324a0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96324a0+0x5c, 'R', 'E', 4); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96324a0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x96324a0+0x80, -1); //Suspension Lower Limit
+ setfloat(0x96324a0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x96324a0+0x74, 4); //Suspension Force Level
+ setfloat(0x96324a0+0x84, 0.5); //Suspension Bias
+ setfloat(0x96324a0+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96324a0+0x68, 30); //Steering Lock
+ setfloat(0x96324a0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96324a0+0xc0, 1500); //Turn Mass
+ setfloat(0x96324a0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96324a0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96324a0+0xa8, -1.5); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 0, 175, 255);
+ //neon 
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  55, 0, 55);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Pimped Stallion at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 206); //Car Id
+ setchar(0x8C73B30+0x24, 171,143,255, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a323a, 1,  0); 
+ //Wheels
+ setfloat(0x9364018, 1.2, 1.2); //wheel size
+ setfloat(0x9630800+0x6c, 0.8); //Traction Multiplier
+ setfloat(0x9630800+0xc4, 0.9); //Traction Loss
+ setfloat(0x9630800+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630800+0x5c, 'R', 'P', 4); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630800+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630800+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9630800+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9630800+0x74, 1); //Suspension Force Level
+ setfloat(0x9630800+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630800+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630800+0x68, 25); //Steering Lock
+ setfloat(0x9630800+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630800+0xc0, 1500); //Turn Mass
+ setfloat(0x9630800+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630800+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630800+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 0, 175, 255);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  171, 143, 255);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Dudek13l at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 265); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0,255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255,255); //Color2
+ setshort(0x98a2ec4, 1, 'D','u','d','e','k','1','3','l', 0); 
+ //Wheels
+ setfloat(0x936DAF8, 1, 1); //wheel size
+ setfloat(0x9633880+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9633880+0xc4, 1); //Traction Loss
+ setfloat(0x9633880+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9633880+0x5c, 'R', 'E', 5); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9633880+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9633880+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9633880+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9633880+0x74, 1); //Suspension Force Level
+ setfloat(0x9633880+0x84, 0.6); //Suspension Bias
+ setfloat(0x9633880+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9633880+0x68, 30); //Steering Lock
+ setfloat(0x9633880+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9633880+0xc0, 1500); //Turn Mass
+ setfloat(0x9633880+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9633880+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9633880+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 0, 175, 255);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 0, 255);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Christmas Bus at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 237); //Car Id
+ setchar(0x8C73B30+0x24, 255,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,255,0, 255); //Color2
+ setshort(0x98a3474, 1, 'C','h','r','i','s','t','m','a','s',' ','B','u','s', 0); 
+ //Wheels
+ setfloat(0x9369178, 1.4, 1.4); //wheel size
+ setfloat(0x9632120+0x6c, 0.8); //Traction Multiplier
+ setfloat(0x9632120+0xc4, 0.9); //Traction Loss
+ setfloat(0x9632120+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9632120+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9632120+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9632120+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x9632120+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9632120+0x74, 2); //Suspension Force Level
+ setfloat(0x9632120+0x84, 0.5); //Suspension Bias
+ setfloat(0x9632120+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9632120+0x68, 30); //Steering Lock
+ setfloat(0x9632120+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9632120+0xc0, 1500); //Turn Mass
+ setfloat(0x9632120+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9632120+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9632120+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+ setchar(0x09569B94, 0, 255, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat limo at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 228); //Car Id
+ setchar(0x8C73B30+0x24, 255,204,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,0,0, 255); //Color2
+ setshort(0x98a334e, 1, 'l','i','m','o', 0); 
+ //Wheels
+ setfloat(0x93679D8, 1.3, 1.3); //wheel size
+ setfloat(0x96319e0+0x6c, 0.9); //Traction Multiplier
+ setfloat(0x96319e0+0xc4, 0.9); //Traction Loss
+ setfloat(0x96319e0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96319e0+0x5c, 'R', 'D', 3); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96319e0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x96319e0+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x96319e0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x96319e0+0x74, 2.0); //Suspension Force Level
+ setfloat(0x96319e0+0x84, 0.6); //Suspension Bias
+ setfloat(0x96319e0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96319e0+0x68, 30); //Steering Lock
+ setfloat(0x96319e0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96319e0+0xc0, 1500); //Turn Mass
+ setfloat(0x96319e0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96319e0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96319e0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 204, 0);}
+ //Exhuast
+ setchar(0x09569B94, 0, 175, 255);
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Christmas car at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 273); //Car Id
+ setchar(0x8C73B30+0x24, 255,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,255,0, 255); //Color2
+ setshort(0x98a2fd6, 1, 'C','h','r','i','s','t','m','a','s',' ','c','a','r', 0); 
+ //Wheels
+ setfloat(0x936EFF8, 1.5, 1.5); //wheel size
+ setfloat(0x9634420+0x6c, 0.8); //Traction Multiplier
+ setfloat(0x9634420+0xc4, 0.8); //Traction Loss
+ setfloat(0x9634420+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634420+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634420+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634420+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x9634420+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634420+0x74, 2.2); //Suspension Force Level
+ setfloat(0x9634420+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634420+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634420+0x68, 30); //Steering Lock
+ setfloat(0x9634420+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634420+0xc0, 1500); //Turn Mass
+ setfloat(0x9634420+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634420+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634420+0xa8, 0); //Centre of Mass - Z
+//Effects 
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+//Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Monster Fireballs at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 256); //Car Id
+ setchar(0x8C73B30+0x24, 255,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,204,0, 255); //Color2
+ setshort(0x98a30ba, 1, 'M','o','n','s','t','e','r','f','i','r','e','b','a','l','l','s', 0); 
+ //Wheels
+ setfloat(0x936C358, 1.5, 1.5); //wheel size
+ setfloat(0x96334a0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96334a0+0xc4, 0.9); //Traction Loss
+ setfloat(0x96334a0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96334a0+0x5c, 'R', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96334a0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x96334a0+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x96334a0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x96334a0+0x74, 2.2); //Suspension Force Level
+ setfloat(0x96334a0+0x84, 0.6); //Suspension Bias
+ setfloat(0x96334a0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96334a0+0x68, 30); //Steering Lock 
+ setfloat(0x96334a0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96334a0+0xc0, 1500); //Turn Mass
+ setfloat(0x96334a0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96334a0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96334a0+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0); 
+//Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 80, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Lambo at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 270); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,255, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,0, 255); //Color2
+ setshort(0x98a339c, 1, 'L','a','m','b','o', 0); 
+ //Wheels
+ setfloat(0x936E818, 1.5, 1.5); //wheel size
+ setfloat(0x9634180+0x6c, 0.8); //Traction Multiplier
+ setfloat(0x9634180+0xc4, 0.8); //Traction Loss
+ setfloat(0x9634180+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634180+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634180+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634180+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9634180+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634180+0x74, 2.2); //Suspension Force Level
+ setfloat(0x9634180+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634180+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634180+0x68, 30); //Steering Lock
+ setfloat(0x9634180+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634180+0xc0, 1500); //Turn Mass
+ setfloat(0x9634180+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634180+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634180+0xa8, 0); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 0, 175, 255);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 0, 255);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Honda Civic at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 211); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,255, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,255,0, 255); //Color2
+ setshort(0x98a3274, 1, 'H','o','n','d','a',' ','C','i','v','i','c', 0); 
+ //Wheels
+ setfloat(0x9364D38, 1.2, 1.2); //wheel size
+ setfloat(0x9630b80+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630b80+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630b80+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630b80+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630b80+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630b80+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x9630b80+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9630b80+0x74, 2.2); //Suspension Force Level
+ setfloat(0x9630b80+0x84, .7); //Suspension Bias
+ setfloat(0x9630b80+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630b80+0x68, 30); //Steering Lock
+ setfloat(0x9630b80+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630b80+0xc0, 1500); //Turn Mass
+ setfloat(0x9630b80+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630b80+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630b80+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 0, 255);}
+ //Exhaust
+ setchar(0x09569B94, 0, 175, 255);
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Sacred at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 196); //Car Id
+ setchar(0x8C73B30+0x24, 104,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 65,0,16, 255); //Color2
+ setshort(0x98a364e, 1, 'S','a','c','r','e','d', 0); 
+ //Wheels
+ setfloat(0x93625D8, 1.3, 1.3); //wheel size
+ setfloat(0x962fe60+0x6c, 0.8); //Traction Multiplier
+ setfloat(0x962fe60+0xc4, 0.8); //Traction Loss
+ setfloat(0x962fe60+0x70, 0.6); //Traction Bias
+ //Engine
+ setchar(0x962fe60+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962fe60+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962fe60+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x962fe60+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962fe60+0x74, 1); //Suspension Force Level
+ setfloat(0x962fe60+0x84, 0.6); //Suspension Bias
+ setfloat(0x962fe60+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962fe60+0x68, 30); //Steering Lock
+ setfloat(0x962fe60+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962fe60+0xc0, 1500); //Turn Mass
+ setfloat(0x962fe60+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962fe60+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962fe60+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhuast
+ setchar(0x09569B94, 104, 30, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  104, 30, 0);}
+ //Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat 1969 Speedy at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 192); //Car Id
+ setchar(0x8C73B30+0x24, 255,204,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,0,0, 255); //Color2
+ setshort(0x98a3174, 1, 'S','p','e','e','d','y',' ','1','9','6','9', 0); 
+ //Wheels
+ setfloat(0x9361B58, 1.3, 1.3); //wheel size
+ setfloat(0x962fbc0+0x6c, .75); //Traction Multiplier
+ setfloat(0x962fbc0+0xc4, .75); //Traction Loss
+ setfloat(0x962fbc0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962fbc0+0x5c, '4', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962fbc0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962fbc0+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x962fbc0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962fbc0+0x74, 1.3); //Suspension Force Level
+ setfloat(0x962fbc0+0x84, .7); //Suspension Bias
+ setfloat(0x962fbc0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962fbc0+0x68, 30); //Steering Lock
+ setfloat(0x962fbc0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962fbc0+0xc0, 1500); //Turn Mass
+ setfloat(0x962fbc0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962fbc0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962fbc0+0xa8, 0); //Centre of Mass - Z
+//Effects 
+ //Exhuast
+ setchar(0x09569B94, 255, 204, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 204, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Monster Truck at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 180); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,255,0, 255); //Color2
+ setshort(0x98a3134, 1, 'M','o','n','s','t','e','r',' ','T','r','u','c','k', 0); 
+ //Wheels
+ setfloat(0x935FBD8, 1.7, 1.7); //wheel size
+ setfloat(0x962f140+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f140+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f140+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f140+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f140+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f140+0x80, -1); //Suspension Lower Limit
+ setfloat(0x962f140+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962f140+0x74, 4); //Suspension Force Level
+ setfloat(0x962f140+0x84, 0.5); //Suspension Bias
+ setfloat(0x962f140+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f140+0x68, 30); //Steering Lock
+ setfloat(0x962f140+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f140+0xc0, 1500); //Turn Mass
+ setfloat(0x962f140+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f140+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f140+0xa8, -1.5); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 0, 255, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+ //Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Monster Truck LE at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 180); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,0,0, 255); //Color2
+ setshort(0x98a3134, 1, 'M','o','n','s','t','e','r',' ','T','r','u','c','k',' ','L','E', 0); 
+ //Wheels
+ setfloat(0x935FBD8, 1.7, 1.7); //wheel size
+ setfloat(0x962f140+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f140+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f140+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f140+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f140+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f140+0x80, -1); //Suspension Lower Limit
+ setfloat(0x962f140+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962f140+0x74, 4); //Suspension Force Level
+ setfloat(0x962f140+0x84, 0.5); //Suspension Bias
+ setfloat(0x962f140+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f140+0x68, 30); //Steering Lock
+ setfloat(0x962f140+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f140+0xc0, 1500); //Turn Mass
+ setfloat(0x962f140+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f140+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f140+0xa8, -1.5); //Centre of Mass - Z
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Monster Truck SE at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 180); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a3134, 1, 'M','o','n','s','t','e','r',' ','T','r','u','c','k',' ','S','E', 0); 
+ //Wheels
+ setfloat(0x935FBD8, 1.7, 1.7); //wheel size
+ setfloat(0x962f140+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f140+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f140+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f140+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f140+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f140+0x80, -1); //Suspension Lower Limit
+ setfloat(0x962f140+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962f140+0x74, 4); //Suspension Force Level
+ setfloat(0x962f140+0x84, 0.5); //Suspension Bias
+ setfloat(0x962f140+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f140+0x68, 30); //Steering Lock
+ setfloat(0x962f140+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f140+0xc0, 1500); //Turn Mass
+ setfloat(0x962f140+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f140+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f140+0xa8, -1.5); //Centre of Mass - Z
+ //Exhuast
+ setchar(0x09569B94, 0, 175, 255);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 0, 255);}
+ //Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Monster Truck ZE at The Clymenus Suite
+//Author:buzbegone
+//Helped with the suspension by Vette
+//Any problems, PM me
+//Basics
+setint(0x8C73B30, 245); //Car Id
+setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+setshort(0x98a2fb2, 1, 'M','o','n','s','t','e','r',' ','T','r','u','c','k',' ','Z','E', 0);
+//Wheels
+setfloat(0x936A678, 1.5, 1.5); //wheel size
+setfloat(0x96329e0+0x6c, 0.75); //Traction Multiplier
+setfloat(0x96329e0+0xc4, 0.85); //Traction Loss
+setfloat(0x96329e0+0x70, 0.5); //Traction Bias
+//Engine
+setchar(0x96329e0+0x5c, 'R', 'P', 6); // Drive type / Engine type / Gears
+//Suspension
+setfloat(0x96329e0+0x7c, 0.47); //Suspension Upper Limit
+setfloat(0x96329e0+0x80, -1); //Suspension Lower Limit
+setfloat(0x96329e0+0x78, 0.4); //Suspension Damping Level
+setfloat(0x96329e0+0x74, 4); //Suspension Force Level
+setfloat(0x96329e0+0x84, 0.5); //Suspension Bias
+setfloat(0x96329e0+0x88, 0.3); //Anti-Dive Multiplier
+//Handling
+setfloat(0x96329e0+0x68, 30); //Steering Lock
+setfloat(0x96329e0+0xbc, 1500); //Vehilce Mass
+setfloat(0x96329e0+0xc0, 1500); //Turn Mass
+setfloat(0x96329e0+0xa0, 0); //Centre of Mass - X
+setfloat(0x96329e0+0xa4, 0); //Centre of Mass - Y
+setfloat(0x96329e0+0xa8, -1.5); //Centre of Mass - Z
+//Effects
+ //Exhuast
+ setchar(0x09569B94, 30, 0, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Blitz at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 254); //Car Id
+ setchar(0x8C73B30+0x24, 65,0,16, 255); //Color 1
+ setchar(0x8C73B30+0x28, 80,80,80, 255); //Color2
+ setshort(0x98a336c, 1, 'B','l','i','t','z', 0); 
+ //Wheels
+ setfloat(0x936BE18, 1.5, 1.5); //wheel size
+ setfloat(0x9633120+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9633120+0xc4, 0.85); //Traction Loss
+ setfloat(0x9633120+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9633120+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9633120+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9633120+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x9633120+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9633120+0x74, 4); //Suspension Force Level
+ setfloat(0x9633120+0x84, 0.5); //Suspension Bias
+ setfloat(0x9633120+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9633120+0x68, 30); //Steering Lock
+ setfloat(0x9633120+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9633120+0xc0, 1500); //Turn Mass
+ setfloat(0x9633120+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9633120+0xa4, -0.2); //Centre of Mass - Y
+ setfloat(0x9633120+0xa8, 0); //Centre of Mass - Z
+//Effects 
+ //Exhuast
+ setchar(0x09569B94, 65, 0, 16);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat J Coupe gives u throwing upgrade
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 272); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 30,0,0, 255); //Color2
+ setshort(0x98a3564, 1, 'J',' ','C','o','u','p','e', 0); 
+ //Wheels
+ setfloat(0x936ED58, 1.3, 1.3); //wheel size
+ setfloat(0x9634340+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634340+0xc4, 0.85); //Traction Loss
+ setfloat(0x9634340+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634340+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634340+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634340+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9634340+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634340+0x74, 1.3); //Suspension Force Level
+ setfloat(0x9634340+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634340+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634340+0x68, 30); //Steering Lock
+ setfloat(0x9634340+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634340+0xc0, 1500); //Turn Mass
+ setfloat(0x9634340+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634340+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634340+0xa8, 0); //Centre of Mass - Z
+//Effects 
+ //Exhuast
+ setchar(0x09569B94, 80, 0, 255);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);
+//Thrown Weapon Upgrade Pack
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setshort(sub+0x40, 0x0E);//Allow run and throw
+setfloat(sub+0x44, 0.25, 0.25, 0.25);//Set firing speed to Minigun's speed
+}
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Muscle at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 187); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,30,0, 255); //Color2
+ setshort(0x98a316c, 1, 'M','u','s','c','l','e', 0); 
+ //Wheels
+ setfloat(0x9360E38, 1.35, 1.35); //wheel size
+ setfloat(0x962f680+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f680+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f680+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f680+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f680+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f680+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x962f680+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962f680+0x74, 1.5); //Suspension Force Level
+ setfloat(0x962f680+0x84, 0.6); //Suspension Bias
+ setfloat(0x962f680+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f680+0x68, 30); //Steering Lock
+ setfloat(0x962f680+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f680+0xc0, 1500); //Turn Mass
+ setfloat(0x962f680+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f680+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f680+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Cobra at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 266); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+ setshort(0x98a35a4, 1, 'C','o','b','r','a', 0); 
+ //Wheels
+ setfloat(0x936DD98, 1.3, 1.3); //wheel size
+ setfloat(0x96340a0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x96340a0+0xc4, 0.85); //Traction Loss
+ setfloat(0x96340a0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x96340a0+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x96340a0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x96340a0+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x96340a0+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x96340a0+0x74, 3); //Suspension Force Level
+ setfloat(0x96340a0+0x84, 0.6); //Suspension Bias
+ setfloat(0x96340a0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x96340a0+0x68, 30); //Steering Lock
+ setfloat(0x96340a0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x96340a0+0xc0, 1500); //Turn Mass
+ setfloat(0x96340a0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x96340a0+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x96340a0+0xa8, 0); //Centre of Mass - Z
+//Effects
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Jaguar at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 172); //Car Id
+ setchar(0x8C73B30+0x24, 0,30,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+ setshort(0x98a33b8, 1, 'J','a','g','u','a','r', 0); 
+ //Wheels
+ setfloat(0x935E6D8, 1.2, 1.2); //wheel size
+ setfloat(0x962ea40+0x6c, 0.76); //Traction Multiplier
+ setfloat(0x962ea40+0xc4, 0.85); //Traction Loss
+ setfloat(0x962ea40+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962ea40+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962ea40+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962ea40+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x962ea40+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962ea40+0x74, 3); //Suspension Force Level
+ setfloat(0x962ea40+0x84, 0.6); //Suspension Bias
+ setfloat(0x962ea40+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962ea40+0x68, 31); //Steering Lock
+ setfloat(0x962ea40+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962ea40+0xc0, 1500); //Turn Mass
+ setfloat(0x962ea40+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962ea40+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962ea40+0xa8, 0); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 0, 255, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Zr 400 at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 212); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 30,0,0, 255); //Color2
+ setshort(0x98a3286, 1, 'Z','r',' ','4','0','0', 0); 
+ //Wheels
+ setfloat(0x9630c60+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630c60+0xc4, 2); //Traction Loss
+ setfloat(0x9630c60+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630c60+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630c60+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9630c60+0x80, -0.04); //Suspension Lower Limit
+ setfloat(0x9630c60+0x78, 0.08); //Suspension Damping Level
+ setfloat(0x9630c60+0x74, 1); //Suspension Force Level
+ setfloat(0x9630c60+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630c60+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630c60+0x68, 41); //Steering Lock
+ setfloat(0x9630c60+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630c60+0xc0, 1500); //Turn Mass
+ setfloat(0x9630c60+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630c60+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630c60+0xa8, 0); //Centre of Mass - Z
+//Effects
+//Neon 
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, 255, 0, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Exhuast
+setchar(0x09569B94, 255, 80, 0);
+//Teleport
+teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Zr 400 LE at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 212); //Car Id
+ setchar(0x8C73B30+0x24, 80,80,80, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+ setshort(0x98a3286, 1, 'Z','r',' ','4','0','0',' ','L','E', 0); 
+ //Wheels
+ setfloat(0x9630c60+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630c60+0xc4, 1.4); //Traction Loss
+ setfloat(0x9630c60+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630c60+0x5c, 'R', 'P', 4); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630c60+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9630c60+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9630c60+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9630c60+0x74, 1); //Suspension Force Level
+ setfloat(0x9630c60+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630c60+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630c60+0x68, 35); //Steering Lock
+ setfloat(0x9630c60+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630c60+0xc0, 1500); //Turn Mass
+ setfloat(0x9630c60+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630c60+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630c60+0xa8, 0); //Centre of Mass - Z
+//Effects 
+//neon
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, 150, 150, 150);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Exhuast
+setchar(0x09569B94, 255, 80, 0);
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Death at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 231); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,30,0, 255); //Color2
+ setshort(0x98a2ef2, 1, 'D','e','a','t','h', 0); 
+ //Wheels
+ setfloat(0x9631f60+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9631f60+0xc4, 2); //Traction Loss
+ setfloat(0x9631f60+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9631f60+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9631f60+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9631f60+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9631f60+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9631f60+0x74, 1); //Suspension Force Level
+ setfloat(0x9631f60+0x84, 0.6); //Suspension Bias
+ setfloat(0x9631f60+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9631f60+0x68, 41); //Steering Lock
+ setfloat(0x9631f60+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9631f60+0xc0, 1500); //Turn Mass
+ setfloat(0x9631f60+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9631f60+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9631f60+0xa8, 0); //Centre of Mass - Z
+//Effects
+//neon
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, 255, 0, 0);} 
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Exhuast
+setchar(0x09569B94, 255, 80, 0);
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Buggy at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 195); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 30,0,0, 255); //Color2
+ setshort(0x98a351c, 1, 'B','u','g','g','y', 0); 
+ //Wheels
+ setfloat(0x9362338, 1.3, 1.3); //wheel size
+ setfloat(0x962fd80+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962fd80+0xc4, 0.85); //Traction Loss
+ setfloat(0x962fd80+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962fd80+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962fd80+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962fd80+0x80, -0.3); //Suspension Lower Limit
+ setfloat(0x962fd80+0x78, 0); //Suspension Damping Level
+ setfloat(0x962fd80+0x74, 1); //Suspension Force Level
+ setfloat(0x962fd80+0x84, 0.6); //Suspension Bias
+ setfloat(0x962fd80+0x88, 1); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962fd80+0x68, 30); //Steering Lock
+ setfloat(0x962fd80+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962fd80+0xc0, 1500); //Turn Mass
+ setfloat(0x962fd80+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962fd80+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962fd80+0xa8, 0); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 255, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);  
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Doggy fresh at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 199); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+ setshort(0x98a31d0, 1, 'D','o','g','g','y',' ','f','r','e','s','h', 0); 
+ //Wheels
+ setfloat(0x9362DB8, 1.3, 1.3); //wheel size
+ setfloat(0x9630020+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630020+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630020+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630020+0x5c, 'R', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630020+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630020+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9630020+0x78, 0.5); //Suspension Damping Level
+ setfloat(0x9630020+0x74, 1); //Suspension Force Level
+ setfloat(0x9630020+0x84, 0.5); //Suspension Bias
+ setfloat(0x9630020+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630020+0x68, 30); //Steering Lock
+ setfloat(0x9630020+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630020+0xc0, 1500); //Turn Mass
+ setfloat(0x9630020+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630020+0xa4, -0.2); //Centre of Mass - Y
+ setfloat(0x9630020+0xa8, 0); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 255, 0, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 80, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Taxi xs at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 226); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,30,0, 255); //Color2
+ setshort(0x98a3330, 1, 'T','a','x','i',' ','x','s', 0); 
+ //Wheels
+ setfloat(0x9367498, 1.3, 1.3); //wheel size
+ setfloat(0x9631ba0+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9631ba0+0xc4, 0.85); //Traction Loss
+ setfloat(0x9631ba0+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9631ba0+0x5c, 'R', 'E', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9631ba0+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9631ba0+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9631ba0+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9631ba0+0x74, 1); //Suspension Force Level
+ setfloat(0x9631ba0+0x84, 0.6); //Suspension Bias
+ setfloat(0x9631ba0+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9631ba0+0x68, 30); //Steering Lock
+ setfloat(0x9631ba0+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9631ba0+0xc0, 1500); //Turn Mass
+ setfloat(0x9631ba0+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9631ba0+0xa4, -0.2); //Centre of Mass - Y
+ setfloat(0x9631ba0+0xa8, 0); //Centre of Mass - Z
+ //Effect
+//Disable Side Missions
+setchar(0x09f69054,  1);
+//Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  0, 0, 255);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+#cheat Honda Civic le at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 274); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,80,0, 255); //Color2
+ setshort(0x98a3212, 1, 'H','o','n','d','a',' ','C','i','v','i','c',' ','l','e', 0); 
+ //Wheels
+ setfloat(0x936F298, 1.3, 1.3); //wheel size
+ setfloat(0x9634500+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634500+0xc4, 0.85); //Traction Loss
+ setfloat(0x9634500+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634500+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634500+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634500+0x80, -0.15); //Suspension Lower Limit
+ setfloat(0x9634500+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9634500+0x74, 1); //Suspension Force Level
+ setfloat(0x9634500+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634500+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634500+0x68, 30); //Steering Lock
+ setfloat(0x9634500+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634500+0xc0, 1500); //Turn Mass
+ setfloat(0x9634500+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634500+0xa4, 0.0); //Centre of Mass - Y
+ setfloat(0x9634500+0xa8, -.5); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 80, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00); 
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Rattle at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 171); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,255, 255); //Color2
+ setshort(0x98a30e2, 1, 'R','a','t','t','l','e', 0); 
+ //Wheels
+ setfloat(0x935E438, 1.4, 1.4); //wheel size
+ setfloat(0x962eb20+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962eb20+0xc4, 0.85); //Traction Loss
+ setfloat(0x962eb20+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962eb20+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962eb20+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962eb20+0x80, -0.3); //Suspension Lower Limit
+ setfloat(0x962eb20+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x962eb20+0x74, 1); //Suspension Force Level
+ setfloat(0x962eb20+0x84, 0.6); //Suspension Bias
+ setfloat(0x962eb20+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962eb20+0x68, 30); //Steering Lock
+ setfloat(0x962eb20+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962eb20+0xc0, 1500); //Turn Mass
+ setfloat(0x962eb20+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962eb20+0xa4, -0.1); //Centre of Mass - Y
+ setfloat(0x962eb20+0xa8, 0); //Centre of Mass - Z
+ //Effect
+ //Exhuast
+ setchar(0x09569B94, 255, 80, 0);
+ //Neon
+ for(neon=0;neon<16;neon++)
+ {setchar(0x0972EFF0+4*neon,  255, 80, 0);}
+//Fire Burn Out Smoke
+ setchar(0x9569c90,  0x00,  0x00,  0x00,  0x00,  0x00,  0x00,  0x80,  0x3f,  0x00,  0x00,  0x00,  0x00,  0xff,  0x20,  0x00);  
+//Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+
+#cheat The Force at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 273); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 200,0,200, 255); //Color2
+ setshort(0x98a2fd6, 1, 'T','h','e',' ','F','o','r','c','e', 0); 
+ //Wheels
+ setfloat(0x936EFF8, 1.3, 1.3); //wheel size
+ setfloat(0x9634420+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634420+0xc4, 0.85); //Traction Loss
+ setfloat(0x9634420+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634420+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634420+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634420+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9634420+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634420+0x74, 1.0); //Suspension Force Level
+ setfloat(0x9634420+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634420+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634420+0x68, 30); //Steering Lock
+ setfloat(0x9634420+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634420+0xc0, 1500); //Turn Mass
+ setfloat(0x9634420+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634420+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634420+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+
+#cheat adabre at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 203); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 30,0,0, 255); //Color2
+ setshort(0x98a3202, 1, 'a','d','a','b','r','e', 0); 
+ //Wheels
+ setfloat(0x9363838, 1.3, 1.3); //wheel size
+ setfloat(0x9630560+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630560+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630560+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630560+0x5c, 'R', 'E', 3); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630560+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630560+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9630560+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9630560+0x74, 1); //Suspension Force Level
+ setfloat(0x9630560+0x84, 0.6); //Suspension Bias
+ setfloat(0x9630560+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630560+0x68, 30); //Steering Lock
+ setfloat(0x9630560+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630560+0xc0, 1500); //Turn Mass
+ setfloat(0x9630560+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630560+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630560+0xa8, -0.5); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Ja mata at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 204); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 200,200,200, 255); //Color2
+ setshort(0x98a2fee, 1, 'J','a',' ','m','a','t','a', 0); 
+ //Wheels
+ setfloat(0x9363AD8, 1.3, 1.3); //wheel size
+ setfloat(0x9630480+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630480+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630480+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630480+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630480+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630480+0x80, -0.05); //Suspension Lower Limit
+ setfloat(0x9630480+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9630480+0x74, 1); //Suspension Force Level
+ setfloat(0x9630480+0x84, 0.6); //Suspension Bias
+ setfloat(0x9630480+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630480+0x68, 30); //Steering Lock
+ setfloat(0x9630480+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630480+0xc0, 1500); //Turn Mass
+ setfloat(0x9630480+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630480+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630480+0xa8, -0.5); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Sentinel LE at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 274); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 200,200,200, 255); //Color2
+ setshort(0x98a3212, 1, 'S','e','n','t','i','n','e','l',' ','L','E', 0); 
+ //Wheels
+ setfloat(0x936F298, 1.4, 1.4); //wheel size
+ setfloat(0x9634500+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634500+0xc4, 0.85); //Traction Loss
+ setfloat(0x9634500+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634500+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634500+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634500+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9634500+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634500+0x74, 1.5); //Suspension Force Level
+ setfloat(0x9634500+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634500+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634500+0x68, 30); //Steering Lock
+ setfloat(0x9634500+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634500+0xc0, 1500); //Turn Mass
+ setfloat(0x9634500+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634500+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634500+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Krids at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 270); //Car Id
+ setchar(0x8C73B30+0x24, 30,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,30, 255); //Color2
+ setshort(0x98a339c, 1, 'K','r','i','d','s', 0); 
+ //Wheels
+ setfloat(0x936E818, 1.5, 1.5); //wheel size
+ setfloat(0x9634180+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9634180+0xc4, 0.85); //Traction Loss
+ setfloat(0x9634180+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9634180+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9634180+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9634180+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x9634180+0x78, 0.4); //Suspension Damping Level
+ setfloat(0x9634180+0x74, 2); //Suspension Force Level
+ setfloat(0x9634180+0x84, 0.6); //Suspension Bias
+ setfloat(0x9634180+0x88, 0); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9634180+0x68, 30); //Steering Lock
+ setfloat(0x9634180+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9634180+0xc0, 1500); //Turn Mass
+ setfloat(0x9634180+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9634180+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9634180+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Fly Fly Willie at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 198); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,30, 255); //Color 1
+ setchar(0x8C73B30+0x28, 30,0,0, 255); //Color2
+ setshort(0x98a2f60, 1, 'F','l','y',' ','F','l','y',' ','W','i','l','l','i','e', 0); 
+ //Wheels
+ setfloat(0x9630100+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9630100+0xc4, 0.85); //Traction Loss
+ setfloat(0x9630100+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9630100+0x5c, 'R', 'E', 1); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9630100+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x9630100+0x80, -0.3); //Suspension Lower Limit
+ setfloat(0x9630100+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9630100+0x74, 1.5); //Suspension Force Level
+ setfloat(0x9630100+0x84, 0.6); //Suspension Bias
+ setfloat(0x9630100+0x88, 0.5); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9630100+0x68, 30); //Steering Lock
+ setfloat(0x9630100+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9630100+0xc0, 1500); //Turn Mass
+ setfloat(0x9630100+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9630100+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9630100+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Caravan at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 182); //Car Id
+ setchar(0x8C73B30+0x24, 200,200,200, 255); //Color 1
+ setchar(0x8C73B30+0x28, 255,80,0, 255); //Color2
+ setshort(0x98a3142, 1, 'C','a','r','a','v','a','n', 0); 
+ //Wheels
+ setfloat(0x9360118, 1.2, 1.2); //wheel size
+ setfloat(0x962f220+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f220+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f220+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f220+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f220+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f220+0x80, -0.1); //Suspension Lower Limit
+ setfloat(0x962f220+0x78, 0.1); //Suspension Damping Level
+ setfloat(0x962f220+0x74, 1.6); //Suspension Force Level
+ setfloat(0x962f220+0x84, 0.6); //Suspension Bias
+ setfloat(0x962f220+0x88, 0.3); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f220+0x68, 30); //Steering Lock
+ setfloat(0x962f220+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f220+0xc0, 1500); //Turn Mass
+ setfloat(0x962f220+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f220+0xa4, -0.25); //Centre of Mass - Y
+ setfloat(0x962f220+0xa8, 0); //Centre of Mass - Z
+ //Teleport
+ teleport( 268.31, -174.98, 11.50);
+off()
+
+
+#cheat Turbo at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 178); //Car Id
+ setchar(0x8C73B30+0x24, 0,255,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 0,0,0, 255); //Color2
+ setshort(0x98a2e10, 1, 'T','u','r','b','o', 0); 
+ //Wheels
+ setfloat(0x962f060+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x962f060+0xc4, 0.85); //Traction Loss
+ setfloat(0x962f060+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x962f060+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x962f060+0x7c, 0.47); //Suspension Upper Limit
+ setfloat(0x962f060+0x80, -0.3); //Suspension Lower Limit
+ setfloat(0x962f060+0x78, 0.1); //Suspension Damping Level
+ setfloat(0x962f060+0x74, 1.3); //Suspension Force Level
+ setfloat(0x962f060+0x84, 0.6); //Suspension Bias
+ setfloat(0x962f060+0x88, 0.2); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x962f060+0x68, 30); //Steering Lock
+ setfloat(0x962f060+0xbc, 1500); //Vehilce Mass
+ setfloat(0x962f060+0xc0, 1500); //Turn Mass
+ setfloat(0x962f060+0xa0, 0); //Centre of Mass - X
+ setfloat(0x962f060+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x962f060+0xa8, 0); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat Hot Rod at The Clymenus Suite
+ //Created By Sunshine Customs
+ //Sunshine Customs Created By emcp
+ //Addresses Found By Vette
+ //Basics
+ setint(0x8C73B30, 267); //Car Id
+ setchar(0x8C73B30+0x24, 0,0,0, 255); //Color 1
+ setchar(0x8C73B30+0x28, 80,80,80, 255); //Color2
+ setshort(0x98a3450, 1, 'H','o','t',' ','R','o','d', 0); 
+ //Wheels
+ setfloat(0x936E038, 1.5, 1.5); //wheel size
+ setfloat(0x9633d20+0x6c, 0.75); //Traction Multiplier
+ setfloat(0x9633d20+0xc4, 0.85); //Traction Loss
+ setfloat(0x9633d20+0x70, 0.5); //Traction Bias
+ //Engine
+ setchar(0x9633d20+0x5c, 'R', 'D', 6); // Drive type / Engine type / Gears
+ //Suspension
+ setfloat(0x9633d20+0x7c, 0.35); //Suspension Upper Limit
+ setfloat(0x9633d20+0x80, -0.2); //Suspension Lower Limit
+ setfloat(0x9633d20+0x78, 0.2); //Suspension Damping Level
+ setfloat(0x9633d20+0x74, 1.7); //Suspension Force Level
+ setfloat(0x9633d20+0x84, 0.6); //Suspension Bias
+ setfloat(0x9633d20+0x88, 1); //Anti-Dive Multiplier
+ //Handling
+ setfloat(0x9633d20+0x68, 30); //Steering Lock
+ setfloat(0x9633d20+0xbc, 1500); //Vehilce Mass
+ setfloat(0x9633d20+0xc0, 1500); //Turn Mass
+ setfloat(0x9633d20+0xa0, 0); //Centre of Mass - X
+ setfloat(0x9633d20+0xa4, 0); //Centre of Mass - Y
+ setfloat(0x9633d20+0xa8, -1); //Centre of Mass - Z
+ //Effects
+ //Exhaust
+
+#cheat Never Been Busted
+//By: Gunner54
+setchar(0x08BB40AC, 0);
+
+#cheat Never Been Wasted
+//By: Gunner54
+setchar(0x08BB40A8, 0);
+
+#cheat lock4car
+getint(pobj + 0x150);
+if(add)
+{
+   setshort(car+0x232, 0x0101);}
+
+#cheat Multiplayer Passenger
+setchar(pcar+0x8B4, 0x18)
+
+#cheat INTEGER (cheat device format)
+setint(0x08B89ACC, 99999999);
+
+#cheat FLOAT (cheat device format)
+setfloat(0x08B89BCC, 1.8);
+
+#cheat Little Haiti Shootout
+setint(pplayer+0x5d8, 0xffffff);
+setchar(pplayer+0xCB8, 0x3);
+setchar(pplayer+0x5CC, 0x13);
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b40, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3b41, 0);
+setchar(0x8bb3e00, 3);
+setchar(0x09f69054,1);
+moveto(-975.14,271.33,10.27); object(0x1D4B,0,0,274);
+moveto(-932.47,290.76,13.07); object(0x1CB2,0,0,86);
+moveto(-983.78,287.34,12.07); object(0x1CB2,0,0,357);
+moveto(-976.44,288.45,11.97); object(0x1CB2,0,0,268);
+moveto(-976.71,274.92,10.70); object(0x1c2,0,0,212);
+moveto(-979.54,270.21,10.67); object(0x1BA,0,0,203);
+move(-0.26,0.99,-0.10); object(0x1BB,0,90,212);
+move(-0.46,5.29,0.00); object(0x1BD,0,90,262);
+move(-0.02,1.17,0.10); object(0x1BE,85,90,276);
+move(-0.05,-0.82,0.60); object(0x1BD,160,85,266);
+move(-0.00,0.61,0.30); object(0x1BD,245,185,11);
+move(3.42,7.53,-0.80); object(0x1B4,180,180,142);
+move(-2.85,-19.66,-2.80); object(0x1B3,180,180,2);
+move(-0.46,0.36,0.00); object(0x1B3,180,180,4);
+move(-0.31,-0.39,-0.20); object(0x1B3,280,180,4);
+move(-0.07,16.72,2.90); object(0x1B8,180,180,153);
+move(4.84,3.89,0.00); object(0x1B8,180,180,228);
+pspawn = 0x08E81290;
+setint(pspawn, 268);
+setfloat(pspawn + 4, -977.09, 260.31, 10.79, 270);
+pspawn += 0x30;
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x4e4, 0xFF);
+setchar(yourped+0x789, 0x7);}
+static yourpedb;
+if(pped && pped != yourped)
+yourpedb=pped;
+if(yourped && yourpedb){
+setchar(yourpedb+0x63C, 0x22);
+setchar(yourpedb+0x87c, 0x1e);
+setint(yourpedb+0x648, 1000);
+setchar(yourpedb+0x4e4, 0xFF);
+setchar(yourpedb+0x789, 0x7);
+setfloat(yourped+0x30, -976.46);
+setfloat(yourped+0x34, 266.51);
+setfloat(yourped+0x38, 10.95);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+setfloat(yourpedb+0x30, -976.46);
+setfloat(yourpedb+0x34, 266.51);
+setfloat(yourpedb+0x38, 11.27);
+setchar(yourpedb+0x894, 0x8);
+setint(yourpedb+0x890, pplayer);
+teleport(-937.37, 285.71, 11.27);}
+
+#cheat Saw Blade
+//Bump into cars to collect them, then use O to spin them
+//extremely fast, knocking out everything in their way!
+static car1;
+static car2;
+static car3;
+static car4;
+static started;
+static touch2;
+static touch3;
+static touch4;
+if(!started){
+angle = 0;started = 1;}
+if(buttons & CTRL_RTRIGGER){
+if(press & CTRL_UP) car1 = 0;
+if(press & CTRL_RIGHT) car2 = 0;
+if(press & CTRL_DOWN) car3 = 0;
+if(press & CTRL_LEFT) car4 = 0;}
+if(buttons & CTRL_CIRCLE);{
+revspeed = 6;
+rotspeed = 5;} 
+else{revspeed = 1;
+rotspeed = .1;}
+touch1 = getint(pobj+0x150);
+if(car1)touch2 = getint(car1+0x150);
+if(car2)touch3 = getint(car2+0x150);
+if(car3)touch4 = getint(car3+0x150);
+if(touch1 && touch1!= pcar && touch1!= car1  && touch1!= car2  && touch1!= car3  && touch1!= car4 && getshort(touch1 + 0x56) >= 170 && getshort(touch1 + 0x56) <= 280){
+if(!car1) car1 = touch1;
+else 
+if(!car2) car2 = touch1;
+else 
+if(!car3) car3 = touch1;
+else 
+if(!car4) car4 = touch1;}
+if(touch2 && touch2 != pcar && touch2 != car1  && touch2 != car2  && touch2 != car3  && touch2 != car4 && getshort(touch2 + 0x56) >= 170 && getshort(touch2 + 0x56) <= 280){
+if(!car1) car1 = touch2;
+else 
+if(!car2) car2 = touch2;
+else 
+if(!car3) car3 = touch2;
+else 
+if(!car4) car4 = touch2;}
+if(touch3 && touch3 != pcar && touch3 != car1  && touch3 != car2  && touch3 != car3  && touch3 != car4 && getshort(touch3 + 0x56) >= 170 && getshort(touch3 + 0x56) <= 280){
+if(!car1) car1 = touch3;
+else 
+if(!car2) car2 = touch3;
+else 
+if(!car3) car3 = touch3;
+else 
+if(!car4) car4 = touch3;}
+if(touch4 && touch4 != pcar && touch4 != car1  && touch4 != car2  && touch4 != car3  && touch4 != car4 && getshort(touch4 + 0x56) >= 170 && getshort(touch4 + 0x56) <= 280){
+if(!car1) car1 = touch4;
+else 
+if(!car2) car2 = touch4;
+else 
+if(!car3) car3 = touch4;
+else 
+if(!car4) car4 = touch4;}
+angle+=revspeed;
+if(angle > 360)angle = 0;
+if(car1){
+setfloat(car1 + 0x08, 0);
+setfloat(car1 + 0x18, 0);
+setfloat(car1+0x140, 0, 0, -0.00083);
+setfloat(car1 + 0x20, 0, 0, 1);
+setfloat(car1 + 0x70, 0, 0, rotspeed);
+setfloat(car1 + 0x27c, 100000);
+setfloat(car1+0x30, getfloat(pobj+0x30) + cos(angle)*10, getfloat(pobj+0x34) + sin(angle)*10, getfloat(pobj+0x38) + 0.25);}
+if(car2){
+setfloat(car2 + 0x08, 0);
+setfloat(car2 + 0x18, 0);
+setfloat(car2+0x140, 0, 0, -0.00083);
+setfloat(car2 + 0x20, 0, 0, 1);
+setfloat(car2 + 0x70, 0, 0, rotspeed);
+setfloat(car2 + 0x27c, 100000);
+setfloat(car2+0x30, getfloat(pobj+0x30) + cos(angle+90)*10, getfloat(pobj+0x34) + sin(angle+90)*10, getfloat(pobj+0x38) + 0.25);}
+if(car3){
+setfloat(car3 + 0x08, 0);
+setfloat(car3 + 0x18, 0);
+setfloat(car3+0x140, 0, 0, -0.00083);
+setfloat(car3 + 0x20, 0, 0, 1);
+setfloat(car3 + 0x70, 0, 0, rotspeed);
+setfloat(car3 + 0x27c, 100000);
+setfloat(car3+0x30, getfloat(pobj+0x30) + cos(angle+180)*10, getfloat(pobj+0x34) + sin(angle+180)*10, getfloat(pobj+0x38) + 0.25);}if(car4){setfloat(car4 + 0x08, 0);
+setfloat(car4 + 0x18, 0);
+setfloat(car4+0x140, 0, 0, -0.00083);
+setfloat(car4 + 0x20, 0, 0, 1);
+setfloat(car4 + 0x70, 0, 0, rotspeed);
+setfloat(car4 + 0x27c, 100000);
+setfloat(car4+0x30, getfloat(pobj+0x30) + cos(angle+270)*10, getfloat(pobj+0x34) + sin(angle+270)*10, getfloat(pobj+0x38) + 0.25);}
+#off
+car1 = car2 = car3 = car4 = started = 0;
+
+#cheat Increased Traffic
+setchar(0x08BB329C, 0x00);
+
+#cheat Push Vehicles
+setfloat(pplayer + 0xD0, 250000.0);
+//Pedestrian's Weight or Masssetfloat(pplayer + 0xE0, 0.2);
+//Force exempt on object with lower weight when colliding#offsetfloat(pplayer + 0xD0, 70.0);
+setfloat(pplayer + 0xE0, 0.05);
+
+#cheat Throw Vehicles
+setfloat(pplayer + 0xD0, 250000.0);
+setfloat(pplayer + 0xE0, 50.0);
+#off
+setfloat(pplayer + 0xD0, 70.0);
+setfloat(pplayer + 0xE0, 0.05);
+
+#cheat Larger Jumps
+setfloat(pplayer + 0xD0, 15.0);
+#off
+setfloat(pplayer + 0xD0, 70.0);
+
+#cheat Super Jumps
+setfloat(pplayer + 0xD0, 1.0);
+#off
+setfloat(pplayer + 0xD0, 70.0);
+
+#cheat Insanely High Jumps
+setfloat(pplayer + 0xD0, .01);
+#off
+setfloat(pplayer + 0xD0, 70.0);
+
+#cheat Burgershop
+moveto(445.60,1148.59,-199.63);
+object(0x1CF2,0,0,18);
+if(getfloat(pobj + 0x38) <= -100.00){
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, 445.41, 1146.64, -201.00);
+static Marker1;
+X1 = 445.41;
+Y1 = 1146.64;
+Z1 = -199.83;
+if(!Marker1){Marker1 = 1;
+}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setshort(0x08BF81FE, 'W', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'K', 'i', 'n', 'g', ' ', 'K', 'n', 'u', 't', 's', ' ', '!', 0);
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't','o', ' ', 'b', 'u', 'y', ' ', 'a', ' ', 'm', 'e', 'a', 't', 'y', ' ', 'B', 'u', 'r', 'g', 'e', 'r', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '1', '0', '~', 'w', '~');
+setfloat(mark, 0, 0, 0);}}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1)<1){
+setint(0x08bde55c, getint(0x08bde55c)-10);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)+100);
+setshort(0x08e90DD8, 1, 'H', 'm', 'm', '.', '.', '.', 0);}
+
+#cheat Mall Camera Fix
+if(getfloat(pobj + 0x38) <= -100.00){
+setfloat(0x8bc86c0, 0x2);
+setfloat(0x8bc8684, 0x2);}
+
+#cheat Drug Mode
+setchar(0x8BC8984, 0x0c);
+setfloat(pplayer + 0x4E4, 50.0);
+
+#cheat Druggy PIGs
+static Marker1;
+X1 = 91.67;
+Y1 = 269.59;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<1){
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't','o', ' ', 'b', 'u', 'y', ' ', 's', 'o', 'm', 'e', ' ', '"', 'S', 'n', 'o', 'w', '"', ' ', ' ', '!', ' ', 'P', 'r', 'i', 'c', 'e', ' ', '~', 'h', '~', ' ', '$', '2', '0', '0', '~', 'w', '~');}
+if(press&CTRL_CROSS&&sqrt(checkx1*checkx1+checky1*checky1)<1){
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+setint(0x08bde55c, getint(0x08bde55c)-200);
+setchar(0x8BC8984, 0x0c);
+setfloat(pplayer+0x4e4, getint(pplayer+0x4e4)-75);
+setshort(0x08e90DD8, 1, 'G', 'o', 'o', 'd', '.', '.', '.', 0);}
+if(getchar(0x8BC8984) == 0x0c){
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+if(newtime - 20 > time){
+setchar(0x8BC8984, 0x0);}}
+static Marker2;
+X2 = 95.67;
+Y2 = 270.81;
+if(!Marker2){
+Marker2 = 1;}
+checkx2 = X2-getfloat(pplayer+0x30);
+checky2 = Y2-getfloat(pplayer+0x34);
+if(sqrt(checkx2*checkx2+checky2*checky2)<1){
+setshort(0x08e90bd8, 1, 'H', 'e', 'y', ',', ' ', 'c', 'a', 'n', ' ', 'I', ' ', 'b', 'u', 'y', ' ', 'y', 'o', 'u', 'r', ' ', 'N', 'i', 'g', 'h', 't', 's', 't','i', 'c', 'k', ' ', '?', ' ', 'I', ' ', 'g', 'i', 'v', 'e', ' ', 'y', 'o', 'u', ' ', '$', '5', ' ', '!',);}
+if(press&CTRL_CROSS&&sqrt(checkx2*checkx2+checky2*checky2)<1){
+setshort(0x08e90DD8, 1, 'N', 'o', ' ', '?', ' ', 'F', 'u', 'c', 'k', ' ', 'y','o', 'u', ' ', '!', 0);}
+
+#cheat X
+setshort(0x08BF81FE, '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', '~', 'X', '~', 0);
+if(press&CTRL_CROSS){
+setint(0x08bde55c, getint(0x08bde55c)-100);}
+
+#cheat Voodoo Hydraulics
+setfloat (0x96324a0+0x80, -0.01);
+setfloat(0x9632540, 0);
+setfloat(0x9632544, 0);
+if (getshort(pcar+0x56)==239){if (getfloat(pcar+0xD0)==1000){hyd = .1;}
+if (getfloat(pcar+0xD0) == 500){hyd = -.1;}
+if (buttons & CTRL_LEFT){
+setfloat(0x9632540, -.5);}
+if (buttons & CTRL_RIGHT){
+setfloat(0x9632540, .5);}
+if (buttons & CTRL_UP){
+setfloat(0x9632544, 1.5);}
+if (buttons & CTRL_DOWN){
+setfloat(0x9632544, -1.5);}
+if (press & CTRL_CIRCLE && getchar(pcar+0x136)){
+setfloat(pcar + 0x00000148, hyd);}
+if (press & CTRL_NOTE){
+if (hyd == .1){
+setfloat(pcar+0xD0, 500);
+setfloat(pcar+0x688, .6, .6, .6, .6);
+setfloat(pcar+0x698, 1.05, 1.05, 1.05, 1.05);}
+if (hyd == -.1){
+setfloat(pcar+0xD0, 1000);
+setfloat(pcar+0x688, .46, .46, .46, .46);
+setfloat(pcar+0x698, .81, .81, .81, .81);}}}
+
+#cheat update cheat device 2.4
+
+#cheat San Andreas Bunnyhop
+if(pcar){
+static prev;
+buttonsup = (~buttons&prev);
+prev = buttons;
+yourcar = pcar;}
+if(getshort(pcar+0x56)==178){if((buttonsup&CTRL_DOWN)&&(buttonsup&CTRL_DOWN)){
+setfloat(yourcar+0x00000148,+0.1);}}
+if(getshort(pcar+0x56)==179){if((buttonsup&CTRL_DOWN)&&(buttonsup&CTRL_DOWN)){
+setfloat(yourcar+0x00000148,+0.1);}}
+
+#cheat Teleport to the Biplane
+teleport(-1266.37, -1076.81, 10000.00)
+
+#cheat out the sky
+teleport(0, 0, 9999999999.99)
+
+#cheat The Learjet
+setint(pplayer+0x5bc, 0xffffff);
+setchar(pplayer+0xCB8, 0x2);
+setchar(pplayer+0x5B0, 0xE);
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30)setchar(pbomb+0xC, 0x0);
+setchar(0x09f69054, 1);
+ptow = getint(0x0994f460);
+if(ptow){setchar(pplayer+0xCB8, 0x0);
+setchar(pplayer+0x5B0, 0x0);
+door = getchar(pplayer+0x8B4);
+check = getshort(ptow+0x56);}
+checkid = getshort(pcar+0x56);
+if(ptow&&checkid&&checkid == 222&&check&&check == 368){
+setchar(pcar+0x4A, 0x15);
+setshort(ptow+0x56, 7453);}
+if(pcar&&checkid&&checkid == 222&&ptow&&check&&check == 7453){
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x277, 0xEF);
+setfloat(0x8bc8684, 10);
+a1 = getfloat(pcar+0x0);
+a2 = getfloat(pcar+0x4);
+a3 = getfloat(pcar+0x8);
+b1 = getfloat(pcar+0x10);
+b2 = getfloat(pcar+0x14);
+b3 = getfloat(pcar+0x18);
+c1 = getfloat(pcar+0x20);
+c2 = getfloat(pcar+0x24);
+c3 = getfloat(pcar+0x28);
+d1 = getfloat(pcar+0x30);
+d2 = getfloat(pcar+0x34);
+d3 = getfloat(pcar+0x38);
+e1 = getfloat(pcar+0x70);
+e2 = getfloat(pcar+0x74);
+e3 = getfloat(pcar+0x78);
+f1 = getfloat(pcar+0x140);
+f2 = getfloat(pcar+0x144);
+f3 = getfloat(pcar+0x148);
+if(buttons&CTRL_DOWN){
+setfloat(pcar+0x38, d3+5);}
+static obj;
+if(!obj){
+obj = ptow;}
+else{
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}}
+if(obj){
+checkobj = getshort(obj+0x56);}
+if(obj&&checkobj&&checkobj == 7454){
+setchar(pcar+0x49, 0x81);
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3-0.5);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}
+if(obj&&checkobj&&checkobj == 7453&&buttons&CTRL_TRIANGLE&&door != 0x37){
+setshort(obj+0x56, 7454);}
+if(obj&&checkobj&&checkobj == 7454&&door == 0x37){
+setshort(obj+0x56, 7453);}
+if(obj&&checkobj&&checkobj == 7454&&buttons&CTRL_TRIANGLE){
+setchar(pcar+0x49, 0x82);}
+if(pcar&&checkid&&checkid != 222){setchar(pcar+0x277, 0x20);}
+#off
+obj = state = 0;
+setchar(0x09f69054, 0);
+setchar(pcar+0x277, 0x20);
+setchar(pcar+0x49, 0x82);
+setchar(pcar+0x4A, 0x18);
+
+#cheat Teleport to Explosive Delivery Sidemission
+teleport(-1083.33,281.63,11.26);
+
+#cheat Explosive Delivery
+a1 = getfloat(pcar+0x0);
+a2 = getfloat(pcar+0x4);
+a3 = getfloat(pcar+0x8);
+b1 = getfloat(pcar+0x10);
+b2 = getfloat(pcar+0x14);
+b3 = getfloat(pcar+0x18);
+c1 = getfloat(pcar+0x20);
+c2 = getfloat(pcar+0x24);
+c3 = getfloat(pcar+0x28);
+d1 = getfloat(pcar+0x30);
+d2 = getfloat(pcar+0x34);
+d3 = getfloat(pcar+0x38);
+e1 = getfloat(pcar+0x70);
+e2 = getfloat(pcar+0x74);
+e3 = getfloat(pcar+0x78);
+f1 = getfloat(pcar+0x140);
+f2 = getfloat(pcar+0x144);
+f3 = getfloat(pcar+0x148);
+pspawn = 0x08E81290;
+setint(pspawn, 180);
+setfloat(pspawn+0x4, -1109.05,293.75,12.26, 270);
+ptow = getint(0x0994f460);
+if(ptow){
+check = getshort(ptow+0x56);}
+checkid = getshort(pcar+0x56);
+static Marker1;
+X1 = -1109.05;Y1 = 293.75;if(!Marker1){Marker1 = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(!ptow&&sqrt(checkx1*checkx1+checky1*checky1)<5){
+setshort(0x98a3134, 1, 'B','o','m','b','c','a','t', 0);
+setshort(0x08e90bd8, 1, 'T', 'h', 'r', 'o', 'w', ' ', 't', 'h', 'e', ' ', 'm', 'i', 'n', 'e', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', ' ', 't', 'h', 'e', ' ', '~', 'h', '~', 'E', 'x', 'p', 'l', 'o', 's', 'i', 'v', 'e', ' ', 'D', 'e', 'l', 'i', 'v', 'e', 'r', 'y', '~', 'w', '~', ' ', 's', 'i', 'd', 'e', 'm', 'i', 's', 's', 'i', 'o', 'n', ' ', '!', 0);
+setint(pplayer+0x5bc, 0xffffff);
+setchar(pplayer+0xCB8, 0x2);
+setchar(pplayer+0x5B0, 0xE);}
+if(ptow&&check&&check != 368&&sqrt(checkx1*checkx1+checky1*checky1)<5){
+setshort(0x98a3134, 1, 'B','o','m','b','c','a','t', 0);
+setshort(0x08e90bd8, 1, 'T', 'h', 'r', 'o', 'w', ' ', 't', 'h', 'e', ' ', 'm', 'i', 'n', 'e', ' ', 't', 'o', ' ', 's', 't', 'a', 'r', 't', ' ', 't', 'h', 'e', ' ', '~', 'h', '~', 'E', 'x', 'p', 'l', 'o', 's', 'i', 'v', 'e', ' ', 'D', 'e', 'l', 'i', 'v', 'e', 'r', 'y', '~', 'w', '~', ' ', 's', 'i', 'd', 'e', 'm', 'i', 's', 's', 'i', 'o', 'n', ' ', '!', 0);
+setint(pplayer+0x5bc, 0xffffff);
+setchar(pplayer+0xCB8, 0x2);
+setchar(pplayer+0x5B0, 0xE);}
+for(pbomb = 0x08BF9E50; pbomb < 0x08BFA420; pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp+0xC)){
+setchar(pexp+0xC, 0x0);
+det = 1;}
+if(ptow&&check&&check == 368){
+setshort(0x08e90bd8, 1, 'E', 'n', 't', 'e', 'r', ' ', 't', 'h', 'e', ' ', '~', 'h', '~', 'B','o','b','c','a','t', '~', 'w', '~', ' ', '!', 0);
+setint(pplayer+0x5bc, 0x0);
+setchar(pplayer+0xCB8, 0x0);
+setchar(pplayer+0x5B0, 0x0);}
+if(ptow&&pcar&&checkid&&checkid == 180&&check&&check == 368){
+setshort(ptow+0x56, 450);}
+if(ptow&&pcar&&checkid&&checkid == 180&&check&&check == 450){
+static bomber;
+bomber = 1;}
+if(bomber){
+static obj;
+if(!obj){obj = ptow;}
+else{
+selectobject(obj);
+setfloat(obj+0x0, a1);
+setfloat(obj+0x4, a2);
+setfloat(obj+0x8, a3);
+setfloat(obj+0x10, b1);
+setfloat(obj+0x14, b2);
+setfloat(obj+0x18, b3);
+setfloat(obj+0x20, c1);
+setfloat(obj+0x24, c2);
+setfloat(obj+0x28, c3);
+setfloat(obj+0x30, d1);
+setfloat(obj+0x34, d2);
+setfloat(obj+0x38, d3+1.2);
+setfloat(obj+0x70, e1);
+setfloat(obj+0x74, e2);
+setfloat(obj+0x78, e3);
+setfloat(obj+0x140, f1);
+setfloat(obj+0x144, f2);
+setfloat(obj+0x148, f3);
+propagateobject();}}
+if(obj&&bomber){
+setshort(pcar+0x232, 0x101);
+setchar(0x09f69054, 1);
+setfloat(0x8bc8684, 5);
+setint(pplayer+0x910, 5);
+setchar(0x08BB329C, 0x0);
+setchar(0x08E93604, 0x1);
+setchar(0x8bb3e00, 2);
+setchar(0x8bb3df8, 2);
+setchar(0x8bb458c, 2);
+setshort(0x08E92FFC, 'W', 'a', 't', 'c', 'h', ' ', 'o', 'u', 't', ',', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'p', 's', ' ', 'a', 'r', 'e', ' ', 'a', 'l', 'e', 'r', 't', 'e', 'd', ' ', '!');
+setshort(0x08E931FC, 'W', 'a', 't', 'c', 'h', ' ', 'o', 'u', 't', ',', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'p', 's', ' ', 'a', 'r', 'e', ' ', 'a', 'l', 'e', 'r', 't', 'e', 'd', ' ', '!');
+setshort(0x08E933FC, 'W', 'a', 't', 'c', 'h', ' ', 'o', 'u', 't', ',', ' ', 't', 'h', 'e', ' ', 'c', 'o', 'p', 's', ' ', 'a', 'r', 'e', ' ', 'a', 'l', 'e', 'r', 't', 'e', 'd', ' ', '!');
+setshort(0x08e90bd8, 1, 'B', 'r', 'i', 'n', 'g', ' ', 't', 'h', 'i', 's', ' ', 's', 't', 'u', 'f', 'f', ' ', 't', 'o', ' ', '~', 'h', '~', '8', '-', 'B', 'a', 'l', 'l', 's', ' ', 'G', 'a', 'r', 'a', 'g', 'e', '~','w', '~', ' ', '!', 0);}
+static Marker2;
+X2 = -900.81;
+Y2 = 1122.63;
+if(!Marker2){
+Marker2 = 1;}
+checkx2 = X2-getfloat(pobj+0x30);
+checky2 = Y2-getfloat(pobj+0x34);
+if(obj&&bomber&&sqrt(checkx2*checkx2+checky2*checky2)<5){
+setshort(0x08e90DD8, 1, ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'p', 'a','s', 's', 'e', 'd', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ', ' ', ' ', ' ', ' ', '9', '9', '9', '9', '9', '9', '9', '9', '$', ' ', '!',0);
+setint(0x08bde55c, getint(0x08bde55c)+99999999);
+obj = state = 0;
+pexp = 0;
+bomber = 0;
+det = 0;
+setshort(pcar+0x232, 0);
+setchar(0x8bb3e00, 1);
+setchar(0x8bb3df8, 1);
+setchar(0x8bb458c, 1);
+setshort(0x98a3134, 1, 'B','o','b','c','a','t', 0);
+setchar(0x09f69054, 0);
+setfloat(0x8bc8684, 0);
+setint(pplayer+0x910, 0);
+setchar(0x08E93604, 0x0);
+setshort(0x08e90bd8, 0);
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+teleport(playerx, playery, playerz);}
+#offobj = state = 0;
+pexp = 0;
+bomber = 0;
+det = 0;
+setshort(pcar+0x232, 0);
+setchar(0x8bb3e00, 1);
+setchar(0x8bb3df8, 1);
+setchar(0x8bb458c, 1);
+setshort(0x98a3134, 1, 'B','o','b','c','a','t', 0);
+setchar(0x09f69054, 0);
+setfloat(0x8bc8684, 0);
+setint(pplayer+0x910, 0);
+setchar(0x08E93604, 0x0);
+setshort(0x08e90bd8, 0);
+
+#cheat Teleport to the Pinata Mate
+teleport(-1085.16, 320.45, 11.27);
+#cheat Pinata Matestatic
+speed;
+static currentx;
+static currenty;
+static currentz;
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+ p <= 0x098ecf90;
+ p+=0xd10){
+if(p != player) setchar(p + 0x4c,  1);}
+for(p2=0x098edcc0;
+ p2 <= 0x099019a0;
+ p2+=0x820){
+if(p2 != pcar) setchar(p2 + 0x4c,  1);}}
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 12.00;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 12.00;
+checkpoint3x = -1063.08;
+checkpoint3y = 334.78;
+checkpoint3z = 12.00;
+checkpoint4x = -1104.03;
+checkpoint4y = 335.52;
+checkpoint4z = 12.00;
+checkpoint5x = -1104.91;
+checkpoint5y = 320.80;
+checkpoint5z = 12.00;
+checkpoint6x = -1085.16;
+checkpoint6y = 320.45;
+checkpoint6z = 12.00;
+checkpoint7x = -1077.40;
+checkpoint7y = 312.63;
+checkpoint7z = 12.00;
+if(!currentx){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+static opp;
+if(!opp){
+moveto(-1077.40, 312.63, 12.00); opp = object(0x1c91,0,0,0);}
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}
+if(opp){
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34)
+;d3 = currentz - getfloat(opp+0x38);}
+selectobject(opp);
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+propagateobject();
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 2 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.01;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.01;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.01;}
+else 
+if(currentx == checkpoint7x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.01;}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Big Bumping Bouy
+address = getint(0x9415ef8);
+setfloat(address, cos(0)*cos(0));
+setfloat(address+4, sin(0)*sin(0)*cos(0)-cos(0)*sin(0));
+setfloat(address+8, cos(0)*sin(0)*cos(0)+sin(0)*sin(0));
+setfloat(address+0x10, cos(0)*sin(0));
+setfloat(address+0x14, sin(0)*sin(0)*cos(0)+cos(0)*cos(0));
+setfloat(address+0x18, cos(0)*sin(0)*sin(0)-sin(0)*cos(0));
+setfloat(address+0x20, -sin(0));
+setfloat(address+0x24, sin(0)*cos(0));
+setfloat(address+0x28, cos(0)*cos(0));
+setfloat(address+0x30, -1077.40, 312.63, 11.26);
+setshort(address+0x56, 0x214);
+
+#cheat Interactive Door Test
+moveto(-1095.99,288.11,13.26); object(0x1C99,0,0,180);
+moveto(-1096.00,299.31,13.26); object(0x1C99,0,0,180);
+static Marker1;
+X1 = -1096.00;
+Y1 = 293.71;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<5){
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');
+setshort(0x08E931FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');
+setshort(0x08E933FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~','w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o',' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');}
+top = 15.66;
+bottom = 13.26;
+xpos = -1096.00;
+ypos = 293.71;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);obj = object(0x1C99,0,0,180);}
+else{
+selectobject(obj);
+if(state == 0){
+if(getfloat(obj+0x38) >= top&&buttons&CTRL_DOWN&&sqrt(checkx1*checkx1+checky1*checky1)<5){
+ state = 2;}
+if(getfloat(obj+0x38) <=bottom&&buttons&CTRL_UP&&sqrt(checkx1*checkx1+checky1*checky1)<5){
+ state = 1;}}
+if(state == 1){
+setfloat(obj+0x38, getfloat(obj+0x38)+0.01);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(obj+0x38, getfloat(obj+0x38)-0.01);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;
+
+#cheat Bone Crusher
+moveto(-1095.99,288.11,13.26); object(0x1C99,0,0,180);
+moveto(-1096.00,299.31,13.26); object(0x1C99,0,0,180);
+top = 15.66;
+bottom = 13.26;
+xpos = -1096.00;
+ypos = 293.71;
+static obj;
+static state;
+if(!obj){moveto(xpos,ypos,bottom);
+obj = object(0x1C99,0,0,180);}
+else{
+selectobject(obj);
+if(state == 0){
+if(getfloat(obj+0x38) >= top){
+ state = 2;}
+if(getfloat(obj+0x38) <= bottom){
+ state = 1;}}
+if(state == 1){
+setfloat(obj+0x38, getfloat(obj+0x38)+0.05);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else 
+if(state == 2){
+setfloat(obj+0x38, getfloat(obj+0x38)-0.05);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+ptouch = getint(pobj+0x150);
+if (ptouch&&getshort(ptouch+0x56) == 7321){
+setfloat(pplayer+0x4e4, 0);
+setfloat(pplayer+0x4e8, 0);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pcar+0x30), getfloat(pcar+0x34), getfloat(pcar+0x38));
+setfloat(pcar+0x27C, 0);
+setshort(0x08e90DD8, 1, 'C', 'r', 'u', 's', 'h', 'e', 'd', ' ', 't', 'o', ' ', 'd', 'e', 'a', 't', 'h', ' ', '!', 0);
+setchar(pplayer+0x8B4, 0x3A);
+obj = state = 0;
+playerx = getfloat(pobj+0x030);
+playery = getfloat(pobj+0x034);
+playerz = getfloat(pobj+0x038);
+teleport(playerx, playery, playerz);}
+#off
+obj = state = 0;
+
+#cheat Make Vance Dance
+pweapon = getchar(pplayer+0x789);
+if(buttons&CTRL_CIRCLE&&pweapon == 3){
+setchar(pplayer+0x550, 1);
+plock = getchar(pplayer+0x1c9);
+if(plock == 5){
+setchar(pplayer+0x550, 0);
+setchar(pplayer+0x1c8, 3);
+setchar(pplayer+0x1c9, 4);}}
+#off
+setchar(pplayer+0x550, 0);
+
+#cheat Spawn Security Guards
+static spawn;
+if(buttons&CTRL_LTRIGGER&&press&CTRL_CROSS){
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+spawn = 1;
+setfloat(pobj+0x30, 93.05, 271.67, 21.78);}
+if(spawn == 1){
+setfloat(0x8bc86c0, 0x10);
+setfloat(0x8bc8684, 0x10);
+static count;
+if(count%150==0){
+for(i=0;
+ 0x98b4a40+i<=0x98ecf90;
+ i+=0xd10){
+if(0x98b4a40+i != pplayer){
+setfloat(0x98b4a40+i+0x30, playerx+1, playery+1, playerz+1);
+setfloat(pobj+0x30, playerx, playery, playerz+1);
+setchar(0x98b4a40+i+0x894, 0xc);
+setint(0x98b4a40+i+0x890, pplayer);}}
+spawn = 2;
+setfloat(0x8bc86c0, 0x2);
+setfloat(0x8bc8684, 0x2);}
+count++;}
+
+#cheat Spawn Peds
+setchar(0x8BB329C, 0);
+if(buttons&CTRL_LTRIGGER&&buttons&CTRL_CROSS){
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+for(i=0;
+ 0x98b4a40+i<=0x98ecf90;
+ i+=0xd10){
+if(0x98b4a40+i != pplayer){
+setfloat(0x98b4a40+i+0x30, playerx+1, playery+1, playerz+1);
+setchar(0x98b4a40+i+0x894, 0x0);
+setchar(0x98b4a40+i+0x8b4, 0x0);}}}
+
+#cheat Spawn Peds (No Ghost Peds)
+if(buttons&CTRL_LTRIGGER&&buttons&CTRL_CROSS){
+playerx = getfloat(pobj+0x30);
+playery = getfloat(pobj+0x34);
+playerz = getfloat(pobj+0x38);
+for(i=0;
+ 0x98b4a40+i<=0x98ecf90;
+ i+=0xd10){
+if(0x98b4a40+i != pplayer&&!getint(0x98b4a40+i+0x480)){
+setfloat(0x98b4a40+i+0x30, playerx+1, playery+1, playerz+1);
+setchar(0x98b4a40+i+0x894, 0x0);
+setchar(0x98b4a40+i+0x8b4, 0x0);}}}
+
+#cheat Ambience Music
+setchar(0x8bb11dc,7);
+setchar(0x9a6341b,7);
+
+#cheat teleport to house on pole
+teleport(873.01,186.58,13.80);
+
+#cheat house on pole
+moveto(907.29,-181.50,20.00); object(0x1CA4,90,0,78);
+move(-2.53,-0.52,0.00); object(0x1CA4,90,0,78);
+move(3.23,-3.85,0.00); object(0x1CA4,90,0,86);
+move(-2.20,0.03,-0.10); object(0x1CA4,90,0,82);
+move(4.88,0.50,0.00); object(0x1CA4,90,0,270);
+move(-0.81,4.09,-0.10); object(0x1CA4,90,0,266);
+move(1.25,0.10,0.00); object(0x1CA4,90,0,267);
+move(1.35,-4.32,0.00); object(0x1CA4,90,0,270);
+move(1.78,0.10,0.00); object(0x1CA4,90,0,271);
+move(-0.41,3.60,0.00); object(0x1CA4,90,0,271);
+move(1.17,0.64,0.00); object(0x1CA4,90,0,259);
+move(-9.94,1.79,2.20); object(0x1CA4,85,270,270);
+move(5.21,0.62,0.00); object(0x1CA4,85,270,270);
+move(-3.59,1.03,-0.20); object(0x1CA4,85,270,82);
+move(-3.67,-3.37,0.00); object(0x1CA4,85,270,22);
+move(4.50,1.93,0.00); object(0x1CA4,85,270,103);
+move(4.15,-0.22,0.00); object(0x1CA4,85,270,137);
+move(2.13,-1.83,0.00); object(0x1CA4,85,270,165);
+move(0.66,-2.30,0.00); object(0x1CA4,85,270,184);
+move(-0.64,-2.57,0.00); object(0x1CA4,85,270,214);
+move(-1.54,-2.04,0.00); object(0x1CA4,85,270,263);
+move(-2.57,0.63,0.00); object(0x1CA4,85,270,271);
+move(-2.70,-0.01,0.00); object(0x1CA4,85,270,274);
+move(-0.71,7.72,0.00); object(0x1CA4,85,270,41);
+move(-2.79,-2.90,0.00); object(0x1CA4,85,270,350);
+move(-12.20,-5.05,-7.30); object(0x1CA4,90,210,170);
+move(3.38,0.59,1.90); object(0x1CA4,90,210,170);
+move(3.70,0.70,2.10); object(0x1CA4,90,210,170);
+move(5.05,1.13,1.20); object(0x1CA4,90,190,166);
+move(2.67,0.83,0.50); object(0x1CA4,90,190,171);
+move(7.72,1.68,3.90); object(0x1CA4,90,180,179);
+move(-0.71,-3.02,0.00); object(0x1CA4,90,180,213);
+move(-2.50,-1.98,0.00); object(0x1CA4,90,180,250);
+move(-3.13,-0.08,0.00); object(0x1CA4,90,180,287);
+move(-3.54,5.18,0.00); object(0x1CA4,90,180,4);
+move(0.91,2.51,0.00); object(0x1CA4,90,180,35);
+move(2.75,1.92,0.00); object(0x1CA4,90,180,75);
+move(3.05,-1.90,0.00); object(0x1CA4,90,180,121);
+move(-2.80,-4.59,0.00); object(0x1CA4,90,180,118);
+move(3.36,-0.22,0.00); object(0x1CA4,90,180,190);
+move(-0.13,2.32,0.00); object(0x1CA4,90,180,163);
+move(0.30,2.39,0.00); object(0x1CA4,90,180,145);
+move(-3.21,-1.33,0.00); object(0x1CA4,90,180,119);
+move(-1.57,0.56,0.00); object(0x1CA4,90,180,100);
+move(-1.03,-2.27,0.00); object(0x1CA4,90,180,130);
+move(1.55,-2.34,0.00); object(0x1CA4,90,180,163);
+move(6.01,2.66,-3.80); object(0x1CB3,0,355,339);
+move(0.15,-0.97,0.00); object(0x1CB3,0,355,3);
+move(-4.09,-0.37,0.00); object(0x1CB5,0,355,79);
+move(3.39,-3.43,1.50); object(0x1C91,0,355,17);
+move(-6.49,7.27,0.70); object(0x0155,0,0,301);
+move(2.58,-6.67,0.00); object(0x0151,0,0,174);
+move(-0.91,-0.56,0.00); object(0x0150,0,0,193);
+move(-0.85,0.06,0.00); object(0x014D,0,0,220);
+move(2.82,-0.03,-0.30); object(0x01CB,0,0,169);
+move(-4.69,6.39,-1.30); object(0x01CD,0,0,323);
+move(6.00,-0.11,0.90); object(0x01FB,0,0,248);
+move(-0.77,0.91,0.00); object(0x0201,0,0,261);
+move(-7.14,-2.20,0.20); object(0x0264,0,0,248);
+
+#cheat jump in the air to do a headspin otherwise just randomly spin around!
+setchar(pplayer + 0x000001CA, 60);
+
+#cheat infinite time outside of vehicle in taxi missions!
+setchar(0x08BF9970, 45);
+
+#cheat The Mysterious Banshee
+static state;
+DifficultLevel = 50;
+ if(state)      
+setshort(pcar+0x232,  0x0101);  
+else 
+{ 
+    setint(0x08C739B0,  175);
+     setfloat(0x08C739B4,  -837.81, -1196.18, 11);
+     setfloat(0x08C739C0,  3.1415);
+     if(getfloat(pcar+0x30) > -840 && getfloat(pcar+0x30) < -830 && getfloat(pcar+0x34) < -1185 && getfloat(pcar+0x34) > -1200 && getshort(pcar+0x56) == 175)
+     {
+     state = 1;
+     time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);     
+}
+ }
+ if(state == 1) {
+ setshort(0x08e90bd8,  1,  'O',  'h',  ',',  ' ' ,  'N',  'o',  ' ',  't',  'h',  'e',  'r',  'e',  's',  ' ',  'a',  ' ',  'b',  'o',  'm',  'b',  ' ',  'i',  'n',  ' ',  'h',  'e',  'r',  'e',  '!', 0);
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+ if(newtime - 2 > time)        {
+        state = 2;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41); 
+       } 
+} 
+if(state == 2) {
+ setshort(0x08e90bd8,  1,  'K',  'e',  'e', 'p',  ' ' ,  't',  'h',  'e',  ' ',  's',  'p',  'e',  'e',  'd',  ' ',  'u',  'p',  ' ',  'o',  'r',  ' ',  'd',  'i',  'e',  '!', 0); 
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        if(newtime - 2 > time)       
+ {        state = 3;
+        health = 150;
+        time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+        } 
+} if(state == 3) { 
+setshort(0x08e90bd8,  1,  'T',  'h',  'e', ' ', '~', 'b', '~',  'a' ,  'r',  'm',  'o',  'r',  ' ',  'b',  'a',  'r', '~', 'w', '~',  ' ',  's',  'h',  'o',  'w',  ' ',  'h',  'o',  'w',  ' ',  'f',  'a',  'r',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b', ' ',  'i',  's',  ' ',  'f',  'r',  'o',  'm',  ' ',  'e',  'x',  'p',  'l',  'o',  'd',  'i',  'n',  'g',  '.',  ' ',  'D',  'r',  'i',  'v',  'e',  ' ',  'f',  'a',  's',  't',  ' ',  't',  'o',  ' ',  'k',  'e',  'e',  'p',  ' ',  'i',  't',  ' ',  'u',  'p',  '.', 0);
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100; newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 3 > time){
+state = 4;
+time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);}
+if(speed < DifficultLevel)    
+health -= 0.5;
+else
+if(health < 150)    
+health += 0.5;
+ setfloat(pplayer+0x4e8, health); 
+     if(health <= 0){setfloat(pcar+0x27c, 0);
+state = 0;
+} 
+} 
+if(state == 4) {
+ newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);
+      if(newtime - 4 < time)    
+        setshort(0x08e90bd8,  1,  '~',  'r',  '~', '8', '-', 'B', 'a',  'l' ,  'l', '~',  'w',  '~',  ' ',  'c',  'a',  'n',  ' ',  't',  'a', 'k', 'e', ' ',  'c',  'a',  'r',  'e',  ' ',  'o',  'f',  ' ',  't',  'h',  'e',  ' ',  'b',  'o',  'm',  'b',  ',',  ' ',  'g',  'o',  ' ',  't', 'o',  ' ',  'h',  'i',  'm',  ',', ' ',  'N',  'O',  'W',  '!', 0);  
+else
+time = 0;
+ speed = sqrt(getfloat(pcar+0x140)*getfloat(pcar+0x140)+getfloat(pcar+0x144)*getfloat(pcar+0x144)) * 100;
+ if(speed < DifficultLevel + 10)     
+     health -= 0.5;
+      else if(health < 150) 
+         health += 0.5;
+ setfloat(pplayer+0x4e8, health);
+      if(health <= 0)   
+   {
+      setfloat(pcar+0x27c, 0);
+      state = 0; 
+     }
+ if(getfloat(pcar+0x30) < -900 && getfloat(pcar+0x30) > -910 && getfloat(pcar+0x34) > 1115 && getfloat(pcar+0x34) < 1125)  
+    {   
+   state = 5;  
+    time = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);      
+}
+ } 
+if(state == 5) 
+{ 
+newtime = getchar(0x08bb3b40)*getchar(0x08bb3b40) + getchar(0x08bb3b41);  
+    if(newtime - 2 > time)  
+   state = 6; 
+} 
+if(state == 6) 
+{ 
+setshort(0x08e90bd8,  1,  'C',  'o',  'n', 'g', 'r', 'a', 't',  's' ,  ',', ' ',  'y',  'o',  'u',  ' ',  'w',  'o',  'n',  '.',  ' ',  'P', 'r', 'e', 's', 's',  ' ' ,  'U', 'P', ' ',  't',  'o',  ' ',  'e',  'n',  'd',  '.', 0);
+if(buttons & CTRL_UP){
+state = 0;
+setshort(pcar+0x232,  0); } }
+#off
+state = 0;
+setshort(pcar+0x232,  0);
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat Change Any Object Vic gets Near into a Ramp!
+add = getint(0x0994f460);
+setshort(add + 0x56, 0x28e);
+
+#cheat ???
+obj = 0x0991B180;
+
+#cheat custom tracks always on
+//by vettefan
+//after you activate the cheat, the music won't start playing until after you first enter a vehicle, then the music will continue to play outside of the car.
+setchar(pcar+0x2b7, 0x6f);
+setchar(0x8bb11dc, 0x6f);
+
+#cheat radio always on
+//by vettefan
+//activate it before you leave your safehouse, or you'll have to enter a vehicle first
+setchar(pcar+0x2b7, 0);
+setchar(0x8bb11dc, 0);
+setchar(0x9a6341b, 0);
+ 
+0 - flash fm
+1 - Vrock
+2 - paradise
+3 - VCPR
+4 - VCFL radio
+5 - the wave 103
+6 - flash 105 fm
+7 - espatoso
+8 - emotion 98.3
+9 - radio off
+
+#cheat Red Radar Disc
+R = 255;
+G = 0;
+B = 0;
+for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+#cheat Green Radar Disc
+R = 0;
+G = 255;
+B = 0;for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+#cheat Blue Radar Disc
+R = 0;
+G = 0;
+B = 255;
+for(radar=0;radar<16;radar++){
+setchar(0x96cbfb0+4*radar, R, G, B);}
+off();
+
+#cheat real time clock
+setint(0x8bb3b3c, 200000);
+#off
+setint(0x8bb3b3c, 1000)
+;#cheat set clock
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_UP)
+setchar(0x8bb3b40, getchar(0x8bb3b40)+1);
+if (pressmed & CTRL_DOWN)
+setchar(0x8bb3b40, getchar(0x8bb3b40)-1);
+if (pressmed & CTRL_LEFT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)-1);
+if (pressmed & CTRL_RIGHT)
+setchar(0x8bb3b41, getchar(0x8bb3b41)+1);}
+
+#cheat Vcn cop
+//made with VCS Car Spawner by DDM
+pspawn = 0x08E81290;
+setint(pspawn, 260);
+setfloat(pspawn + 4, -469.57, 1123.63, 64.75);
+ pspawn + 4,  227.56,  -129.41,  5.9,  160);
+
+#cheat button test
+if (getint(0x08bde6b8) == 843854162)
+{
+setint(0x08bde55c,  9999999,  9999999);
+ }
+
+#cheat ??? unknown
+//Made with DDM's Text Editor
+setshort(0x08e90bd8, 1, 'F', 'U', 'C', 'K', ' ', 'Y', 'O', 'U', ' ', 'G', 'T', 'A', ' ', 'V', 'C', 'S',0); 
+
+#cheat PED ANIHALATER
+//Gathered by Steman
+//credits for ALL cheats too Waterbottle, Edison Carter, ADePSP, Vettefan88 and DDM
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_CIRCLE) {
+//Force Blast, by edison
+static pdone;
+if (pped != 0 && pped != pdone)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, dx * 0.2);
+setfloat(pped + 0x0144, dy * 0.2);
+setfloat(pped + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+pdone = pped;
+}
+if (pped == 0)
+{
+pdone = 0;
+}
+}
+//Telekinisis
+pped = getint(0x08BA1D70);
+static address;
+static rotsp;
+if(pped && pped<0x9900000) address=pped;
+if(address && pped>0x9900000) {
+x = getfloat(0x08ba1d50) - getfloat(address + 0x30);
+y = getfloat(0x08ba1d54) - getfloat(address + 0x34);
+z = getfloat(0x08ba1d58) - getfloat(address + 0x38);
+setshort(address+0x1c8, 0x1020);
+setfloat(address + 0x140, x*0.1);
+setfloat(address + 0x144, y*0.1);
+setfloat(address + 0x148, z*0.1);
+if(buttons & CTRL_CROSS)
+rotsp+=0.005;
+else
+rotsp = 0;
+setfloat(address+0x78, rotsp);
+}
+//PyroKinisis {
+pped = getint(0x08BA1D70);
+if(buttons & CTRL_SQUARE)
+if(pped)
+{
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pped+0x30), getfloat(pped+0x34), getfloat(pped+0x38));
+setfloat(pped+0x4e4, getfloat(pped+0x4e4)-1.5);
+}
+if(buttons & CTRL_CROSS) {
+//Tractor Beam, by edison
+if (pped != 0)
+{
+dx = getfloat(pped + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(pped + 0x0034) - getfloat(pplayer + 0x0034);
+dz = getfloat(pped + 0x0038) - getfloat(pplayer + 0x0038);
+setshort(pped + 0x01c8, 0x1020);
+setfloat(pped + 0x0140, -dx * 0.05);
+setfloat(pped + 0x0144, -dy * 0.05);
+setfloat(pped + 0x0148, -dz * 0.05);
+}
+}
+//Aim of Death
+if(buttons & CTRL_TRIANGLE) {
+pped = getint(0x08BA1D70);
+if (pped != 0)
+setfloat(pped + 0x4e4, 0);
+}
+//Force Wave
+if ((buttons & CTRL_LTRIGGER) && (buttons & CTRL_CIRCLE))
+{
+for (p = 0x098b4a40; p <= 0x098e9b50; p += 0xd10)
+{
+if (p == pplayer)
+continue;
+dx = getfloat(p + 0x0030) - getfloat(pplayer + 0x0030);
+dy = getfloat(p + 0x0034) - getfloat(pplayer + 0x0034);
+setshort(p + 0x01c8, 0x1020);
+setfloat(p + 0x0140, dx * 0.2);
+setfloat(p + 0x0144, dy * 0.2);
+setfloat(p + 0x0148, (fabs(dx) + fabs(dy)) * 0.05);
+}
+}
+//Obliterate All Peds
+ 
+if((buttons & CTRL_LTRIGGER) && (press & CTRL_TRIANGLE)) {
+player = getint(0x08bc8170);//address of pplayer
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != player) setfloat(0x098b4a40 + i + 0x4e4, 0);
+}
+}
+
+#cheat Light Control
+if(buttons & CTRL_RIGHT)
+setchar(0x9460815, 0x00);{
+setchar(0x946081a, 0x35);}
+if(buttons & CTRL_LEFT)
+setchar(0x9460815, 0xb0);
+{setchar(0x946081a, 0x55);}
+if(buttons & CTRL_DOWN){
+setchar(0x9460817, 0xD4);}
+if(buttons & CTRL_UP){
+setchar(0x9460817, 0xC4);
+}
+
+#cheat Raise the world
+if (buttons & CTRL_UP) 
+setfloat(0x9442038, getfloat(0x9442038)-.1);
+if (buttons & CTRL_DOWN) 
+setfloat(0x9442038, getfloat(0x9442038)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Shift the World of the Boat 
+if (buttons & CTRL_LEFT)
+setfloat(0x9442030, getfloat(0x9442030)-.1);
+if (buttons & CTRL_RIGHT) 
+setfloat(0x9442030, getfloat(0x9442030)+.1);
+#off
+setfloat(0x9442030, 6);
+
+#cheat Teleport to Move boat World
+teleport(-785.42, -824.36, 11.07);
+
+#cheat vice statue
+moveto(-235.88,-1475.55,5.72);  object(0x1CB2,90,90,194);
+move(1.27,5.10,0.00);  object(0x1CB2,90,90,194);
+move(0.77,-2.55,2.10);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.10,0.00);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(0.87,4.04,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,192);
+move(2.25,-0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.45,-2.09,0.00);  object(0x1C93,90,0,192);
+move(-2.25,0.48,0.00);  object(0x1C93,90,0,192);
+move(-0.30,-1.80,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.00,0.00,4.40);  object(0x1C93,90,0,14);
+move(-2.13,0.54,0.00);  object(0x1C93,90,0,14);
+move(0.52,2.05,0.00);  object(0x1C93,90,0,14);
+move(2.13,-0.54,0.00);  object(0x1C93,90,0,14);
+move(0.23,1.66,0.00);  object(0x1C93,90,0,193);
+move(-1.53,0.41,0.00);  object(0x1C93,90,0,188);
+move(-0.44,0.33,0.10);  object(0x1C93,90,0,193);
+move(0.00,0.00,4.50);  object(0x1C93,90,0,193);
+move(1.80,-0.66,-0.10);  object(0x1C93,90,0,193);
+move(-0.52,-2.22,0.00);  object(0x1C93,90,0,193);
+move(-1.85,0.43,0.00);  object(0x1C93,90,0,193);
+move(-0.32,-1.08,0.00);  object(0x1C93,90,0,16);
+move(2.11,-0.62,0.00);  object(0x1C93,90,0,16);
+move(0.00,0.00,4.10);  object(0x1C93,90,0,16);
+move(-1.92,0.56,0.00);  object(0x1C93,90,0,16);
+move(0.14,1.19,0.00);  object(0x1C93,90,0,16);
+move(2.02,-0.59,0.00);  object(0x1C93,90,0,16);
+move(0.64,2.24,0.00);  object(0x1C93,90,0,192);
+move(-1.96,0.40,0.00);  object(0x1C93,90,0,192);
+move(-2.16,0.02,-18.90);  object(0x1C93,0,0,195);
+move(-0.04,-0.06,2.04);  object(0x1C93,0,0,197);
+move(4.01,2.09,-2.15);  object(0x1C93,0,0,102);
+move(0.00,0.00,2.10);  object(0x1C93,0,0,102);
+move(-1.83,0.37,0.09);  object(0x1C93,0,0,102);
+move(0.00,0.00,-1.70);  object(0x1C93,0,0,102);
+move(3.73,-3.82,0.14);  object(0x1C93,0,0,15);
+move(0.00,0.00,1.50);  object(0x1C93,0,0,15);
+move(0.48,1.86,-0.00);  object(0x1C93,0,0,15);
+move(0.01,-0.28,-1.51);  object(0x1C93,0,0,196);
+move(-4.72,-6.28,0.20);  object(0x1C93,0,0,279);
+move(0.00,0.00,1.70);  object(0x1C93,0,0,279);
+move(3.19,0.13,0.00);  object(0x1C93,0,0,12);
+move(-5.88,1.19,0.00);  object(0x1C93,0,0,12);
+move(0.00,0.00,-1.80);  object(0x1C93,0,0,12);
+move(6.00,-1.51,0.12);  object(0x1C93,0,0,14);
+move(-2.32,4.07,22.20);  object(0x1C91,0,0,108);
+
+#cheat
+crush
+
+#cheat max out bullets that hit stat
+setint(0x08BB41D0, 2147483647);
+
+#cheat nothing
+setchar(0x08C40849, 17);
+
+#cheat ZOMBIES
+setchar(0x08bb32c8, 1);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setchar(0x08bb10d4, 1);
+setchar(0x08BB329C, 0xFF);
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) {
+setchar(0x098b4a40 + i + 0x4A, 32);
+setchar(0x098b4a40 + i +0x1cb, 0x3f);
+setchar(0x098b4a40 + i +0x578, 0x01);
+setchar(0x098b4a40 + i +0x87c, 0x1e);
+//setchar(0x098b4a40 + i +0x8B4, 0x0);
+//setchar(0x098b4a40 + i +0x8C4, 0x0);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x00);
+setchar(0x098b4a40 + i + 0x894, 0x8);
+setint(0x098b4a40 + i + 0x890, pplayer);
+}
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat Enable Traffic at Leaf Links Golfclub
+setchar(0x08BB329C, 0x00);
+
+#cheat Equip any Ped with the SMG
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x19);
+setchar(pped+0x87c, 0x1e);
+//setchar(pped+0x8B4, 0x0);
+//setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+
+#cheat Gangmembers do drivebys
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+setfloat(pped+0x4e4, 10000);
+setchar(pped+0x604, 0x18);
+setchar(pped+0x87c, 0x1e);
+//setchar(pped+0x8B4, 0x0);
+//setchar(pped+0x8C4, 0x0);
+setint(pped+0x648, 1000);
+setchar(pped+0x789, 0x05);
+}
+
+#cheat Hitmen
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x620, 0x1d);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x06);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+#cheat Example Mission
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -1007.98,1015.59,9.96,90);
+moveto(-1007.98,1015.59,9.20); object(0x01BF,0,0,212);
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+{
+yourped=pped;
+}
+if(yourped)
+{
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x7);
+}
+if(buttons & CTRL_RTRIGGER && press & CTRL_LTRIGGER)
+{
+setfloat(pplayer+0x30, -1018.23);
+setfloat(pplayer+0x34, 1013.77);
+setfloat(pplayer+0x38, 8.87);
+setfloat(yourped+0x30, -1011.22);
+setfloat(yourped+0x34, 1016.20);
+setfloat(yourped+0x38, 8.87);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+
+
+#cheat Infinite Ammo for Ped
+//By Sousanator
+
+pped = getint(0x08BA1D70);
+if(pped){
+setint(pped+0x5d8, 0x00ffffff);
+setint(pped+0x5f4, 0x00ffffff);
+setint(pped+0x610, 0x00ffffff);
+setint(pped+0x5bc, 0x00ffffff);
+setint(pped+0x62c, 0x00ffffff);
+setint(pped+0x648, 0x00ffffff);
+setint(pped+0x664, 0x00ffffff);
+setint(pped+0x680, 0x00ffffff);
+}
+
+#cheat Bodyguard
+pped = getint(0x08BA1D70); //Pointer to aimed at ped
+static yourped;
+if(pped&&!yourped && press & CTRL_UP)
+yourped=pped; //If aimed at a ped, save its address in the memory
+if(yourped){
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if(getint(yourped+0x480))
+setchar(yourped+0x894, 0x10);
+else{
+if(pped && pped != yourped && buttons & CTRL_TRIANGLE){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);
+} else {
+setchar(yourped+0x894, 0xC); //If not in a car, make that ped follow you
+setint(yourped+0x890, pplayer); //Lets the ped know who to follow
+}
+}
+}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11); //If in a car, make that ped get in the car
+setint(yourped+0x484, pcar); //Makes the ped know what car to get into
+setint(yourped+0x450, pcar);
+}
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+}
+}
+
+
+#cheat Hitmen with .357 Colt Python
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x5CC, 0x14);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x03);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+#cheat Hitmen with M249
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+
+#cheat Hitmen with Minigun
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped)
+{
+setint(yourped+0x5d8, 0x00ffffff);
+setint(yourped+0x5f4, 0x00ffffff);
+setint(yourped+0x610, 0x00ffffff);
+setint(yourped+0x5bc, 0x00ffffff);
+setint(yourped+0x62c, 0x00ffffff);
+setint(yourped+0x648, 0x00ffffff);
+setint(yourped+0x664, 0x00ffffff);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x63C, 0x23);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x07);
+setchar(yourped+0x87c, 0x1e);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+}
+
+#cheat Always have Infinite Health
+setchar(pplayer+0x4e4, 0xFFFFF);
+
+#cheat Press LTRIGGER+SQUARE to get Full Health
+if(buttons & CTRL_LTRIGGER && press & CTRL_SQUARE)
+{
+setfloat(pplayer+0x4e4, 10000);
+}
+
+#cheat The Ring of Fire
+//ID: 19528
+//Score: 74
+//Author: Durka Durka Mahn
+//Category: Environment
+//Description: 10 fires will surround you in the shape of a circle! Hit O to release the Ring, and any vehicles caught in the ring when you release it will catch fire and blow up! Hit Down to lock the ring size.
+//Image: http://img256.imageshack.us/img256/4190/video1rn0.gif
+//Time: 13/04/2007 16:25:04
+//Working: Yes
+static counter;
+static dist;
+static lockdist;
+static lockx;
+static locky;
+static lockz;
+static lockon;
+x = getfloat(pobj + 0x30);
+y = getfloat(pobj + 0x34);
+z = getfloat(pobj + 0x38);
+if(press & CTRL_CIRCLE) {
+lockx = x;
+locky = y;
+lockz = z;
+}
+if(buttons & CTRL_CIRCLE) {
+dist += 0.5;
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, lockx + cos(0) * dist,  locky + sin(0) * dist,  lockz);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, lockx + cos(36) * dist,  locky + sin(36) * dist,  lockz);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, lockx + cos(72) * dist,  locky + sin(72) * dist,  lockz);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  lockx + cos(108) * dist,  locky + sin(108) * dist,  lockz);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, lockx + cos(144) * dist,  locky + sin(144) * dist,  lockz);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, lockx + cos(180) * dist,  locky + sin(180) * dist,  lockz);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, lockx + cos(216) * dist,  locky + sin(216) * dist,  lockz);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  lockx + cos(252) * dist,  locky + sin(252) * dist,  lockz);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, lockx + cos(288) * dist,  locky + sin(288) * dist,  lockz);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, lockx + cos(324) * dist,  locky + sin(324) * dist,  lockz);
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = lockx - getfloat(cars+0x30);
+         dy = locky - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+else {
+if(dist > 3.0) {
+dist -= 0.5;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+if(dist < 3.0) {
+dist += 0.5;
+}
+else if(press & CTRL_DOWN && !lockon) {
+lockdist = dist;
+lockon = 1;
+}
+else if(press & CTRL_DOWN && lockon) {
+lockon = 0;
+}
+if(lockon) {
+dist = lockdist;
+if(counter++ % 30 == 0) {
+     for(cars=0x098edcc0; cars <= 0x099019a0; cars+=0x820) {
+         if(cars != pcar) {
+         dx = x - getfloat(cars+0x30);
+         dy = y - getfloat(cars+0x34);
+         if(sqrt(dx*dx+dy*dy) < dist )
+         {
+         setfloat(cars+0x27C,  0);
+         }
+     }
+}
+}
+}
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, x + cos(0) * dist,  y + sin(0) * dist,  z);
+setchar(0x08be3a60, 1);
+setfloat(0x08be3a70, x + cos(36) * dist,  y + sin(36) * dist,  z);
+setchar(0x08be3aa0, 1);
+setfloat(0x08be3ab0, x + cos(72) * dist,  y + sin(72) * dist,  z);
+setchar(0x08be3ae0, 1);
+setfloat(0x08be3af0,  x + cos(108) * dist,  y + sin(108) * dist,  z);
+setchar(0x08be3b20, 1);
+setfloat(0x08be3b30, x + cos(144) * dist,  y + sin(144) * dist,  z);
+setchar(0x08be3b60, 1);
+setfloat(0x08be3b70, x + cos(180) * dist,  y + sin(180) * dist,  z);
+setchar(0x08be3ba0, 1);
+setfloat(0x08be3bb0, x + cos(216) * dist,  y + sin(216) * dist,  z);
+setchar(0x08be3be0, 1);
+setfloat(0x08be3bf0,  x + cos(252) * dist,  y + sin(252) * dist,  z);
+setchar(0x08be3c20, 1);
+setfloat(0x08be3c30, x + cos(288) * dist,  y + sin(288) * dist,  z);
+setchar(0x08be3c60, 1);
+setfloat(0x08be3c70, x + cos(324) * dist,  y + sin(324) * dist,  z);
+}
+#off
+setchar(0x08bb32c8,    0); 
+
+#cheat ???
+setshort(0x08E90DD8, 1, 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A','!', 0);
+
+#cheat rockstar stopped
+#cheat New Construction
+moveto(-745.23,218.21,10.71);  object(0x1CA4,0,0,5);
+move(49.26,488.73,-0.70);  object(0x1CA4,0,0,5);
+move(14.39,3.33,-2.30);  object(0x1CA4,0,0,5);
+move(4.60,138.61,0.30);  object(0x1CA4,0,0,5);

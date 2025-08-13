@@ -1,0 +1,23 @@
+#cheat Set Money
+if ((pressslow & CTRL_UP))
+{
+setint(0x08bde55c, getint(0x08bde55c) + 1000);}
+if ((pressslow & CTRL_DOWN))
+{
+setint(0x08bde55c, getint(0x08bde55c) - 1000);}
+
+#cheat ???
+setchar(0x66666666, 66666666);
+
+#cheat 60FPS
+setchar(0xE001FFF7, 2126940);
+setchar(0x2020745C, 0);
+
+#cheat Exit CheatDevice!!!!!
+setchar(0x08BAFB50, 0);
+setchar(0x08BF2D3C, 2);
+#off
+setchar(0x08BAFB50, 1);
+
+#cheat Cwcheat test (says ERROR)
+_L 0x00000000 0x00000000

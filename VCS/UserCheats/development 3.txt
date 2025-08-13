@@ -1,0 +1,86 @@
+#cheat Counter
+// This example shows how many times you have pressed the Circle button.
+static counter;
+if (!counter)
+{
+counter = 0;
+}
+if (press & CTRL_CIRCLE)
+{
+counter = counter + 1;
+// Each time the if condition "(press & CTRL_CIRCLE)" is true the counter will be it's old value + 1.
+// That's how we make the counter count up.
+}
+setshort(0x08E90BD8, 1, 'C', 'o', 'u', 'n', 't', ':', ' ', 0x30 + counter / 10 , 0x30 + counter % 10, 0);
+#off
+counter = 0;
+// (line after "#off") resets the counter to 0 when you turn the code off.
+
+#cheat Timer
+static timer;
+currenttime = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+if (!timer)
+{
+timer = 16;
+// This (line above) is the starting time of the timer.
+time2 = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+}
+if (currenttime - time2 >= 1)
+{
+timer --;
+// This (line above) makes the timer count down every second of ingame time.
+time2 = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+}
+setshort(0x08E90BD8, 1, 'T', 'i', 'm', 'e', 'r', ':', ' ', 0x30 + timer / 10 , 0x30 + timer % 10, 0);
+if (timer <= 0)
+{
+setchar(0x08E937B5, 0x01);
+// Place the effect's of running out of time here!
+// The line "setchar(0x08E937B5, 0x01);" just makes the short "beep" sound in this example...
+setshort(0x08E90DD8, 1, '~', 'r', '~', 'Y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'o', 'u', 't', ' ', 'o', 'f', ' ', 't', 'i', 'm', 'e', '!', 0);
+// Obvious, a text (line above) to inform the player that he's out of time...
+off();
+}
+#off
+timer = 0;
+// (line after "#off") resets the timer to 0 (to make the line "if (!timer)" work again) when you turn the code off.
+
+#cheat Mission Passed Screen:
+setshort(0x08E90DD8, 1, ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'p', 'a', 's', 's', 'e', 'd', ', ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '5', '0', '0', '$', ' ', '!', 0);
+
+#cheat Mission Objective:
+setshort(0x08BA09CC, 1, 'C', 'u', 's', 't', 'o', 'm', ' ', 'm', 'e', 's', 's', 's', 'a', 'g', 'e', '!', 0);
+
+#cheat Short Info (Upper Left Corner):
+setshort(0x08BF81FE, 'C', 'u', 's', 't', 'o', 'm', ' ', 'm', 'e', 's', 's', 's', 'a', 'g', 'e', '!', 0);
+
+#cheat Message Box:
+setchar(0x08E93604, 0x01);
+setshort(0x08E92FFC, 'C', 'u', 's', 't', 'o', 'm', ' ', 'm', 'e', 's', 's', 's', 'a', 'g', 'e', '!');
+setshort(0x08E931FC, 'C', 'u', 's', 't', 'o', 'm', ' ', 'm', 'e', 's', 's', 's', 'a', 'g', 'e', '!');
+setshort(0x08E933FC, 'C', 'u', 's', 't', 'o', 'm', ' ', 'm', 'e', 's', 's', 's', 'a', 'g', 'e', '!');
+
+#cheat Money Counter:
+money = getint(0x08E81290);
+setint(0x08BDE55C, money, money);
+setint(0x08BDE55C, value, value); // Can only display numbers. Replace "value, value" with a variable or a fixed value.
+
+#cheat Let's say, we have this text:
+setshort(0x08BA09CC, 'U', 'p', 'a', 'l', 'u', 'p', 'p', 'a', ' ', 'r', 'u', 'l', 'e', 's', ' ', '!', '!', '!', '!', ' ');
+
+#cheat Display Value
+static value;
+if (!value)
+{
+value = 17;
+}
+setshort(0x08E90BD8, 1, 'A', 'm', 'o', 'u', 'n', 't', ':', ' ', 0x30 + value / 10 , 0x30 + value % 10, 0);
+
+#cheat Cross:
+setshort(0x08E90BD8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', ' ', '~', 'n', '~', 't', 'o', ' ', 'd', 'o', ' ', 's', 'o', 'm', 'e', 't', 'h', 'i', 'n', 'g', '!', 0);
+
+#cheat Circle:
+setshort(0x08E90BD8, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'O', '~', ' ', ' ', '~', 'n', '~', 't', 'o', ' ', 'd', 'o', ' ', 's', 'o', 'm', 'e', 't', 'h', 'i', 'n', 'g', '!', 0);
+
+#cheat ???
+setshort(0x08E90DD8, 1, 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A','!', 0);

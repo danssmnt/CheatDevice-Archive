@@ -1,0 +1,200 @@
+#cheat in Night Gang Peds attack you
+if (getchar(0x08bb3b40) >= 20 || getchar(0x08bb3b40) <= 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 200 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+ID = getshort(p+0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+setchar(p+0x894, 0x8);
+setint(p+0x890, pplayer);}}}
+#cheat Jumper
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 50 == 0) {
+if(press & CTRL_SQUARE){
+setfloat(pplayer + 0x00000148, +0.1);}}
+#cheat Back 20HP
+pguard = getchar(pplayer + 0x4E4);
+if(pplayer&&pguard == 149){
+setfloat(pplayer+0x4e4, 20);}
+#cheat 20HP
+setfloat(pplayer+0x4e4, 20);
+#cheat Full Armor
+setfloat(pplayer+0x4e8, 150);
+off()
+#cheat UP HP VIC
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)+0.05<20);
+#cheat Worker really hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Touch Peds I hurt you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 80 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p+0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+object = getint(p+0x150);
+if(getint(p+0x150)>0x098b4a40&&getint(p+0x150)<0x098ecf90){
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)-1);}}}
+
+#cheat Died
+pguard = getchar(pplayer + 0x8B4);
+if(pplayer&&pguard == 39 || 3A){
+setshort(0x08E90DD8, 1, ' ', 'Y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'd', 'i', 'e', 'd', '!', 0);}
+
+#cheat Ped No guns
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40+i+0x578, 0x00);
+setchar(0x098b4a40+i+0x87c, 0x1e);
+setint(0x098b4a40+i+0x648, 1000);
+setchar(0x098b4a40+i+0x789, 0x00);
+setchar(0x098b4a40+i+0x87c, 0x1e);}}
+
+#cheat Survive a Oxygen
+static timer;
+currenttime = getchar(0x08BB3B40) * 100 + getchar(0x08BB3B41);
+if (!timer)
+{
+timer = 100;
+time2 = getchar(0x08BB3B40) * 100 + getchar(0x08BB3B41);
+}
+if (currenttime - time2 >= 6)
+{
+timer --;
+time2 = getchar(0x08BB3B40) * 100 + getchar(0x08BB3B41);
+}
+setshort(0x08E90BD8, 1, 'T', 'i', 'm', 'e', 'r', ':', ' ', 0x30 + timer / 10 , 0x30 + timer % 10, 0);
+if (health >= 20){
+setchar(0x8BC8984,  0x08);}
+else if (timer <= 0)
+{
+setchar(0x08E937B5, 0x01);
+setshort(0x08E90DD8, 1, '~', 'r', '~', 'Y', 'o', 'u', ' ', 'a', 'r', 'e', ' ', 'o', 'u', 't', ' ', 'o', 'f', ' ', 'O', 'x', 'y', 'g', 'e', 'n',0);
+setfloat(pplayer+0x4e4, 0);
+off();}
+
+#cheat Gangs Attack you V2.2.6
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 200 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+ID = getshort(p+0x56);
+if(ID == 14 || ID == 35 || ID == 34 || ID == 12 || ID == 13 || ID == 91 || ID == 92 || ID == 93 || ID == 94 || ID == 95 || ID == 96 || ID == 101 || ID == 102 || ID == 103 || ID == 104 || ID == 105 || ID == 106 || ID == 70 || ID == 152 || ID == 151 || ID == 150 || ID == 145 || ID == 144 || ID == 142 || ID == 135 || ID == 133 || ID == 129 || ID == 126 || ID == 121 || ID == 100 || ID == 99 || ID == 98 || ID == 97 || ID == 72 || ID == 109 || ID == 110 || ID == 111 || ID == 112 || ID == 113 || ID == 114 || ID == 115 || ID == 116 || ID == 117 || ID == 118){
+if(p != player)
+setchar(p+0x894, 0x8);
+setint(p+0x890, pplayer);}}}
+
+#cheat No Aim Target
+sethex(0x08BA1D6F, 00);
+
+#cheat You have No Breath
+setfloat(pplayer+0x82C, 0);
+
+#cheat No girls
+static timer;
+if(timer % 1 == 0)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 5 == 0) {
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+id = getshort(p+0x56);
+if(id == 16 || id == 17 || id == 20 || id == 21 || id == 24 || id == 28 || id == 29 || id == 30 || id == 38 || id == 42 || id == 43 || id == 45 || id == 56 || id == 57 || id == 60 || id == 61 || id == 64 || id == 71 || id == 73 || id == 81 || id == 83 || id == 85 || id == 86 || id == 87 )
+if(p != player)
+setchar(p + 0x4c, 1);}}
+timer++;
+if(timer == 1)
+timer = 0;
+#off
+setshort(0x08E90DD8, 1, 'G', 'i', 'r', 'l', 's', ' ', 'a', 'r', 'e', ' ', 'C', 'o', 'm', 'i', 'n', 'g', '!', 0);
+
+#cheat No Hookers
+static timer;
+if(timer % 1 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 31 || id == 50 || id == 76 )
+{
+setchar(0x098B4A40 + x + 0x4c, 1);
+}
+}
+timer++;
+if(timer == 1)
+timer = 0;
+#off
+setshort(0x08E90DD8, 1, 'H', 'o', 'o', 'k', 'e', 'r', 's', ' ', 'a', 'r', 'e', ' ', 'g', 'e', 't', ' ', 'L', 'i', 'v', 'i', 'n', 'g', '!', 0);
+
+#cheat HAUNTED VICE CITY!!!
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)-0.02);
+setchar(0x08BB3E00, 0);
+setchar(0x08BB3DF8, 0);
+setchar(0x08BB458C, 0);
+setint(0x08BB3B3C, 99999999999999999999999);
+setchar(0x08BB3B40, 117);
+setchar(0x08BB3B41, 168);
+static counter;
+player = getint(0x08bc8170);//address of pplayer 
+if(counter++ % 30 == 0) {
+     for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+             if(p != player) setchar(p + 0x4c, 1);
+     }
+}
+
+#cheat Touch attack you!
+ptouch = getint(pplayer+0x150);
+if(ptouch){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+ID = getshort(p+0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Make Target Attack You!
+pped = getint(0x08BA1D70);
+if(pped){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+ID = getshort(p+0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+setchar(p+0x894, 0x8);
+setint(p+0x890, pplayer);}}}
+#cheat Attack him Gang Peds Attack You
+if(buttons & CTRL_CIRCLE){
+player = getint(0x08bc8170);
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat NO MORE WANTED
+setint(pplayer + 0x0910, 0);
+
+#cheat Vic eating food
+static timer;
+if(timer%200==0)
+if(buttons & CTRL_UP)
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)+3);
+timer++;
+if(timer==200)
+timer=0;

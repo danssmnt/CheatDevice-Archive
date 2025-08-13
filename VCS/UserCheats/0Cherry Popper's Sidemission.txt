@@ -1,0 +1,72 @@
+#cheat Teleport to Cherry Poppers Ice Cream Factory
+teleport(-863.44, -541.40, 11.11);
+
+#cheat Mr. Whoopee at Cherry Poppers Ice Cream Factory
+carspawn = 0x08E821C0;
+setfloat(carspawn + 4, -862.11, -570.81, 11.11, 270);
+
+#cheat Spawn Buyable Property Icon at Cherry Poppers Ice Cream Factory
+icon = 0x08E8EFC0;
+setfloat(icon, -864.29, -576.71, 11.10);
+setchar(icon + 0x19, 0x0D);
+
+#cheat Spawn Sidemission Icon at Cherry Poppers Ice Cream Factory (Needs better Icon)
+icon = 0x08E8EFC0;
+setfloat(icon, -866.17, -571.98, 11.11);
+setchar(icon + 0x19, 0x22);
+
+#cheat Spawn Buyable Property Pickup at Cherry Poppers Ice Cream Factory
+pickup = 0x08C6A330;
+setfloat(pickup, -864.29, -576.71, 11.10);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01F7);
+setchar(pickup + 0x38, 0x02);
+pickup += 0x40;
+
+#cheat Spawn Money Pickup at Cherry Poppers Ice Cream Factory
+pickup = 0x08C6A370;
+setfloat(pickup, -864.77, -562.49, 11.11);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D42);
+setchar(pickup + 0x38, 0x01);
+pickup += 0x40;
+
+#cheat Buy Cherry Poppers Ice Cream Factory Text
+static pickup;
+static menu;
+if(!menu)
+{
+menu = 0;
+}
+pickup = 0x08C6A330;
+if(getchar(0x08C6A369) == 1)
+{
+menu = 1;
+}
+if(menu == 1)
+{
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+setfloat(pplayer + 0x30, playerx, playery, playerz);
+setchar(0x08E93604, 0x01);
+setshort(0x08E92FFC, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't', 'o', ' ', 'b', 'u', 'y', ' ', '~', 'n', '~', 'C', 'h', 'e', 'r', 'r', 'y', ' ', 'P', 'o', 'p', 'p', 'e', 'r', 's', ' ', 'I', 'c', 'e', ' ', 'C', 'r', 'e', 'a', 'm', ' ', 'F', 'a', 'c', 't', 'o', 'r', 'y', ' ', ' ', '~', 'n', '~', 'P', 'r', 'i', 'c', 'e', ' ', '4', '0', '0', '0', '0', '$', 0);
+setshort(0x08E931FC, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't', 'o', ' ', 'b', 'u', 'y', ' ', '~', 'n', '~', 'C', 'h', 'e', 'r', 'r', 'y', ' ', 'P', 'o', 'p', 'p', 'e', 'r', 's', ' ', 'I', 'c', 'e', ' ', 'C', 'r', 'e', 'a', 'm', ' ', 'F', 'a', 'c', 't', 'o', 'r', 'y', ' ', ' ', '~', 'n', '~', 'P', 'r', 'i', 'c', 'e', ' ', '4', '0', '0', '0', '0', '$', 0);
+setshort(0x08E933FC, 1, 'P', 'r', 'e', 's', 's', ' ', '~', 'X', '~', ' ', 't', 'o', ' ', 'b', 'u', 'y', ' ', '~', 'n', '~', 'C', 'h', 'e', 'r', 'r', 'y', ' ', 'P', 'o', 'p', 'p', 'e', 'r', 's', ' ', 'I', 'c', 'e', ' ', 'C', 'r', 'e', 'a', 'm', ' ', 'F', 'a', 'c', 't', 'o', 'r', 'y', ' ', ' ', '~', 'n', '~', 'P', 'r', 'i', 'c', 'e', ' ', '4', '0', '0', '0', '0', '$', 0);
+if(press & CTRL_CROSS)
+{
+menu = 0;
+}
+if(press & CTRL_CIRCLE)
+{
+menu = 0;
+}
+}
+else if(getchar(0x08C6A3A9) == 0)
+{
+menu = 0;
+}
+if(menu == 0)
+{
+setchar(0x08E93604, 0x00);
+}

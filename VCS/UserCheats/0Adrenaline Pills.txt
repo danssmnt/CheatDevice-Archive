@@ -1,0 +1,5 @@
+#cheat Adrenaline Pills
+ppill = getint(0x0994f460);
+check = getshort(ppill+0x56);
+if(ppill && check && check == 466 || check == 468 || check == 474){
+setshort(ppill+0x56, 467);}

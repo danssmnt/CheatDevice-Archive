@@ -1,0 +1,1420 @@
+#cheat Turn the Vice Point Mall BMX into another Vehicle
+pspawn = 0x08E82CA0;
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 178;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+pobject = pobject+1;}
+setint(pspawn, pobject);
+
+#cheat Turn the nearest Object into another one
+pspawn = getint(0x0994f460);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 450;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+setshort(pspawn + 0x56, pobject);
+
+#cheat View ModelID of what you touch
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+p = getint(pobj + 0x150);
+if (p){
+n = getshort(p + 0x58);
+setint(0x08bde55c, n, n);}
+
+#cheat Teleport to Dark Alley
+teleport(-1011.22, 1016.20, 10.90); 
+
+#cheat Dark Alley
+setchar(0x08BB329C, 0xFF);
+setchar(0x8bb3e00, 6);
+setchar(0x8bb3df8, 6);
+setchar(0x8bb458c, 6);
+setchar(0x09f69054, 1);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, -1007.98,1015.59,9.96,90);
+moveto(-1007.98,1015.59,9.20); object(0x01BF,0,0,212);
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x4e4, 0xFF);
+setchar(yourped+0x789, 0x7);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_LTRIGGER&&press&CTRL_LEFT){
+setfloat(pplayer+0x30, -1018.23);
+setfloat(pplayer+0x34, 1013.77);
+setfloat(pplayer+0x38, 8.87);
+setfloat(yourped+0x30, -1011.22);
+setfloat(yourped+0x34, 1016.20);
+setfloat(yourped+0x38, 9.00);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+
+#cheat Concrete Wall Pickup Spawn
+setfloat(0x991C280+0x30,-1077.40,312.63,11.26);
+setshort(0x991C280+0x56,0x1ca4);
+off()
+
+#cheat Broken Concrete Wall Pickup Spawn
+setfloat(0x991C280+0x30,-1077.40,312.63,11.26);
+setshort(0x991C280+0x56,0x1ca3);
+off()
+
+#cheat Good +100$
+setint(0x08bde55c, +100)
+
+#cheat SEC$
+setint(0x08bde55c, +1)
+
+#cheat -1$
+setint(0x08bde55c, -1)
+
+#cheat Get Negative $666
+setint(0x08bde55c, -666)
+
+#cheat Get Very Negative $16666
+setint(0x08bde55c, -16666)
+
+#cheat Gold Exhuast smoke
+setchar(0x9569b94, 0xCC, 0x99, 0x33);
+
+#cheat horror time!
+setchar(0x08BB3E00, 0);
+setchar(0x08BB3DF8, 0);
+setchar(0x08BB458C, 0);
+setint(0x08BB3B3C, 99999999999999999999999);
+setchar(0x08BB3B40, 117);
+setchar(0x08BB3B41, 168);
+
+#cheat ???-unknown
+setshort(0x08e90bd8, 1, 'F', 'U', 'C', 'K', ' ', 'Y', 'O', 'U', ' ', 'G', 'T', 'A', ' ', 'V', 'C', 'S',0); 
+setchar(0x08BF2D3C, 2);
+
+#cheat Custom Markers
+static Made;
+X1 = 269.45;
+Y1 = -166.28;
+Z1 = 11.84;
+X2 = -796.30;
+Y2 = -1181.56;
+Z2 = 11.10;
+if(!Made){
+for( rot = 0; rot < 270; rot += 10.8 ){
+moveto(X1 + cos(rot) * 3, Y1 + sin(rot) * 3, Z1); object(0x1ce5, 0, 0, -rot + 90);}
+for( rot2 = 0; rot2 < 270; rot2 += 10.8 ){
+moveto(X2 + cos(rot2) * 3, Y2 + sin(rot2) * 3, Z2); object(0x1ce5, 0, 0, -rot2 + 90);}
+Made = 1;}
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 2 ){
+setfloat(pobj+0x30, X2 + 5, Y2 + 5, Z2);}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 2 ){
+setfloat(pobj+0x30, X1 + 5, Y1 + 5, Z1);}
+
+#cheat Change the number of people that you have killed to 999999999
+setint(0x08BB41B4, 99999999); 
+
+#cheat change the number of necks you have broken to 99999
+setint(0x08BB4208, 99999);
+
+#cheat Change the number of people that you have killed to 999999999999999999999999
+setint(0x08BB41B4, 999999999999999999999999);
+
+#cheat change the number of necks you have broken to 99999999999999999999999999999
+setint(0x08BB4208, 99999999999999999999999999999);
+
+#cheat Infinite Rampage Time/Kills
+setchar(0x8BB4404, 1);
+sethex(0x8BB4420, FF);
+sethex(0x8BB4418, FF);
+sethex(0x8BB441C, FF);
+ 
+#cheat Pause/Resume Rampages (L+Left/Right)
+if(buttons & CTRL_LTRIGGER && press & CTRL_LEFT)
+setchar(0x8BB4404, 1);
+if(buttons & CTRL_LTRIGGER && press & CTRL_RIGHT)
+setchar(0x8BB4404, 0);
+
+#cheat Infinite Time in Turn on,tune in,bug out
+setchar(0x9F6D934, 0); 
+
+#cheat Infinite Time in Burning Bridges
+setchar(0x9F6DD18, 0);
+
+#cheat try and get as high a media attention as you can with just a sniper
+setshort(0x08bb41ac, 1);
+setchar(pplayer+0x658, 0x1E);
+setchar(pplayer+0x789, 0x08);
+setint(pplayer+0x664, 0x00ffffff);
+setint(0x089bb648, 0);
+setint(0x089bb65c, 0);
+setint(0x089bb66c, 0);
+teleport(-1037.79, -283.01, 10.77);
+
+#cheat teleport to the printworks
+teleport(-1037.79, -283.01, 10.77);
+
+#cheat Tester mission
+setchar(0x08BB329C, 0x00);
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0x5B0, 0x11);
+setchar(0x09f69054,1);
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped){
+yourped=pped;}
+if(yourped){
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+setint(yourped+0x648, 1000);
+setfloat(yourped+0x30, -976.46);
+setfloat(yourped+0x34, 266.51);
+setfloat(yourped+0x38, 10.95);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+teleport(-937.37, 285.71, 11.27);}
+
+#cheat Elevator for G-Spotlight Mission
+top = 68.34;
+bottom = 21.54;
+xpos = -530.44;
+ypos = 857.33;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1CA4,90,0,0);}
+else{
+selectobject(obj);
+if(state == 0 && getfloat(getint(pplayer+0xf0)+0x30) == getfloat(obj+0x30)){
+if(getfloat(obj+0x38) >= top && buttons & CTRL_DOWN) state = 2;
+else if(buttons & CTRL_UP) state = 1;}
+if(state == 1){
+setfloat(obj + 0x38, getfloat(obj+0x38) + 0.04);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(obj + 0x38, getfloat(obj+0x38) - 0.04);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;
+
+#cheat Teleport to the Elevator
+teleport(-539.65,840.81,23.03);
+
+#cheat wheres the marker
+//Try to find the marker if you can
+//Made by Nerner
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'N', 'e','r', 'n', 'e', 'r');
+setshort(0x08E931FC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'N', 'e','r', 'n', 'e', 'r');
+setshort(0x08E933FC, 'M', 'a', 'd', 'e', ' ', 'b', 'y', ' ', 'N', 'e','r', 'n', 'e', 'r');
+static Marker;
+X1 = -824.11;
+Y1 = 528.63;
+Z1 = 93.51;
+setshort(0x08e90bd8, 1, 'G', 'o', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'm','a', 'r', 'k', 'e', 'r', ' ', '!',0);
+if(!Marker){
+for(rot = 0;
+rot<270;
+rot += 6.0){
+moveto(X1+cos(rot)*2,Y1+sin(rot)*2,Z1);object(0x1ce5,0,0,-rot+90);}
+Marker = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<2){
+setshort(0x08e90DD8, 1, ' ', 'M', 'I', 'S', 'S', 'I', 'O', 'N', ' ', 'P', 'A','S', 'S', 'E', 'D', '!', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'B', 'l', 'i', 's', 't', 'a', ' ', 'G', 'T',' ', 'i', 'n', ' ', 'y', 'o', 'u', 'r', ' ', 'g', 'a', 'r', 'a', 'g', 'e', '!',0);
+setint(0x8C73A70, 177);
+setchar(0x8C73A70+0x24, 255,255,0, 255);
+setchar(0x8C73A70+0x28, 0,255,255, 255);
+setshort(0x98a3116, 1, 'B','l','i','s','t','a',' ','G','T', 0);
+setfloat(0x935F3F8, 1.2, 1.2);
+setfloat(0x962edc0+0x6c, 0.75);
+setfloat(0x962edc0+0xc4, 0.85);
+setfloat(0x962edc0+0x70, 0.5);
+setchar(0x962edc0+0x5c, '4', 'D', 6);
+setfloat(0x962edc0+0x7c, 0.35);
+setfloat(0x962edc0+0x80, -0.15);
+setfloat(0x962edc0+0x78, 0.08);
+setfloat(0x962edc0+0x74, 1);
+setfloat(0x962edc0+0x84, 0.5);
+setfloat(0x962edc0+0x88, 0);
+setfloat(0x962edc0+0x68, 30);
+setfloat(0x962edc0+0xbc, 2500);
+setfloat(0x962edc0+0xc0, 1000);
+setfloat(0x962edc0+0xa0, 0);
+setfloat(0x962edc0+0xa4, 0);
+setfloat(0x962edc0+0xa8, 0);
+teleport( -1087.31, 356.47, 11.27);}
+
+#cheat Random Construction with some guy inside
+//Just a quick cheat to test the phoning animation !
+//Made by Upaluppa
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'T', 'e', 's', 't');
+setshort(0x08E931FC, 'T', 'e', 's', 't');
+setshort(0x08E933FC, 'T', 'e', 's', 't');
+moveto(62.30,333.53,23.75); object(0x1C99,0,270,358);
+move(-4.10,-0.15,0.00); object(0x1C99,0,270,358);
+move(2.89,-4.41,-1.20); object(0x1C99,0,125,88);
+move(0.12,-3.31,-2.30); object(0x1C99,0,125,88);
+moveto(60.57,335.76,25.22); object(0x01A0,0,0,0);
+move(-3.69,-4.77,0.00); object(0x01A0,0,0,265);
+move(-6.74,-22.41,-12.91); object(0x01A0,0,0,206);
+moveto(57.84,335.21,24.02); object(0x01B4,0,0,359);
+move(-0.46,-2.45,0.00); object(0x01B8,0,0,359);
+move(1.60,0.02,0.00); object(0x01B8,0,0,359);
+move(2.20,0.03,0.00); object(0x01B8,0,0,359);
+move(1.80,0.02,0.00); object(0x01B8,0,0,359);
+move(-5.07,0.15,-0.20); object(0x01BA,0,0,352);
+move(1.24,0.30,-0.10); object(0x01BB,90,0,6);
+pped = getint(0x08BA1D70);
+if(pped){
+setfloat(pped+0x30, 64.86);
+setfloat(pped+0x34, 324.02);
+setfloat(pped+0x38, 20.86);
+setchar(pped+0x894, 0xC);
+setint(pped+0x890, pplayer);
+setchar(pped+0x8B4, 0x24);
+teleport(61.26,317.90,20.48);}
+
+#cheat Throw Explosive Pizza Boxes!!
+setint(pplayer+0x5bc, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x02);
+setchar(pplayer+0x5B0, 0x10);
+pspawn = getint(0x0994f460);
+setshort(pspawn+0x56, 0262);
+for(pbomb = 0x08BF9E50;
+pbomb < 0x08BFA420;
+pbomb += 0x30){
+setchar(pbomb, 0x12);}
+pexp = 0x08BF9E50;
+static det;
+if(getchar(pexp + 0x0C)){
+setchar(pexp + 0x0C, 0x0);
+det = 1;}
+if(det && buttons & CTRL_CROSS){
+setchar(pexp + 0x0C, 0x1);
+det = 0;}
+
+#cheat Tow Objects (No Id Changing Version)
+ptow = getint(0x0994f460);
+check = getshort(ptow+0x56);
+setchar(0x9F932D8, 35);
+if(buttons & CTRL_UP){
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);}
+static Marker;
+X = -782.42;
+Y = 922.57;
+if(!Marker){
+for(rot = 0;rot<360;rot += 10.0)
+Marker = 1;}
+checkx = X-getfloat(pobj+0x30);
+checky = Y-getfloat(pobj+0x34);
+if(sqrt(checkx*checkx+checky*checky)<2){
+setfloat(pobj + 0x030, playerx);
+setfloat(pobj + 0x034, playery);
+setfloat(pobj + 0x038, playerz);}
+if(ptow && check && check == 7350 || check == 7353 || check == 7392){
+setshort(ptow+0x56, 450);}
+
+#cheat Spawn Air Ambulance + Teleport to it
+pspawn = 0x08E81290;
+setint(pspawn, 189);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26)
+
+
+#cheat Spawn Pinataplane + Teleport to it
+pspawn = 0x08E81290;
+setint(pspawn, 189);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26)
+
+#cheat Pinataplane
+setfloat(0x8bc8684, -17.5);
+static onoff;
+static Drivable;
+ptow = getint(0x0994f460);
+check = getshort(ptow+0x56);
+checkCarID = getshort(pcar+0x56);
+if(pcar&&checkCarID&&checkCarID == 189&&ptow && check && check == 7350 || check == 7353 || check == 7392){
+setchar(pcar + 0x49, 81);
+setchar(pcar+0x4A, 0x15);
+Drivable = 1;
+setshort(ptow+0x56, 7313);}
+if(Drivable == 1){
+setfloat(pcar+0x78, -xstick / 40);
+if (buttons & CTRL_CROSS) {
+boost = 0.5;
+thrust = boost * 0.00333;
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0010) * thrust);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0014) * thrust);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x0018) * thrust);}
+if(buttons & CTRL_SQUARE){
+setfloat(pcar + 0x140, getfloat(pcar + 0x140)*0.95, getfloat(pcar + 0x144)*0.95 );}
+if(check&&getshort(ptow + 0x56) > 150&&getshort(ptow + 0x56) == 7313){
+onoff = 1;}
+if(onoff&&getshort(ptow + 0x56) > 150&&getshort(ptow + 0x56) == 7313){
+setfloat(ptow + 0x30, getfloat(pobj + 0x30) + getfloat(pobj + 0x10) * 7.5);
+setfloat(ptow + 0x34, getfloat(pobj + 0x34) + getfloat(pobj + 0x14) * 7.5);
+setfloat(ptow + 0x38, getfloat(pobj + 0x38) + 2.5);
+setfloat(ptow + 0x70, 0, 0, 0);}
+static height;
+if(!height)
+height = getfloat(pcar+0x38);
+static Zdeg;
+if(!Zdeg)
+Zdeg = getfloat(pplayer+0x8d0);
+static st;
+static speed;
+setfloat(pcar+0x1c8, 0x1020);
+setfloat(pcar+0x38, height);
+setfloat(pcar+0x148, 0);
+Zdeg += xstick * 1.5;
+if(ystick){
+Xdeg = getfloat(pcar) * -10 * ystick;
+Ydeg = getfloat(pcar+4) * -10 * ystick;}
+else Ydeg = Xdeg = 0;
+if(buttons & CTRL_CROSS){
+if(speed < 0)
+speed += 0.02;
+if(speed < 0.75)
+speed += 0.01;}
+else
+if(buttons & CTRL_SQUARE){
+if(speed > 0)
+speed -= 0.015;
+if(speed > -0.4)
+speed -= 0.008;}
+else speed *= 0.95;
+if(buttons & CTRL_UP) height+=0.1;
+if(buttons & CTRL_DOWN && !(getchar(pcar+0x4a) & 0x10) ) height-=0.1;
+setfloat(pcar+0x00, cos(Ydeg) * cos(Zdeg));
+setfloat(pcar+0x04, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) - cos(Xdeg) * sin(Zdeg));
+setfloat(pcar+0x08, cos(Xdeg) * sin(Ydeg) * cos(Zdeg) + sin(Xdeg) * sin(Zdeg));
+setfloat(pcar+0x10, cos(Ydeg) * sin(Zdeg));
+setfloat(pcar+0x14, sin(Xdeg) * sin(Ydeg) * cos(Zdeg) + cos(Xdeg) * cos(Zdeg));
+setfloat(pcar+0x18, cos(Xdeg) * sin(Ydeg) * sin(Zdeg) - sin(Xdeg) * cos(Zdeg));
+setfloat(pcar+0x20, -sin(Ydeg));
+setfloat(pcar+0x24, sin(Xdeg) * cos(Ydeg));
+setfloat(pcar+0x28, cos(Xdeg) * cos(Ydeg));
+setfloat(pcar+0x140, -getfloat(pcar+4)*speed);
+setfloat(pcar+0x144, getfloat(pcar)*speed);}
+if(!(getchar(pcar+0x4a) & 0x10) || ystick > 0) height += ystick * speed / 7;
+if(!pcar) Xdeg = Ydeg = Zdeg = height = 0;
+#off
+setchar(pcar + 0x49, 82);
+setchar(pcar+0x4A, 0x18);
+Xdeg = Ydeg = Zdeg = height = 0;
+
+#cheat Marker Placement
+mark = 0x08c62EA0;
+//Starting address
+setfloat(mark, getfloat(pobj+0x30), getfloat(pobj+0x34),  getfloat(pobj+0x38) + 1);
+//X, Y, Z coords
+setchar(mark+0x2c, 0, 0, 255);
+//Color
+setchar(mark+0x3B, 0x3F);
+setchar(mark+0x4F, 0x02);
+
+#cheat More Health
+//Use with my weapon packs
+setfloat(pplayer+0x4e4, 1000000);
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);
+//Set firing speed to Minigun's speed}
+off();
+#cheat Shotgun Upgrade Pack
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);
+//Set firing speed to Minigun's speed}
+off();
+#cheat Machine Gun Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFEA0+(i*0x70);
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);
+//Set firing speed to Minigun's speed}
+off();
+#cheat Pistol Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);
+//Set firing speed to Minigun's sp}
+off();
+#cheat Thrown Weapon Upgrade Pack
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46);
+//Allow manual aiming
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setshort(sub+0x40, 0x0E);
+//Allow run and shoot
+setfloat(sub+0x44, 0.25, 0.25, 0.25);
+//Set firing speed to Minigun's speed}
+off();
+#cheat bruh
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setfloat(sub+0x44, 0.25, 0.25, 0.25);
+off();
+#cheat Heavy Weapon Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x09600060+(i*0x70);
+setchar(sub+0x0, 0x46); 
+//Allow manual aiming
+setchar(sub+0x1, 0x1);
+//Allow jumping
+setfloat(sub+0x8, 500);
+//Set range to 500
+setint(sub+0x14, 1000);
+//Max out clip size
+setfloat(sub+0x18, 5000);
+//Set high damage for each gun
+setshort(sub+0x40, 0x0E);
+//Allow run and shoot
+setfloat(sub+0x44, 0.4, 0.4, 0.4);
+//Set firing speed to Minigun's speed}
+off();
+
+#cheat Camera Test
+setfloat(0x08BC8030, 0, 0, 0); 
+//No idea what this is...
+setfloat(0x08BC80B0, 0, 0, 1440); 
+//Rotation
+setfloat(0x08BC8070, 0, 0, 180); 
+//Zoom?
+setfloat(0x08BC7E8C, 180);
+setfloat(0x08BC7E90, 180);
+setfloat(0x08BC7FDC, 180);
+setfloat(0x08BC7FB8, 180);
+#cheat Camera Test 2
+setfloat(0x08BC8030, 0, 0, 0); 
+//No idea what this is...
+setfloat(0x08BC80B0, 0, 1080, 0); 
+//Rotation
+setfloat(0x08BC8070, 0, 180, 0); 
+//Zoom?
+setfloat(0x08BC7E8C, 90);
+#cheat Camera Test 3
+setfloat(0x08BC8030, 0, 0, 0); 
+//No idea what this is...
+setfloat(0x08BC80B0, 1080, 0, 0); 
+//Rotation
+setfloat(0x08C7F18, -0.9);
+setfloat(0x08BC8070, 180, 0, 0); 
+//Zoom?
+setfloat(0x08BC7E8C, 90);
+
+#cheat Set fire at where car is hit
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pcar+0x30) + getfloat(pcar+0x120), getfloat(pcar+0x34) + getfloat(pcar+0x124), getfloat(pcar+0x38) + getfloat(pcar+0x128));
+#cheat Set fire at where car is hit 2
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pcar+0x30) - getfloat(pcar+0x120), getfloat(pcar+0x34) - getfloat(pcar+0x124), getfloat(pcar+0x38) - getfloat(pcar+0x128));
+
+#cheat Kill Anyone Attempting to Kill
+/Carjack You (Hit O)
+if(press & CTRL_CIRCLE)
+for(i=0;
+0x098b4a40+i<=0x098ecf90;
+i+=0xd10)
+{
+if(0x098b4a40 + i != pplayer && (getint(0x098b4a40 + i + 0x890) == pplayer || (getint(0x098b4a40 + i + 0x484) == pcar && getint(0x098b4a40 + i + 0x450) == pcar))) {
+setfloat(0x098b4a40+i+0x4e4, 0);}}
+
+#cheat Passengers!
+if(buttons & CTRL_DOWN)
+for(i=0;
+0x098b4a40+i<=0x098ecf90;
+i+=0xd10)
+{
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar)
+{
+setchar(0x098b4a40 + i + 0x5BC, 0x21);
+setint(0x098b4a40 + i +0x484, pcar);
+setint(0x098b4a40 + i +0x450, pcar);}}
+#cheat Loved
+for(i=0;
+0x098b4a40+i<=0x098ecf90;
+i+=0xd10)
+{
+if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480))
+{
+setchar(0x098b4a40 + i + 0x894, 0xc);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+#cheat Enable AI Driving/Walking/Running
+if(pcar){
+setchar(pplayer+0x894, 0x17);
+else{
+if(buttons & CTRL_CROSS)
+setchar(pplayer+0x894, 0x19);
+else
+setchar(pplayer+0x894, 0x18);}
+#off
+setchar(pplayer+0x894, 0x01);
+#cheat Touch attack you!
+ptouch = getint(pplayer+0x150);
+if(ptouch){
+setchar(ptouch + 0x894, 0x8);
+setint(ptouch + 0x890, pplayer);}
+#cheat Make Target Attack You!
+pped = getint(0x08BA1D70);
+if(pped){
+setchar(pped+0x894, 0x8);
+setint(pped+0x890, pplayer);}
+#cheat Make Target Follow You!
+pped = getint(0x08BA1D70);
+//Pointer to aimed at pedstatic yourped;
+static fix;
+if(pped&&!yourped)
+yourped=pped;
+//If aimed at a ped, save its address in the memory
+if(yourped){
+setfloat(yourped+0x4e4, 10000);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x87c, 0x1e);
+//setchar(yourped+0x8B4, 0x0);
+//setchar(yourped+0x8C4, 0x0);
+setint(yourped+0x648, 1000);
+setchar(yourped+0x789, 0x7);
+if(!pcar){
+if(getint(yourped+0x480)){
+setchar(yourped+0x894, 0x10);
+fix=1;}
+else{
+if(pped && pped != yourped){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);
+fix=1;}
+else{
+if(fix){
+setchar(yourped+0x894, 0x01);
+fix=0;}
+setchar(yourped+0x894, 0xC);
+//If not in a car, make that ped follow you
+setint(yourped+0x890, pplayer);
+//Lets the ped know who to follow}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x11);
+//If in a car, make that ped get in the car
+setint(yourped+0x484, pcar);
+//Makes the ped know what car to get into
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_LTRIGGER && press & CTRL_TRIANGLE){
+setfloat(yourped+0x4e4, 0);
+yourped=0;}}
+
+#cheat Touch of Death 2
+coll = getint(pobj+0x150);
+if(coll&&getshort(coll+0x56) >= 170 && getshort(coll+0x56) <= 280){
+for(i=0;
+i<4;
+i++){
+person=getint(coll+0x384+(i*0x4));
+if(person!=pplayer&&person){
+setfloat(person + 0x4e4, 0);
+setchar(person + 0x894, 0x26);}}}
+
+#cheat Theft of Death
+ptheft = getint(pplayer+0x450);
+if(ptheft){
+for(i=0;
+i<4;
+i++){
+person=getint(ptheft+0x384+(i*0x4));
+if(person!=pplayer&&person){
+setfloat(person + 0x4e4, 0);
+setchar(person + 0x894, 0x26);}}}
+
+#cheat Touch Peds and Cars to make them Float Away!
+static touch;
+if(getint(pobj+0x150))
+touch=getint(pobj+0x150);
+if(touch)
+if(getshort(touch+0x56)<280)
+sethex(touch+0xEC, 0x20);
+if(getchar(pcar+0xEC)==0x20)
+sethex(pcar+0xEC,0x22);
+
+#cheat Teh blahz
+mark = 0x08c62EA0;
+setfloat(mark, 394.29, 26.15, 15.58);
+setint(mark+0x20, 0x09a6d668);
+setchar(mark+0x2c, 1, 1, 255);
+setchar(mark+0x3B, 0x3F + 0x2);
+setchar(mark+0x4F, 0x02);
+setchar(mark+0x47, 0x42);
+setc 0x90;
+setfs  har(mark+0x50, 1, 0, 1);
+mark += 0x90;
+setfs  har(mark+0x50, 1, 0, 1);
+mark += 0x90;
+setfs  har(mark+0x50, 1, 0, 1);
+mark += 0x90;
+setfs  har(mark+0x50, 1, 0, 1);
+mark += 0x90;
+setfloat(mark, 322.03, -20.76, 11.32);
+setint(mark+0x20, 0x09a6d668);
+setchar(mark+0x2c, 1, 1, 255);
+setchar(mark+0x3B, 0x3F + 0x2);
+setchar(mark+0x4F, 0x02);
+setchar(mark+0x47, 0x42);
+setchar(mark+0x50, 1, 0, 1);
+#cheat Box Text
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '~', 'n', '~', 'B', 'a', 'a', 0);
+#cheat Bottom Left Corner
+setshort(0x08BF81FE, 'T', 'e', 's', 't', '?',0);
+
+#cheat Heal Last Killed Pedestrian (R + UP)
+static lastkilled;
+static lastaimed;
+ptarget = getint(0x08BA1D70); 
+//Pointer to aimed at ped
+if(ptarget)lastaimed = ptarget;
+if(getfloat(lastaimed + 0x4e4) <= 0)lastkilled = lastaimed;
+if(lastkilled && buttons & CTRL_RTRIGGER && press & CTRL_UP){
+setchar(pplayer + 0x894, 0x18);
+setint(pplayer + 0x890, lastkilled);}
+#off
+lastkilled = ptarget = lastaimed = 0;
+
+#cheat UP=KILL DOWN=REMOVE LEFT=BEACH RIGHT=GOLF
+pped = getint(0x08BA1D70);
+if(pped&&buttons&CTRL_RTRIGGER&&press&CTRL_UP){
+setchar(pped+0x8B4, 0x44);
+setint(pped+0x890, pplayer);}
+if(pped&&buttons&CTRL_RTRIGGER&&press&CTRL_DOWN){
+setchar(pped+0x8B4, 0x37);
+setint(pped+0x890, pplayer);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_LEFT){
+setfloat(pplayer + 0x30, 488.76);
+setfloat(pplayer + 0x34, -1002.93);
+setfloat(pplayer + 0x38, 11.07);}
+if(buttons&CTRL_RTRIGGER&&press&CTRL_RIGHT){
+setfloat(pplayer + 0x30, 99.73);
+setfloat(pplayer + 0x34, 256.17);
+setfloat(pplayer + 0x38, 21.78);}
+
+#cheat Mark the Ped
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);
+static mark;
+mark = 0x08c62EA0;
+setfloat(mark, getfloat(yourped+0x30), getfloat(yourped+0x34), getfloat(yourped+0x38) +
+1);
+setchar(mark+0x2c, 255, 0, 0);
+setchar(mark+0x3B, 0x3F);
+setchar(mark+0x4F, 0x02);
+health = getfloat(yourped+0x4e4);
+if(health == 0){
+setfloat(yourped+0x4e4, 0);
+yourped=0;}}
+
+#cheat Yellow Shopkeepers
+setchar(0x093793A2, 4);
+
+#cheat WARNING ! THIS CHEAT CAN CAUSE SEIZURES !!!
+setchar(0x08E937B5, 0x01);
+
+#cheat Counter
+static count;
+if(count%600==0){
+setshort(0x08e90DD8, 1, '!', 0);
+setchar(0x08E937B5, 0x01);}
+count++;
+
+#cheat Spawn Palm Tree Leaf at the Compound
+setfloat(0x08E7AC40, -1077.40, 312.63, 11.26);
+
+#cheat Spawn all pickups around you
+count = 0;
+for(i = 0x014B; i <= 0x01DA; i++)
+if(i != 0x0159 && i != 0x016B && i != 0x016D && i != 0x016E && i != 0x01B3 && i != 0x01D1 && !(i > 0x0170 && i < 0x01B5)       && !(i > 0x01B5 && i < 0x01D2) && !(i > 0x01D4 && i < 0x01DA) ) {
+pickup = 0x08C6A330 + count*0x40;
+setfloat(pickup, getfloat(pobj+0x30) + 15*cos(count*360/40), getfloat(pobj+0x34) + 20*sin(count*360/40), getfloat(pobj+0x38));
+setint(pickup+0x2C, 1000000);
+setshort(pickup+0x34, i);
+setchar(pickup+0x38, 0x03);
+count++;}
+off();
+
+#cheat Rope Spawn at the Compound
+setfloat(0x08C73240, -1077.40, 312.63, 11.26);
+
+#cheat Spawn Marker at the Compound
+marker = 0x08BF7B40;
+setfloat(marker, -1077.40, 312.63, 11.26);
+setchar(marker+0x1A, 0x01);
+setchar(marker+0x1C, 0x06);
+marker += 0x20;
+
+#cheat No Traffic
+setchar(0x08BB329C, 0xFF);
+#cheat Interior Atmosphere
+setchar(0x08B8EBA4, 0x01);
+
+#cheat Radar with map
+setchar(0x08E937A8, 0x00);
+#cheat Radar without map
+setchar(0x08E937A8, 0x01);
+#cheat No radar
+setchar(0x08E937A8, 0x02);
+
+#cheat Kill all spawned pedestrians
+for(add = 0x08E78C90;
+(ped = getint(add));
+add+=0x4)
+if(ped != 0x098b4a40)
+setfloat(ped+0x4e4, 0);
+
+#cheat low rage mode
+setchar(0x8BC8984,  0x04);
+
+#cheat rage mode
+setchar(0x8BC8984,  0x08);
+
+#cheat rage mode 2
+static counter;
+player = getint(0x08bc8170);
+//address of pplayer 
+if(counter++ % 30 == 0) {
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}
+setchar(0x8BC8984,  0x08);
+setchar(0x08bacdf5, 1);
+setchar(0x08baef2c, 1);
+setchar(0x08bb32c8, 1);
+setchar(0x08BB3B5B, 0x5f);
+
+#cheat Slow Motion (Adrenaline Effect)
+setchar(0x08BB3B5B, 0x8f);
+#off
+setchar(0x08BB3B5B, 0x3f);
+
+#cheat Peds attack you
+static counter;
+player = getint(0x08bc8170);
+//address of pplayer 
+if(counter++ % 30 == 0)
+{
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}
+
+#cheat Peds attack you (FORCE)
+static timer;
+if(timer%1==0)
+static counter;
+player = getint(0x08bc8170);
+//address of pplayer 
+if(counter++ % 1 == 0)
+{
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);
+health = getfloat(pplayer+0x4e4);
+if(health == 0){
+setchar(p + 0x894, 0x31);}}}
+timer++;
+if(timer==1)
+timer=0;
+
+#cheat All spawned pedestrians attack you
+for(add = 0x08E78C90;
+(ped = getint(add));
+add+=0x4)
+if(ped != 0x098b4a40){
+setint(ped + 0x890, pplayer);
+setchar(ped+0x894, 0x8);}
+
+#cheat View ModelID of the targetted ped !
+p = getint(0x08BA1D70);
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+if (p){n = getshort(p + 0x58);
+setint(0x08bde55c, n, n);}
+
+#cheat Hit Down to go to biplane
+if(press & CTRL_DOWN){
+teleport(-1266.37, -1076.81, 14.87)}
+
+#cheat compound car show and pickups.
+//construction
+moveto(-1086.74,326.43,8.37);  object(0x1CD5,0,0,88);
+move(0.14,-5.10,-1.10);  object(0x1CD5,0,0,88);
+move(-0.39,10.09,-1.00);  object(0x1CD5,0,0,88);
+move(-6.05,-0.24,-0.50);  object(0x1CD5,90,0,88);
+move(12.06,0.46,0.00);  object(0x1CD5,90,0,272);
+move(-6.50,-5.29,2.10);  object(0x1CD5,90,0,88);
+move(-4.90,-0.17,0.00);  object(0x1CD5,90,0,88);
+move(0.17,-4.80,-1.10);  object(0x1CD5,90,0,88);
+move(5.84,0.21,0.10);  object(0x1CD5,90,0,88);
+move(10.43,4.98,3.80);  object(0x1CD5,150,0,270);
+move(-0.19,-5.00,-1.00);  object(0x1CD5,150,0,270);
+move(-0.10,10.10,-1.00);  object(0x1CD5,150,0,270);
+
+#cheat unknown cheat
+setfloat(0x9634800+0x80, -0.01); 
+
+#cheat change the weight of the Polaris V8
+static start;
+if (!start)
+weight = 0;
+start = 1;
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_LEFT){
+weight = weight-1;}
+if (buttons & CTRL_LTRIGGER && pressmed & CTRL_RIGHT){
+weight = weight+1;}
+setfloat(0x9634340+0xbc, weight);
+
+#cheat Clone Mod
+//Enter a savehouse to create a clone
+setshort(0x09F88C80, 26);
+for(i=0; 0x98b4a40+i<=0x98ecf90; i+=0xd10){
+ID = getshort(0x098b4a40+i+0x56);
+if(0x098b4a40+i!= pplayer&&ID == 0){
+playerz = getfloat(pplayer+0x38);
+if(playerz>=11.80){
+setchar(0x098b4a40+i+0x8B4, 0x39);
+teleport(-1077.40, 312.63, 11.26);}}}
+
+#cheat Multclone
+//Enter a savehouse to create a clone
+setshort(0x09F88C80, 26);
+for(i=0; 0x98b4a40+i<=0x98ecf90; i+=0xd10){
+ID = getshort(0x098b4a40+i+0x56);
+if(0x098b4a40+i!= pplayer&&ID == 0){
+playerz = getfloat(0x098b4a40+i+0x38);
+if(0x098b4a40+iz>=11.80){
+setchar(0x098b4a40+i+0x8B4, 0x39);
+teleport(-1077.40, 312.63, 11.26);}}}
+
+#cheat Teleport Vic+Clone to the Compound
+for(i=0; 0x98b4a40+i<=0x98ecf90; i+=0xd10){
+ID = getshort(0x098b4a40+i+0x56);
+if(ID == 0){
+if(0x98b4a40+i &&!getint(0x98b4a40+i+0x480)){
+setfloat(0x98b4a40+i+0x30, -1077.40, 312.63, 11.26);}}}
+off();
+
+#cheat Left/Right Driving (D-Pad Left/Right)
+if(buttons & CTRL_LEFT)
+setfloat(pcar+0x30,getfloat(pcar+0x30) - 0.3*getfloat(pcar),getfloat(pcar+0x34) - 0.3*getfloat(pcar + 0x4));
+else 
+if(buttons & CTRL_RIGHT)
+setfloat(pcar+0x30,getfloat(pcar+0x30) + 0.3*getfloat(pcar),getfloat(pcar+0x34) + 0.3*getfloat(pcar + 0x4));
+#cheat Left/Right Driving (O + Analog)
+if(buttons & CTRL_CIRCLE && abs(xstick) > 0.1){
+setfloat(pcar+0x30,getfloat(pcar+0x30) + 0.3*xstick*getfloat(pcar),getfloat(pcar+0x34) + 0.3*xstick*getfloat(pcar + 0x4));
+setfloat(pcar + 0x350, 0);}
+
+#cheat Finished Lava!
+//by nerner with elements of a cheat by psphacker108
+//cheers for releasing the watermod by the way
+setchar(0x08b8eb90, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08b8eb8e, 0xff, 0x00, 0x00, 0x00, 0xff);
+setchar(0x08b8eb88, 0x00, 0x00, 0xff, 0xff);
+if(getchar(pplayer + 0x1DB) == 0x08)
+setfloat(pplayer + 0x4E4, 0); 
+
+#cheat Hot Pink Water
+setfloat(0x08B8EB88, 100.0, 0.0, 50.0);
+
+#cheat Greenish Blue World
+setfloat(0x08B8EAC8, 0.0, 1.0, 0.25);
+setfloat(0x08B8EAD8, 0.0, 1.0, 0.25);
+setfloat(0x08B8EAE4, 0.0, 1.0, 0.25);
+
+#cheat Hover Vic
+//By DDM
+if(!pcar)
+{
+//Only enable while in car
+setshort(pplayer + 0x1C8, 0x1020);
+//Remove player from ground
+setfloat(pplayer + 0x148, ystick*0.333 -0.038);
+//"Reverse" gravity
+if(buttons & CTRL_CIRCLE && !getint(pplayer + 0x150))
+{
+setfloat(pplayer+0x140,getfloat(pplayer+0x140) + 0.18*xstick*getfloat(pplayer),getfloat(pplayer+0x144) + 0.18*xstick*getfloat(pplayer + 0x4));}
+else{
+setfloat(pplayer + 0x78, -xstick*0.05);}
+if(buttons & CTRL_CROSS && !getint(pplayer + 0x150)){
+//Check if the X button is being pressed
+setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) + getfloat(pplayer + 0x0010) * 0.018);
+setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) + getfloat(pplayer + 0x0014) * 0.018);
+}
+else{
+setfloat(pplayer + 0x140, getfloat(pplayer + 0x140)*0.9,getfloat(pplayer+0x144)*0.9,getfloat(pplayer+0x148)*0.9);
+//Slow down!}}
+
+#cheat Blue World - GO TO 0xff for intense blue!
+setchar(0x08B8EB4F, 0x23);
+#cheat red vic World
+//ALL PEDS AND VEHICLES WILL HAVE A RED LIGHT ON THEM
+setchar(0x08B8EAE7, 0xff);
+#cheat Remove Sun Reflection on vic + Vehicles
+//This sort of locks the suns reflections (ANYTIME) on vic and the vehicles
+setchar(0x08B8EB9A, 0x01);
+
+#cheat Katamari (hold O to activate)
+upf = 1.5;
+static add;
+if(buttons & CTRL_CIRCLE)
+{
+if(!add || !(ped = getint(add))){
+add = 0x08E78C90;
+ped = getint(add);}
+if(ped != 0x098b4a40){
+pedc = getint(ped + 0x480);
+if(pedc > 0x08800000 && pedc < 0x09FFFFFF && pedc != getint(pplayer + 0x480)){
+health = 0x27C;
+edit = pedc;}
+else
+if(!(pedc > 0x08800000 && pedc < 0x09FFFFFF)){
+edit = ped;
+health = 0x4E4;
+setshort(ped + 0x1C8, 0x1020);}
+xdist = (getfloat(pobj + 0x30) + getfloat(pobj + 0x10) * 10) - getfloat(edit + 0x30);
+ydist = (getfloat(pobj + 0x34) + getfloat(pobj + 0x14) * 10) - getfloat(edit + 0x34);
+zdist = getfloat(pobj + 0x38) - getfloat(edit + 0x38) + 5;
+tdist = sqrt(xdist*xdist + ydist*ydist + zdist*zdist);
+xmov = xdist/(tdist*tdist);
+ymov = ydist/(tdist*tdist);
+zmov = zdist/(tdist*tdist);
+setfloat(edit + 0x140, xmov*upf, ymov*upf, zmov*upf);
+setfloat(edit + health, 10000000);}
+add+=0x4;}
+
+#cheat Electromagnet (hold O to activate)
+upf = 1.5;
+static add;
+if(buttons & CTRL_CIRCLE){
+if(!add || !(ped = getint(add))){
+add = 0x08E78C90;
+ped = getint(add);
+}
+if(ped != 0x098b4a40)
+{
+pedc = getint(ped + 0x480);
+if(pedc > 0x08800000 && pedc < 0x09FFFFFF && pedc != getint(pplayer + 0x480)){ 
+health = 0x27C;
+edit = pedc;
+}
+else
+if(!(pedc > 0x08800000 && pedc < 0x09FFFFFF)){
+edit = ped;
+health = 0x4E4;
+setshort(ped + 0x1C8, 0x1020);}
+xdist = getfloat(pobj + 0x30) - getfloat(edit + 0x30);
+ydist = getfloat(pobj + 0x34) - getfloat(edit + 0x34);
+zdist = getfloat(pobj + 0x38) - getfloat(edit + 0x38) + 5;
+tdist = sqrt(xdist*xdist + ydist*ydist + zdist*zdist);
+xmov = xdist/(tdist*tdist);
+ymov = ydist/(tdist*tdist);
+zmov = zdist/(tdist*tdist);
+setfloat(edit + 0x140, xmov*upf, ymov*upf, zmov*upf);
+setfloat(edit + health, 10000000);}
+add+=0x4;}
+
+#cheat Helicar
+xv = getfloat(pcar + 0x140);
+yv = getfloat(pcar + 0x144);
+zv = getfloat(pcar + 0x148);
+speed = sqrt(xv*xv + yv*yv + zv*zv);
+if(buttons & CTRL_LTRIGGER)
+setfloat(pcar + 0x78, 0.02);
+else
+if(buttons & CTRL_RTRIGGER)
+setfloat(pcar + 0x78, -0.02);
+else
+setfloat(pcar + 0x78, getfloat(pcar + 0x78)*0.9);
+if(abs(getfloat(pcar + 0x28)) > 0.3 && speed < 10){
+if(buttons & CTRL_CROSS){
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) + getfloat(pcar + 0x0020) * 0.010);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) + getfloat(pcar + 0x0024) * 0.010);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) + getfloat(pcar + 0x28) * 0.010);}
+else
+if(buttons & CTRL_SQUARE){
+setfloat(pcar + 0x0140, getfloat(pcar + 0x0140) - getfloat(pcar + 0x0020) * 0.010);
+setfloat(pcar + 0x0144, getfloat(pcar + 0x0144) - getfloat(pcar + 0x0024) * 0.010);
+setfloat(pcar + 0x0148, getfloat(pcar + 0x0148) - getfloat(pcar + 0x28) * 0.010);}
+else
+setfloat(pcar + 0x148, getfloat(pcar + 0x148) * 0.9);}
+if(getfloat(pcar + 0x148) < 0.009)
+setfloat(pcar + 0x148, getfloat(pcar + 0x148) + 0.009);
+
+#cheat Drivable Vic
+//By DDM
+static thrust;
+static decay;
+static upwardThrust;
+if(!pcar){ 
+//Only enable while in car
+setfloat(pplayer + 0x4e4, 1000000);
+//Give a lot of health to prevent death 
+setshort(pplayer + 0x1C8, 0x1020); 
+//Remove player from ground    
+if(buttons & CTRL_CIRCLE && !getint(pplayer + 0x150)){         
+setfloat(pplayer + 0x78, 0); 
+//Prevent player from turning         
+setfloat(pplayer+0x140,getfloat(pplayer+0x140) + 0.018*xstick*getfloat(pplayer),getfloat(pplayer+0x144) + 0.018*xstick*getfloat(pplayer + 0x4));}
+else{         
+setfloat(pplayer + 0x78, -xstick*0.05);}
+if(!getint(pplayer + 0x150)){
+if(buttons & CTRL_CROSS){
+//Check if the X button is being pressed              
+setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) + getfloat(pplayer + 0x0010) * 0.018);              
+setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) + getfloat(pplayer + 0x0014) * 0.018);              
+thrust = 0.018;}
+else
+if(buttons & CTRL_SQUARE){              
+thrust = 0;              
+setfloat(pplayer + 0x0140, getfloat(pplayer + 0x0140) - getfloat(pplayer + 0x0010) * 0.005);              
+setfloat(pplayer + 0x0144, getfloat(pplayer + 0x0144) - getfloat(pplayer + 0x0014) * 0.005);              
+/*setfloat(pplayer + 0x140, getfloat(pplayer + 0x140)*0.9,getfloat(pplayer+0x144)*0.9);
+//Slow down!*/} 
+else{              
+setfloat(pplayer + 0x140,getfloat(pplayer+0x140)*0.95 + getfloat(pplayer + 0x0010) * thrust,getfloat(pplayer+0x144)*0.95 + getfloat(pplayer + 0x0014) * thrust);
+//Slow down!}}
+else
+thrust = 0;
+thrust *= 0.995;}
+
+#cheat Planes are more fun to fly!
+val = (buttons & CTRL_CROSS) ? 1.0:0.0;
+setfloat(pcar + 0x3B4, val);
+
+#cheat ERR_INTERNET_DISCONNECTED
+if(getchar(pplayer + 0x1DB) == 0x08)
+setfloat(pplayer + 0x4E4, 0); 
+#cheat infinite time in boomshine blowout
+setchar(0x09F6DA48, 0);
+#cheat no timer in boomshine blowout!
+setchar(0x08BB42A0, 0);
+#cheat rampage timer in Boomshine Blowout!
+setchar(0x08BB42A0, 0);
+setchar(0x08BB4404, 1);
+
+#cheat Mission Select!
+static start;
+if (!start)
+{
+mission = 20;
+start = 1;
+}
+if (buttons & CTRL_RTRIGGER)
+{
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;
+if (mission <= 07)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 08)
+{setshort(0x08e90bd8, 1, '1', 's', 't', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+if (mission == 09)
+{setshort(0x08e90bd8, 1, 'T', 'e', 'l', 'e', 'p', 'o', 'r', 't', ' ', 'T', 'o', ' ', 'B', 'e', 'a', 'c', 'h', 'c', 'o', 'm', 'b', 'e', 'r', ' ', 'H', 'o', 't', 'e', 'l', ',', ' ', 'S', 't', 'u', 'c', 'k', ' ', 'I', 'n', ' ', 'C', 'a', 'r', 0);}
+if (mission == 10)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 11)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'A', 't', 't', 'a', 'c', 'k', 0);}
+if (mission == 12)
+{setshort(0x08e90bd8, 1, 'I', 'n', ' ', 'T', 'h', 'e', ' ', 'A', 'i', 'r', ' ', 'T', 'o', 'n', 'i', 'g', 'h', 't', ' ', '(', 'P', 'h', 'i', 'l', ' ', 'C', 'o', 'l', 'l', 'i', 'n', 's', ' ', 'C', 'o', 'n', 'c', 'e', 'r', 't', ')', 0);}
+if (mission == 13)
+{setshort(0x08e90bd8, 1, 'V', 'i', 'd', 'e', 'o', ' ', 'M', 'e', 'm', 'o', 'r', 'i', 'e', 's', 0);}
+if (mission == 14)
+{setshort(0x08e90bd8, 1, 'S', 'h', 'o', 'o', 't', 'i', 'n', 'g', ' ', 'R', 'a', 'n', 'g', 'e', 0);}
+if (mission == 15)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'r', 'a', 'm', 'e', 'd', 'i', 'c', ' ', '(', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ')', 0);}
+if (mission == 16)
+{setshort(0x08e90bd8, 1, 'V', 'i', 'g', 'i', 'l', 'a', 'n', 't', 'e', 0);}
+if (mission == 17)
+{setshort(0x08e90bd8, 1, 'F', 'i', 'r', 'e', 'f', 'i', 'g', 'h', 't', 'e', 'r', 0);}
+if (mission == 18)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'r', 'a', 'm', 'e', 'd', 'i', 'c', ' ', '(', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ')', 0);}
+if (mission == 19)
+{setshort(0x08e90bd8, 1, 'S', 'w', 'i', 'n', 'g', 'e', 'r', 's', ' ', 'C', 'l', 'u', 'b', ' ', 'G', 'o', 'l', 'f', 0);}
+if (mission == 20)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'x', 'i', ' ', 'D', 'r', 'i', 'v', 'e', 'r', 0);}
+if (mission == 21)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'P', 'r', 'o', 't', 'e', 'c', 't', 'i', 'o', 'n', ' ', 'R', 'a', 'c', 'k', 'e', 't', 0);}
+if (mission == 22)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'L', 'o', 'a', 'n', ' ', 'S', 'h', 'a', 'r', 'k', 0);}
+if (mission == 23)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'P', 'r', 'o', 's', 't', 'i', 't', 'u', 't', 'i', 'o', 'n', 0);}
+if (mission == 24)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'D', 'r', 'u', 'g', 's', 0);}
+if (mission == 25)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'S', 'm', 'u', 'g', 'g', 'l', 'i', 'n', 'g', 0);}
+if (mission == 26)
+{setshort(0x08e90bd8, 1, 'E', 'm', 'p', 'i', 'r', 'e', ' ', 'B', 'u', 'i', 'l', 'd', 'i', 'n', 'g', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', ' ', 'R', 'o', 'b', 'b', 'e', 'r', 'y', 0);}
+if (mission == 27)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 28)
+{setshort(0x08e90bd8, 1, 'C', 'r', 'a', 's', 'h', ' ', 'C', 'o', 'a', 'c', 'h', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+if (mission == 29)
+{setshort(0x08e90bd8, 1, 'Q', 'u', 'a', 'd', ' ', 'B', 'i', 'k', 'e', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 30)
+{setshort(0x08e90bd8, 1, 'B', 'M', 'X', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 31)
+{setshort(0x08e90bd8, 1, 'S', 'a', 'n', 'c', 'h', 'e', 'z', ' ', 'T', 'i', 'm', 'e', ' ', 'T', 'r', 'i', 'a', 'l', 's', 0);}
+if (mission == 32)
+{setshort(0x08e90bd8, 1, 'B', 'M', 'X', ' ', 'M', 'a', 'l', 'l', 0);}
+if (mission == 33)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 34)
+{setshort(0x08e90bd8, 1, 'H', 'e', 'l', 'i', ' ', 'T', 'o', 'u', 'r', 's', 0);}
+if (mission == 35)
+{setshort(0x08e90bd8, 1, 'F', 'i', 'r', 'e', ' ', 'H', 'e', 'l', 'i', 0);}
+if (mission == 36)
+{setshort(0x08e90bd8, 1, 'T', 'u', 'r', 'i', 's', 'm', 'o', ' ', '(', '1', 's', 't', ' ', 'I', 's', 'l', 'a', 'n', 'd', ')', 0);}
+if (mission == 37)
+{setshort(0x08e90bd8, 1, 'H', 'u', 'n', 't', 'e', 'r', ' ', 'T', 'a', 'r', 'g', 'e', 't', 0);}
+if (mission == 38)
+{setshort(0x08e90bd8, 1, 'A', 'i', 'r', ' ', 'R', 'a', 'c', 'e', 0);}
+if (mission == 39)
+{setshort(0x08e90bd8, 1, 'M', 'u', 'l', 't', 'i', ' ', 'V', 'e', 'h', 'i', 'c', 'l', 'e', ' ', 'R', 'a', 'c', 'e', 0);}
+if (mission == 40)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 41)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 08)
+{setshort(0x08e90bd8, 1, 'S', 'o', 'l', 'd', 'i', 'e', 'r', 0);}
+if (mission == 42)
+{setshort(0x08e90bd8, 1, 'C', 'l', 'e', 'a', 'n', 'i', 'n', 'g', ' ', 'H', 'o', 'u', 's', 'e', 0);}
+if (mission == 43)
+{setshort(0x08e90bd8, 1, 'C', 'o', 'n', 'd', 'u', 'c', 't', ' ', 'U', 'n', 'b', 'e', 'c', 'o', 'm', 'i', 'n', 'g', 0);}
+if (mission == 44)
+{setshort(0x08e90bd8, 1, 'C', 'h', 'o', 'l', 'o', ' ', 'V', 'i', 'c', 't', 'o', 'r', 'y', 0);}
+if (mission == 45)
+{setshort(0x08e90bd8, 1, 'B', 'o', 'o', 'm', 's', 'h', 'i', 'n', 'e', ' ', 'B', 'l', 'o', 'w', 'o', 'u', 't', 0);}
+if (mission == 46)
+{setshort(0x08e90bd8, 1, 'T', 'r', 'u', 'c', 'k', ' ', 'S', 't', 'o', 'p', 0);}
+if (mission == 47)
+{setshort(0x08e90bd8, 1, 'M', 'a', 'r', 'k', 'e', 'd', ' ', 'M', 'a', 'n', 0);}
+if (mission == 48)
+{setshort(0x08e90bd8, 1, 'S', 'h', 'a', 'k', 'e', 'd', 'o', 'w', 'n', 0);}
+if (mission == 49)
+{setshort(0x08e90bd8, 1, 'F', 'e', 'a', 'r', ' ', 'T', 'h', 'e', ' ', 'R', 'e', 'p', 'o', 0);}
+if (mission == 50)
+{setshort(0x08e90bd8, 1, 'W', 'a', 'k', 'i', 'n', 'g', ' ', 'U', 'p', ' ', 'T', 'h', 'e', ' ', 'N', 'e', 'i', 'g', 'h', 'b', 'o', 'u', 'r', 's', 0);}
+if (mission == 51)
+{setshort(0x08e90bd8, 1, 'O', ',', ' ', 'B', 'r', 'o', 't', 'h', 'e', 'l', ',', ' ', 'W', 'h', 'e', 'r', 'e', ' ', 'A', 'r', 't', ' ', 'T', 'h', 'o', 'u', '?', 0);}
+if (mission == 52)
+{setshort(0x08e90bd8, 1, 'G', 'o', 't', ' ', 'P', 'r', 'o', 't', 'e', 'c', 't', 'i', 'o', 'n', '?', 0);}
+if (mission == 53)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'e', 'n', ' ', 'F', 'u', 'n', 'd', 'a', 'y', ' ', 'C', 'o', 'm', 'e', 's', 0);}
+if (mission == 54)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'k', 'i', 'n', ' ', 'O', 'u', 't', ' ', 'T', 'h', 'e ', 'W', 'h', 'i', 't', 'e', ' ', 'T', 'r', 'a', 's', 'h', 0);}
+if (mission == 55)
+{setshort(0x08e90bd8, 1, 'D', '.', 'I', '.', 'V', '.', 'O', '.', 'R', '.', 'C', '.', 'E', '.', 0);}
+if (mission == 56)
+{setshort(0x08e90bd8, 1, 'T', 'o', ' ', 'V', 'i', 'c', 't', 'o', 'r', ',', ' ', 'T', 'h', 'e', ' ', 'S', 'p', 'o', 'i', 'l', 's', 0);}
+if (mission == 57)
+{setshort(0x08e90bd8, 1, 'H', 'o', 's', 'e', ' ', 'T', 'h', 'e', ' ', 'H', 'o', 'e', 's', 0);}
+if (mission == 58)
+{setshort(0x08e90bd8, 1, 'R', 'o', 'b', 'b', 'i', 'n', 'g', ' ', 'T', 'h', 'e', ' ', 'C', 'r', 'a', 'd', 'l', 'e', 0);}
+if (mission == 59)
+{setshort(0x08e90bd8, 1, 'J', 'i', 'v', 'e', ' ', 'D', 'r', 'i', 'v', 'e', 0);}
+if (mission == 60)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'A', 'u', 'd', 'i', 't', 'i', 'o', 'n', 0);}
+if (mission == 61)
+{setshort(0x08e90bd8, 1, 'C', 'a', 'u', 'g', 'h', 't', ' ', 'I', 'n', ' ', 'T', 'h', 'e', ' ', 'A', 'c', 't', 0);}
+if (mission == 62)
+{setshort(0x08e90bd8, 1, 'S', 'n', 'i', 't', 'c', 'h', ' ', 'H', 'i', 't', 'c', 'h', 0);}
+if (mission == 63)
+{setshort(0x08e90bd8, 1, 'F', 'r', 'o', 'm', ' ', 'Z', 'e', 'r', 'o', ' ', 'T', 'o', 'H', 'e', 'r', 'o', 0);}
+if (mission == 64)
+{setshort(0x08e90bd8, 1, 'N', 'i', 'c', 'e', ' ', 'P', 'a', 'c', 'k', 'a', 'g', 'e', 0);}
+if (mission == 65)
+{setshort(0x08e90bd8, 1, 'B', 'a', 'l', 'l', 's', 0);}
+if (mission == 66)
+{setshort(0x08e90bd8, 1, 'P', 'a', 'p', 'i', ' ', 'D', 'o', 'n', 't', ' ', 'S', 'c', 'r', 'e', 'e', 'c', 'h', 0);}
+if (mission == 67)
+{setshort(0x08e90bd8, 1, 'H', 'a', 'v', 'a', 'n', 'a', ' ', 'G', 'o', 'o', 'd', ' ', 'T', 'i', 'm', 'e', 0);}
+if (mission == 68)
+{setshort(0x08e90bd8, 1, 'M', 'o', 'n', 'e', 'y', ' ', 'F', 'o', 'r', ' ', 'N', 'o', 't', 'h', 'i', 'n', 'g', 0);}
+if (mission == 69)
+{setshort(0x08e90bd8, 1, 'L', 'e', 'a', 'p', ' ', 'A', 'n', 'd', ' ', 'B', 'o', 'u', 'n', 'd', 0);}
+if (mission == 70)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'B', 'u', 'm', ' ', 'D', 'e', 'a', 'l', 0);}
+if (mission == 71)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'M', 'u', 'g', 's', 'h', 'o', 't ', 'L', 'o', 'n', 'g', 's', 'h', 'o', 't', 0);}
+if (mission == 72)
+{setshort(0x08e90bd8, 1, 'H', 'o', 's', 't', 'i', 'l', 'e', ' ', 'T', 'a', 'k', 'e', 'o', 'v', 'e', 'r', 0);}
+if (mission == 73)
+{setshort(0x08e90bd8, 1, 'U', 'n', 'f', 'r', 'i', 'e', 'n', 'd', 'l', 'y', ' ', 'C', 'o', 'm', 'p', 'e', 't', 'i', 't', 'i', 'o', 'n', 0);}
+if (mission == 74)
+{setshort(0x08e90bd8, 1, 'H', 'i', 'g', 'h', ' ', 'W', 'i', 'r', 'e', 0);}
+if (mission == 75)
+{setshort(0x08e90bd8, 1, 'B', 'u', 'r', 'n', 'i', 'n', 'g', ' ', 'B', 'r', 'i', 'd', 'g', 'e', 's', 0);}
+if (mission == 76)
+{setshort(0x08e90bd8, 1, 'A', 'c', 'c', 'i', 'd', 'e', 'n', 't', 's', ' ', 'W', 'I', 'l', 'l', ' ', 'H', 'a', 'p', 'p', 'e', 'n', 0);}
+if (mission == 77)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'C', 'o', 'l', 'o', 'n', 'e', 'l', 's', ' ', 'C', 'o', 'k', 'e', 0);}
+if (mission == 78)
+{setshort(0x08e90bd8, 1, 'K', 'i', 'l', 'l', ' ', 'P', 'h', 'i', 'l', 0);}
+if (mission == 79)
+{setshort(0x08e90bd8, 1, 'S', 'a', 'y', ' ', 'C', 'h', 'e', 'e', 's', 'e', 0);}
+if (mission == 80)
+{setshort(0x08e90bd8, 1, 'K', 'i', 'l', 'l', ' ', 'P', 'h', 'i', 'l', ':', ' ', 'P', 'a', 'r', 't', ' ', '2', 0);}
+if (mission == 81)
+{setshort(0x08e90bd8, 1, 'S', 'o', ' ', 'L', 'o', 'n', 'g', ' ', 'S', 'c', 'h', 'l', 'o', 'n', 'g', 0);}
+if (mission == 82)
+{setshort(0x08e90bd8, 1, 'C', 'R', 'A', 'S', 'H', 0);}
+if (mission == 83)
+{setshort(0x08e90bd8, 1, 'B', 'l', 'i', 't', 'z', 'k', 'r', 'i', 'e', 'g', 0);}
+if (mission == 84)
+{setshort(0x08e90bd8, 1, 'T', 'u', 'r', 'n', ' ', 'O', 'n', ',', ' ', 'T', 'u', 'n', 'e', ' ', 'I', 'n', ',', ' ', 'B', 'u', 'g', ' ', 'O', 'u', 't', 0);}
+if (mission == 85)
+{setshort(0x08e90bd8, 1, 'T', 'a', 'k', 'i', 'n', 'g', ' ', 'T', 'h', 'e', ' ', 'F', 'a', 'l', 'l', 0);}
+if (mission == 86)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'i', 't', 'e', ' ', 'L', 'i', 'e', 's', 0);}
+if (mission == 87)
+{setshort(0x08e90bd8, 1, 'W', 'h', 'e', 'r', 'e', ' ', 'I', 't', ' ', 'H', 'u', 'r', 't', 's', ' ', 'M', 'o', 's', 't', 0);}
+if (mission == 88)
+{setshort(0x08e90bd8, 1, 'B', 'l', 'i', 't', 'z', 'k', 'r', 'i', 'e', 'g', ' ', 'S', 't', 'r', 'i', 'k', 'e', 's', ' ', 'A', 'g', 'a', 'i', 'n', 0);}
+if (mission == 89)
+{setshort(0x08e90bd8, 1, 'L', 'o', 's', 't', ' ', 'A', 'n', 'd', ' ', 'F', 'o', 'u', 'n', 'd', 0);}
+if (mission == 90)
+{setshort(0x08e90bd8, 1, 'L', 'i', 'g', 'h', 't', ' ', 'M', 'y', ' ', 'P', 'y', 'r', 'e', 0);}
+if (mission == 91)
+{setshort(0x08e90bd8, 1, 'H', 'o', 'm', 'e', 's', ' ', 'O', 'n', ' ', 'T', 'h', 'e', ' ', 'R', 'a', 'n', 'g', 'e', 0);}
+if (mission == 92)
+{setshort(0x08e90bd8, 1, 'P', 'u', 'r', 'p', 'l', 'e', ' ', 'H', 'a', 'z', 'e', 0);}
+if (mission == 93)
+{setshort(0x08e90bd8, 1, 'F', 'a', 'r', 'e', 'w', 'e', 'l', 'l', ' ', 'T', 'o', ' ', 'A', 'r', 'm', 's', 0);}
+if (mission == 94)
+{setshort(0x08e90bd8, 1, 'S', 't', 'e', 'a', 'l', ' ', 'T', 'h', 'e', ' ', 'D', 'e', 'a', 'l', 0);}
+if (mission == 95)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'E', 'x', 'c', 'h', 'a', 'n', 'g', 'e', 0);}
+if (mission == 96)
+{setshort(0x08e90bd8, 1, 'D', 'o', 'm', 'o', ' ', 'A', 'r', 'i', 'g', 'a', 't', 'o', ' ', 'D', 'o', 'm', 'e', 's', 't', 'o', 'b', 'o', 't', 'o', 0);}
+if (mission == 97)
+{setshort(0x08e90bd8, 1, 'O', 'v', 'e', 'r', ' ', 'T', 'h', 'e', ' ', 'T', 'o', 'p', 0);}
+if (mission == 98)
+{setshort(0x08e90bd8, 1, 'T', 'h', 'e', ' ', 'L', 'a', 's', 't', ' ', 'S', 't', 'a', 'n', 'd', 0);}
+if (mission >= 99)
+{setshort(0x08e90bd8, 1, '1', 's', 't', ' ', 'M', 'i', 's', 's', 'i', 'o', 'n', 0);}
+}
+setchar(0x9F932D8, mission);
+
+#cheat Gang Peds hate you V2
+player = getint(0x08bc8170);
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 63 || ID == 49 || ID == 33 || ID == 27 || ID == 78 || ID == 48 || ID == 82 || ID == 52 || ID == 127 || ID == 130 || ID == 88 || ID == 41 || ID == 18 || ID == 46 || ID == 58 || ID == 65 || ID == 26 || ID == 67 || ID == 36 || ID == 40 || ID == 68 || ID == 37 || ID == 19 || ID == 53 || ID == 59 || ID == 54 || ID == 62 || ID == 44 || ID == 22 || ID == 74 || ID == 23 || ID == 75 || ID == 123){
+if(p != player)
+dx = getfloat(pplayer+0x30) - getfloat(p+0x30);
+dy = getfloat(pplayer+0x34) - getfloat(p+0x34);
+dx = getfloat(p+0x30) - getfloat(pplayer+0x30);
+dy = getfloat(p+0x34) - getfloat(pplayer+0x34);
+if(sqrt(dx*dx) < 2 && sqrt(dy*dy) < 2){
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Tank to Truck
+for(admiralpcar=0x098edcc0; admiralpcar <= 0x099019a0; admiralpcar+=0x820) {
+if(getshort(admiralpcar+0x56) == 246){
+if(admiralpcar != pcar)
+setchar(admiralpcar + 0x56, 218);}}

@@ -1,0 +1,67 @@
+#cheat Tow Objects
+setfloat(0x8bc8684, 3);
+setchar(0x9F932D8, 35);
+if(buttons & CTRL_UP){
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);}
+static Marker;
+X = -782.42;
+Y = 922.57;
+if(!Marker){
+for(rot = 0;rot<360;rot += 10.0)
+Marker = 1;}
+checkx = X-getfloat(pobj+0x30);
+checky = Y-getfloat(pobj+0x34);
+if(sqrt(checkx*checkx+checky*checky)<2){
+setfloat(pobj + 0x030, playerx);
+setfloat(pobj + 0x034, playery);
+setfloat(pobj + 0x038, playerz);}
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+static start;
+if (!start){
+pobject = 7313;
+start = 1;
+money = getint(0x08E81290);}
+setint(0x08bde55c, money, money);
+setint(0x08bde55c, pobject, pobject);
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1;}
+if (buttons & CTRL_LTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-100;}
+if (buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+100;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_LEFT){
+pobject = pobject-1000;}
+if (buttons & CTRL_LTRIGGER && buttons & CTRL_RTRIGGER && pressfast & CTRL_RIGHT){
+pobject = pobject+1000;}
+ptow = getint(0x0994f460);
+check = getshort(ptow+0x56);
+if(pcar && buttons & CTRL_CIRCLE && ptow && check && check == 7350 || check == 7353 || check == 7392){
+setshort(ptow+0x56, pobject);}
+
+#cheat Tow Objects (No Id Changing Version)
+ptow = getint(0x0994f460);
+check = getshort(ptow+0x56);
+setchar(0x9F932D8, 35);
+if(buttons & CTRL_UP){
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);}
+static Marker;
+X = -782.42;
+Y = 922.57;
+if(!Marker){
+for(rot = 0;rot<360;rot += 10.0)
+Marker = 1;}
+checkx = X-getfloat(pobj+0x30);
+checky = Y-getfloat(pobj+0x34);
+if(sqrt(checkx*checkx+checky*checky)<2){
+setfloat(pobj + 0x030, playerx);
+setfloat(pobj + 0x034, playery);
+setfloat(pobj + 0x038, playerz);}
+if(ptow && check && check == 7350 || check == 7353 || check == 7392){
+setshort(ptow+0x56, 450);}

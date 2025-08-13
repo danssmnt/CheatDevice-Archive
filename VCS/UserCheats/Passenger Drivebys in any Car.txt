@@ -1,0 +1,12 @@
+#cheat Get in the Passenger seat of a car
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);}
+
+#cheat Position Reset
+sethex(0x098B52F4, 00);
+
+#cheat indeflatable tires
+setshort(pcar+0x3b6, 0, 0);
+setshort(pcar+0x434, 0);
+

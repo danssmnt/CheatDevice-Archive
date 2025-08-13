@@ -1,0 +1,37 @@
+// danssmnt: Micsuit was my old name, this cheat was made in 10th Feb. 2023 (iirc)
+
+#cheat Water Game
+
+WaterLevelAddr = 0x96C96B0;
+WaterLevelFloat = getfloat(WaterLevelAddr);
+HourAddr = 0x08BB3B40; 
+static WaterRise;
+static Hour;
+
+if (!Hour) {
+	Hour = true;
+	GameHours = 0;
+}
+
+if (GameHours != getchar(HourAddr)) { 
+	GameHours = getchar(HourAddr); 
+	WaterRise = true;
+}
+
+
+if (WaterRise) {
+	WaterLevelFloat = WaterLevelFloat + 1.0;
+	setfloat(WaterLevelAddr, WaterLevelFloat);
+	setshort(0x08e90bd8, 1, 'W', 'a', 't', 'e', 'r', ' ', 'L', 'e', 'v', 'e', 'l', ' ', 'r', 'o', 's', 'e', ' ', 'b', 'y', ' ','~', 'h', '~', '1', '~', 'w', '~', '!');
+
+	WaterRise = false;
+}
+
+if (getchar(0x954A000) != 0)
+{
+	for (p = 0x9549D80; p < 0x954E580; p += 4)
+		setint(p, 0);
+}
+
+#off
+setfloat(WaterLevelAddr,  6);

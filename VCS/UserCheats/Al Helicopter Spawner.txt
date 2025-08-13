@@ -1,0 +1,372 @@
+#cheat AI Helicopter Script
+setint(0x08C739B0, 207);
+setint(0x08C73A70, 207);
+setint(0x08C73B30, 207);
+static spawn;
+static time;
+static paivehicle;
+static menu;
+if (!menu)
+{
+menu = 0;
+}
+static helitype;
+if (!helitype)
+{
+helitype = 1;
+}
+choices = 2;
+static showmenu;
+if (!showmenu)
+{
+showmenu = 1;
+setchar(0x08E937B5, 0x01);
+}
+if (showmenu == 2)
+{
+setchar(0x08E93604, 0x00);
+}
+if (showmenu == 1)
+{
+setchar(0x08E93604, 0x01);
+if(press & CTRL_DOWN && menu < 1)
+{
+menu++;
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+}
+if (press & CTRL_UP && menu > 0)
+{
+menu--;
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+}
+setshort(0x08E92FFC, '~', 'b', '~', '-', ' ', 'H', 'e', 'l', 'i', 'c', 'o', 'p', 't', 'e', 'r', ' ', 'A', 'I', ' ', 'T', 'e', 's', 't', ' ', '-', '~', 'w', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC, '~', 'b', '~', '-', ' ', 'H', 'e', 'l', 'i', 'c', 'o', 'p', 't', 'e', 'r', ' ', 'A', 'I', ' ', 'T', 'e', 's', 't', ' ', '-', '~', 'w', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC, '~', 'b', '~', '-', ' ', 'H', 'e', 'l', 'i', 'c', 'o', 'p', 't', 'e', 'r', ' ', 'A', 'I', ' ', 'T', 'e', 's', 't', ' ', '-', '~', 'w', '~', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+if (menu == 0)
+{
+if (helitype > 1 && press & CTRL_LEFT)
+{
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+helitype = helitype - 1;
+}
+if (helitype < 10 && press & CTRL_RIGHT)
+{
+setchar(0x08E93604, 0x00);
+setchar(0x08E937B5, 0x01);
+helitype = helitype + 1;
+}
+if (helitype == 1)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+spawnid = 173;
+}
+else if (helitype == 2)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ');
+spawnid = 188;
+}
+else if (helitype == 3)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ');
+spawnid = 189;
+}
+else if (helitype == 4)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+spawnid = 213;
+}
+else if (helitype == 5)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ');
+spawnid = 260;
+}
+else if (helitype == 6)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k');
+spawnid = 261;
+}
+else if (helitype == 7)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+spawnid = 262;
+}
+else if (helitype == 8)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ');
+spawnid = 263;
+}
+else if (helitype == 9)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+spawnid = 275;
+}
+else if (helitype == 10)
+{
+setshort(0x08E92FFC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, '>', 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ');
+spawnid = 279;
+}
+}
+if (menu == 1)
+{
+setshort(0x08E92FFC + 172, '>', 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 172, '>', 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 172, '>', 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+if (spawn != 2 && press & CTRL_CROSS)
+{
+setchar(0x08E937B5, 0x01);
+spawn = 1;
+showmenu = 2;
+}
+}
+}
+if (menu != 0)
+{
+if (helitype == 1)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'L', 'i', 't', 't', 'l', 'e', ' ', 'W', 'i', 'l', 'l', 'i', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 2)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'r', 'm', 'a', 'd', 'i', 'l', 'l', 'o', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 3)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'A', 'i', 'r', ' ', 'A', 'm', 'b', 'u', 'l', 'a', 'n', 'c', 'e', ' ', ' ', ' ');
+}
+else if (helitype == 4)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 5)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'N', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 6)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'P', 'o', 'l', 'i', 'c', 'e', ' ', 'M', 'a', 'v', 'e', 'r', 'i', 'c', 'k', ' ');
+}
+else if (helitype == 7)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 8)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'S', 'e', 'a', ' ', 'S', 'p', 'a', 'r', 'r', 'o', 'w', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 9)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'H', 'u', 'n', 't', 'e', 'r', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+else if (helitype == 10)
+{
+setshort(0x08E92FFC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 92, 'T', 'y', 'p', 'e', ':', ' ', 'V', 'C', 'P', 'D', ' ', 'C', 'h', 'o', 'p', 'p', 'e', 'r', ' ', ' ', ' ', ' ');
+}
+}
+if (menu != 1)
+{
+setshort(0x08E92FFC + 172, 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E931FC + 172, 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+setshort(0x08E933FC + 172, 'S', 'p', 'a', 'w', 'n', ' ', 's', 'e', 'l', 'e', 'c', 't', 'e', 'd', ' ', 't', 'y', 'p', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+}
+if (spawn == 1)
+{
+time++;
+if (time <= 50)
+{
+static counter;
+vspawn = 0x08E82CA0;
+setint(vspawn, spawnid);
+xcoord = getfloat(pplayer + 0x30) + 10;
+ycoord = getfloat(pplayer + 0x34) + 10;
+zcoord = getfloat(pplayer + 0x38);
+setfloat(vspawn + 0x04, xcoord, ycoord, zcoord, 180);
+if (counter++ % 30 == 0)
+{
+for (p = 0x098EDCC0; p <= 0x099019A0; p += 0x0820)
+{
+checkid = getshort(p + 0x56);
+if (checkid == spawnid)
+{
+setchar(p + 0x0267, 0x75);
+}
+}
+}
+}
+for (i = 0; 0x098B4A40 + i <= 0x098ECF90; i += 0x0D10)
+{
+copid = getshort(0x098B4A40 + i + 0x56);
+if (copid == 8 && getint(0x098B4A40 + i + 0x0484))
+{
+setfloat(0x098B4A40 + i + 0x30, xcoord - 5, ycoord, zcoord + 1);
+paivehicle = getint(0x098B4A40 + i + 0x0484);
+}
+}
+if (time >= 51 && time <= 100)
+{
+for (p2 = 0x098EDCC0; p2 <= 0x099019A0; p2 += 0x0820)
+{
+setchar(p2 + 0x0267, 0x44);
+}
+}
+if (time >= 101)
+{
+spawn = 2;
+time = 0;
+}
+}
+static movementtimer;
+currenttime = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+if (!movementtimer)
+{
+movementtimer = 15;
+time2 = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+}
+if (currenttime - time2 >= 1)
+{
+movementtimer --;
+time2 = getchar(0x08BB3B40) * 60 + getchar(0x08BB3B41);
+}
+if (movementtimer <= 0)
+{
+static move;
+if (move != 2)
+{
+move = 1;
+}
+}
+if (move == 1)
+{
+static anothertimer;
+if (!anothertimer)
+{
+anothertimer = 0;
+}
+anothertimer++;
+if (anothertimer >= 2)
+{
+selectobject(paivehicle);
+if (getfloat(paivehicle + 0x027C) > 0.0)
+{
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x30) < (getfloat(pplayer + 0x30) + 10))
+{
+setfloat(paivehicle + 0x30, getfloat(paivehicle + 0x30) + 0.1);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x30) > (getfloat(pplayer + 0x30) + 10))
+{
+setfloat(paivehicle + 0x30, getfloat(paivehicle + 0x30) - 0.1);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x34) < (getfloat(pplayer + 0x34) + 10))
+{
+setfloat(paivehicle + 0x34, getfloat(paivehicle + 0x34) + 0.1);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x34) > (getfloat(pplayer + 0x34) + 10))
+{
+setfloat(paivehicle + 0x34, getfloat(paivehicle + 0x34) - 0.1);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) < (getfloat(pplayer + 0x38) + 8))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) + 0.05);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) >= (getfloat(pplayer + 0x38) + 8) && getfloat(paivehicle + 0x38) <= (getfloat(pplayer + 0x38) + 10))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) + 0.001);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) > (getfloat(pplayer + 0x38) + 12))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) - 0.05);
+}
+if (!getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) <= (getfloat(pplayer + 0x38) + 10) && getfloat(paivehicle + 0x38) >= (getfloat(pplayer + 0x38) + 8))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) - 0.001);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x30) < (getfloat(pplayer + 0x30) + 10))
+{
+setfloat(paivehicle + 0x30, getfloat(paivehicle + 0x30) + 0.5);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x30) > (getfloat(pplayer + 0x30) + 10))
+{
+setfloat(paivehicle + 0x30, getfloat(paivehicle + 0x30) - 0.5);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x34) < (getfloat(pplayer + 0x34) + 10))
+{
+setfloat(paivehicle + 0x34, getfloat(paivehicle + 0x34) + 0.5);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x34) > (getfloat(pplayer + 0x34) + 10))
+{
+setfloat(paivehicle + 0x34, getfloat(paivehicle + 0x34) - 0.5);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) < (getfloat(pplayer + 0x38) + 8))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) + 0.1);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) >= (getfloat(pplayer + 0x38) + 8) && getfloat(paivehicle + 0x38) <= (getfloat(pplayer + 0x38) + 10))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) + 0.005);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) > (getfloat(pplayer + 0x38) + 12))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) - 0.1);
+}
+if (getint(pplayer + 0x0480) && getfloat(paivehicle + 0x38) <= (getfloat(pplayer + 0x38) + 10) && getfloat(paivehicle + 0x38) >= (getfloat(pplayer + 0x38) + 8))
+{
+setfloat(paivehicle + 0x38, getfloat(paivehicle + 0x38) - 0.005);
+}
+}
+propagateobject();
+anothertimer = 0;
+}
+if (getfloat(paivehicle + 0x027C) <= 0.0)
+{
+menu = showmenu = spawn = time = counter = paivehicle = movementtimer = move = anothertimer = 0;
+off();
+}
+}
+#off
+setfloat(paivehicle + 0x027C, 0.0);
+menu = showmenu = spawn = time = counter = paivehicle = movementtimer = move = anothertimer = 0;
+
+
+

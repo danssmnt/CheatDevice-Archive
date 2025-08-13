@@ -1,0 +1,86 @@
+#cheat GhostRider
+pspawn = 0x08E81290;  
+setint(pspawn,    231);  
+setfloat(pspawn + 4,    -1041.73,    -761.80,    11.57,    90);
+pspawn += 0x30;
+setchar(0x08be3a20,  1);
+setfloat(0x08be3a30,  getfloat(pobj+0x30),  getfloat(pobj+0x34),  
+
+getfloat(pobj+0x38));
+setchar(0x08be3a20,  1);
+setfloat(0x08be3a30,  getfloat(pcar+0x30),  getfloat(pcar+0x34),  
+
+getfloat(pcar+0x38));
+setchar(0x9569b94,  0xFF,  0x00,  0x00);
+setchar(pcar+0x224, 0xFF, 0x00, 0x00);
+setchar(pcar+0x228, 0xFF, 0x00, 0x00);
+setshort(pcar+0x3b6,  0,  0);
+R = 255;
+G = 80;
+B = 0;
+for(neon=0;neon<16;neon++)
+{setchar(0x097272d0+4*neon, R, G, B);}
+static rotation;
+if (rotation == 0)
+{
+rotation = 900;
+}
+spin = tan(rotation);
+setfloat(pcar + 0x644,  spin,  spin,  spin,  spin);
+rotation = rotation - 1;
+if (rotation == 1)
+{rotation = 900;}
+
+
+
+
+if (buttons & CTRL_CROSS && !(buttons & CTRL_CIRCLE)) {
+
+speed = sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar +
+
+0x144) * getfloat(pcar + 0x144));
+
+if(speed<1.8) {
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.9)
+
+setfloat(pcar+0x140,  0,  0);
+
+max speed for NOS accelerate
+if(speed<1.8);
+setfloat(pcar+0x140,  getfloat(pcar+0x140)-getfloat(pcar+0x4)*0.005);
+setfloat(pcar+0x144,  getfloat(pcar+0x144)+getfloat(pcar)*0.005);
+}
+}
+//Power Brake if vehicle is on ground
+if(buttons & CTRL_SQUARE && getshort(pcar+0x1c8)==0.5)
+
+setfloat(pcar+0x140,  0,  0);
+
+
+#cheat Mad Attack
+//made with Button Cheat Maker by DDM
+//Credits go to DDM (Durka Durka Mahn)
+if(buttons & CTRL_CIRCLE)
+{
+setchar(0x08be3a20, 1); setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+}
+
+#cheat teleport to and back V0.1
+//My First Cheat Created For VCS
+//Created By Emmet Mc Poland (emcp)
+if(press & CTRL_UP && press & CTRL_RTRIGGER)
+{
+x = getfloat(pplayer + 0x30);
+y = getfloat(pplayer + 0x34);
+z = getfloat(pplayer + 0x38);
+teleport(-711.64,   -1180.96,  7.0);
+}
+if(press & CTRL_DOWN && press & CTRL_RTRIGGER)
+{
+teleport( x,   y,  z);
+}

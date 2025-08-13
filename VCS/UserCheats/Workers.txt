@@ -1,0 +1,536 @@
+#cheat Infinite Ammo for all Peds USE THIS FIRST v2
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 3 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10) {
+if(p != player)
+setint(p + 0x5d8,   9999);
+setint(p + 0x5f4,   9999);
+setint(p + 0x610,   9999);
+setint(p + 0x5bc,   9999);
+setint(p + 0x62c,   9999);
+setint(p + 0x648,   9999);
+setint(p + 0x664,   9999);
+setint(p + 0x680,   9999);}}
+#cheat Extreme Rapid Fire
+if(buttons&CTRL_CIRCLE){
+static timer;
+if(timer % 1 == 0)
+setint(pplayer + 0x000008B4,  12);}
+timer++;
+if(timer == 1)
+timer = 0;
+#cheat Worker really hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 50 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really hate you (FORCED)
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 1 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat 1000HP i
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 1 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setfloat(p+0x4E4, 1000);}}}
+#cheat Super LOL
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setfloat(sub+0x44, 0.28, 0.28, 0.28);}
+#cheat LOL
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setfloat(sub+0x44, 0.3, 0.3, 0.3);}
+#cheat Demonic mode
+setshort(0x08BF81FE, 'I', ' ', 'G', 'o', 'n', 'n', 'a', ' ', 'k', 'i', 'l', 'l', ' ', 'y', 'o', 'u', '!', 0);
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)-0.1);
+setchar(0x08BA1D70, 0x090);
+setchar(0x08BA1D71, 0x05C);
+setchar(0x08BA1D72, 0x08C);
+setchar(0x08BA1D73, 0x09);
+setchar(0x8BC8984,  0x08);
+setchar(0x08BB3B5B, 0x5f);
+setchar(0x8BC8984, 0x0c);
+setchar(0x8BC8984,  0x08);
+setchar(pplayer + 0x000001CB, 8);
+setfloat(pcar+0x27C, 0.0);
+setchar(0x08be3a20, 1);
+setfloat(0x08be3a30, getfloat(pobj+0x30), getfloat(pobj+0x34), getfloat(pobj+0x38));
+setchar(0x08b8eb90, 0x00, 0x00, 0x00, 0x00);
+setchar(0x08b8eb8e, 0xff, 0x00, 0x00, 0x00, 0xff);
+setchar(0x08b8eb88, 0x00, 0x00, 0xff, 0xff);
+if(getchar(pplayer + 0x38) <= 6 && getchar(pplayer + 0x38) >= -50){
+setchar(0x08BE3A20, 1);
+setfloat(0x08BE3A30, getfloat(pobj + 0x30), getfloat(pobj + 0x34), getfloat(pobj + 0x38));
+setfloat(pplayer + 0x4E4, 0);
+setfloat(pplayer + 0x4E4, 0);}
+if(pcar && getchar(pcar + 0x38) <= 6 && getchar(pcar + 0x38) >= -50){
+setfloat(pcar + 0x27C, 0x0);
+sethex(pcar + 0x4A, 79);
+setchar(0x08BE3A20, 1);
+setfloat(0x08BE3A30, getfloat(pobj + 0x30), getfloat(pobj + 0x34), getfloat(pobj + 0x38));
+setfloat(pplayer + 0x4E4, 0);}
+else
+if(pcar){
+explosion=0x08BBBD50;
+setchar(explosion, 0xA);
+setfloat(explosion+0x10, getfloat(pcar+0x30), getfloat(pcar+0x34), getfloat(pcar+0x38));
+setint(explosion+0x28, pobj);
+setfloat(explosion+0x20, 5);
+setfloat(explosion+0x1c, 1);
+setchar(explosion+0x30, 0x30, 0xe4, 0x31, 0x4A, 0xf0);
+setchar(explosion+0x35, 0x1);
+setchar(explosion+0x3D, 0x1);
+setshort(explosion+0x42, 0x4316);}
+if(buttons & CTRL_SELECT){
+setshort(0x08e90DD8, 1, 'G', 'o', 't', 'c', 'h', 'a', '!',0);
+setchar(pplayer+0x8B4, 0x41);}
+#cheat HP
+setfloat(pplayer + 0x4E4, 2000);
+#cheat UP HP VIC
+setfloat(pplayer+0x4e4, getfloat(pplayer+0x4e4)+2);
+setint(pplayer+0x000004E4)<2000);
+#cheat HP like vc & 3
+static hp;
+if(!hp) 
+hp = getint(0x08bde560);
+vc = getint(pplayer + 0x4e4);
+setint(0x08bde55c, ((vc-250)/750)*100, ((vc-250)/750)*100); 
+setchar(0x8BAEDB8, '%', 'd', 0); 
+setchar(0x8BAEDC0, '%', 'd', 0);
+money = getint(0x08bde560);
+#off
+setint(0x08bde55c, money, money);
+setchar(0x8BAEDB8, '%', '0', '8', 'd', '$', 0);
+setchar(0x8BAEDC0, '$', '%', '0', '8', 'd', 0);
+#cheat Easy //
+
+#cheat Worker really Pistol hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5CC, 0x13);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x03);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Gun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x604, 0x19);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Small Gun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x604, 0x18);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Bullshoot hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x604, 0x1A);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Normal //
+#cheat Worker really Gun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x604, 0x19);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Hard //
+
+#cheat Worker really AK47 hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x620, 0x1D);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x06);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Big Gun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x620, 0x1C);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x06);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Flamethrower hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x63C, 0x21);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Sniper hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x658, 0x1E);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x08);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Tear Gas hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5B0, 0x10);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Equalizer hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5CC, 0x14);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x03);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really Shotgun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5E8, 0x15);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x04);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Worker really SMG hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x604, 0x1B);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x05);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+
+#cheat Impossible //
+#cheat Worker really Grenade hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5B0, 0xC);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Grenade2 hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5B0, 0xD);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Mines hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5B0, 0xE);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Molotov hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5B0, 0x11);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x02);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Spaz-12 hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5E8, 0x16);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x04);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Big Shotgun hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x5E8, 0x17);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x04);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Rocket Launcher hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x63C, 0x20);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really M294 hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x63C, 0x22);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really MINIGUN! hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x63C, 0x23);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x07);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}
+#cheat Worker really Laser hate you
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40;
+p <= 0x098ecf90;
+p+=0xd10){
+ID = getshort(p + 0x56);
+if(ID == 34){
+if(p != player)
+setchar(p + 0x658, 0x1F);
+setchar(p + 0x87c, 0x1e);
+setint(p + 0x648, 1000);
+setchar(p + 0x789, 0x08);
+setchar(p + 0x87c, 0x1e);
+setchar(p + 0x894, 0x8);
+setint(p + 0x890, pplayer);}}}

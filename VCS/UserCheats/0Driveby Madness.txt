@@ -1,0 +1,21 @@
+#cheat Driveby Mode
+ptouch = getint(pplayer+0x150);
+static yourcar;
+if(ptouch&&!yourcar){
+yourcar=ptouch;}
+if (yourcar){
+x = getfloat(yourcar+0x30);
+y = getfloat(yourcar+0x34);
+z = getfloat(yourcar+0x38);
+setfloat(pplayer+0x30, x);
+setfloat(pplayer+0x34, y);
+setfloat(pplayer+0x38, z+1);
+playerhealth = getfloat(pplayer+0x4e4);
+carhealth = getfloat(yourcar+0x4e4);
+if(playerhealth == 0){
+carhealth = 0;
+yourcar = 0;}
+if(carhealth == 0){
+yourcar = 0;}}
+#off
+yourcar = 0;

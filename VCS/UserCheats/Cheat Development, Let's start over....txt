@@ -1,0 +1,419 @@
+#cheat The glorious Age of the Local Paper
+setchar(0x08E90BD5, 0x06); // Changes "Little Haiti" to "age of local paper"
+setchar(0x08E90BD7, 0x09); // Makes the location name appear
+
+#cheat Secret Message
+setchar(0x08E90BD5, 0x06);
+setchar(0x08E90BD7, 0x09);
+off#
+
+#cheat test teleport
+if(press & CTRL_CROSS){
+teleport(163.67,1490.13,21.80);
+} 
+
+#cheat Enterable VCPD HQ
+X1 = 396.61;
+Y1 = -472.80;
+Z1 = 12.33;
+X2 = 373.06;
+Y2 = -481.25;
+Z2 = 21.57;
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 1 ){
+setfloat(pobj+0x30, X2+1, Y2+1, Z2+1);}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 1 ){
+setfloat(pobj+0x30, X1+1, Y1+1, Z1+1);}
+static mark;
+mark = 0x8c62EA0;
+if(getfloat(pobj+0x38) <= 16.00){
+setfloat(mark, 396.61, -472.80, 12.33);}
+if(getfloat(pobj+0x38) >= 16.00){
+setfloat(mark, 373.06, -481.25, 21.57);}
+
+#cheat Disco Vehicle
+// By vettefan88
+setfloat(pcar+0x224,  getfloat(pcar+0x20),  getfloat(pcar+0x24));
+
+#cheat Red Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static R;
+R = getchar(mark+0x2c);
+R++;
+setchar(mark+0x2c, R);
+
+#cheat Green Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static G;
+G = getchar(mark+0x2d);
+G++;
+setchar(mark+0x2d, G);
+
+#cheat Blue Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static B;
+B = getchar(mark+0x2e);
+B++;
+setchar(mark+0x2e, B);
+
+#cheat Change the number of people that you have killed to 999999999
+setint(0x08BB41B4, 99999999);
+
+
+#cheat change the number of necks you have broken to 99999
+setint(0x08BB4208, 99999);
+
+#cheat Orange Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 106, 0);
+
+#cheat Violet Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 127, 0, 55);
+
+#cheat Pink Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 220);
+
+#cheat Yellow Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 216, 0);
+
+#cheat Blue Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 255);
+
+#cheat Green Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 255, 0);
+
+#cheat Red Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 0);
+
+#cheat Black Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+
+#cheat White Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Standard Marker Color
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 30, 255, 255);
+
+#cheat Black Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+
+#cheat White Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Yellow Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 216, 0);
+
+#cheat Entrance Marker Placement
+static mark;
+mark = 0x8c62EA0;
+setfloat(mark,getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38)+1);
+
+#cheat Random Marker Color that I have just put together. 
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 170, 25, 205);
+
+#cheat Enterable VCPD HQ
+X1 = 396.61;
+Y1 = -472.80;
+Z1 = 12.33;
+X2 = 373.06;
+Y2 = -481.25;
+Z2 = 21.57;
+checkx1 = X1 - getfloat(pobj+0x30);
+checky1 = Y1 - getfloat(pobj+0x34);
+checkx2 = X2 - getfloat(pobj+0x30);
+checky2 = Y2 - getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1) < 1 ){
+setfloat(pobj+0x30, X2+1, Y2+1, Z2+1);}
+if(sqrt(checkx2*checkx2+checky2*checky2) < 1 ){
+setfloat(pobj+0x30, X1+1, Y1+1, Z1+1);}
+static mark;
+mark = 0x8c62EA0;
+if(getfloat(pobj+0x38) <= 16.00){
+setfloat(mark, 396.61, -472.80, 12.33);}
+if(getfloat(pobj+0x38) >= 16.00){
+setfloat(mark, 373.06, -481.25, 21.57);}
+
+#cheat Disco Vehicle
+// By vettefan88
+setfloat(pcar+0x224,  getfloat(pcar+0x20),  getfloat(pcar+0x24));
+
+#cheat Red Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static R;
+R = getchar(mark+0x2c);
+R++;
+setchar(mark+0x2c, R);
+
+#cheat Green Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static G;
+G = getchar(mark+0x2d);
+G++;
+setchar(mark+0x2d, G);
+
+#cheat Blue Disco Markers
+mark = 0x8c62EA0;
+static counter;
+static B;
+B = getchar(mark+0x2e);
+B++;
+setchar(mark+0x2e, B);
+
+#cheat Change the number of people that you have killed to 999999999
+setint(0x08BB41B4, 99999999);
+
+
+#cheat change the number of necks you have broken to 99999
+setint(0x08BB4208, 99999);
+
+#cheat Save/Loaded Cheated
+//If you have cheated before, it will teleport you to Leaf Links. If you haven't, it will save that it has.
+if(getint(0x08BB41B4) == 0xFFFFFFFF){
+    teleport(0,0,0);
+} else {
+    setint(0x08BB41B4, 0xFFFFFFFF);
+    off();
+
+#cheat Savable Teleport (L+[] to Save, L+O to Tele)
+//Creates a savable teleport. You can save your game after using this cheat to save the
+//location to memory.
+if(press & CTRL_CIRCLE && buttons & CTRL_LTRIGGER && getint(0x08BB41C0) == 0xFFFFFFFF)
+setfloat(pobj+0x30,getfloat(0x08BB41C4),getfloat(0x08BB41C8),getfloat(0x08BB41CC));
+if(press & CTRL_SQUARE && buttons & CTRL_LTRIGGER){
+setint(0x08BB41C0, 0xFFFFFFFF);
+setfloat(0x08BB41C4, getfloat(pobj + 0x30));
+setfloat(0x08BB41C8, getfloat(pobj + 0x34));
+setfloat(0x08BB41CC, getfloat(pobj + 0x38));
+}
+
+#cheat Set Longest insane jump height to zero
+setchar(0x8bb3cf8, 0x0);
+setchar(0x8bb3cf9, 0x0);
+
+#cheat Yellow Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 216, 0);
+
+#cheat Black Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+
+#cheat White Markers
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Orange Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 106, 0);
+
+#cheat Violet Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 127, 0, 55);
+
+#cheat Pink Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 220);
+
+#cheat Yellow Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 216, 0);
+
+#cheat Blue Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 255);
+
+#cheat Green Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 255, 0);
+
+#cheat Red Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 0);
+
+#cheat Black Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+
+#cheat White Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Standard Marker Color
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 30, 255, 255);
+
+#cheat Entrance Marker Placement
+static mark;
+mark = 0x8c62EA0;
+setfloat(mark,getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38)+1);
+
+#cheat Random Marker Color that I have just put together. 
+static mark;
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 170, 25, 205);
+
+#cheat Marker on Vic
+mark = 0x8c62EA0;
+setfloat(mark,getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38)+1);
+
+#cheat Phonejob
+state = getchar(0x09f69054);
+mission = 0;
+evidence = 0;
+mark = 0x08c62EA0;
+moveto(275.24,-694.31,9.42);  object(0x01C1,0,0,198);
+move(-1.43,0.46,0.00);  object(0x01C1,0,0,278);
+move(0.61,-0.26,1.20);  object(0x01C1,180,0,341);
+move(-2.06,0.40,-1.40);  object(0x01BE,180,0,341);
+move(-1.18,0.22,0.00);  object(0x01BD,180,0,341);
+pspawn = 0x08E81290;   
+setint(pspawn,  213);    
+setfloat(pspawn + 4,  279.31, -704.24, 10.32,  270);
+pped = getint(0x08BA1D70);
+static yourped;
+if(mission == 0&&pped&&!yourped&&press & CTRL_UP){
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', '~', 'w', '~', 0);
+yourped=pped;}
+if(yourped){
+health = getfloat(yourped+0x4e4);}
+if(mission == 0){
+setshort(0x08e90bd8, 1, 'G', 'e', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'P', 'a',
+'y', 'p', 'h', 'o', 'n', 'e', ' ', 'n', 'e', 'x', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'V', 'C', 'P', 'D', ' ', 'H', 'Q', ' ', 'i', 'n', ' ', 'W', 'a', 's', 'h', 'i', 'n', 'g', 't', 'o', 'n', ' ', 'B', 'e', 'a', 'c', 'h', ' ', '!');
+setchar(mark+0x2c, 0, 0, 255);
+setfloat(mark, 252.76, -651.29, 10.04);}
+static Marker1;
+X1 = 252.76;
+Y1 = -651.29;
+Z1 = 10.04;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pplayer+0x30);
+checky1 = Y1-getfloat(pplayer+0x34);
+checkz1 = Z1-getfloat(pplayer+0x38);
+if(yourped&&sqrt(checkx1*checkx1+checky1*checky1+checkz1*checkz1)<1){
+setint(pplayer+0x664, 0xffffff);
+setchar(pplayer+0x658, 0x1E);
+setchar(pplayer+0x789, 0x08);
+setfloat(yourped+0x30, 272.76);
+setfloat(yourped+0x34, -695.01);
+setfloat(yourped+0x38, 10.04);
+setint(yourped+0x648, 0x00ffffff);
+setchar(yourped+0x63C, 0x22);
+setchar(yourped+0x789, 0x07);
+setint(yourped+0x680, 0x00ffffff);
+setchar(yourped+0x674, 0x26);}
+if(mission == 1){
+setchar(0x09f69054, 1);
+setchar(mark+0x2c, 255, 0, 0);
+setfloat(mark, getfloat(yourped+0x30), getfloat(yourped+0x34), getfloat(yourped+0x38) +
+1);
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pplayer);}
+if(yourped&&getchar(yourped+0x894) == 0x8){
+setshort(0x08e90bd8, 1, 'H', 'e', 'y', ' ', 'L', 'e', 'o', ' ', '!', ' ', 'I', ' ', 'w',
+'a', 'n', 't', ' ', 'y', 'o', 'u', ' ', 't', 'o', ' ', 'g', 'i', 'v', 'e', ' ', 't', 'h', 'i', 's', ' ', 'b', 'u', 'g', 'g', 'e', 'r', ' ', 'w', 'h', 'a', 't', ' ', 'h', 'e', ' ', 'd', 'e', 's', 'e', 'r', 'v', 'e', 's', ' ', '!');}
+if(yourped&&!getchar(yourped+0x894) == 0x8&&health == 0){
+setchar(mark+0x2c, 0, 0, 255);
+setfloat(mark, 252.76, -651.29, 10.04);
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+if(mission == 1&&yourped&&getchar(yourped+0x894) == 0x8&&health == 0){
+setfloat(mark, 0, 0, 0);
+setshort(0x08e90DD8, 1, 'G', 'o', 'o', 'd', ' ', '!', ' ', 'T', 'a', 'k', 'e', ' ', 'a', ' ', 'p', 'i', 'c', 't', 'u','r', 'e', ' ', 'o', 'f', ' ', 'h', 'i', 's', ' ', 'd', 'e', 'a', 'd', ' ', 'b','o', 'd', 'y', ' ', '!', 0);
+yourped=0;}
+camera=getchar(pplayer+0x789);
+aimx = getfloat(0x08ba1d50);
+aimy = getfloat(0x08ba1d54);
+if(yourped&&health == 0&&buttons&CTRL_RTRIGGER&&camera == 0x9&&presslow & CTRL_CIRCLE&&sqrt(aimx*aimx+aimy*aimy)<3){
+evidence = 1;}
+if(evidence == 1){
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');
+setshort(0x08E931FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');
+setshort(0x08E933FC, 'T','a','k','e',' ','t','h','e',' ','e','v','i','d','e','n','c','e',' ','t','o',' ','t','h','e',' ','P','r','i','n','t','w','o','r','k','s', ' ', '!');}
+static Printworks;
+X2 = -1055.54;
+Y2 = -272.94;
+Z2 = 11.40;
+if(!Printworks){ for(rot = 0;rot<360;rot += 6.0){
+moveto(X2+cos(rot)*2,Y2+sin(rot)*2,Z2);object(0x1d31,0,0,-rot+90);}
+Printworks = 1;}
+checkx2 = X2-getfloat(pobj+0x30);
+checky2 = Y2-getfloat(pobj+0x34);
+if(evidence == 1&&sqrt(checkx2*checkx2+checky2*checky2)<2){
+setshort(0x08e90DD8, 1, ' ', 'M', 'I', 'S', 'S', 'I', 'O', 'N', ' ', 'P', 'A',
+'S', 'S', 'E', 'D', '!', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '$', '1', '0', '0', '0', '0 ', '0', '!',0);
+setint(0x08bde55c, getint(0x08bde55c)+100000);
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+if(state == 1&&buttons & CTRL_RTRIGGER&&press & CTRL_UP){
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+evidence = 0;
+setchar(0x08E93604, 0x0);
+setchar(0x09f69054, 0);
+mission = 0;}
+#off
+evidence = 0;
+setshort(0x08e90DD8, 1, '~', 'h', '~', 'P', 'h', 'o', 'n', 'e', ' ', 'J',
+'o', 'b', ' ', 'c', 'a', 'n', 'c', 'e', 'l','e', 'd', '~',
+'w', '~', 0);
+setfloat(yourped+0x4e4, 0);
+yourped=0;
+setchar(0x08E93604, 0x0);
+setfloat(mark, 0, 0, 0);
+setchar(mark+0x2c, 30, 255, 255);
+setchar(0x09f69054, 0);
+mission = 0;}
+
+#cheat Your Car Is Goldy Chrome
+// By nerner
+setchar(pcar+0x224, 197, 179, 88);
+setchar(pcar+0x228, 197, 179, 88);
+
+#cheat Your Car Is Silvery chrome
+// By nerner
+setchar(pcar+0x224, 192, 192, 192);
+setchar(pcar+0x228, 192, 192, 192);
+

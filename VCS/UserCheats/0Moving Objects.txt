@@ -1,0 +1,167 @@
+#cheat Teleport to the Pinata Mate
+teleport(-1085.16, 320.45, 11.27);
+
+#cheat Pinata Mate
+static speed;
+static currentx;
+static currenty;
+static currentz;
+static counter;
+player = getint(0x08bc8170);
+if(counter++ % 30 == 0){
+for(p=0x098b4a40; p <= 0x098ecf90; p+=0xd10){
+if(p != player) setchar(p + 0x4c, 1);}
+for(p2=0x098edcc0; p2 <= 0x099019a0; p2+=0x820){
+if(p2 != pcar) setchar(p2 + 0x4c, 1);}}
+checkpoint1x = -1077.40;
+checkpoint1y = 312.63;
+checkpoint1z = 12.00;
+checkpoint2x = -1063.19;
+checkpoint2y = 312.05;
+checkpoint2z = 12.00;
+checkpoint3x = -1063.08;
+checkpoint3y = 334.78;
+checkpoint3z = 12.00;
+checkpoint4x = -1104.03;
+checkpoint4y = 335.52;
+checkpoint4z = 12.00;
+checkpoint5x = -1104.91;
+checkpoint5y = 320.80;
+checkpoint5z = 12.00;
+checkpoint6x = -1085.16;
+checkpoint6y = 320.45;
+checkpoint6z = 12.00;
+checkpoint7x = -1077.40;
+checkpoint7y = 312.63;
+checkpoint7z = 12.00;
+if(!currentx){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+static opp;
+if(!opp){
+moveto(-1077.40, 312.63, 12.00);
+opp = object(0x1c91,0,0,0);}
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}
+if(opp){
+d1 = currentx - getfloat(opp+0x30);
+d2 = currenty - getfloat(opp+0x34);
+d3 = currentz - getfloat(opp+0x38);}
+selectobject(opp);
+setfloat(opp + 0x30, getfloat(opp + 0x30) + d1 * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + d2 * speed);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+propagateobject();
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 2 ){
+if(currentx == checkpoint1x){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+speed = 0.01;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.01;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.01;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.01;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.01;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.01;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.01;}}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Lift into the Sky until you die !
+top = 99999.00;
+bottom = 10.00;
+xpos = -1077.40;
+ypos = 312.63;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1CA4,90,0,0);}
+else{
+selectobject(obj);
+if(state == 0&&getfloat(getint(pplayer+0xf0)+0x30) == getfloat(obj+0x30)){
+if(getfloat(obj+0x38) >= top&&buttons&CTRL_DOWN) state = 2;
+else if(buttons&CTRL_UP) state = 1;}
+if(state == 1){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) + 0.04);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(0x8bc86c0, 10);
+setfloat(0x8bc8684, 10);
+setfloat(obj + 0x38, getfloat(obj+0x38) - 0.04);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;
+
+#cheat Interactive Door Test
+moveto(-1095.99,288.11,13.26); object(0x1C99,0,0,180);
+moveto(-1096.00,299.31,13.26); object(0x1C99,0,0,180);
+static Marker1;
+X1 = -1096.00;
+Y1 = 293.71;
+if(!Marker1){
+Marker1 = 1;}
+checkx1 = X1-getfloat(pobj+0x30);
+checky1 = Y1-getfloat(pobj+0x34);
+if(sqrt(checkx1*checkx1+checky1*checky1)<5){
+setchar(0x08E93604, 0x1);
+setshort(0x08E92FFC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');
+setshort(0x08E931FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~', 'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o', ' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');
+setshort(0x08E933FC, 'P', 'r', 'e', 's', 's', ' ', '~', 'h', '~', 'U', 'p', '~',
+'w', '~', '/', '~', 'h', '~', 'D', 'o', 'w', 'n', '~', 'w', '~', ' ', 't', 'o',
+' ', 'o', 'p', 'e', 'n', '/','c', 'l', 'o', 's', 'e', ' ', 't', 'h', 'e', ' ', 'd', 'o', 'o', 'r', '!');}
+top = 15.66;
+bottom = 13.26;
+xpos = -1096.00;
+ypos = 293.71;
+static obj;
+static state;
+if(!obj){
+moveto(xpos,ypos,bottom);
+obj = object(0x1C99,0,0,180);}
+else{
+selectobject(obj);
+if(state == 0){
+if(getfloat(obj+0x38) >= top&&buttons&CTRL_DOWN&&sqrt(checkx1*checkx1+checky1*checky1)<5){ state = 2;}
+if(getfloat(obj+0x38) <=
+bottom&&buttons&CTRL_UP&&sqrt(checkx1*checkx1+checky1*checky1)<5){ state = 1;}}
+if(state == 1){
+setfloat(obj+0x38, getfloat(obj+0x38)+0.01);
+if(getfloat(obj+0x38) >= top) state = 0;}
+else if(state == 2){
+setfloat(obj+0x38, getfloat(obj+0x38)-0.01);
+if(getfloat(obj+0x38) <= bottom) state = 0;}
+propagateobject();}
+#off
+obj = state = 0;

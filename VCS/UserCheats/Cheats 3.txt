@@ -1,0 +1,65 @@
+#cheat Hydraulics
+setshort(0x08e90bd8, 1, 'P', 'r', 'e', 's', 's', ' ', 'r', 'i', 'g', 'h', 't', ' ', 't', 'o', ' ', 't', 'i', 'l', 't', ' ', 't', 'h', 'e', ' ', 'c', 'a', 'r', ' ', 'r', 'i', 'g', 'h', 't', ',', ' ', 'l', 'e', 'f', 't', ' ', 't', 'o', ' ', 't', 'i', 'l', 't', ' ', 'i', 't', ' ', 'l', 'e', 'f', 't', ',', ' ', 'u', 'p', ' ', 't', 'o', ' ', 't', 'i', 'l', 't', ' ', 'i', 't', ' ', 'f', 'o', 'r', 'w', 'a', 'r', 'd', 's', ',', ' ', 'd', 'o', 'w', 'n', ' ', 't', 'o', ' ', 't', 'i', 'l', 't', ' ', 'i', 't', ' ', 'b', 'a', 'c', 'k', 'w', 'a', 'r', 'd', 's', ',', ' ', 'H', 'o', 'l', 'd', ' ', 'R', ' ', 'a', 'n', 'd', ' ', 't', 'a', 'p', ' ', 'c', 'i', 'r', 'c', 'l', 'e', ' ', 't', 'o', ' ', 'b', 'o', 'u', 'n', 'c', 'e', '.', ' ', 'C', 'i', 'r', 'c', 'l', 'e', ' ', 'r', 'e', 's', 'e', 't', 's', ' ', 'c', 'a', 'r', '.', 0); 
+if(buttons & CTRL_LEFT){
+setchar(pcar + 0x000003B8, 0);
+setchar(pcar + 0x000003B9, 0);
+setchar(pcar + 0x000003B7, 2);
+setchar(pcar + 0x000003B6, 2);}
+if(buttons & CTRL_RIGHT){
+setchar(pcar + 0x000003B8, 2);
+setchar(pcar + 0x000003B9, 2);
+setchar(pcar + 0x000003B7, 0);
+setchar(pcar + 0x000003B6, 0);}
+if(buttons & CTRL_UP){
+setchar(pcar + 0x000003B8, 2);
+setchar(pcar + 0x000003B6, 2);
+setchar(pcar + 0x000003B7, 0);
+setchar(pcar + 0x000003B9, 0);}
+if(buttons & CTRL_DOWN){
+setchar(pcar + 0x000003B7, 2);
+setchar(pcar + 0x000003B9, 2);
+setchar(pcar + 0x000003B6, 0);
+setchar(pcar + 0x000003B8, 0);}
+if (press & CTRL_RTRIGGER){
+setchar(pcar + 0x000003B7, 2);
+setchar(pcar + 0x000003B9, 2);
+setchar(pcar + 0x000003B8, 2);
+setchar(pcar + 0x000003B6, 2);}
+if(buttons & CTRL_CIRCLE){
+setchar(pcar + 0x000003B6, 0);
+setchar(pcar + 0x000003B7, 0);
+setchar(pcar + 0x000003B9, 0);
+setchar(pcar + 0x000003B8, 0);}
+#off
+setchar(pcar + 0x000003B6, 0);
+setchar(pcar + 0x000003B7, 0);
+setchar(pcar + 0x000003B9, 0);
+setchar(pcar + 0x000003B8, 0);
+
+#cheat Voodoo Hydraulics
+setfloat(0x9632540, 0);
+setfloat(0x9632544, 0);
+if (getshort(pcar+0x56)==239){
+if (getfloat(pcar+0xD0)==1000)
+{hyd = .1;}
+if (getfloat(pcar+0xD0) == 500)
+{hyd = -.1;}
+if (buttons & CTRL_LEFT)
+{setfloat(0x9632540, -.5);}
+if (buttons & CTRL_RIGHT)
+{setfloat(0x9632540, .5);}
+if (buttons & CTRL_UP)
+{setfloat(0x9632544, 1.5);}
+if (buttons & CTRL_DOWN)
+{setfloat(0x9632544, -1.5);}
+if (press & CTRL_CIRCLE && getchar(pcar+0x136))
+{setfloat(pcar + 0x00000148, hyd);}
+if (press & CTRL_NOTE){
+if (hyd == .1)
+{setfloat(pcar+0xD0, 500);
+setfloat(pcar+0x688, .6, .6, .6, .6);
+setfloat(pcar+0x698, 1.05, 1.05, 1.05, 1.05);}
+if (hyd == -.1)
+{setfloat(pcar+0xD0, 1000);
+setfloat(pcar+0x688, .46, .46, .46, .46);
+setfloat(pcar+0x698, .81, .81, .81, .81);}}}

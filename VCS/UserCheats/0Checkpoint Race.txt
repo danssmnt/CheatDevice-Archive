@@ -1,0 +1,81 @@
+#cheat Teleport to Test Track
+teleport(266.08, -1405.06, 11.07);
+
+#cheat Test Track
+vehiclespawn = 0x08E81290;
+setint(vehiclespawn, 205);
+setfloat(vehiclespawn + 0x4, 291.65, -1414.97, 11.07, 270);
+icon = 0x08E8EFC0;
+setfloat(icon, 291.65, -1414.97, 11.07);
+setchar(icon + 0x19, 0x0E);
+moveto(289.53,-1421.75,10.27);
+object(0x1CB8,90,180,272);
+move(-2.66,0.10,0.00);
+object(0x1CB8,90,180,272);
+move(6.87,13.49,0.10);
+object(0x1CB8,90,180,90);
+move(-2.69,-0.06,0.00);
+object(0x1CB8,90,180,90);
+move(3.20,-1.16,0.00);
+object(0x1CB8,90,180,196);
+move(-0.97,-2.56,0.10);
+object(0x1CB8,90,180,196);
+move(-2.08,-8.76,-0.10);
+object(0x1CB8,90,180,196);
+move(0.73,2.51,0.00);
+object(0x1CB8,90,180,196);
+X1 = 291.65;
+Y1 = -1414.97;
+checkx1 = X1-getfloat(pobj + 0x30);
+checky1 = Y1-getfloat(pobj + 0x34);
+if(getshort(pcar + 0x56) == 205 && sqrt(checkx1*checkx1 + checky1*checky1)<2)
+{
+setshort(0x08E90DD8, 1, '~', 'h', '~', 'C', 'h', 'e', 'c', 'k', 'p', 'o', 'i', 'n', 't', ' ', 'R', 'a', 'c', 'e', '~', 'w', '~', 0);
+}
+if(getshort(pcar + 0x56) == 205)
+{
+setshort(0x08e90bd8, 1, 'G', 'e', 't', ' ', 't', 'o', ' ', 't', 'h', 'e', ' ', 'n', 'e', 'x', 't', ' ', '~', 'h', '~', 'C', 'h', 'e', 'c', 'k', 'p', 'o', 'i', 'n', 't', '~', 'w', '~', ' ', '!');
+static time;
+setshort(0x08BF81FE, 'T', 'i', 'm', 'e', ':', ' ', time, time, time, ' ', 0);
+time++;
+if(time >= 1400)
+{
+setchar(0x08E937B5, 0x01);
+}
+if(time == 1500)
+{
+setshort(0x08e90DD8, 1, 'T', 'i', 'm', 'e', ' ', 'o', 'u', 't', ' ', '!', 0);
+setchar(0x08E937B5, 0x01);
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);
+time = 0;
+setfloat(marker, 0, 0, 0);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 0, 0, 0);
+setchar(icon + 0x19, 0x07);
+teleport(playerx, playery, playerz);
+}
+marker = 0x08BF7B40;
+setfloat(marker, 321.90, -1420.41, 11.07);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+setfloat(icon, 321.90, -1420.41, 11.07);
+setchar(icon + 0x19, 0x00);
+}
+X2 = 321.90;
+Y2 = -1420.41;
+checkx2 = X2-getfloat(pobj + 0x30);
+checky2 = Y2-getfloat(pobj + 0x34);
+if(getshort(pcar + 0x56) == 205 && sqrt(checkx2*checkx2 + checky2*checky2)<2)
+setshort(0x08E90DD8, 1, '~', 'h', '~', 'Y', 'O', 'U', ''', 'R', 'E', ' ', 'W', 'I', 'N', 'N', 'E', 'R', ' ', '!', '~', 'w', '~', 0);
+playerx = getfloat(pobj + 0x030);
+playery = getfloat(pobj + 0x034);
+playerz = getfloat(pobj + 0x038);
+setfloat(marker, 0, 0, 0);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 0, 0, 0);
+setchar(icon + 0x19, 0x07);
+teleport(playerx, playery, playerz);

@@ -1,0 +1,653 @@
+#cheat Leaf Links Lovers
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i + 0x894, 0x17);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+
+#cheat Where to go ?
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x8B4, 11);}}
+off();
+
+#cheat I've fallen and I can't get up !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x8B4, 0x2D);}}
+off();
+
+#cheat Jogging Blokes
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i + 0x894, 0x19);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+
+#cheat Manhunt
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i + 0x894, 0x31);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+
+#cheat Look at that nice Car ! (Only in Car)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) {
+setchar(0x098b4a40 + i + 0x894, 0x12);
+setint(0x098b4a40 + i +0x484, pcar);
+setint(0x098b4a40 + i +0x450, pcar);}}
+off();
+
+#cheat Do I look like a Taxidriver ? (Only in Car)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) {
+setchar(0x098b4a40 + i + 0x894, 0x11);
+setint(0x098b4a40 + i +0x484, pcar);
+setint(0x098b4a40 + i +0x450, pcar);}}
+off();
+
+#cheat Come in ! Come in ! (Only in Car)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) {
+setchar(0x098b4a40 + i + 0x894, 0x21);
+setint(0x098b4a40 + i +0x484, pcar);
+setint(0x098b4a40 + i +0x450, pcar);}}
+off();
+
+#cheat Lets get ready to Fistfight !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x894, 0x8);
+setint(0x098b4a40 + i+0x890, pplayer);}}
+off();
+
+#cheat I love You !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x894, 0xC);
+setint(0x098b4a40 + i+0x890, pplayer);}}
+off();
+
+#cheat Taxi ! Taxi !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x894, 0x20);}}
+off();
+
+#cheat You are surrounded !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i+0x8B4, 0x40);}}
+off();
+
+#cheat Taken for a Ride
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer) {
+setchar(0x098b4a40 + i + 0x894, 0x17);
+setint(0x098b4a40 + i + 0x890, pplayer);}}
+off();
+
+#cheat I need to use the Phone !
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+if(0x098b4a40 + i != pplayer && !(getint(0x098b4a40 + i + 0x480)) && pcar) {
+setchar(0x098b4a40 + i +0x8B4, 0x24);}}
+off();
+
+#cheat Guys Follow You 
+setchar(0x08bacdf5, 1);
+#off
+setchar(0x08bacdf5, 0);
+
+#cheat Ladies'man Girls follow you
+static timer;
+if(timer% 50==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 16 || ID == 20 || ID == 21 || ID == 24 || ID == 28 || ID == 29 || ID == 30 || ID == 38 || ID == 42 || ID == 43 || ID == 45 || ID == 56 || ID == 60 || ID == 61 || ID == 64 || ID == 71 || ID == 73 || ID == 81 || ID == 83 || ID == 85 || ID == 86 || ID == 87 || ID == 138 || ID == 141){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0xC);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==50)
+timer=0;
+
+#cheat Ladies have guns
+static timer;
+if(timer% 50==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 16 || ID == 20 || ID == 21 || ID == 24 || ID == 28 || ID == 29 || ID == 30 || ID == 38 || ID == 42 || ID == 43 || ID == 45 || ID == 56 || ID == 60 || ID == 61 || ID == 64 || ID == 71 || ID == 73 || ID == 81 || ID == 83 || ID == 85 || ID == 86 || ID == 87 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5CC, 0x13);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x07);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+timer++;
+if(timer==50)
+timer=0;
+
+#cheat Hookers follow you
+static timer;
+if(timer%50==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 31 || ID == 50 || ID == 76 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0xC);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==50)
+timer=0;
+#cheat No girls
+static timer;
+if(timer % 50 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 16 || id == 17 || id == 20 || id == 21 || id == 24 || id == 28 || id == 29 || id == 30 || id == 38 || id == 42 || id == 43 || id == 45 || id == 56 || id == 57 || id == 60 || id == 61 || id == 64 || id == 71 || id == 73 || id == 81 || id == 83 || id == 85 || id == 86 || id == 87 || id == 138 || id == 141 )
+{
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);
+}
+}
+timer++;
+if(timer == 50)
+timer = 0;
+#cheat No Hookers
+static timer;
+if(timer % 50 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 31 || id == 50 || id == 76 )
+{
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);
+}
+}
+timer++;
+if(timer == 50)
+timer = 0;
+#cheat Goodbye
+teleport(100, 100, 124999566);
+#cheat No Gangs
+static timer;
+if(timer % 50 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 93 || id == 94 || id == 95 || id == 96 || id == 97 || id == 98 || id == 99 || id == 100 || id == 101 || id == 102 )
+{
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);
+}
+}
+timer++;
+if(timer == 50)
+timer = 0;
+#cheat Remove Cops
+static timer;
+if(timer % 50 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 8 || id == 9 || id == 10 || id == 11 || id == 119)
+{
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);
+}
+}
+timer++;
+if(timer == 50)
+timer = 0;
+
+#cheat NO TAOS!!
+static timer;
+if(timer % 25 == 0)
+for(x = 0; 0x098B4A40 + x <= 0x098ECF90; x += 0x0D10)
+{
+id = getshort(0x098B4A40 + x + 0x56);
+if(id == 15 || id == 16 || id == 17 || id == 18 || id == 19 || id == 20 || id == 21 || id == 22 || id == 23 || id == 24 || id == 25 || id == 26 || id == 27 || id == 28 || id == 29 || id == 30 || id == 31 || id == 32 || id == 33 || id == 34 || id == 36 || id == 37 || id == 38 || id == 39 || id == 40 || id == 41 || id == 42 || id == 43 || id == 44 || id == 45 || id == 46 || id == 47 || id == 48 || id == 49 || id == 50 || id == 51 || id == 52 || id == 53 || id == 54 || id == 55 || id == 56 || id == 57 || id == 58 || id == 59 || id == 60 || id == 61 || id == 62 || id == 63 || id == 64 || id == 65 || id == 66 || id == 67 || id == 68 || id == 69 || id == 70 || id == 71 || id == 72 || id == 73 || id == 74 || id == 75 || id == 76 || id == 77 || id == 78 || id == 79 || id == 80 || id == 81 || id == 82 || id == 83 || id == 84 || id == 85 || id == 86 || id == 87 || id == 88 )
+{
+setfloat(0x098B4A40 + x + 0x30, 0, 0, 0);
+}
+}
+timer++;
+if(timer == 25)
+timer = 0;
+
+#cheat Flashy and Taxi man hate you
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 14 || ID == 35){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Flashy handgun
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 14 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5CC, 0x14);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x03);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Flashy Bomb
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 14 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5B0, 0x0C);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x02);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Taxi man sword
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 35 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x594, 0x0A);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x01);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Taxi Man Rocket Launcher
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 35 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x63C, 0x20);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x07);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat paic with AK47
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 12 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x620, 0x1d);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x06);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat fireman hate you with M249
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 13 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x63C, 0x22);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x07);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat paic with Sniper L
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 12 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x658, 0x1F);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x08);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat fireman hate you with Molotov Cocktails
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 13 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5B0, 0x11);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x02);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat Marty hate you
+static timer;
+if(timer%25==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 103 || ID == 104){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==25)
+timer=0;
+
+#cheat PIG's hate you with gun
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 99 || ID == 100){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x620, 0x1C);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x06);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Cubans hate you
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 91 || ID == 92){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Cubans hold shotgun
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 91 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5E8, 0x16);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x04);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Cubans Hold SMG
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 92 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x604, 0x1B);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x05);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Golf Wars hate you
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 105 || ID == 106){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setchar(0x098b4a40+x+0x894, 0x8);
+setint(0x098b4a40+x+0x890, pplayer);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Golf Wars Hold Big Shotgun
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 105 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x5EB, 0x17);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x04);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Golf Wars Hold Flamethrower
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 106 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x63C, 0x21);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x07);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Queen girl Hold M4 Assault Rifle
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 138 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x620, 0x1C);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x06);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;
+
+#cheat Queen girl 2 Hold M249
+static timer;
+if(timer%200==0)
+for(x=0; 0x098b4a40+x<=0x098ecf90; x+=0xd10){
+ID = getshort(0x098b4a40+x+0x56);
+if(ID == 141 ){
+if(0x098b4a40+x != pplayer&&!getint(0x098b4a40+x+0x480)){
+setint(0x098b4a40+x+0x5d8, 0x00ffffff);
+setint(0x098b4a40+x+0x5f4, 0x00ffffff);
+setint(0x098b4a40+x+0x610, 0x00ffffff);
+setint(0x098b4a40+x+0x5bc, 0x00ffffff);
+setint(0x098b4a40+x+0x62c, 0x00ffffff);
+setint(0x098b4a40+x+0x648, 0x00ffffff);
+setint(0x098b4a40+x+0x664, 0x00ffffff);
+setint(0x098b4a40+x+0x680, 0x00ffffff);
+setchar(0x098b4a40+x+0x63C, 0x22);
+setchar(0x098b4a40+x+0x87c, 0x1e);
+setint(0x098b4a40+x+0x648, 1000);
+setchar(0x098b4a40+x+0x789, 0x07);
+setchar(0x098b4a40+x+0x87c, 0x1e);}}}
+timer++;
+if(timer==200)
+timer=0;

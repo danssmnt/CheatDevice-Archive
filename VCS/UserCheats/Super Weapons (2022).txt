@@ -1,0 +1,338 @@
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Shotgun Upgrade Pack
+for(i=0; i<3; i++){
+sub=0x095FFB90+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Machine Gun Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFEA0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Pistol Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's sp
+}
+off();
+
+
+#cheat Pistol 2 Upgrade Pack
+for(i=0; i<2; i++){
+sub=0x095FFAB0+(i*0x70);
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 1);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's sp
+}
+off();
+
+#cheat Thrown Weapon Upgrade Pack
+for(i=0; i<6; i++){
+sub=0x095FF7A0+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setshort(sub+0x40, 0x0E);//Allow run and throw
+setfloat(sub+0x44, 0.25, 0.25, 0.25);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Heavy Weapon Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x09600060+(i*0x70);
+setchar(sub+0x0, 0x46); //Allow manual aiming
+setchar(sub+0x1, 0x1);//Allow jumping
+setfloat(sub+0x8, 500);//Set range to 500
+setint(sub+0x14, 1000);//Max out clip size
+setfloat(sub+0x18, 5000);//Set high damage for each gun
+setfloat(sub+0x44, 0.4, 0.4, 0.4);//Set firing speed to Minigun's speed
+}
+off();
+
+#cheat Flame Wars!
+static x;
+if(x%500==0)
+for(i=0; 0x098b4a40+i<=0x098ecf90; i+=0xd10) {
+   if(0x098b4a40 + i != pplayer && !getint(0x098b4a40+i+0x480)) {
+setchar(0x098b4a40 + i +0x63c, 0x21);
+setint(0x098b4a40 + i + 0x648, 10000);
+setchar(0x098b4a40 + i + 0x789, 0x7);
+       setchar(0x098b4a40 + i + 0x894, 0x8);
+       setint(0x098b4a40 + i + 0x890, pplayer);
+   }
+}
+x++;
+if(x==500)
+x=0;
+
+#cheat All Weapons (36) (v2)
+//By Sousanator
+setint(pplayer+0x5d8,   0x00ffffff);
+setint(pplayer+0x5f4,   0x00ffffff);
+setint(pplayer+0x610,   0x00ffffff);
+setint(pplayer+0x5bc,   0x00ffffff);
+setint(pplayer+0x62c,   0x00ffffff);
+setint(pplayer+0x648,   0x00ffffff);
+setint(pplayer+0x664,   0x00ffffff);
+setint(pplayer+0x680,   0x00ffffff);
+
+static weaponPlace;
+static group0;
+static group1;
+static group2;
+static group3;
+static group4;
+static group5;
+static group6;
+static group7;
+static group8;
+static group9;
+
+
+if (pressslow & CTRL_LEFT) {
+weaponPlace--;
+} else if (pressslow & CTRL_RIGHT) {
+weaponPlace++;
+}
+if (weaponPlace > 9) {
+weaponPlace=0;
+} else if (weaponPlace < 0) {
+weaponPlace=9;
+}
+
+if (weaponPlace == 0) {
+if (pressslow & CTRL_DOWN) {
+group0--;
+} else if (pressslow & CTRL_UP) {
+group0++;
+}
+if (group0 > 1) {
+group0=0;
+} else if (group0 < 0) {
+group0=1;
+}
+setchar(pplayer+0xCB8,    0x00);
+
+if (group0 == 0){
+setchar(pplayer+0x578,    0x00);//FIST
+} else if (group0 == 1){
+setchar(pplayer+0x578,    0x01);//BRASS KNUCLES
+}
+} else if (weaponPlace == 1) {
+if (pressslow & CTRL_DOWN) {
+group1--;
+} else if (pressslow & CTRL_UP) {
+group1++;
+}
+if (group1 > 9) {
+group1=0;
+} else if (group1 < 0) {
+group1=9;
+}
+setchar(pplayer+0xCB8,    0x01);
+if (group1==0){
+setchar(pplayer+0x594,    0x02);//LITTLE KNIFE
+} else if (group1==1){
+setchar(pplayer+0x594,    0x03);//GOLF CLUB
+} else if (group1==2){
+setchar(pplayer+0x594,    0x04);//KNIGHT STICK
+} else if (group1==3){
+setchar(pplayer+0x594,    0x05);//KNIFE
+} else if (group1==4){
+setchar(pplayer+0x594,    0x06);//BAT
+} else if (group1==5){
+setchar(pplayer+0x594,    0x07);//AXE
+} else if (group1==6){
+setchar(pplayer+0x594,    0x08);//CANE
+} else if (group1==7){
+setchar(pplayer+0x594,    0x09);//MECHETTY
+} else if (group1==8){
+setchar(pplayer+0x594,    0x0A);//KATANA
+} else if (group1==9){
+setchar(pplayer+0x594,    0x0B);//SAW
+}
+} else if (weaponPlace == 2) {
+if (pressslow & CTRL_DOWN) {
+group2--;
+} else if (pressslow & CTRL_UP) {
+group2++;
+}
+if (group2 > 4) {
+group2=0;
+} else if (group2 < 0) {
+group2=4;
+}
+setchar(pplayer+0xCB8,    0x02);
+if (group2==0){
+setchar(pplayer+0x5B0,    0x0C);//GRENADE
+} else if (group2==1){
+setchar(pplayer+0x5B0,    0x0D);//GRENADE2
+} else if (group2==2){
+setchar(pplayer+0x5B0,    0x0E);//REMOTE MINES
+} else if (group2==3){
+setchar(pplayer+0x5B0,    0x10);//TEAR GAS
+} else if (group2==4){
+setchar(pplayer+0x5B0,    0x11);//MOLTOV
+}
+} else if (weaponPlace == 3) {
+if (pressslow & CTRL_DOWN) {
+group3--;
+} else if (pressslow & CTRL_UP) {
+group3++;
+}
+if (group3 > 1) {
+group3=0;
+} else if (group3 < 0) {
+group3=1;
+}
+setchar(pplayer+0xCB8,    0x03);
+if (group3==0){
+setchar(pplayer+0x5CC,    0x13);//PISTOL
+} else if (group3==1){
+setchar(pplayer+0x5CC,    0x14);//HANDGUN
+}
+} else if (weaponPlace == 4) {
+if (pressslow & CTRL_DOWN) {
+group4--;
+} else if (pressslow & CTRL_UP) {
+group4++;
+}
+if (group4 > 2) {
+group4=0;
+} else if (group4 < 0) {
+group4=2;
+}
+setchar(pplayer+0xCB8,    0x04);
+if (group4==0){
+setchar(pplayer+0x5E8,    0x15);//SHOTGUN    
+} else if (group4==1){
+setchar(pplayer+0x5E8,    0x16);//SHOTGUN2
+} else if (group4==2){
+setchar(pplayer+0x5E8,    0x17);//SHOTGUN3
+}
+} else if (weaponPlace == 5) {
+if (pressslow & CTRL_DOWN) {
+group5--;
+} else if (pressslow & CTRL_UP) {
+group5++;
+}
+if (group5 > 3) {
+group5=0;
+} else if (group5 < 0) {
+group5=3;
+}
+setchar(pplayer+0xCB8,    0x05);
+if (group5==0){
+setchar(pplayer+0x604,    0x18);//UZI
+} else if (group5==1){
+setchar(pplayer+0x604,    0x19);//UZI2
+} else if (group5==2){
+setchar(pplayer+0x604,    0x1A);//SILENT UZI
+} else if (group5==3){
+setchar(pplayer+0x604,    0x1B);//2HAND UZI
+}
+} else if (weaponPlace == 6) {
+if (pressslow & CTRL_DOWN) {
+group6--;
+} else if (pressslow & CTRL_UP) {
+group6++;
+}
+if (group6 > 1) {
+group6=0;
+} else if (group6 < 0) {
+group6=1;
+}
+setchar(pplayer+0xCB8,    0x06);
+if (group6==0){
+setchar(pplayer+0x620,    0x1C);//2HAND UZI2
+} else if (group6==1){
+setchar(pplayer+0x620,    0x1D);//AK47
+}
+} else if (weaponPlace == 7) {
+if (pressslow & CTRL_DOWN) {
+group7--;
+} else if (pressslow & CTRL_UP) {
+group7++;
+}
+if (group7 > 3) {
+group7=0;
+} else if (group7 < 0) {
+group7=3;
+}
+setchar(pplayer+0xCB8,    0x07);
+if (group7==0){
+setchar(pplayer+0x63C,    0x20);//ROCKET LAUNCHER
+}else if (group7==1){
+setchar(pplayer+0x63C,    0x21);//FLAMETHROWER
+} else if (group7==2){
+setchar(pplayer+0x63C,    0x22);//MINIGUN2
+} else if (group7==3){
+setchar(pplayer+0x63C,    0x23);//CHAINGUN
+}
+} else if (weaponPlace == 8) {
+if (pressslow & CTRL_DOWN) {
+group8--;
+} else if (pressslow & CTRL_UP) {
+group8++;
+}
+if (group8 > 1) {
+group8=0;
+} else if (group8 < 0) {
+group8=1;
+}
+setchar(pplayer+0xCB8,    0x08);
+if (group8==0){
+setchar(pplayer+0x658,    0x1E);//SNIPER
+} else if (group8==1){
+setchar(pplayer+0x658,    0x1F);//SNIPER2
+}
+} else if (weaponPlace == 9) {
+if (pressslow & CTRL_DOWN) {
+group9--;
+} else if (pressslow & CTRL_UP) {
+group9++;
+}
+if (group9 > 2) {
+group9=0;
+} else if (group9 < 0) {
+group9=2;
+}
+setchar(pplayer+0xCB8,    0x09);
+if (group9==0){
+setchar(pplayer+0x674,    0x27);//BINOCULARS
+} else if (group9==1){
+setchar(pplayer+0x674,    0x26);//CAMERA
+} else if (group9==2){
+setchar(pplayer+0x674,    0x24);//REMOTE SWITCH
+}
+}

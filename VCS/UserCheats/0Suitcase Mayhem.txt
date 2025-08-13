@@ -1,0 +1,86 @@
+#cheat Suitcase Mayhem
+setchar(0x09F69054, 1);
+static mission;
+if(!mission)
+{
+mission = 0;
+}
+icon = 0x08E8EFC0;
+setfloat(icon, 118.71, -826.73, 10.46);
+setchar(icon + 0x19, 0x25);
+marker = 0x08BF7B40;
+setfloat(marker, 118.71, -826.73, 10.46);
+setchar(marker + 0x16, 0x80, 0x40);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+X1 = 118.71;
+Y1 = -826.73;
+checkx1 = X1 - getfloat(pplayer + 0x30);
+checky1 = Y1 - getfloat(pplayer + 0x34);
+if(sqrt(checkx1 * checkx1 + checky1 * checky1) < 2)
+{
+mission = 1;
+}
+if(mission == 1)
+{
+setshort(0x08E90DD8, 1, 'M', 'I', 'S', 'S', 'I', 'O', 'N', 0);
+setchar(marker + 0x16, 0x00, 0x00);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 327.95, 205.68, 11.41);
+setchar(icon + 0x19, 0x0B);
+static pickup;
+pickup = 0x08C67B30;
+setfloat(pickup, -1077.40, 312.60, 11.26);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01F9);
+setchar(pickup + 0x38, 0x02);
+if(getchar(pickup + 0x39) == 1)
+{
+mission = 2;
+}
+}
+if(mission == 2)
+{
+marker = 0x08BF7B40;
+setfloat(marker, 94.98, 267.65, 21.78);
+setchar(marker + 0x16, 0x80, 0x3F);
+setchar(marker + 0x1A, 0x01);
+setchar(marker + 0x1C, 0x06);
+setfloat(icon, 94.98, 267.65, 21.78);
+setchar(icon + 0x19, 0x00);
+X2 = 94.98;
+Y2 = 267.65;
+checkx2 = X2 - getfloat(pplayer + 0x30);
+checky2 = Y2 - getfloat(pplayer + 0x34);
+if(sqrt(checkx2 * checkx2 + checky2 * checky2) < 2)
+{
+mission = 3;
+}
+}
+if(mission == 3)
+{
+setchar(marker + 0x16, 0x00, 0x00);
+setchar(marker + 0x1A, 0x00);
+setchar(marker + 0x1C, 0x00);
+setfloat(icon, 64.40, 273.24, 19.43);
+setchar(icon + 0x19, 0x04);
+setfloat(pickup, 64.40, 273.24, 19.43);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x0165);
+setchar(pickup + 0x38, 0x02);
+if(getchar(pickup + 0x39) == 1)
+{
+mission = 4;
+}
+}
+if(mission == 4)
+{
+setfloat(icon, 77.35, 580.07, 18.57);
+setchar(icon + 0x19, 0x33);
+pickup = 0x08C693F0;
+setfloat(pickup, 77.35, 580.07, 18.57);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01B3);
+setchar(pickup + 0x38, 0x02);
+}

@@ -1,0 +1,44 @@
+#cheat Got Cash ?
+static pickup;
+static menu;
+if(!menu)
+{
+menu = 0;
+}
+pickup = 0x08C6A370;
+setfloat(pickup, -1077.40, 312.60, 11.26);
+setint(pickup + 0x2C, 0xFF);
+setshort(pickup + 0x34, 0x01D42);
+setchar(pickup + 0x38, 0x01);
+if(getchar(0x08C6A3A9) == 1)
+{
+menu = 1;
+}
+if(menu == 1)
+{
+playerx = getfloat(pplayer + 0x30);
+playery = getfloat(pplayer + 0x34);
+playerz = getfloat(pplayer + 0x38);
+setfloat(pplayer + 0x30, playerx, playery, playerz);
+setchar(0x08E93604, 0x01);
+setshort(0x08E92FFC, 1, 'P', 'l', 'a', 'c', 'e', 'h', 'o', 'l', 'd', 'e', 'r', 0);
+setshort(0x08E931FC, 1, 'P', 'l', 'a', 'c', 'e', 'h', 'o', 'l', 'd', 'e', 'r', 0);
+setshort(0x08E933FC, 1, 'P', 'l', 'a', 'c', 'e', 'h', 'o', 'l', 'd', 'e', 'r', 0);
+if(press & CTRL_CROSS)
+{
+menu = 0;
+}
+if(press & CTRL_CIRCLE)
+{
+menu = 0;
+}
+}
+else if(getchar(0x08C6A3A9) == 0)
+{
+menu = 0;
+}
+if(menu == 0)
+{
+setchar(0x08E93604, 0x00);
+}
+

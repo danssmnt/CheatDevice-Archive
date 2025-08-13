@@ -1,0 +1,345 @@
+#cheat Spawn Helicopter + Ramp to the Roof
+moveto(-1060.50,312.43,14.17); object(0x1C99,0,305,177);
+move(-3.00,-0.17,-2.10); object(0x1C99,0,305,177);
+move(-2.10,-0.12,-1.50); object(0x1C99,0,305,177);
+move(8.19,0.46,5.80); object(0x1C99,0,305,177);
+move(14.38,-0.09,3.30); object(0x1C99,0,270,181);
+move(-4.10,0.06,0.00); object(0x1C99,0,270,181);
+move(-4.00,0.05,0.00); object(0x1C99,0,270,181);
+move(-3.59,0.04,-1.20); object(0x1C99,0,310,179);
+pspawn = 0x08E81290;
+setint(pspawn, 262);
+setfloat(pspawn + 4, -1077.40, 312.63, 11.26, 270);
+pspawn += 0x30;
+teleport(-1054.93, 319.51, 11.26)
+
+#cheat Create your Personal Heli Driver
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped){
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if((press & CTRL_DOWN))
+setchar(yourped+0x87c, 0x1e);
+else{
+if(pped && pped != yourped){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);}
+else{
+if((press & CTRL_UP))
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x17);
+setchar(yourped+0x894, 0x12);
+setint(yourped+0x484, pcar);
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_RTRIGGER && press & CTRL_SQUARE){
+setchar(yourped+0x894, 0x10);
+setfloat(yourped+0x4e4, 0);
+yourped=0;}
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);}}
+
+#cheat Set Heli Flyingpath
+static speed;
+static lap;
+static currentx;
+static currenty;
+static currentz;
+checkpoint1x = -1083.01;
+checkpoint1y = 314.94;
+checkpoint1z = 20.72;
+checkpoint2x = -1019.42;
+checkpoint2y = 288.54;
+checkpoint2z = 20.72;
+checkpoint3x = -1024.16;
+checkpoint3y = 177.32;
+checkpoint3z = 20.72;
+checkpoint4x = -877.98;
+checkpoint4y = 51.72;
+checkpoint4z = 20.72;
+checkpoint5x = -718.42;
+checkpoint5y = 12.21;
+checkpoint5z = 20.72;
+checkpoint6x = 240.25;
+checkpoint6y = -128.25;
+checkpoint6z = 20.72;
+checkpoint7x = 294.89;
+checkpoint7y = 272.16;
+checkpoint7z = 20.72;
+if(!currentx&&getint(pobj+0x150)){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);
+setfloat(opp + 0x30, -1080.77, 320.85, 20.72);
+speed = 0.0006;}
+setfloat(opp + 0x30, getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + dy * speed);
+setfloat(opp + 0x38, 20.72);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 7 ){
+if(currentx == checkpoint1x && !lap){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+lap = 1;
+speed = 0.0004;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;}
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Get the Scorpion with unlimited ammo
+setint(pplayer+0x610, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x05);
+setchar(pplayer+0x604, 0x18);
+
+#_________________________________
+
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);
+setfloat(sub+0x8, 500);
+setint(sub+0x14, 1000);
+setfloat(sub+0x18, 5000);
+setfloat(sub+0x44, 0.4, 0.4, 0.4);}
+off();
+
+Tour 2 (Starting at Lance`s House):
+
+Look at the instructions from the 1st Tour, if you don`t know how to use this !
+
+#cheat Spawn helicopter and teleport you to it
+pspawn = 0x08E81290;
+setint(pspawn, 262);
+setfloat(pspawn + 4, -70.43, -1608.43, 12.21, 0);
+pspawn += 0x30;
+teleport(-67.33, -1588.14, 10.43)
+
+#cheat Create your Personal Heli Driver
+pped = getint(0x08BA1D70);
+static yourped;
+if(pped&&!yourped)
+yourped=pped;
+if(yourped){
+setchar(yourped+0x87c, 0x1e);
+if(!pcar){
+if((press & CTRL_DOWN))
+setchar(yourped+0x87c, 0x1e);
+else{
+if(pped && pped != yourped){
+setchar(yourped+0x894, 0x8);
+setint(yourped+0x890, pped);}
+else{
+if((press & CTRL_UP))
+setchar(yourped+0x894, 0xC);
+setint(yourped+0x890, pplayer);}}}
+else{
+if(!getint(yourped+0x480))
+setchar(yourped+0x894, 0x17);
+setchar(yourped+0x894, 0x12);
+setint(yourped+0x484, pcar);
+setint(yourped+0x450, pcar);}
+if(buttons & CTRL_RTRIGGER && press & CTRL_SQUARE){
+setchar(yourped+0x894, 0x10);
+setfloat(yourped+0x4e4, 0);
+yourped=0;}
+if(buttons & CTRL_TRIANGLE && !pcar){
+setchar(pplayer+0x894, 0x11);
+setchar(pplayer+0x8B4, 0x18);}}
+
+#cheat Set heli flyingpath along the Ocean Drive
+static speed;
+static lap;
+static currentx;
+static currenty;
+checkpoint1x = -64.11;
+checkpoint1y = -1573.05;
+checkpoint1z = 14.00;
+checkpoint2x = 107.85;
+checkpoint2y = -1597.52;
+checkpoint2z = 14.00;
+checkpoint3x = 161.38;
+checkpoint3y = -1559.10;
+checkpoint3z = 14.00;
+checkpoint4x = 227.96;
+checkpoint4y = -1406.98;
+checkpoint4z = 14.00;
+checkpoint5x = 310.77;
+checkpoint5y = -939.09;
+checkpoint5z = 14.00;
+checkpoint6x = 503.97;
+checkpoint6y = -520.97;
+checkpoint6z = 14.00;
+checkpoint7x = 503.67;
+checkpoint7y = -380.51;
+checkpoint7z = 14.00;
+checkpoint8x = 503.97;
+checkpoint8y = -520.97;
+checkpoint8z = 14.00;
+checkpoint9x = 310.77;
+checkpoint9y = -939.09;
+checkpoint9z = 14.00;
+checkpoint10x = 227.96;
+checkpoint10y = -1406.98;
+checkpoint10z = 14.00;
+checkpoint11x = 161.38;
+checkpoint11y = -1559.10;
+checkpoint11z = 14.00;
+checkpoint12x = 107.85;
+checkpoint12y = -1597.52;
+checkpoint12z = 14.00;
+checkpoint13x = -64.11;
+checkpoint13y = -1573.05;
+checkpoint13z = 14.00;
+if(!currentx&&getint(pobj+0x150)){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+opp = getint(pobj + 0x150);
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);
+setfloat(opp + 0x30, -70.43, -1608.43, 12.22);
+speed = 0.0005;}
+setfloat(opp + 0x30, getfloat(opp + 0x30) + dx * speed);
+setfloat(opp + 0x34, getfloat(opp + 0x34) + dy * speed);
+setfloat(opp + 0x38, getfloat(opp + 0x38) + dz * speed);
+setfloat(opp + 0x140, 0, 0, 0);
+checkx = currentx - getfloat(opp+0x30);
+checky = currenty - getfloat(opp+0x34);
+checkz = currentz - getfloat(opp+0x38);
+if(sqrt(checkx*checkx+checky*checky+checkz*checkz) < 13 ){
+if(currentx == checkpoint1x && !lap){
+currentx = checkpoint2x;
+currenty = checkpoint2y;
+currentz = checkpoint2z;
+lap = 1;
+speed = 0.0004;}
+else if(currentx == checkpoint2x){
+currentx = checkpoint3x;
+currenty = checkpoint3y;
+currentz = checkpoint3z;
+speed = 0.001;}
+else if(currentx == checkpoint3x){
+currentx = checkpoint4x;
+currenty = checkpoint4y;
+currentz = checkpoint4z;
+speed = 0.001;}
+else if(currentx == checkpoint4x){
+currentx = checkpoint5x;
+currenty = checkpoint5y;
+currentz = checkpoint5z;
+speed = 0.001;}
+else if(currentx == checkpoint5x){
+currentx = checkpoint6x;
+currenty = checkpoint6y;
+currentz = checkpoint6z;
+speed = 0.001;}
+else if(currentx == checkpoint6x){
+currentx = checkpoint7x;
+currenty = checkpoint7y;
+currentz = checkpoint7z;
+speed = 0.001;}
+else if(currentx == checkpoint7x){
+currentx = checkpoint8x;
+currenty = checkpoint8y;
+currentz = checkpoint8z;
+speed = 0.001;}
+else if(currentx == checkpoint8x){
+currentx = checkpoint9x;
+currenty = checkpoint9y;
+currentz = checkpoint9z;
+speed = 0.001;}
+else if(currentx == checkpoint9x){
+currentx = checkpoint10x;
+currenty = checkpoint10y;
+currentz = checkpoint10z;
+speed = 0.001;}
+else if(currentx == checkpoint10x){
+currentx = checkpoint11x;
+currenty = checkpoint11y;
+currentz = checkpoint11z;
+speed = 0.001;}
+else if(currentx == checkpoint11x){
+currentx = checkpoint12x;
+currenty = checkpoint12y;
+currentz = checkpoint12z;
+speed = 0.001;}
+else if(currentx == checkpoint12x){
+currentx = checkpoint13x;
+currenty = checkpoint13y;
+currentz = checkpoint13z;
+speed = 0.001;}
+else if(currentx == checkpoint13x){
+currentx = checkpoint1x;
+currenty = checkpoint1y;
+currentz = checkpoint1z;
+speed = 0.001;}
+dx = currentx - getfloat(opp+0x30);
+dy = currenty - getfloat(opp+0x34);
+dz = currentz - getfloat(opp+0x38);}
+#off
+currentx = currenty = currentz = gotten = opp = 0;
+
+#cheat Get the Scorpion with unlimited ammo
+setint(pplayer+0x610, 0x00ffffff);
+setchar(pplayer+0xCB8, 0x05);
+setchar(pplayer+0x604, 0x18);
+
+#cheat Position Reset
+sethex(0x098B52F4, 00);
+
+#cheat Sub Machine Gun Upgrade Pack
+for(i=0; i<4; i++){
+sub=0x095FFCE0+(i*0x70);
+setchar(sub+0x1, 0x1);
+setfloat(sub+0x8, 500);
+setint(sub+0x14, 1000);
+setfloat(sub+0x18, 5000);
+setfloat(sub+0x44, 0.4, 0.4, 0.4);}
+off();

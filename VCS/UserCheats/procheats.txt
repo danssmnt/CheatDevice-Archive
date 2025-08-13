@@ -1,0 +1,253 @@
+#cheat Weather Modifier
+static fInit;
+if (!fInit){
+fInit = true;
+weather = 0;}
+if (press & CTRL_DOWN && (getchar(0x8bb3df8) != 0)){
+weather = weather - 1;}
+if (press & CTRL_UP && (getchar(0x8bb3df8) != 255)){
+weather = weather + 1;}
+setchar(0x8bb3e00,  weather);
+setchar(0x8bb3df8,  weather);
+setchar(0x8bb458c,  weather);
+
+#cheat Full On Hoverbike V1
+// By Supacasey
+// Game will crash if a vehicle other than a bike with this on is entered!
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++){
+setchar(0x097272d0+4*neon,  R,  G,  B);}
+setchar(pcar + 0x50a, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x50f, 0xff);
+setchar(pcar + 0x523, 0xbf);
+setchar(pcar + 0x5e0, 0x00);
+setchar(0x9569b94,  0x33,  0x00,  0xff);
+#off
+R = 0;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++){
+setchar(0x097272d0+4*neon,  R,  G,  B);}
+setchar(pcar + 0x50a, 0x25);
+setchar(pcar + 0x50b, 0xc3);
+setchar(pcar + 0x50f, 0x33);
+setchar(pcar + 0x523, 0xbe);
+setchar(pcar + 0x5e0, 0xff);
+setchar(0x9569b94,  0x00,  0x00,  0x00);
+
+#cheat Full On Hoverbike V2
+// By Supacasey
+// Game will crash if a vehicle other than a bike with this on is entered!
+R = 0;
+G = 0;
+B = 255;
+for(neon=0;neon<16;neon++){
+setchar(0x097272d0+4*neon,  R,  G,  B);}
+setchar(pcar + 0x50a, 0xff);
+setchar(pcar + 0x50b, 0xff);
+setchar(pcar + 0x50f, 0xff);
+setchar(pcar + 0x523, 0xbf);
+setchar(pcar + 0x51f, 0xff);
+setchar(pcar + 0x5e0, 0x00);
+setchar(0x9569b94,  0x33,  0x00,  0xff);
+#off
+R = 0;
+G = 0;
+B = 0;
+for(neon=0;neon<16;neon++){
+setchar(0x097272d0+4*neon,  R,  G,  B);}
+setchar(pcar + 0x50a, 0x25);
+setchar(pcar + 0x50b, 0xc3);
+setchar(pcar + 0x50f, 0x33);
+setchar(pcar + 0x523, 0xbe);
+setchar(pcar + 0x51f, 0xbe);
+setchar(pcar + 0x5e0, 0xff);
+setchar(0x9569b94,  0x00,  0x00,  0x00);
+
+#cheat Ultimate
+setint(pplayer+0x5d8,  0x00ffffff);
+setint(pplayer+0x5f4,  0x00ffffff);
+setint(pplayer+0x610,  0x00ffffff);
+setint(pplayer+0x5bc,  0x00ffffff);
+setint(pplayer+0x62c,  0x00ffffff);
+setint(pplayer+0x648,  0x00ffffff);
+setint(pplayer+0x664,  0x00ffffff);
+setint(pplayer+0x5d4,  2);
+setint(pplayer+0x5f0,  2);
+setint(pplayer+0x60c,  2);
+setint(pplayer+0x5b8,  2);
+setint(pplayer+0x628,  2);
+setint(pplayer+0x644,  2);
+setint(pplayer+0x660,  2);
+setshort(pcar+0x3b6,  0,  0);
+setshort(pcar+0x434,  0);
+setfloat(pplayer + 0x1C4,  0.0);
+setfloat(pplayer + 0x82C,  2.0);
+#cheat Touch Cars to make them Float Away!
+static touch;
+if(getint(pobj+0x150))
+touch=getint(pobj+0x150);
+if(touch)  
+if(getshort(touch+0x56)<280)      
+sethex(touch+0xEC, 0x20);
+if(getchar(pcar+0xEC)==0x20)  
+sethex(pcar+0xEC,0x22);
+#cheat Acid Trip
+setchar(0x8BC8984, 0x0c);
+#cheat Random Vehicle Color
+// By vettefan88
+setfloat(pcar+0x224,  getfloat(pcar+0x20),  getfloat(pcar+0x24));
+off();
+#cheat Disable Side Missions
+setchar(0x09f69054,  1);
+#off
+setchar(0x09f69054,  0);
+#cheat Mission Select!
+//BY: Vettefan88//Hold R and press left and right to toggle between missions
+static start;
+if (!start){
+mission = 20;
+start = 1;
+money = getint(0x08bde55c);}
+setint(0x08bde55c, money, money);
+if (buttons & CTRL_RTRIGGER){
+setint(0x08bde55c, mission, mission);
+if (pressmed & CTRL_LEFT)
+mission = mission-1;
+if (pressmed & CTRL_RIGHT)
+mission = mission+1;}
+setchar(0x9F932D8, mission);
+#cheat Skip Nighttime
+if (getchar(0x08bb3b40) >= 19 || getchar(0x08bb3b40) <= 0)  
+setchar(0x08bb3b40, 5, 0);
+
+#cheat guns
+// By Waterbottle
+setchar(pplayer+0x594,0x0b);//chainsaw
+setchar(pplayer+0x5B0,0x10);//teargas
+setchar(pplayer+0x5CC,0x14);//some handgun
+setchar(pplayer+0x5E8,0x15);//..
+setchar(pplayer+0x604,0x18);//..
+setchar(pplayer+0x620,0x1C);//..
+setchar(pplayer+0x63C,0x23);//mini gun
+setchar(pplayer+0x658,0x1E);//sniper
+
+#cheat Teleport to First Garage
+teleport(-824.03, -1191.66, 12.00);
+
+#cheat Teleport to Open area
+//By TSF442
+teleport(-799.70, -1256.84, 12.00);
+#cheat Teleport to Ocean
+//By TSF442
+teleport(-684.48, -1137.85, 9.00);
+
+#cheat admiral in garage
+//By TSF442
+//Leave on until garage door opens
+//all cars are red unless there is a car with another color first
+setint(0x08C739B0, 171);
+#off
+setint(0x08C739B0, 0);
+#cheat Teleport: washington beach
+teleport(98.56,-760.12, 10.46);
+#cheat Teleport: ferris wheel
+teleport(357.04, -227.30, 11.93);
+#cheat Teleport: vice point
+teleport(302.40, -2.80, 10.90);
+#cheat Teleport: The MAll 
+teleport(479.15, 1134.22, 17.48);
+#cheat Teleport: Malibu Club
+teleport(497.10, -82.41, 10.03);
+#cheat Teleport: Beach
+teleport(815.11, -260.94, 13.69);
+#cheat Teleport: Tall Building
+teleport(237.37, -785.86, 130.87);
+#cheat Teleport: Working Helicoptor
+teleport(391.20, -500.50, 22.47);
+#cheat Teleport: HomeBase
+teleport(-824.84, -1197.66, 11.19);
+
+#cheat heavycars
+setfloat(pcar + 0xD0, 300000.0, 500000.0);
+
+#cheat indeflatable tires
+setshort(pcar+0x3b6, 0, 0);//cars
+setshort(pcar+0x434, 0);//bikes
+
+#cheat Wanted Level Modifier
+setchar(0x098B5350, 0x0);
+
+#cheat Car Goes Flipping Everytime you prees up
+// VCS C.D. 21 and Up...
+if(press & CTRL_UP){
+setfloat(pcar + 0x0000010B, +1B)}
+
+#cheat Wasted
+setchar(pplayer+0x8B4, 0x3A);
+off();
+
+#cheat View ID of the nearest object
+setchar(0x8BAEDB8, '%', 'd', 0);
+setchar(0x8BAEDC0, '%', 'd', 0);
+pobject = getint(0x0994f460);
+if (pobject){
+n = getshort(pobject+0x56);
+setint(0x08bde55c, n, n);}
+
+#cheat Player Wasted
+if(buttons & CTRL_UP){
+setchar(pplayer+0x8B4, 0x39);}
+#cheat Player Wasted with Blood
+if(buttons & CTRL_UP){
+setchar(pplayer+0x8B4, 0x3A);}
+#cheat Player Busted
+if(buttons & CTRL_UP){
+setchar(pplayer+0x8B4, 0x41);}
+
+#cheat GTA Vice City PC Version Vehicle Camera
+if (getint(pplayer + 0x0480) && pcar){
+setchar(0x8BC8630, 0x03);}
+ 
+#cheat Center Camera Behind You
+setchar(0x8BC8630, 0x03);
+#off
+setchar(0x8BC8630, 0x00);
+
+#cheat Voodoo Hydraulics
+setfloat(0x9632540, 0);
+setfloat(0x9632544, 0);
+if (getshort(pcar+0x56)==239){
+if (getfloat(pcar+0xD0)==1000){
+hyd = .1;}
+if (getfloat(pcar+0xD0) == 500){
+hyd = -.1;}
+if (buttons & CTRL_LEFT){
+setfloat(0x9632540, -.5);}
+if (buttons & CTRL_RIGHT){
+setfloat(0x9632540, .5);}
+if (buttons & CTRL_UP){
+setfloat(0x9632544, 1.5);}
+if (buttons & CTRL_DOWN){
+setfloat(0x9632544, -1.5);}
+if (press & CTRL_CIRCLE && getchar(pcar+0x136)){
+setfloat(pcar + 0x00000148, hyd);}
+if (press & CTRL_NOTE){
+if (hyd == .1){setfloat(pcar+0xD0, 500);
+setfloat(pcar+0x688, .6, .6, .6, .6);
+setfloat(pcar+0x698, 1.05, 1.05, 1.05, 1.05);}
+if (hyd == -.1){
+setfloat(pcar+0xD0, 1000);
+setfloat(pcar+0x688, .46, .46, .46, .46);
+setfloat(pcar+0x698, .81, .81, .81, .81);}}}
+
+#cheat Cubans at the Golf Course
+setchar(0x9F932D8, 11);
+
+#cheat Warp to Leaf Links Golfclub
+if(buttons&CTRL_UP){
+setchar(pobj+0x8B4, 0x2C);}
+

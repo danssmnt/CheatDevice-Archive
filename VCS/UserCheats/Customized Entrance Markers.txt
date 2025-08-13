@@ -1,0 +1,116 @@
+#cheat Orange Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 106, 0);
+
+#cheat Violet Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 127, 0, 55);
+
+#cheat Pink Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 220);
+
+#cheat Yellow Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 216, 0);
+
+#cheat Blue Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 255);
+
+#cheat Green Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 255, 0);
+
+#cheat Red Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 0, 0);
+
+#cheat Black Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 0, 0, 0);
+
+#cheat White Markers
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 255, 255, 255);
+
+#cheat Standard Marker Color
+mark = 0x8c62EA0;
+setchar(mark+0x2c, 30, 255, 255);
+
+#cheat Marker Color Changer
+mark = 0x8c62EA0;
+static counter;
+static menu;
+static R;
+static G;
+static B;
+R = getchar(mark+0x2c);
+G = getchar(mark+0x2d);
+B = getchar(mark+0x2e);
+if( menu == 0 ){
+n = getchar(mark+0x2c);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'R', 'e', 'd', ':', ' ', hund, dec, unit, 0 );}
+if( menu == 1 ){
+n = getchar(mark+0x2d);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'G', 'r', 'e', 'e', 'n', ':', ' ', hund, dec, unit, 0 );}
+if( menu == 2 ){
+n = getchar(mark+0x2e);
+if ( n < 0 ) n = -n;
+fract = int(n * 10) % 10;
+unit = int( n ) % 10;
+n = n / 10;
+dec = int( n ) % 10;
+n = n / 10;
+hund = int( n ) % 10;
+hund = hund + '0';
+dec = dec + '0';
+unit = unit + '0';
+fract = fract + '0';
+setshort( 0x8e90bd8, 1, 'B', 'l', 'u', 'e', ':', ' ', hund, dec, unit, 0 );}
+if(buttons&CTRL_LEFT){
+if(menu == 0){
+R--;}
+if(menu == 1){
+G--;}
+if(menu == 2){
+B--;}}
+if(buttons&CTRL_RIGHT){
+if(menu == 0){
+R++;}
+if(menu == 1){
+G++;}
+if(menu == 2){
+B++;}}
+if(press&CTRL_DOWN&&menu < 2){
+menu++;}
+if(press&CTRL_UP&&menu > 0){
+menu--;}
+setchar(mark+0x2c, R, G, B);
+
+#cheat Entrance Marker Placement
+static mark;
+mark = 0x8c62EA0;
+setfloat(mark,getfloat(pobj+0x30),getfloat(pobj+0x34),getfloat(pobj+0x38)+1);

@@ -1,0 +1,21 @@
+#cheat Compteur de vitesse
+//Téléchargé sur ViceCityStories.fr
+//By NRG500
+
+vitesse = int((sqrt(getfloat(pcar + 0x140) * getfloat(pcar + 0x140) + getfloat(pcar + 0x144) * getfloat(pcar + 0x144)))*160);
+nbBarre = vitesse/10;
+static i;
+
+centaine = vitesse/100;
+dizaine = (vitesse - (centaine*100))/10;
+unite = vitesse -centaine*100 - dizaine*10;
+
+setshort(0x08e92DDA, 1, 0x30+centaine, 0x30+dizaine, 0x30+unite, ' ', 'K', 'm', '/', 'h', ' ', ' ');
+
+for( i=0; i<nbBarre; i++)
+{
+   if( nbBarre != i+1)
+   setshort(0x08e92DF0+2*i, '|', ' ');
+   else if( nbBarre == i+1)
+   setshort(0x08e92DF0+2*i, '|', 0);
+}
