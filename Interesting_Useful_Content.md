@@ -2,7 +2,7 @@
 
 | Website | Notes |
 |:--------|:------|
-|[Cheat Device Remastered](http://http://cheatdeviceremastered.com/) | Cheat Device Remaster made by Freakler (we really recommend it!)
+|[Cheat Device Remastered](http://cheatdeviceremastered.com/) | Cheat Device Remaster made by Freakler (we really recommend it!)
 |[Heli In The Garage](https://gtaforums.com/topic/224075-heli-in-the-garage/) | Original GTA Forums post by Edison Carter |
 | [CheatDevice For LCS By Edison Carter FAQ](https://gtaforums.com/topic/224921-cheatdevice-for-lcs-faq/) | Really old FAQ for LCS Cheat Device |
 | [Official CheatDevice For LCS By Edison Carter FAQ](https://gtaforums.com/topic/226501-official-cheatdevice-for-lcs-faq/) | Another really old FAQ for LCS Cheat Device |
