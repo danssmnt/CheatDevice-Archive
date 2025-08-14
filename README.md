@@ -25,44 +25,35 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 ### LCS
 |    Version    |          Archived?        |          Tested?          |             Notes             |
 |---------------|:-------------------------:|:-------------------------:|-------------------------------|
-| v0.1          | :x:                       | :x:                       | First Version of **Cheat Device** |
+| **v0.1**          | :x:                       | :x:                       | First Version of **Cheat Device** |
 | v0.1a         | :x:                       | :x:                       ||
 | v0.1b         | :white_check_mark:        | :x:                       ||
 | v0.1c         | :white_check_mark:        | :x:                       ||
 | v0.1d         | :x:                       | :x:                       ||
-||
-| v0.2          | :x:                       | :x:                       ||
-||
-| v0.3          | :white_check_mark:        | :x:                       ||
+| **v0.2**      | :x:                       | :x:                       ||
+| **v0.3**      | :white_check_mark:        | :x:                       ||
 | v0.3a         | :x:                       | :x:                       ||
 | v0.3b         | :x:                       | :x:                       ||
 | v0.3c         | :white_check_mark:        | :x:                       ||
-||
-| v0.4          | :white_check_mark:        | :x:                       ||
-||
-| v0.5          | :white_check_mark:        | :x:                       ||
+| **v0.4**      | :white_check_mark:        | :x:                       ||
+| **v0.5**      | :white_check_mark:        | :x:                       ||
 | v0.5a         | :white_check_mark:        | :x:                       ||
 | v0.5b         | :x:                       | :x:                       ||
 | v0.5c         | :x:                       | :x:                       ||
 | v0.5d         | :white_check_mark:        | :x:                       ||
 | v0.5e         | :white_check_mark:        | :x:                       ||
-||
-| v0.6          | :white_check_mark:        | :x:                       ||
+| **v0.6**      | :white_check_mark:        | :x:                       ||
 | v0.6a         | :white_check_mark:        | :x:                       ||
-||
-| v0.7          | :white_check_mark:        | :x:                       ||
+| **v0.7**      | :white_check_mark:        | :x:                       ||
 | v0.7a         | :x:                       | :x:                       ||
 | v0.7b         | :x:                       | :x:                       ||
 | v0.7c         | :x:                       | :x:                       ||
 | v0.7d         | :white_check_mark:        | :x:                       ||
-||
-| v0.8          | :x:                       | :x:                       ||
+| **v0.8**      | :x:                       | :x:                       ||
 | v0.8a         | :white_check_mark:        | :x:                       ||
 | v0.8b         | :white_check_mark:        | :x:                       ||
-||
-| v0.9          | :white_check_mark:        | :x:                       ||
-||
-| v1.0          | :white_check_mark:        | :x:                       ||
+| **v0.9**      | :white_check_mark:        | :x:                       ||
+| **v1.0**      | :white_check_mark:        | :x:                       ||
 | v1.0a         | :x:                       | :x:                       ||
 | v1.0b         | :white_check_mark:        | :x:                       ||
 | v1.0c         | :white_check_mark:        | :x:                       ||
@@ -70,25 +61,21 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 | v1.0e         | :x:                       | :x:                       ||
 | v1.0f         | :white_check_mark:        | :x:                       ||
 | v1.0g         | :white_check_mark:        | :white_check_mark:        ||
-| v1.0h         | :x:                       | :x:                       | Probably doesn't exist, see [this](./LCS/Cheat%20Device/v1.0/v1.0h/README.md). |
+| v1.0h         | :x:                       | :x:                       | Probably doesn't exist, see **[this](./LCS/Cheat%20Device/v1.0/v1.0h/README.md)**. |
 
 ### VCS
 |    Version    |         Archived?         |          Tested?          |             Notes             |
 |---------------|:-------------------------:|:-------------------------:|-------------------------------|
+| **v2.0**      | :white_check_mark:        |:x:                        | First official release for VCS |
 | v2.0 Alpha    | :white_check_mark:        |:x:                        | First "unofficial" release for VCS |
-| v2.0          | :white_check_mark:        |:x:                        | First official release for VCS |
 | v2.0a         | :white_check_mark:        |:x:                        ||
-||
-| v2.1          | :white_check_mark:        |:x:                        ||
+| **v2.1**      | :white_check_mark:        |:x:                        ||
 | v2.1a         | :white_check_mark:        |:x:                        ||
-||
-| v2.2          | :white_check_mark:        |:x:                        ||
+| **v2.2**      | :white_check_mark:        |:x:                        ||
 | v2.2a         | :x:                       |:x:                        ||
-||
-| v2.3          | :white_check_mark:        |:x:                        ||
+| **v2.3**      | :white_check_mark:        |:x:                        ||
 | v2.3a         | :white_check_mark:        |:x:                        ||
-||
-| v2.4          | :white_check_mark:        | :white_check_mark:        | Final release |
+| **v2.4**      | :white_check_mark:        | :white_check_mark:        | Final release |
 
 ## UserCheats
 We're trying to archive all **UserCheats** made for **Cheat Device** too!
@@ -106,7 +93,7 @@ Refer to _[How can I contribute?](./.github/CONTRIBUTING.md)_.
  - [ ] Archive all known UserCheats for **Cheat Device**.
  - [ ] Make a website for this project.
  - [ ] Archive old screenshots, images, photos, videos of **Cheat Device**.
- - [ ] Decompile / Reverse Engineer **Cheat Device** (v1.0g LCS and 2.4 VCS).
+ - [ ] Decompile / Reverse Engineer **Cheat Device** (``v1.0g`` LCS and ``2.4`` VCS).
  
 ## Miscellaneous Content
 Refer to _[Misc. Content](./Miscellaneous%20Content.md#miscellaneous-content)_.
