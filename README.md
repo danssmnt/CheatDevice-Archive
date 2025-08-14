@@ -1,4 +1,7 @@
-<img src="./Pictures/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80" style="display: block; margin: 0 auto;"></img><br>
+<p align="center">
+  <img src="./Pictures/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
+</p>
+<br></br>
 
 This project aims to fully archive **Edison Carter’s Cheat Device** for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
 
