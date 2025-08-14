@@ -1,7 +1,8 @@
 <p align="center">
   <img src="./Pictures/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
 </p>
-<br></br>
+
+---
 
 This project aims to fully archive **Edison Carter’s Cheat Device** for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
 
@@ -13,6 +14,8 @@ This is a **Work in Progress**.
 **Cheat Device** is, in a nutshell, a cheat menu for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_, created by the popular modder _**Edison Carter**_. 
 It was very famous back in the day, even allowing you to create your own cheats (with Cheat Maker)! It was certainly one of the most influential _PlayStation: Portable_ homebrews ever and part of my childhood!
 
+<img src="./Pictures/LCS VCS EC Cheat Device.jpg" alt="Cheat Device LCS VCS" width="480" height="272"></img>
+
 This project was started by me (_**danssmnt**_), with the help of some OG CheatDevice members, as a way to preserve an almost 20 year old homebrew. 
 Even with the popularity back then, **Cheat Device** has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of **Cheat Device** history before it was lost for good.
 
@@ -20,73 +23,71 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 
 ## Progress
 ### LCS
-|    Version    |          Archived?          |          Tested?          |             Notes             |
-|---------------|:---------------------------:|:-------------------------:|-------------------------------|
-| **v0.1**      |-|-|-|
-| v0.1          | :x:                         | :x:                       | First Version of **Cheat Device** |
-| v0.1a         | :x:                         | :x:                       ||
-| v0.1b         | :white_check_mark:          | :x:                       ||
-| v0.1c         | :white_check_mark:          | :x:                       ||
-| v0.1d         | :x:                         | :x:                       ||
-| **v0.2**      |-|-|-|
-| v0.2          | :x:                         | :x:                       ||
-| **v0.3**      |-|-|-|
-| v0.3          | :white_check_mark:          | :x:                       ||
-| v0.3a         | :x:                         | :x:                       ||
-| v0.3b         | :x:                         | :x:                       ||
-| v0.3c         | :white_check_mark:          | :x:                       ||
-| **v0.4**      |-|-|-|
-| v0.4          | :white_check_mark:          | :x:                       ||
-| **v0.5**      |-|-|-|
-| v0.5          | :white_check_mark:          | :x:                       ||
-| v0.5a         | :white_check_mark:          | :x:                       ||
-| v0.5b         | :x:                         | :x:                       ||
-| v0.5c         | :x:                         | :x:                       ||
-| v0.5d         | :white_check_mark:          | :x:                       ||
-| v0.5e         | :white_check_mark:          | :x:                       ||
-| **v0.6**      |-|-|-|
-| v0.6          | :white_check_mark:          | :x:                       ||
-| v0.6a         | :white_check_mark:          | :x:                       ||
-| **v0.7**      |-|-|-|
-| v0.7          | :white_check_mark:          | :x:                       ||
-| v0.7a         | :x:                         | :x:                       ||
-| v0.7b         | :x:                         | :x:                       ||
-| v0.7c         | :x:                         | :x:                       ||
-| v0.7d         | :white_check_mark:          | :x:                       ||
-| **v0.8**      |-|-|-|
-| v0.8          | :x:                         | :x:                       ||
-| v0.8a         | :white_check_mark:          | :x:                       ||
-| v0.8b         | :white_check_mark:          | :x:                       ||
-| **v0.9**      |-|-|-|
-| v0.9          | :white_check_mark:          | :x:                       ||
-| **v1.0**      |-|-|-|
-| v1.0          | :white_check_mark:          | :x:                       ||
-| v1.0a         | :x:                         | :x:                       ||
-| v1.0b         | :white_check_mark:          | :x:                       ||
-| v1.0c         | :white_check_mark:          | :x:                       ||
-| v1.0d         | :white_check_mark:          | :x:                       | First **Cheat Device** to be released as a PRX |
-| v1.0e         | :x:                         | :x:                       ||
-| v1.0f         | :white_check_mark:          | :x:                       ||
-| v1.0g         | :white_check_mark:          | :white_check_mark:        ||
-| v1.0h         | :x:                         | :x:                       | Probably doesn't exist, see [this](./LCS/Cheat%20Device/v1.0/v1.0h/README.md). |
+|    Version    |          Archived?        |          Tested?          |             Notes             |
+|---------------|:-------------------------:|:-------------------------:|-------------------------------|
+| v0.1          | :x:                       | :x:                       | First Version of **Cheat Device** |
+| v0.1a         | :x:                       | :x:                       ||
+| v0.1b         | :white_check_mark:        | :x:                       ||
+| v0.1c         | :white_check_mark:        | :x:                       ||
+| v0.1d         | :x:                       | :x:                       ||
+||
+| v0.2          | :x:                       | :x:                       ||
+||
+| v0.3          | :white_check_mark:        | :x:                       ||
+| v0.3a         | :x:                       | :x:                       ||
+| v0.3b         | :x:                       | :x:                       ||
+| v0.3c         | :white_check_mark:        | :x:                       ||
+||
+| v0.4          | :white_check_mark:        | :x:                       ||
+||
+| v0.5          | :white_check_mark:        | :x:                       ||
+| v0.5a         | :white_check_mark:        | :x:                       ||
+| v0.5b         | :x:                       | :x:                       ||
+| v0.5c         | :x:                       | :x:                       ||
+| v0.5d         | :white_check_mark:        | :x:                       ||
+| v0.5e         | :white_check_mark:        | :x:                       ||
+||
+| v0.6          | :white_check_mark:        | :x:                       ||
+| v0.6a         | :white_check_mark:        | :x:                       ||
+||
+| v0.7          | :white_check_mark:        | :x:                       ||
+| v0.7a         | :x:                       | :x:                       ||
+| v0.7b         | :x:                       | :x:                       ||
+| v0.7c         | :x:                       | :x:                       ||
+| v0.7d         | :white_check_mark:        | :x:                       ||
+||
+| v0.8          | :x:                       | :x:                       ||
+| v0.8a         | :white_check_mark:        | :x:                       ||
+| v0.8b         | :white_check_mark:        | :x:                       ||
+||
+| v0.9          | :white_check_mark:        | :x:                       ||
+||
+| v1.0          | :white_check_mark:        | :x:                       ||
+| v1.0a         | :x:                       | :x:                       ||
+| v1.0b         | :white_check_mark:        | :x:                       ||
+| v1.0c         | :white_check_mark:        | :x:                       ||
+| v1.0d         | :white_check_mark:        | :x:                       | First **Cheat Device** to be released as a PRX |
+| v1.0e         | :x:                       | :x:                       ||
+| v1.0f         | :white_check_mark:        | :x:                       ||
+| v1.0g         | :white_check_mark:        | :white_check_mark:        ||
+| v1.0h         | :x:                       | :x:                       | Probably doesn't exist, see [this](./LCS/Cheat%20Device/v1.0/v1.0h/README.md). |
 
 ### VCS
 |    Version    |         Archived?         |          Tested?          |             Notes             |
 |---------------|:-------------------------:|:-------------------------:|-------------------------------|
-| **v2.0**|-|-|-|
 | v2.0 Alpha    | :white_check_mark:        |:x:                        | First "unofficial" release for VCS |
 | v2.0          | :white_check_mark:        |:x:                        | First official release for VCS |
 | v2.0a         | :white_check_mark:        |:x:                        ||
-| **v2.1**      |-|-|-|
+||
 | v2.1          | :white_check_mark:        |:x:                        ||
 | v2.1a         | :white_check_mark:        |:x:                        ||
-| **v2.2**      |-|-|-|
+||
 | v2.2          | :white_check_mark:        |:x:                        ||
 | v2.2a         | :x:                       |:x:                        ||
-| **v2.3**      |-|-|-|
+||
 | v2.3          | :white_check_mark:        |:x:                        ||
 | v2.3a         | :white_check_mark:        |:x:                        ||
-| **v2.4**      |-|-|-|
+||
 | v2.4          | :white_check_mark:        | :white_check_mark:        | Final release |
 
 ## UserCheats
