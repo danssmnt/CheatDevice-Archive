@@ -1,6 +1,6 @@
-![Edison Carter's Cheat Device](<./Pictures/LCS%20VCS%20EC%20Cheat%20Device.jpg>)
+<img src="./Pictures/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80" style="display: block; margin: 0 auto;"></img><br>
 
-This project aims to fully archive _**Edison Carter’s Cheat Device**_ for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
+This project aims to fully archive **Edison Carter’s Cheat Device** for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
 
 This is a **Work in Progress**.
 
@@ -8,19 +8,19 @@ This is a **Work in Progress**.
 **Cheat Device** was one of the first homebrews ever made for the _PlayStation: Portable_ (running on firmware 2.01, 2.5 and 2.6), developed between 2005 and 2007. 
 
 **Cheat Device** is, in a nutshell, a cheat menu for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_, created by the popular modder _**Edison Carter**_. 
-It was very famous back in the day, allowing you to create your own cheats! It was certainly one of the most influential _PlayStation: Portable_ homebrews ever.
+It was very famous back in the day, even allowing you to create your own cheats (with Cheat Maker)! It was certainly one of the most influential _PlayStation: Portable_ homebrews ever and part of my childhood!
 
-This archival was started by me (@danssmnt) as a way to preserve an almost 20 year old homebrew. 
-Even with the popularity back then, _**Cheat Device**_ has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of _**Cheat Device**_ history before it was lost for good.
+This project was started by me (_**danssmnt**_), with the help of some OG CheatDevice members, as a way to preserve an almost 20 year old homebrew. 
+Even with the popularity back then, **Cheat Device** has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of **Cheat Device** history before it was lost for good.
 
-This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and gta forums from back in the day.
+This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and GTA forums from back in the day.
 
 ## Progress
 ### LCS
 |    Version    |          Archived?          |          Tested?          |             Notes             |
 |---------------|:---------------------------:|:-------------------------:|-------------------------------|
 | **v0.1**      |-|-|-|
-| v0.1          | :x:                         | :x:                       | First Version of Cheat Device |
+| v0.1          | :x:                         | :x:                       | First Version of **Cheat Device** |
 | v0.1a         | :x:                         | :x:                       ||
 | v0.1b         | :white_check_mark:          | :x:                       ||
 | v0.1c         | :white_check_mark:          | :x:                       ||
@@ -61,7 +61,7 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 | v1.0a         | :x:                         | :x:                       ||
 | v1.0b         | :white_check_mark:          | :x:                       ||
 | v1.0c         | :white_check_mark:          | :x:                       ||
-| v1.0d         | :white_check_mark:          | :x:                       | First Cheat Device to be released as a PRX |
+| v1.0d         | :white_check_mark:          | :x:                       | First **Cheat Device** to be released as a PRX |
 | v1.0e         | :x:                         | :x:                       ||
 | v1.0f         | :white_check_mark:          | :x:                       ||
 | v1.0g         | :white_check_mark:          | :white_check_mark:        ||
@@ -87,32 +87,32 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 | v2.4          | :white_check_mark:        | :white_check_mark:        | Final release |
 
 ## UserCheats
-We're trying to archive all UserCheats made for Cheat Device too!
-Most of them come from CheatSync backups made by the community!
+We're trying to archive all **UserCheats** made for **Cheat Device** too!
+Most of them come from _CheatSync_ backups made by the community!
 
 > [!WARNING]
 > All usercheats are **UNTESTED** and can crash your game.
-> Also it is recommended to use them in the latest releases of Cheat Device.
+> Also it is recommended to use them in the latest releases of **Cheat Device**.
 
-## Contributing to the project
+## Contributing
 Refer to _[How can I contribute?](./.github/CONTRIBUTING.md)_.
  
-## What more could be done?
- - [ ] Archive all versions of cheat device.
- - [ ] Archive all known usercheats for cheat device.
+## Project Goals
+ - [ ] Archive all versions of **Cheat Device**.
+ - [ ] Archive all known UserCheats for **Cheat Device**.
  - [ ] Make a website for this project.
- - [ ] Archive old screenshots, images, photos, videos of Cheat Device.
- - [ ] Decompile / Reverse Engineer Cheat Device (latest releases).
+ - [ ] Archive old screenshots, images, photos, videos of **Cheat Device**.
+ - [ ] Decompile / Reverse Engineer **Cheat Device** (v1.0g LCS and 2.4 VCS).
  
-## Interesing / Useful Cheat Device Content
-Refer to _[Interesing / Useful Content](./Interesting_Useful_Content.md#interesting--useful-cheat-device-content)_.
+## Miscellaneous Content
+Refer to _[Misc. Content](./Miscellaneous%20Content.md#miscellaneous-content)_.
 
-## Credits
- - **Edison Carter and [other people](./Interesting_Useful_Content.md#cheatdevice-original-contributors)** - For making this awesome homebrew! :D
+## Acknowledgments
+ - **_Edison Carter_** and **[more](./Miscellaneous%20Content.md#cheatdevice-original-contributors)** - For making this awesome homebrew!
  - **[Wayback Machine](https://web.archive.org/)** - Almost all CD versions were found preserved here.
  - _**[Kabuto_Kun](https://www.reddit.com/user/Kabuto_Kun/)**_ - _[CheatSync Backups](https://www.reddit.com/r/vitahacks/comments/6xxsif/comment/dmjvnx5/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)_
- - **PSP GTA Cheat Device Community** (_03stevensmi_) - _[PSP CHEAT DEVICE ARCHIVE & OTHERS ( VCS, LCS, CWCHEAT, OTHERS & LCS+VCS CHEATS FOR NEW FIRMWIRE)](https://archive.org/details/psp-cheat-device-archive)_
- - **Freakler**:
+ - **PSP GTA Cheat Device Community** (_**03stevensmi**_) - _[PSP CHEAT DEVICE ARCHIVE & OTHERS ( VCS, LCS, CWCHEAT, OTHERS & LCS+VCS CHEATS FOR NEW FIRMWIRE)](https://archive.org/details/psp-cheat-device-archive)_
+ - **_Freakler_**:
    - More VCS UserCheats
    - Noobz LCS Goofy Exploit
    - Hexed LCS v1.0g PRXs

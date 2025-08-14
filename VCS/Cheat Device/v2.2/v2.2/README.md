@@ -1,7 +1,7 @@
 # VCS Cheat Device v2.2
 
-![1 CD v2.2](<../../../../Pictures/VCSHoverBike1.gif>)
-![2 CD v2.2](<../../../../Pictures/VCSHoverBike2.gif>)
+![1 CD v2.2](<../../../../Pictures/VCS/VCSHoverBike1.gif>)
+![2 CD v2.2](<../../../../Pictures/VCS/VCSHoverBike2.gif>)
 
 ## Release Date
 Between 14 dec. 2006 and 21 dec. 2006

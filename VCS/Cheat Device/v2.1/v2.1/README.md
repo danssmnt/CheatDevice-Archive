@@ -1,9 +1,9 @@
 # VCS Cheat Device v2.1
 
-![1 CD v2.1](<../../../../Pictures/VCSBubbleCars2.gif>)
-![2 CD v2.1](<../../../../Pictures/VCSHeavyCar.gif>)
-![3 CD v2.1](<../../../../Pictures/VCSHeavyCar2.gif>)
-![4 CD v2.1](<../../../../Pictures/VCSHeavyCar3.gif>)
+![1 CD v2.1](<../../../../Pictures/VCS/VCSBubbleCars2.gif>)
+![2 CD v2.1](<../../../../Pictures/VCS/VCSHeavyCar.gif>)
+![3 CD v2.1](<../../../../Pictures/VCS/VCSHeavyCar2.gif>)
+![4 CD v2.1](<../../../../Pictures/VCS/VCSHeavyCar3.gif>)
 
 ## Release Date
 5 nov. 2006

@@ -1,6 +1,6 @@
 # LCS Cheat Device v0.2
 
-![v0.2](<../../../Pictures/CheatDevicev02.jpg>)
+![v0.2](<../../../Pictures/LCS/CheatDevicev02.jpg>)
 
 ## Release Date
 Between 30 nov. 2005 and 4 dec. 2005

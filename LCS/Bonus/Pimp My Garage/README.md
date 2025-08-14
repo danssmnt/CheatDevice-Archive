@@ -1,12 +1,12 @@
 # Pimp My Garage Portable
 
-![PMG - Logo](<../../../Pictures/Pmglogo.webp>)
-![PMG - Basics](<../../../Pictures/Pimp My Garage Portable - Basics.png>)
-![PMG - Wheels](<../../../Pictures/Pimp My Garage Portable - Wheels.png>)
-![PMG - Engine](<../../../Pictures/Pimp My Garage Portable - Engine.png>)
-![PMG - Menu](<../../../Pictures/Pimp My Garage Portable - Menu.png>)
+![PMG - Logo](<../../../Pictures/Bonus/Pmglogo.webp>)
+![PMG - Basics](<../../../Pictures/Bonus/Pimp My Garage Portable - Basics.png>)
+![PMG - Wheels](<../../../Pictures/Bonus/Pimp My Garage Portable - Wheels.png>)
+![PMG - Engine](<../../../Pictures/Bonus/Pimp My Garage Portable - Engine.png>)
+![PMG - Menu](<../../../Pictures/Bonus/Pimp My Garage Portable - Menu.png>)
 
-Pimp My Garage Portable is a _PlayStation: Portable_ version of the old online [Pimp My Garage Tool](https://web.archive.org/web/20071113232508/http://www.cheatsync.net/pmg/).
+**Pimp My Garage Portable** is a _PlayStation: Portable_ version of the old online [Pimp My Garage Tool](https://web.archive.org/web/20071113232508/http://www.cheatsync.net/pmg/).
 
 ## Release Notes
 (Taken from [Gamebrew: Pimp My Garage Portable PSP](https://www.gamebrew.org/wiki/Pimp_My_Garage_Portable_PSP))
@@ -25,4 +25,4 @@ All the power of the online version (apart from percent submerged) and more:
  
 ## Archival Notes
 > [!NOTE]
-> Edison Carter's Cheat Device is needed to use the tool.
+> **Edison Carter's Cheat Device** is needed to use the tool.

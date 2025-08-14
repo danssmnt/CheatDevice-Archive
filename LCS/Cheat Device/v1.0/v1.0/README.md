@@ -1,11 +1,11 @@
 # LCS Cheat Device v1.0
 
-![1 CD v1.0](<../../../../Pictures/Katamari2.jpg>)
-![2 CD v1.0](<../../../../Pictures/Katamari3.jpg>)
-![3 CD v1.0](<../../../../Pictures/Hover1.jpg>)
-![4 CD v1.0](<../../../../Pictures/Hover2.jpg>)
-![5 CD v1.0](<../../../../Pictures/RCBanditKatamari.gif>)
-![6 CD v1.0](<../../../../Pictures/bluesmoke1b.gif>)
+![1 CD v1.0](<../../../../Pictures/LCS/Katamari2.jpg>)
+![2 CD v1.0](<../../../../Pictures/LCS/Katamari3.jpg>)
+![3 CD v1.0](<../../../../Pictures/LCS/Hover1.jpg>)
+![4 CD v1.0](<../../../../Pictures/LCS/Hover2.jpg>)
+![5 CD v1.0](<../../../../Pictures/LCS/RCBanditKatamari.gif>)
+![6 CD v1.0](<../../../../Pictures/LCS/bluesmoke1b.gif>)
 
 
 ## Release Date

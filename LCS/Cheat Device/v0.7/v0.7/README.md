@@ -1,11 +1,11 @@
 # LCS Cheat Device v0.7
 
-![1 CD v0.7](<../../../../Pictures/FreezeEverything1.jpg>)
-![2 CD v0.7](<../../../../Pictures/FreezeEverything2.jpg>)
-![3 CD v0.7](<../../../../Pictures/WallDriving1.jpg>)
-![4 CD v0.7](<../../../../Pictures/WallDriving3.gif>)
-![5 CD v0.7](<../../../../Pictures/zero gravity heavy bike.gif>)
-![6 CD v0.7](<../../../../Pictures/low gravity spawn.gif>)
+![1 CD v0.7](<../../../../Pictures/LCS/FreezeEverything1.jpg>)
+![2 CD v0.7](<../../../../Pictures/LCS/FreezeEverything2.jpg>)
+![3 CD v0.7](<../../../../Pictures/LCS/WallDriving1.jpg>)
+![4 CD v0.7](<../../../../Pictures/LCS/WallDriving3.gif>)
+![5 CD v0.7](<../../../../Pictures/LCS/zero gravity heavy bike.gif>)
+![6 CD v0.7](<../../../../Pictures/LCS/low gravity spawn.gif>)
 
 ## Release Date
 11 jan. 2006

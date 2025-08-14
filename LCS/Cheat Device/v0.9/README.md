@@ -1,8 +1,8 @@
 # LCS Cheat Device v0.9
 
-![1 CD v0.9](<../../../Pictures/VettesLoop.jpg>)
-![2 CD v0.9](<../../../Pictures/ParkLoop1.jpg>)
-![3 CD v0.9](<../../../Pictures/Pyramid.jpg>)
+![1 CD v0.9](<../../../Pictures/LCS/VettesLoop.jpg>)
+![2 CD v0.9](<../../../Pictures/LCS/ParkLoop1.jpg>)
+![3 CD v0.9](<../../../Pictures/LCS/Pyramid.jpg>)
 
 ## Release Date
 24 fev. 2006

@@ -1,6 +1,6 @@
 # LCS Cheat Device v1.0d
 
-![1 CD v1.0d](<../../../../Pictures/driveonwall2.gif>)
+![1 CD v1.0d](<../../../../Pictures/LCS/driveonwall2.gif>)
 
 ## Release Date
 Between 26 apr. 2006 and 01 jun. 2006. (PRX file date is unreliable)

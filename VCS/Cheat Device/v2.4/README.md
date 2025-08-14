@@ -1,6 +1,6 @@
 # VCS Cheat Device v2.4
 
-![1 CD v2.4](<../../../Pictures/VCS CD v2.4.png>)
+![1 CD v2.4](<../../../Pictures/VCS/VCS CD v2.4.png>)
 
 ## Release Date
 13 oct. 2007

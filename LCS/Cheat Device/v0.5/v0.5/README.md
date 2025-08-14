@@ -1,6 +1,6 @@
 # LCS Cheat Device v0.5
 
-![Heavy Motorcycle CD v0.5](<../../../../Pictures/HeavyMotorcycle.gif>)
+![Heavy Motorcycle CD v0.5](<../../../../Pictures/LCS/HeavyMotorcycle.gif>)
 
 ## Release Date
 20 dec. 2005

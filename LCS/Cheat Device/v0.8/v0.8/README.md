@@ -1,7 +1,7 @@
 # LCS Cheat Device v0.8
 
-![1 CD v0.8](../../../../Pictures/RocketBike1.gif)
-![2 CD v0.8](../../../../Pictures/RocketBike2.gif)
+![1 CD v0.8](../../../../Pictures/LCS/RocketBike1.gif)
+![2 CD v0.8](../../../../Pictures/LCS/RocketBike2.gif)
 
 ## Release Date
 17 jan. 2006?

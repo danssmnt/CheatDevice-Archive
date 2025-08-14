@@ -1,5 +1,7 @@
 # LCS Cheat Device v1.0g
 
+![1 CD v1.0g](<../../../../Pictures/LCS/Cheat_Device_1.0g page2 freakler.png>)
+
 ## Release Date
 13 or 14 oct 2007
 
