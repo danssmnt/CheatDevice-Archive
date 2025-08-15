@@ -1,4 +1,4 @@
-<p style="text-align: center;">
+<p align="center">
   <img src="./Pictures/CDA/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
 </p>
 
@@ -18,7 +18,7 @@ It was very famous back in the day, even allowing you to create your own cheats 
 
 ---
 
-<div style="text-align: center;">
+<div align="center">
     <img src="./Pictures/CDA/PSP STREET LCS.webp" alt="PSP Street" style="height: 90px;"/>
     <img src="./Pictures/CDA/PSP WHITE VCS.webp" alt="White PSP" style="height: 90px;"/>
     <img src="./Pictures/CDA/PSP GO LCS.webp" alt="PSP GO" style="height: 90px;"/>
