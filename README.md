@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="./Pictures/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
+<p style="text-align: center;">
+  <img src="./Pictures/CDA/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
 </p>
+
+![Discord](https://img.shields.io/discord/1405664620814798898?style=flat&label=Official%20Discord%20Server&labelColor=rgb(50%2C%2050%2C%2050)&color=%2374428a)
 
 ---
 
@@ -14,12 +16,23 @@ This is a **Work in Progress**.
 **Cheat Device** is, in a nutshell, a cheat menu for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_, created by the popular modder _**Edison Carter**_. 
 It was very famous back in the day, even allowing you to create your own cheats (with Cheat Maker)! It was certainly one of the most influential _PlayStation: Portable_ homebrews ever and part of my childhood!
 
-<img src="./Pictures/LCS VCS EC Cheat Device.jpg" alt="Cheat Device LCS VCS" width="480" height="272"></img>
+---
 
-This project was started by me (_**danssmnt**_), with the help of some OG CheatDevice members, as a way to preserve an almost 20 year old homebrew. 
+<div style="text-align: center;">
+    <img src="./Pictures/CDA/PSP STREET LCS.webp" alt="PSP Street" style="height: 90px;"/>
+    <img src="./Pictures/CDA/PSP WHITE VCS.webp" alt="White PSP" style="height: 90px;"/>
+    <img src="./Pictures/CDA/PSP GO LCS.webp" alt="PSP GO" style="height: 90px;"/>
+    <img src="./Pictures/CDA/PSVITA OLED VCS.webp" alt="PSVita OLED" style="height: 90px;"/>
+</div>
+
+---
+
+This project was started by me ([@danssmnt](https://github.com/danssmnt)), with the help of some OG CheatDevice members, as a way to preserve an almost 20 year old homebrew. 
 Even with the popularity back then, **Cheat Device** has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of **Cheat Device** history before it was lost for good.
 
 This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and GTA forums from back in the day.
+
+---
 
 ## Progress
 ### LCS
@@ -77,6 +90,8 @@ This archive was made by scouring old websites (with **[Wayback Machine](https:/
 | v2.3a         | :white_check_mark:        |:x:                        ||
 | **v2.4**      | :white_check_mark:        | :white_check_mark:        | Final release |
 
+---
+
 ## UserCheats
 We're trying to archive all **UserCheats** made for **Cheat Device** too!
 Most of them come from _CheatSync_ backups made by the community!
@@ -85,8 +100,18 @@ Most of them come from _CheatSync_ backups made by the community!
 > All usercheats are **UNTESTED** and can crash your game.
 > Also it is recommended to use them in the latest releases of **Cheat Device**.
 
+---
+
+## Installing
+Refer to _[Cheat Device Installation Guide](./.github/INSTALLING.md)_.
+
 ## Contributing
 Refer to _[How can I contribute?](./.github/CONTRIBUTING.md)_.
+
+## Miscellaneous Content
+Refer to _[Misc. Content](./Miscellaneous%20Content.md#miscellaneous-content)_.
+
+---
  
 ## Project Goals
  - [ ] Archive all versions of **Cheat Device**.
@@ -95,8 +120,7 @@ Refer to _[How can I contribute?](./.github/CONTRIBUTING.md)_.
  - [ ] Archive old screenshots, images, photos, videos of **Cheat Device**.
  - [ ] Decompile / Reverse Engineer **Cheat Device** (``v1.0g`` LCS and ``2.4`` VCS).
  
-## Miscellaneous Content
-Refer to _[Misc. Content](./Miscellaneous%20Content.md#miscellaneous-content)_.
+---
 
 ## Acknowledgments
  - **_Edison Carter_** and **[more](./Miscellaneous%20Content.md#cheatdevice-original-contributors)** - For making this awesome homebrew!
