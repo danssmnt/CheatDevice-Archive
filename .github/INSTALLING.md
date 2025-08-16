@@ -5,12 +5,13 @@
 > [!WARNING]
 > By following this guide you agree you are entirely responsible if somehow you mess up and anything bad happens to your _PSP_ (like bricking...). We can't guarantee this guide will work for every _PSP_ / _PSVita_ and we recommend reading it completely before starting.
 
-> [!INFO]
+
+> [!NOTE]
 > Be aware that:
 > - **Cheat Device** isn't compatible with PPSSPP.
 > - **Cheat Device** is compatible with Adrenaline (PSVita).
 
-> [!INFO]
+> [!NOTE]
 > Keep in mind `v1.0g` (LCS) and `v2.4` (VCS) have specific PRXs for different firmwares compatibility, check the `README.md` inside the version folder for more info.
 > We don't really know about the other versions, they probably don't work on later firmwares.
 
