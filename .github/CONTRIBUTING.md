@@ -8,4 +8,6 @@ There's lots of ways to help us on our objective:
  6. If you wanna go even further and have a good understanding of _PlayStation: Portable_ Programming (C Language, MIPS Assembly), how about helping decompile **Cheat Device**?
  7. If you have more inside knowledge from back then, don't be afraid to tell us!
  
+Also join our [Discord Server <img src="../Pictures/CDA/Discord Logo.webp" width="20" align="top"/>](https://discord.gg/eEJFGwdX7U)!
+ 
 If you have done any of these, don't be afraid to open a pull request or an issue!
