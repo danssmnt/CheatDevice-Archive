@@ -2,11 +2,11 @@
   <img src="./Pictures/CDA/Cheat Device Archive Logo.webp" alt="Cheat Device Archive Logo" width="440" height="80"></img>
 </p>
 
-![Discord](https://img.shields.io/discord/1405664620814798898?style=flat&label=Official%20Discord%20Server&labelColor=rgb(50%2C%2050%2C%2050)&color=%2374428a)
-
 ---
 
 This project aims to fully archive **Edison Carter’s Cheat Device** for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
+
+Join our [Discord Server <img src="./Pictures/CDA/Discord Logo.webp" width="20" align="center"/>](https://discord.gg/eEJFGwdX7U)
 
 This is a **Work in Progress**.
 
@@ -30,7 +30,7 @@ It was very famous back in the day, even allowing you to create your own cheats 
 This project was started by me ([@danssmnt](https://github.com/danssmnt)), with the help of some OG CheatDevice members, as a way to preserve an almost 20 year old homebrew. 
 Even with the popularity back then, **Cheat Device** has been slowly dying over time, with more and more content being removed and taken down from the internet, so, I decided it was best to try and preserve most of **Cheat Device** history before it was lost for good.
 
-This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and GTA forums from back in the day.
+This archive was made by scouring old websites (with **[Wayback Machine](https://web.archive.org/)**) and GTA Forums from back in the day.
 
 ---
 

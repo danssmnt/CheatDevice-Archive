@@ -16,6 +16,13 @@
 
 ---
 
+Clone the repo, either press `Code/Download ZIP` on browser, or run the following command on a terminal: 
+```
+git clone https://github.com/danssmnt/CheatDevice-Archive
+```
+
+From there you can access all archived versions (inside LCS and VCS) plus some bonus content!
+
 ## LCS
 There are two types of Cheat Devices for LCS:
  - (**OLD**) Save Game Exploit (``v0.1`` - ``v1.0d``)
@@ -28,7 +35,7 @@ There are two types of Cheat Devices for LCS:
 > [!WARNING]
 > We recommend doing a backup of your original saved data as the hacked saved game occupies the first save slot!
 
-To install it, simply copy the savedata provided to your PSP ``ms0:/PSP/SAVEDATA/`` directory and run _Grand Theft Auto: Liberty City Stories_.
+To install it, simply copy the savedata provided to your PSP ``ms0:/PSP/SAVEDATA/`` directory.
 
 ### PRX
 #### ARK-4
@@ -52,13 +59,19 @@ Remember to disable it when running other games in order to not cause problems.
 
 ## Installing UserCheats
 
-To install UserCheats, simply copy the `UserCheats` folder to `ms0:/CHEATS/` and rename it to `lcs` / `vcs`, depending on the game.
+### LCS
+Copy all `.txt` found inside `LCS/UserCheats` to `ms0:/CHEATS/`.
+
+### VCS
+Copy all `.txt` found inside `VCS/UserCheats` to `ms0:/CHEATS/vcs` (create the `vcs` folder if not present).
 
 > [!WARNING]
 > All usercheats are **UNTESTED** and can crash your game.
 > Also it is recommended to use them in the latest releases of **Cheat Device**.
 
-That should be it, now boot up your GTA and experience the nostalgia again!
+---
+
+That should be it, now boot up your GTA and everything should work, you might have to wait some seconds for the menu to show! 
 
 ---
 

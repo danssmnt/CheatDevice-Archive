@@ -1,5 +1,4 @@
 # VCS Cheat Device v2.4
--
 
 ![1 CD v2.4](<../../../Pictures/VCS/VCS CD v2.4.png>)
 
