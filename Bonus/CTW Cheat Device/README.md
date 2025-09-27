@@ -10,7 +10,7 @@ Was compiled back in 12 Nov. 2018, but only shared to the community by 16 Aug. 2
 (Copied from a Discord Server)
 
 > [!WARNING]
-> This does NOT work on PPSSPP but only PSP (well partially) and Adrenaline eCFW for Vita. It is compatible with both the EU and US version of Chinatown Wars. This does NOT work on PPSSPP but only PSP (well partially) and Adrenaline eCFW for Vita. It is compatible with both the EU and US version of Chinatown Wars.
+> This does NOT work on PPSSPP but only PSP (well partially) and Adrenaline eCFW for Vita. It is compatible with both the EU and US version of Chinatown Wars.
 
 > - Copy "ctwcheatdevice.prx" to the seplugins folder and register it in the "GAME.TXT"
 > - Create a "ctw" folder next to it inside the seplugins folder and place the "ctwvehicles.txt" inside
