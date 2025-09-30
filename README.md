@@ -6,8 +6,6 @@
 
 This project aims to fully archive **Edison Carter’s Cheat Device** for _Grand Theft Auto: Liberty City Stories_ and _Grand Theft Auto: Vice City Stories_.
 
-Join our [Discord Server <img src="./Pictures/CDA/Discord Logo.webp" width="20" align="top"/>](https://discord.gg/VXMJDU5z3E)
-
 This is a **Work in Progress**.
 
 ## What, why and how?
